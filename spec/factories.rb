@@ -14,4 +14,11 @@ FactoryGirl.define do
     content "Lorem ipsum"
     user
   end
+
+factory :debate do |f|
+  f.title "foo"
+  f.content "foobar"
+  f.type_of_debate "foobar"
+end
+
 end

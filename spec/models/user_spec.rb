@@ -25,6 +25,11 @@ describe User do
   it { should respond_to(:followers) }
   it { should respond_to(:following?) }
   it { should respond_to(:follow!) }
+  it { should respond_to(:performances) }
+  it { should respond_to(:debates) }
+  it { should respond_to(:debating?) }
+  
+  
 
   it { should be_valid }
   it { should_not be_admin }
@@ -197,4 +202,5 @@ describe User do
               its(:followed_users) { should_not include(other_user) }
         end
     end
+    
 end

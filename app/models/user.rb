@@ -20,7 +20,11 @@ class User < ActiveRecord::Base
   has_many :followed_users, through: :relationships, source: :followed
   
   has_many :reverse_relationships, foreign_key: "followed_id", class_name:  "Relationship", dependent:   :destroy
-  has_many :followers, through: :reverse_relationships, source: :follower
+  has_many :followers, through: :reverse_relationships
+  
+  has_many :performances, foreign_key: "user_id", dependent: :destroy
+  has_many :debates, through: :performances
+  
                                      
 
     before_save { |user| user.email = email.downcase }
@@ -49,8 +53,11 @@ class User < ActiveRecord::Base
     def unfollow!(other_user)
       relationships.find_by_followed_id(other_user.id).destroy
     end
-
-
+    
+    def debating?(debate)
+      debates.find_by_id(debate.id)
+    end
+    
 private
 
     def create_remember_token

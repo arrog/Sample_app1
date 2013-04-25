@@ -3,7 +3,9 @@ namespace :db do
   task populate: :environment do
     make_users
     make_microposts
+    make_debates
     make_relationships
+    make_performances
   end
 end
 
@@ -32,6 +34,15 @@ def make_microposts
   end
 end
 
+def make_debates
+  50.times do
+    content = Faker::Lorem.sentence(1)
+    title = Faker::Lorem.sentence(1)
+    type_of_debate = Faker::Lorem.sentence(1)
+    Debate.create!(content: content, type_of_debate: type_of_debate, title: title)
+  end
+end
+
 def make_relationships
   users = User.all
   user  = users.first
@@ -39,4 +50,16 @@ def make_relationships
   followers      = users[3..40]
   followed_users.each { |followed| user.follow!(followed) }
   followers.each      { |follower| follower.follow!(user) }
+end
+
+def make_performances
+  users = User.all
+  debates = Debate.all
+  user  = users.first
+  debate = debates.last
+  debate_bis = debates.first
+  full_debates = debates[2..50]
+  full_debates.each { |f| debate.participate!(f) }
+  full_debates.each { |f| debate_bis.participate!(f) }
+ 
 end
