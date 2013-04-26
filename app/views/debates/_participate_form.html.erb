@@ -1,0 +1,9 @@
+<% if current_user.debating?(@debate)%>
+	Tu participes déjà
+<% else %>
+
+	<% form_for(current_user.performances.build(debate_id: @debate.id), remote: true) do |f| %>) %>
+	 <div><%= f.hidden_field :debate_id %></div>
+	  <%= f.submit "Participate", class: "btn btn-large btn-primary" %>
+	<% end %>
+<% end %>

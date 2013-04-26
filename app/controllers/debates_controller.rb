@@ -21,7 +21,7 @@ class DebatesController < ApplicationController
     
   def show
       @debate = Debate.find(params[:id])
-      @users = @debate.users.paginate(page: params[:page])
+      @users = @debate.users
   end
   
   def edit 

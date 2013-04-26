@@ -58,6 +58,8 @@ class User < ActiveRecord::Base
       debates.find_by_id(debate.id)
     end
     
+    
+    
 private
 
     def create_remember_token
