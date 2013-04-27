@@ -11,7 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130425184330) do
+ActiveRecord::Schema.define(:version => 20130427164940) do
+
+  create_table "arguments", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "content"
+    t.text     "title"
+    t.integer  "argumentable_id"
+    t.string   "argumentable_type"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "arguments", ["argumentable_id", "argumentable_type"], :name => "index_arguments_on_argumentable_id_and_argumentable_type"
+
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "content"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "ancestry"
+  end
+
+  add_index "comments", ["ancestry"], :name => "index_comments_on_ancestry"
+  add_index "comments", ["commentable_id", "commentable_type"], :name => "index_comments_on_commentable_id_and_commentable_type"
 
   create_table "debates", :force => true do |t|
     t.string   "title"
@@ -53,6 +78,14 @@ ActiveRecord::Schema.define(:version => 20130425184330) do
   add_index "performances", ["user_id", "debate_id"], :name => "index_performances_on_user_id_and_debate_id", :unique => true
   add_index "performances", ["user_id"], :name => "index_performances_on_user_id"
 
+  create_table "reactions", :force => true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "argument_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"
     t.integer  "followed_id"
@@ -76,5 +109,15 @@ ActiveRecord::Schema.define(:version => 20130425184330) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+
+  create_table "wall_debs", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.integer  "likes"
+    t.integer  "dislikes"
+    t.integer  "neutral"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
 end

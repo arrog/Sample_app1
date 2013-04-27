@@ -21,7 +21,9 @@ class DebatesController < ApplicationController
     
   def show
       @debate = Debate.find(params[:id])
-      @users = @debate.users
+      @argumentable = @debate
+      @arguments = @argumentable.arguments
+      @argument = Argument.new
   end
   
   def edit 

@@ -1,11 +1,11 @@
-<%= @debate.title%>
+<h1><%= @debate.title %> </h1>
 
-</br>
+<%= simple_format @debate.content%>
+<%= simple_format @argumentable.content%>
 
-<%= @debate. content %>
+<h2>Arguments</h2>
 
-</br>
-
-<%= @debate.type_of_debate%>
+<%= render "arguments/arguments" %>
+<p><%= link_to "New argument", [:new, @argumentable, :argument] %></p>
 
 

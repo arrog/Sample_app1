@@ -22,9 +22,10 @@ class User < ActiveRecord::Base
   has_many :reverse_relationships, foreign_key: "followed_id", class_name:  "Relationship", dependent:   :destroy
   has_many :followers, through: :reverse_relationships
   
-  has_many :performances, foreign_key: "user_id", dependent: :destroy
-  has_many :debates, through: :performances
+  has_many :arguments
+  has_many :debates, through: :arguments, source: :argumentable, source_type: :'Debate'
   
+  has_many :comments
                                      
 
     before_save { |user| user.email = email.downcase }
