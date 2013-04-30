@@ -1,11 +1,33 @@
 <h1><%= @debate.title %> </h1>
 
+
+| <%= pluralize @debate.reputation_for(:votes).to_i, "vote" %>
+| <%= pluralize @debate.count_for, "vote pour" %>
+| <%= pluralize @debate.count_against, "vote contre" %>
+| <%= pluralize @debate.count_neutral, "personnes suisses" %>
+
+	
+<% if current_user && !current_user.voted_for?(@debate) %>
+  | <%= link_to "up", vote_debate_path(@debate, type: "up"), method: "post" %>
+  | <%= link_to "down", vote_debate_path(@debate, type: "down"), method: "post" %>
+  | <%= link_to "neutral", vote_debate_path(@debate, type: "neutral"), method: "post" %>
+<% end %>
+
+
 <%= simple_format @debate.content%>
 <%= simple_format @argumentable.content%>
 
 <h2>Arguments</h2>
 
-<%= render "arguments/arguments" %>
+<div id="arguments">
+		<% @arguments.each do |argument| %>
+			<%= render "shared/argument_badge", :argument => argument %>
+			<%= argument.id%>
+			<%= link_to "Reaction", argument_path(argument) %>
+		<%end%>
+		
+</div>
+	
 <p><%= link_to "New argument", [:new, @argumentable, :argument] %></p>
 
 

@@ -1,0 +1,23 @@
+<div class ="argument">
+	_argument_badge
+	<%= simple_format argument.content%>
+	<%= simple_format argument.user.name %>
+
+	<ol class="argcoms">
+		
+		<% argument.argcoms.each do |argcom| %>
+			<%= argcom.id %>
+		 <%= render "shared/argcom_badge", :argcom => argcom %>
+		<% end %>
+     </ol>
+
+	| <%= pluralize argument.reputation_for(:likes).to_i, "likes" %>
+	| <%= pluralize argument.count_positive, "likes +" %>
+	
+	
+	<% if current_user && !current_user.liked_arg?(argument) %>
+	  | <%= link_to "up", like_argument_path(argument, type: "up"), method: "post" %>
+	  | <%= link_to "down", like_argument_path(argument, type: "down"), method: "post" %>
+	<% end %>
+	
+</div>

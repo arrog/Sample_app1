@@ -25,8 +25,12 @@ class User < ActiveRecord::Base
   has_many :arguments
   has_many :debates, through: :arguments, source: :argumentable, source_type: :'Debate'
   
-  has_many :comments
-                                     
+  has_many :argcoms
+  
+  has_many :evaluations, class_name: "ReputationSystem::Evaluation", as: :source
+  has_reputation :likes, source: {reputation: :likes, of: :arguments}, aggregated_by: :sum
+  has_reputation :votes, source: {reputation: :votes, of: :debates}, aggregated_by: :sum
+  
 
     before_save { |user| user.email = email.downcase }
     before_save :create_remember_token
@@ -59,7 +63,13 @@ class User < ActiveRecord::Base
       debates.find_by_id(debate.id)
     end
     
+    def liked_arg?(argument)
+      evaluations.where(target_type: argument.class, target_id: argument.id).present?
+    end
     
+    def voted_for?(debate)
+      evaluations.where(target_type: debate.class, target_id: debate.id).present?
+    end
     
 private
 

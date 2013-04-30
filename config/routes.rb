@@ -6,13 +6,24 @@ SampleApp::Application.routes.draw do
       end
   end  
   
-  resources :debates do
+  resources :debates, shallow: true do 
     resources :arguments
+    member { post :vote }
   end
+  
+  resources :arguments do
+    resources :argcoms
+    member { post :like }
+  end
+  
+  resources :argcoms
+  
     
   resources :sessions, only: [:new, :create, :destroy]
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+
+  
   
   root to: 'static_pages#home'
 
@@ -24,7 +35,7 @@ SampleApp::Application.routes.draw do
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
-  match '/create', to: 'debates #new'
+  match '/create', to: 'debates #new'  ## to be deleted
   
   
 end

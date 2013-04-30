@@ -24,10 +24,12 @@ class DebatesController < ApplicationController
       @argumentable = @debate
       @arguments = @argumentable.arguments
       @argument = Argument.new
+      @argcom  = current_user.argcoms.build
   end
   
   def edit 
   end
+  
   
   #def update
    #   if @user.update_attributes(params[:user])
@@ -44,5 +46,14 @@ class DebatesController < ApplicationController
       flash[:success] = "Debate deleted."
       redirect_to debates_url
   end
+  
+  
+  def vote
+     value = params[:type] == "up" ? 1 :
+        value = params[:type] == "down" ? -1 : 0
+     @debate = Debate.find(params[:id])
+     @debate.add_or_update_evaluation(:votes, value, current_user)
+     redirect_to :back, notice: "Thank you for voting"
+   end
   
 end
