@@ -15,7 +15,7 @@
 	| <%= pluralize argument.count_positive, "likes +" %>
 	
 	
-	<% if current_user && !current_user.liked_arg?(argument) %>
+	<% if current_user && !@argument.has_evaluation?(:likes, current_user) %>
 	  | <%= link_to "up", like_argument_path(argument, type: "up"), method: "post" %>
 	  | <%= link_to "down", like_argument_path(argument, type: "down"), method: "post" %>
 	<% end %>

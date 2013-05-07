@@ -8,7 +8,7 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'jquery-rails', '2.0.2'
 gem 'activerecord-reputation-system', require: 'reputation_system'
-  
+
 group :development, :test do
   
   gem 'annotate', '2.5.0'
@@ -26,6 +26,9 @@ group :assets do
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
   gem 'ancestry'
+  gem 'devise'
+  gem 'twitter-bootstrap-rails'
+  gem 'compass-rails'
 end
 
 group :test do

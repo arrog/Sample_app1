@@ -1,21 +1,118 @@
-<!DOCTYPE html>
-<html>
+
+<!doctype html>
+
+<!--[if lt IE 7 ]> <html lang="<%= I18n.locale %>" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="<%= I18n.locale %>" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="<%= I18n.locale %>" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="<%= I18n.locale %>" class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="<%= I18n.locale %>"> <!--<![endif]-->
   <head>
-    <title><%= full_title(yield(:title)) %></title>
-    <%= stylesheet_link_tag    "application", media: "all" %>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <%= yield :head %>
+    
+    <link rel="shortcut icon" href="/assets/favicon.gif" type="image/x-icon" />
+    
+    <title>Moutoner | Venez débattre </title>
+    
+    <!--[if lt IE 9]>
+      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
-    <%= render 'layouts/shim' %>    
   </head>
+  
   <body>
-    <%= render 'layouts/header' %>
-    <div class="container">
-	  <% flash.each do |key, value| %>
-	     <div class="alert alert-<%= key %>"><%= value %></div>
-	  <% end %>
-      <%= yield %>
-      <%= render 'layouts/footer' %>
-	  <%= debug(params) if Rails.env.development? %>
+    <div id="wrap">
+      <header>
+        <div class="container">
+          <div id="logo">
+            <%= link_to image_tag('logo_moutoner.png', :alt => 'Cup of Teach'), root_path %>
+          </div>
+          
+          <ul id="main-nav" class="unstyled">
+            <%= content_tag(:li, :class => ("active" if current_page?(debates_path))) do %>
+              <%= link_to debates_path do %>
+                <%= content_tag(:strong, "Les Débats") %>
+              <% end %>
+            <% end %>
+            <%= content_tag(:li, :class => ("active" if current_page?(apprendre_path))) do %>
+              <%= link_to apprendre_path do %>
+                <%= content_tag(:strong, "Les astuces") %>
+              <% end %>
+            <% end %>
+            <% if current_user %>
+              <li>&bull;</li>
+              <%= content_tag(:li, :class => ("active" if current_page?(user_path(current_user)))) do %>
+                <%= link_to user_path(current_user) do %>
+                  <%= content_tag(:strong, "Mon Profil") %>
+                <% end %>
+              <% end %>
+            <% end %>
+          </ul>
+          
+          <% if user_signed_in? %>
+            <div id="user-nav" class="btn-group">
+              <a class="btn" data-toggle="dropdown" href="#">
+                <i class="icon-user"></i>
+                <%= current_user.name %>
+              </a>                
+              <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profil", user_path(current_user) %></li>
+                <li><%= link_to "Déconnexion", destroy_user_session_path, :method=>'delete' %></li>
+              </ul>
+            </div>
+          <% else %>
+            <ul id="user-nav" class="unstyled">
+              <%= content_tag(:li, link_to(raw("cr&eacute;er un compte"), new_user_registration_path)) %>
+              <%= content_tag(:li, link_to("s'identifier", new_user_session_path)) %>
+            </ul>
+          <% end %>
+        </div>
+      </header>
+      
+      <section id="main-wrap">
+        <%= render :partial => "shared/flash_messages" unless action_name == "homepage" %>
+        <%= content_for?(:content) ? yield(:content) : yield %>
+      </section>
     </div>
+    
+    <footer>
+      <section id="social_links">
+        <div class="container">
+          <div id="icons">
+            <ul class="unstyled">
+              <%= content_tag(:li, link_to("", "http://www.facebook.com/cupofteach", :id => "facebook", :target => "_blank")) %>
+              <%= content_tag(:li, link_to("", "http://www.twitter.com/cupofteach", :id => "twitter", :target => "_blank")) %>
+              <%= content_tag(:li, link_to("", "http://www.pinterest.com", :id => "pinterest", :target => "_blank")) %>
+              <%= content_tag(:li, link_to("", "http://vimeo.com/cupofteach", :id => "vimeo", :target => "_blank")) %>
+              <%= content_tag(:li, link_to("", "http://www.linkedin.com/company/2597764", :id => "linkedin", :target => "_blank")) %>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section id="footer_content">
+        <div class="container">
+          <ul class="unstyled">
+            
+            <li><%= link_to "Blog", "http://blog.cupofteach.com" %></li>
+            <li><%= link_to "FAQ", faq_path %></li>
+            <li><%= link_to "CGU", cgu_path %></li>
+            <li><%= link_to "Presse", presse_path %></li>
+            <li><%= link_to "Contact", contact_path %></li>
+          </ul>
+        </div>
+      </section>
+    </footer>
   </body>
 </html>

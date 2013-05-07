@@ -1,0 +1,101 @@
+html, body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+
+
+footer {
+  position: relative;
+	margin-top: -170; /* negative value of footer height */
+	height: 60px;
+	clear: both;
+}
+
+/*Opera Fix*/
+body:before {
+	content: "";
+	height: 100%;
+	float: left;
+	width: 0;
+	margin-top: -32767px;
+}
+
+footer > #footer_content {
+  height: 100%;
+  padding-top: 40px;
+  background-color: #FFF;
+  ul {
+    display: table;
+    width: 100%;
+    li {
+      display: table-cell;
+      text-align: center;
+      width: 16.666%;            
+
+      > a {
+        color: #575656;
+        @include title;
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+  #facebook { @include icons-24-sprite(facebook-grey); }
+
+#social_links {
+  margin: 30px 0px 10px 0px;
+  border-bottom: 4px solid #9D9D9C;
+  height: 28px;
+  text-align: center;
+      
+  #facebook { @include icons-24-sprite(facebook-grey); }
+  #twitter { @include icons-24-sprite(twitter-grey); }
+  #pinterest { @include icons-24-sprite(pinterest-grey); }
+  #vimeo { @include icons-24-sprite(vimeo-grey); }
+  #linkedin { @include icons-24-sprite(linkedin-grey); }
+  
+  #facebook:hover { @include icons-24-sprite(facebook-pink); }  
+  #twitter:hover { @include icons-24-sprite(twitter-pink); }
+  #pinterest:hover { @include icons-24-sprite(pinterest-pink); }
+  #vimeo:hover { @include icons-24-sprite(vimeo-pink); }
+  #linkedin:hover { @include icons-24-sprite(linkedin-pink); }    
+  
+  #icons {
+    position: absolute;
+    width: 204px;
+    left: 50%;
+    margin-left: -102px;
+
+    ul {
+      position: absolute;
+      background-color: #EDEBE2;
+
+      li {
+        display: inline;
+
+        &:first-child a { margin-left: 14px; }
+        &:last-child a { margin-right: 14px; }
+
+        a {
+          display: block;
+          width: 24px;
+          height: 24px;
+          float: left;
+          margin: 0px 7px;
+          background-repeat: no-repeat;
+          border-bottom: 4px solid #9D9D9C;
+          padding-bottom: 4px;
+        }
+
+        a:hover {
+          border-bottom: 4px solid #D60655;
+        }
+      }
+    }
+  }
+}

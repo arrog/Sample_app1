@@ -1,0 +1,220 @@
+/// Define mixins using ruby code before importing because @importing .css.scss.erb file does not execute ruby code.
+@mixin pink-bg {
+  background: url('<%= asset_path "background-pink.jpg" %>');
+}
+
+@import "base";
+@import "bootstrap";
+@import "header";
+@import "static";
+@import "footer";
+@import "users";
+
+
+@font-face {
+  font-family: "Belgrad";
+  src: url(<%= asset_path "Belgrad.ttf" %>);
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a {
+  color: $mainColor;
+}
+
+h1.title, h2.title, h3.title, h4.title, h5.title {
+  @include border-bottom;
+  margin-bottom: 20px;
+}
+
+.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12 {
+  > .new-widget:first-child {
+    margin-top: 0px;
+  }
+} 
+
+hr {
+  border-top: 1px solid #AAA;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+em > a {
+  font-style: normal;
+  color: $mainColor;
+}
+
+.overflow {
+  color: red;
+}
+
+form, .form-stacked {
+
+  label {
+    font-weight: bold;
+  }
+  
+  input[type=text], input[type=email], input[type=password], input[type=number] {
+    background: #EEE;
+    border: 1px solid #666A73;
+    font-size: 14px;
+    line-height: 26px;
+    height: 32px;
+    padding: 0px 10px;
+  }
+  
+  /* Don't forget to update tinymce's ui.css stylesheet */
+  textarea {
+    background: #EEE;
+    border: 1px solid #666A73;
+  }
+  
+  
+  .control-group {
+    position: relative;
+    margin: 20px 0px 0px 0px;
+
+    .control-label { display: inline; }
+
+    .help-block { margin: 0; }
+
+    .help-right {
+      top: 0;
+      right: 5px;
+      position: absolute;
+    }
+
+    .controls {
+      margin-top: 5px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .field, .actions {
+    margin-top: 20px;
+  }
+}
+
+form.form-vertical {
+  label {
+    margin: 20px 0px 0px 2px;
+  }
+}
+
+form.ajust-input {
+  input[type=text], input[type=email], input[type=password], textarea {
+    width: 100%;
+    @include box-sizing(border-box);
+  }
+}
+
+input.ajust-input, textarea.ajust-input {
+  width: 100%;
+  @include box-sizing(border-box);
+}
+
+.new-widget {
+  @include widget;
+  
+  h3 { margin-bottom: 10px; }
+  h4 { margin-bottom: 7px; }
+}
+
+.badge-horizontal {
+  display: table;
+  width: 100%;
+  @include box-sizing(border-box);
+
+  > div {
+    display: table-cell;
+    vertical-align: bottom;
+    i { vertical-align: bottom; }
+
+    > span.wrap {
+      display: inline-block;
+      width: 130px;
+      @include force-wrap;
+    }
+  }
+}
+
+.badge-horizontal.sidebar-item {
+  > div {
+    padding: 7px 0px;
+  }
+
+  > div:first-child {
+    width: 30px;
+  }
+
+  > div {
+    
+    strong {
+      display: inline-block;
+      vertical-align: bottom;
+      padding: 0px 6px 0px 0px;
+      
+      line-height: 16px;
+      font-size: 18px;
+      color: $mainColor;
+    }
+
+    span, a {
+      display: inline-block;
+      vertical-align: bottom;
+      padding: 0px;
+      line-height: 13px;
+    }
+  }
+}
+
+.badge-v-centered {
+  display: table;
+  @include subtle-link;
+  
+  > div {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.user-badge {
+  img { width: 165px; }
+  h3 {
+    line-height: 20px;
+    margin: 7px 0px 3px 0px;
+  }
+  p { margin: 1px 0px; }
+  .badge-icon.user-location {
+    margin: 2px 0px;
+    > div:first-child {
+      width: 16px;
+    }
+  }
+}
+
+.user-large-badge {
+  border: $widgetBorder;
+  border-spacing: 20px;
+  padding: 0px;
+    
+  > div {
+    vertical-align: top;
+
+  }
+
+  .user_avatar {
+    width: 120px;
+  }
+
+  .user_information {
+    strong, span { display: block; }
+  }
+
+  .user_follow_information {
+    text-align: center;
+    width: 150px;
+  }
+}
+
+

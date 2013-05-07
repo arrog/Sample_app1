@@ -1,0 +1,58 @@
+header {
+  height: 70px;
+  position: relative;
+  background-color: #FFF;
+  border-bottom: 4px solid $mainColor;
+  
+  @include subtle-link;
+  
+  .container {
+    padding: 10px 0px;
+  
+    #logo {
+      @include float-left;
+      margin-right: 30px;
+    }
+
+    #main-nav {
+      @include float-left;
+    
+      li {
+        padding: 7px 15px 3px 15px;
+        display: inline-block;
+      
+        a {
+          strong {
+            display: block;
+            font-size: 15px;
+            line-height: 40px;
+            @include title;
+          }
+        
+        }
+      }
+    
+      li.active, li:hover {
+        a {
+          text-decoration: none;        
+          strong {
+            color: $mainColor;
+          }
+        }
+      }
+    }
+  
+    #fb-header {
+      position: absolute;
+  //    @include float-right;
+      margin: 15px 0px;
+      left: 700px;
+    }
+  
+    #user-nav {    
+      @include float-right;
+      margin: 10px 0px;
+    }
+
+  }
+}

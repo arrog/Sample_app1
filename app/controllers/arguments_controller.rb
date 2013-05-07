@@ -1,6 +1,6 @@
 class ArgumentsController < ApplicationController
  before_filter :load_argumentable
- before_filter :signed_in_user, only: [:new, :create, :destroy]
+ before_filter :authenticate_user!, only: [:new, :create, :destroy]
  
 
   def new

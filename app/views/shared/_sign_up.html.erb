@@ -1,0 +1,80 @@
+<div id="sign_up">
+  <div id="sign_up_with_facebook">
+    <div id="go_to_sign_in">
+      Déjà inscrit ?
+      <%= link_to "Se connecter", (controller_name == "orders" ? "?auth=login" : new_user_session_path) %>
+    </div>
+
+    <h3>Inscrivez-vous avec Facebook</h3>
+    
+    <p>
+      Plus simple et plus rapide,<br />il suffit d'un clic !
+    </p>
+
+    <p>
+      <%= link_to image_tag("/assets/facebook_inscription.png"), user_omniauth_authorize_path(:facebook) %>
+    </p>
+
+    <p>
+      <em>
+        Nous ne posterons jamais sans votre accord<br />
+        En cliquant sur "S'inscrire avec Facebook", vous acceptez nos Conditions d’utilisation.
+      </em>
+    </p>
+  </div>            
+  <div id="separator">
+    <%= image_tag "/assets/icon-or.png" %>
+  </div>
+  
+  <h3>Inscrivez-vous avec votre email</h3>
+
+   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :class => "form-stacked ajust-input"}) do |f| %>
+   
+     <% if resource.errors.any? %>
+       <div id="error_explanation">
+         <h2><%= pluralize(resource.errors.count, "error") %> prohibited this feedback from being saved:</h2>
+
+         <ul>
+         <% resource.errors.full_messages.each do |msg| %>
+           <li><%= msg %></li>
+         <% end %>
+         </ul>
+       </div>
+     <% end %>
+
+     <div class="field" style="width: 49.5%; display: inline-block;">
+       <%= f.label :first_name %>
+       <%= f.text_field :first_name, :autocomplete => 'off', :class => "span2" %>
+     </div>
+
+     <div class="field" style="width: 49%; display: inline-block; margin-left: 1%;">
+       <%= f.label :last_name %>
+       <%= f.text_field :last_name, :autocomplete => 'off', :class => "span2" %>
+     </div>
+
+     <div class="field">
+       <%= f.label :email %>
+       <%= f.email_field :email, :autocomplete => 'off', :class => "span4" %>
+     </div>
+
+     <div class="field" style="width: 49.5%; display: inline-block; vertical-align: top;">
+       <%= f.label :password %>
+       <%= f.password_field :password, :autocomplete => 'off', :class => "password-field showpassword" %>
+     </div>
+
+     <div class="field" style="width: 49%; display: inline-block; margin-left: 1%; vertical-align: top;">
+       <%= f.label :zip_code %>
+       <%= f.text_field :zip_code, :autocomplete => 'off' %>
+     </div>
+ 
+     <div class="actions" style="text-align: center">
+       <%= f.submit nil, :class => "btn btn-success btn-large" %>
+     </div>
+   
+   <% end %>
+</div>
+<p align="center">
+  <em>
+    En cliquant sur "S'inscrire avec mon email", vous acceptez nos Conditions d’utilisation.
+  </em>
+</p>

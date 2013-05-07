@@ -1,0 +1,93 @@
+@import "compass";
+@import "compass/support";
+@import "compass/utilities/general/min";
+@import "compass/typography/text/force-wrap";
+
+$mainColor: #808080;
+
+$borderBottom: 1px solid #BAB8B0;
+$borderBottomShadow: #FFF 0px 1px 0;
+
+$borderRight: 1px solid #BAB8B0;
+$borderRightShadow: #FFF 1px 0px 0;
+
+$widgetBorder: 1px solid #BAB8B0;
+
+$icons-cat-layout: horizontal;
+$icons-cat-spacing: 12px;
+@import "icons-cat/*.png";
+@include all-icons-cat-sprites;
+i[class*="icons-cat"] {
+  display: inline-block;
+  border: none;
+  width: 64px;
+  height: 64px;
+}
+
+$icons-32-layout: horizontal;
+$icons-32-spacing: 20px;
+@import "icons-32/*.png";
+@include all-icons-32-sprites;
+i[class*="icons-32"] {
+  display: inline-block;
+  border: none;
+  width: 32px;
+  height: 32px;
+}
+
+$icons-24-layout: horizontal;
+$icons-24-spacing: 20px;
+@import "icons-24/*.png";
+@include all-icons-24-sprites;
+i[class*="icons-24"] {
+  display: inline-block;
+  border: none;
+  height: 24px;
+  width: 24px;
+}
+
+@mixin title {
+  text-transform: uppercase;
+  font-family: "Belgrad";
+  letter-spacing: 1px;
+}
+
+@mixin border-bottom {
+  border-bottom: $borderBottom; 
+  box-shadow: $borderBottomShadow;
+}
+
+@mixin border-right {
+  border-right: $borderRight;
+  box-shadow: $borderRightShadow;
+}
+
+@mixin normal-link {
+  a {
+    color: #3190a4;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #266876;
+  }
+}
+
+@mixin subtle-link {
+  a {
+    color: #333;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+@mixin blur-link {
+  a {
+    color: #555;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+@mixin widget {
+  background: #FFF;
+  border: $widgetBorder;
+  padding: 20px;
+}

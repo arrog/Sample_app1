@@ -1,18 +1,11 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
-
 class User < ActiveRecord::Base
+  
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable #:omniauthable
 
-  attr_accessible :name, :email, :password, :password_confirmation
-  has_secure_password
+  
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  #has_secure_password
   
   has_many :microposts, dependent: :destroy
   
@@ -24,24 +17,30 @@ class User < ActiveRecord::Base
   
   has_many :arguments
   has_many :debates, through: :arguments, source: :argumentable, source_type: :'Debate'
+  has_many :doulins, through: :arguments, source: :argumentable, source_type: :'Doulin'
+  
+  has_many :performances
+  has_many :challenges, through: :performances
+  
   
   has_many :argcoms
   
   has_many :evaluations, class_name: "ReputationSystem::Evaluation", as: :source
   has_reputation :likes, source: {reputation: :likes, of: :arguments}, aggregated_by: :sum
   has_reputation :votes, source: {reputation: :votes, of: :debates}, aggregated_by: :sum
-  
+  has_reputation :vote_experts, source: {reputation: :vote_experts, of: :doulins}, aggregated_by: :sum
 
     before_save { |user| user.email = email.downcase }
     before_save :create_remember_token
 
     validates :name, presence: true, length: { maximum: 50 }
-    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-    validates :email, presence:   true,
-                    format:     { with: VALID_EMAIL_REGEX },
-                    uniqueness: { case_sensitive: false }
-    validates :password, presence: true, length: { minimum: 6 }
-    validates :password_confirmation, presence: true
+    validates :email, presence: true
+    #VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    #validates :email, presence:   true,
+                   # format:     { with: VALID_EMAIL_REGEX },
+                    #uniqueness: { case_sensitive: false }
+    #validates :password, presence: true, length: { minimum: 6 }
+    #validates :password_confirmation, presence: true
     
     def feed
        Micropost.from_users_followed_by(self)
@@ -63,13 +62,10 @@ class User < ActiveRecord::Base
       debates.find_by_id(debate.id)
     end
     
-    def liked_arg?(argument)
-      evaluations.where(target_type: argument.class, target_id: argument.id).present?
+    def in_challenges?(challenge)
+      challenges.find_by_id(challenge.id)
     end
-    
-    def voted_for?(debate)
-      evaluations.where(target_type: debate.class, target_id: debate.id).present?
-    end
+      
     
 private
 

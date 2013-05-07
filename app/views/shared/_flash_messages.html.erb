@@ -1,0 +1,18 @@
+<% if flash[:notice] || flash[:alert] %>
+  <section id="flash_messages">
+    <div class="container">
+      <% if flash[:notice] %>
+        <p class="alert alert-info auto-clear">
+          <button class="close" data-dismiss="alert">×</button>
+          <%= flash[:notice] %>
+        </p>
+      <% end %>
+      <% if flash[:alert] %>
+        <p class="alert alert-error auto-clear">
+          <button class="close" data-dismiss="alert">×</button>
+          <%= flash[:alert] %>
+        </p>
+      <% end %>
+    </div>
+  </section>
+<% end %>

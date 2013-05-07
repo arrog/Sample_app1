@@ -20,4 +20,8 @@ class Argument < ActiveRecord::Base
     evaluations.where( target_type: self.class, target_id: self.id, value: 1.0 ).count
   end
   
+  def count_negative
+     evaluations.where( target_type: self.class, target_id: self.id, value: -1.0 ).count
+   end
+  
 end

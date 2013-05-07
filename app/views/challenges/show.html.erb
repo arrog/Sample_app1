@@ -1,0 +1,19 @@
+<h1><%= @challenge.title %> </h1>
+<%= current_user.id%>
+ 
+	
+<%= simple_format @challenge.context%>
+<%= simple_format @argumentable.context%>
+
+<h2>Arguments</h2>
+
+<div id="arguments">
+		<% @arguments.each do |argument| %>
+				<%= render "shared/argument_badge", :argument => argument, :argumentable => @challenge %>
+		<%end%>
+		
+</div>
+
+</br>
+
+	<%= link_to "New argument", [:new, @argumentable, :argument] %>
