@@ -1,19 +1,60 @@
 <h1><%= @challenge.title %> </h1>
-<%= current_user.id%>
- 
-	
-<%= simple_format @challenge.context%>
-<%= simple_format @argumentable.context%>
-
-<h2>Arguments</h2>
-
-<div id="arguments">
-		<% @arguments.each do |argument| %>
-				<%= render "shared/argument_badge", :argument => argument, :argumentable => @challenge %>
-		<%end%>
-		
-</div>
 
 </br>
+Tags: <%= raw @challenge.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+</br>
+<%= @challenge.type_deb %>
+<%= @challenge.state %>
 
-	<%= link_to "New argument", [:new, @argumentable, :argument] %>
+</br>
+	
+	<% if @challenge.juges < 3 && !current_user.in_challenge?(@challenge)%>
+  		Inscris toi en tant que juge! Il reste <%= 3 - @challenge.juges %>
+		<%= link_to("Juge".html_safe,
+	          join_judge_challenge_path(@challenge) ,:method => :post) %>
+	<% end %>
+	
+</br>
+	<% if @challenge.type_deb == 2 %>
+			<%= render "lincoln_douglas", :challenge => @challenge, :arguments => @arguments %>
+			
+	<% elsif @challenge.type_deb == 3 %>
+			<%= render "american", :challenge => @challenge, :arguments => @arguments %>
+			
+	<% elsif @challenge.type_deb == 4 %>
+			<%= render "four_corner", :challenge => @challenge, :arguments => @arguments %>
+			
+	<% elsif @challenge.type_deb == 8 %>
+			<%= render "british", :challenge => @challenge, :arguments => @arguments %>
+	<%end%>
+
+
+			<% if @challenge.state == "judged" %>
+
+				<section id="jugments">
+				  <div class="container">
+
+					<div class="row">
+				      <div class="span9">
+				          <% if current_user.juge_challenge?(@challenge) && !current_user.has_judged?(@challenge)%>
+							<%= render "judgment_two", :challenge => @challenge %>
+						  <% end %>
+				      </div>
+				    </div>
+					
+					<div class="row">
+						<div class ="span9">
+							<% @judgments.each do |judgment| %>	
+								<%= render "shared/judgment_badge", :judgment => judgment, :challenge => @challenge %>
+							<%end%>
+						</div>
+					</div>
+			   		
+
+				  </div>
+				</section>	
+
+			<% end %>
+			
+
+

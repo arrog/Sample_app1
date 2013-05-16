@@ -1,0 +1,25 @@
+	</br>
+	</br>
+	<%= current_user.id%>
+	<% if @invitations.any? %>
+		</br>
+        <div class="courses_list">
+        <% @invitations.each do |ob| %>
+		<% if ob.position == 100 %>
+			<%= ob.sender.name%> "vous a invité à être juge dans le débat"
+		<% else %>
+			<%= ob.sender.name%> "vous a invité à participer au débat" 
+		<% end %>
+		 	<%= render "shared/challenge_badge", :challenge => ob.challenge %>
+		<% end %>
+		  <%= link_to("Accepter".html_safe,
+			           accept_invitation_path(ob) ,:method => :post) %>
+         
+		  <%= link_to("Refuser".html_safe,
+		             reject_invitation_path(ob) ,:method => :post) %>
+		<% end %>
+		</div>
+	<% else %>
+		Aucune invitaton
+	<% end %>
+      

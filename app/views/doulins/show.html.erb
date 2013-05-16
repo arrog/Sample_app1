@@ -1,4 +1,10 @@
+
+
 <%- model_class = Doulin -%>
+
+Tags: <%= raw @doulin.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+
+
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>

@@ -29,6 +29,10 @@ group :assets do
   gem 'devise'
   gem 'twitter-bootstrap-rails'
   gem 'compass-rails'
+  gem 'kaminari'
+  gem 'state_machine'
+  gem 'acts-as-taggable-on'
+  gem 'has_scope'
 end
 
 group :test do

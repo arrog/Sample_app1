@@ -1,8 +1,7 @@
-<% provide(:title, 'All Debates') %>
-<h1>All users</h1>
+</br>
+</br>
+<%= link_to "Créér un challenge", new_challenge_path %>
 
-<%= will_paginate %>
-<ul class="challenges">
-	<%= render @challenges%>
-</ul>
-<%= will_paginate %>
+<%= render "shared/index", :object => @challenges %>
+
+<%=link_to "sport", challenges_path(:cat => 1)%>

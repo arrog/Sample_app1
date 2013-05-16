@@ -12,7 +12,15 @@
             <div>
               <h2>Moutoner<br /> Le plus grand espace de débats.</h2>
               <h3>Débattre, pour sortir de la pensée unique<br />
-              <%= link_to "Découvrir", debates_path, :class => "btn btn-success btn-large" %>
+
+              <%= link_to "Découvrir", list_path, :class => "btn btn-success btn-large" %>
+				</br></br>
+				<%= form_tag ("/search_results"), :method => "get", :class=>"search_form" do %>
+				  <%= text_field_tag ("search"), nil, :class => 'search_input',
+				    :onblur=>"if(this.value=='')this.setAttribute('class', 'search_input');",
+				    :onfocus=>"this.setAttribute('class', 'search_input_clear');"
+				 %>
+				<% end %>
             </div>
           </div>
         </div>
@@ -27,12 +35,12 @@
     <div class="row">
       <div class="span4">
         <div class="explanation">
-          <div class="image"><%= link_to image_tag("debats.png"), doulins_path %></div>
+          <div class="image"><%= link_to image_tag("debats.png"), debates_path %></div>
         </div>
       </div>
       <div class="span4">
         <div class="explanation">
-          <div class="image"><%= link_to image_tag("experts.png"), debates_path %></div>
+          <div class="image"><%= link_to image_tag("experts.png"), doulins_path %></div>
         </div>
       </div>
       <div class="span4">

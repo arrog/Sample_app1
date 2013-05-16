@@ -1,6 +1,9 @@
 <% provide(:title, 'Sign up') %>
 <h1>Create a debate</h1>
 
+
+
+##### RAJOUTER UN BOUTON APRES POUR RAJOUTER DES GENS ####
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@challenge) do |f| %>
@@ -14,11 +17,15 @@
       <%= f.text_field :context %>
 
       <%= f.label :type_of_debate %>
-      <%= f.text_field :type_of_debate%>
-
+      <%= f.text_field :type_deb%>
+	  
+	  <div class="field">
+	  <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+	  <%= f.text_field :tag_list %>
+	  </div>
+	
       <%= f.submit "Create a debate", class: "btn btn-large btn-primary" %>
-
-    <% end %>
-
+	
+	<% end %>
   </div>
 </div>

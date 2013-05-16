@@ -1,5 +1,8 @@
 <h1><%= @debate.title %> </h1>
-<%= current_user.id%>
+
+
+Tags: <%= raw @debate.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+
 
 | <%= pluralize @debate.reputation_for(:votes).to_i, "vote" %>
 | <%= pluralize @debate.count_for, "vote pour" %>
@@ -7,17 +10,24 @@
 | <%= pluralize @debate.count_neutral, "personnes suisses" %>
 
 	
+
+	<% if user_signed_in? %>
+	
 <% if current_user && !@debate.has_evaluation?(:votes, current_user) %>
   | <%= link_to "up", vote_debate_path(@debate, type: "up"), method: "post" %>
   | <%= link_to "down", vote_debate_path(@debate, type: "down"), method: "post" %>
   | <%= link_to "neutral", vote_debate_path(@debate, type: "neutral"), method: "post" %>
 <% end %>
 
+<%else%> Connecte-toi pour voter!
+<% end %>
 
 <%= simple_format @debate.content%>
 <%= simple_format @argumentable.content%>
 
 <h2>Arguments</h2>
+
+
 
 <div id="arguments">
 		<% @arguments.each do |argument| %>
@@ -31,19 +41,23 @@
 			<%= argument.id%>
 			
 			</br>
+		<% if user_signed_in? %>
 			<% if @debate.has_evaluation?(:votes, current_user) %>
 				<%= link_to "Reaction", argument_path(argument) %>
 			<% else  %> il faut voter pour le débat pour pouvoir réagir pour pouvoir réagir!
 			<% end %>
 		<%end%>
+		<%end%>
 		
 </div>
 
 </br>
+<% if user_signed_in? %>
 <% if @debate.has_evaluation?(:votes, current_user) %>
 	<%= link_to "New argument", [:new, @argumentable, :argument] %>
 <% else  %> il faut voter pour le débat pour pouvoir participer!
-<% end %>	
+<% end %>
+<%end%>
 
 
 

@@ -17,6 +17,11 @@
       <%= f.text_field :type_of_debate, :class => 'text_field' %>
     </div>
   </div>
+  
+  <div class="field">
+  <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+  <%= f.text_field :tag_list %>
+  </div>
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

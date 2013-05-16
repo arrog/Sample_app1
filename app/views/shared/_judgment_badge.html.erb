@@ -1,0 +1,11 @@
+<div class ="judgment">
+	_judgment_badge
+	<%= simple_format judgment.content%>
+	<%= simple_format judgment.user.name %>
+	
+	<% if current_user && !@judgment.has_evaluation?(:likes, current_user) %>
+	  | <%= link_to "up", like_judgment_path(judgment, type: "up"), method: "post" %>
+	  | <%= link_to "down", like_judgment_path(judgment, type: "down"), method: "post" %>
+	<% end %>
+	
+</div>

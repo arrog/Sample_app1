@@ -1,0 +1,13 @@
+
+<fieldset>
+  <%= f.label :content, "Reciever" %><br />
+  <%= f.text_area :reciever_id %><br/>
+  
+  <%= f.label :content, "Position" %><br />
+  <%= f.text_area :reciever_id %><br/>
+  
+  <%= f.hidden_field :challenge_id, :value => challenge.id %>
+
+  <%= f.submit "Inviter", class: "btn btn-large btn-primary" %>
+
+  </fieldset>

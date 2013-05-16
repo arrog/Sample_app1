@@ -1,0 +1,19 @@
+<h1>New Judgment</h1>
+
+<%= form_for(Judgment.new, :url => { :action => "create" }) do |f| %>
+ 
+ 
+ <div class ="field">
+	<%= f.text_area:title, rows:1 %>
+	<%= f.text_area:content, rows:8 %>
+	<%= f.number_field :grade %>
+	<%= f.number_field :grade_two %>
+	<%= f.number_field :grade_three %>
+	<%= f.number_field :grade_four %>
+	
+ </div>
+	
+ <div class ="actions">
+	<%= f.submit%>
+ </div>
+<% end %>

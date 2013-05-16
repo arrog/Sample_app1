@@ -34,12 +34,12 @@
       <header>
         <div class="container">
           <div id="logo">
-            <%= link_to image_tag('logo_moutoner.png', :alt => 'Cup of Teach'), root_path %>
+            <%= link_to image_tag('logo_moutoner.png', :alt => 'Moutoner'), root_path %>
           </div>
           
           <ul id="main-nav" class="unstyled">
-            <%= content_tag(:li, :class => ("active" if current_page?(debates_path))) do %>
-              <%= link_to debates_path do %>
+            <%= content_tag(:li, :class => ("active" if current_page?(list_path))) do %>
+              <%= link_to list_path do %>
                 <%= content_tag(:strong, "Les Débats") %>
               <% end %>
             <% end %>

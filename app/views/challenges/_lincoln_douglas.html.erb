@@ -1,0 +1,40 @@
+		<% if challenge.not_full?%>
+			
+		<% if current_user.in_challenge?(challenge) %>
+		
+				Invite tes amis à ce débat en attendant!
+				
+		<% else %>
+		
+			position 1 :
+				<% if  challenge.lincoln_douglas_position_left.include?(1)%>
+					<%= link_to("Prends la position de prime minister".html_safe,
+		              join_one_challenge_path(challenge) ,:method => :post) %>
+				<% else%>
+					okok
+				<%end%>
+			
+			
+			position 2 : <% if  challenge.lincoln_douglas_position_left.include?(2)%>
+				<%= link_to("Prends la position de first oponent".html_safe,
+			              join_two_challenge_path(challenge) ,:method => :post) %>
+				<%end%>
+		<% end %>
+
+		<% else %>
+
+			<% if challenge.state == "incomplete" && current_user.in_challenge?(challenge)%>
+			 <%= link_to("Commencer le débat!".html_safe,
+			           starting_challenge_path(challenge) ,:method => :post) %>
+			<%elsif challenge.state == "incomplete" %>
+				ce débat va bientôt commencer
+			<% elsif challenge.state == "open"%>
+				<h2>Arguments</h2>
+				<%= link_to("A ton tour")%>
+					<%= link_to("Signifier la fin du débat!".html_safe,
+				        finish_challenge_path(challenge) ,:method => :post) %>
+					
+			<%end%>
+		<%end%>
+			
+			

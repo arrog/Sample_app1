@@ -1,9 +1,7 @@
-class DebatesController < ApplicationController
+class DoulinsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
- 
-  def index
-    @doulins = Doulin.paginate(page: params[:page])
-  end
+  before_filter :allowed
+
   
   def new
     @doulin = Doulin.new
@@ -30,6 +28,14 @@ class DebatesController < ApplicationController
   def edit 
   end
   
+  def index
+    if params[:cat] && !params[:cat].empty?
+      @current_category = Cat.find(params[:cat])
+      @doulins = Doulin.where(:cat_id => @current_category.id)
+    else
+      @doulins = Doulin.all
+    end
+  end
   
   #def update
    #   if @user.update_attributes(params[:user])
@@ -55,4 +61,14 @@ class DebatesController < ApplicationController
      redirect_to :back, notice: "Thank you for voting"
    end
   
+  
+  private
+  
+  def allowed
+    @doulin = Doulin.find(params[:id])
+    if @doulin.state < "open"
+      redirect_to(root_path) unless current_user.admin?
+    end
+  end
+      
 end

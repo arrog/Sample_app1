@@ -1,9 +1,5 @@
 class ChallengesController < ApplicationController
-  before_filter ::authenticate_user!, except: [:index, :show]
- 
-  def index
-    @challenges = Challenge.paginate(page: params[:page])
-  end
+  before_filter :authenticate_user!, except: [:index, :show]
   
   def new
     @challenge = Challenge.new
@@ -11,7 +7,8 @@ class ChallengesController < ApplicationController
   
   def create
       @challenge = Challenge.new(params[:challenge])
-      if @debate.save
+      ch = @challenge
+      if @challenge.save
         flash[:success] = "You created a new debate!"
         redirect_to @challenge
       else
@@ -21,14 +18,25 @@ class ChallengesController < ApplicationController
     
   def show
       @challenge = Challenge.find(params[:id])
+      @performance = @challenge.performances.build
       @argumentable = @challenge
       @arguments = @argumentable.arguments
       @argument = current_user.arguments.new
+      @judgments = @challenge.judgments
   end
   
   def edit 
   end
   
+  
+  def index
+    if params[:cat] && !params[:cat].empty?
+      @current_category = Cat.find(params[:cat])
+      @challenges = Challenge.where(:cat_id => @current_category.id)
+    else
+      @challenges = Challenge.all
+    end
+  end
   
   #def update
    #   if @user.update_attributes(params[:user])
@@ -53,11 +61,82 @@ class ChallengesController < ApplicationController
      @debate = Debate.find(params[:id])
      @debate.add_or_update_evaluation(:votes, value, current_user)
      redirect_to :back, notice: "Thank you for voting"
-   end
+  end
   
+  def starting
+    @challenge = Challenge.find(params[:id])
+    @challenge.starting
+    redirect_to challenge_path(@challenge)
+  end
+    
+  def finish
+     @challenge = Challenge.find(params[:id])
+     @challenge.finish
+     redirect_to challenge_path(@challenge)
+  end
+
+  def grade
+    @challenge = Challenge.find(params[:id])
+    @challenge.grade
+    redirect_to challenge_path(@challenge)
+  end
+  
+  def join_one
+    @challenge = Challenge.find(params[:id])
+    current_user.join_position_one!(@challenge)
+    redirect_to @challenge
+  end
+  
+  def join_two
+    @challenge = Challenge.find(params[:id])
+    current_user.join_position_two!(@challenge)
+    redirect_to @challenge
+  end
+  
+  def join_three
+    @challenge = Challenge.find(params[:id])
+    current_user.join_position_three!(@challenge)
+    redirect_to @challenge
+  end
+  
+  def join_four
+    @challenge = Challenge.find(params[:id])
+    current_user.join_position_four!(@challenge)
+    redirect_to @challenge
+  end
+  
+  def join_five
+    @challenge = Challenge.find(params[:id])
+    current_user.join_position_five!(@challenge)
+    redirect_to @challenge
+  end
+  
+  def join_six
+    @challenge = Challenge.find(params[:id])
+    current_user.join_position_six!(@challenge)
+    redirect_to @challenge
+  end
+  
+  def join_seven
+    @challenge = Challenge.find(params[:id])
+    current_user.join_position_seven!(@challenge)
+    redirect_to @challenge
+  end
+  
+  def join_eight
+    @challenge = Challenge.find(params[:id])
+    current_user.join_position_eight!(@challenge)
+    redirect_to @challenge
+  end
+  
+  def join_judge
+    @challenge = Challenge.find(params[:id])
+    current_user.join_position_judge!(@challenge)
+    redirect_to @challenge
+  end
   
    private
-
+         
        def authorized_user
          @micropost = current_user.microposts.find_by_id(params[:id])
          redirect_to root_url if @micropost.nil?

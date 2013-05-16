@@ -1,0 +1,68 @@
+	<% if @challenge.not_full?%>
+	
+		<% if current_user.in_challenge?(challenge) %>
+	
+			Invite tes amis à ce débat en attendant!
+			
+		<% else %>
+		
+		position 1 : <% if  challenge.british_position_left.include?(1)%>
+			<%= link_to("Prends la position de prime minister".html_safe,
+		          join_one_challenge_path(challenge) ,:method => :post) %>
+			<%end%>
+		
+		
+		position 2 : <% if  challenge.british_position_left.include?(2)%>
+			<%= link_to("Prends la position de first oponent".html_safe,
+		              join_two_challenge_path(challenge) ,:method => :post) %>
+			<%end%>
+			
+		
+		position 3 : <% if  challenge.british_position_left.include?(3)%>
+			<%= link_to("Prends la position de prime minister".html_safe,
+		              join_three_challenge_path(challenge) ,:method => :post) %>
+			<%end%>
+		
+		
+		position 4 : <% if  challenge.british_position_left.include?(4)%>
+			<%= link_to("Prends la position de first oponent".html_safe,
+			           join_four_challenge_path(challenge) ,:method => :post) %>
+			<%end%>
+		
+		position 5 : <% if  challenge.british_position_left.include?(5)%>
+	       	<%= link_to("Prends la position de prime minister".html_safe,
+	                 join_five_challenge_path(challenge) ,:method => :post) %> 
+	       	<%end%>
+	       
+	       
+	    position 6 : <% if  challenge.british_position_left.include?(6)%>
+	       	<%= link_to("Prends la position de first oponent".html_safe,
+	                     join_six_challenge_path(challenge) ,:method => :post) %>
+	       	<%end%>
+	       
+	       
+	    position 7 : <% if  challenge.british_position_left.include?(7)%>
+	       	<%= link_to("Prends la position de prime minister".html_safe,
+	                     join_seven_challenge_path(challenge) ,:method => :post) %>
+	       	<%end%>
+	       
+	       
+	    position 8 : <% if  challenge.british_position_left.include?(8)%>
+	       	<%= link_to("Prends la position de first oponent".html_safe,
+	       	           join_eight_challenge_path(challenge) ,:method => :post) %>
+	       	<%end%>
+		<%end%>
+	      
+			
+	<% else %>
+	
+		<%if arguments == nil && current_user.in_challenge?(challenge)%>
+		 <%= link_to("Votre atelier n'est pas encore visible <strong>Mettre en ligne</strong>".html_safe,
+		           starting_challenge_path(challenge) ,:method => :post) %>
+		<%elsif arguments == nil %>
+			ce débat va bientôt commencer
+		<% elsif %>
+			<h2>Arguments</h2>
+			
+		<%end%>
+	<%end%>

@@ -1,10 +1,7 @@
 class DebatesController < ApplicationController
-  before_filter :signed_in_user, only: [:new, :create, :destroy]
- 
-  def index
-    @debates = Debate.paginate(page: params[:page])
-  end
-  
+  before_filter :authenticate_user!, only: [:new, :create, :destroy]
+  before_filter :allowed
+
   def new
     @debate = Debate.new
   end
@@ -24,12 +21,20 @@ class DebatesController < ApplicationController
       @argumentable = @debate
       @arguments = @argumentable.arguments
       @argument = Argument.new
-      @argcom  = current_user.argcoms.build
+     
   end
   
   def edit 
   end
   
+  def index
+    if params[:cat] && !params[:cat].empty?
+      @current_category = Cat.find(params[:cat])
+      @debates = Debate.where(:cat_id => @current_category.id)
+    else
+      @debates = Debate.all
+    end
+  end
   
   #def update
    #   if @user.update_attributes(params[:user])
@@ -56,4 +61,11 @@ class DebatesController < ApplicationController
      redirect_to :back, notice: "Thank you for voting"
    end
   
+   private
+
+    def allowed
+      @debate = Debate.find(params[:id])
+      if @debate.state == "offline"
+        redirect_to(root_path) unless current_user.admin?
+      end
 end

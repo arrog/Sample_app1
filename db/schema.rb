@@ -11,15 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505194440) do
-
-  create_table "Challenges", :force => true do |t|
-    t.integer  "type_deb"
-    t.string   "title"
-    t.text     "context"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
+ActiveRecord::Schema.define(:version => 20130516173001) do
 
   create_table "argcoms", :force => true do |t|
     t.integer  "user_id"
@@ -43,17 +35,43 @@ ActiveRecord::Schema.define(:version => 20130505194440) do
 
   add_index "arguments", ["argumentable_id", "argumentable_type"], :name => "index_arguments_on_argumentable_id_and_argumentable_type"
 
+  create_table "cats", :force => true do |t|
+    t.text     "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "challenges", :force => true do |t|
+    t.text     "context"
+    t.text     "title"
+    t.integer  "type_deb"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "state"
+    t.integer  "cat_id"
+  end
+
   create_table "debates", :force => true do |t|
     t.string   "title"
     t.string   "content"
     t.string   "type_of_debate"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.integer  "cat_id"
   end
 
   create_table "doulins", :force => true do |t|
     t.string   "context"
     t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "cat_id"
+  end
+
+  create_table "expertises", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "doulin_id"
+    t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -67,6 +85,43 @@ ActiveRecord::Schema.define(:version => 20130505194440) do
   end
 
   add_index "interventions", ["performance_id"], :name => "index_interventions_on_performance_id"
+
+  create_table "invitations", :force => true do |t|
+    t.integer  "sender_id"
+    t.integer  "reciever_id"
+    t.integer  "challenge_id"
+    t.integer  "position"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "state"
+  end
+
+  create_table "judgements", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "challenge_id"
+    t.string   "title"
+    t.text     "content"
+    t.integer  "grade"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "judgements", ["user_id", "challenge_id"], :name => "index_judgements_on_user_id_and_challenge_id", :unique => true
+
+  create_table "judgments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "challenge_id"
+    t.integer  "grade"
+    t.string   "title"
+    t.text     "content"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "grade_two"
+    t.integer  "grade_three"
+    t.integer  "grade_four"
+  end
+
+  add_index "judgments", ["user_id", "challenge_id"], :name => "index_judgments_on_user_id_and_performance_id", :unique => true
 
   create_table "microposts", :force => true do |t|
     t.string   "content"
@@ -142,6 +197,23 @@ ActiveRecord::Schema.define(:version => 20130505194440) do
   add_index "rs_reputations", ["reputation_name", "target_id", "target_type"], :name => "index_rs_reputations_on_reputation_name_and_target", :unique => true
   add_index "rs_reputations", ["reputation_name"], :name => "index_rs_reputations_on_reputation_name"
   add_index "rs_reputations", ["target_id", "target_type"], :name => "index_rs_reputations_on_target_id_and_target_type"
+
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       :limit => 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
