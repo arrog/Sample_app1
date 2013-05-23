@@ -3,7 +3,7 @@
 @import "compass/utilities/general/min";
 @import "compass/typography/text/force-wrap";
 
-$mainColor: #808080;
+$mainColor: #000000;
 
 $borderBottom: 1px solid #BAB8B0;
 $borderBottomShadow: #FFF 0px 1px 0;
@@ -48,7 +48,7 @@ i[class*="icons-24"] {
 
 @mixin title {
   text-transform: uppercase;
-  font-family: "Belgrad";
+  font-family: "Bebas";
   letter-spacing: 1px;
 }
 

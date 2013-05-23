@@ -1,6 +1,7 @@
 class DebatesController < ApplicationController
-  before_filter :authenticate_user!, only: [:new, :create, :destroy]
-  before_filter :allowed
+  before_filter :allowed, only: :show
+  before_filter :verify_is_admin,  only: [:new, :create, :destroy, :update]
+  before_filter :authenticate_user!, only: [:vote]
 
   def new
     @debate = Debate.new
@@ -28,11 +29,20 @@ class DebatesController < ApplicationController
   end
   
   def index
-    if params[:cat] && !params[:cat].empty?
-      @current_category = Cat.find(params[:cat])
-      @debates = Debate.where(:cat_id => @current_category.id)
+    if current_user.try(:admin?)
+      if params[:cat] && !params[:cat].empty?
+        @current_category = Cat.find(params[:cat])
+        @debates = Debate.where(:cat_id => @current_category.id)
+      else
+        @debates = Debate.all
+      end
     else
-      @debates = Debate.all
+      if params[:cat] && !params[:cat].empty?
+        @current_category = Cat.find(params[:cat])
+        @debates = Debate.where(:cat_id => @current_category.id).permission
+      else
+        @debates = Debate.permission
+      end
     end
   end
   
@@ -59,13 +69,20 @@ class DebatesController < ApplicationController
      @debate = Debate.find(params[:id])
      @debate.add_or_update_evaluation(:votes, value, current_user)
      redirect_to :back, notice: "Thank you for voting"
-   end
+  end
+  
+  def publish
+      @debate = Debate.find(params[:id])
+      @debate.publish
+      redirect_to debate_path(@debate)
+  end
   
    private
 
     def allowed
       @debate = Debate.find(params[:id])
       if @debate.state == "offline"
-        redirect_to(root_path) unless current_user.admin?
+        redirect_to(root_path) unless current_user.try(:admin?)
       end
+    end
 end

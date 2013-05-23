@@ -14,8 +14,8 @@
 
 
 @font-face {
-  font-family: "Belgrad";
-  src: url(<%= asset_path "Belgrad.ttf" %>);
+  font-family: "Bebas";
+  src: url(<%= asset_path "Bebas.ttf" %>);
 }
 
 h1 a, h2 a, h3 a, h4 a, h5 a {
@@ -61,7 +61,7 @@ form, .form-stacked {
     height: 32px;
     padding: 0px 10px;
   }
-  
+  	
   /* Don't forget to update tinymce's ui.css stylesheet */
   textarea {
     background: #EEE;
@@ -115,108 +115,92 @@ input.ajust-input, textarea.ajust-input {
   @include box-sizing(border-box);
 }
 
-.new-widget {
-  @include widget;
-  
-  h3 { margin-bottom: 10px; }
-  h4 { margin-bottom: 7px; }
+#menu-categories{
+	margin-left: 300px;
+	background-color:#EEE;
+	height: 330px;
+	margin-top: 15px;
+	
+	
+	.row{
+		margin-top: 20px;
+		margin-left: 10px;
+		
+		.categ{
+			color: $mainColor;
+			font-weight: bold;
+		}
+	}
 }
 
-.badge-horizontal {
-  display: table;
-  width: 100%;
-  @include box-sizing(border-box);
-
-  > div {
-    display: table-cell;
-    vertical-align: bottom;
-    i { vertical-align: bottom; }
-
-    > span.wrap {
-      display: inline-block;
-      width: 130px;
-      @include force-wrap;
-    }
-  }
+#debate-badge{
+	#debate-badge1{
+		height:160px;
+		width:500px;
+		background-color:#EEE;
+		margin-bottom:30px;
+		
+		#debate-badge2{
+			height:130px;
+			width: 110px;
+			background-color:#3C3C3B;
+			margin-top:15px;
+			margin-bottom:15px;
+			color: #FFF;
+			font-weight: bold;
+		}
+		
+		#title{
+			margin-top:10px;
+		}
+	}
+	
 }
 
-.badge-horizontal.sidebar-item {
-  > div {
-    padding: 7px 0px;
-  }
-
-  > div:first-child {
-    width: 30px;
-  }
-
-  > div {
-    
-    strong {
-      display: inline-block;
-      vertical-align: bottom;
-      padding: 0px 6px 0px 0px;
-      
-      line-height: 16px;
-      font-size: 18px;
-      color: $mainColor;
-    }
-
-    span, a {
-      display: inline-block;
-      vertical-align: bottom;
-      padding: 0px;
-      line-height: 13px;
-    }
-  }
+#challenge-badge{
+	#challenge-badge1{
+		height:160px;
+		width:500px;
+		background-color:#EEE;
+		margin-bottom:30px;
+		
+		#challenge-badge2{
+			height:130px;
+			width: 110px;
+			background-color:#3C3C3B;
+			margin-top:15px;
+			margin-bottom:15px;
+			color: #FFF;
+			font-weight: bold;
+		}
+		
+		#title{
+			margin-top:10px;
+		}
+	}
+	
 }
 
-.badge-v-centered {
-  display: table;
-  @include subtle-link;
-  
-  > div {
-    display: table-cell;
-    vertical-align: middle;
-  }
+#doulin-badge{
+	#doulin-badge1{
+		height:160px;
+		width:500px;
+		background-color:#EEE;
+		margin-bottom:30px;
+		
+		#doulin-badge2{
+			height:130px;
+			width: 110px;
+			background-color:#3C3C3B;
+			margin-top:15px;
+			margin-bottom:15px;
+			color: #FFF;
+			font-weight: bold;
+		}
+		
+		#title{
+			margin-top:10px;
+		}
+	}
+	
 }
-
-.user-badge {
-  img { width: 165px; }
-  h3 {
-    line-height: 20px;
-    margin: 7px 0px 3px 0px;
-  }
-  p { margin: 1px 0px; }
-  .badge-icon.user-location {
-    margin: 2px 0px;
-    > div:first-child {
-      width: 16px;
-    }
-  }
-}
-
-.user-large-badge {
-  border: $widgetBorder;
-  border-spacing: 20px;
-  padding: 0px;
-    
-  > div {
-    vertical-align: top;
-
-  }
-
-  .user_avatar {
-    width: 120px;
-  }
-
-  .user_information {
-    strong, span { display: block; }
-  }
-
-  .user_follow_information {
-    text-align: center;
-    width: 150px;
-  }
-}
-
-

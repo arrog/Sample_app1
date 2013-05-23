@@ -1,6 +1,17 @@
-<div class="debate-badge">
-  <div class="debate-information">
-    <h3><%= link_to debate.title, debate %></h3>
+<section id="debate-badge">
+	<div class="container">
+  		<div class="row">
+			<div class="span4" id="debate-badge1">
+				<div class="span2" id="debate-badge2">
+					OPEN
+				</div>	
+				<div class="span3" id="title">
+    			<h3><%= link_to debate.title, debate %></h3>
+				<h4><%= debate.content %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
-  </div>
-</div>
+ 

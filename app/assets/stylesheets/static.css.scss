@@ -1,47 +1,36 @@
-#video_signup {
-  margin: -30px 0px 0px 0px;
-  padding: 20px 0px;
+#holy{
+	margin-left: 65px
+}
+
 
   
   #video {
     width: 100%;
+	height: 400px;
     display: table;
-    background-color: #FFF;
-    border: 10px solid #E9383F;
-    box-shadow: -7px 7px 20px -4px #000;
+    background-color: #EEE;
+	
+	#video_2{
+	margin: 30px -40px 0px 0px;
+
+	height: 340px;
+    background-color: #7F7F7F;
+	}
 
     > div {
       display: table-cell;
       height: 100%;
       vertical-align: top;
     }
-    
-    #img {
-      position: relative;
 
-      width: 580px;      
-      > div {
-        height: 510px;
-      margin: 20px;
-//        padding: 20px 0px 20px 20px;
-      }
 
-      img {
-        width: 100%;
-      }
-
-      #catchline {
-        top: 20px;
-        left: 20px;
-        color: #FFF;
-        position: absolute;
-      }
-    }
+   
 
     #hero {
+			
       > div {
-        margin: 20px 20px 20px 0px;
-      
+        margin: 20px 0px 20px 20px;
+		
         h2 {
           line-height: 32px;
           width: 250px;
@@ -51,29 +40,44 @@
           margin: 20px 0px;
           line-height: 28px;
         }
-      
-        .btn {
-          width: 180px;
-          line-height: 30px;
-          font-size: 20px;
-          letter-spacing: 1px;
-          margin-top: 15px;
-        }
+		
+     	.bouton{
+		background-color: #7F7F7F;
+		height:40px;
+		width: 230px;
+		font-weight: bold;
+		@include title
+		}
       }
+	
+	
     }
-  }
+
+
+
+  
 }
 
 
 #explanations {
   padding: 20px 0px;
-  background-color: #575656;
-  box-shadow: 0px 10px 25px -10px #000 inset;
+  background-color: #FFF;
+  
+
+	#explanation1{
+	border-top: $borderBottom;
+	border-bottom: $borderBottom
+	}
 
   
   .explanation {
+	margin-top: 30px;
+	margin-bottom: 30px;
     text-align: center;
+	height: 200px;
+	width: 90%;
     padding: 16px 22px 0px 22px;
+	background-color: #EEE
   }
   
   .explanation:hover {
@@ -83,180 +87,29 @@
   }
 }
 
-#certified-teachers {
-  padding: 60px 0px;
-
-  .horizontal-badge {
-    position: relative;
-    margin: 10px 0px;
-    height: 180px;
-    background-color: #9D9D9C;
-    @include single-box-shadow(#888, -4px, 4px, 10px, 0px);
-    p, a { color: #FFF; }
-    
-    > div {
-      display: inline-block;
-    }
-    
-    .badge-sidebar {
-      vertical-align: top;
-      width: 140px;
-      margin: 15px 7px 15px 15px;
-      img {
-        @include border-radius(5px);
-      }
-    }
-    
-    .badge-body {
-      @include box-sizing(box-border);
-      margin: 15px 15px 15px 7px;
-      width: 270px;
-      > p { width: 100%; }
-    }
-    
-   .corner {
-      position: absolute;
-      right: -14px;
-      bottom: -22px;
-    }
-  }
+#best-debates{
+	padding: 10px 20px 20px 20px;
+	
+	
+	#best-debates1{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 40px;
+    text-align: center;
+	padding: 5px 0px 0px 0px;
+	height: 25px;
+	width: 100%;
+	background-color: #EEE;
+	font-color: #000000;
+	font-weight: bold;
+	line-height: 15 px;
+	}
+	
+	#best-debates2{
+	margin-top:15px;
+	}
 }
 
-
-
-#find-a-course, #share-knowledge, #why_teach, #contactez-nous, #our_team {
-  padding: 30px 15px;
-
-  h1 {
-    margin: 0px 20px 15px 20px;
-    padding-bottom: 15px;
-  }
-
-  p {
-    font-size: 20px;
-    line-height: 28px;
-    margin: 20px 0px;
-    text-align: justify;
-  }
-
-  > div {
-    > div { margin: 0px 20px;}
-  }
-
-  img.bordered {
-    border: 5px solid #FFF;
-    @include box-shadow(5px 5px 20px 0px #999);
-  }
-
-  a.btn {
-    width: 290px;
-    line-height: 25px;
-  }
-
-  hr {
-    margin: 30px 0px;
-  }
-}
-
-#find-a-course {
-  .filters-table {
-    display: table;
-    width: 100%;
-    @include box-sizing(border-box);
-    border-spacing: 20px;
-
-    > div {
-      display: table-row;
-
-      > div {
-        display: table-cell;
-        background-color: #ECECEC;
-        text-align: center;
-        padding: 18px;
-        @include force-wrap;
-
-        h3 {
-          font-size: 21px;
-          margin: 5px 0px 0px 0px;
-        }
-
-        > p {
-          margin: 5px 0px;
-          font-size: 18px;
-        }
-        
-        
-      }
-    }
-  }
-}
-
-#founders-presentation {
-  > div {
-    .founder-name {
-      > h3 { padding: 15px 0px 30px 0px; border-bottom: 1px solid #AAA; }
-      
-      ul.social_links {
-        margin: 15px 0px 0px 0px;
-        float: right;
-
-        li {
-          display: inline-block;
-          width: 24px;
-          margin-left: 30px;
-
-          &:first-child a { margin-left: 14px; }
-          &:last-child a { margin-right: 14px; }
-
-          a {
-            display: block;
-            width: 24px;
-            height: 24px;
-            float: left;
-            margin: 0px;
-            background-repeat: no-repeat;
-            border-bottom: 4px solid #9D9D9C;
-            padding-bottom: 4px;
-          }
-
-          a:hover {
-            border-bottom: 4px solid #D60655;
-          }
-        }
-      }
-      
-      #linkedin { @include icons-24-sprite(linkedin-grey); }
-      #twitter { @include icons-24-sprite(twitter-grey); }
-
-      #linkedin:hover { @include icons-24-sprite(linkedin-pink); }    
-      #twitter:hover { @include icons-24-sprite(twitter-pink); }
-    }
-    .founder-description {
-      > h3 { padding: 30px 0px 0px 0px; }
-      > p { margin: 10px 0px; }
-    }   
-  }
-  
-  #marc-arthur {
-    float: left;
-    width: 400px;
-    padding-right: 31px;
-    border-right: 1px solid #AAA;
-  }
-  
-  #mathieu {
-    float: right;
-    width: 400px;
-  }
-}
-
-#FAQ {
- h1 { margin: 30px 0px 10px 0px;  }
- h2 { margin: 20px 0px 8px 0px;  }
- h3 { margin: 15px 0px 6px 0px;  }
- h4 { margin: 10px 0px 6px 0px;  }
-}
-
-#press {
-  text-align: center;
+#list-container{
+	padding: 10px 20px 20px 20px;	
 }

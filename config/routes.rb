@@ -1,5 +1,5 @@
 SampleApp::Application.routes.draw do
-
+  
   devise_for :users
 
   resources :users do
@@ -21,14 +21,19 @@ SampleApp::Application.routes.draw do
     resources :arguments
     member { post :vote }
   end
-  
+
+  resources :expertises
+      
   resources :doulins, shallow: true do 
     resources :arguments
+    resources :expertises
+    resources :comments
     member { post :vote_expert }
   end
    
   resources :challenges, shallow: true do 
     resources :arguments
+    resources :comments
     resources :performances 
     resources :judgments
      member do
@@ -54,6 +59,7 @@ SampleApp::Application.routes.draw do
   end
   
   resources :argcoms
+  resources :comments
     
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]

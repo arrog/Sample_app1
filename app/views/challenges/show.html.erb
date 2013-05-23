@@ -7,12 +7,14 @@ Tags: <%= raw @challenge.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') 
 <%= @challenge.state %>
 
 </br>
+	<% if signed_in? %>
 	
-	<% if @challenge.juges < 3 && !current_user.in_challenge?(@challenge)%>
+		<% if @challenge.juges < 3 && !current_user.in_challenge?(@challenge)%>
   		Inscris toi en tant que juge! Il reste <%= 3 - @challenge.juges %>
 		<%= link_to("Juge".html_safe,
 	          join_judge_challenge_path(@challenge) ,:method => :post) %>
-	<% end %>
+		<% end %>
+	<% end%>
 	
 </br>
 	<% if @challenge.type_deb == 2 %>
@@ -56,5 +58,12 @@ Tags: <%= raw @challenge.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') 
 
 			<% end %>
 			
-
+			<% if @comments.any? %>
+			<% @comments.each do |comment| %>
+				<%= render "shared/comment", comment: comment %>
+			<%end%>
+			<%end%>
+	
+			<%= render "shared/comment_form", comment: @comment, commentable: @challenge, type: "Challenge"%>
+				
 

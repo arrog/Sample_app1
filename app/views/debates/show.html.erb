@@ -1,33 +1,71 @@
-<h1><%= @debate.title %> </h1>
+<section id="open-debate">
+	<div class="container">
+		<div class="row">
+			<div class="span10 offset1">
+				<div id="title">
+					<div class="span5">
+				        <div class="image" id="image"></div>
+						<div class="span4">
+							| <%= pluralize @debate.count_for, "vote pour" %>
+							| <%= pluralize @debate.count_against, "vote contre" %>
+							| <%= pluralize @debate.count_neutral, "personnes suisses" %>
+						</div>
+				    </div>
+					<div class= "span5">
+						<div id="title2">
+							<h1><%= @debate.title%></h1>
+							</br>
+							<%= @debate.content%>
+							</br>
+							Tags: <%= raw @debate.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+							</br>
+							<div class="row">
+								<%if current_user %>
+								<div class="span2" id="vote">
+									 <%= link_to "up", vote_debate_path(@debate, type: "up"), method: "post", :class => "vote2" %>
+								</div>
+								<div class="span2" id="vote">
+									 <%= link_to "down", vote_debate_path(@debate, type: "down"), method: "post", class: "vote2" %>
+								</div>
+								<div id="vote" class="span2">
+									 <%= link_to "neutral", vote_debate_path(@debate, type: "neutral"), method: "post", class: "vote2" %>
+								</div>
+								<%else%> Connecte toi pour voter
+								<%end%>
+							</div>
+							
+							<div class="span5" id="blank">
+							</div>
+							
+							<div class="row">
+								<div class="span1" id="stats">
+									<h2><%= @debate.reputation_for(:votes).to_i%> vote |</h2>
+								</div>
+								
+								<div class="span1" id="stats">
+									<h2><%= @debate.arguments.count%> arg |</h2>
+								</div>
+								
+								<div class="span1" id="stats">
+									<h2><%= @debate.argcoms.count%> com</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 
 
-Tags: <%= raw @debate.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+<%= @debate.state %>
+<% if @debate.state == "online"%>
+	<%= link_to "publish", publish_debate_path(@debate), method: "post", :class => "vote2" %>
+<%end%>
 
-
-| <%= pluralize @debate.reputation_for(:votes).to_i, "vote" %>
-| <%= pluralize @debate.count_for, "vote pour" %>
-| <%= pluralize @debate.count_against, "vote contre" %>
-| <%= pluralize @debate.count_neutral, "personnes suisses" %>
-
-	
-
-	<% if user_signed_in? %>
-	
-<% if current_user && !@debate.has_evaluation?(:votes, current_user) %>
-  | <%= link_to "up", vote_debate_path(@debate, type: "up"), method: "post" %>
-  | <%= link_to "down", vote_debate_path(@debate, type: "down"), method: "post" %>
-  | <%= link_to "neutral", vote_debate_path(@debate, type: "neutral"), method: "post" %>
-<% end %>
-
-<%else%> Connecte-toi pour voter!
-<% end %>
-
-<%= simple_format @debate.content%>
-<%= simple_format @argumentable.content%>
 
 <h2>Arguments</h2>
-
-
 
 <div id="arguments">
 		<% @arguments.each do |argument| %>

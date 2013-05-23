@@ -3,26 +3,42 @@
   
   <div class="container">
     <div class="row">
-      <div class="span12">
+      <div class="span11" id ="holy">
         <div id="video">
-          <div id="img">
-            <div><%= image_tag "gra46.png" %></div>
-          </div>
+		  
           <div id="hero">
             <div>
-              <h2>Moutoner<br /> Le plus grand espace de débats.</h2>
-              <h3>Débattre, pour sortir de la pensée unique<br />
+			<% if !signed_in?%>
+              <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+			  <%= devise_error_messages! %>
+			 <div> 
+			  <%= f.label :Nom %>
+			  <%= f.text_field :name %>
+			</div>
+			<div>
+			  <%= f.label "Adresse E-mail" %>
+			  <%= f.email_field :email, :autofocus => true %>
+			</div>  
+			<div>	
+			  <%= f.label "Mot de passe" %>
+			  <%= f.password_field :password %>
+			  </div>
+	
+			<div><%= f.submit "INSCRIS-TOI GRATUITEMENT", :class => "bouton"%></div>
+			
+			  <% end %>
+			<%else%>
+				<h2>le plus grand espace de débats</h2>
+			<%end%>
+			</div>	
+         </div>
+	
 
-              <%= link_to "Découvrir", list_path, :class => "btn btn-success btn-large" %>
-				</br></br>
-				<%= form_tag ("/search_results"), :method => "get", :class=>"search_form" do %>
-				  <%= text_field_tag ("search"), nil, :class => 'search_input',
-				    :onblur=>"if(this.value=='')this.setAttribute('class', 'search_input');",
-				    :onfocus=>"this.setAttribute('class', 'search_input_clear');"
-				 %>
-				<% end %>
-            </div>
-          </div>
+		  <div class="span7 offset 3">
+          	<div id="video_2">
+			</div>
+		  </div>
+		
         </div>
       </div>
 
@@ -32,24 +48,51 @@
 
 <section id="explanations">
   <div class="container">
-    <div class="row">
+    <div class="row" id ="explanation1">
       <div class="span4">
         <div class="explanation">
-          <div class="image"><%= link_to image_tag("debats.png"), debates_path %></div>
+          <div class="image"></div>
         </div>
       </div>
       <div class="span4">
         <div class="explanation">
-          <div class="image"><%= link_to image_tag("experts.png"), doulins_path %></div>
+          <div class="image"></div>
         </div>
       </div>
       <div class="span4">
         <div class="explanation">
-          <div class="image"><%= link_to image_tag("dialectique.png"), challenges_path %></div>
+          <div class="image"></div>
         </div>
       </div>
     </div>
   </div>
 </section>
-  
+
+<section id="best-debates">
+	<div class="container">
+	    <div class="row">
+		
+	      <div class="span4 offset2">
+	        <div id="best-debates1">
+				DEBATS LES PLUS SUIVIS
+	        </div>
+	      </div>
 	
+	      <div class="span4">
+	        <div id="best-debates1">
+				DEBATS EXPERTS A VENIR
+	        </div>
+	      </div>
+	
+	    </div>
+	  </div>
+	
+	<%= render "shared/menu_cat"%>
+	
+	<div class="span7 offset 4" id="best-debates2">
+         <%= render "shared/challenge_badge", :challenge => @challenge%>
+         <%= render "shared/doulin_badge", :doulin => @doulin %>
+         <%= render "shared/debate_badge", :debate => @debate %>
+	</div>
+  
+</section>

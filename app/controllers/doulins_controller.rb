@@ -1,7 +1,9 @@
 class DoulinsController < ApplicationController
-  before_filter :authenticate_user!, except: [:index, :show]
-  before_filter :allowed
-
+  before_filter :authenticate_user!, only: [:vote_expert]
+  before_filter :allowed, only: :show
+  before_filter :verify_is_admin,  except: [:index, :show, :vote_expert]
+  
+  has_scope :permission
   
   def new
     @doulin = Doulin.new
@@ -20,21 +22,33 @@ class DoulinsController < ApplicationController
   def show
       @doulin = Doulin.find(params[:id])
       @argumentable = @doulin
+      @commentable = @doulin
+      @expertise = @doulin.expertises.new
       @arguments = @argumentable.arguments
       @argument = Argument.new
-      @argcom  = current_user.argcoms.build
+      @comments = @commentable.comments
+      @comment = @commentable.comments.new
   end
   
   def edit 
   end
   
   def index
-    if params[:cat] && !params[:cat].empty?
-      @current_category = Cat.find(params[:cat])
-      @doulins = Doulin.where(:cat_id => @current_category.id)
+    if current_user.try(:admin?)
+      if params[:cat] && !params[:cat].empty?
+        @current_category = Cat.find(params[:cat])
+        @doulins = Doulin.where(:cat_id => @current_category.id)
+      else
+        @doulins = Doulin.all
+      end
     else
-      @doulins = Doulin.all
-    end
+      if params[:cat] && !params[:cat].empty?
+        @current_category = Cat.find(params[:cat])
+        @doulins = Doulin.where(:cat_id => @current_category.id).permission
+      else
+        @doulins = Doulin.permission
+      end
+    end 
   end
   
   #def update
@@ -56,19 +70,48 @@ class DoulinsController < ApplicationController
   
   def vote_expert
      value = params[:type] == "up" ? 1 : -1
-     @debate = Debate.find(params[:id])
-     @debate.add_or_update_evaluation(:votes, value, current_user)
+     @doulin = Doulin.find(params[:id])
+     @doulin.add_or_update_evaluation(:vote_experts, value, current_user)
      redirect_to :back, notice: "Thank you for voting"
    end
   
+  
+   def ready
+     @doulin = Doulin.find(params[:id])
+     @challenge.ready
+     redirect_to doulin_path(@doulin)
+   end
+   
+   def publish
+      @doulin = Doulin.find(params[:id])
+      @doulin.publish
+      redirect_to doulin_path(@doulin)
+   end
+   
+   def start
+       @doulin = Doulin.find(params[:id])
+       @doulin.start
+       redirect_to doulin_path(@doulin)
+    end
+    
+   def finish
+      @doulin = Doulin.find(params[:id])
+      @doulin.finish
+      redirect_to doulin_path(@doulin)
+   end
+
+   
   
   private
   
   def allowed
     @doulin = Doulin.find(params[:id])
     if @doulin.state < "open"
-      redirect_to(root_path) unless current_user.admin?
+      redirect_to(root_path) unless current_user.try(:admin?)
     end
   end
-      
+  
+  def verify_is_admin
+     (current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.try(:admin?))
+   end
 end

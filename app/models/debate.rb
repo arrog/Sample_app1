@@ -7,6 +7,7 @@ class Debate < ActiveRecord::Base
   
   has_many :arguments, as: :argumentable
   has_many :users, through: :arguments
+  has_many :argcoms, through: :arguments
   
   has_reputation :votes, source: :user, aggregated_by: :sum
   has_many :evaluations, class_name: "ReputationSystem::Evaluation", as: :target
@@ -20,6 +21,8 @@ class Debate < ActiveRecord::Base
 
   
   paginates_per 10
+  
+  scope :permission, -> { where(:state => "online")}
   
   state_machine initial: :offline do
 

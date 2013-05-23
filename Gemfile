@@ -8,6 +8,10 @@ gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
 gem 'jquery-rails', '2.0.2'
 gem 'activerecord-reputation-system', require: 'reputation_system'
+gem 'kaminari'
+gem 'state_machine'
+gem 'acts-as-taggable-on'
+gem 'has_scope'
 
 group :development, :test do
   
@@ -29,10 +33,7 @@ group :assets do
   gem 'devise'
   gem 'twitter-bootstrap-rails'
   gem 'compass-rails'
-  gem 'kaminari'
-  gem 'state_machine'
-  gem 'acts-as-taggable-on'
-  gem 'has_scope'
+  
 end
 
 group :test do

@@ -27,6 +27,7 @@ class User < ActiveRecord::Base
   has_many :judgments
   
   has_many :argcoms, dependent: :destroy
+  has_many :comments, dependent: :destroy
   
   has_many :evaluations, class_name: "ReputationSystem::Evaluation", as: :source
   has_reputation :likes, source: {reputation: :likes, of: :arguments}, aggregated_by: :sum
@@ -111,6 +112,27 @@ class User < ActiveRecord::Base
       performances.create!(challenge_id: challenge.id, position:100)
     end
     
+    
+    ## Notifications
+    
+    #def challenge_en_cours ## à perfectionner avec l'amélioration des
+    #  challenges.where(state: "open")
+    #end
+    
+    #def doulin_en_cours  ## à perfectionner avec l'amélioration des
+    #  doulins.where(state: "open")
+    #end
+    
+   # def invitation_en_cours
+     # reverse_invitations.where(state: "unseen")
+  #  end
+    
+    #def challenge_a_noter
+      #performances.where(position:100).challenges.where(state: "finish")      
+    #end
+    
+  #  def notification_arguments ## voir public activities
+   # end
     
     def general_grade
       a=0

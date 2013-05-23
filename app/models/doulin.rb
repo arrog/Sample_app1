@@ -10,6 +10,8 @@ class Doulin < ActiveRecord::Base
   has_many :expertises
   has_many :users, through: :expertises
   
+  has_many :comments, as: :commentable
+  
   has_reputation :vote_experts, source: :user, aggregated_by: :sum
   has_many :evaluations, class_name: "ReputationSystem::Evaluation", as: :target
   
@@ -19,6 +21,8 @@ class Doulin < ActiveRecord::Base
   validates_presence_of :tag_list
   validates_size_of     :tag_list,
                         :maximum => 3
+                        
+  scope :permission, -> { where(:state => ["online", "open","over"]) }
 
   paginates_per 10
   
@@ -34,7 +38,11 @@ class Doulin < ActiveRecord::Base
 
     event :start do
       transition :online => :open
-     end
+    end
+    
+    event :finish do
+      transition :open => :over
+    end
   end
   
   def count_for

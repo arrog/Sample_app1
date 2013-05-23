@@ -1,24 +1,75 @@
 header {
-  height: 70px;
+  height: 200px;
   position: relative;
   background-color: #FFF;
-  border-bottom: 4px solid $mainColor;
+  
   
   @include subtle-link;
   
   .container {
-    padding: 10px 0px;
+    padding: 0px 0px;
   
     #logo {
-      @include float-left;
-      margin-right: 30px;
+	margin-top: 15px;
+	@include float-right;
     }
 
-    #main-nav {
-      @include float-left;
+
+	#search {
+	  @include float-left;
+	  margin-top: 5px;
+	  margin-left: 5px;
+	  width: 130px
+      ;
+    }
+	
+	#Notifications{
+	margin-top: 15px;
+	margin-left: 10px	
+	}
+	
+    
+  
+    #user-nav {    
+      @include float-right;
+      margin: 20px 0px;
+    }
+
+	#debat-nav{
+		@include float-right;
+		li {
+	        display: inline-block;
+	        a {
+	          strong {
+	            display: block;
+	            font-size: 15px;
+	            line-height: 40px;
+	            @include title;
+	          }
+	        }
+	      }
+
+	      li.active, li:hover {
+	        a {
+	          text-decoration: none;        
+	          strong {
+	            color: $mainColor;
+	          }
+	        }
+		  }
+	}
+	
+	#navigation{
+	border-top: $borderBottom;
+	border-bottom: $borderBottom
+	}
+	
+	#main-nav {
+    margin-left:200px;
+	
     
       li {
-        padding: 7px 15px 3px 15px;
+        
         display: inline-block;
       
         a {
@@ -41,18 +92,7 @@ header {
         }
       }
     }
-  
-    #fb-header {
-      position: absolute;
-  //    @include float-right;
-      margin: 15px 0px;
-      left: 700px;
-    }
-  
-    #user-nav {    
-      @include float-right;
-      margin: 10px 0px;
-    }
+
 
   }
 }

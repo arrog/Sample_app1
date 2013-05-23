@@ -1,5 +1,15 @@
-<div class="challenge-badge">
-  <div class="challenge-information">
-    <h3><%= link_to challenge.title, challenge %></h3>
-  </div>
-</div>
+<section id="challenge-badge">
+	<div class="container">
+  		<div class="row">
+			<div class="span4" id="challenge-badge1">
+				<div class="span2" id="challenge-badge2">
+					DUEL
+				</div>	
+				<div class="span3" id="title">
+    			<h3><%= link_to challenge.title, challenge %></h3>
+				<h4><%= challenge.context %>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

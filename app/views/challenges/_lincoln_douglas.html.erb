@@ -1,5 +1,6 @@
+		<% if signed_in?%>	
 		<% if challenge.not_full?%>
-			
+	
 		<% if current_user.in_challenge?(challenge) %>
 		
 				Invite tes amis à ce débat en attendant!
@@ -35,6 +36,7 @@
 				        finish_challenge_path(challenge) ,:method => :post) %>
 					
 			<%end%>
+		<%end%>
 		<%end%>
 			
 			

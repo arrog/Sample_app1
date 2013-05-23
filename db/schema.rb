@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130516173001) do
+ActiveRecord::Schema.define(:version => 20130517140536) do
 
   create_table "argcoms", :force => true do |t|
     t.integer  "user_id"
@@ -51,6 +51,17 @@ ActiveRecord::Schema.define(:version => 20130516173001) do
     t.integer  "cat_id"
   end
 
+  create_table "comments", :force => true do |t|
+    t.text     "content"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "user_id"
+  end
+
+  add_index "comments", ["commentable_id", "commentable_type"], :name => "index_comments_on_commentable_id_and_commentable_type"
+
   create_table "debates", :force => true do |t|
     t.string   "title"
     t.string   "content"
@@ -58,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20130516173001) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.integer  "cat_id"
+    t.text     "state"
   end
 
   create_table "doulins", :force => true do |t|
@@ -66,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20130516173001) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "cat_id"
+    t.string   "state"
   end
 
   create_table "expertises", :force => true do |t|

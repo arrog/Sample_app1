@@ -14,11 +14,13 @@ class Challenge < ActiveRecord::Base
   has_many :arguments, as: :argumentable
   has_many :judgments
   
+    has_many :comments, as: :commentable
+  
   accepts_nested_attributes_for :performances, allow_destroy: true
   
   validates :type_deb, presence: true
   validates :title, presence: true, length: { maximum: 140 }
-  validates :context, presence: true, length: { maximum: 1000 }
+  
                         
   validates_presence_of :tag_list
   validates_size_of     :tag_list,

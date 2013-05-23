@@ -20,9 +20,14 @@ class ChallengesController < ApplicationController
       @challenge = Challenge.find(params[:id])
       @performance = @challenge.performances.build
       @argumentable = @challenge
+      @commentable = @challenge
       @arguments = @argumentable.arguments
-      @argument = current_user.arguments.new
       @judgments = @challenge.judgments
+      @comments = @commentable.comments
+      @comment = @commentable.comments.new
+      if signed_in?
+        @argument=current_user.arguments.new
+      end
   end
   
   def edit 

@@ -1,0 +1,17 @@
+</br>
+</br>
+</br>
+
+
+
+<%= form_for @expertise do |f| %>
+
+  <%= f.label :content, "Position" %><br />
+  <%= f.number_field :position %><br/>
+
+  <%= f.label :content, "User" %><br />
+  <%= f.text_field :user_id %><br/>
+
+<%= f.submit "Rajouter" %>
+
+<%end%>
