@@ -1,0 +1,72 @@
+<div class="row" id="carre">
+
+		<% if challenge.type_deb == 2 %>
+				<% if !challenge.lincoln_douglas_position_left.include?(1) %>		
+					<%= challenge.prime_minister.name%>
+				<% elsif signed_in?  && !current_user.in_challenge?(challenge) %>
+					<%= link_to("choisir cette position".html_safe,
+		              	join_one_challenge_path(challenge) ,:method => :post) %>
+				<%end%>
+		
+		<%elsif challenge.type_deb == 4 %>
+				<% if !challenge.four_corner_position_left.include?(1) %>
+					<%= challenge.prime_minister.name %>
+				<% elsif signed_in?  && !current_user.in_challenge?(challenge) %>
+					<%= link_to("choisir cette position".html_safe,
+			              join_one_challenge_path(challenge) ,:method => :post) %>		
+				<%end%>
+				A rajouter ici un espace pour la note
+		
+		<%elsif challenge.type_deb == 3%>
+				<% if !challenge.american_position_left.include?(1) %>
+					<%= challenge.prime_minister.name %>
+				<% elsif signed_in?  && !current_user.in_challenge?(challenge)%>
+					<%= link_to("choisir cette position".html_safe,
+			              join_one_challenge_path(challenge) ,:method => :post) %>
+				<%end%>
+				A arranger avec les team
+		
+		<%elsif challenge.type_deb == 8 %>
+					<% if !challenge.british_position_left.include?(1) %>
+						<%= challenge.prime_minister.name %>
+					<% elsif signed_in?  && !current_user.in_challenge?(challenge) %>
+						<%= link_to("choisir cette position".html_safe,
+				              join_one_challenge_path(challenge) ,:method => :post) %>
+					<%end%>
+		<%end%>
+</div>
+
+
+		<%if challenge.type_deb == 4 %>
+			<div class ="row" id ="carre-bas">
+				<% if !challenge.four_corner_position_left.include?(2) %>
+					<%= challenge.second_prop.name %>
+				<% elsif signed_in?  && !current_user.in_challenge?(challenge) %>
+					<%= link_to("choisir cette position".html_safe,
+			              join_two_challenge_path(challenge) ,:method => :post) %>
+				<%end%>
+			</div>
+				
+		
+		<%elsif challenge.type_deb == 3%>
+			<div class ="row" id ="carre-bas">
+				<% if !challenge.american_position_left.include?(2) %>
+					<%= challenge.second_prop.name %>
+				<% elsif signed_in?  && !current_user.in_challenge?(challenge) %>
+						<%= link_to("choisir cette position".html_safe,
+				              join_two_challenge_path(challenge) ,:method => :post) %>									
+				<%end%>
+			</div>
+				A arranger avec les team
+		
+		<%elsif challenge.type_deb == 8 %>
+			<div class ="row" id ="carre-bas">
+					<% if !challenge.british_position_left.include?(2) %>
+						<%= challenge.prime_minister.name %>
+					<% elsif signed_in?  && !current_user.in_challenge?(challenge) %>
+							<%= link_to("choisir cette position".html_safe,
+					              join_two_challenge_path(challenge) ,:method => :post) %>
+					
+					<%end%>
+			</div>
+		<%end%>

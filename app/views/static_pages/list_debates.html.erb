@@ -1,0 +1,37 @@
+<section>
+	<div class="span2" id="menu-categories">
+		<div class ="row">
+			<%= link_to "SPORTS", debats_path(:cat => 1), :class => "categ"%>
+		</div>
+		
+		<div class ="row">
+			<%= link_to "VIE", debats_path(:cat => 2), :class => "categ"%>
+		</div>
+		
+		<div class ="row">
+			<%= link_to "MONDE", debats_path(:cat => 3), :class => "categ"%>
+		</div>
+		
+		<div class ="row">
+			<%= link_to "ECONOMIE", debats_path(:cat => 4), :class => "categ"%>
+		</div>
+		
+		<div class ="row">
+			<%= link_to "CULTURE", debats_path(:cat => 5), :class => "categ"%>
+		</div>
+		
+		<div class ="row">
+			<%= link_to "SCIENCES", debats_path(:cat => 6), :class => "categ"%>
+		</div>
+		
+		<div class ="row">
+			<%= link_to "QUESTIONNEMENT", debats_path(:cat => 7), :class => "categ"%>
+		</div>
+		
+		<div class ="row">
+			<%= link_to "SOCIETE", debats_path(:cat => 8), :class => "categ"%>
+		</div>
+		
+	</div>
+<section>
+<%= render "shared/index", :object => @debates %>

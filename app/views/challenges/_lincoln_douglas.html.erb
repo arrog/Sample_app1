@@ -1,42 +1,190 @@
-		<% if signed_in?%>	
-		<% if challenge.not_full?%>
-	
-		<% if current_user.in_challenge?(challenge) %>
-		
-				Invite tes amis à ce débat en attendant!
-				
-		<% else %>
-		
-			position 1 :
-				<% if  challenge.lincoln_douglas_position_left.include?(1)%>
-					<%= link_to("Prends la position de prime minister".html_safe,
-		              join_one_challenge_path(challenge) ,:method => :post) %>
-				<% else%>
-					okok
-				<%end%>
-			
-			
-			position 2 : <% if  challenge.lincoln_douglas_position_left.include?(2)%>
-				<%= link_to("Prends la position de first oponent".html_safe,
-			              join_two_challenge_path(challenge) ,:method => :post) %>
-				<%end%>
+<div class="container">
+
+	<div class="row">
+		<div class="span 8 offset2">
+		THE PRIME MINISTER OPENED THE DEBATE WITH
+		<% if challenge.state == "first" %>
+			<% if signed_in? && current_user == challenge.prime_minister %>
+				<% if !challenge.arguments.where(position: 1).any? %>
+					<%= render "shared/argument_form", argumentable: challenge, argument: challenge.arguments.new, position: 1 %>
+				<% else %>
+					<%= render "shared/argument_badge", argument: challenge.first_argument %>
+					<%= link_to("VALIDE TON ARGUMENT".html_safe,
+			              next_challenge_path(challenge) ,:method => :post) %>
+				<% end %>
+			<% else%>
+				<%= challenge.prime_minister.name %> en badge avec ...
+			<%end%>
+		<% elsif ["second","third","forth","fifth","sixth","seventh","eighth","judged","over"].include?(challenge.state) %>
+			<%= render "shared/argument_badge", argument: challenge.first_argument %>
 		<% end %>
-
-		<% else %>
-
-			<% if challenge.state == "incomplete" && current_user.in_challenge?(challenge)%>
-			 <%= link_to("Commencer le débat!".html_safe,
-			           starting_challenge_path(challenge) ,:method => :post) %>
-			<%elsif challenge.state == "incomplete" %>
-				ce débat va bientôt commencer
-			<% elsif challenge.state == "open"%>
-				<h2>Arguments</h2>
-				<%= link_to("A ton tour")%>
-					<%= link_to("Signifier la fin du débat!".html_safe,
-				        finish_challenge_path(challenge) ,:method => :post) %>
-					
+		<div>	
+	</div>
+	
+	<div class="row">
+		THE LEADER OF THE OPPOSITION
+		<% if challenge.state == "second" %>
+			<% if signed_in? && current_user == challenge.first_opponent %>
+				<% if !challenge.arguments.where(position: 2).any? %>
+					<%= render "shared/argument_form", argumentable: challenge, argument: challenge.arguments.new, position: 2 %>
+				<% else %>
+					<%= render "shared/argument_contre_badge", argument: challenge.second_argument %>
+					<%= link_to("VALIDE TON ARGUMENT".html_safe,
+			              next_challenge_path(challenge) ,:method => :post) %>
+				<% end %>
+			<% else%>
+				<%= challenge.first_opponent.name %> en badge avec ...
+			<%end%>
+		<% elsif ["third","forth","fifth","sixth","seventh","eighth","judged","over"].include?(challenge.state) %>
+			<%= render "shared/argument_contre_badge", argument: challenge.second_argument %>
+		<% end %>	
+	</div>
+	
+	<div class="row">
+		THE PRIME MINISTER SECOND INTERVENTION
+		<% if challenge.state == "third" %>
+			<% if signed_in? && current_user == challenge.prime_minister %>
+				<% if !challenge.arguments.where(position: 3).any? %>
+					<%= render "shared/argument_form", argumentable: challenge, argument: challenge.arguments.new, position: 3 %>
+				<% else %>
+					<%= render "shared/argument_badge", argument: challenge.third_argument %>
+					<%= link_to("VALIDE TON ARGUMENT".html_safe,
+			              next_challenge_path(challenge) ,:method => :post) %>
+				<% end %>
+			<% else%>
+				<%= challenge.prime_minister.name %> en badge avec ...
+			<%end%>
+		<% elsif ["forth","fifth","sixth","seventh","eighth","judged","over"].include?(challenge.state) %>
+			<%= render "shared/argument_badge", argument: challenge.third_argument %>
+		<% end %>	
+	</div>
+	
+	<div class="row">
+		THE LEADER OF THE OPPOSITION SECOND INTERVENTION
+		<% if challenge.state == "forth" %>
+			<% if signed_in? && current_user == challenge.first_opponent %>
+				<% if !challenge.arguments.where(position: 4).any? %>
+					<%= render "shared/argument_form", argumentable: challenge, argument: challenge.arguments.new, position: 4 %>
+				<% else %>
+					<%= render "shared/argument_contre_badge", argument: challenge.fourth_argument %>
+					<%= link_to("VALIDE TON ARGUMENT".html_safe,
+			              next_challenge_path(challenge) ,:method => :post) %>
+				<% end %>
+			<% else%>
+				<%= challenge.first_opponent.name %> en badge avec ...
+			<%end%>
+		<% elsif ["fifth","sixth","seventh","eighth","judged","over"].include?(challenge.state) %>
+			<%= render "shared/argument_contre_badge", argument: challenge.fourth_argument %>
+		<% end %>	
+	</div>
+	
+	<div class="row">
+		THE PRIME MINISTER THIRD INTERVENTION
+		<% if challenge.state == "fifth" %>
+			<% if signed_in? && current_user == challenge.prime_minister %>
+				<% if !challenge.arguments.where(position: 5).any? %>
+					<%= render "shared/argument_form", argumentable: challenge, argument: challenge.arguments.new, position: 5 %>
+				<% else %>
+					<%= render "shared/argument_badge", argument: challenge.fifth_argument %>
+					<%= link_to("VALIDE TON ARGUMENT".html_safe,
+			              next_challenge_path(challenge) ,:method => :post) %>
+				<% end %>
+			<% else%>
+				<%= challenge.prime_minister.name %> en badge avec ...
+			<%end%>
+		<% elsif ["sixth","seventh","eighth","judged","over"].include?(challenge.state) %>
+			<%= render "shared/argument_badge", argument: challenge.fifth_argument %>
+		<% end %>	
+	</div>
+	
+	<div class="row">
+		THE LEADER OF THE OPPOSITION THIRD INTERVENTION
+		<% if challenge.state == "sixth" %>
+			<% if signed_in? && current_user == challenge.first_opponent %>
+				<% if !challenge.arguments.where(position: 6).any? %>
+					<%= render "shared/argument_form", argumentable: challenge, argument: challenge.arguments.new, position: 6 %>
+				<% else %>
+					<%= render "shared/argument_contre_badge", argument: challenge.sixth_argument %>
+					<%= link_to("VALIDE TON ARGUMENT".html_safe,
+			              next_challenge_path(challenge) ,:method => :post) %>
+				<% end %>
+			<% else%>
+				<%= challenge.first_opponent.name %> en badge avec ...
+			<%end%>
+		<% elsif ["seventh","eighth","judged","over"].include?(challenge.state) %>
+			<%= render "shared/argument_contre_badge", argument: challenge.sixth_argument %>
+		<% end %>	
+	</div>
+	
+	<div class="row">
+		THE PRIME MINISTER SECOND INTERVENTION
+		<% if challenge.state == "seventh" %>
+			<% if signed_in? && current_user == challenge.prime_minister %>
+				<% if !challenge.arguments.where(position: 7).any? %>
+					<%= render "shared/argument_form", argumentable: challenge, argument: challenge.arguments.new, position: 7 %>
+				<% else %>
+					<%= render "shared/argument_badge", argument: challenge.seventh_argument %>
+					<%= link_to("VALIDE TON ARGUMENT".html_safe,
+			              next_challenge_path(challenge) ,:method => :post) %>
+				<% end %>
+			<% else%>
+				<%= challenge.prime_minister.name %> en badge avec ...
+			<%end%>
+		<% elsif ["eighth","judged","over"].include?(challenge.state) %>
+			<%= render "shared/argument_badge", argument: challenge.seventh_argument %>
+		<% end %>	
+	</div>
+	
+	<div class="row">
+		THE LEADER OF THE OPPOSITION SECOND INTERVENTION
+		<% if challenge.state == "eighth" %>
+			<% if signed_in? && current_user == challenge.first_opponent %>
+				<% if !challenge.arguments.where(position: 8).any? %>
+					<%= render "shared/argument_form", argumentable: challenge, argument: challenge.arguments.new, position: 8 %>
+				<% else %>
+					<%= render "shared/argument_contre_badge", argument: challenge.eighth_argument %>
+					<%= link_to("VALIDE TON ARGUMENT".html_safe,
+			              finish_challenge_path(challenge) ,:method => :post) %>
+				<% end %>
+			<% else%>
+				<%= challenge.first_opponent.name %> en badge avec ...
+			<%end%>
+		<% elsif ["judged","over"].include?(challenge.state) %>
+			<%= render "shared/argument_contre_badge", argument: challenge.eighth_argument %>
+		<% end %>	
+	</div>
+	
+	<div class="row" >
+	<div class="span9" id="replique-gauche">
+		<%if ["judged","over"].include?(challenge.state)%> 
+			<% if signed_in? && current_user == challenge.prime_minister && !current_user.has_replique?(challenge)%>
+				<%= form_for(replique) do |f| %>
+				  <%= render 'shared/error_messages', object: f.object %>
+				    <%= f.text_area :content, rows:1, placeholder: "La réplique de l'escalier." , class: "form"%>
+					<%= f.hidden_field :replicable_id, :value => challenge.id %>
+					<%= f.hidden_field :replicable_type, :value => "Challenge" %>
+				  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+				<% end %>
+			<% elsif challenge.prime_minister.has_replique?(challenge)%>
+				<%= render "shared/replique_badge", replique: challenge.repliques.where(user_id: challenge.prime_minister.id).first%>
 			<%end%>
 		<%end%>
+		</div>
+	</div>
+	
+	<div class="row" id="replique-droite">
+		<%if ["judged","over"].include?(challenge.state)%> 
+			<% if signed_in? && current_user == challenge.first_opponent && !current_user.has_replique?(challenge)%>
+				<%= form_for(replique) do |f| %>
+				  <%= render 'shared/error_messages', object: f.object %>
+				  <div class="field">
+				    <%= f.text_area :content, placeholder: "La réplique de l'escalier." %>
+				  </div>
+				  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+				<% end %>
+			<% elsif challenge.first_opponent.has_replique?(challenge)%>
+				<%= render "shared/replique_badge"%>
+			<%end%>
 		<%end%>
-			
-			
+	</div>	
+</div>

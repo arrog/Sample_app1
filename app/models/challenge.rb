@@ -1,9 +1,10 @@
 class Challenge < ActiveRecord::Base
-  attr_accessible :context, :title, :type_deb, :performances_attributes, :tag_list, :cat_id, :invitations_attributes
+  include PublicActivity::Common
+  
+  attr_accessible :context, :title, :type_deb, :performances_attributes, :tag_list, :cat_id, :invitations_attributes, :state, :avatar
   
   acts_as_taggable
-  
-  
+  acts_as_followable
   
   belongs_to :cat
   
@@ -13,8 +14,8 @@ class Challenge < ActiveRecord::Base
   
   has_many :arguments, as: :argumentable
   has_many :judgments
-  
-    has_many :comments, as: :commentable
+  has_many :repliques, as: :replicable
+  has_many :comments, as: :commentable
   
   accepts_nested_attributes_for :performances, allow_destroy: true
   
@@ -31,21 +32,36 @@ class Challenge < ActiveRecord::Base
   
   paginates_per 10
   
-  scope :open_challenges, -> { with_state(:open) }
+  scope :open_challenges, -> { where(:state => ["first","second","third","fourth","fifth","sixth","seventh","eighth"])}
+  scope :incomplete, -> { where(:state => ["incomplete"]) }
     
   state_machine initial: :incomplete do
     
     event :starting do
-      transition :incomplete => :open
+      transition :incomplete => :first
+    end
+    
+    event :next do
+      transition :first => :second
+      transition :second => :third
+      transition :third => :forth
+      transition :forth => :fifth
+      transition :fifth => :sixth
+      transition :sixth => :seventh
+      transition :seventh => :eighth
     end
     
     event :finish do
-      transition :open => :judged
+      transition :sixth => :judged
+      transition :eighth => :judged
     end
-
+    
     event :grade do
-      transition :judged => :over
-     end
+      transition :judged => :judged_one
+      transition :judged_one => :judged_two
+      transition :judged_two => :over
+    end
+  
   end
   
   
@@ -70,7 +86,7 @@ class Challenge < ActiveRecord::Base
   end
   
   def juges
-    performances.where(position: 100).count
+    self.performances.where(position:100).count+self.performances.where(position:101).count+self.performances.where(position:102).count
   end
   
   def lincoln_douglas_position_left
@@ -109,16 +125,86 @@ class Challenge < ActiveRecord::Base
      performances.where(position:5).first.user
   end
   
-  def second_opp
+  def third_opp
       performances.where(position:6).first.user
   end
   
-  def second_prop
+  def fourth_prop
      performances.where(position:7).first.user
   end
   
-  def second_opp
+  def fourth_opp
       performances.where(position:8).first.user
+  end
+  
+  def first_judge
+    performances.where(position: 100).first.user
+  end
+  
+  def second_judge
+    performances.where(position: 101).first.user  
+  end
+  
+  def third_judge
+    performances.where(position:102).first.user    
+  end
+  
+  def first_judgment
+    judgments.where(user_id: self.first_judge.id).first
+  end
+  def first_judgment_array
+    judgments.where(user_id: self.first_judge.id)
+  end
+  
+  def second_judgment
+     judgments.where(user_id: self.second_judge.id).first
+  end
+  def second_judgment_array
+    judgments.where(user_id: self.second_judge.id)
+  end
+  
+  def third_judgment
+     judgments.where(user_id: self.third_judge.id).first
+  end
+  def third_judgment_array
+    judgments.where(user_id: self.third_judge.id)
+  end
+  
+  def have_first_judge?
+    performances.where(position:100).any?
+  end
+  
+  def have_second_judge?
+    performances.where(position:101).any?
+  end
+  
+  def have_third_judge?
+    performances.where(position:102).any?
+  end
+  
+  def first_argument
+    arguments.where(position:1).first
+  end
+  def second_argument
+    arguments.where(position:2).first
+  end
+  def third_argument
+    arguments.where(position:3).first
+  end
+  def fourth_argument
+    arguments.where(position:4).first
+  end
+  def fifth_argument
+    arguments.where(position:5).first
+  end
+  def sixth_argument
+    arguments.where(position:6).first
+  end
+  def seventh_argument
+    arguments.where(position:7).first
+  end
+  def eighth_argument
+    arguments.where(position:8).first
   end
   
   

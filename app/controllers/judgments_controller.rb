@@ -7,7 +7,7 @@ class JudgmentsController < ApplicationController
         @judgment = current_user.judgments.build(params[:judgment])
         if @judgment.save
           flash[:success] = "Judgment created!"
-          redirect_to root_url
+          redirect_to :back
         else
           render new
         end

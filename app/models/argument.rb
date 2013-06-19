@@ -1,5 +1,8 @@
 class Argument < ActiveRecord::Base
-  attr_accessible :content, :title, :argcoms_attributes
+  
+  include PublicActivity::Common
+  
+  attr_accessible :content, :title, :position, :argcoms_attributes
   
   belongs_to :user
   belongs_to :argumentable, polymorphic: true

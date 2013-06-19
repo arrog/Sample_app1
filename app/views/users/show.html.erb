@@ -1,18 +1,52 @@
 <% provide(:title, @user.name) %>
+<%= link_to("edit", edit_user_path(@user))%>
+
 <div class="row">
   <aside class="span4">
     <section>
       <h1>
         
         <%= @user.name %>
+		</br>
+		<%= image_tag @user.avatar.url(:large) %>
+		</br>
+		<%= image_tag @user.avatar.url(:medium) %>
+		</br>
+		<%= image_tag @user.avatar.url(:small) %>
       </h1>
+
+		<% if current_user && current_user.following?(@user)%>
+			<%= link_to"Ne plus suivre", unfollow_user_path(@user)%>
+		<% elsif current_user %>
+			<%= link_to"Suivre", follow_user_path(@user)%>
+		<% else %>
+			<%= link_to "Suivre", new_user_session_path %>
+		<% end %>
+		</br>
+		
+		<% if current_user && current_user.in_team?(@user)%>
+			VOUS AVEZ DEJA UNE EQUIPE AVEC LUI
+		<% elsif current_user %>
+			<%= link_to "Faire équipe avec lui", team_user_path(@user)%>
+		<% else %>
+			<%= link_to "Faire équipe avec lui", new_user_session_path %>
+		<% end %>
+		</br>
+		
+		<% if current_user && current_user.defier?(@user)%>
+			<%= link_to "Défier", new_challenge_path %>
+		<% elsif current_user %>
+			<%= link_to "Défier", defier_user_path(@user)%>
+		<% else %>
+			<%= link_to "Défier", new_user_session_path %>
+		<% end %>
+		
     </section>
 	<section>
-	  <%= render 'shared/stats' %>
+
 	</section>
   </aside>
   <div class="span8">
-	<%= render 'follow_form' if signed_in? %>
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
@@ -21,4 +55,12 @@
       <%= will_paginate @microposts %>
     <% end %>
   </div>
+
+  <div class="span8">
+	<% @activities.each do |activity| %>
+	  <div class="activity">
+	    <%= link_to activity.owner.name, activity.owner if activity.owner %>
+	    <%= render_activity activity %>
+	  </div>
+	<% end %>
 </div>

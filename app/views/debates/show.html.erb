@@ -1,15 +1,21 @@
+<%= @debate.rapport%>
 <section id="open-debate">
 	<div class="container">
 		<div class="row">
 			<div class="span10 offset1">
 				<div id="title">
 					<div class="span5">
-				        <div class="image" id="image"></div>
-						<div class="span4">
-							| <%= pluralize @debate.count_for, "vote pour" %>
-							| <%= pluralize @debate.count_against, "vote contre" %>
-							| <%= pluralize @debate.count_neutral, "personnes suisses" %>
-						</div>
+				        <div class="image" id="image">	
+							<div class="row">
+						        <div id="stats2">
+								<%= render "shared/voting_bar", rapport: @debate.rapport%>
+								</br>
+								| <%= pluralize @debate.count_for, "vote pour" %>
+					        	| <%= pluralize @debate.count_against, "vote contre" %>
+					        	| <%= pluralize @debate.count_neutral, "personnes suisses" %>
+						        </div>
+							</div>
+							</div>
 				    </div>
 					<div class= "span5">
 						<div id="title2">
@@ -30,7 +36,10 @@
 								<div id="vote" class="span2">
 									 <%= link_to "neutral", vote_debate_path(@debate, type: "neutral"), method: "post", class: "vote2" %>
 								</div>
-								<%else%> Connecte toi pour voter
+								<%else%>
+								<div class="connecte-toi">	
+									<h3>CONNECTE TOI POUR VOTER</h3>
+								</div>
 								<%end%>
 							</div>
 							
@@ -55,47 +64,41 @@
 				</div>
 			</div>
 		</div>
+		<div id="arguments">
+			<div id="choix box">
+				<% if signed_in? %>
+					<% if @debate.has_evaluation?(:votes, current_user) %>
+						<%= link_to "New argument", [:new, @argumentable, :argument] %>
+					<% else  %>
+					"il faut voter pour le débat pour pouvoir participer!"
+					<%end%>
+				<%end%>
+			</div>
+			
+				<% @arguments.each do |argument| %>
+				<div class="span10 offset1">
+					<% if @debate.valeur_vote(argument.user) == 1.0 %>
+						<%= render "shared/argument_badge", :argument => argument, :argumentable => @debate %>
+					<%elsif @debate.valeur_vote(argument.user) == - 1.0 %> 
+						<%= render "shared/argument_contre_badge", :argument => argument, :argumentable => @debate %>
+					<% else%>
+						<%= render "shared/argument_neutre_badge", :argument => argument, :argumentable => @debate %>
+					<% end %>
+
+						<% if user_signed_in? %>
+							<% if @debate.has_evaluation?(:votes, current_user) %>
+								<%= link_to "Reaction", argument_path(argument) %>
+							<% else  %> il faut voter pour le débat pour pouvoir réagir pour pouvoir réagir!
+							<% end %>
+						<%end%>
+				</div>
+				<%end%>
+
+		</div>		
 	</div>
 </section>
 
 
-<%= @debate.state %>
-<% if @debate.state == "online"%>
-	<%= link_to "publish", publish_debate_path(@debate), method: "post", :class => "vote2" %>
-<%end%>
-
-
-<h2>Arguments</h2>
-
-<div id="arguments">
-		<% @arguments.each do |argument| %>
-			<% if @debate.valeur_vote(argument.user) == 1.0 %>
-				<%= render "shared/argument_badge", :argument => argument, :argumentable => @debate %>
-			<%elsif @debate.valeur_vote(argument.user) == - 1.0 %> 
-				<%= render "shared/argument_contre_badge", :argument => argument, :argumentable => @debate %>
-			<% else%>
-				<%= render "shared/argument_neutre_badge", :argument => argument, :argumentable => @debate %>
-			<% end %>
-			<%= argument.id%>
-			
-			</br>
-		<% if user_signed_in? %>
-			<% if @debate.has_evaluation?(:votes, current_user) %>
-				<%= link_to "Reaction", argument_path(argument) %>
-			<% else  %> il faut voter pour le débat pour pouvoir réagir pour pouvoir réagir!
-			<% end %>
-		<%end%>
-		<%end%>
-		
-</div>
-
-</br>
-<% if user_signed_in? %>
-<% if @debate.has_evaluation?(:votes, current_user) %>
-	<%= link_to "New argument", [:new, @argumentable, :argument] %>
-<% else  %> il faut voter pour le débat pour pouvoir participer!
-<% end %>
-<%end%>
 
 
 

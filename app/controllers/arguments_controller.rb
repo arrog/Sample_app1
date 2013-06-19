@@ -1,7 +1,6 @@
 class ArgumentsController < ApplicationController
  before_filter :load_argumentable
  before_filter :authenticate_user!, only: [:new, :create, :destroy]
- 
 
   def new
     @argument = @argumentable.arguments.new
@@ -18,10 +17,13 @@ class ArgumentsController < ApplicationController
       @argument = @argumentable.arguments.new(params[:argument])
       @argument.user = current_user
       if @argument.save
+        if @argumentable.class == "Debate"
+            @argument.create_activity :create, owner: current_user
+        end
         flash[:success] = "Tu argumentes!"
         redirect_to @argumentable
       else
-        render :new
+        redirect_to @argumentable
       end
   end
   
@@ -30,6 +32,7 @@ class ArgumentsController < ApplicationController
     value = params[:type] == "up" ? 1 : -1
     @argument = Argument.find(params[:id])
     @argument.add_or_update_evaluation(:likes, value, current_user)
+    @argument.create_activity :vote, owner: current_user
     redirect_to :back, notice: "Thank you for liking"
   end
   

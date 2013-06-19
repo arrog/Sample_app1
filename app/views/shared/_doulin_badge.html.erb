@@ -7,6 +7,11 @@
 				</div>	
 				<div class="span3" id="title">
     			<h3><%= link_to doulin.title, doulin %></h3>
+					<% if current_user && current_user.following?(doulin)%>
+						<%= link_to"Ne plus suivre", unfollow_doulin_path(doulin)%>
+					<% else %>
+						<%= link_to"Suivre", follow_doulin_path(doulin)%>
+					<% end %>
 				<h4><%= doulin.context %>
 				</div>
 			</div>

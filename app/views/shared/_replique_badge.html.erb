@@ -1,0 +1,14 @@
+<section id="replique">
+		<div class="span1" id="user">
+			<%= replique.user.name %>
+		</div>
+		<div class="span5">
+			<%= replique.content %>
+			</br>
+			<% if current_user?(replique.user) %>
+		    <%= link_to "delete", replique, method: :delete,
+		                                     data: { confirm: "You sure?" },
+		                                     title: replique.content %>
+		  <% end %>
+		</div>
+</section>

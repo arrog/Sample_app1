@@ -1,0 +1,11 @@
+
+<%= @group.title%>
+<% if current_user && current_user.admin?(@group) %>
+
+	<%= link_to "RAJOUTER QUELQU'UN EN RESPONSABLE DU GROUP", rajouter_group_path(@group) %>
+	
+	
+	
+<%else %>		
+	Tu es pas admin donc ferme là	
+<% end %>

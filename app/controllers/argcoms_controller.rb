@@ -5,10 +5,9 @@ class ArgcomsController < ApplicationController
 
   def create
       @argcom = current_user.argcoms.build(params[:argcom])
-      @argument = @argcom.argument
         if @argcom.save
           flash[:success] = "Comment created!"
-          redirect_to @argument
+          redirect_to :back 
         else
           render "new"  ##??????
         end

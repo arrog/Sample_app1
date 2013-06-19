@@ -1,9 +1,9 @@
 class DoulinsController < ApplicationController
   before_filter :authenticate_user!, only: [:vote_expert]
   before_filter :allowed, only: :show
-  before_filter :verify_is_admin,  except: [:index, :show, :vote_expert]
+  before_filter :verify_is_admin,  except: [:show, :vote_expert, :start, :next, :finish, :follow, :unfollow]
   
-  has_scope :permission
+  has_scope :permission_doulin
   
   def new
     @doulin = Doulin.new
@@ -41,14 +41,7 @@ class DoulinsController < ApplicationController
       else
         @doulins = Doulin.all
       end
-    else
-      if params[:cat] && !params[:cat].empty?
-        @current_category = Cat.find(params[:cat])
-        @doulins = Doulin.where(:cat_id => @current_category.id).permission
-      else
-        @doulins = Doulin.permission
-      end
-    end 
+    end
   end
   
   #def update
@@ -72,13 +65,14 @@ class DoulinsController < ApplicationController
      value = params[:type] == "up" ? 1 : -1
      @doulin = Doulin.find(params[:id])
      @doulin.add_or_update_evaluation(:vote_experts, value, current_user)
+     @doulin.create_activity :vote, owner: current_user
      redirect_to :back, notice: "Thank you for voting"
    end
   
   
    def ready
      @doulin = Doulin.find(params[:id])
-     @challenge.ready
+     @doulin.ready
      redirect_to doulin_path(@doulin)
    end
    
@@ -91,22 +85,50 @@ class DoulinsController < ApplicationController
    def start
        @doulin = Doulin.find(params[:id])
        @doulin.start
-       redirect_to doulin_path(@doulin)
+       redirect_to :back
     end
+    
+    def next
+        @doulin = Doulin.find(params[:id])
+        @doulin.next
+        redirect_to :back
+     end
     
    def finish
       @doulin = Doulin.find(params[:id])
       @doulin.finish
-      redirect_to doulin_path(@doulin)
+      redirect_to :back
+   end
+   
+   def follow
+     @doulin = Doulin.find(params[:id])
+     if current_user
+       current_user.follow(@doulin)
+       @doulin.create_activity :follow, owner: current_user
+       redirect_to :back
+       flash[:notice] = "You are now following #{@doulin.title}."
+     else
+       flash[:error] = "You must <a href='/users/sign_in'>login</a> to follow #{@doulin.title}.".html_safe
+     end
    end
 
+   def unfollow
+     @challenge = Challenge.find(params[:id])
+     if current_user
+       current_user.stop_following(@doulin)
+       redirect_to :back
+       flash[:notice] = "You are no longer following #{@doulin.title}."
+     else
+       flash[:error] = "You must <a href='/users/sign_in'>login</a> to unfollow #{@doulin.title}.".html_safe
+     end
+   end
    
   
   private
   
   def allowed
     @doulin = Doulin.find(params[:id])
-    if @doulin.state < "open"
+    if ["offline", "complete_off"].include?(@doulin.state)
       redirect_to(root_path) unless current_user.try(:admin?)
     end
   end

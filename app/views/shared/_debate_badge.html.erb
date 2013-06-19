@@ -7,6 +7,11 @@
 				</div>	
 				<div class="span3" id="title">
     			<h3><%= link_to debate.title, debate %></h3>
+					<% if current_user && current_user.following?(debate)%>
+						<%= link_to"Ne plus suivre", unfollow_debate_path(debate)%>
+					<% else %>
+						<%= link_to"Suivre", follow_debate_path(debate)%>
+					<% end %>
 				<h4><%= debate.content %>
 				</div>
 			</div>

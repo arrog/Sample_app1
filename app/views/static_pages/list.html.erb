@@ -1,1 +1,38 @@
+<section>
+	<div class="span2" id="menu-categories">
+		<div class ="row">
+			<%= link_to "SPORTS", list_path(:cat => 1), :class => "categ"%>
+		</div>
+		
+		<div class ="row">
+			<%= link_to "VIE", list_path(:cat => 2), :class => "categ"%>
+		</div>
+		
+		<div class ="row">
+			<%= link_to "MONDE", list_path(:cat => 3), :class => "categ"%>
+		</div>
+		
+		<div class ="row">
+			<%= link_to "ECONOMIE", list_path(:cat => 4), :class => "categ"%>
+		</div>
+		
+		<div class ="row">
+			<%= link_to "CULTURE", list_path(:cat => 5), :class => "categ"%>
+		</div>
+		
+		<div class ="row">
+			<%= link_to "SCIENCES", list_path(:cat => 6), :class => "categ"%>
+		</div>
+		
+		<div class ="row">
+			<%= link_to "QUESTIONNEMENT", list_path(:cat => 7), :class => "categ"%>
+		</div>
+		
+		<div class ="row">
+			<%= link_to "SOCIETE", list_path(:cat => 8), :class => "categ"%>
+		</div>
+		
+	</div>
+<section>
+
 <%= render "shared/index", :object => @lists %>

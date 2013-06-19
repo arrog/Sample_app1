@@ -1,0 +1,24 @@
+
+<h1>Create a group</h1>
+
+
+
+##### RAJOUTER UN BOUTON APRES POUR RAJOUTER DES GENS ####
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@group) do |f| %>
+	  
+	  <%= render '/shared/error_messages', object: f.object %>
+
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :Description %>
+      <%= f.text_field :description %>
+      
+
+      <%= f.submit "Create a group", class: "btn btn-large btn-primary" %>
+	
+	<% end %>
+  </div>
+</div>

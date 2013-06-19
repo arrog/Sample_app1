@@ -29,7 +29,7 @@
     #hero {
 			
       > div {
-        margin: 20px 0px 20px 20px;
+        margin: 30px 0px 20px 20px;
 		
         h2 {
           line-height: 32px;
@@ -113,3 +113,10 @@
 #list-container{
 	padding: 10px 20px 20px 20px;	
 }
+
+#images img { float: left; padding: 10px; }
+#contents { float: left; clear:both; }
+#contents > div { border: 1px solid black; width: 300px; height: 400px; }
+#contents > div:not(.active) { display: none; }
+#vacation > div { border: 1px solid black; width: 300px; height: 400px; }
+#vacation > div:not(.active) { display: none; }

@@ -1,0 +1,7 @@
+<%= link_to "créér un groupe", new_group_path%>
+
+<% @groups.each do |g|%>
+	
+	<%= render "shared/group_badge", group: g%>
+	
+<%end%>

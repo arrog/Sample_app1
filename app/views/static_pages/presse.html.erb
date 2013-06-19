@@ -1,0 +1,20 @@
+<div id="essai">
+	<button class="bouton">
+		challenge
+	</button>
+	
+	<div id="vacation">
+	    <% @lists.each do |ob| %>
+			<% if ob.class == Debate %>
+	
+	<div class="debate active">
+		 	<%= render "shared/debate_badge", :debate => ob %>
+	</div>
+			<% elsif ob.class == Challenge %>
+	<div id="challenge" class="active">
+			 <%= render "shared/challenge_badge", :challenge => ob %>
+	</div>
+	<% end %>
+	<% end %>
+	</div>
+</div>

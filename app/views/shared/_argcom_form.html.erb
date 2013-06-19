@@ -1,11 +1,9 @@
-
-<%= form_for(argcom) do |f| %>
-		argcom_for
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-	<%= argument.id %>
-    <%= f.text_field :content, placeholder: "..." %>
-	<%= f.hidden_field :argument_id, :value => argument.id %>
-  </div>
-  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
-<% end %>
+<div id="new-argcom">
+	<%= form_for(argcom) do |f| %>
+	  <%= render 'shared/error_messages', object: f.object %>
+	  <div class="field">
+	    <%= f.text_field :content, placeholder: "réagis à l'argument", class: "text-reaction" %>
+		<%= f.hidden_field :argument_id, :value => argument.id %>
+	  	<%= f.submit "Post", class: "reaction" %>
+	<% end %>
+</div>

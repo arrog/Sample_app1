@@ -1,7 +1,10 @@
 class Debate < ActiveRecord::Base
-  attr_accessible :content, :title, :type_of_debate, :tag_list, :cat_id
+  include PublicActivity::Common
+    
+  attr_accessible :content, :title, :type_of_debate, :tag_list, :cat_id, :avatar, :state
   
   acts_as_taggable
+  acts_as_followable
   
   belongs_to :cat
   
@@ -19,10 +22,20 @@ class Debate < ActiveRecord::Base
   validates_size_of     :tag_list,
                         :maximum => 3
 
+  has_attached_file :avatar,
+                    :styles =>  { :large => "600x300>", :medium => "165x165>"},
+                    :storage => :s3,
+                    :s3_credentials => "#{Rails.root}/config/s3.yml",
+                    :path => ":class/:attachment/:id/:style.:extension",
+                    :bucket => 'open-debate-avatar',
+                    :default_url => "default_:style.jpg",
+                    :s3_permissions => :private,
+                    :s3_host_name => 's3-eu-west-1.amazonaws.com'
+  
   
   paginates_per 10
   
-  scope :permission, -> { where(:state => "online")}
+  scope :permission_debate, -> { where(:state => "online")}
   
   state_machine initial: :offline do
 
@@ -49,5 +62,12 @@ class Debate < ActiveRecord::Base
     self.evaluations.where(target_type: self.class, target_id: self.id, source_id: user.id).first.value      
   end
   
+  def rapport
+    if (self.count_for+self.count_against) == 0
+      0
+    else
+      100*self.count_for/(self.count_for+self.count_against)
+    end
+  end
     
 end

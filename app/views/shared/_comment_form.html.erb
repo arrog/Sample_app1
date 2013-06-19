@@ -4,6 +4,6 @@
     <%= f.text_field :content, placeholder: "comment ..." %>
 	<%= f.hidden_field :commentable_id, :value => commentable.id %>
 	<%= f.hidden_field :commentable_type, :value => type %>
-  </div>
-  <%= f.submit "Post", class: "btn btn-large btn-primary" %>
+  <%= f.submit "Post" %>
+</div>
 <% end %>

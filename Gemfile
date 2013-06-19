@@ -12,6 +12,7 @@ gem 'kaminari'
 gem 'state_machine'
 gem 'acts-as-taggable-on'
 gem 'has_scope'
+gem "acts_as_follower"
 
 group :development, :test do
   
@@ -33,6 +34,13 @@ group :assets do
   gem 'devise'
   gem 'twitter-bootstrap-rails'
   gem 'compass-rails'
+  gem "paperclip", "~> 3.0"
+  gem 'aws-sdk'
+  gem 'public_activity'
+  gem 'omniauth-facebook'
+  gem 'omniauth-twitter'
+  gem 'omniauth-viadeo'
+  gem 'omniauth-linkedin'
   
 end
 

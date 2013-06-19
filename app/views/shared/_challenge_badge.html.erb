@@ -7,6 +7,11 @@
 				</div>	
 				<div class="span3" id="title">
     			<h3><%= link_to challenge.title, challenge %></h3>
+					<% if current_user && current_user.following?(challenge)%>
+						<%= link_to"Ne plus suivre", unfollow_challenge_path(challenge)%>
+					<% else %>
+						<%= link_to"Suivre", follow_challenge_path(challenge)%>
+					<% end %>
 				<h4><%= challenge.context %>
 				</div>
 			</div>

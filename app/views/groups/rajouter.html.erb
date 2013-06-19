@@ -1,0 +1,11 @@
+<%=current_user.admin?(@group)%>
+
+<% if current_user.circle.any? %>
+	
+	<% current_user.circle.each do |us| %>
+		<%= link_to image_tag(us.avatar.url(:small)), [@group, us] %>
+		<%= link_to "Iniviter", ["invite_group", @group, us]%>
+	<%end%>
+<%end%>
+
+

@@ -4,6 +4,7 @@ class PerformancesController < ApplicationController
   def create
     @performance = current_user.performances.build(params[:performance])
     if @performance.save
+      @performance.create_activity :join, owner: current_user
       flash[:success] = "You created a new debate!"
       redirect_to_previous_page
     else

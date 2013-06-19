@@ -1,69 +1,231 @@
-<h1><%= @challenge.title %> </h1>
-
-</br>
-Tags: <%= raw @challenge.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
-</br>
-<%= @challenge.type_deb %>
-<%= @challenge.state %>
-
-</br>
-	<% if signed_in? %>
-	
-		<% if @challenge.juges < 3 && !current_user.in_challenge?(@challenge)%>
-  		Inscris toi en tant que juge! Il reste <%= 3 - @challenge.juges %>
-		<%= link_to("Juge".html_safe,
-	          join_judge_challenge_path(@challenge) ,:method => :post) %>
-		<% end %>
-	<% end%>
-	
-</br>
-	<% if @challenge.type_deb == 2 %>
-			<%= render "lincoln_douglas", :challenge => @challenge, :arguments => @arguments %>
-			
-	<% elsif @challenge.type_deb == 3 %>
-			<%= render "american", :challenge => @challenge, :arguments => @arguments %>
-			
-	<% elsif @challenge.type_deb == 4 %>
-			<%= render "four_corner", :challenge => @challenge, :arguments => @arguments %>
-			
-	<% elsif @challenge.type_deb == 8 %>
-			<%= render "british", :challenge => @challenge, :arguments => @arguments %>
+<section id="challenge">
+	<% if signed_in? && !current_user.in_challenge?(@challenge)%>
+	<div class = "rejoindre-aleatoirement">
+		<% if @challenge.type_deb == 2 %>
+			<% numéro = @challenge.lincoln_douglas_position_left.shuffle.first %>
+		<%elsif @challenge.type_deb == 3 %>
+			<% numéro = @challenge.american_position_left.shuffle.first %>
+		<%elsif @challenge.type_deb == 4 %>
+			<% numéro = @challenge.four_corner_position_left.shuffle.first %>
+		<%elsif @challenge.type_deb == 8 %>
+			<% numéro = @challenge.british_position_left.shuffle.first %>
+		<%end%>
+		
+		<%= numéro%>
+		<% if numéro == 1 %>
+			<%= link_to("PRENDRE UNE POSITION ALEATOIRE 1".html_safe,
+	              join_one_challenge_path(@challenge) ,:method => :post) %>
+		<% elsif numéro ==2 %>
+			<%= link_to("PRENDRE UNE POSITION ALEATOIRE 2".html_safe,
+	              join_two_challenge_path(@challenge) ,:method => :post) %>
+		<% elsif numéro ==3 %>
+			<%= link_to("PRENDRE UNE POSITION ALEATOIRE 3".html_safe,
+			      join_three_challenge_path(@challenge) ,:method => :post) %>
+		<% elsif numéro ==4 %>
+			<%= link_to("PRENDRE UNE POSITION ALEATOIRE 4".html_safe,
+				  join_four_challenge_path(@challenge) ,:method => :post) %>	
+		<% elsif numéro ==5 %>
+			<%= link_to("PRENDRE UNE POSITION ALEATOIRE 5".html_safe,
+				join_five_challenge_path(@challenge) ,:method => :post) %>
+		<% elsif numéro ==6 %>
+			<%= link_to("PRENDRE UNE POSITION ALEATOIRE 6".html_safe,
+				join_six_challenge_path(@challenge) ,:method => :post) %>
+		<% elsif numéro ==7 %>
+			<%= link_to("PRENDRE UNE POSITION ALEATOIRE 7".html_safe,
+				join_seven_challenge_path(@challenge) ,:method => :post) %>
+		<% elsif numéro ==8 %>
+			<%= link_to("PRENDRE UNE POSITION ALEATOIRE 8".html_safe,
+				join_eight_challenge_path(@challenge) ,:method => :post) %>
+		<%end%>
+	</div>
 	<%end%>
-
-
-			<% if @challenge.state == "judged" %>
-
-				<section id="jugments">
-				  <div class="container">
-
-					<div class="row">
-				      <div class="span9">
-				          <% if current_user.juge_challenge?(@challenge) && !current_user.has_judged?(@challenge)%>
-							<%= render "judgment_two", :challenge => @challenge %>
-						  <% end %>
-				      </div>
-				    </div>
-					
-					<div class="row">
-						<div class ="span9">
-							<% @judgments.each do |judgment| %>	
-								<%= render "shared/judgment_badge", :judgment => judgment, :challenge => @challenge %>
-							<%end%>
-						</div>
-					</div>
-			   		
-
-				  </div>
-				</section>	
-
-			<% end %>
-			
-			<% if @comments.any? %>
-			<% @comments.each do |comment| %>
-				<%= render "shared/comment", comment: comment %>
-			<%end%>
-			<%end%>
 	
-			<%= render "shared/comment_form", comment: @comment, commentable: @challenge, type: "Challenge"%>
-				
+	<div class="container" id="title">
+		<div class="row">
+			<div class="span2 offset1">
+				<%= render "titre_gauche", :challenge => @challenge %>
+			</div>
+			<div class="span6" id="title2">
+				<div class="row" id="illustration">
+				</div>
+				<div class="row" id="content">
 
+					<h1><%= @challenge.title %> </h1>
+
+					</br>
+					Tags: <%= raw @challenge.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+					</br>
+					<%= @challenge.context%>
+				</div>
+			</div>
+			<div class="span2">
+				<%= render "titre_droite", :challenge => @challenge %>
+			</div>
+		</div>
+	</div>
+
+<div class ="start">
+	<% if @challenge.state == "incomplete" && !@challenge.not_full? && signed_in? && current_user == @challenge.prime_minister %>
+		<%= link_to("LANCE LE DEBAT".html_safe,
+	              starting_challenge_path(@challenge) ,:method => :post) %>
+	<%end%>
+</div>
+
+<div class="container">
+	<% if @challenge.type_deb == 2 %>
+		<%= render "lincoln_douglas", challenge: @challenge, replique: @challenge.repliques.new %>
+	<%elsif @challenge.type_deb == 3 %>
+		<%= render "american", challenge: @challenge %>
+	<%elsif @challenge.type_deb == 4 %>
+		<%= render "four_corner", challenge: @challenge %>
+	<%elsif @challenge.type_deb == 8 %>
+		<%= render "british", challenge: @challenge %>
+	<%end%>
+</div>
+	
+<div class="container">
+	
+	<div class="row">
+		<div class="span8 offset2" id="juges">
+		 	<div class="span1" id="user-juge">
+				<% if !@challenge.have_first_judge? %>
+		 			<% if signed_in? && !current_user.in_challenge?(@challenge) %>
+		 				<%= link_to("prends la place de juge".html_safe,
+		    	       						join_judge_challenge_path(@challenge) ,:method => :post) %>
+		 			<%else%>
+		 				PAS ENCORE DE JUGES
+		 			<%end%>	
+		 		<%else%>
+		 			<%= @challenge.first_judge.name %>
+			</div>
+			<div class="span5" id="content">
+					<% if signed_in? && current_user == @challenge.first_judge && @challenge.state == "judged" && 	!current_user.has_judged?(@challenge)%>
+						<div id="time-to-judge">
+						<% if [2,3].include?(@challenge.type_deb) %>
+							<%= render "judgment_two", :challenge => @challenge, :judgment => @judgment %>
+						<% elsif [4,8].include?(@challenge.type_deb) %>
+							<%= render "judgment_four", :challenge => @challenge, :judgment => @judgment %>
+						<%end%>
+						</div>
+					<%elsif !@challenge.first_judgment_array.any?%> En attente de jugement
+					
+					<%elsif @challenge.first_judgment_array.any? %>
+						<h2><%= @challenge.first_judgment.title%></h2>
+						<%= @challenge.first_judgment.content%>  <%# a rajouter un link edit %>
+				
+			</div>
+			<div class="span1" id="grades">	
+			   	 		<%= @challenge.first_judgment.grade %>
+			   	 		<%= @challenge.first_judgment.grade_two %>
+			   	 		
+			   	 		<% if [4,8].include?(@challenge.type_deb) %>
+			   	 			<%= @challenge.first_judgment.grade_three %>
+			   	 			<%= @challenge.first_judgment.grade_four %>
+			   	 		<%end%>
+			   	 	<% end %>
+				<%end%>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="span8 offset2" id="juges">
+		 	<div class="span1" id="user-juge">
+				<% if !@challenge.have_second_judge? %>
+		 			<% if signed_in? && !current_user.in_challenge?(@challenge) %>
+		 				<%= link_to("prends la place de juge".html_safe,
+		    	       						join_judge_two_challenge_path(@challenge) ,:method => :post) %>
+		 			<%else%>
+		 				PAS ENCORE DE JUGES
+		 			<%end%>	
+		 		<%else%>
+		 			<%= @challenge.second_judge.name %>
+			</div>
+			<div class="span5" id="content">
+					<% if current_user == @challenge.second_judge && @challenge.state == "judged" && !current_user.has_judged?(@challenge)%>
+						<%# à rajouter if state = il est temps de voter aussi %>
+						<% if [2,3].include?(@challenge.type_deb) %>
+							<%= render "judgment_two", :challenge => @challenge, :judgment => @judgment %>
+						<% elsif [4,8].include?(@challenge.type_deb) %>
+							<%= render "judgment_four", :challenge => @challenge, :judgment => @judgment %>
+						<%end%>
+
+					<%elsif !@challenge.second_judgment_array.any? %>En attente de jugement
+					<%else%>
+					<h2><%= @challenge.second_judgment.title%></h2>
+					<%= @challenge.second_judgment.content%>
+			</div>
+			<div class="span1" id="grades">
+						<%= @challenge.second_judgment.grade %>
+						<%= @challenge.second_judgment.grade_two %>
+						
+						<% if [4,8].include?(@challenge.type_deb) %>
+							<%= @challenge.second_judgment.grade_three %>
+							<%= @challenge.second_judgment.grade_four %>
+						<%end%>
+					<%end%>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="span8 offset2" id="juges">
+		 	<div class="span1" id="user-juge">
+				<% if !@challenge.have_third_judge? %>
+		 			<% if signed_in? && !current_user.in_challenge?(@challenge) %>
+		 				<%= link_to("prends la place de juge".html_safe,
+		    	       						join_judge_three_challenge_path(@challenge) ,:method => :post) %>
+		 			<%else%>
+		 				PAS ENCORE DE JUGES
+		 			<%end%>	
+		 		<%else%>
+		 			<%= @challenge.third_judge.name %>
+			</div>
+			<div class="span5" id="content">
+					<% if current_user == @challenge.third_judge && @challenge.state == "judged" && !current_user.has_judged?(@challenge)%>
+						<%# à rajouter if state = il est temps de voter aussi %>
+						<% if [2,3].include?(@challenge.type_deb) %>
+							<%= render "judgment_two", :challenge => @challenge, :judgment => @judgment %>
+						<% elsif [4,8].include?(@challenge.type_deb) %>
+							<%= render "judgment_four", :challenge => @challenge, :judgment => @judgment %>
+						<%end%>
+					
+					<%elsif !@challenge.third_judgment_array.any? %>En attente de jugement
+					<%else%>
+					<h2><%= @challenge.third_judgment.title%></h2>
+					<%= @challenge.third_judgment.content%>
+			</div>
+			<div class="span1" id="grades">
+						<%= @challenge.third_judgment.grade %>
+						<%= @challenge.third_judgment.grade_two %>
+						
+						<% if [4,8].include?(@challenge.type_deb) %>
+							<%= @challenge.third_judgment.grade_three %>
+							<%= @challenge.third_judgment.grade_four %>
+						<%end%>
+					<% end %>
+				<%end%>
+			</div>
+		</div>
+	</div>
+		
+</div>
+
+<div class="container">
+			<% if @comments.any? %>
+			<div class="row">
+				<div class="span8 offset2">
+					<% @comments.each do |comment| %>
+						<%= comment.content %>
+					<%end%>
+				</div>
+			</div>
+			<%end%>
+	        <div class="row">
+				<div class="span8 offset2">
+					<%= render "shared/comment_form", comment: @comment, commentable: @challenge, type: "Challenge"%>
+				</div>
+			</div>
+</div>
+</section>

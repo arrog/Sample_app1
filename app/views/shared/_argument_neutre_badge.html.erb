@@ -1,23 +1,57 @@
-<div class ="argument">
-	_argument_badge
-	<%= simple_format argument.content%>
-	<%= simple_format argument.user.name %>
-
-	<ol class="argcoms">
-		
-		<% argument.argcoms.each do |argcom| %>
-			<%= argcom.id %>
-		 <%= render "shared/argcom_badge", :argcom => argcom %>
-		<% end %>
-     </ol>
-
-	| <%= pluralize argument.reputation_for(:likes).to_i, "likes" %>
-	| <%= pluralize argument.count_positive, "likes +" %>
-	
-	
-	<% if current_user && !current_user.liked_arg?(argument) %>
-	  | <%= link_to "up", like_argument_path(argument, type: "up"), method: "post" %>
-	  | <%= link_to "down", like_argument_path(argument, type: "down"), method: "post" %>
-	<% end %>
-	
-</div>
+<section id="argument-neutre">
+	<div class="container">
+		<div class="row">
+		     <div class="span1" id="vote">
+	   	        <%= argument.count_positive %>+
+		     	</br>
+		        <%= argument.count_negative %> -
+				</br>
+	   	        <% if current_user && !@argument.has_evaluation?(:likes, current_user) %>
+	               <%= link_to "up", like_argument_path(argument, type: "up"), method: "post" %>
+					</br>
+	               <%= link_to "down", like_argument_path(argument, type: "down"), method: "post" %>
+	   	        <% end %>
+	   		 </div>
+		     
+		     <div class="span7" id="gris">
+		         <div class="row">
+	                 <div class="span2">
+	                 	<div class="user">
+	                 		<%= argument.user.name %>
+	                 	</div>
+	                 </div>
+	                 <div class="span5">
+	                 	<div class="title">
+	                 		<h2><%= argument.title%></h2>
+	                 	</div>
+		        		<div class="stats">
+	                 		<div class="span1" id="oui">
+		        					OUI
+	                 		</div>
+		     				<div class="span1" id="argcom">
+	                 			<h3><%=argument.argcoms.count%></h3>
+		     				</div>
+	                 	</div>
+                        
+	                 	<div class="content">
+	                 		<%= simple_format argument.content%>
+	                 	</div>
+	                 </div>
+		     	</div>
+	         </div>
+	     </div>
+             
+         <div class="row">
+	    	<div class="span8 offset1">
+    				<% argument.argcoms.each do |argcom| %>
+    				 <%= render "shared/argcom_badge", :argcom => argcom %>
+    				<% end %>
+			</div>
+			<% if signed_in? %>
+			<div class="span8 offset1">
+				<%= render "shared/argcom_form", :argcom => argument.argcoms.new, :argument => argument %>
+			</div>
+			<%end%>
+		</div>
+	</div>
+</section>
