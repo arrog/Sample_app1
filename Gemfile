@@ -38,7 +38,6 @@ group :assets do
   gem "paperclip", "~> 3.0"
   gem 'aws-sdk'
   gem 'public_activity'
-  gem 'omniauth'
   gem 'omniauth-facebook'
   gem 'omniauth-twitter'
   gem 'omniauth-viadeo'
