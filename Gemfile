@@ -13,7 +13,7 @@ gem 'state_machine'
 gem 'acts-as-taggable-on'
 gem 'has_scope'
 gem "acts_as_follower"
-
+gem 'devise'
 group :development, :test do
   
   gem 'annotate', '2.5.0'
@@ -31,7 +31,6 @@ group :assets do
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
   gem 'ancestry'
-  gem 'devise'
   gem 'twitter-bootstrap-rails'
   gem 'compass-rails'
   gem "paperclip", "~> 3.0"
