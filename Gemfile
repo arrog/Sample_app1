@@ -13,6 +13,7 @@ gem 'state_machine'
 gem 'acts-as-taggable-on'
 gem 'has_scope'
 gem "acts_as_follower"
+gem 'devise'
 
 
 group :development, :test do
@@ -42,7 +43,7 @@ group :assets do
   gem 'omniauth-twitter'
   gem 'omniauth-viadeo'
   gem 'omniauth-linkedin'
-  gem 'devise'
+
 end
 
 group :test do
