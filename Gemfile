@@ -13,7 +13,8 @@ gem 'state_machine'
 gem 'acts-as-taggable-on'
 gem 'has_scope'
 gem "acts_as_follower"
-gem 'devise'
+
+
 group :development, :test do
   
   gem 'annotate', '2.5.0'
@@ -36,11 +37,12 @@ group :assets do
   gem "paperclip", "~> 3.0"
   gem 'aws-sdk'
   gem 'public_activity'
+  gem 'omniauth'
   gem 'omniauth-facebook'
   gem 'omniauth-twitter'
   gem 'omniauth-viadeo'
   gem 'omniauth-linkedin'
-  
+  gem 'devise'
 end
 
 group :test do

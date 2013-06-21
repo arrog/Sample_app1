@@ -270,6 +270,7 @@ DEPENDENCIES
   has_scope
   jquery-rails (= 2.0.2)
   kaminari
+  omniauth
   omniauth-facebook
   omniauth-linkedin
   omniauth-twitter
