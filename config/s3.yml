@@ -1,3 +1,7 @@
 development:
     access_key_id: AKIAJ775KZTCLWKTTM5Q
     secret_access_key: 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
+    
+production:
+    access_key_id: AKIAJ775KZTCLWKTTM5Q
+    secret_access_key: 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
