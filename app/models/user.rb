@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+
+  include PublicActivity::Common
     
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
@@ -41,16 +43,16 @@ class User < ActiveRecord::Base
   has_many :invitations, foreign_key: "sender_id", dependent: :destroy
   has_many :reverse_invitations, foreign_key: "reciever_id", class_name:  "Invitation", dependent:   :destroy
   
- # has_attached_file :avatar,
- #                   :styles =>  { :large => "300x300>", :medium => "165x165>", :small => "35x35>", :tiny => "30x30>" },
- #                   :storage => :s3,
- #                   :s3_credentials => "#{Rails.root}/config/s3.yml",
- #                   :path => ":class/:attachment/:id/:style.:extension",
- #                   :bucket => 'moutoner-first',
- #                   :default_url => "default_:style.jpg",
- #                   :s3_permissions => :private,
- #                   :s3_host_name => 's3-eu-west-1.amazonaws.com'
- #                   
+  has_attached_file :avatar,
+                    :styles =>  { :large => "300x300>", :medium => "165x165>", :small => "35x35>", :tiny => "30x30>" },
+                    :storage => :s3,
+                    :s3_credentials => "#{Rails.root}/config/s3.yml",
+                    :path => ":class/:attachment/:id/:style.:extension",
+                    :bucket => 'moutoner-first',
+                    :default_url => "default_:style.jpg",
+                    :s3_permissions => :private,
+                    :s3_host_name => 's3-eu-west-1.amazonaws.com'
+                    
                     
 
     validates :name, presence: true, length: { maximum: 50 }
