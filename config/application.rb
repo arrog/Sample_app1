@@ -72,8 +72,6 @@ module SampleApp
     config.to_prepare do
       Devise::SessionsController.layout "devise" 
     end
-    
-    Paperclip::Railtie.insert
      
   end
 end
