@@ -19,11 +19,9 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
       unless @user = User.find_by_email(data.email)
  
         @user = User.new( :email => data.email, :password => Devise.friendly_token[0,20],
-                          :gender => data.gender,
+                          :name => data.name,
                           :avatar => open("http://graph.facebook.com/#{data.id}/picture?type=large"))
         @user.headline = data.bio if data.bio && data.bio.length < 100
-        @user.save!
-        @user.password_empty = true
         @user.save!
         @user
       end
@@ -36,7 +34,6 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
         redirect_to new_user_registration_url
       end
     else
-      km_record("Synchronized Facebook")
       save_service_user_id(:facebook)
     end
   end

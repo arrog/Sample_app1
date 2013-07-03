@@ -2,7 +2,11 @@ SampleApp::Application.routes.draw do
   
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
                      controllers: {omniauth_callbacks: "omniauth_callbacks"}
-
+                     
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+  
   resources :users do
       member do
         get :following, :followers
