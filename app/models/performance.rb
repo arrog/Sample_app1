@@ -1,5 +1,6 @@
 class Performance < ActiveRecord::Base
-  include PublicActivity::Common
+  
+  include ::PublicActivity::Common
   
   attr_accessible :challenge_id, :perf, :position, :user_id
   

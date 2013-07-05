@@ -1,5 +1,5 @@
 class Debate < ActiveRecord::Base
-  include PublicActivity::Common
+  include ::PublicActivity::Common
     
   attr_accessible :content, :title, :type_of_debate, :tag_list, :cat_id, :avatar, :state
   
