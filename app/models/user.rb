@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  include ::PublicActivity::Common
+  
   
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
