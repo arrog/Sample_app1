@@ -14,9 +14,10 @@ gem 'acts-as-taggable-on'
 gem 'has_scope'
 gem "acts_as_follower"
 gem 'devise'
+gem 'unicorn'
+gem 'pg'
 
 group :development, :test do
-  gem 'sqlite3', '1.3.5'
   gem 'annotate', '2.5.0'
   gem 'rspec-rails', '2.11.0'
   # gem 'guard-rspec', '1.2.1'
@@ -54,5 +55,4 @@ group :test do
 end
 
 group :production do
-   gem 'pg', '0.12.2'
 end
