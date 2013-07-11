@@ -24,6 +24,7 @@ class MembershipsController < ApplicationController
       redirect_to :back
     end
   end
+  
    private
 
    def admin_user
