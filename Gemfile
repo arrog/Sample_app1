@@ -42,7 +42,6 @@ group :assets do
   gem 'omniauth-viadeo'
   gem 'omniauth-linkedin'
   gem 'sqlite3'
-  
 end
 
 group :test do
