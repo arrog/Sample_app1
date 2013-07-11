@@ -282,7 +282,7 @@ DEPENDENCIES
   omniauth-linkedin
   omniauth-twitter
   omniauth-viadeo
-  paperclip
+  paperclip (~> 3.0)
   pg
   public_activity
   rails (= 3.2.13)

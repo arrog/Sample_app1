@@ -1,11 +1,9 @@
 class AddAvatarToGroups < ActiveRecord::Migration
   def self.up
-    change_table :groups do |t|
-      t.attachment :avatar
-    end
+    add_attachment :groups, :avatar
   end
 
   def self.down
-    drop_attached_file :groups, :avatar
+    remove_attachment :groups, :avatar
   end
 end

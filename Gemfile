@@ -35,7 +35,7 @@ group :assets do
   gem 'ancestry'
   gem 'twitter-bootstrap-rails'
   gem 'compass-rails'
-  gem "paperclip"
+  gem "paperclip", "~> 3.0"
   gem 'aws-sdk'
   gem 'public_activity'
   gem 'omniauth-facebook'
