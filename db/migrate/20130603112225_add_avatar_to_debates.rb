@@ -6,6 +6,9 @@ class AddAvatarToDebates < ActiveRecord::Migration
   end
 
   def self.down
+    remove_attachment :debates, :avatar
+    remove_attachment :challenges, :avatar
+    remove_attachment :doulins, :avatar
   end
   
 end

@@ -1,4 +1,13 @@
 SampleApp::Application.configure do
+  
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['moutoner-first'],
+      :access_key_id => ENV['AKIAJ775KZTCLWKTTM5Q'],
+      :secret_access_key => ENV['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']
+    }
+  }
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
