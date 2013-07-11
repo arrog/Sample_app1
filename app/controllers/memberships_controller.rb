@@ -17,10 +17,10 @@ class MembershipsController < ApplicationController
   def create
     @membership = Membership.new(params[:membership])
     if @membership.save
-      flash[:success] = "Invité!"
+      flash[:success] = "Invite!"
       redirect_to :back
     else
-      falsh[:error] = "ça a foiré!"
+      falsh[:error] = "ca a foire!"
       redirect_to :back
     end
   end
