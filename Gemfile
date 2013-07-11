@@ -15,7 +15,7 @@ gem 'has_scope'
 gem "acts_as_follower"
 gem 'devise'
 gem 'unicorn'
-gem 'pg'
+
 
 group :development, :test do
   gem 'annotate', '2.5.0'
@@ -41,7 +41,8 @@ group :assets do
   gem 'omniauth-twitter'
   gem 'omniauth-viadeo'
   gem 'omniauth-linkedin'
-
+  gem 'sqlite3'
+  
 end
 
 group :test do
@@ -55,4 +56,5 @@ group :test do
 end
 
 group :production do
+  gem 'pg'
 end
