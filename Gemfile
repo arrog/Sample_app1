@@ -41,7 +41,7 @@ group :assets do
   gem 'omniauth-twitter'
   gem 'omniauth-viadeo'
   gem 'omniauth-linkedin'
-  gem 'sqlite3'
+  gem 'sqlite3', '1.3.5'
 end
 
 group :test do
