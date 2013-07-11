@@ -15,6 +15,7 @@ gem 'has_scope'
 gem "acts_as_follower"
 gem 'devise'
 gem 'unicorn'
+gem 'public_activity'
 
 
 group :development, :test do
@@ -37,7 +38,6 @@ group :assets do
   gem 'compass-rails'
   gem "paperclip", "~> 3.0"
   gem 'aws-sdk'
-  gem 'public_activity'
   gem 'omniauth-facebook'
   gem 'omniauth-twitter'
   gem 'omniauth-viadeo'
