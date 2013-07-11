@@ -16,7 +16,7 @@ gem "acts_as_follower"
 gem 'devise'
 gem 'unicorn'
 gem 'public_activity'
-
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 group :development, :test do
   gem 'annotate', '2.5.0'
@@ -36,7 +36,6 @@ group :assets do
   gem 'ancestry'
   gem 'twitter-bootstrap-rails'
   gem 'compass-rails'
-  gem "paperclip", "~> 3.0"
   gem 'aws-sdk'
   gem 'omniauth-facebook'
   gem 'omniauth-twitter'
