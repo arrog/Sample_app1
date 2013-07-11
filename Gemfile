@@ -20,6 +20,7 @@ gem 'unicorn'
 group :development, :test do
   gem 'annotate', '2.5.0'
   gem 'rspec-rails', '2.11.0'
+  gem 'sqlite3', '1.3.5'
   # gem 'guard-rspec', '1.2.1'
   # gem 'guard-spork', '1.2.0'  
   # gem 'spork', '0.9.2'
@@ -41,7 +42,7 @@ group :assets do
   gem 'omniauth-twitter'
   gem 'omniauth-viadeo'
   gem 'omniauth-linkedin'
-  gem 'sqlite3', '1.3.5'
+
 end
 
 group :test do
