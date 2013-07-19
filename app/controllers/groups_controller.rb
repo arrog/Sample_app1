@@ -7,8 +7,7 @@ class GroupsController < ApplicationController
   end
   
   def create
-      @group = Group.new(params[:Group])
-      ch = @group
+      @group = Group.new(params[:group])
       if @group.save
         @membership = current_user.memberships.create(group_id: @group.id, role:"admin", state:"accepted")
         flash[:success] = "You created a new group!"

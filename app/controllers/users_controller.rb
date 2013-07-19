@@ -78,8 +78,8 @@ class UsersController < ApplicationController
         flash[:error] = "You cannot make team with yourself"
       else
         current_user.team!(@user)
-        redirect_to :back
         flash[:notice] = "#{@user.name} doit accepter d'etre votre coequipier"
+        redirect_to :back
       end
     else
       flash[:error] = "You must <a href='/users/sign_in'>login</a> to make teams #{@user.name}.".html_safe

@@ -23,7 +23,7 @@
     <!--[if lt IE 9]>
       <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    
+
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -32,92 +32,168 @@
   <body>
     <div id="wrap">
       <header>
-        <div class="container"> 
-	     <div class ="row"> 
+        <div class="container" class="span11"> 
+	     
+		 <div class ="row"> 
+		  
 		  <div class="span4", style="float:left">
-			<div id="Notifications", class ="row">
-				NOTIFICATIONS
-			</div>
-			<div id="search", class ="row">
-	      		<%= form_tag ("/search_results"), :method => "get", :class=>"search-form" do %>
+			<div class="row" id="ligne1">
+				<div id="Notifications" class="span1">
+					<div id="image">
+						<%= image_tag('notifications-1.png') %>
+					</div>
+					<div id="chiffre">
+						<% if current_user %>
+							3
+						<%else%>
+							0
+						<%end%>
+					</div>
 
-				  <%= text_field_tag ("search"), nil, :class => 'search_input',
-				    :onblur=>"if(this.value=='')this.setAttribute('class', 'search_input');",
-				    :onfocus=>"this.setAttribute('class', 'search_input_clear');"
-				 %>
-				<% end %>
+				</div>
+				<div id="Notifications2" class="span1">
+					<div id="image">
+						<%= image_tag('notifications-2.png') %>
+					</div>
+					<div id="chiffre">
+						<% if current_user %>
+							3
+						<%else%>
+							0
+						<%end%>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row" id="ligne2">
+				<div id="Notifications3" class="span1">
+					<div id="image">
+						<%= image_tag('notifications-3.png') %>
+					</div>
+					<div id="chiffre">
+						<% if current_user %>
+							3
+						<%else%>
+							0
+						<%end%>
+					</div>
+				</div>
+				<div id="Notifications4" class="span1">
+					<div id="image">
+						<%= image_tag('notifications-4.png') %>
+					</div>
+					<div id="chiffre">
+						<% if current_user %>
+							3
+						<%else%>
+							0
+						<%end%>
+					</div>
+				</div>
+			</div>	
+	
+			<div class ="row" id="search">
+				<div id="gris">
+					<div class="loupe">
+						<%= image_tag('search-tag.png') %>
+					</div>
+				</div>
+				<div>
+	      			<%= form_tag ("/search_results"), :method => "get", :id=>"search-form" do %>
+                	
+					  <%= text_field_tag ("search") , nil, :id=>"search-text",
+					    :onblur=>"if(this.value=='')this.setAttribute('class', 'search_input');",
+					    :onfocus=>"this.setAttribute('class', 'search_input_clear');",
+						placeholder: "CHERCHER UN DEBAT"
+					 %>
+					<% end %>
+				</div>
 			</div>
 	      </div>
 
 	      <div class="span4">
-			<div class="span2">
+			<div class="span3">
 	      	<div id="logo", class="img-circle">
-	              <%= link_to image_tag('logo_moutoner.png', :alt => 'Moutoner'), root_path %>
+	              <%= link_to image_tag('logo.png', :alt => 'Moutoners'), root_path %>
 	        </div>
 			</div>
 	      </div>
 		    
-          <div class ="span4", style:"float:right">
+          <div class ="span4", style:"float:right" id="adroite">
 			<div class ="row">
 			  <% if user_signed_in? %>
-	              <div id="user-nav" class="btn-group", style:"float:right">
-	                <a class="btn" data-toggle="dropdown" href="#">
-	                  <i class="icon-user"></i>
-	                  <%= current_user.name %>
-	                </a>                
-	                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-	                  <span class="caret"></span>
-	                </a>
-	                <ul class="dropdown-menu">
-	                  <li><%= link_to "Profil", user_path(current_user) %></li>
-	                  <li><%= link_to "Déconnexion", destroy_user_session_path, :method=>'delete' %></li>
-	                </ul>
-	              </div>
-	          <% else %>
-	              <ul id="user-nav" class="unstyled", style:"float:right">
-	                <%= content_tag(:li, link_to(raw("cr&eacute;er un compte"), new_user_registration_path)) %>
-	                <%= content_tag(:li, link_to("s'identifier", new_user_session_path)) %>
+	            <div id="user-nav" class="btn-group">
+	                <%= current_user.name %>
+	              <a id="dropdown" class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+	                <span class="caret"></span>
+	              </a>
+	              <ul class="dropdown-menu">
+	                <li><%= link_to "Profil", user_path(current_user) %></li>
+	                <li><%= link_to "Déconnexion", destroy_user_session_path, :method=>'delete' %></li>
 	              </ul>
+	            </div>
+	          <% else %>
+	            <div id="deconnecte" class="unstyled">
+	              <%= link_to("S'IDENTIFIER", new_user_session_path, :class=>"test") %>
+	            </div>
 	          <% end %>
 			</div>
+			
 			<div class ="row", id="debat-nav">
-				<%= content_tag(:li, :class => ("active" if current_page?(apprendre_path))) do %>
-	              <%= link_to apprendre_path do %>
-	                <%= content_tag(:strong, "APPRENDRE A DEBATTRE") %>
-	              <% end %>
-	            <% end %>
+				<div class="row" class="span2 offset 2" style:"float:right" id="RS">
+					<div id="facebook-page">
+						<%= link_to image_tag('facebook-petit.png', :alt => 'Moutoners', :class => "image"), "http://www.facebook.com"%>
+					</div>
+					<div id="twitter-page">
+						<%= link_to image_tag('twitter-petit.png', :alt => 'Moutoners', :class => "image"), "http://www.twitter.com"%>
+					</div>					
+				</div>
+				<div id="apprendre">
+					<%= content_tag(:li, :class => ("active" if current_page?(apprendre_path))) do %>
+	            	  <%= link_to apprendre_path do %>
+	            	    <%= content_tag(:strong, "APPRENDRE A DEBATTRE") %>
+	            	  <% end %>
+	            	<% end %>
+				</div>
 			</div>
           </div>
 		 </div>
 		
 		
 		 <div class ="row"> 
-		   <div class = "span12", id = "navigation">
+		   <div class = "span11", id = "navigation">
 		 	<div class = "span11">
 		     <ul id="main-nav" class="unstyled">
+
                  <%= content_tag(:li, :class => ("active" if current_page?(list_path))) do %>
                    <%= link_to list_path do %>
-                     <%= content_tag(:strong, "TOUS LES DEBATS  |") %>
-                   <% end %>
+                     <h3>TOUS LES DEBATS
+                     <%= image_tag('tiret-header.png', :alt => 'Moutoner')%></h3>
+ 					<% end %>
                  <% end %>
+
                  <%= content_tag(:li, :class => ("active" if current_page?(experts_path))) do %>
                    <%= link_to experts_path do %>
-                     <%= content_tag(:strong, "LES EXPERTS  |") %>
+                     <h3>LES EXPERTS
+					<%= image_tag('tiret-header.png', :alt => 'Moutoner')%></h3>
                    <% end %>
                  <% end %>
+
           		<%= content_tag(:li, :class => ("active" if current_page?(debats_path))) do %>
                    <%= link_to debats_path do %>
-                     <%= content_tag(:strong, "MURS DE DEBATS  |") %>
+                     <h3>DEBATS OUVERTS
+					<%= image_tag('tiret-header.png', :alt => 'Moutoner') %></h3>
                    <% end %>
                  <% end %>
 		 		<%= content_tag(:li, :class => ("active" if current_page?(dialectiques_path))) do %>
                    <%= link_to dialectiques_path do %>
-                     <%= content_tag(:strong, "LES CHALLENGES  |") %>
+                     <h3>DEFIS
+					<%= image_tag('tiret-header.png', :alt => 'Moutoner') %></h3>
                    <% end %>
                 <% end %>
 		 		<%= content_tag(:li, :class => ("active" if current_page?(groups_path))) do %>
                    <%= link_to groups_path do %>
-                     <%= content_tag(:strong, "LES GROUPES") %>
+                     <h3>LES GROUPES</h3>
                    <% end %>
                 <% end %>
                </ul>

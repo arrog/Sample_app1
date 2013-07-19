@@ -2,69 +2,75 @@
   <%= render :partial => "shared/flash_messages" %>
   
   <div class="container">
+	<div class="row">
+		<div class="span5 offset4" id="intro">
+		Argumente. Conteste. Vote. Défie. Juge. Débats.
+		</div>
+	</div>
     <div class="row">
       <div class="span11" id ="holy">
-        <div id="video">
+        
+		<div id="video">
+		<% if !signed_in?%>
           <div id="hero">
             <div>
-			<% if !signed_in?%>
+	
               <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 			  <%= devise_error_messages! %>
-			 <div> 
-			  <%= f.text_field :name, placeholder: "NOM" %>
-			</div>
-			<div>
-			  <%= f.email_field :email, :autofocus => true, placeholder:"EMAIL" %>
-			</div>  
-			<div>	
-			  <%= f.password_field :password, placeholder:"MOT DE PASSE" %>
+			  <div class="bouton">
+			  	INSCRIS-TOI     GRATUITEMENT
 			  </div>
-	
-			<div><%= f.submit "INSCRIS-TOI GRATUITEMENT", :class => "bouton"%></div>
-			
-			<div><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></div>
-			
-			  <% end %>
-			<%else%>
-				<h2>le plus grand espace de débats</h2>
-			<%end%>
-			</div>	
-         </div>
-	
-
-		  <div class="span7 offset 3">
-          	<div id="video_2">
+			  <div> 
+			    <%= f.text_field :name, placeholder: "NOM", class: "fields" %>
+			  </div>
+			  <div>
+			    <%= f.email_field :email, :autofocus => true, placeholder:"EMAIL", class: "fields" %>
+			  </div>  
+			  <div>	
+			    <%= f.password_field :password, placeholder:"MOT DE PASSE", class: "fields2" %>
+			  </div>
+			  <div><%= f.submit "VALIDER", :class => "validation"%></div>
+			  <div class="inscriptionface"><%= link_to "INSCRIPTION VIA FACEBOOK", user_omniauth_authorize_path(:facebook),
+			  													class: "via"%></div>
+			    <% end %>
 			</div>
 		  </div>
-		
-        </div>
-      </div>
-
+			
+          <div id="video_2">
+		  </div>
+			<%else%>
+		  <div id="connecte">
+		  </div>
+		  <div id="video_3">
+		  </div>
+			<%end%>	
+				
+		</div>
+	  </div>
     </div>
-  </div>
-</section>
 
-<section id="explanations">
-  <div class="container">
     <div class="row" id ="explanation1">
-      <div class="span4">
-        <div class="explanation">
-          <div class="image"></div>
+
+        <div class="explanation1">
+		  <div class="texte">Débats Ouverts</div>
+          <div class="image"> <%= image_tag('baniere-explication.png', :alt => 'Moutoners') %></div>
         </div>
-      </div>
-      <div class="span4">
-        <div class="explanation">
-          <div class="image"></div>
+
+        <div class="explanation2">
+		  <div class="texte">Défis</div>
+          <div class="image"><%= image_tag('baniere-explication.png', :alt => 'Moutoners') %></div>
         </div>
-      </div>
-      <div class="span4">
-        <div class="explanation">
-          <div class="image"></div>
+
+        <div class="explanation3">
+		  <div class="texte">Les Experts</div>	
+          <div class="image"><%= image_tag('baniere-explication.png', :alt => 'Moutoners') %></div>
         </div>
-      </div>
+
     </div>
   </div>
 </section>
+
+
 
 <section id="best-debates">
 	<div class="container">
@@ -84,7 +90,7 @@
 	
 	    </div>
 	  </div>
-	
+   <div class="container">
 	<%= render "shared/menu_cat"%>
 
 	<div class="span7 offset 4" id="best-debates2">
@@ -92,5 +98,6 @@
       <%#   <%= render "shared/doulin_badge", :doulin => @doulin %>
       <%#   <%= render "shared/debate_badge", :debate => @debate %>
 	</div>
+   </div>
   
 </section>

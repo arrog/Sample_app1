@@ -1,0 +1,12 @@
+<% content_for :content do %>
+<div class="container">
+    <div class="row">
+      <div class="span8 offset2">
+        <%= yield :main_content %>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<%= render :file => 'layouts/application' %>

@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :admin 
 
   include ::PublicActivity::Common
   
@@ -48,15 +48,15 @@ class User < ActiveRecord::Base
   has_many :invitations, foreign_key: "sender_id", dependent: :destroy
   has_many :reverse_invitations, foreign_key: "reciever_id", class_name:  "Invitation", dependent:   :destroy
   
-  #has_attached_file :avatar,
-  #                  :styles =>  { :large => "300x300>", :medium => "165x165>", :small => "35x35>", :tiny => "30x30>" },
-  #                  :storage => :s3,
-  #                  :s3_credentials => "#{Rails.root}/config/s3.yml",
-  #                  :path => ":class/:attachment/:id/:style.:extension",
-  #                  :bucket => 'moutoner-first',
-  #                  :default_url => "default_:style.jpg",
-  #                  :s3_permissions => :private,
-  #                  :s3_host_name => 's3-eu-west-1.amazonaws.com'
+  has_attached_file :avatar,
+                    :styles =>  { :large => "300x300>", :medium => "165x165>", :small => "35x35>", :tiny => "30x30>" },
+                    :storage => :s3,
+                    :s3_credentials => "#{Rails.root}/config/s3.yml",
+                    :path => ":class/:attachment/:id/:style.:extension",
+                    :bucket => 'moutoner-first',
+                    :default_url => "default_:style.jpg",
+                    :s3_permissions => :private,
+                    :s3_host_name => 's3-eu-west-1.amazonaws.com'
                     
                     
 
@@ -68,11 +68,11 @@ class User < ActiveRecord::Base
     end
     
     def team!(other_user)
-        relationships.create!(reciever_id: other_user.id, value:1, sender_id: self.id)
+        Relationship.create!(reciever_id: other_user.id, value:1, sender_id: self.id)
     end
     
     def defier!(other_user)
-        relationships.create!(reciever_id: other_user.id, value:-1, sender_id: self.id)
+       Relationship.create!(reciever_id: other_user.id, value:-1, sender_id: self.id)
     end
     
     def circle
@@ -80,11 +80,11 @@ class User < ActiveRecord::Base
     end
     
     def in_team?(other_user)
-      (self.relationships.where(reciever_id: other_user.id, value:1)+self.relationships.where(sender_id: other_user.id, value:1)).any?
+      (Relationship.where(reciever_id: other_user.id, value:1, sender_id: self.id)+ Relationship.where(sender_id: other_user.id, value:1, sender_id: self.id)).any?
     end
     
     def defier?(other_user)
-      (self.relationships.where(reciever_id: other_user.id, value:-1)+self.relationships.where(sender_id: other_user.id, value:-1)).any?
+ (Relationship.where(reciever_id: other_user.id, value:-1, sender_id: self.id)+ Relationship.where(sender_id: other_user.id, value:-1, sender_id: self.id)).any?
     end
     
     def debating?(debate)

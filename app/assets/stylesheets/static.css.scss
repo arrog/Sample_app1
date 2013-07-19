@@ -1,35 +1,53 @@
-#holy{
-	margin-left: 65px
+#intro{
+font-family: "georgia";
+font-size: 16px;
+font-style: italic;
+font-weight: bold;
+margin-top:23px;
 }
 
+#holy{
+	margin-left: 120px;
+	margin-top: 15px;
+}
 
   
   #video {
-    width: 100%;
+    width: 874px;
 	height: 400px;
     display: table;
-    background-color: #EEE;
+    background-color: #AAD0FF;
+	margin-top:10px;
+	border-radius: 13px;
 	
 	#video_2{
-	margin: 30px -40px 0px 0px;
-
-	height: 340px;
-    background-color: #7F7F7F;
+	width: 550px;
+	height: 358px;
+	margin-top: - 378px;
+	margin-left: 300px;
+    background-color: #FFF;
 	}
 
-    > div {
-      display: table-cell;
-      height: 100%;
-      vertical-align: top;
-    }
-
-
-   
-
+	#connecte{
+	margin-top: 20px;
+	margin-left:20px;
+	width: 260px;
+	height: 358px;
+	background-color: #CCC;
+	}
+	
+	#video_3{	
+	width: 550px;
+	height: 358px;
+	margin-top: - 358px;
+	margin-left: 290px;
+    background-color: #FFF;
+	}
+		
     #hero {
 			
       > div {
-        margin: 30px 0px 20px 20px;
+        margin: 20px 0px 20px 20px;
 		
         h2 {
           line-height: 32px;
@@ -42,50 +60,172 @@
         }
 		
      	.bouton{
-		background-color: #7F7F7F;
-		height:40px;
-		width: 230px;
+		background-color: #878D8E;
+		height:54px;
+		width: 260px;
+		padding-top:15px;
+		line-height: 20px;
 		font-weight: bold;
-		@include title
+		text-align: center;
+		font-family:"gotham";
+		font-size: 18px;
+		color: white;
+		margin-bottom:10px;
+		}
+		
+		.fields{
+		margin-top: 15px;
+		background-color: #FFF;
+		height:40px;
+		width: 240px;
+		border: none;
+		border-radius: 0px;
+		}
+		
+		.fields2{
+		margin-top: 15px;
+		background-color: #FFF;
+		width: 160px;
+		height:40px;		
+		border: none;
+		border-radius: 0px;
+		}
+		
+		.validation{
+		margin-top: -69px;
+		margin-left: 185px;
+		background-color: #000;
+		width: 75px;
+		height:40px;		
+		border: none;
+		color: white;
+		text-align: center;
+		font-family:"gotham";
+		font-size: 14px;
+		border-radius: 0px;		
+		}
+		
+		.inscriptionface{
+		background-color: #878D8E;
+		height:54px;
+		width: 260px;
+		padding-top:15px;
+     	text-align: center;
+		
+		.via{
+		line-height: 20px;
+		font-weight: bold;
+		font-family:"gotham";
+		font-size: 18px;
+		color: white;
+		}
 		}
       }
-	
-	
-    }
-
-
-
-  
+    }  
 }
 
-
-#explanations {
-  padding: 20px 0px;
-  background-color: #FFF;
   
-
-	#explanation1{
-	border-top: $borderBottom;
-	border-bottom: $borderBottom
-	}
-
-  
-  .explanation {
+  .explanation1 {
 	margin-top: 30px;
+	margin-left:60px;
 	margin-bottom: 30px;
     text-align: center;
-	height: 200px;
-	width: 90%;
+	height: 175px;
+	width: 260px;
     padding: 16px 22px 0px 22px;
-	background-color: #EEE
+	background-color: #CCC;
+	
+	.texte{
+	position:relative;
+	padding-top: 140px;
+	line-height: 20px;
+	font-weight: bold;
+	font-family:"gotham";
+	font-size: 18px;
+	color: white;
+	z-index:3;
+	
+	}
+	.image{
+	position:relative;
+	margin-top:-23px;
+	z-index:2;
+	}	
   }
   
-  .explanation:hover {
+  .explanation2 {
+	margin-top: -221px;
+	margin-left:394px;
+	margin-bottom: 30px;
+    text-align: center;
+	height: 175px;
+	width: 260px;
+    padding: 16px 22px 0px 22px;
+	background-color: #CCC;
+	
+	.texte{
+	position:relative;
+	padding-top: 140px;
+	line-height: 20px;
+	font-weight: bold;
+	font-family:"gotham";
+	font-size: 18px;
+	color: white;
+	z-index:3;
+	
+	}
+	.image{
+	position:relative;
+	margin-top:-23px;
+	z-index:2;
+	}
+  }
+
+  .explanation3 {
+	margin-top: -221px;
+	margin-left: 728px;
+	margin-bottom: 30px;
+    text-align: center;
+	height: 175px;
+	width: 260px;
+    padding: 16px 22px 0px 22px;
+	background-color: #CCC;
+	
+	.texte{
+	position:relative;
+	padding-top: 140px;
+	line-height: 20px;
+	font-weight: bold;
+	font-family:"gotham";
+	font-size: 18px;
+	color: white;
+	z-index:3;
+	
+	}
+	.image{
+	position:relative;
+	margin-top:-23px;
+	z-index:2;
+	}
+  }	
+  
+  .explanation1:hover {
     background-color: #3C3C3B;
     box-shadow: -3px 3px 15px -4px #000 inset;
 //    .border-radius;
   }
-}
+
+  .explanation2:hover {
+    background-color: #3C3C3B;
+    box-shadow: -3px 3px 15px -4px #000 inset;
+//    .border-radius;
+  }
+
+  .explanation3:hover {
+    background-color: #3C3C3B;
+    box-shadow: -3px 3px 15px -4px #000 inset;
+//    .border-radius;
+  }
 
 #best-debates{
 	padding: 10px 20px 20px 20px;

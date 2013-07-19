@@ -1,4 +1,6 @@
 class Relationship < ActiveRecord::Base
+# Sender et Recivever sont inversés
+
   attr_accessible :reciever_id, :sender_id, :value, :state
   
   belongs_to :reciever, class_name: "User"
