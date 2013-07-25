@@ -45,7 +45,7 @@ class GroupsController < ApplicationController
 
    def admin_user
      @group = Group.find(params[:id])
-     redirect_to(root_path) unless current_user.admin?(@group)
+     redirect_to(root_path) unless current_user.admin_group?(@group)
    end
 
 

@@ -29,7 +29,7 @@ class MembershipsController < ApplicationController
 
    def admin_user
      @group = Membership.find(params[:id]).group
-     redirect_to(root_path) unless current_user.admin?(@group)
+     redirect_to(root_path) unless current_user.admin_group?(@group)
    end
 
 

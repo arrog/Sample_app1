@@ -1,67 +1,67 @@
-<div class="span3" id="progress-bar">	
+<div id="voting-bar">
 	<% if rapport == 0 %>
 		<div class="zero">
 		</div>
-	<%elsif rapport <= 5 %>
+	<%elsif (1..5).include?(rapport)%>
 		<div class="cinq">
 		</div>
-	<%elsif rapport <= 10 %>
+	<%elsif (6..10).include?(rapport)%>
 		<div class="dix">
 		</div>
-	<%elsif rapport <= 15 %>
+	<%elsif (11..15).include?(rapport)%>
 		<div class="quinze">
 		</div>
-	<%elsif rapport <= 20 %>
+	<%elsif (16..20).include?(rapport)%>
 		<div class="vingt">
 		</div>
-	<%elsif rapport <= 25 %>
+	<%elsif (21..25).include?(rapport)%>
 		<div class="vingt-cinq">
 		</div>
-	<%elsif rapport <= 30 %>
+	<%elsif (26..30).include?(rapport)%>
 		<div class="trente">
 		</div>
-	<%elsif rapport <= 35 %>
+	<%elsif (31..35).include?(rapport)%>
 		<div class="trente-cinq">
 		</div>
-	<%elsif rapport <= 45 %>
+	<%elsif (36..40).include?(rapport)%>
 		<div class="quarante">
 		</div>
-	<%elsif rapport <= 50 %>
+	<%elsif (41..45).include?(rapport)%>
 		<div class="quarante-cinq">
 		</div>
-	<%elsif rapport <= 55 %>
+	<%elsif (46..50).include?(rapport)%>
 		<div class="cinquante">
 		</div>
-	<%elsif rapport <= 55 %>
+	<%elsif (51..55).include?(rapport)%>
 		<div class="cinquante-cinq">
 		</div>
-	<%elsif rapport <= 60 %>
+	<%elsif (56..60).include?(rapport)%>
 		<div class="soixante">
 		</div>
-	<%elsif rapport <= 65 %>
+	<%elsif (61..65).include?(rapport)%>
 		<div class="soixante-cinq">
 		</div>
-	<%elsif rapport <= 70 %>
+	<%elsif (66..70).include?(rapport)%>
 		<div class="septante">
 		</div>
-	<%elsif rapport <= 75 %>
+	<%elsif (71..75).include?(rapport)%>
 		<div class="septante-cinq">
 		</div>
-	<%elsif rapport <= 80 %>
+	<%elsif (76..80).include?(rapport)%>
 		<div class="octante">
 		</div>
-	<%elsif rapport <= 85 %>
+	<%elsif (81..85).include?(rapport)%>
 		<div class="octante-cinq">
 		</div>
-	<%elsif rapport <= 90 %>
+	<%elsif (86..90).include?(rapport)%>
 		<div class="nonante">
 		</div>
-	<%elsif rapport <= 95 %>
+	<%elsif (91..95).include?(rapport)%>
 		<div class="nonante-cinq">
 		</div>
-	<%elsif rapport <= 100 %>
-		<div class="zero">
-			</div>
+	<%elsif (95..100).include?(rapport)%>
+		<div class="cent">
+		</div>
 
 	<%end%>
 </div>

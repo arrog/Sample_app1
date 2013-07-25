@@ -16,7 +16,7 @@ class Argument < ActiveRecord::Base
   
   validates :user_id, presence: true
   validates :title, presence: true, length: { maximum: 140 }
-  validates :content, presence: true, length: { maximum: 1000 }
+  validates :content, presence: true
   
   
   def count_positive

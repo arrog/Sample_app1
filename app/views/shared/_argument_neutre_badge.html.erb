@@ -1,57 +1,62 @@
 <section id="argument-neutre">
-	<div class="container">
-		<div class="row">
-		     <div class="span1" id="vote">
-	   	        <%= argument.count_positive %>+
-		     	</br>
-		        <%= argument.count_negative %> -
-				</br>
-	   	        <% if current_user && !@argument.has_evaluation?(:likes, current_user) %>
-	               <%= link_to "up", like_argument_path(argument, type: "up"), method: "post" %>
-					</br>
-	               <%= link_to "down", like_argument_path(argument, type: "down"), method: "post" %>
-	   	        <% end %>
-	   		 </div>
-		     
-		     <div class="span7" id="gris">
-		         <div class="row">
+		<div class="row" id='initial'>
+		     <div class id="gris">
+		        <div class="row">
 	                 <div class="span2">
 	                 	<div class="user">
-	                 		<%= argument.user.name %>
+							<%= image_tag argument.user.avatar.url(:medium), class: "image" %>
+						</div>
+						<div class="nom-user">
+	                 		<%= link_to argument.user.name, argument.user %>
 	                 	</div>
 	                 </div>
-	                 <div class="span5">
-	                 	<div class="title">
-	                 		<h2><%= argument.title%></h2>
-	                 	</div>
-		        		<div class="stats">
-	                 		<div class="span1" id="oui">
-		        					OUI
+	                 <div class="span4">
+						<div class="row" id='title5'>
+	                 		<div class="title">
+	                 			<h2><%= argument.title%></h2>
+							<span class="cont"><%=argument.content.split(' ').slice(0,36).join(' ')%> ...</span>
 	                 		</div>
-		     				<div class="span1" id="argcom">
-	                 			<h3><%=argument.argcoms.count%></h3>
-		     				</div>
-	                 	</div>
-                        
-	                 	<div class="content">
-	                 		<%= simple_format argument.content%>
-	                 	</div>
+						</div>
+						<div class="row" id="coco1">
+		        			<div class="stats">
+							  <%= argument.count_positive %>
+							  <%= link_to image_tag("like-argument.png"), like_argument_path(argument, type: "up"), method: "post"%> |
+							  <%= argument.count_negative %>
+							  <%=link_to image_tag("dislike-argument.png"), like_argument_path(argument, type: "down"), method: "post" %>
+                              
+							  <%= image_tag("box-texte.png", class: "box")%>
+							  <%= image_tag("vote-suisse.png", class: "oui")%>	
+							  
+							  <a class='toggleOpen'>Lire la suite... </a>								
+	                 		</div>
+						</div>
+						
+						<div class="row" id="coco">
+	                 		<div class="toggle">
+							  <div id="argcontent">
+	                 			<%= simple_format argument.content%>
+							  </div>
+							<p class="toggleClose"><a>Refermer l'argument</a></p>
+							
+	                 		</div>
+						</div>
 	                 </div>
 		     	</div>
 	         </div>
-	     </div>
-             
-         <div class="row">
-	    	<div class="span8 offset1">
-    				<% argument.argcoms.each do |argcom| %>
-    				 <%= render "shared/argcom_badge", :argcom => argcom %>
-    				<% end %>
-			</div>
-			<% if signed_in? %>
-			<div class="span8 offset1">
-				<%= render "shared/argcom_form", :argcom => argument.argcoms.new, :argument => argument %>
-			</div>
-			<%end%>
+
+	    </div>
+     <div class="argcoms">        
+        <div class="row">
+	        <div class="span8">
+		    		<% argument.argcoms.each do |argcom| %>
+    	    		 <%= render "shared/argcom_badge", :argcom => argcom %>
+    	    		<% end %>
+		    </div>
 		</div>
+		<div class="row">
+		    <% if signed_in? && argument.argumentable_type == "Debate"%>
+		    	<%= render "shared/argcom_form", :argcom => argument.argcoms.new, :argument => argument %>
+		    <%end%>
+	   </div>
 	</div>
 </section>

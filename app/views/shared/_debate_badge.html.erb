@@ -1,22 +1,57 @@
 <section id="debate-badge">
-	<div class="container">
   		<div class="row">
-			<div class="span4" id="debate-badge1">
-				<div class="span2" id="debate-badge2">
-					OPEN
-				</div>	
-				<div class="span3" id="title">
-    			<h3><%= link_to debate.title, debate %></h3>
-					<% if current_user && current_user.following?(debate)%>
-						<%= link_to"Ne plus suivre", unfollow_debate_path(debate)%>
-					<% else %>
-						<%= link_to"Suivre", follow_debate_path(debate)%>
-					<% end %>
-				<h4><%= debate.content %>
+			<div class="span7" id="debate-badge1">
+				<div class="row">
+					<div class="span1" id="debate-badge2">
+						<%= image_tag("signe-ouvert.png", alt: "Moutoners")%>
+					</div>
+					
+					<div class="span4">
+						<div class="texte">
+							<%= image_tag("text-badge.png", alt: "Moutoners")%>
+							<div class="title">
+	    						<%= link_to debate.title, debate, class: "title"%>
+							</div>
+							<div class="context">
+							<%= debate.content %>
+							</div>
+						</div>
+					</div>
+					
 				</div>
 			</div>
-		</div>
-	</div>
-</section>
 
- 
+			<div class="span2">
+				<div class="follow">
+				<% if current_user && current_user.following?(debate)%>
+					<%= link_to"Ne plus suivre", unfollow_debate_path(debate)%>
+				<% else %>
+					<%= link_to"suivre", follow_debate_path(debate)%>
+				<% end %>
+				</div>
+				<div class="categorie">
+					<div class="arrow-left"></div>
+					<div class="image">
+					<% if debate.cat_id == 1 %>
+						<%= link_to image_tag("cat-sports.png", :alt => 'Moutoners'), list_path(:cat => 1)%>
+					<%elsif debate.cat_id == 2 %>
+						<%= link_to image_tag("cat-quotidien.png", :alt => 'Moutoners'), list_path(:cat => 2)%>
+					<%elsif debate.cat_id == 3 %>
+						<%= link_to image_tag("cat-monde.png", :alt => 'Moutoners'), list_path(:cat => 3)%>
+					<%elsif debate.cat_id == 4 %>
+						<%= link_to image_tag("cat-economie.png", :alt => 'Moutoners'), list_path(:cat => 4)%>
+					<%elsif debate.cat_id == 5 %>
+						<%= link_to image_tag("cat-culture.png", :alt => 'Moutoners'), list_path(:cat => 5)%>
+					<%elsif debate.cat_id == 6 %>
+					 	<%= link_to image_tag("cat-sciences.png", :alt => 'Moutoners'), list_path(:cat => 6)%>
+					<%elsif debate.cat_id == 7 %>
+						<%= link_to image_tag("cat-philosophie.png", :alt => 'Moutoners'), list_path(:cat => 7)%>
+					<%elsif debate.cat_id == 8 %>
+						<%= link_to image_tag("cat-societe.png", :alt => 'Moutoners'), list_path(:cat => 8)%>
+					<%end%>
+					</div>
+				</div>		
+			</div>
+		
+		</div>
+</section>

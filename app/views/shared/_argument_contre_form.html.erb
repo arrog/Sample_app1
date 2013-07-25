@@ -1,0 +1,38 @@
+<section id="new-argument">
+	
+	<div class="span6" id='new-argument2'>
+		<%= form_for [argumentable, argument] do |f| %>
+		
+		<% if argument.errors.any? %>
+		<div class="error-messages-newarg">
+			<h2>Please correct the following errors </h2>
+			<ul>
+				<% argument.errors.full_messages.each do |msg|%>
+					<li><%= msg %></li>
+				<%end%>
+			</ul>
+		</div>
+	 	<%end%>
+		
+		<div class='row'>
+			<div class='span4'>
+					<%= f.text_area:title, rows:1, class: "title-newarg", placeholder: "Titre (moins de 140 caractères)" %>
+			</div>
+		</div>
+		<div class='row'>
+			<div class='span5'>
+			<%= f.text_area:content, class: "text-newarg", placeholder: "Contenu de l'argumentation" %>
+			<%= f.hidden_field :position, :value => position %>
+			</div>
+		</div>
+		<div class='row'>
+			<div class='actions-newarg'>
+			<%= f.submit'PUBLIER', :class => 'actions'%>
+			<% end %>
+		 	</div>
+		</div>
+	</div>
+</section>
+
+
+

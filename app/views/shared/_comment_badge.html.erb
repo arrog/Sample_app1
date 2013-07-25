@@ -1,0 +1,21 @@
+<section>
+	<div class="span7" id="comment">
+		<div class="row">
+			<div class="span1" id="imageuser">
+				<%= image_tag comment.user.avatar.url(:small), class: "image" %>
+			</div>
+			<div class="span2" id="user">
+				<%= comment.user.name%>
+			</div>
+			<div class="span6" id="content">
+				<%= comment.content %>
+				</br>
+				<% if current_user?(comment.user) %>
+			    <%= link_to "delete", comment, method: :delete,
+			                                     data: { confirm: "You sure?" },
+			                                     title: comment.content %>
+			  <% end %>
+				</div>
+		</div>
+	</div>
+</section>

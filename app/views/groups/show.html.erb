@@ -1,6 +1,6 @@
 
 <%= @group.title%>
-<% if current_user && current_user.admin?(@group) %>
+<% if current_user && current_user.admin_group?(@group) %>
 
 	<%= link_to "RAJOUTER QUELQU'UN EN RESPONSABLE DU GROUP", rajouter_group_path(@group) %>
 	

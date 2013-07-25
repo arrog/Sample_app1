@@ -1,9 +1,33 @@
-<%= form_for comment do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_field :content, placeholder: "comment ..." %>
-	<%= f.hidden_field :commentable_id, :value => commentable.id %>
-	<%= f.hidden_field :commentable_type, :value => type %>
-  <%= f.submit "Post" %>
-</div>
-<% end %>
+<section>
+	<div class="span7" id="new-comment">
+		<div class="row">
+			<div class="span1" id="imageuser">
+				<% if current_user %>
+					<%= image_tag current_user.avatar.url(:small), class: "image" %>
+				<% elsif %>
+					<%= image_tag ("default_small.jpg")%>
+				<% end%>
+			</div>
+			<div class="span2" id="user">
+				<% if current_user%>
+					<%= current_user.name%>
+				<% elsif %>
+					Connecte-toi
+				<% end%>
+			</div>
+			<div class="span4" id="content">
+				<%= form_for comment do |f| %>
+				  <%= render 'shared/error_messages', object: f.object %>
+				  <div class="field">
+				    <%= f.text_area :content, placeholder: "Réagis!", class: "content" %>
+					<%= f.hidden_field :commentable_id, :value => commentable.id %>
+					<%= f.hidden_field :commentable_type, :value => type %>
+				  <%= f.submit "Valider" %>
+				</div>
+				<% end %>
+				</div>
+		</div>
+	</div>
+</section>
+
+

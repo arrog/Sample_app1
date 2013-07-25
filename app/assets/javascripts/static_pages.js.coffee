@@ -3,11 +3,6 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 
-jQuery ->
 
-$(document).ready ->
-			
-			$("#essai").on "click", ".bouton", ->
-			  $("#vacation #challenge").removeClass "active"
+	    
 
-			

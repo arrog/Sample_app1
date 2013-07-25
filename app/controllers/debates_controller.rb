@@ -1,6 +1,6 @@
 class DebatesController < ApplicationController
   before_filter :allowed, only: :show
-  before_filter :verify_is_admin,  only: [:new, :create, :destroy, :update, :index]
+  before_filter :verify_is_admin,  only: [:new, :edit, :create, :destroy, :update, :index]
   before_filter :authenticate_user!, only: [:vote]
 
   has_scope :permission_debate
@@ -29,6 +29,7 @@ class DebatesController < ApplicationController
   end
   
   def edit 
+    @debate = Debate.find(params[:id])
   end
   
   def index

@@ -1,274 +1,319 @@
 <section id="doulin">
 	<div class="container">
-		<div class="row">
-			<div class="span2 offset1" id="user1">
+	<% if current_user.try(:admin?)%>
+		<a><%= link_to "modifier les informations", edit_doulin_path(@doulin), class: "edit3"%></a>
+	<%end%>
+	 <div class="row">
+		<div class="span10 offset1">
+			<div id="title">
 				<div class="row">
-						<% if @doulin.have_first? %>
-							<%= @doulin.first_user.name%>
-						<%else%>
-							en attente
-						<%end%>
-				</div>
-				<div class="row">
-					<%if signed_in?%>
-						<%= link_to "up", vote_expert_doulin_path(@doulin, type: "up"), method: "post" %>
-					<%end%>
-				</div>
-			</div>
-			<div class="span6" id="title2">
-				<div class="row" id="illustration">
-				</div>
-				<div class="row" id="content">
-
-					<h1><%= @doulin.title %> </h1>
-
-					</br>
-					Tags: <%= raw @doulin.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
-					</br>
-					<%= @doulin.context%>
-					<div class="row">
-				        <div id="stats2">
-				        	| <%= pluralize @doulin.count_for, "vote pour" %>
-				        	| <%= pluralize @doulin.count_against, "vote contre" %>
-				        </div>
+					
+					<div class="span2">
+						
+					    <div class="image1">
+							<% if @doulin.have_first? %>
+								<%= image_tag @doulin.first_user.avatar.url(:medium), class:"image" %>
+							<%else%>
+								<%= image_tag ("default_medium.jpg") %>
+							<%end%>
+						</div>
+						<div class="first_user">
+							<% if @doulin.have_first? %>
+								<a><%= link_to @doulin.first_user.name, @doulin.first_user, class: "first_user"%></a>
+									<p class='desc'><%= @doulin.first_user.content%></p>
+							<%else%>
+								<% if current_user.try(:admin)%>
+									<a><%= link_to "rajoute un expert",new_doulin_expertise_path(@doulin.id), class: "first_user" %></a>
+								<%end%>	
+							<%end%>
+						</div>
+						
 					</div>
+					
+					<div class="span5" id="title2">
+							
+							<div class="title3"><%= link_to @doulin.title, @doulin, class: "title3"%></div>
+
+							<div id="content">
+								<span id="content"><%= @doulin.context%></span>
+							</div>
+							
+							<div class="row" id="vote">
+								<% if @doulin.have_first? %>
+					<a><%= link_to "POUR #{@doulin.first_user.name}", vote_expert_doulin_path(@doulin, type: "up"), class: "pour-first"%></a><span class="rapport-gauche"><%= @doulin.rapport%>%</span>
+								<% else %>
+									<a class="pour-first" href="#">POUR LE MEC</a>	
+								<%end%>
+
+								<% if @doulin.have_second? %>
+					<span class="rapport-droite"><%= @doulin.rapport_inverse %>%</span><a><%= link_to "POUR #{@doulin.second_user.name}", vote_expert_doulin_path(@doulin, type: "down"), class: "pour-second"%>
+								<% else %>
+									<a class="pour-second" href="#">POUR LA MEUF</a>	
+								<%end%>
+							</div>
+							<div class='row' id="barre">
+								<%= render "shared/voting_bar", rapport: @doulin.rapport%>
+					        </div>
+			
+							<div class="row" id="stats">
+								<div class="stat1">
+									<%= @doulin.count_for+@doulin.count_against%>
+									<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image")%>
+									|
+							
+									<span class="stat2"><%= @doulin.arguments.count%></span>
+									<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image")%>
+									|
+							
+									<span class="stat2"><%= @doulin.comments.count%></span>
+									<%= image_tag("icone-debat-2.png", alt: "Moutoners", class: "image")%>
+								</div>
+							</div>
+									
+					</div>
+					<div class="span2">
+						
+					    <div class="image2">
+							<% if @doulin.have_second? %>
+								<%= image_tag @doulin.second_user.avatar.url(:medium), class:"image" %>
+							<%else%>
+								<%= image_tag ("default_medium.jpg") %>
+							<%end%>
+						</div>
+						<div class="second_user">
+							<% if @doulin.have_second? %>
+								<a><%= link_to @doulin.second_user.name, @doulin.second_user, class: "first_user"%></a>
+									<p class='desc'><%= @doulin.second_user.content%></p>
+							<%else%>
+								<% if current_user.try(:admin)%>
+									<a><%= link_to "rajoute un expert",new_doulin_expertise_path(@doulin.id), class: "first_user" %></a>
+								<%end%>	
+							<%end%>
+						</div>
+						
+					</div>
+
+					
+					</div>		
+	 			</div>
+	 		</div>
+	 	</div>				
+	   	<div class="span1" id="catcat">
+			<div class="arrow-left"></div>   		
+	   		<div class="image">
+	   		<% if @doulin.cat_id == 1 %>
+	   			<%= link_to image_tag("cat-sports.png", :alt => 'Moutoners'), list_path(:cat => 1)%>
+	   		<%elsif @doulin.cat_id == 2 %>
+	   			<%= link_to image_tag("cat-quotidien.png", :alt => 'Moutoners'), list_path(:cat => 2)%>
+	   		<%elsif @doulin.cat_id == 3 %>
+	   			<%= link_to image_tag("cat-monde.png", :alt => 'Moutoners'), list_path(:cat => 3)%>
+	   		<%elsif @doulin.cat_id == 4 %>
+	   			<%= link_to image_tag("cat-economie.png", :alt => 'Moutoners'), list_path(:cat => 4)%>
+	   		<%elsif @doulin.cat_id == 5 %>
+	   			<%= link_to image_tag("cat-culture.png", :alt => 'Moutoners'), list_path(:cat => 5)%>
+	   		<%elsif @doulin.cat_id == 6 %>
+	   		 	<%= link_to image_tag("cat-sciences.png", :alt => 'Moutoners'), list_path(:cat => 6)%>
+	   		<%elsif @doulin.cat_id == 7 %>
+	   			<%= link_to image_tag("cat-philosophie.png", :alt => 'Moutoners'), list_path(:cat => 7)%>
+	   		<%elsif @doulin.cat_id == 8 %>
+	   			<%= link_to image_tag("cat-societe.png", :alt => 'Moutoners'), list_path(:cat => 8)%>
+	   		<%end%>
+	   		</div>
+	   	</div>
+		
+		<div class="row">
+
+			<div class "row" id="to-be-closed">
+				<div id="effective-context"><div class="text"><%= h(@doulin.content).gsub(/\n/, '<br/>').html_safe%></div></div>
+			</div>
+			<div class="row" id ="openning-context">
+				<div class="texte">Contexte</div>
+				<div class="arrow-down-context"></div>
+				<div class="arrow-up-context"></div>
+			</div>
+		</div>
+		
+		
+		<div class="row" id="start">
+			<% if @doulin.state =="online" && signed_in? && current_user == @doulin.first_user%>
+				<%= link_to("Commence le débat".html_safe,
+		              start_doulin_path(@doulin) ,:method => :post) %>
+			<%end%>
+		</div>
+
+		<div class="row">
+			<% if @doulin.state == "first" %>
+				<% if signed_in? && current_user == @doulin.first_user %>
+					<% if !@doulin.arguments.where(position: 1).any? %>
+						<%= render "shared/argument_form", argumentable: @doulin, argument: @doulin.arguments.new, position: 1 %>
+					<% else %>
+						<%= render "shared/argument_badge", argument: @doulin.first_argument %>
+					<p id="start">	<%= link_to("VALIDE TON ARGUMENT".html_safe,
+				              next_doulin_path(@doulin) ,:method => :post) %></p>
+					<% end %>
+				<% else%>
+					<%= @doulin.first_user.name %> en badge avec ...
+				<%end%>
+			<% elsif ["second","third","forth","fifth","sixth","seventh","eighth","over"].include?(@doulin.state) %>
+				<%= render "shared/argument_badge", argument: @doulin.first_argument %>
+			<% end %>
+		</div>
+        
+		<div class="row">
+			<% if @doulin.state == "second" %>
+				<% if signed_in? && current_user == @doulin.second_user %>
+					<% if !@doulin.arguments.where(position: 2).any? %>
+						<%= render "shared/argument_contre_form", argumentable: @doulin, argument: @doulin.arguments.new, position: 2 %>
+					<% else %>
+						<%= render "shared/argument_contre_badge", argument: @doulin.second_argument %>
+						<p id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+				              next_doulin_path(@doulin) ,:method => :post) %></p>
+					<% end %>
+				<% else%>
+				<%end%>
+			<% elsif ["third","forth","fifth","sixth","seventh","eighth" ,"over"].include?(@doulin.state) %>
+				<%= render "shared/argument_contre_badge", argument: @doulin.second_argument %>
+			<% end %>	
+		</div>
+        
+		<div class="row">
+			<% if @doulin.state == "third" %>
+				<% if signed_in? && current_user == @doulin.first_user %>
+					<% if !@doulin.arguments.where(position: 3).any? %>
+						<%= render "shared/argument_form", argumentable: @doulin, argument: @doulin.arguments.new, position: 3 %>
+					<% else %>
+						<%= render "shared/argument_badge", argument: @doulin.third_argument %>
+						<p id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+				              next_doulin_path(@doulin) ,:method => :post) %></p>
+					<% end %>
+				<% else%>
+				<%end%>
+			<% elsif ["forth","fifth","sixth","seventh","eighth" ,"over"].include?(@doulin.state) %>
+				<%= render "shared/argument_badge", argument: @doulin.third_argument %>
+			<% end %>	
+		</div>
+        
+		<div class="row">
+			<% if @doulin.state == "forth" %>
+				<% if signed_in? && current_user == @doulin.second_user %>
+					<% if !@doulin.arguments.where(position: 4).any? %>
+						<%= render "shared/argument_contre_form", argumentable: @doulin, argument: @doulin.arguments.new, position: 4 %>
+					<% else %>
+						<%= render "shared/argument_contre_badge", argument: @doulin.fourth_argument %>
+						<p id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+				              next_doulin_path(@doulin) ,:method => :post) %></p>
+					<% end %>
+				<% else%>
+				<%end%>
+			<% elsif ["fifth","sixth","seventh","eighth" ,"over"].include?(@doulin.state) %>
+				<%= render "shared/argument_contre_badge", argument: @doulin.fourth_argument %>
+			<% end %>	
+		</div>
+        
+		<div class="row">
+			<% if @doulin.state == "fifth" %>
+				<% if signed_in? && current_user == @doulin.first_user %>
+					<% if !@doulin.arguments.where(position: 5).any? %>
+						<%= render "shared/argument_form", argumentable: @doulin, argument: @doulin.arguments.new, position: 5 %>
+					<% else %>
+						<%= render "shared/argument_badge", argument: @doulin.fifth_argument %>
+						<p id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+				              next_doulin_path(@doulin) ,:method => :post) %></p>
+					<% end %>
+				<% else%>
+				<%end%>
+			<% elsif ["sixth","seventh","eighth" ,"over"].include?(@doulin.state) %>
+				<%= render "shared/argument_badge", argument: @doulin.fifth_argument %>
+			<% end %>	
+		</div>
+        
+		<div class="row">
+			<% if @doulin.state == "sixth" %>
+				<% if signed_in? && current_user == @doulin.second_user %>
+					<% if !@doulin.arguments.where(position: 6).any? %>
+						<%= render "shared/argument_contre_form", argumentable: @doulin, argument: @doulin.arguments.new, position: 6 %>
+					<% else %>
+						<%= render "shared/argument_contre_badge", argument: @doulin.sixth_argument %>
+						<p id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+				              finish_doulin_path(@doulin) ,:method => :post) %></p>
+					<% end %>
+				<% else%>
+				<%end%>
+			<% elsif ["seventh","eighth" ,"over"].include?(@doulin.state) %>
+				<%= render "shared/argument_contre_badge", argument: @doulin.sixth_argument %>
+			<% end %>	
+		</div>
+		
+
+		<% if @doulin. state == "offline" || @doulin. state == "complete_off"%>
+		<div class="row">
+			<% if current_user.try(:admin)%>
+				<%= link_to "GET READY", ready_doulin_path(@doulin), method: "post" %>
+				</br>
+				<%= link_to "PUBLISH", publish_doulin_path(@doulin), method: "post" %>
+				<div class="form-actions">
+				  <%= link_to t('.back', :default => t("helpers.links.back")),
+				              doulins_path, :class => 'btn'  %>
+				  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+				              edit_doulin_path(@doulin), :class => 'btn' %>
+				  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+				              doulin_path(@doulin),
+				              :method => 'delete',
+				              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+				              :class => 'btn btn-danger' %>
+				</div>
+		</div>
+			<%end%>
+		<% elsif ["first","third" ,"fifth"].include?(@doulin.state)%>
+			<% if current_user && current_user==@doulin.first_user%>
+			<%else%>
+			<div class="tour-gauche">
+				<div class="image">
+					<%= image_tag @doulin.first_user.avatar.url(:small), class:"image" %>
+				<span class="name"><%= @doulin.first_user.name%> prépare son argument ...</span>
 				</div>
 			</div>
-			<div class="span2" id="user2">
-			   	<div class="row">		
-						<% if @doulin.have_second? %>
-			   	 			<%= @doulin.second_user.name%>
-			   	 		<%else%>
-			   	 			en attente
-			   	 		<%end%>
-				</div>
-				<div class="row">
-					<%if signed_in?%>
-						<%= link_to "down", vote_expert_doulin_path(@doulin, type: "down"), method: "post" %>
-					<%end%>
+			<%end%>
+		<% elsif ["second","forth" ,"sixth"].include?(@doulin.state)%>
+			<% if current_user && current_user==@doulin.second_user%>
+			<%else%>
+			<div class="tour-droite">
+				<div class="image">
+					<%= image_tag @doulin.second_user.avatar.url(:small), class:"image" %>
+				<span class="name"><%= @doulin.second_user.name%> prépare son argument ...</span>
 				</div>
 			</div>
+			<%end%>			
+		<%end%>		
+		
+		<div class="espace"></div>
+		
+		<div class='row'>
+			<div class="row" id="comments-to-close">
+				<%= render "shared/comment_badge", comment:@doulin.comments.first%>
+				<%= render "shared/comment_badge", comment:@doulin.comments.second%>
+			</div>
+			<div class="row" id="comments-to-open">
+				<% @doulin.comments.each do |m| %>
+					<%= render "shared/comment_badge", comment: m%>
+			    <% end %>
+			</div>
+
+			<div class="row"><%= render "shared/comment_form", commentable: @doulin, type: Doulin, comment: @doulin.comments.new%></div>
+			
+			<div class="row" id ="openning-comments">
+				<div class="comment-texte1">Afficher plus de commentaires</div>
+				<div class="comment-texte2">Afficher moins de commentaires</div>
+				<div class="arrow-down-comments"></div>
+				<div class="arrow-up-comments"></div>
+			</div>
+			
+		</div>
+		
+		
+		</div>
+		<div>
+		</br></br>	</br>		</br>		</br>
 		</div>
 	</div>
 </section>
-
-<div class ="start">
-	<% if @doulin.state == "online" && signed_in? && current_user == @doulin.first_user %>
-		<%= link_to("LANCE LE DEBAT".html_safe,
-	              start_doulin_path(@doulin) ,:method => :post) %>
-	<%end%>
-</div>
-
-<div class="container">
-
-	<div class="row">
-		<div class="span 8 offset2">
-		THE PRIME MINISTER OPENED THE DEBATE WITH
-		<% if @doulin.state == "first" %>
-			<% if signed_in? && current_user == @doulin.first_user %>
-				<% if !@doulin.arguments.where(position: 1).any? %>
-					<%= render "shared/argument_form", argumentable: @doulin, argument: @doulin.arguments.new, position: 1 %>
-				<% else %>
-					<%= render "shared/argument_badge", argument: @doulin.first_argument %>
-					<%= link_to("VALIDE TON ARGUMENT".html_safe,
-			              next_doulin_path(@doulin) ,:method => :post) %>
-				<% end %>
-			<% else%>
-				<%= @doulin.first_user.name %> en badge avec ...
-			<%end%>
-		<% elsif ["second","third","forth","fifth","sixth","seventh","eighth","over"].include?(@doulin.state) %>
-			<%= render "shared/argument_badge", argument: @doulin.first_argument %>
-		<% end %>
-		<div>	
-	</div>
-	
-	<div class="row">
-		THE LEADER OF THE OPPOSITION
-		<% if @doulin.state == "second" %>
-			<% if signed_in? && current_user == @doulin.second_user %>
-				<% if !@doulin.arguments.where(position: 2).any? %>
-					<%= render "shared/argument_form", argumentable: @doulin, argument: @doulin.arguments.new, position: 2 %>
-				<% else %>
-					<%= render "shared/argument_contre_badge", argument: @doulin.second_argument %>
-					<%= link_to("VALIDE TON ARGUMENT".html_safe,
-			              next_doulin_path(@doulin) ,:method => :post) %>
-				<% end %>
-			<% else%>
-				<%= @doulin.second_user.name %> en badge avec ...
-			<%end%>
-		<% elsif ["third","forth","fifth","sixth","seventh","eighth" ,"over"].include?(@doulin.state) %>
-			<%= render "shared/argument_contre_badge", argument: @doulin.second_argument %>
-		<% end %>	
-	</div>
-	
-	<div class="row">
-		THE PRIME MINISTER SECOND INTERVENTION
-		<% if @doulin.state == "third" %>
-			<% if signed_in? && current_user == @doulin.first_user %>
-				<% if !@doulin.arguments.where(position: 3).any? %>
-					<%= render "shared/argument_form", argumentable: @doulin, argument: @doulin.arguments.new, position: 3 %>
-				<% else %>
-					<%= render "shared/argument_badge", argument: @doulin.third_argument %>
-					<%= link_to("VALIDE TON ARGUMENT".html_safe,
-			              next_doulin_path(@doulin) ,:method => :post) %>
-				<% end %>
-			<% else%>
-				<%= @doulin.first_user.name %> en badge avec ...
-			<%end%>
-		<% elsif ["forth","fifth","sixth","seventh","eighth" ,"over"].include?(@doulin.state) %>
-			<%= render "shared/argument_badge", argument: @doulin.third_argument %>
-		<% end %>	
-	</div>
-	
-	<div class="row">
-		THE LEADER OF THE OPPOSITION SECOND INTERVENTION
-		<% if @doulin.state == "forth" %>
-			<% if signed_in? && current_user == @doulin.second_user %>
-				<% if !@doulin.arguments.where(position: 4).any? %>
-					<%= render "shared/argument_form", argumentable: @doulin, argument: @doulin.arguments.new, position: 4 %>
-				<% else %>
-					<%= render "shared/argument_contre_badge", argument: @doulin.fourth_argument %>
-					<%= link_to("VALIDE TON ARGUMENT".html_safe,
-			              next_doulin_path(@doulin) ,:method => :post) %>
-				<% end %>
-			<% else%>
-				<%= @doulin.second_user.name %> en badge avec ...
-			<%end%>
-		<% elsif ["fifth","sixth","seventh","eighth" ,"over"].include?(@doulin.state) %>
-			<%= render "shared/argument_contre_badge", argument: @doulin.fourth_argument %>
-		<% end %>	
-	</div>
-	
-	<div class="row">
-		THE PRIME MINISTER THIRD INTERVENTION
-		<% if @doulin.state == "fifth" %>
-			<% if signed_in? && current_user == @doulin.first_user %>
-				<% if !@doulin.arguments.where(position: 5).any? %>
-					<%= render "shared/argument_form", argumentable: @doulin, argument: @doulin.arguments.new, position: 5 %>
-				<% else %>
-					<%= render "shared/argument_badge", argument: @doulin.fifth_argument %>
-					<%= link_to("VALIDE TON ARGUMENT".html_safe,
-			              next_doulin_path(@doulin) ,:method => :post) %>
-				<% end %>
-			<% else%>
-				<%= @doulin.first_user.name %> en badge avec ...
-			<%end%>
-		<% elsif ["sixth","seventh","eighth" ,"over"].include?(@doulin.state) %>
-			<%= render "shared/argument_badge", argument: @doulin.fifth_argument %>
-		<% end %>	
-	</div>
-	
-	<div class="row">
-		THE LEADER OF THE OPPOSITION THIRD INTERVENTION
-		<% if @doulin.state == "sixth" %>
-			<% if signed_in? && current_user == @doulin.second_user %>
-				<% if !@doulin.arguments.where(position: 6).any? %>
-					<%= render "shared/argument_form", argumentable: @doulin, argument: @doulin.arguments.new, position: 6 %>
-				<% else %>
-					<%= render "shared/argument_contre_badge", argument: @doulin.sixth_argument %>
-					<%= link_to("VALIDE TON ARGUMENT".html_safe,
-			              next_doulin_path(@doulin) ,:method => :post) %>
-				<% end %>
-			<% else%>
-				<%= @doulin.second_user.name %> en badge avec ...
-			<%end%>
-		<% elsif ["seventh","eighth" ,"over"].include?(@doulin.state) %>
-			<%= render "shared/argument_contre_badge", argument: @doulin.sixth_argument %>
-		<% end %>	
-	</div>
-	
-	<div class="row">
-		THE PRIME MINISTER SECOND INTERVENTION
-		<% if @doulin.state == "seventh" %>
-			<% if signed_in? && current_user == @doulin.first_user %>
-				<% if !@doulin.arguments.where(position: 7).any? %>
-					<%= render "shared/argument_form", argumentable: @doulin, argument: @doulin.arguments.new, position: 7 %>
-				<% else %>
-					<%= render "shared/argument_badge", argument: @doulin.seventh_argument %>
-					<%= link_to("VALIDE TON ARGUMENT".html_safe,
-			              next_doulin_path(@doulin) ,:method => :post) %>
-				<% end %>
-			<% else%>
-				<%= @doulin.first_user.name %> en badge avec ...
-			<%end%>
-		<% elsif ["eighth" ,"over"].include?(@doulin.state) %>
-			<%= render "shared/argument_badge", argument: @doulin.seventh_argument %>
-		<% end %>	
-	</div>
-	
-	<div class="row">
-		THE LEADER OF THE OPPOSITION SECOND INTERVENTION
-		<% if @doulin.state == "eighth" %>
-			<% if signed_in? && current_user == @doulin.second_user %>
-				<% if !@doulin.arguments.where(position: 8).any? %>
-					<%= render "shared/argument_form", argumentable: @doulin, argument: @doulin.arguments.new, position: 8 %>
-				<% else %>
-					<%= render "shared/argument_contre_badge", argument: @doulin.eighth_argument %>
-					<%= link_to("VALIDE TON ARGUMENT".html_safe,
-			              finish_doulin_path(@doulin) ,:method => :post) %>
-				<% end %>
-			<% else%>
-				<%= @doulin.second_user.name %> en badge avec ...
-			<%end%>
-		<% elsif ["judged","over"].include?(@doulin.state) %>
-			<%= render "shared/argument_contre_badge", argument: @doulin.eighth_argument %>
-		<% end %>	
-	</div>	
-</div>
-
-<% if @doulin. state == "offline"%>
-
-	<% if current_user.try(:admin)%>
-		<%= link_to "GET READY", ready_doulin_path(@doulin), method: "post" %>
-		</br>
-		<%= link_to "PUBLISH", publish_doulin_path(@doulin), method: "post" %>
-		<div class="form-actions">
-		  <%= link_to t('.back', :default => t("helpers.links.back")),
-		              doulins_path, :class => 'btn'  %>
-		  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-		              edit_doulin_path(@doulin), :class => 'btn' %>
-		  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-		              doulin_path(@doulin),
-		              :method => 'delete',
-		              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-		              :class => 'btn btn-danger' %>
-		</div>
-		
-		Rajouter un expert!
-		<%= link_to "hey baby",new_doulin_expertise_path(@doulin.id) %>
-		<%= form_for @expertise do |f| %>
-
-		  <%= f.label :content, "Position" %><br />
-		  <%= f.number_field :position %><br/>
-
-		  <%= f.label :content, "User" %><br />
-		  <%= f.text_field :user_id %><br/>
-
-		  <%= f.label :content, "Doulin_id" %><br />
-		  <%= f.text_field :doulin_id %><br/>
-
-		<%= f.submit "Rajouter" %>
-		<%end%>
-		
-	<%end%>
-<%end%>
-
-<div class="container">
-			<% if @comments.any? %>
-			<div class="row">
-				<div class="span8 offset2">
-					<% @comments.each do |comment| %>
-						<%= comment.content %>
-					<%end%>
-				</div>
-			</div>
-			<%end%>
-	        <div class="row">
-				<div class="span8 offset2">
-					<%= render "shared/comment_form", comment: @comment, commentable: @doulin, type: "Doulin"%>
-				</div>
-			</div>
-</div>
-
-
-

@@ -62,6 +62,22 @@ class Debate < ActiveRecord::Base
     self.evaluations.where(target_type: self.class, target_id: self.id, source_id: user.id).first.value      
   end
   
+  def rapport_oui
+    if self.count_for == 0
+      0
+    elsif
+      100*self.count_for/(self.count_for+self.count_against+self.count_neutral)      
+    end
+  end
+  
+  def rapport_non
+    if self.count_against == 0
+      0
+    elsif
+      100*self.count_against/(self.count_for+self.count_against+self.count_neutral)      
+    end  
+  end
+  
   def rapport
     if (self.count_for+self.count_against) == 0
       0

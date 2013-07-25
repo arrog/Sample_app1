@@ -1,19 +1,55 @@
 <section id="doulin-badge">
-	<div class="container">
-  		<div class="row">
-			<div class="span4" id="doulin-badge1">
-				<div class="span2" id="doulin-badge2">
-					EXPERT
-				</div>	
-				<div class="span3" id="title">
-    			<h3><%= link_to doulin.title, doulin %></h3>
-					<% if current_user && current_user.following?(doulin)%>
-						<%= link_to"Ne plus suivre", unfollow_doulin_path(doulin)%>
-					<% else %>
-						<%= link_to"Suivre", follow_doulin_path(doulin)%>
-					<% end %>
-				<h4><%= doulin.context %>
-				</div>
+	<div class="row">
+		<div class="span2" id="image-gauche">
+			<%= image_tag doulin.first_user.avatar.url(:medium), class: "gauche" %>
+		</div>
+		
+		<div class="span3" id="doulin-badge1">
+			<div class="title">
+				<%= link_to doulin.title, doulin, class: "title"%>
+			</div>
+			<div class="nom1">
+				<%= link_to doulin.first_user.name, doulin.first_user, class: "nom1"%>
+			</div>
+			<div class="nom2">
+				<%= link_to doulin.second_user.name, doulin.second_user, class: "nom2"%>
+			</div>
+		</div>
+		
+		<div class="span2" id='image-droite'>
+			<%= image_tag doulin.second_user.avatar.url(:medium), class: "droite" %>
+		</div>
+		
+		<div class="span2">
+			<div class="follow">
+			<% if current_user && current_user.following?(doulin)%>
+				<%= link_to"Ne plus suivre", unfollow_doulin_path(doulin)%>
+			<% else %>
+				<%= link_to"suivre", follow_doulin_path(doulin)%>
+			<% end %>
+			</div>
+	
+			<div class="categorie">
+			  	<div class="arrow-left"></div>
+			  	<div class="image">
+			  	<% if doulin.cat_id == 1 %>
+			  		<%= link_to image_tag("cat-sports.png", :alt => 'Moutoners'), list_path(:cat => 1)%>
+			  	<%elsif doulin.cat_id == 2 %>
+			  		<%= link_to image_tag("cat-quotidien.png", :alt => 'Moutoners'), list_path(:cat => 2)%>
+			  	<%elsif doulin.cat_id == 3 %>
+			  		<%= link_to image_tag("cat-monde.png", :alt => 'Moutoners'), list_path(:cat => 3)%>
+			  	<%elsif doulin.cat_id == 4 %>
+			  		<%= link_to image_tag("cat-economie.png", :alt => 'Moutoners'), list_path(:cat => 4)%>
+			  	<%elsif doulin.cat_id == 5 %>
+			  		<%= link_to image_tag("cat-culture.png", :alt => 'Moutoners'), list_path(:cat => 5)%>
+			  	<%elsif doulin.cat_id == 6 %>
+			  	 	<%= link_to image_tag("cat-sciences.png", :alt => 'Moutoners'), list_path(:cat => 6)%>
+			  	<%elsif doulin.cat_id == 7 %>
+			  		<%= link_to image_tag("cat-philosophie.png", :alt => 'Moutoners'), list_path(:cat => 7)%>
+			  	<%elsif doulin.cat_id == 8 %>
+			  		<%= link_to image_tag("cat-societe.png", :alt => 'Moutoners'), list_path(:cat => 8)%>
+			  	<%end%>
+			  	</div>
 			</div>
 		</div>
 	</div>

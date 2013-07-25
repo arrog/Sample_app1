@@ -1,31 +1,100 @@
-<%= form_for @debate, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :title, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :title, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :content, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :content, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :type_of_debate, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :type_of_debate, :class => 'text_field' %>
-    </div>
-  </div>
-  
-  <div class="field">
-  <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-  <%= f.text_field :tag_list %>
-  </div>
+<section id="open-debate">
+	<div class="container">
+	<%= form_for @debate, :html => { :class => 'form-horizontal' } do |f| %>
+	 <div class="row">
+		<div class="span10 offset1">
+			<div id="title">
+				<div class="row">
+					
+					<div class="span5">
+					    <div class="image1">	
+							<%= image_tag("ouvert-image.png", alt: "Moutoners", class: "image")%>
+							<%= f.file_field :avatar %>							
+						</div>
+					</div>
+					
+					<div>
+						<div class="row" id="title2">
+							<span class="title3"><%= f.text_field :title, :class => 'edit1' %></span>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                debates_path, :class => 'btn' %>
-  </div>
-<% end %>
+							<div class="row" id="content">
+								<span class="content"><%= f.text_field :content, :class => 'edit1' %></span>
+							
+								<div id="blank1">
+								</div>
+
+						
+								<div class="row" id="vote">
+									<span class="vote2">VOTEZ</span>
+						 			<%= image_tag("vote-oui.png", class: "oui")%>
+
+									<%= image_tag("vote-suisse.png", class: "suisse")%>
+
+									<%= image_tag("vote-non.png", class: "non")%>
+					
+									<div class="row" id="blank2">
+									</div>
+			
+									<div class="row" id="stats">
+										<div class="stat1">
+											<%= @debate.count_for+@debate.count_against + @debate.count_neutral%>
+											<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image")%>
+											|
+								
+											<span class="stat2"><%= @debate.arguments.count%></span>
+											<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image")%>
+											|
+							
+											<span class="stat2"><%= @debate.argcoms.count%></span>
+											<%= image_tag("icone-debat-2.png", alt: "Moutoners", class: "image")%>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>						
+					</div>		
+	 			</div>
+	 		</div>
+	 	</div>				
+	   	<div class="span1" id="catcat">
+			<div class="arrow-left"></div>   		
+	   		<div class="image">
+	   		<% if @debate.cat_id == 1 %>
+	   			<%= link_to image_tag("cat-sports.png", :alt => 'Moutoners'), list_path(:cat => 1)%>
+	   		<%elsif @debate.cat_id == 2 %>
+	   			<%= link_to image_tag("cat-quotidien.png", :alt => 'Moutoners'), list_path(:cat => 2)%>
+	   		<%elsif @debate.cat_id == 3 %>
+	   			<%= link_to image_tag("cat-monde.png", :alt => 'Moutoners'), list_path(:cat => 3)%>
+	   		<%elsif @debate.cat_id == 4 %>
+	   			<%= link_to image_tag("cat-economie.png", :alt => 'Moutoners'), list_path(:cat => 4)%>
+	   		<%elsif @debate.cat_id == 5 %>
+	   			<%= link_to image_tag("cat-culture.png", :alt => 'Moutoners'), list_path(:cat => 5)%>
+	   		<%elsif @debate.cat_id == 6 %>
+	   		 	<%= link_to image_tag("cat-sciences.png", :alt => 'Moutoners'), list_path(:cat => 6)%>
+	   		<%elsif @debate.cat_id == 7 %>
+	   			<%= link_to image_tag("cat-philosophie.png", :alt => 'Moutoners'), list_path(:cat => 7)%>
+	   		<%elsif @debate.cat_id == 8 %>
+	   			<%= link_to image_tag("cat-societe.png", :alt => 'Moutoners'), list_path(:cat => 8)%>
+	   		<%else%>
+
+			<%end%>
+	   		</div>
+			</br>	
+			<p><%= f.text_area :cat_id, :class => 'edit0' %></p>
+	   	</div>
+	
+		<div class="row">
+			<div class="span6 offset4">
+				<%= f.label :tag_list, "Tags (separated by commas)" %><br />
+			  <%= f.text_area :tag_list, :class => 'edit1' %>
+			</div>
+		</div>
+		  <div class="form-actions">
+		    <%= f.submit "VALIDER", :class => 'btn btn-primary' %>
+		    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+		                doulins_path, :class => 'btn' %>
+		  </div>
+	<% end%>			
+	</div>
+</section>

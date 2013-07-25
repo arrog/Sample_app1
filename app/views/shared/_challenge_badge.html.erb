@@ -1,20 +1,57 @@
 <section id="challenge-badge">
-	<div class="container">
   		<div class="row">
-			<div class="span4" id="challenge-badge1">
-				<div class="span2" id="challenge-badge2">
-					DUEL
-				</div>	
-				<div class="span3" id="title">
-    			<h3><%= link_to challenge.title, challenge %></h3>
-					<% if current_user && current_user.following?(challenge)%>
-						<%= link_to"Ne plus suivre", unfollow_challenge_path(challenge)%>
-					<% else %>
-						<%= link_to"Suivre", follow_challenge_path(challenge)%>
-					<% end %>
-				<h4><%= challenge.context %>
+			<div class="span6" id="challenge-badge1">
+				<div class="row">
+					<div class="span1" id="challenge-badge2">
+						<%= image_tag("signe-defi.png", alt: "Moutoners")%>
+					</div>
+					
+					<div class="span4">
+						<div class="texte">
+							<%= image_tag("text-badge.png", alt: "Moutoners")%>
+							<div class="title">
+	    						<%= link_to challenge.title, challenge, class: "title"%>
+							</div>
+							<div class="context">
+							<%= challenge.context %>
+							</div>
+						</div>
+					</div>
+					
 				</div>
 			</div>
+
+			<div class="span2">
+				<div class="follow">
+				<% if current_user && current_user.following?(challenge)%>
+					<%= link_to"Ne plus suivre", unfollow_challenge_path(challenge)%>
+				<% else %>
+					<%= link_to"suivre", follow_challenge_path(challenge)%>
+				<% end %>
+				</div>
+				<div class="categorie">
+					<div class="arrow-left"></div>
+					<div class="image">
+					<% if challenge.cat_id == 1 %>
+						<%= link_to image_tag("cat-sports.png", :alt => 'Moutoners'), list_path(:cat => 1)%>
+					<%elsif challenge.cat_id == 2 %>
+						<%= link_to image_tag("cat-quotidien.png", :alt => 'Moutoners'), list_path(:cat => 2)%>
+					<%elsif challenge.cat_id == 3 %>
+						<%= link_to image_tag("cat-monde.png", :alt => 'Moutoners'), list_path(:cat => 3)%>
+					<%elsif challenge.cat_id == 4 %>
+						<%= link_to image_tag("cat-economie.png", :alt => 'Moutoners'), list_path(:cat => 4)%>
+					<%elsif challenge.cat_id == 5 %>
+						<%= link_to image_tag("cat-culture.png", :alt => 'Moutoners'), list_path(:cat => 5)%>
+					<%elsif challenge.cat_id == 6 %>
+					 	<%= link_to image_tag("cat-sciences.png", :alt => 'Moutoners'), list_path(:cat => 6)%>
+					<%elsif challenge.cat_id == 7 %>
+						<%= link_to image_tag("cat-philosophie.png", :alt => 'Moutoners'), list_path(:cat => 7)%>
+					<%elsif challenge.cat_id == 8 %>
+						<%= link_to image_tag("cat-societe.png", :alt => 'Moutoners'), list_path(:cat => 8)%>
+					<%end%>
+					</div>
+				</div>		
+			</div>
+		
 		</div>
-	</div>
 </section>

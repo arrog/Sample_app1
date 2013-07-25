@@ -226,37 +226,51 @@ margin-top:23px;
     box-shadow: -3px 3px 15px -4px #000 inset;
 //    .border-radius;
   }
-
-#best-debates{
-	padding: 10px 20px 20px 20px;
-	
 	
 	#best-debates1{
-	margin-top: 5px;
-	margin-bottom: 5px;
-	margin-left: 40px;
+	margin-left: 217px;
     text-align: center;
-	padding: 5px 0px 0px 0px;
-	height: 25px;
-	width: 100%;
-	background-color: #EEE;
+	font-family:"gotham";
+	font-size:18px;
+	height: 29px;
+	width: 315px;
+	background-color: #CCC;
 	font-color: #000000;
 	font-weight: bold;
-	line-height: 15 px;
+	line-height: 30px;
 	}
 	
 	#best-debates2{
-	margin-top:15px;
+	margin-top:-29px;
+	margin-left: 560px;
+    text-align: center;
+	font-family:"gotham";
+	font-size:18px;
+	height: 29px;
+	width: 315px;
+	background-color: #CCC;
+	font-color: #000000;
+	font-weight: bold;
+	line-height: 30px;
 	}
+	
+	#best-debates3{
+	margin-left:425px;
+	margin-top:-480px;
+	}
+	#en-bas{
+	margin-bottom:50px;
+	}
+	
+	
+
+#for-badges{
+	margin-left: 435px;
+	margin-top: -490px;
+	
+	.liste{
+	margin-left:10px;
+	margin-bottom:10px;
+	}	
 }
 
-#list-container{
-	padding: 10px 20px 20px 20px;	
-}
-
-#images img { float: left; padding: 10px; }
-#contents { float: left; clear:both; }
-#contents > div { border: 1px solid black; width: 300px; height: 400px; }
-#contents > div:not(.active) { display: none; }
-#vacation > div { border: 1px solid black; width: 300px; height: 400px; }
-#vacation > div:not(.active) { display: none; }

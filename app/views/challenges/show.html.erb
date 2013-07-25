@@ -1,4 +1,5 @@
 <section id="challenge">
+	<div class="container">
 	<% if signed_in? && !current_user.in_challenge?(@challenge)%>
 	<div class = "rejoindre-aleatoirement">
 		<% if @challenge.type_deb == 2 %>
@@ -81,9 +82,7 @@
 	<%elsif @challenge.type_deb == 8 %>
 		<%= render "british", challenge: @challenge %>
 	<%end%>
-</div>
 	
-<div class="container">
 	
 	<div class="row">
 		<div class="span8 offset2" id="juges">
@@ -209,10 +208,8 @@
 			</div>
 		</div>
 	</div>
-		
-</div>
 
-<div class="container">
+
 			<% if @comments.any? %>
 			<div class="row">
 				<div class="span8 offset2">
@@ -227,5 +224,5 @@
 					<%= render "shared/comment_form", comment: @comment, commentable: @challenge, type: "Challenge"%>
 				</div>
 			</div>
-</div>
+
 </section>

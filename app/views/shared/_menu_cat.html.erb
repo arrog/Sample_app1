@@ -1,36 +1,58 @@
-<section>
-	<div class="span2" id="menu-categories">
+	<div id="menu-categories">
 		<div class ="row">
-			<%= link_to "SPORTS", list_path(:cat => 1), :class => "categ"%>
+			<div class="image">
+				<%= link_to image_tag("cat-sports.png", :alt => 'Moutoners'), list_path(:cat => 1)%>
+				<%= link_to "Sports", list_path(:cat => 1), :class => "categ"%>
+			</div>
 		</div>
 		
 		<div class ="row">
-			<%= link_to "VIE", list_path(:cat => 2), :class => "categ"%>
+			<div class="image">
+				<%= link_to image_tag("cat-quotidien.png", :alt => 'Moutoners'), list_path(:cat => 2)%>
+				<%= link_to "Quotidien", list_path(:cat => 2), :class => "categ"%>
+			</div>
 		</div>
 		
 		<div class ="row">
-			<%= link_to "MONDE", list_path(:cat => 3), :class => "categ"%>
+			<div class="image">
+				<%= link_to image_tag("cat-monde.png", :alt => 'Moutoners'), list_path(:cat => 3)%>
+				<%= link_to "Monde", list_path(:cat => 3), :class => "categ"%>
+			</div>
 		</div>
 		
 		<div class ="row">
-			<%= link_to "ECONOMIE", list_path(:cat => 4), :class => "categ"%>
+			<div class="image">
+				<%= link_to image_tag("cat-economie.png", :alt => 'Moutoners'), list_path(:cat => 4)%>
+				<%= link_to "Economie", list_path(:cat => 4), :class => "categ"%>
+			</div>
+		</div>
+				
+		<div class ="row">
+			<div class="image">
+				<%= link_to image_tag("cat-culture.png", :alt => 'Moutoners'), list_path(:cat => 5)%>
+				<%= link_to "Culture", list_path(:cat => 5), :class => "categ"%>
+			</div>
+		</div>
+				
+		<div class ="row">
+			<div class="image">
+				<%= link_to image_tag("cat-sciences.png", :alt => 'Moutoners'), list_path(:cat => 6)%>
+				<%= link_to "Sciences", list_path(:cat => 6), :class => "categ"%>
+			</div>
+		</div>
+				
+		<div class ="row">
+			<div class="image">
+				<%= link_to image_tag("cat-philosophie.png", :alt => 'Moutoners'), list_path(:cat => 7)%>
+				<%= link_to "Philosophie", list_path(:cat => 7), :class => "categ"%>
+			</div>
 		</div>
 		
 		<div class ="row">
-			<%= link_to "CULTURE", list_path(:cat => 5), :class => "categ"%>
-		</div>
-		
-		<div class ="row">
-			<%= link_to "SCIENCES", list_path(:cat => 6), :class => "categ"%>
-		</div>
-		
-		<div class ="row">
-			<%= link_to "QUESTIONNEMENT", list_path(:cat => 7), :class => "categ"%>
-		</div>
-		
-		<div class ="row">
-			<%= link_to "SOCIETE", list_path(:cat => 8), :class => "categ"%>
+			<div class="image">
+				<%= link_to image_tag("cat-societe.png", :alt => 'Moutoners'), list_path(:cat => 8)%>
+				<%= link_to "Société", list_path(:cat => 8), :class => "categ"%>
+			</div>
 		</div>
 		
 	</div>
-<section>

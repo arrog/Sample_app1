@@ -26,11 +26,20 @@ class DoulinsController < ApplicationController
       @expertise = @doulin.expertises.new
       @arguments = @argumentable.arguments
       @argument = Argument.new
-      @comments = @commentable.comments
-      @comment = @commentable.comments.new
   end
   
   def edit 
+    @doulin = Doulin.find(params[:id])
+  end
+  
+  def update
+    @doulin = Doulin.find(params[:id])
+       if @doulin.update_attributes(params[:doulin])
+         flash[:success] = "Profile updated"
+              redirect_to @doulin
+       else
+         render 'edit'
+       end
   end
   
   def index

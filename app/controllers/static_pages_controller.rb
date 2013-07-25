@@ -16,6 +16,9 @@ class StaticPagesController < ApplicationController
     @lists = (@challenges +@debates).shuffle
   end
   def cgu
+    @challenges = Challenge.all
+    @debates = Debate.all
+    @lists = (@challenges +@debates).shuffle
   end
   def help
   end

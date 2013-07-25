@@ -1,6 +1,6 @@
 class ArgumentsController < ApplicationController
  before_filter :load_argumentable
- before_filter :authenticate_user!, only: [:new, :create, :destroy]
+ before_filter :authenticate_user!, only: [:new, :create, :destroy, :like]
 
   def new
     @argument = @argumentable.arguments.new
@@ -23,7 +23,8 @@ class ArgumentsController < ApplicationController
         flash[:success] = "Tu argumentes!"
         redirect_to @argumentable
       else
-        redirect_to @argumentable
+        flash[:errors]
+        redirect_to :back
       end
   end
   

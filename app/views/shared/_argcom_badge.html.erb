@@ -1,8 +1,11 @@
 <section id="argcom2">
-		<div class="span1" id="user">
-			<%= argcom.user.name %>
+		<div id="imageuser">
+			<%= image_tag argcom.user.avatar.url(:small), class: "image" %>
 		</div>
-		<div class="span5">
+		<div class="span1" id="user">
+			<%= argcom.user.name%>
+		</div>
+		<div class="span6" id="content">
 			<%= argcom.content %>
 			</br>
 			<% if current_user?(argcom.user) %>

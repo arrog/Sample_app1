@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :admin 
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :admin, :content
 
   include ::PublicActivity::Common
   
@@ -127,7 +127,7 @@ class User < ActiveRecord::Base
       Membership.create!(user_id: user.id, group_id: group.id, state: "accepted")
     end
     
-    def admin?(group)
+    def admin_group?(group)
       memberships.where(group_id: group.id, role:"admin").any?
     end
     

@@ -1,7 +1,7 @@
 class Doulin < ActiveRecord::Base
   include ::PublicActivity::Common
     
-  attr_accessible :context, :title, :tag_list, :cat_id, :avatar
+  attr_accessible :content, :title, :tag_list, :cat_id, :avatar, :context
   
   acts_as_taggable
   acts_as_followable
@@ -12,7 +12,6 @@ class Doulin < ActiveRecord::Base
   has_many :repliques, as: :replicable
   has_many :expertises
   has_many :users, through: :expertises
-  
   has_many :comments, as: :commentable
   
   has_reputation :vote_experts, source: :user, aggregated_by: :sum
@@ -37,7 +36,7 @@ class Doulin < ActiveRecord::Base
                     :s3_host_name => 's3-eu-west-1.amazonaws.com'
   
                         
-  scope :permission_doulin, -> { where(:state => ["online", "first", "third", "fifth", "seventh","second", "fourth", "sixth", "eighth","over"]) }
+  scope :permission_doulin, -> { where(:state => ["online", "first", "third", "fifth", "seventh","second", "forth", "sixth", "eighth","over"]) }
 
   paginates_per 10
   
@@ -65,6 +64,7 @@ class Doulin < ActiveRecord::Base
       transition :seventh => :eighth
     end
     event :finish do
+      transition :sixth => :over
       transition :eighth => :over
     end
   end
@@ -83,14 +83,6 @@ class Doulin < ActiveRecord::Base
   
   def have_second?
     expertises.where(position:2).any?
-  end
-  
-  def count_for
-    evaluations.where( target_type: self.class, target_id: self.id, value: 1.0 ).count
-  end
-  
-  def count_against
-    evaluations.where( target_type: self.class, target_id: self.id, value: -1.0 ).count
   end
   
   def first_argument
@@ -117,5 +109,31 @@ class Doulin < ActiveRecord::Base
   def eighth_argument
     arguments.where(position:8).first
   end
+
+  def count_for
+    evaluations.where( target_type: self.class, target_id: self.id, value: 1.0 ).count
+  end
   
+  def count_against
+    evaluations.where( target_type: self.class, target_id: self.id, value: -1.0 ).count
+  end
+  
+  def valeur_vote(user)
+    self.evaluations.where(target_type: self.class, target_id: self.id, source_id: user.id).first.value      
+  end
+  
+  def rapport
+    if (self.count_for+self.count_against) == 0
+      0
+    else
+      100*self.count_for/(self.count_for+self.count_against)
+    end
+  end
+  def rapport_inverse
+    if (self.count_for+self.count_against) == 0
+      0
+    else
+    100 - self.rapport
+    end
+  end
 end

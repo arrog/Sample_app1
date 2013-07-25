@@ -1,104 +1,161 @@
-<%= @debate.rapport%>
 <section id="open-debate">
 	<div class="container">
-		<div class="row">
-			<div class="span10 offset1">
-				<div id="title">
+		<% if current_user.try(:admin?)%>
+			<a><%= link_to "modifier les informations", edit_debate_path(@debate), class: "edit3"%></a>
+		<%end%>		
+	 <div class="row">
+		<div class="span10 offset1">
+			<div id="title">
+				<div class="row">
+					
 					<div class="span5">
-				        <div class="image" id="image">	
-							<div class="row">
-						        <div id="stats2">
-								<%= render "shared/voting_bar", rapport: @debate.rapport%>
-								</br>
-								| <%= pluralize @debate.count_for, "vote pour" %>
-					        	| <%= pluralize @debate.count_against, "vote contre" %>
-					        	| <%= pluralize @debate.count_neutral, "personnes suisses" %>
-						        </div>
-							</div>
-							</div>
-				    </div>
-					<div class= "span5">
-						<div id="title2">
-							<h1><%= @debate.title%></h1>
-							</br>
-							<%= @debate.content%>
-							</br>
-							Tags: <%= raw @debate.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
-							</br>
-							<div class="row">
-								<%if current_user %>
-								<div class="span2" id="vote">
-									 <%= link_to "up", vote_debate_path(@debate, type: "up"), method: "post", :class => "vote2" %>
-								</div>
-								<div class="span2" id="vote">
-									 <%= link_to "down", vote_debate_path(@debate, type: "down"), method: "post", class: "vote2" %>
-								</div>
-								<div id="vote" class="span2">
-									 <%= link_to "neutral", vote_debate_path(@debate, type: "neutral"), method: "post", class: "vote2" %>
-								</div>
-								<%else%>
-								<div class="connecte-toi">	
-									<h3>CONNECTE TOI POUR VOTER</h3>
-								</div>
-								<%end%>
-							</div>
-							
-							<div class="span5" id="blank">
-							</div>
-							
-							<div class="row">
-								<div class="span1" id="stats">
-									<h2><%= @debate.reputation_for(:votes).to_i%> vote |</h2>
-								</div>
-								
-								<div class="span1" id="stats">
-									<h2><%= @debate.arguments.count%> arg |</h2>
-								</div>
-								
-								<div class="span1" id="stats">
-									<h2><%= @debate.argcoms.count%> com</h2>
-								</div>
-							</div>
+						
+					    <div class="image1">	
+							<%= image_tag("ouvert-image.png", alt: "Moutoners", class: "image")%>							
+							<div id="stats2">								
+							    <div class="row" id="resultats">
+									<span class="resultats-oui">OUI</span>
+									<span class="resultats-oui1">
+										<% if @debate.evaluations.any?%>
+				<%=100*@debate.count_for / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%
+										<%else%> 0%
+										<%end%>
+				</span>
+									<span class="resultats-non1">
+			   						<% if @debate.evaluations.any?%>
+			   <%=100*@debate.count_against / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%
+			   						<%else%> 0%
+									<%end%>
+				</span>
+									<span class="resultats-non">NON</span>									
+								</div>								
+								<p class='barre'><%= render "shared/voting_bar", rapport: @debate.rapport%></p>
+						    </div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-		<div id="arguments">
-			<div id="choix box">
-				<% if signed_in? %>
-					<% if @debate.has_evaluation?(:votes, current_user) %>
-						<%= link_to "New argument", [:new, @argumentable, :argument] %>
-					<% else  %>
-					"il faut voter pour le débat pour pouvoir participer!"
-					<%end%>
-				<%end%>
-			</div>
+					
+					<div>
+						<div class="row" id="title2">
+							<span class="title3"><%= link_to @debate.title, @debate, class: "title3"%></span>
+
+							<div class="row" id="content">
+								<span class="content"><%= @debate.content%></span>
+							
+								<div id="blank1">
+								</div>
+
+						
+								<div class="row" id="vote">
+									<span class="vote2">VOTEZ</span>
+						 			<%= link_to image_tag("vote-oui.png", class: "oui"), vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>
+
+									<%= link_to image_tag("vote-suisse.png", class: "suisse"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %>
+
+									<%= link_to image_tag("vote-non.png", class: "non"), vote_debate_path(@debate, type: "down"), method: "post", class: "non"%>
+					
+									<div class="row" id="blank2">
+									</div>
 			
-				<% @arguments.each do |argument| %>
-				<div class="span10 offset1">
-					<% if @debate.valeur_vote(argument.user) == 1.0 %>
-						<%= render "shared/argument_badge", :argument => argument, :argumentable => @debate %>
-					<%elsif @debate.valeur_vote(argument.user) == - 1.0 %> 
-						<%= render "shared/argument_contre_badge", :argument => argument, :argumentable => @debate %>
-					<% else%>
-						<%= render "shared/argument_neutre_badge", :argument => argument, :argumentable => @debate %>
-					<% end %>
+									<div class="row" id="stats">
+										<div class="stat1">
+											<%= @debate.count_for+@debate.count_against + @debate.count_neutral%>
+											<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image")%>
+											|
+								
+											<span class="stat2"><%= @debate.arguments.count%></span>
+											<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image")%>
+											|
+							
+											<span class="stat2"><%= @debate.argcoms.count%></span>
+											<%= image_tag("icone-debat-2.png", alt: "Moutoners", class: "image")%>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>						
+					</div>		
+	 			</div>
+	 		</div>
+	 	</div>				
+	   	<div class="span1" id="catcat">
+			<div class="arrow-left"></div>   		
+	   		<div class="image">
+	   		<% if @debate.cat_id == 1 %>
+	   			<%= link_to image_tag("cat-sports.png", :alt => 'Moutoners'), list_path(:cat => 1)%>
+	   		<%elsif @debate.cat_id == 2 %>
+	   			<%= link_to image_tag("cat-quotidien.png", :alt => 'Moutoners'), list_path(:cat => 2)%>
+	   		<%elsif @debate.cat_id == 3 %>
+	   			<%= link_to image_tag("cat-monde.png", :alt => 'Moutoners'), list_path(:cat => 3)%>
+	   		<%elsif @debate.cat_id == 4 %>
+	   			<%= link_to image_tag("cat-economie.png", :alt => 'Moutoners'), list_path(:cat => 4)%>
+	   		<%elsif @debate.cat_id == 5 %>
+	   			<%= link_to image_tag("cat-culture.png", :alt => 'Moutoners'), list_path(:cat => 5)%>
+	   		<%elsif @debate.cat_id == 6 %>
+	   		 	<%= link_to image_tag("cat-sciences.png", :alt => 'Moutoners'), list_path(:cat => 6)%>
+	   		<%elsif @debate.cat_id == 7 %>
+	   			<%= link_to image_tag("cat-philosophie.png", :alt => 'Moutoners'), list_path(:cat => 7)%>
+	   		<%elsif @debate.cat_id == 8 %>
+	   			<%= link_to image_tag("cat-societe.png", :alt => 'Moutoners'), list_path(:cat => 8)%>
+	   		<%end%>
+	   		</div>
+	   	</div>
 
-						<% if user_signed_in? %>
-							<% if @debate.has_evaluation?(:votes, current_user) %>
-								<%= link_to "Reaction", argument_path(argument) %>
-							<% else  %> il faut voter pour le débat pour pouvoir réagir pour pouvoir réagir!
-							<% end %>
-						<%end%>
-				</div>
-				<%end%>
+		</div>			
+		
 
-		</div>		
+		
+		<div class="row" id="arguments">
+
+					<% if current_user && @debate.has_evaluation?(:votes, current_user) %>
+					
+						<div class="row" id="box-argument">
+				   			<% if @debate.valeur_vote(current_user) == 1.0 %>
+				   				<%= render "shared/argument_form", argumentable: @debate, argument: current_user.arguments.new, position:1 %>
+				   			<%elsif @debate.valeur_vote(current_user) == - 1.0 %> 
+				   				<%= render "shared/argument_contre_form", argumentable: @debate, argument: current_user.arguments.new, position:1 %>
+				   			<% else%>
+				   				<%= render "shared/argument_neutre_form", argumentable: @debate, argument: current_user.arguments.new, position:1 %>
+				   			<% end %>
+				    	</div>
+
+						<div class="row" id="voter">
+							<div class="texte">Contribue au débat!</div>
+							<div class="arrow-down-newarg"></div>
+							<div class="arrow-up-newarg"></div>
+						</div>
+				
+					<% else  %>
+						<div class="row" id="voter">
+							<% if current_user%>			
+							<div class="texte">Vote, puis contribue au débat!</div>
+							<%else%>
+							<div class="texte"><%= link_to 'Vote, puis contribue au débat', new_user_session_path, class: "texte" %></div>
+							<%end%>
+						</div>
+					<%end%>					
+		</div>
+		
+		
+		<div>
+			<% @arguments.each do |argument| %>
+			<div class="row">
+				<% if @debate.valeur_vote(argument.user) == 1.0 %>
+					<%= render "shared/argument_badge", :argument => argument, :argumentable => @debate %>
+				<%elsif @debate.valeur_vote(argument.user) == - 1.0 %> 
+					<%= render "shared/argument_contre_badge", :argument => argument, :argumentable => @debate %>
+				<% else%>
+					<%= render "shared/argument_neutre_badge", :argument => argument, :argumentable => @debate %>
+				<% end %>
+
+			</div>
+			<%end%>
+			
+			
+		</div>
+		<div>
+		</br></br>		</br>		</br>
+		</div>
 	</div>
 </section>
-
-
-
-
-
+					

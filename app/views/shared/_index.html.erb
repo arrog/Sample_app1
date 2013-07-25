@@ -1,20 +1,15 @@
-<section id="list container">
 
-		<div class="span7 offset " id="list-container1">  
-		      <% if object.any? %>
-				</br>
-		        <div class="courses_list">
-		        <% object.each do |ob| %>
-				 <% if ob.class == Debate %>
-				 	<%= render "shared/debate_badge", :debate => ob %>
-				<% elsif ob.class == Doulin %>
-					<%= render "shared/doulin_badge", :doulin => ob %>
-				<% elsif ob.class == Challenge %>
-					 <%= render "shared/challenge_badge", :challenge => ob %>
-				<% end %>
-				<% end %>
-		        </div>
-		      <% end %>
-		  </div>
-
-</section>
+      <% if object.any? %>
+		</br>
+        <% object.each do |ob| %>
+		<div class="liste">
+			 <% if ob.class == Debate %>
+			 	<%= render "shared/debate_badge", :debate => ob %>
+			<% elsif ob.class == Doulin %>
+				<%= render "shared/doulin_badge", :doulin => ob %>
+			<% elsif ob.class == Challenge %>
+				 <%= render "shared/challenge_badge", :challenge => ob %>
+			<% end %>
+		</div>
+		<% end %>
+      <% end %>
