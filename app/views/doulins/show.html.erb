@@ -290,13 +290,13 @@
 		
 		<div class='row'>
 			<div class="row" id="comments-to-close">
-				<%= if @doulins.comments.count >= 2%>
+				<% if @doulin.comments.any?%>
 					<%= render "shared/comment_badge", comment:@doulin.comments.first%>
-					<%= render "shared/comment_badge", comment:@doulin.comments.second%>
-				<%= elsif @doulins.comments.count = 1%>
-					<%= render "shared/comment_badge", comment:@doulin.comments.first%>
-				<%= end%>
-				
+					<%if @doulin.comments.count = 1 %>
+						<%= render "shared/comment_badge", comment:@doulin.comments.second%>
+					<% end%>
+				<%end%>
+					
 			</div>
 			<div class="row" id="comments-to-open">
 				<% @doulin.comments.each do |m| %>
