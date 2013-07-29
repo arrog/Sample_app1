@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, only: [:index, :edit, :update, :following, :followers]
-  before_filter :correct_user,   only: [:edit, :update]
+  before_filter :authenticate_user!, only: [:index, :edit, :update, :following, :followers, :follow, :unfollow, :team, :defier, :invite_group]
+  before_filter :correct_user,   only: [:edit, :update, :notifications]
   before_filter :admin_user,     only: :destroy
   before_filter :load_group, only: :invite_group
   
@@ -19,11 +19,32 @@ class UsersController < ApplicationController
         render 'edit'
       end
   end
-    
+  
+  def notifications
+    @user = User.find(params[:id])
+  end
+  
+  def active
+    @user = User.find(params[:id])
+  end
+  
+  def my_groups
+    @user = User.find(params[:id])
+  end
+  
+  def activities
+    @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
+    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: @user.id)
+  end
+  
   def show
       @user = User.find(params[:id])
-      @microposts = @user.microposts.paginate(page: params[:page])
-      @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: @user.id)
+      if current_user && current_user == @user
+        redirect_to notifications_user_path(@user)
+      else
+        redirect_to activities_user_path(@user)
+      end
   end
   
   

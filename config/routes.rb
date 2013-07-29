@@ -14,6 +14,10 @@ SampleApp::Application.routes.draw do
         get :unfollow
         get :team
         get :defier
+        get :notifications
+        get :activities
+        get :active
+        get :my_groups
       end
   end  
   
@@ -83,6 +87,7 @@ SampleApp::Application.routes.draw do
     resources :judgments
     resources :repliques
      member do
+        match 'vote_challenge'
         match 'vote'
         match 'starting'
         match 'next'

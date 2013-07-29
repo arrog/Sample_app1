@@ -8,7 +8,7 @@
 			<div id="title">
 				<div class="row">
 					
-					<div class="span5">
+					<div class="span5" id="gauche-ouvert">
 						
 					    <div class="image1">	
 							<%= image_tag("ouvert-image.png", alt: "Moutoners", class: "image")%>							
@@ -34,47 +34,39 @@
 						</div>
 					</div>
 					
-					<div>
+					<div class="span5" id="droite-ouvert">
 						<div class="row" id="title2">
-							<span class="title3"><%= link_to @debate.title, @debate, class: "title3"%></span>
+							<%= link_to @debate.title, @debate, class: "title3"%>
+						</div>
+						<div class="row" id="content">
+							<div class="content"><%= @debate.content%></div>
+						</div>
+						<div class="row" id="vote">
+							<span class="vote2">VOTEZ</span>
+				 			<%= link_to image_tag("vote-oui.png", class: "oui"), vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>
 
-							<div class="row" id="content">
-								<span class="content"><%= @debate.content%></span>
-							
-								<div id="blank1">
-								</div>
+							<%= link_to image_tag("vote-suisse.png", class: "suisse"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %>
 
+							<%= link_to image_tag("vote-non.png", class: "non"), vote_debate_path(@debate, type: "down"), method: "post", class: "non"%>
+						</div>
 						
-								<div class="row" id="vote">
-									<span class="vote2">VOTEZ</span>
-						 			<%= link_to image_tag("vote-oui.png", class: "oui"), vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>
+						<div class="row" id="stats">
+							<div class="stat1">
+								<%= @debate.count_for+@debate.count_against + @debate.count_neutral%>
+								<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image")%>
+								|
 
-									<%= link_to image_tag("vote-suisse.png", class: "suisse"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %>
+								<span class="stat2"><%= @debate.arguments.count%></span>
+								<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image")%>
+								|
 
-									<%= link_to image_tag("vote-non.png", class: "non"), vote_debate_path(@debate, type: "down"), method: "post", class: "non"%>
-					
-									<div class="row" id="blank2">
-									</div>
-			
-									<div class="row" id="stats">
-										<div class="stat1">
-											<%= @debate.count_for+@debate.count_against + @debate.count_neutral%>
-											<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image")%>
-											|
-								
-											<span class="stat2"><%= @debate.arguments.count%></span>
-											<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image")%>
-											|
-							
-											<span class="stat2"><%= @debate.argcoms.count%></span>
-											<%= image_tag("icone-debat-2.png", alt: "Moutoners", class: "image")%>
-										</div>
-									</div>
-									
-								</div>
+								<span class="stat2"><%= @debate.argcoms.count%></span>
+								<%= image_tag("icone-debat-2.png", alt: "Moutoners", class: "image")%>
 							</div>
-						</div>						
-					</div>		
+						</div>
+						
+					</div>
+					
 	 			</div>
 	 		</div>
 	 	</div>				

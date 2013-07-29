@@ -1,9 +1,26 @@
-<div id="new-argcom">
-	<%= form_for(argcom) do |f| %>
-	  <%= render 'shared/error_messages', object: f.object %>
-	  <div class="field">
-	    <%= f.text_field :content, placeholder: "réagis à l'argument", class: "text-reaction" %>
-		<%= f.hidden_field :argument_id, :value => argument.id %>
-	  	<%= f.submit "Post", class: "reaction" %>
-	<% end %>
-</div>
+<section id="argcom2">
+		<div id="imageuser">
+			<% if current_user %>
+				<%= image_tag current_user.avatar.url(:small), class: "image" %>
+			<% elsif %>
+				<%= image_tag ("default_small.jpg")%>
+			<% end%>
+		</div>
+		<div class="span1" id="user">
+			<% if current_user%>
+				<%= current_user.fitting_name%>
+			<% elsif %>
+				Connecte-toi
+			<% end%>
+		</div>
+		<div class="span6" id="content">
+			<%= form_for(argcom) do |f| %>
+			  <%= render 'shared/error_messages', object: f.object %>
+
+			    <%= f.text_field :content, placeholder: "réagis à l'argument", class: "text-reaction" %>
+				<%= f.hidden_field :argument_id, :value => argument.id %>
+			  	<%= f.submit "Post", class: "reaction" %>
+			<% end %>
+			</br>
+		</div>
+</section>

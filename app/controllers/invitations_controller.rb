@@ -11,12 +11,12 @@ class InvitationsController < ApplicationController
   end
   
   def create
-    @invitation = current_user.new(params[:invitation])
+    @invitation = Invitation.new(params[:invitation])
     if @invitation.save
       flash[:success] = "You invited him"
-      redirect_to back
+      redirect_to :back
     else
-      render 'new'
+      redirect_to :back
     end
   end
   
@@ -24,15 +24,15 @@ class InvitationsController < ApplicationController
      @invitation = Invitation.find(params[:id])
      @challenge = @invitation.challenge
      @invitation.accept
-     redirect_to challenge_path(@challenge)
+     redirect_to :back
   end
    
   def reject
      @invitation = Invitation.find(params[:id])
      @challenge = @invitation.challenge
      @invitation.reject
-     redirect_to invitations_path
-   end 
+     redirect_to :back
+  end 
   
    private
 

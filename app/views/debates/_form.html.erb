@@ -1,59 +1,37 @@
 <section id="open-debate">
 	<div class="container">
-	<%= form_for @debate, :html => { :class => 'form-horizontal' } do |f| %>
+	<%= form_for @debate, :html => { :class => 'form-horizontal' } do |f| %>	
 	 <div class="row">
 		<div class="span10 offset1">
 			<div id="title">
 				<div class="row">
 					
-					<div class="span5">
+					<div class="span5" id="gauche-ouvert">
+						
 					    <div class="image1">	
 							<%= image_tag("ouvert-image.png", alt: "Moutoners", class: "image")%>
-							<%= f.file_field :avatar %>							
+							<%= f.file_field :avatar %>								
+
 						</div>
 					</div>
 					
-					<div>
+					<div class="span5" id="droite-ouvert">
 						<div class="row" id="title2">
-							<span class="title3"><%= f.text_field :title, :class => 'edit1' %></span>
-
-							<div class="row" id="content">
-								<span class="content"><%= f.text_field :content, :class => 'edit1' %></span>
-							
-								<div id="blank1">
-								</div>
+							<%= f.text_field :title, :class => 'edit1' %>
+						</div>
+						<div class="row" id="content">
+							<div class="content"><%= f.text_field :content, :class => 'edit1' %></div>
+						</div>
 
 						
-								<div class="row" id="vote">
-									<span class="vote2">VOTEZ</span>
-						 			<%= image_tag("vote-oui.png", class: "oui")%>
-
-									<%= image_tag("vote-suisse.png", class: "suisse")%>
-
-									<%= image_tag("vote-non.png", class: "non")%>
-					
-									<div class="row" id="blank2">
-									</div>
-			
-									<div class="row" id="stats">
-										<div class="stat1">
-											<%= @debate.count_for+@debate.count_against + @debate.count_neutral%>
-											<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image")%>
-											|
-								
-											<span class="stat2"><%= @debate.arguments.count%></span>
-											<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image")%>
-											|
-							
-											<span class="stat2"><%= @debate.argcoms.count%></span>
-											<%= image_tag("icone-debat-2.png", alt: "Moutoners", class: "image")%>
-										</div>
-									</div>
-									
-								</div>
+						<div class="row" id="stats">
+							<div class="stat1">
+									TAGS:<%= f.text_area :tag_list, :class => 'edit1' %>
 							</div>
-						</div>						
-					</div>		
+						</div>
+						
+					</div>
+					
 	 			</div>
 	 		</div>
 	 	</div>				
@@ -76,25 +54,20 @@
 	   			<%= link_to image_tag("cat-philosophie.png", :alt => 'Moutoners'), list_path(:cat => 7)%>
 	   		<%elsif @debate.cat_id == 8 %>
 	   			<%= link_to image_tag("cat-societe.png", :alt => 'Moutoners'), list_path(:cat => 8)%>
-	   		<%else%>
-
-			<%end%>
+	   		<%end%>
 	   		</div>
-			</br>	
-			<p><%= f.text_area :cat_id, :class => 'edit0' %></p>
+		</br>	
+		<p><%= f.text_area :cat_id, :class => 'edit0' %></p>
 	   	</div>
-	
-		<div class="row">
-			<div class="span6 offset4">
-				<%= f.label :tag_list, "Tags (separated by commas)" %><br />
-			  <%= f.text_area :tag_list, :class => 'edit1' %>
-			</div>
-		</div>
-		  <div class="form-actions">
-		    <%= f.submit "VALIDER", :class => 'btn btn-primary' %>
-		    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-		                doulins_path, :class => 'btn' %>
-		  </div>
-	<% end%>			
+
+		</div>			
+		
+			  <div class="form-actions">
+			    <%= f.submit "VALIDER", :class => 'btn btn-primary' %>
+			    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+			                doulins_path, :class => 'btn' %>
+			  </div>
+		<% end%>
+
 	</div>
 </section>

@@ -7,12 +7,16 @@ class Invitation < ActiveRecord::Base
   belongs_to :challenge
   
   state_machine initial: :unseen do   
+    
     event :accept do
       transition :unseen => :accepted
     end  
+    
     event :reject do
+      transition :accepted => :rejected
       transition :unseen => :rejected
     end
+  
   end
   
 end

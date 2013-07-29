@@ -44,7 +44,7 @@
 					</div>
 					<div id="chiffre">
 						<% if current_user %>
-							3
+							<%= link_to current_user.notifications, notifications_user_path(current_user), class: "chiffre"%>
 						<%else%>
 							0
 						<%end%>
@@ -57,7 +57,7 @@
 					</div>
 					<div id="chiffre">
 						<% if current_user %>
-							3
+							<%= link_to current_user.notifications, notifications_user_path(current_user), class: "chiffre"%>
 						<%else%>
 							0
 						<%end%>
@@ -72,7 +72,7 @@
 					</div>
 					<div id="chiffre">
 						<% if current_user %>
-							3
+							<%= link_to current_user.notifications, notifications_user_path(current_user), class: "chiffre" %>
 						<%else%>
 							0
 						<%end%>
@@ -84,7 +84,7 @@
 					</div>
 					<div id="chiffre">
 						<% if current_user %>
-							3
+							<%= link_to current_user.notifications, notifications_user_path(current_user), class: "chiffre"%>
 						<%else%>
 							0
 						<%end%>
@@ -123,7 +123,7 @@
 			<div class ="row">
 			  <% if user_signed_in? %>
 	            <div id="user-nav" class="btn-group">
-	                <%= current_user.name %>
+	                <%= link_to current_user.fitting_name, current_user, class: "white" %>
 	              <a id="dropdown" class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 	                <span class="caret"></span>
 	              </a>
@@ -164,38 +164,26 @@
 		   <div class = "span11", id = "navigation">
 		 	<div class = "span11">
 		     <ul id="main-nav" class="unstyled">
+				
 
-                 <%= content_tag(:li, :class => ("active" if current_page?(list_path))) do %>
-                   <%= link_to list_path do %>
-                     <h3>TOUS LES DEBATS
-                     <%= image_tag('tiret-header.png', :alt => 'Moutoner')%></h3>
- 					<% end %>
-                 <% end %>
+                 <li><%= link_to "TIMELINE", list_path, class: "black" %></li>
+				
+				<li class="tiret">|</li>
+				
+				 <li><%= link_to "LES EXPERTS", experts_path, class: "black" %></li>
+				
+				<li class="tiret">|</li>
 
-                 <%= content_tag(:li, :class => ("active" if current_page?(experts_path))) do %>
-                   <%= link_to experts_path do %>
-                     <h3>LES EXPERTS
-					<%= image_tag('tiret-header.png', :alt => 'Moutoner')%></h3>
-                   <% end %>
-                 <% end %>
+                 <li><%= link_to "DEBATS OUVERTS", debats_path, class: "black" %></li>
+				
+				<li class="tiret">|</li>
 
-          		<%= content_tag(:li, :class => ("active" if current_page?(debats_path))) do %>
-                   <%= link_to debats_path do %>
-                     <h3>DEBATS OUVERTS
-					<%= image_tag('tiret-header.png', :alt => 'Moutoner') %></h3>
-                   <% end %>
-                 <% end %>
-		 		<%= content_tag(:li, :class => ("active" if current_page?(dialectiques_path))) do %>
-                   <%= link_to dialectiques_path do %>
-                     <h3>DEFIS
-					<%= image_tag('tiret-header.png', :alt => 'Moutoner') %></h3>
-                   <% end %>
-                <% end %>
-		 		<%= content_tag(:li, :class => ("active" if current_page?(groups_path))) do %>
-                   <%= link_to groups_path do %>
-                     <h3>LES GROUPES</h3>
-                   <% end %>
-                <% end %>
+                 <li><%= link_to "DEFIS", dialectiques_path, class: "black" %></li>
+				
+				<li class="tiret">|</li>
+
+
+                 <li class="last"><%= link_to "LES GROUPES", groups_path, class: "black" %></li>
                </ul>
 		 	</div>
 		   </div>

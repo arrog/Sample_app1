@@ -17,6 +17,8 @@ gem 'devise'
 gem 'unicorn'
 gem 'public_activity'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'thin'
+
 
 group :development, :test do
   gem 'annotate', '2.5.0'

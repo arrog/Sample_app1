@@ -1,5 +1,5 @@
 header {
-  height: 252px;
+  height: 250px;
   position: relative;
   
   
@@ -61,6 +61,10 @@ header {
 		font-family: 'bebasneue-webfont';
 		font-size:25px;
 		color: white;
+
+		.chiffre{
+			color: white;
+		}		
 		}
 	}
 	
@@ -82,6 +86,11 @@ header {
 		font-family: 'bebasneue-webfont';
 		font-size:25px;
 		color: white;
+
+		.chiffre{
+			color: white;
+		}
+
 		}
 	}	
 	}
@@ -105,6 +114,10 @@ header {
 		font-family: 'bebasneue-webfont';
 		font-size:25px;
 		color: white;
+		
+		.chiffre{
+			color: white;
+		}
 		}
 	}	
 
@@ -126,6 +139,10 @@ header {
 		font-family: 'bebasneue-webfont';
 		font-size:25px;
 		color: white;
+	
+		.chiffre{
+			color: white;
+		}		
 		}
 	}	
 	}
@@ -144,6 +161,10 @@ header {
 	  text-align:center;
       line-height: 25px;
 	  font-size: 15px;
+	
+	.white{
+	color: white;
+	}
 	
     }
 	#deconnecte{
@@ -234,36 +255,38 @@ header {
 	margin-top: 10px;
 	margin-left: 60px;
 	margin-right: -10px;
+	margin-bottom: 7px;
 	border-bottom: $borderDashed;
 	    font-size: 20px;
 	}
 	
 	#main-nav {
-    margin-left:70px;
+    margin-left:40px;
 	margin-top: 10px;
-	
+	font-family: "gotham";
+	font-size:20px;
+	font-color: black;
+
+	.tiret{
+	color: #808080;
+	font-size: 18px;
+	font-family:"georgia";
+	font-weight: bold;
+	}
+
+    .black{
+		color: #000;
+	}	
       li {
-        
         display: inline-block;
-      
-        a {
-          strong {
-            display: block;
-            font-size: 20px;
-            @include title;
-			color:#000000;
-          }
-        
-        }
+		padding-right:22px;
       }
-    
+	
+	.last{
+	padding-right:0px;
+	}
       li.active, li:hover {
-        a {
-          text-decoration: none;        
-          strong {
-            color: $mainColor;
-          }
-        }
+		text-decoration:underline;
       }
     }
 

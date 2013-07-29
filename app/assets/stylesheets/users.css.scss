@@ -1,3 +1,212 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#user-profile{
+
+}
+
+#activities{
+	margin-left: 10px;
+	margin-top: -15px;
+	#intro-activities{
+		margin-left: -20px;
+		
+		.texte{
+			background-color: red;
+			height:30px;
+			padding-left: 10px;
+			padding-top: 10px;
+			background-color: #D3D3D3;
+			font-style: italic;
+			font-size: 14px;
+			font-family: "georgia";
+		
+		}
+
+	}
+
+}
+
+
+
+#notifications{
+	margin-left: 10px;
+	margin-top: -15px;
+	#intro-notifications{
+		margin-left: -20px;
+		
+		.texte{
+			height:30px;
+			padding-left: 10px;
+			padding-top: 10px;
+			background-color: #FF7575;
+			font-style: italic;
+			font-size: 14px;
+			font-family: "georgia";
+		
+		}
+		.action-notification{
+			margin-top: - 30px;
+			padding: 6px;
+			margin-left: 470px;
+			width: 22px;
+			background-color: #808080;
+			font-family: "bebasneue-webfont";
+			text-align: center;
+			font-size:22px;
+			color: black;
+			}
+			
+		.notification-link:hover{
+				color: white;
+			}
+
+		.action-notification2{
+			margin-top: - 30px;
+			padding: 6px;
+			margin-left: 510px;
+			width: 25px;
+			background-color: #808080;
+			font-family: "bebasneue-webfont";
+			text-align: center;
+			font-size:22px;
+			
+		}			
+
+	}
+
+}
+
+
+#profile-header{
+	margin-top: 17px;
+	margin-bottom: 40px;
+	font-family: "georgia";
+	font-style: italic;
+	font-weight: bold;
+	font-size: 20px;
+	margin-left:240px;
+
+	
+	li {
+      display: inline-block;
+	  padding-right: 20px;
+    }
+	
+	.tiret{
+	color: #808080;
+	font-size: 21px;
+	}
+  
+    li.active, li:hover {
+		text-decoration:underline;
+    }
+}
+
+#profile-badge{
+	background-color: #D3D3D3;
+	margin-left:211px;
+	width: 170px;
+	min-height: 400px;
+	margin-bottom: 30px;
+	border-radius: 12px;
+	
+	#image1{
+		width:150px;
+		height:160px;
+		margin:10px;
+		img { width: 150px; height:150px;}
+		border-bottom: 1px solid white;
+		
+		.image{
+		}
+	}
+	
+	#nom-profile{
+		font-family:"gotham";
+		font-size: 16px;
+		font-color: black;
+		margin-left: 10px;
+		width: 150px;
+		text-align: center;
+	}
+	
+	#description-profile{
+		font-style: italic;
+		font-family: "georgia";
+		margin-left: 10px;
+		width: 150px;
+		margin-bottom: 8px;
+		border-bottom: 10px solid white;
+		.field2{
+		background-color: white;
+		border-radius: 0px;
+		border: none;
+		width: 130px;
+		}
+		
+		.texte{
+		margin-top: 5px;
+		margin-bottom: 8px;
+		}
+		.actions{
+		margin-top:-8px;
+			.actions2{
+			border-radius:0px;
+			background-color: black;
+			color: $mainColor;
+			border:none;
+			}
+		}
+	}
+	
+	#boutons-profile{
+		margin-left: 10px;
+		width: 150px;
+		margin-top: 15px;
+		border-bottom: 1px solid white;
+		
+		.boutons-sociaux{
+		font-family: "gotham";
+		font-size: 16px;
+		margin-bottom: 15px;
+		
+		.boutons-sociaux2{
+		color: $mainColor;
+		padding: 5px 10px 5px 10px;
+		background-color: black;
+		}
+		}
+	}
+	
+	#stats-profil{
+		margin-left: 10px;
+		width: 150px;
+		margin-bottom: 5px;
+		margin-top: 5px;
+		font-family: "gotham";
+		font-size: 16px;
+		border-bottom: 1px solid white;
+		
+		.texte1{
+			padding-top: 8px;
+			margin-bottom: 3px;
+			background-color: #808080;
+			width: 50px;
+			height: 22px;
+			text-align: center;
+			color: white;
+			font-family: "bebasneue-webfont";
+			font-size: 27px;
+		}
+		
+		.texte2{
+			margin-left: 60px;
+			margin-top: -30px;
+			margin-bottom: 15px;
+		}
+	}
+		
+}

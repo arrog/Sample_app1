@@ -7,14 +7,15 @@
 							<%= image_tag argument.user.avatar.url(:medium), class: "image" %>
 						</div>
 						<div class="nom-user">
-	                 		<%= link_to argument.user.name, argument.user %>
+	                 		<%= link_to argument.user.fitting_name, argument.user %>
 	                 	</div>
 	                 </div>
 	                 <div class="span4">
 						<div class="row" id='title5'>
 	                 		<div class="title">
 	                 			<h2><%= argument.title%></h2>
-							<span class="cont"><%=argument.content.split(' ').slice(0,36).join(' ')%> ...</span>
+							</div>
+							<div class="cont"><%=argument.content.split(' ').slice(0,36).join(' ')%> ...
 	                 		</div>
 						</div>
 						<div class="row" id="coco1">
@@ -23,11 +24,12 @@
 							  <%= link_to image_tag("like-argument.png"), like_argument_path(argument, type: "up"), method: "post"%> |
 							  <%= argument.count_negative %>
 							  <%=link_to image_tag("dislike-argument.png"), like_argument_path(argument, type: "down"), method: "post" %>
-                              
+
+
 							  <%= image_tag("box-texte.png", class: "box")%>
-							  <%= image_tag("vote-suisse.png", class: "oui")%>	
-							  
-							  <a class='toggleOpen'>Lire la suite... </a>								
+							  <%= image_tag("vote-oui.png", class: "oui")%>	
+									
+							  <div class='toggleOpen'>Lire la suite...</div>								
 	                 		</div>
 						</div>
 						
@@ -51,12 +53,11 @@
 		    		<% argument.argcoms.each do |argcom| %>
     	    		 <%= render "shared/argcom_badge", :argcom => argcom %>
     	    		<% end %>
+				    <% if signed_in? && argument.argumentable_type == "Debate"%>
+				    	<%= render "shared/argcom_form", :argcom => argument.argcoms.new, :argument => argument %>
+				    <%end%>
 		    </div>
 		</div>
-		<div class="row">
-		    <% if signed_in? && argument.argumentable_type == "Debate"%>
-		    	<%= render "shared/argcom_form", :argcom => argument.argcoms.new, :argument => argument %>
-		    <%end%>
-	   </div>
+
 	</div>
 </section>

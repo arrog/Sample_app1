@@ -1,6 +1,7 @@
-join debate
-<% if activity.trackable %>
-  <%= link_to activity.trackable.title, activity.trackable %>
-<% else %>
-  which has since been removed
-<% end %>
+<section id="activities">
+	<% if activity.trackable %>
+	  	<div class="span4" id="intro-activities">
+		<div class="texte"><%= link_to activity.owner.fitting_name, activity.owner %> a rejoint le débat </div></div>
+		<div class="row"><%= render "shared/challenge_badge", challenge: activity.trackable %></div>
+	<% end %>
+</section>

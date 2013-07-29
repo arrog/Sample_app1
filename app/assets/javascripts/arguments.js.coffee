@@ -10,11 +10,11 @@ $(document).ready ->
   $(".argcoms").hide()
 
 
-  $("a.toggleOpen").click ->
-    	$(this).hide().parent().parent().next("#coco").children(".toggle").slideDown("medium").parent().siblings("#title5").children(".title").children(".cont").hide().closest("#initial").siblings(".argcoms").show()
+  $(".toggleOpen").click ->
+    	$(this).hide().parent().parent().next("#coco").children(".toggle").slideDown("medium").parent().siblings("#title5").children(".cont").hide().closest("#initial").siblings(".argcoms").show()
 	    
 	 
 
   $("p.toggleClose").click ->
-    $(this).parents(".toggle").slideUp("fast").parent().siblings("#title5").children(".title").children(".cont").show().parent().parent().siblings("#coco1").children(".stats").children(".toggleOpen").show().closest("#initial").siblings(".argcoms").hide()
+    $(this).parents(".toggle").slideUp("fast").parent().siblings("#title5").children(".cont").show().parent().siblings("#coco1").children(".stats").children(".toggleOpen").show().closest("#initial").siblings(".argcoms").hide()
 

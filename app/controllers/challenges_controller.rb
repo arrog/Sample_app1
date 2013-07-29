@@ -18,14 +18,11 @@ class ChallengesController < ApplicationController
     
   def show
       @challenge = Challenge.find(params[:id])
-      @performance = @challenge.performances.build
       @argumentable = @challenge
       @commentable = @challenge
       @arguments = @argumentable.arguments
       @judgments = @challenge.judgments
       @comments = @commentable.comments
-      @comment = @commentable.comments.new
-      @judgment = @challenge.judgments.new
       if signed_in?
         @argument = current_user.arguments.new
       end
@@ -33,6 +30,14 @@ class ChallengesController < ApplicationController
   
   def update
   end
+  
+  def vote_challenge
+     value = params[:type] == "up" ? 1 : -1
+     @challenge = Challenge.find(params[:id])
+     @challenge.add_or_update_evaluation(:vote_challenges, value, current_user)
+     @challenge.create_activity :vote, owner: current_user
+     redirect_to :back, notice: "Thank you for voting"
+   end
   
   
   def index

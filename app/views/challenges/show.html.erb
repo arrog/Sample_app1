@@ -1,228 +1,313 @@
 <section id="challenge">
 	<div class="container">
-	<% if signed_in? && !current_user.in_challenge?(@challenge)%>
-	<div class = "rejoindre-aleatoirement">
-		<% if @challenge.type_deb == 2 %>
-			<% numéro = @challenge.lincoln_douglas_position_left.shuffle.first %>
+
+		<% if @challenge.type_deb == 2%>
+			<%= render "challenges/lincoln_douglas", challenge: @challenge %>
 		<%elsif @challenge.type_deb == 3 %>
-			<% numéro = @challenge.american_position_left.shuffle.first %>
+			<%= render "challenges/american", challenge: @challenge %>
 		<%elsif @challenge.type_deb == 4 %>
-			<% numéro = @challenge.four_corner_position_left.shuffle.first %>
+			<%= render "challenges/four_corner", challenge: @challenge %>
 		<%elsif @challenge.type_deb == 8 %>
-			<% numéro = @challenge.british_position_left.shuffle.first %>
+			<%= render "challenges/british", challenge: @challenge %>
 		<%end%>
 		
-		<%= numéro%>
-		<% if numéro == 1 %>
-			<%= link_to("PRENDRE UNE POSITION ALEATOIRE 1".html_safe,
-	              join_one_challenge_path(@challenge) ,:method => :post) %>
-		<% elsif numéro ==2 %>
-			<%= link_to("PRENDRE UNE POSITION ALEATOIRE 2".html_safe,
-	              join_two_challenge_path(@challenge) ,:method => :post) %>
-		<% elsif numéro ==3 %>
-			<%= link_to("PRENDRE UNE POSITION ALEATOIRE 3".html_safe,
-			      join_three_challenge_path(@challenge) ,:method => :post) %>
-		<% elsif numéro ==4 %>
-			<%= link_to("PRENDRE UNE POSITION ALEATOIRE 4".html_safe,
-				  join_four_challenge_path(@challenge) ,:method => :post) %>	
-		<% elsif numéro ==5 %>
-			<%= link_to("PRENDRE UNE POSITION ALEATOIRE 5".html_safe,
-				join_five_challenge_path(@challenge) ,:method => :post) %>
-		<% elsif numéro ==6 %>
-			<%= link_to("PRENDRE UNE POSITION ALEATOIRE 6".html_safe,
-				join_six_challenge_path(@challenge) ,:method => :post) %>
-		<% elsif numéro ==7 %>
-			<%= link_to("PRENDRE UNE POSITION ALEATOIRE 7".html_safe,
-				join_seven_challenge_path(@challenge) ,:method => :post) %>
-		<% elsif numéro ==8 %>
-			<%= link_to("PRENDRE UNE POSITION ALEATOIRE 8".html_safe,
-				join_eight_challenge_path(@challenge) ,:method => :post) %>
-		<%end%>
-	</div>
-	<%end%>
-	
-	<div class="container" id="title">
+		
+		<div class="espace"></div>
+		
+		
+		
+
 		<div class="row">
-			<div class="span2 offset1">
-				<%= render "titre_gauche", :challenge => @challenge %>
-			</div>
-			<div class="span6" id="title2">
-				<div class="row" id="illustration">
-				</div>
-				<div class="row" id="content">
-
-					<h1><%= @challenge.title %> </h1>
-
-					</br>
-					Tags: <%= raw @challenge.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
-					</br>
-					<%= @challenge.context%>
-				</div>
-			</div>
-			<div class="span2">
-				<%= render "titre_droite", :challenge => @challenge %>
-			</div>
-		</div>
-	</div>
-
-<div class ="start">
-	<% if @challenge.state == "incomplete" && !@challenge.not_full? && signed_in? && current_user == @challenge.prime_minister %>
-		<%= link_to("LANCE LE DEBAT".html_safe,
-	              starting_challenge_path(@challenge) ,:method => :post) %>
-	<%end%>
-</div>
-
-<div class="container">
-	<% if @challenge.type_deb == 2 %>
-		<%= render "lincoln_douglas", challenge: @challenge, replique: @challenge.repliques.new %>
-	<%elsif @challenge.type_deb == 3 %>
-		<%= render "american", challenge: @challenge %>
-	<%elsif @challenge.type_deb == 4 %>
-		<%= render "four_corner", challenge: @challenge %>
-	<%elsif @challenge.type_deb == 8 %>
-		<%= render "british", challenge: @challenge %>
-	<%end%>
-	
-	
-	<div class="row">
-		<div class="span8 offset2" id="juges">
-		 	<div class="span1" id="user-juge">
-				<% if !@challenge.have_first_judge? %>
-		 			<% if signed_in? && !current_user.in_challenge?(@challenge) %>
-		 				<%= link_to("prends la place de juge".html_safe,
-		    	       						join_judge_challenge_path(@challenge) ,:method => :post) %>
-		 			<%else%>
-		 				PAS ENCORE DE JUGES
-		 			<%end%>	
-		 		<%else%>
-		 			<%= @challenge.first_judge.name %>
-			</div>
-			<div class="span5" id="content">
-					<% if signed_in? && current_user == @challenge.first_judge && @challenge.state == "judged" && 	!current_user.has_judged?(@challenge)%>
-						<div id="time-to-judge">
-						<% if [2,3].include?(@challenge.type_deb) %>
-							<%= render "judgment_two", :challenge => @challenge, :judgment => @judgment %>
-						<% elsif [4,8].include?(@challenge.type_deb) %>
-							<%= render "judgment_four", :challenge => @challenge, :judgment => @judgment %>
-						<%end%>
+			<div class="span9 offset2" id="juges">
+				<div class="row">
+			 		<div class="span3" id="user-juge">
+						<div class="image1">
+							<div class="image2">
+								<% if @challenge.have_first_judge? %>
+									<%= image_tag @challenge.first_judge.avatar.url(:medium), class: "image2"%>
+								<%else%>
+							<%= image_tag ("default_medium.jpg") %>
+								<%end%>
+							</div>
 						</div>
-					<%elsif !@challenge.first_judgment_array.any?%> En attente de jugement
-					
-					<%elsif @challenge.first_judgment_array.any? %>
-						<h2><%= @challenge.first_judgment.title%></h2>
-						<%= @challenge.first_judgment.content%>  <%# a rajouter un link edit %>
-				
-			</div>
-			<div class="span1" id="grades">	
-			   	 		<%= @challenge.first_judgment.grade %>
-			   	 		<%= @challenge.first_judgment.grade_two %>
-			   	 		
-			   	 		<% if [4,8].include?(@challenge.type_deb) %>
-			   	 			<%= @challenge.first_judgment.grade_three %>
-			   	 			<%= @challenge.first_judgment.grade_four %>
-			   	 		<%end%>
-			   	 	<% end %>
-				<%end%>
-			</div>
-		</div>
-	</div>
-	
-	<div class="row">
-		<div class="span8 offset2" id="juges">
-		 	<div class="span1" id="user-juge">
-				<% if !@challenge.have_second_judge? %>
-		 			<% if signed_in? && !current_user.in_challenge?(@challenge) %>
-		 				<%= link_to("prends la place de juge".html_safe,
-		    	       						join_judge_two_challenge_path(@challenge) ,:method => :post) %>
-		 			<%else%>
-		 				PAS ENCORE DE JUGES
-		 			<%end%>	
-		 		<%else%>
-		 			<%= @challenge.second_judge.name %>
-			</div>
-			<div class="span5" id="content">
-					<% if current_user == @challenge.second_judge && @challenge.state == "judged" && !current_user.has_judged?(@challenge)%>
-						<%# à rajouter if state = il est temps de voter aussi %>
-						<% if [2,3].include?(@challenge.type_deb) %>
-							<%= render "judgment_two", :challenge => @challenge, :judgment => @judgment %>
-						<% elsif [4,8].include?(@challenge.type_deb) %>
-							<%= render "judgment_four", :challenge => @challenge, :judgment => @judgment %>
-						<%end%>
+						<div class="nom-lien">
+							<% if @challenge.have_first_judge? %>
+								<div class="texte"><%= link_to @challenge.first_judge.fitting_name, @challenge.first_judge%></div>
+							<%elsif current_user && current_user.in_challenge?(@challenge)%>
+								<div class="texte">EN ATTENTE</div>
+							<%else%>
+							<div class="texte"><%= link_to("Prends ce trône".html_safe,
+			    		       						join_judge_challenge_path(@challenge) ,:method => :post) %>
+							</div>
+							<%end%>
+						</div>
+					</div>	
+					<div class="span5" id="content">
+						<% if current_user  && ["over", "judged", "judged_one"].include?(@challenge.state) && current_user == @challenge.first_judge && !current_user.has_judged?(@challenge)%>
+						<div class="row" id="title-juge">	
+							<%= form_for @challenge.judgments.new do |f| %>
+							<%= f.hidden_field :challenge_id, :value => @challenge.id %>
+							<%= f.text_area:title, class: "title", placeholder: "Opinion succincte sur le débat" %>
+						</div>
+						<div class="row" id="contenu">
+							<%= f.text_area:content, class: "contenu", placeholder: "Développe ton point de vue" %>
+						</div>
+						<div class="row" id='notes-actions'>
+							<%= f.number_field :grade, class: "note1", placeholder: "Note #{@challenge.prime_minister.name}" %>
+							<%= f.number_field :grade_two, class: "note2", placeholder: "Note #{@challenge.first_opponent.name}" %>
+							<%= f.submit "Envoyer", class: "actions"%>
+						</div>
+							<%end%>
 
-					<%elsif !@challenge.second_judgment_array.any? %>En attente de jugement
-					<%else%>
-					<h2><%= @challenge.second_judgment.title%></h2>
-					<%= @challenge.second_judgment.content%>
-			</div>
-			<div class="span1" id="grades">
-						<%= @challenge.second_judgment.grade %>
-						<%= @challenge.second_judgment.grade_two %>
-						
-						<% if [4,8].include?(@challenge.type_deb) %>
-							<%= @challenge.second_judgment.grade_three %>
-							<%= @challenge.second_judgment.grade_four %>
-						<%end%>
-					<%end%>
-				<% end %>
-			</div>
-		</div>
-	</div>
-	
-	<div class="row">
-		<div class="span8 offset2" id="juges">
-		 	<div class="span1" id="user-juge">
-				<% if !@challenge.have_third_judge? %>
-		 			<% if signed_in? && !current_user.in_challenge?(@challenge) %>
-		 				<%= link_to("prends la place de juge".html_safe,
-		    	       						join_judge_three_challenge_path(@challenge) ,:method => :post) %>
-		 			<%else%>
-		 				PAS ENCORE DE JUGES
-		 			<%end%>	
-		 		<%else%>
-		 			<%= @challenge.third_judge.name %>
-			</div>
-			<div class="span5" id="content">
-					<% if current_user == @challenge.third_judge && @challenge.state == "judged" && !current_user.has_judged?(@challenge)%>
-						<%# à rajouter if state = il est temps de voter aussi %>
-						<% if [2,3].include?(@challenge.type_deb) %>
-							<%= render "judgment_two", :challenge => @challenge, :judgment => @judgment %>
-						<% elsif [4,8].include?(@challenge.type_deb) %>
-							<%= render "judgment_four", :challenge => @challenge, :judgment => @judgment %>
-						<%end%>
-					
-					<%elsif !@challenge.third_judgment_array.any? %>En attente de jugement
-					<%else%>
-					<h2><%= @challenge.third_judgment.title%></h2>
-					<%= @challenge.third_judgment.content%>
-			</div>
-			<div class="span1" id="grades">
-						<%= @challenge.third_judgment.grade %>
-						<%= @challenge.third_judgment.grade_two %>
-						
-						<% if [4,8].include?(@challenge.type_deb) %>
-							<%= @challenge.third_judgment.grade_three %>
-							<%= @challenge.third_judgment.grade_four %>
-						<%end%>
+						<%elsif @challenge.have_first_judge? && @challenge.first_judgment_array.any? %>
+						<div class="row" id="title-juge">
+								<%= @challenge.first_judgment.title%>
+						</div>	
+						<div class="row" id="contenu">
+								<%= @challenge.first_judgment.content%>
+						</div>
 					<% end %>
-				<%end%>
+					</div>
+
+					<div class="span2" id="grades">	
+						<% if [2,3].include?(@challenge.type_deb) && !@challenge.not_full?%>
+						<div class="adeux">
+							<div class="note1">
+							<%= image_tag "notes-2.png"%></div>
+							<div class="note2">
+							<% if @challenge.have_first_judge? &&@challenge.first_judgment_array.any?%>
+								<%= @challenge.first_judgment.grade %>
+							<%else%>
+							0
+							<%end%>/10
+							<div class='text'></br></br><%= @challenge.prime_minister.fitting_name%></div>
+							</div>
+							<div class="note3">
+							<%= image_tag "notes-2.png"%></div>
+							<div class="note2">
+							<% if @challenge.have_first_judge? && @challenge.first_judgment_array.any?%>
+								<%= @challenge.first_judgment.grade_two %>
+							<%else%>
+							0
+							<%end%>/10
+							<div class='text'></br></br><%= @challenge.first_opponent.fitting_name%></div>
+							</div>
+						</div>
+						<% elsif [4,8].include?(@challenge.type_deb) %>
+							<%= @challenge.first_judgment.grade %>
+							<%= @challenge.first_judgment.grade_two %>
+							<%= @challenge.first_judgment.grade_three %>
+							<%= @challenge.first_judgment.grade_four %>
+						<%end%>
+					</div>
+				</div>
 			</div>
 		</div>
+
+		<div class="row">
+			<div class="span9 offset2" id="juges">
+				<div class="row">
+			 		<div class="span3" id="user-juge">
+						<div class="image1">
+							<div class="image2">
+								<% if @challenge.have_second_judge? %>
+									<%= image_tag @challenge.second_judge.avatar.url(:medium), class: "image2"%>
+								<%else%>
+							<%= image_tag ("default_medium.jpg") %>
+								<%end%>
+							</div>
+						</div>
+						<div class="nom-lien">
+							<% if @challenge.have_second_judge? %>
+								<div class="texte"><%= link_to @challenge.second_judge.fitting_name, @challenge.second_judge%></div>
+							<%elsif current_user && current_user.in_challenge?(@challenge)%>
+								<div class="texte">EN ATTENTE</div>
+							<%else%>
+							<div class="texte"><%= link_to("Prends ce trône".html_safe,
+			    		       						join_judge_challenge_path(@challenge) ,:method => :post) %>
+							</div>
+							<%end%>
+						</div>
+					</div>	
+					<div class="span5" id="content">
+						<% if current_user  && ["over", "judged", "judged_one"].include?(@challenge.state) && current_user == @challenge.second_judge && !current_user.has_judged?(@challenge)%>
+						<div class="row" id="title-juge">	
+							<%= form_for @challenge.judgments.new do |f| %>
+							<%= f.hidden_field :challenge_id, :value => @challenge.id %>
+							<%= f.text_area:title, class: "title", placeholder: "Opinion succincte sur le débat" %>
+						</div>
+						<div class="row" id="contenu">
+							<%= f.text_area:content, class: "contenu", placeholder: "Développe ton point de vue" %>
+						</div>
+						<div class="row" id='notes-actions'>
+							<%= f.number_field :grade, class: "note1", placeholder: "Note #{@challenge.prime_minister.name}" %>
+							<%= f.number_field :grade_two, class: "note2", placeholder: "Note #{@challenge.first_opponent.name}" %>
+							<%= f.submit "Envoyer", class: "actions"%>
+						</div>
+							<%end%>
+
+						<%elsif @challenge.have_second_judge? && @challenge.second_judgment_array.any? %>
+						<div class="row" id="title-juge">
+								<%= @challenge.second_judgment.title%>
+						</div>	
+						<div class="row" id="contenu">
+								<%= @challenge.second_judgment.content%>
+						</div>
+					<% end %>
+					</div>
+
+					<div class="span2" id="grades">	
+							<% if [2,3].include?(@challenge.type_deb) && !@challenge.not_full?%>
+							<div class="adeux">
+								<div class="note1">
+					   	 		<%= image_tag "notes-2.png"%></div>
+								<div class="note2">
+								<% if @challenge.have_second_judge? && @challenge.second_judgment_array.any?%>
+									<%= @challenge.second_judgment.grade %>
+								<%else%>
+								0
+								<%end%>/10
+								<div class='text'></br></br><%= @challenge.prime_minister.fitting_name%></div>
+								</div>
+								<div class="note3">
+					   	 		<%= image_tag "notes-2.png"%></div>
+								<div class="note2">
+								<% if @challenge.have_second_judge? &&@challenge.second_judgment_array.any?%>
+									<%= @challenge.second_judgment.grade_two %>
+								<%else%>
+								0
+								<%end%>/10
+								<div class='text'></br></br><%= @challenge.first_opponent.fitting_name%></div>
+								</div>
+							</div>
+							<% elsif [4,8].include?(@challenge.type_deb) %>
+						    	<%= @challenge.second_judgment.grade %>
+						    	<%= @challenge.second_judgment.grade_two %>
+					   	 		<%= @challenge.second_judgment.grade_three %>
+					   	 		<%= @challenge.second_judgment.grade_four %>
+					   	 	<%end%>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="span9 offset2" id="juges">
+				<div class="row">
+			 		<div class="span3" id="user-juge">
+						<div class="image1">
+							<div class="image2">
+								<% if @challenge.have_third_judge? %>
+									<%= image_tag @challenge.third_judge.avatar.url(:medium), class: "image2"%>
+								<%else%>
+							<%= image_tag ("default_medium.jpg") %>
+								<%end%>
+							</div>
+						</div>
+						<div class="nom-lien">
+							<% if @challenge.have_third_judge? %>
+								<div class="texte"><%= link_to @challenge.third_judge.fitting_name, @challenge.third_judge%></div>
+							<%elsif current_user && current_user.in_challenge?(@challenge)%>
+								<div class="texte">EN ATTENTE</div>
+							<%else%>
+							<div class="texte"><%= link_to("Prends ce trône".html_safe,
+			    		       						join_judge_challenge_path(@challenge) ,:method => :post) %>
+							</div>
+							<%end%>
+						</div>
+					</div>	
+					<div class="span5" id="content">
+						<% if current_user  && ["over", "judged", "judged_one"].include?(@challenge.state) && current_user == @challenge.third_judge && !current_user.has_judged?(@challenge)%>
+						<div class="row" id="title-juge">	
+							<%= form_for @challenge.judgments.new do |f| %>
+							<%= f.hidden_field :challenge_id, :value => @challenge.id %>
+							<%= f.text_area:title, class: "title", placeholder: "Opinion succincte sur le débat" %>
+						</div>
+						<div class="row" id="contenu">
+							<%= f.text_area:content, class: "contenu", placeholder: "Développe ton point de vue" %>
+						</div>
+						<div class="row" id='notes-actions'>
+							<%= f.number_field :grade, class: "note1", placeholder: "Note #{@challenge.prime_minister.name}" %>
+							<%= f.number_field :grade_two, class: "note2", placeholder: "Note #{@challenge.first_opponent.name}" %>
+							<%= f.submit "Envoyer", class: "actions"%>
+						</div>
+							<%end%>
+
+						<%elsif @challenge.have_third_judge? && @challenge.third_judgment_array.any? %>
+						<div class="row" id="title-juge">
+								<%= @challenge.third_judgment.title%>
+						</div>	
+						<div class="row" id="contenu">
+								<%= @challenge.third_judgment.content%>
+						</div>
+						<% end %>
+					</div>
+
+					<div class="span2" id="grades">	
+							<% if [2,3].include?(@challenge.type_deb) && !@challenge.not_full?%>
+							<div class="adeux">
+								<div class="note1">
+					   	 		<%= image_tag "notes-2.png"%></div>
+								<div class="note2">
+								<% if @challenge.have_third_judge? &&@challenge.third_judgment_array.any?%>
+									<%= @challenge.third_judgment.grade %>
+								<%else%>
+								0
+								<%end%>/10
+								<div class='text'></br></br><%= @challenge.prime_minister.fitting_name%></div>
+								</div>
+								<div class="note3">
+					   	 		<%= image_tag "notes-2.png"%></div>
+								<div class="note2">
+								<% if @challenge.have_third_judge? && @challenge.third_judgment_array.any?%>
+									<%= @challenge.third_judgment.grade_two %>
+								<%else%>
+								0
+								<%end%>/10
+								<div class='text'></br></br><%= @challenge.first_opponent.fitting_name%></div>
+								</div>
+							</div>
+							<% elsif [4,8].include?(@challenge.type_deb) %>
+						    	<%= @challenge.third_judgment.grade %>
+						    	<%= @challenge.third_judgment.grade_two %>
+					   	 		<%= @challenge.third_judgment.grade_three %>
+					   	 		<%= @challenge.third_judgment.grade_four %>
+					   	 	<%end%>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="espace"></div>
+		
+		
+		<div class='row'>
+			<div class="row" id="comments-to-close">
+				<% if @challenge.comments.any?%> 
+					<%= render "shared/comment_badge", comment:@challenge.comments.first%>
+					<%if @challenge.comments.count > 1 %>
+						<%= render "shared/comment_badge", comment:@challenge.comments.second%>
+					<% end%>
+				<%end%>					
+			</div>
+			<div class="row" id="comments-to-open">
+				<% @challenge.comments.each do |m| %>
+					<%= render "shared/comment_badge", comment: m%>
+			    <% end %>
+			</div>
+
+			<div class="row"><%= render "shared/comment_form", commentable: @challenge, type: Challenge, comment: @challenge.comments.new%></div>
+			
+			<div class="row" id ="openning-comments">
+				<div class="comment-texte1">Afficher plus de commentaires</div>
+				<div class="comment-texte2">Afficher moins de commentaires</div>
+				<div class="arrow-down-comments"></div>
+				<div class="arrow-up-comments"></div>
+			</div>
+			
+		</div>
+		
 	</div>
-
-
-			<% if @comments.any? %>
-			<div class="row">
-				<div class="span8 offset2">
-					<% @comments.each do |comment| %>
-						<%= comment.content %>
-					<%end%>
-				</div>
-			</div>
-			<%end%>
-	        <div class="row">
-				<div class="span8 offset2">
-					<%= render "shared/comment_form", comment: @comment, commentable: @challenge, type: "Challenge"%>
-				</div>
-			</div>
-
 </section>

@@ -3,15 +3,10 @@
 			<%= image_tag argcom.user.avatar.url(:small), class: "image" %>
 		</div>
 		<div class="span1" id="user">
-			<%= argcom.user.name%>
+			<%= argcom.user.fitting_name%>
 		</div>
 		<div class="span6" id="content">
 			<%= argcom.content %>
 			</br>
-			<% if current_user?(argcom.user) %>
-		    <%= link_to "delete", argcom, method: :delete,
-		                                     data: { confirm: "You sure?" },
-		                                     title: argcom.content %>
-		  <% end %>
 		</div>
 </section>

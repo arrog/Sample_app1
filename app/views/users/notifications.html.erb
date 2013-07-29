@@ -1,0 +1,95 @@
+<section id="user-profile">
+	<div class="container">
+	
+
+		<%= render "profile_header" %>	
+		
+		<div class= 'row'>
+			<div class="span3">
+				<%= render "profile_badge" %>	
+			</div>
+			<div class="span8" id="for-badges">
+				<% if current_user && current_user == @user %>
+					<div class="espace1"></div>
+				<% elsif current_user && current_user.in_team?(@user)%>
+					<div class="espace"></div>
+				<% else%>
+					<div class="espace2"></div>
+				<%end%>
+				
+				<% @user.invitation_request.each do |invitation|%>
+
+					<% if invitation.state == "unseen" && !@user.in_challenge?(invitation.challenge)%>
+					<section id="notifications">
+						<div class="span4" id="intro-notifications">
+							<div class="texte">	<%= invitation.sender.fitting_name%> vous invite à prendre parti dans le défi :</div>
+							<div class="action-notification"><%= link_to "ok", accept_invitation_path(invitation), class: "notification-link"%></div>
+							<div class="action-notification2"><%= link_to "non", reject_invitation_path(invitation), class: "notification-link"%></div>
+						</div>
+						<div class="row">
+							<%= render "shared/challenge_badge", challenge: invitation.challenge %>
+						</div>
+					</section>
+					<% elsif invitation.state =="accepted" && !@user.in_challenge?(invitation.challenge) %>
+					<section id="notifications">
+						<div class="span4" id="intro-notifications">
+							<div class= "texte">Tu confirmes l'invitation pour: </div>
+							<div class="action-notification"><%= link_to("oui".html_safe,
+				              join_one_challenge_path(invitation.challenge) ,:method => :post, class: "notification-link") %></div>
+							<div class="action-notification2"><%= link_to "non", reject_invitation_path(invitation), class: "notification-link"%></div>
+						</div>
+						<div class="row">
+							<%= render "shared/challenge_badge", challenge: invitation.challenge %>
+						</div>
+					<section id="notifications">
+					<%end%>
+				<%end%>				
+				
+				
+				<% @user.doulin_active.each do |doulin|%>
+				<section id="notifications">	
+					<div class="span4" id="intro-notifications">
+					<div class="texte">C'est à toi ! </div></div>
+
+				<div class="row"><%= render "shared/doulin_badge", doulin: doulin %></div>
+				</section>
+				<%end%>
+				
+				<% @user.debat_pret.each do |challenge|%>
+				<section id="notifications">
+					<div class="span4" id="intro-notifications">
+						<div class="texte">Ce défi est prêt ! Tu peux commencer: </div></div>
+					<div class="row"><%= render "shared/challenge_badge", challenge: challenge %></div>
+				</section>
+				<%end%>
+
+				<% @user.challenge_active.each do |challenge|%>
+				<section id="notifications">
+					<div class="span4" id="intro-notifications">
+					 		<div class="texte">C'est à toi !</div></div>
+					<div class="row"><%= render "shared/challenge_badge", challenge: challenge %></div>
+				</section>
+				<%end%>
+				
+				<% @user.challenges_judge.each do |challenge|%>
+				<section id="notifications">
+				<div class="span4" id="intro-notifications">
+				 		<div class="texte">Ce débat est fini; à toi de le juger:</div></div>
+				<div class="row"><%= render "shared/challenge_badge", challenge: challenge %></div>
+				</section>
+				<%end%>
+
+
+
+				<% @user.team_request.each do |relationship|%>
+				<section id="notifications">
+					<div class="intro-notifications">
+					 	<%= relationship.sender.name %> te propose de former une équipe</div>
+				</section>
+				<%end%>	
+					
+			</div>
+		</div>
+
+	</div>
+</section>

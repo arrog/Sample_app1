@@ -40,13 +40,13 @@
 							
 							<div class="row" id="vote">
 								<% if @doulin.have_first? %>
-					<a><%= link_to "POUR #{@doulin.first_user.name}", vote_expert_doulin_path(@doulin, type: "up"), class: "pour-first"%></a><span class="rapport-gauche"><%= @doulin.rapport%>%</span>
+					<a><%= link_to "POUR #{@doulin.first_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "up"), class: "pour-first"%></a><span class="rapport-gauche"><%= @doulin.rapport%>%</span>
 								<% else %>
 									<a class="pour-first" href="#">POUR LE MEC</a>	
 								<%end%>
 
 								<% if @doulin.have_second? %>
-					<span class="rapport-droite"><%= @doulin.rapport_inverse %>%</span><a><%= link_to "POUR #{@doulin.second_user.name}", vote_expert_doulin_path(@doulin, type: "down"), class: "pour-second"%>
+					<span class="rapport-droite"><%= @doulin.rapport_inverse %>%</span><a><%= link_to "POUR #{@doulin.second_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "down"), class: "pour-second"%>
 								<% else %>
 									<a class="pour-second" href="#">POUR LA MEUF</a>	
 								<%end%>
@@ -152,7 +152,6 @@
 				              next_doulin_path(@doulin) ,:method => :post) %></p>
 					<% end %>
 				<% else%>
-					<%= @doulin.first_user.name %> en badge avec ...
 				<%end%>
 			<% elsif ["second","third","forth","fifth","sixth","seventh","eighth","over"].include?(@doulin.state) %>
 				<%= render "shared/argument_badge", argument: @doulin.first_argument %>
@@ -270,7 +269,7 @@
 			<div class="tour-gauche">
 				<div class="image">
 					<%= image_tag @doulin.first_user.avatar.url(:small), class:"image" %>
-				<span class="name"><%= @doulin.first_user.name%> prépare son argument ...</span>
+				<span class="name"><%= @doulin.first_user.fitting_name%> prépare son argument ...</span>
 				</div>
 			</div>
 			<%end%>
@@ -280,7 +279,7 @@
 			<div class="tour-droite">
 				<div class="image">
 					<%= image_tag @doulin.second_user.avatar.url(:small), class:"image" %>
-				<span class="name"><%= @doulin.second_user.name%> prépare son argument ...</span>
+				<span class="name"><%= @doulin.second_user.fitting_name%> prépare son argument ...</span>
 				</div>
 			</div>
 			<%end%>			
@@ -292,7 +291,7 @@
 			<div class="row" id="comments-to-close">
 				<% if @doulin.comments.any?%>
 					<%= render "shared/comment_badge", comment:@doulin.comments.first%>
-					<%if @doulin.comments.count = 1 %>
+					<%if @doulin.comments.count > 1 %>
 						<%= render "shared/comment_badge", comment:@doulin.comments.second%>
 					<% end%>
 				<%end%>

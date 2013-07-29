@@ -1,0 +1,31 @@
+<section id="user-profile">
+	<div class="container">
+	
+
+		<%= render "profile_header" %>	
+
+		<div class= 'row'>
+			<div class="span2">
+				<%= render "profile_badge" %>	
+			</div>
+			<div class="span8" id="for-badges">
+				  <% if current_user && current_user == @user %>
+				  	<div class="espace1"></div>
+				  <% elsif current_user && current_user.in_team?(@user)%>
+				  	<div class="espace"></div>
+				  <% else%>
+				 	<div class="espace2"></div>
+				  <%end%>
+				
+				<% @user.groups.each do |group| %>
+					<%= render "shared/group_badge", group: group  %>
+				<%end%>
+				
+				<% unless @user.groups.any? %>
+					Pas de groupes pour le moment
+				<% end%>
+			</div>
+		</div>
+
+	</div>
+</section>

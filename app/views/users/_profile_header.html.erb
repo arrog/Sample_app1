@@ -1,0 +1,54 @@
+<ul class ="row" id ="profile-header">
+	<% if current_user && current_user == @user%>
+		<li class="notifications-profile">
+			<%= link_to "Notifications", notifications_user_path(@user)%>
+			</li>
+		
+    	<li class="tiret">|</li>
+
+		<li class= "boutons-pending">
+
+			<%= link_to "En Cours", active_user_path(@user)%>
+		</li>
+		
+		<li class="tiret">|</li>
+		
+		<li class="bouttons-profile">
+			<%= link_to "Mes Groupes", my_groups_user_path(@user)%>
+		</li>
+
+		<li class="tiret">|</li>
+
+		<li class="bouttons-profile">
+			<%= link_to "Mon Activité", activities_user_path(@user)%>
+		</li>
+		
+	<% else %>
+
+		<li class="bouttons-profile">
+			Son Activité
+		</li>
+	
+  		<li class="tiret">|</li>
+		
+		<li class="notifications-profile">
+			Ses Votes
+		</li>
+
+    	<li class="tiret">|</li>
+    	
+		<li class= "boutons-pending">
+			Ses Défis
+		</li>
+    	
+    	<li class="tiret">|</li>
+    	
+		<li class="bouttons-profile">
+			Ses Débats Ouverts
+		</li>
+	
+	<%end%>
+	
+		
+	
+</ul>

@@ -1,0 +1,31 @@
+<section id="user-profile">
+	<div class="container">
+	
+
+		<%= render "profile_header" %>	
+
+		<div class= 'row'>
+			<div class="span2">
+				<%= render "profile_badge" %>	
+			</div>
+			<div class="span8" id="for-badges">
+				  <% if current_user && current_user == @user %>
+				  	<div class="espace1"></div>
+				  <% elsif current_user && current_user.in_team?(@user)%>
+				  	<div class="espace"></div>
+				  <% else%>
+				 	<div class="espace2"></div>
+				  <%end%>
+				
+				<% @user.challenges.open_challenges.each do |challenge| %>
+					<%= render "shared/challenge_badge", challenge: challenge  %>
+				<%end%>
+				
+				<% unless @user.challenges.open_challenges.any? %>
+					Pas de défi en cours pour le moment
+				<% end%>
+			</div>
+		</div>
+
+	</div>
+</section>

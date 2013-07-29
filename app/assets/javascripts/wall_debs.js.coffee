@@ -14,7 +14,51 @@ $(document).ready ->
   $(".arrow-up-comments").hide()
   $("#comments-to-open").hide()
   $(".comment-texte2").hide()
+  $(".invitation-fermer").hide()
+  $(".invitation-fermer1").hide()
+  $(".invitation-fermer-american").hide()
+  $(".invitation-fermer1-american").hide()
+  $(".invitation-fermer3-american").hide()
+  $(".invitation-fermer4-american").hide()
 
+
+  $("#invitation3-american").click ->
+	    $(this).parent().hide().siblings(".invitation-fermer3-american").show()
+
+  $("#fermer-invitation3-american").click ->
+	    $(this).parent().parent().hide().siblings(".first_user").show()
+
+  $("#invitation4-american").click ->
+	    $(this).parent().hide().siblings(".invitation-fermer4-american").show()
+
+  $("#fermer-invitation4-american").click ->
+	    $(this).parent().parent().hide().siblings(".second_user").show()
+
+
+ $("#invitation-american").click ->
+	    $(this).parent().hide().siblings(".invitation-fermer-american").show()
+
+  $("#fermer-invitation-american").click ->
+	    $(this).parent().parent().hide().siblings(".first_user").show()
+	
+  $("#invitation1-american").click ->
+	    $(this).parent().hide().siblings(".invitation-fermer1-american").show()
+
+  $("#fermer-invitation1-american").click ->
+	    $(this).parent().parent().hide().siblings(".second_user").show()
+	
+
+ $("#invitation").click ->
+	    $(this).parent().hide().siblings(".invitation-fermer").show()
+
+  $("#fermer-invitation").click ->
+	    $(this).parent().parent().hide().siblings(".first_user").show()
+
+ $("#invitation1").click ->
+	    $(this).parent().hide().siblings(".invitation-fermer1").show()
+
+  $("#fermer-invitation1").click ->
+	    $(this).parent().parent().hide().siblings(".second_user").show()
 
   $(".arrow-down-newarg").click ->
 	    $(this).hide().siblings(".arrow-up-newarg").show().parent().siblings("#box-argument").slideDown("medium")

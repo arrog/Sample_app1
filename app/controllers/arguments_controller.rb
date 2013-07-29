@@ -17,7 +17,7 @@ class ArgumentsController < ApplicationController
       @argument = @argumentable.arguments.new(params[:argument])
       @argument.user = current_user
       if @argument.save
-        if @argumentable.class == "Debate"
+        if @argumentable.class == Debate
             @argument.create_activity :create, owner: current_user
         end
         flash[:success] = "Tu argumentes!"

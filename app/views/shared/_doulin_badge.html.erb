@@ -20,7 +20,7 @@
 			<%= image_tag doulin.second_user.avatar.url(:medium), class: "droite" %>
 		</div>
 		
-		<div class="span2">
+		<div class="span1">
 			<div class="follow">
 			<% if current_user && current_user.following?(doulin)%>
 				<%= link_to"Ne plus suivre", unfollow_doulin_path(doulin)%>

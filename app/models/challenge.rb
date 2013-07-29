@@ -2,7 +2,7 @@ class Challenge < ActiveRecord::Base
   
   include PublicActivity::Common
   
-  attr_accessible :context, :title, :type_deb, :performances_attributes, :tag_list, :cat_id, :invitations_attributes, :state, :avatar
+  attr_accessible :context, :title, :type_deb, :performances_attributes, :tag_list, :cat_id, :invitations_attributes, :state, :avatar, :content
   
   acts_as_taggable
   acts_as_followable
@@ -23,6 +23,8 @@ class Challenge < ActiveRecord::Base
   validates :type_deb, presence: true
   validates :title, presence: true, length: { maximum: 140 }
   
+  has_reputation :vote_challenges, source: :user, aggregated_by: :sum
+  has_many :evaluations, class_name: "ReputationSystem::Evaluation", as: :target
                         
   validates_presence_of :tag_list
   validates_size_of     :tag_list,
@@ -214,7 +216,11 @@ class Challenge < ActiveRecord::Base
     judgments.each do |g|
       a = g.grade + a
     end
-    a/3
+    if judgments.count == 0
+      a
+    else
+      a/(judgments.count)
+    end
   end
   
   def grade_two
@@ -222,7 +228,11 @@ class Challenge < ActiveRecord::Base
     judgments.each do |g|
       a = g.grade_two + a
     end
-    a/3
+    if judgments.count == 0
+      a
+    else
+      a/(judgments.count)
+    end
   end
   
   def grade_three
@@ -230,7 +240,11 @@ class Challenge < ActiveRecord::Base
     judgments.each do |g|
       a = g.grade_three + a
     end
-    a/3
+    if judgments.count == 0
+      a
+    else
+      a/(judgments.count)
+    end
   end
   
   def grade_four
@@ -238,7 +252,37 @@ class Challenge < ActiveRecord::Base
     judgments.each do |g|
       a = g.grade_four + a
     end
-    a/3
+    if judgments.count == 0
+      a
+    else
+      a/(judgments.count)
+    end
   end  
   
+  def count_for
+    evaluations.where( target_type: self.class, target_id: self.id, value: 1.0 ).count
+  end
+  
+  def count_against
+    evaluations.where( target_type: self.class, target_id: self.id, value: -1.0 ).count
+  end
+  
+  def valeur_vote(user)
+    self.evaluations.where(target_type: self.class, target_id: self.id, source_id: user.id).first.value      
+  end
+  
+  def rapport
+    if (self.count_for+self.count_against) == 0
+      0
+    else
+      100*self.count_for/(self.count_for+self.count_against)
+    end
+  end
+  def rapport_inverse
+    if (self.count_for+self.count_against) == 0
+      0
+    else
+    100 - self.rapport
+    end
+  end
 end

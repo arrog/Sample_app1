@@ -1,7 +1,17 @@
-voted
-
-<% if activity.trackable %>
-  <%= link_to activity.trackable.title, activity.trackable %>
-<% else %>
-  which has since been removed
-<% end %>
+<section id="activities">
+	<% if activity.trackable%>
+	  	<div class="span4" id="intro-activities">
+		<div class="texte"><%= link_to activity.owner.fitting_name, activity.owner %> a aimé cette contribution </div></div>
+		<div class="row">
+		<% if activity.trackable.argumentable.valeur_vote(activity.owner) == 1.0 %>
+			<%= render "shared/argument_badge", :argument => activity.trackable, :argumentable => activity.trackable.argumentable %>
+		<%elsif activity.trackable.argumentable.valeur_vote(activity.owner) == - 1.0 %> 
+			<%= render "shared/argument_contre_badge", :argument => activity.trackable, :argumentable => activity.trackable.argumentable %>
+		<% else%>
+			<%= render "shared/argument_neutre_badge", :argument => activity.trackable, :argumentable => activity.trackable.argumentable %>
+		<% end %>
+		</div>
+		<div class="row"><%= render "shared/argumentable_badge", debate: activity.trackable.argumentable %></div>
+		
+	<% end %>
+</section>

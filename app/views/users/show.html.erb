@@ -1,3 +1,141 @@
+<section id="user-profile">
+	<div class="container">
+		<div class ="row">
+			<% if current_user && current_user == @user%>
+				<div class="notifications-profile">
+					Notifications
+				</div>
+            	
+				<div class= "boutons-pending">
+					En Cours
+				</div>
+			<%end%>
+			
+			<div class="bouttons-profile">
+				Profile
+			</div>
+			
+			<div class="notifications-profile">
+				Votes
+			</div>
+
+			<div class= "boutons-pending">
+				Défis
+			</div>
+			
+			<div class="bouttons-profile">
+				Débats
+			</div>			
+			
+		</div>
+		
+		<div class="row" id="notifications">
+			<% @user.invitation_request.each do |invitation|%>
+
+				<% if invitation.state == "unseen" && !@user.in_challenge?(invitation.challenge)%>
+					<div class="span4" id="intro-notifications">
+						<div class="texte">	<%= invitation.sender.fitting_name%> vous invite à prendre parti dans le défi :</div>
+						<div class="action-notification"><%= link_to "ok", accept_invitation_path(invitation), class: "notification-link"%></div>
+						<div class="action-notification2"><%= link_to "non", reject_invitation_path(invitation), class: "notification-link"%></div>
+					</div>
+				<% elsif invitation.state =="accepted" && !@user.in_challenge?(invitation.challenge) %>
+					<div class="span4" id="intro-notifications">
+						<div class= "texte">Tu confirmes l'invitation pour: </div>
+						<div class="action-notification"><%= link_to("oui".html_safe,
+			              join_one_challenge_path(invitation.challenge) ,:method => :post, class: "notification-link") %></div>
+						<div class="action-notification2"><%= link_to "non", reject_invitation_path(invitation), class: "notification-link"%></div>
+					</div>
+				<%end%>
+					<div class="row">
+						<%= render "shared/challenge_badge", challenge: invitation.challenge %>
+					</div>
+			<%end%>
+						
+			<% @user.debat_pret.each do |challenge|%>
+				<div class="span4" id="intro-notifications">
+					<div class="texte">Ce défi est prêt! Tu peux commencer: </div></div>
+				<div class="row"><%= render "shared/challenge_badge", challenge: challenge %></div>
+			<%end%>
+
+			<% @user.challenge_active.each do |challenge|%>
+				<div class="span4" id="intro-notifications">
+				 		<div class"texte">C'est à toi :</div></div>
+				<div class="row"><%= render "shared/challenge_badge", challenge: challenge %></div>
+			<%end%>
+
+			<% @user.challenges_judge.each do |challenge|%>
+			<div class="span4" id="intro-notifications">
+			 		<div class"texte">Ce débat est fini; à toi de le juger:</div></div>
+			<div class="row"><%= render "shared/challenge_badge", challenge: challenge %></div>
+			<% end%>
+			<% @user.doulin_active.each do |doulin|%>
+			<div class="span4" id="intro-notifications">
+			 		<div class"texte">C'est à toi :</div></div>
+			<div class="row"><%= render "shared/doulin_badge", doulin: doulin %></div>	
+			<%end%>	
+			
+			<% @user.team_request.each do |relationship|%>
+				<div class="intro-notifications">
+				 	<%= relationship.sender.name %> te propose de former une équipe</div>
+			<%end%>
+								
+
+		</div>
+		<div class="row">
+			<div class="span8">
+			<% @activities.each do |activity| %>
+			  <div class="activity">
+			    <%= link_to activity.owner.name, activity.owner if activity.owner %>
+			    <%= render_activity activity %>
+			  </div>
+			<% end %>
+		  </div>
+		</div>
+	</div>
+</section>
+
+</>
+
+
+
+<% @user.reverse_invitations.each do |l|%>
+	<%= l.state%><%=l.id%><%= l.position%>
+	<% if l.position == 1 && l.state == "unseen" %>
+		<%= l.sender.name%> vous invite à prendre la 1ère position dans le défi :
+		<%= render "shared/challenge_badge", challenge: l.challenge %>. Acceptez-vous ce défi?
+		<%= link_to "oui", accept_invitation_path(l)%>
+		<%= link_to "non", reject_invitation_path(l)%>
+	<% elsif l.position == 1 && l.state == "accepted" %>
+		Vous avez accepté l'invitation pour :
+		<%= render "shared/challenge_badge", challenge: l.challenge %>. 
+		Etes-vous sûrs??<%= link_to("oui".html_safe,
+              join_one_challenge_path(l.challenge) ,:method => :post) %>
+		<%= link_to "non", reject_invitation_path(l)%>
+	<% elsif l.position == 2 && l.state == "unseen" %>
+		<%= l.sender.name%> vous invite à prendre la Seconde position dans le défi :
+		<%= render "shared/challenge_badge", challenge: l.challenge %>. Acceptez-vous ce défi?
+		<%= link_to "oui", accept_invitation_path(l)%>
+		<%= link_to "non", reject_invitation_path(l)%>
+	<% elsif l.position == 2 && l.state == "accepted" %>
+		Vous avez accepté l'invitation pour :
+		<%= render "shared/challenge_badge", challenge: l.challenge %>. 
+		Etes-vous sûrs?
+		<%= link_to("oui".html_safe,
+		              join_two_challenge_path(l.challenge) ,:method => :post) %>
+		<%= link_to "non", reject_invitation_path(l)%>
+	<%end%>
+	</br>
+	</br>
+<% end%>
+
+
+
+
+</br>
+</br>
+</br>
+</br>
+
 <%= @user.email%>
 <% provide(:title, @user.name) %>
 <%= link_to("edit", edit_user_path(@user))%>
@@ -47,15 +185,7 @@
 
 	</section>
   </aside>
-  <div class="span8">
-    <% if @user.microposts.any? %>
-      <h3>Microposts (<%= @user.microposts.count %>)</h3>
-      <ol class="microposts">
-        <%= render @microposts %>
-      </ol>
-      <%= will_paginate @microposts %>
-    <% end %>
-  </div>
+
 
   <div class="span8">
 	<% @activities.each do |activity| %>
@@ -64,4 +194,4 @@
 	    <%= render_activity activity %>
 	  </div>
 	<% end %>
-</div>
+  </div>

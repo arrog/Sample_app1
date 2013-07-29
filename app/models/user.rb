@@ -44,6 +44,7 @@ class User < ActiveRecord::Base
   has_reputation :likes, source: {reputation: :likes, of: :arguments}, aggregated_by: :sum
   has_reputation :votes, source: {reputation: :votes, of: :debates}, aggregated_by: :sum
   has_reputation :vote_experts, source: {reputation: :vote_experts, of: :doulins}, aggregated_by: :sum
+  has_reputation :vote_challenge, source: {reputation: :vote_challenge, of: :challenges}, aggregated_by: :sum
   
   has_many :invitations, foreign_key: "sender_id", dependent: :destroy
   has_many :reverse_invitations, foreign_key: "reciever_id", class_name:  "Invitation", dependent:   :destroy
@@ -63,6 +64,15 @@ class User < ActiveRecord::Base
     validates :name, presence: true, length: { maximum: 50 }
     validates :email, presence: true
     
+    def fitting_name
+      if self.name.split.size > 1
+        [self.name.split.first.split('').first,'.', self.name.split.last.split('').first(8)].join
+      else
+        self.name.split('').first(12).join
+      end
+    end
+      
+    
     def feed
        Micropost.from_users_followed_by(self)
     end
@@ -75,16 +85,24 @@ class User < ActiveRecord::Base
        Relationship.create!(reciever_id: other_user.id, value:-1, sender_id: self.id)
     end
     
+    def contact
+      #A travailler
+    end
+    
     def circle
       (self.contacts+self.contacted+ self.user_followers + self.following_user).uniq - [self]
     end
     
     def in_team?(other_user)
-      (Relationship.where(reciever_id: other_user.id, value:1, sender_id: self.id)+ Relationship.where(sender_id: other_user.id, value:1, sender_id: self.id)).any?
+      (Relationship.where(reciever_id: other_user.id, value:1, sender_id: self.id)+ Relationship.where(sender_id: other_user.id, value:1, reciever_id: self.id)).any?
+    end
+    
+    def team_user
+      Relationship.where(value:1, sender_id: self.id) + Relationship.where(value:1, reciever_id: self.id)
     end
     
     def defier?(other_user)
- (Relationship.where(reciever_id: other_user.id, value:-1, sender_id: self.id)+ Relationship.where(sender_id: other_user.id, value:-1, sender_id: self.id)).any?
+ (Relationship.where(reciever_id: other_user.id, value:-1, sender_id: self.id)+ Relationship.where(sender_id: other_user.id, value:-1, reciever_id: self.id)).any?
     end
     
     def debating?(debate)
@@ -177,7 +195,7 @@ class User < ActiveRecord::Base
     ## NOTIFICATION CHALLENEGES
     def debat_pret
       dc=[]
-      user.challenges.where(state: "incomplete").each do [l]
+      self.challenges.where(state: "incomplete").each do |l|
         if !l.not_full?
           if l.prime_minister == self
             dc = dc +[l]
@@ -192,7 +210,7 @@ class User < ActiveRecord::Base
         if l.type_deb == 2
           if l.prime_minister == self && ["first", "third", "fifth", "seventh"].include?(l.state)
             cha = cha +[l]
-          elsif l.first_opponent == self && ["second", "fourth", "sixth", "eighth"].include?(l.state)
+          elsif l.first_opponent == self && ["second", "forth", "sixth", "eighth"].include?(l.state)
             cha = cha + [l]
           end         
         elsif l.type_deb == 3
@@ -202,7 +220,7 @@ class User < ActiveRecord::Base
              cha = cha + [l]
           elsif l.second_prop == self && ["third"].include?(l.state)
              cha = cha + [l]
-          elsif l.second_opp == self && ["fourth"].include?(l.state)
+          elsif l.second_opp == self && ["forth"].include?(l.state)
              cha = cha + [l]
           end           
         elsif l.type_deb == 4
@@ -212,7 +230,7 @@ class User < ActiveRecord::Base
             cha = cha + [l]
           elsif l.second_prop == self && ["third", "seventh"].include?(l.state)
             cha = cha + [l]
-          elsif l.second_opp == self && ["fourth", "eighth"].include?(l.state)
+          elsif l.second_opp == self && ["forth", "eighth"].include?(l.state)
             cha = cha + [l]
           end       
         elsif l.type_deb == 8
@@ -222,7 +240,7 @@ class User < ActiveRecord::Base
             cha = cha + [l]
           elsif l.second_prop == self && ["third"].include?(l.state)
             cha = cha + [l]
-          elsif l.second_opp == self && ["fourth"].include?(l.state)
+          elsif l.second_opp == self && ["forth"].include?(l.state)
             cha = cha + [l]
           elsif l.third_prop == self && ["first", "fifth"].include?(l.state)
             cha = cha +[l]
@@ -230,7 +248,7 @@ class User < ActiveRecord::Base
             cha = cha + [l]
           elsif l.fourth_prop == self && ["third", "seventh"].include?(l.state)
             cha = cha + [l]
-          elsif l.fourth_prop == self && ["fourth", "eighth"].include?(l.state)
+          elsif l.fourth_prop == self && ["forth", "eighth"].include?(l.state)
             cha = cha + [l]
           end
         end 
@@ -241,10 +259,11 @@ class User < ActiveRecord::Base
     def doulin_active 
      dou =[]
      doulins.permission_doulin.each do |l|
-      if l.first_user == self && ["first", "third", "fifth", "seventh"].include?(l.state)
-        cha = cha +[l]
-      elsif l.first_opponent == self && ["second", "fourth", "sixth", "eighth"].include?(l.state)
-        cha = cha + [l]
+      if l.state == "online"
+      elsif l.first_user == self && ["first", "third", "fifth", "seventh"].include?(l.state)
+        dou = dou +[l]
+      elsif l.second_user == self && ["second", "fourth", "sixth", "eighth"].include?(l.state)
+        dou = dou + [l]
       end
      end
      dou
@@ -266,23 +285,45 @@ class User < ActiveRecord::Base
      end
     
     ## INVITATION ET TEAM REQUEST
+    def join_group
+      []#a faire
+    end
     
     def invitation_group
-      #A faire
+        []#A faire
     end
     
     def invitation_request
-      reverse_invitations.where(state: "unseen")
+      a=[]
+      reverse_invitations.where(state: "unseen").each do |l|
+        if self.in_challenge?(l.challenge)
+          a
+        else
+          a = a + l
+        end
+      end
+      a
+        
     end
     
     def team_request
-      relationships.where(state:"unseen", reciever_id: self.id)
+      relationships.where(state:"unseen", reciever_id: self.id, value:1)
     end
     
- 
+    def notifications1
+      self.team_request + self.invitation_request+self.invitation_group+ self.join_group+ self.challenges_judge
+    end
     
+    def notifications2
+      self.doulin_active+ self.challenge_active+self.debat_pret
+    end
+    
+    def notifications
+      (self.notifications1+self.notifications2).count
+    end
     ## NOTIFICATION ARGUMENT et NOTIFICATION FOLLOWER à perfectionner
     ## Ces notifications se feront directement dans public activity
+    
     
     def general_grade
       a=0
@@ -300,7 +341,7 @@ class User < ActiveRecord::Base
       where(auth.slice(:provider, :uid)).first_or_create do |user|
         user.provider = auth.provider
         user.uid = auth.uid
-        user.name = auth.info.nickname
+        user.name = auth.info.firstname
         user.email = auth.info.email
       end
     end

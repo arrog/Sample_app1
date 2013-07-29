@@ -1,7 +1,8 @@
-voted
+<section id="activities">
+	<% if activity.trackable %>
+	  	<div class="span4" id="intro-activities">
+		<div class="texte"><%= link_to activity.owner.fitting_name, activity.owner %> a voté dans le débat </div></div>
+		<div class="row"><%= render "shared/debate_badge", debate: activity.trackable %></div>
+	<% end %>
+</section>
 
-<% if activity.trackable %>
-  <%= link_to activity.trackable.title, activity.trackable %>
-<% else %>
-  which has since been removed
-<% end %>
