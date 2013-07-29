@@ -43,15 +43,17 @@ class DebatesController < ApplicationController
     end
   end
   
-  #def update
-   #   if @user.update_attributes(params[:user])
-    #    flash[:success] = "Profile updated"
-     #         sign_in @user
-      #        redirect_to @user
-      #else
-       # render 'edit'
-      #end
-  #end
+  
+  def update
+    @debate = Debate.find(params[:id])
+       if @debate.update_attributes(params[:debate])
+         flash[:success] = "Profile updated"
+              redirect_to @debate
+       else
+         render 'edit'
+       end
+  end
+
   
   def destroy
       Debate.find(params[:id]).destroy
