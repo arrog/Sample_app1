@@ -82,10 +82,12 @@
 	<div class="row" id="en-bas">
 		<%= render "shared/menu_cat"%>
 	
-		<div id="best-debates3">
+		<div id="best-debates3">	
     	    	<%= render "shared/challenge_badge", :challenge => @challenge%>
     	    	<%= render "shared/debate_badge", :debate => @debate %>
-    	    	<%= render "shared/doulin_badge", :doulin => @doulin %>
+    	    	<% if @users.count > 2 %>
+					<%= render "shared/doulin_badge", :doulin => @doulin %>
+				<% end %>
 		</div>
 	</div>
 		

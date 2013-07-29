@@ -8,6 +8,7 @@ class StaticPagesController < ApplicationController
     @challenge = Challenge.first
     @doulin = Doulin.last
     @debate = Debate.first
+    @users = User.all
   end
 
   def presse
