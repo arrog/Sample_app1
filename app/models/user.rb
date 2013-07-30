@@ -299,7 +299,7 @@ class User < ActiveRecord::Base
         if self.in_challenge?(l.challenge)
           a
         else
-          a = a + l
+          a = a + [l]
         end
       end
       a
@@ -319,7 +319,11 @@ class User < ActiveRecord::Base
     end
     
     def notifications
-      (self.notifications1+self.notifications2).count
+      if self.notifications1 == nil && self.notifications2 == nil
+        0
+      else
+        (self.notifications1+self.notifications2).count
+      end
     end
     ## NOTIFICATION ARGUMENT et NOTIFICATION FOLLOWER à perfectionner
     ## Ces notifications se feront directement dans public activity

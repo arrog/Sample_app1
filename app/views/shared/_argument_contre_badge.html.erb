@@ -1,16 +1,16 @@
 <section id="argument-contre">
 		<div class="row" id='initial'>
 		     <div class id="rouge">
-		        <div class="row">
+		        <div class="row" id="descente">
 	                 <div class="span2">
 	                 	<div class="user">
 							<%= image_tag argument.user.avatar.url(:medium), class: "image" %>
 						</div>
 						<div class="nom-user">
-	                 		<%= link_to argument.user.fitting_name, argument.user %>
+	                 	<%= link_to argument.user.fitting_name, argument.user %>
 	                 	</div>
 	                 </div>
-	                 <div class="span4">
+	                 <div class="span4" id="descente2">
 						<div class="row" id='title5'>
 	                 		<div class="title">
 	                 			<h2><%= argument.title%></h2>
@@ -36,14 +36,18 @@
 						<div class="row" id="coco">
 	                 		<div class="toggle">
 							  <div id="argcontent">
-	                 				<%= simple_format argument.content%>
-							  </div>
-							<p class="toggleClose"><a>Refermer l'argument</a></p>
-							
+								<%= h(argument.content).gsub(/\n/, '<br/>').html_safe %>
+							  </div>							
 	                 		</div>
 						</div>
+						
 	                 </div>
 		     	</div>
+		
+				<div class="toggleClose2">
+					<div class="toggleClose"><a>Refermer l'argument</a></div>
+					<div class="arrow-up-argument"></div>
+				</div>
 	         </div>
 
 	    </div>
@@ -53,9 +57,9 @@
 		    		<% argument.argcoms.each do |argcom| %>
     	    		 <%= render "shared/argcom_badge", :argcom => argcom %>
     	    		<% end %>
-				    <% if signed_in? && argument.argumentable_type == "Debate"%>
-				    	<%= render "shared/argcom_form", :argcom => argument.argcoms.new, :argument => argument %>
-				    <%end%>
+					<% if signed_in? && argument.argumentable_type == "Debate"%>
+			    		<%= render "shared/argcom_form", :argcom => argument.argcoms.new, :argument => argument %>
+			    	<%end%>
 		    </div>
 		</div>
 

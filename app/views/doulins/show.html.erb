@@ -82,7 +82,7 @@
 						</div>
 						<div class="second_user">
 							<% if @doulin.have_second? %>
-								<a><%= link_to @doulin.second_user.name, @doulin.second_user, class: "first_user"%></a>
+								<a><%= link_to @doulin.second_user.name, @doulin.second_user, class: "second_user"%></a>
 									<p class='desc'><%= @doulin.second_user.content%></p>
 							<%else%>
 								<% if current_user.try(:admin)%>
@@ -140,8 +140,8 @@
 		              start_doulin_path(@doulin) ,:method => :post) %>
 			<%end%>
 		</div>
-
-		<div class="row">
+		
+		<div class="row" id="pousse-gauche-bleu">
 			<% if @doulin.state == "first" %>
 				<% if signed_in? && current_user == @doulin.first_user %>
 					<% if !@doulin.arguments.where(position: 1).any? %>
@@ -158,7 +158,7 @@
 			<% end %>
 		</div>
         
-		<div class="row">
+		<div class="row" id="pousse-gauche-rouge">
 			<% if @doulin.state == "second" %>
 				<% if signed_in? && current_user == @doulin.second_user %>
 					<% if !@doulin.arguments.where(position: 2).any? %>
@@ -175,7 +175,7 @@
 			<% end %>	
 		</div>
         
-		<div class="row">
+		<div class="row" id="pousse-gauche-bleu">
 			<% if @doulin.state == "third" %>
 				<% if signed_in? && current_user == @doulin.first_user %>
 					<% if !@doulin.arguments.where(position: 3).any? %>
@@ -192,7 +192,7 @@
 			<% end %>	
 		</div>
         
-		<div class="row">
+		<div class="row" id="pousse-gauche-rouge">
 			<% if @doulin.state == "forth" %>
 				<% if signed_in? && current_user == @doulin.second_user %>
 					<% if !@doulin.arguments.where(position: 4).any? %>
@@ -209,7 +209,7 @@
 			<% end %>	
 		</div>
         
-		<div class="row">
+		<div class="row" id="pousse-gauche-bleu">
 			<% if @doulin.state == "fifth" %>
 				<% if signed_in? && current_user == @doulin.first_user %>
 					<% if !@doulin.arguments.where(position: 5).any? %>
@@ -226,7 +226,7 @@
 			<% end %>	
 		</div>
         
-		<div class="row">
+		<div class="row" id="pousse-gauche-rouge">
 			<% if @doulin.state == "sixth" %>
 				<% if signed_in? && current_user == @doulin.second_user %>
 					<% if !@doulin.arguments.where(position: 6).any? %>

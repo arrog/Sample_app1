@@ -1,8 +1,6 @@
 <section id="open-debate">
 	<div class="container">
-		<% if current_user.try(:admin?)%>
-			<a><%= link_to "modifier les informations", edit_debate_path(@debate), class: "edit3"%></a>
-		<%end%>		
+	
 	 <div class="row">
 		<div class="span10 offset1">
 			<div id="title">
@@ -112,7 +110,8 @@
 				    	</div>
 
 						<div class="row" id="voter">
-							<div class="texte">Contribue au débat!</div>
+							<div class="texte-newarg">Contribue au débat!</div>
+							<div class='texte2-newarg'>J'argumenterai plus tard</div>
 							<div class="arrow-down-newarg"></div>
 							<div class="arrow-up-newarg"></div>
 						</div>

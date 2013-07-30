@@ -1,4 +1,4 @@
-<div class= "span3" id="profile-badge">
+<div class="span3" id="profile-badge">
 	
 	<div class="row" id="image1">
 		<%= link_to image_tag(@user.avatar.url(:medium)), @user, class: "image"%>
@@ -40,7 +40,7 @@
 			
 		<% elsif current_user && current_user.following?(@user) %>
 		<div class="boutons-sociaux">
-			<%= link_to"NE PLUS SUIVRE", unfollow_user_path(@user), class: "boutons-sociaux"%>
+			<%= link_to"NE PLUS SUIVRE", unfollow_user_path(@user), class: "boutons-sociaux3"%>
 		</div>
 		<% elsif current_user %>
 		<div class="boutons-sociaux">
@@ -54,6 +54,9 @@
 		
 		
 		<% if current_user && current_user.in_team?(@user)%>
+			<div class="boutons-sociaux">
+				<%= link_to "UN EQUIPIER", user_path(@user), class: "boutons-sociaux2"%>
+			</div>
 		<% elsif current_user && current_user == @user%>
 		<% elsif current_user %>
 		<div class="boutons-sociaux">

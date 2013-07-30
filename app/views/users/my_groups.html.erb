@@ -4,18 +4,12 @@
 
 		<%= render "profile_header" %>	
 
-		<div class= 'row'>
-			<div class="span2">
+		<div class= 'row' id="container-activ">
+			<div>
 				<%= render "profile_badge" %>	
 			</div>
-			<div class="span8" id="for-badges">
-				  <% if current_user && current_user == @user %>
-				  	<div class="espace1"></div>
-				  <% elsif current_user && current_user.in_team?(@user)%>
-				  	<div class="espace"></div>
-				  <% else%>
-				 	<div class="espace2"></div>
-				  <%end%>
+			<div class="span7" id="container-activ2">
+
 				
 				<% @user.groups.each do |group| %>
 					<%= render "shared/group_badge", group: group  %>

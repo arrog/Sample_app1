@@ -6,15 +6,16 @@ jQuery ->
 
 $(document).ready ->
  $ ->
+  $(".toggleClose2").hide()
   $(".toggle").hide()
   $(".argcoms").hide()
 
 
   $(".toggleOpen").click ->
-    	$(this).hide().parent().parent().next("#coco").children(".toggle").slideDown("medium").parent().siblings("#title5").children(".cont").hide().closest("#initial").siblings(".argcoms").show()
+    	$(this).hide().parent().parent().next("#coco").children(".toggle").slideDown("medium").parent().siblings("#title5").children(".cont").hide().parent().parent().parent().siblings(".toggleClose2").show().closest("#initial").siblings(".argcoms").show()
 	    
 	 
 
-  $("p.toggleClose").click ->
-    $(this).parents(".toggle").slideUp("fast").parent().siblings("#title5").children(".cont").show().parent().siblings("#coco1").children(".stats").children(".toggleOpen").show().closest("#initial").siblings(".argcoms").hide()
+  $(".arrow-up-argument").click ->
+    $(this).parents(".toggleClose2").hide().siblings("#descente").children("#descente2").children("#coco").children(".toggle").hide().parent().siblings("#title5").children(".cont").show().parent().siblings("#coco1").children(".stats").children(".toggleOpen").show().closest("#initial").siblings(".argcoms").hide()
 

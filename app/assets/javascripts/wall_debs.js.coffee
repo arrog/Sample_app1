@@ -11,6 +11,7 @@ $(document).ready ->
   $("#to-be-closed").hide()
   $(".arrow-up-context").hide()
   $(".arrow-up-newarg").hide()
+  $(".texte2-newarg").hide()
   $(".arrow-up-comments").hide()
   $("#comments-to-open").hide()
   $(".comment-texte2").hide()
@@ -61,10 +62,10 @@ $(document).ready ->
 	    $(this).parent().parent().hide().siblings(".second_user").show()
 
   $(".arrow-down-newarg").click ->
-	    $(this).hide().siblings(".arrow-up-newarg").show().parent().siblings("#box-argument").slideDown("medium")
+	    $(this).hide().siblings(".texte-newarg").hide().siblings(".arrow-up-newarg").show().siblings('.texte2-newarg').show().parent().siblings("#box-argument").slideDown("medium")
 
   $(".arrow-up-newarg").click ->
-	    $(this).hide().siblings(".arrow-down-newarg").show().parent().siblings("#box-argument").slideUp("fast")
+	    $(this).hide().siblings(".texte2-newarg").hide().siblings(".arrow-down-newarg").show().siblings('.texte-newarg').show().parent().siblings("#box-argument").slideUp("fast")
 
   $(".arrow-down-context").click ->
 	    $(this).hide().siblings(".arrow-up-context").show().parent().siblings("#to-be-closed").slideDown("fast")

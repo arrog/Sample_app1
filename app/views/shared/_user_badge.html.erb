@@ -1,0 +1,14 @@
+<section id="user-badge">
+	<div class="row">
+		<div class="span2">
+			<div class="image1">
+				<%= link_to image_tag(user.avatar.url(:medium)), user, class: "image"%>
+			</div>
+			<div class="nom">
+				<%= link_to user.fitting_name, user, class: "nom"%>
+			</div>
+		</div>
+			
+		
+	</div>
+</section>
