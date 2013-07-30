@@ -13,7 +13,10 @@ $(document).ready ->
   $("#fermer-explication").click ->
     	$(this).parent().parent().hide().siblings("#intro-doulin").children(".ouvrir-informations").show()
  
+  $("#fermer-explication1").click ->
+	    $(this).parent().parent().hide().siblings("#intro-doulin").children(".ouvrir-informations").show()
+
 
   $(".ouvrir-informations").click ->
-    	$(this).hide().parent().siblings("#open-infos").show()    
+    	$(this).hide().parent().siblings("#open-infos").show().siblings("#open-infos2").show()
 	

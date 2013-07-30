@@ -259,6 +259,16 @@
 		<%end%>		
 
 
+		<div class="span1" id="follow">
+	   		<% if current_user && current_user.following?(@challenge)%>
+	   			<div class="texte2"><%= link_to"Fuir", unfollow_challenge_path(@challenge), class: "texte"%></div>
+	   		<% else %>
+	   			<div class="texte"><%= link_to"Suivre", follow_challenge_path(@challenge), class: "texte"%></div>
+	   		<% end %>
+	   			<div class="arrow-left"></div>
+	   </div>
+
+
 		<div class="span1" id="catcat">
 			<div class="arrow-left"></div>   		
 	   		<div class="image">

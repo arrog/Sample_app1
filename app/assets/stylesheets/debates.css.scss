@@ -147,6 +147,50 @@
 		}
 	}
 	
+	#follow{
+	margin-top:-235px;
+	margin-left:942px;
+	height:  24px;
+	width: 90px;
+	background-color: #808080;
+	
+	.texte{
+		font-family: "gotham";
+		font-weight: bold;
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 8px;
+		padding-top:2px;
+		
+		.texte:hover{
+			color: black;
+		}
+	}
+	
+	.texte2{
+		font-family: "gotham";
+		font-weight: bold;
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 12px;
+		padding-top:2px;
+		
+		.texte:hover{
+			color: black;
+		}
+	}
+	.arrow-left{
+		margin-top:-20px;
+		padding-left: 78px;
+	 	width: 0; 
+	 	height: 0; 
+	 	border-top: 12px solid transparent;
+	 	border-bottom: 12px solid transparent; 
+	 	border-right:12px solid white;
+	}
+	
+	}
+	
 	
 	#catcat{
 	margin-top:-195px;
@@ -168,6 +212,7 @@
 	margin-top:-50px;
 	}
 	}
+	
 	
 	
 	#voter{
@@ -466,10 +511,33 @@
 
 
 #argument-pour{
+
+	.modifs{
+		margin-left:716px;
+		width: 80px;
+		margin-top: 20px;
+		font-family: "gotham";
+		font-size: 16px;
+		color: white;
+		font-weight: bold;
+		text-align: center;
+		
+		.texte{
+		padding-top: 2px;
+		height: 22px;
+		background-color: #839AB2;
+		color: white;
+		}
+		.texte2{
+		height: 24px;
+		background-color: #C9C9C9;
+		color: white;
+		}	
+	}
 	
 	#bleu{
 	background-color:#AAD0FF;
-	margin-top:20px;
+	margin-top:-48px;
 	width: 534px;
 	min-height:151px;
 	margin-left:182px;
@@ -610,9 +678,32 @@
 
 #argument-neutre{
 	
+	.modifs{
+		margin-left:839px;
+		width: 80px;
+		margin-top: 20px;
+		font-family: "gotham";
+		font-size: 16px;
+		color: white;
+		font-weight: bold;
+		text-align: center;
+		
+		.texte{
+		padding-top: 2px;
+		height: 22px;
+		background-color: #808080;
+		color: white;
+		}
+		.texte2{
+		height: 24px;
+		background-color: #C9C9C9;
+		color: white;
+		}	
+	}
+	
 	#gris{
 	background-color:#D3D3D3;
-	margin-top:20px;
+	margin-top:-48px;
 	width: 534px;
 	min-height:151px;
 	margin-left:305px;
@@ -754,9 +845,32 @@
 
 #argument-contre{
 	
+	.modifs{
+		margin-left:348px;
+		width: 80px;
+		margin-top: 20px;
+		font-family: "gotham";
+		font-size: 16px;
+		color: white;
+		font-weight: bold;
+		text-align: center;
+		
+		.texte{
+		padding-top: 2px;
+		height: 22px;
+		background-color: #A54952;
+		color: white;
+		}
+		.texte2{
+		height: 24px;
+		background-color: #C9C9C9;
+		color: white;
+		}	
+	}
+	
 	#rouge{
 	background-color:#FF6969;
-	margin-top:20px;
+	margin-top: -48px;
 	width: 534px;
 	min-height:151px;
 	margin-left:428px;
@@ -1063,6 +1177,50 @@
 		margin-top: 0px;
 		}
 		}
+	}
+
+	#follow{
+	margin-top:-235px;
+	margin-left:935px;
+	height:  24px;
+	width: 90px;
+	background-color: #808080;
+	
+	.texte{
+		font-family: "gotham";
+		font-weight: bold;
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 8px;
+		padding-top:2px;
+		
+		.texte:hover{
+			color: black;
+		}
+	}
+	
+	.texte2{
+		font-family: "gotham";
+		font-weight: bold;
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 12px;
+		padding-top:2px;
+		
+		.texte:hover{
+			color: black;
+		}
+	}
+	.arrow-left{
+		margin-top:-20px;
+		padding-left: 78px;
+	 	width: 0; 
+	 	height: 0; 
+	 	border-top: 12px solid transparent;
+	 	border-bottom: 12px solid transparent; 
+	 	border-right:12px solid white;
+	}
+	
 	}
 	
 	#catcat{
@@ -1674,7 +1832,7 @@
 			
 			#equipe{
 			height:30px;
-			background-color:#808080;
+			background-color:#AAD0FF;
 			width: 140px;
 			font-family: "bebasneue-webfont";
 			font-size: 20px;
@@ -1824,7 +1982,7 @@
 			
 			#equipe{
 			height:30px;
-			background-color:#808080;
+			background-color:#FF6969;
 			width: 140px;
 			font-family: "bebasneue-webfont";
 			font-size: 20px;
@@ -2090,6 +2248,50 @@
 	
 	#pousse-gauche2{
 		margin-left:-32px;
+	}
+	
+	#follow{
+	margin-top:-383px;
+	margin-left:910px;
+	height:  24px;
+	width: 90px;
+	background-color: #808080;
+	
+	.texte{
+		font-family: "gotham";
+		font-weight: bold;
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 8px;
+		padding-top:2px;
+		
+		.texte:hover{
+			color: black;
+		}
+	}
+	
+	.texte2{
+		font-family: "gotham";
+		font-weight: bold;
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 12px;
+		padding-top:2px;
+		
+		.texte:hover{
+			color: black;
+		}
+	}
+	.arrow-left{
+		margin-top:-20px;
+		padding-left: 78px;
+	 	width: 0; 
+	 	height: 0; 
+	 	border-top: 12px solid transparent;
+	 	border-bottom: 12px solid transparent; 
+	 	border-right:12px solid white;
+	}
+	
 	}
 	
    	#catcat{
@@ -2469,7 +2671,51 @@
 	#pousse-gauche2{
 		margin-left:-32px;
 	}
+
+
+	#follow{
+	margin-top:-345px;
+	margin-left:910px;
+	height:  24px;
+	width: 90px;
+	background-color: #808080;
 	
+	.texte{
+		font-family: "gotham";
+		font-weight: bold;
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 8px;
+		padding-top:2px;
+		
+		.texte:hover{
+			color: black;
+		}
+	}
+	
+	.texte2{
+		font-family: "gotham";
+		font-weight: bold;
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 12px;
+		padding-top:2px;
+		
+		.texte:hover{
+			color: black;
+		}
+	}
+	.arrow-left{
+		margin-top:-20px;
+		padding-left: 78px;
+	 	width: 0; 
+	 	height: 0; 
+	 	border-top: 12px solid transparent;
+	 	border-bottom: 12px solid transparent; 
+	 	border-right:12px solid white;
+	}
+	
+	}	
    	#catcat{
 	margin-top:-305px;
 	margin-left:910px;

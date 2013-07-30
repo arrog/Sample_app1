@@ -24,11 +24,13 @@
 			<div class="span2">
 				<div class="follow">
 				<% if current_user && current_user.following?(debate)%>
-					<%= link_to"Ne plus suivre", unfollow_debate_path(debate)%>
+					<div class="texte2"><%= link_to"Fuir", unfollow_debate_path(debate), class: "texte"%></div>
 				<% else %>
-					<%= link_to"suivre", follow_debate_path(debate)%>
+					<div class="texte"><%= link_to"Suivre", follow_debate_path(debate), class: "texte"%></div>
 				<% end %>
+					<div class="arrow-left"></div>
 				</div>
+				
 				<div class="categorie">
 					<div class="arrow-left"></div>
 					<div class="image">

@@ -1,5 +1,16 @@
 <section id="argument-neutre">
 		<div class="row" id='initial'>
+			<% if current_user && current_user == argument.user %>
+				<div class="modifs">
+					<div class='texte'><%= link_to "Modifier", edit_argument_path(argument), class: "texte" %></div>
+					<div class= 'texte2'><%= link_to "Effacer", argument_path(argument), :method => :delete, class: "texte2" %></div>
+				</div>
+			<% elsif current_user.try(:admin?)%>
+				<div class="modifs">
+					<div class='texte'><%= link_to "Modifier", edit_argument_path(argument), class: "texte" %></div>
+					<div class= 'texte2'><%= link_to "Effacer", argument_path(argument), :method => :delete, class: "texte2" %></div>
+				</div>
+			<% end%>
 		     <div class id="gris">
 		        <div class="row" id="descente">
 	                 <div class="span2">

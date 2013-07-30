@@ -98,6 +98,16 @@
 	 			</div>
 	 		</div>
 	 	</div>				
+
+		<div class="span1" id="follow">
+	   		<% if current_user && current_user.following?(@doulin)%>
+	   			<div class="texte2"><%= link_to"Fuir", unfollow_doulin_path(@doulin), class: "texte"%></div>
+	   		<% else %>
+	   			<div class="texte"><%= link_to"Suivre", follow_doulin_path(@doulin), class: "texte"%></div>
+	   		<% end %>
+	   			<div class="arrow-left"></div>
+	   </div>
+
 	   	<div class="span1" id="catcat">
 			<div class="arrow-left"></div>   		
 	   		<div class="image">
