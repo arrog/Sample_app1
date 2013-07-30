@@ -80,6 +80,7 @@
 		font-family: "gotham";
 		font-size: 24px;
 		text-align: left;
+		line-height: 25px;
 		
 		
 		}
@@ -302,6 +303,10 @@
 		box-shadow: none;
 		}
 		
+		.text-newarg:-webkit-input-placeholder {
+		   color: red;
+		}
+		
 		.actions-newarg{
 		width:413px;
 		margin-top:-10px;
@@ -314,8 +319,8 @@
 		margin-left:10px;
 		border-radius: 0px;
 		background-color:#808080;
-		font-family: "bebasneue-webfont";
-		font-size:24px;
+		font-family: "gotham";
+		font-size:16px;
 		color: #000000;
 		color: white;
 		}
