@@ -249,6 +249,12 @@
 }
 #new-argument{
 		
+	
+
+	::-webkit-input-placeholder {
+	   font-family: "gotham";
+	}
+	
 	#new-argument1{
 	background-color:#AAD0FF;
 	margin-top:10px;
@@ -278,12 +284,13 @@
 
 		
 		.title-newarg{
+		
 		width: 325px;
 		margin-top:20px;
 		margin-left: 20px;
 		font-family: "gotham";
 		color:#000000;
-		font-size:14px;
+		font-size:19px;
 		background-color:#FFF;
 		border-radius:0px;
 		border: none;
@@ -295,16 +302,13 @@
 		width: 405px;
 		margin-left: 20px;
 		font-family: "georgia";
-		font-size:13px;
+		font-size:16px;
 		background-color:#FFF;
 		border-radius:0px;
 		border: none;
 		resize:none;
 		box-shadow: none;
-		}
 		
-		.text-newarg:-webkit-input-placeholder {
-		   color: red;
 		}
 		
 		.actions-newarg{
@@ -432,7 +436,32 @@
 	width: 500px;
 	font-family:"georgia";
 	font-size: 14px;
+	border-radius:0px;
+	border: none;
+	resize:none;
+	box-shadow: none;
 	}
+	
+	.action{
+		background-color: white;
+		height: 40px;
+		width: 508px;
+		margin: -5px 0px 0px -170px;
+		
+		.actions{
+			border-radius:0px;
+			border: none;
+			margin-top: 1px;
+			margin-left: 15px;
+			padding: 5px;
+			font-family: "gotham";
+			font-size: 18px;
+			color: black;
+			background-color: #808080;
+		}
+	
+	}
+
 }
 
 

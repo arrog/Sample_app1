@@ -22,7 +22,10 @@
 				    <%= f.text_area :content, placeholder: "Réagis!", class: "content" %>
 					<%= f.hidden_field :commentable_id, :value => commentable.id %>
 					<%= f.hidden_field :commentable_type, :value => type %>
-				  <%= f.submit "Valider" %>
+				 
+				 	<div class="action">
+						<%= f.submit "Valider", class: "actions" %>
+					</div>
 				</div>
 				<% end %>
 				</div>
