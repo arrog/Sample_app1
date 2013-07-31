@@ -69,6 +69,10 @@ class Doulin < ActiveRecord::Base
     end
   end
   
+  def valeur_vote(user)
+    self.evaluations.where(target_type: self.class, target_id: self.id, source_id: user.id).first.value      
+  end
+  
   def first_user
     expertises.where(position:1).first.user
   end

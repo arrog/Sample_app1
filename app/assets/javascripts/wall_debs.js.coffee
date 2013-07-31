@@ -21,6 +21,42 @@ $(document).ready ->
   $(".invitation-fermer1-american").hide()
   $(".invitation-fermer3-american").hide()
   $(".invitation-fermer4-american").hide()
+  $(".invitation-fermer").hide()
+  $(".invitation-fermer1").hide()
+  $(".invitation-fermer-fc").hide()
+  $(".invitation-fermer1-fc").hide()
+  $(".invitation-fermer3-fc").hide()
+  $(".invitation-fermer4-fc").hide()
+
+
+
+
+
+  $("#invitation3-fc").click ->
+	    $(this).parent().hide().siblings(".invitation-fermer3-fc").show()
+
+  $("#fermer-invitation3-fc").click ->
+	    $(this).parent().parent().hide().siblings(".first_user").show()
+
+  $("#invitation4-fc").click ->
+	    $(this).parent().hide().siblings(".invitation-fermer4-fc").show()
+
+  $("#fermer-invitation4-fc").click ->
+	    $(this).parent().parent().hide().siblings(".second_user").show()
+
+
+  $("#invitation-fc").click ->
+	    $(this).parent().hide().siblings(".invitation-fermer-fc").show()
+
+  $("#fermer-invitation-fc").click ->
+	    $(this).parent().parent().hide().siblings(".first_user").show()
+
+  $("#invitation1-fc").click ->
+	    $(this).parent().hide().siblings(".invitation-fermer1-fc").show()
+
+  $("#fermer-invitation1-fc").click ->
+	    $(this).parent().parent().hide().siblings(".second_user").show()
+
 
 
   $("#invitation3-american").click ->
@@ -36,7 +72,7 @@ $(document).ready ->
 	    $(this).parent().parent().hide().siblings(".second_user").show()
 
 
- $("#invitation-american").click ->
+  $("#invitation-american").click ->
 	    $(this).parent().hide().siblings(".invitation-fermer-american").show()
 
   $("#fermer-invitation-american").click ->

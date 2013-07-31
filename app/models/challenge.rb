@@ -76,6 +76,11 @@ class Challenge < ActiveRecord::Base
     end
   end
   
+  
+  def valeur_vote(user)
+    self.evaluations.where(target_type: self.class, target_id: self.id, source_id: user.id).first.value      
+  end
+  
   def place_left
     places - users.count
   end

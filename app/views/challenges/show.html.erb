@@ -93,7 +93,7 @@
 							<div class='text'></br></br><%= @challenge.first_opponent.fitting_name%></div>
 							</div>
 						</div>
-						<% elsif [4,8].include?(@challenge.type_deb) %>
+						<% elsif [4,8].include?(@challenge.type_deb)  && !@challenge.not_full? %>
 							<%= @challenge.first_judgment.grade %>
 							<%= @challenge.first_judgment.grade_two %>
 							<%= @challenge.first_judgment.grade_three %>
@@ -180,7 +180,7 @@
 								<div class='text'></br></br><%= @challenge.first_opponent.fitting_name%></div>
 								</div>
 							</div>
-							<% elsif [4,8].include?(@challenge.type_deb) %>
+							<% elsif [4,8].include?(@challenge.type_deb)  && !@challenge.not_full? %>
 						    	<%= @challenge.second_judgment.grade %>
 						    	<%= @challenge.second_judgment.grade_two %>
 					   	 		<%= @challenge.second_judgment.grade_three %>
@@ -268,7 +268,7 @@
 								<div class='text'></br></br><%= @challenge.first_opponent.fitting_name%></div>
 								</div>
 							</div>
-							<% elsif [4,8].include?(@challenge.type_deb) %>
+							<% elsif [4,8].include?(@challenge.type_deb) && !@challenge.not_full? %>
 						    	<%= @challenge.third_judgment.grade %>
 						    	<%= @challenge.third_judgment.grade_two %>
 					   	 		<%= @challenge.third_judgment.grade_three %>

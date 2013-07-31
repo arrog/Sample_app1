@@ -23,47 +23,112 @@
 			}
 			
 		#stats2{
+		width:354px;
 		margin-top:-53px;
-		margin-left:59px;
+		margin-left:10px;
 		
-		#resultats{
+		.reslutats-oui{
+		background-color: #AAD0FF;
+		height: 21px;
+		width: 85px;
+		padding-top:5px;
+		position:relative;
+		z-index: 5;
 		
-		.resultats-oui{
-		margin-left:-30px;
-		background-color:#FFF;
-		font-family:"bebasneue-webfont";
-		font-size:24px;
-		background-color:#FFF;
-		color:#808080;
+		.oui1{
+		font-family: "bebasneue-webfont";
+		font-size: 18px;
+		padding: 0px 5px 0px 5px;
+		color: white;
 		}
-		.resultats-oui1{
-		margin-left:-3px;
-		background-color:#808080;
-		font-family:"bebasneue-webfont";
-		font-size:24px;
-		background-color:#808080;
-		color:#FFF;
+		
+		.oui3{
+		font-family: "georgia";
+		font-size: 18px;
+		font-weight: bold;
+		color: #808080;
+		margin: -20px 0px 0px 30px;
 		}
-		.resultats-non1{
-		margin-left:230px;
-		background-color:#FFF;
-		font-family:"bebasneue-webfont";
-		font-size:24px;
-		background-color:#FFF;
-		color:#808080;
-		}
-		.resultats-non{
-		margin-left:-3px;
-		background-color:#808080;
-		font-family:"bebasneue-webfont";
-		font-size:24px;
-		background-color:#808080;
-		color:#FFF;
+		
+		.oui2{
+		font-family: "georgia";
+		font-size: 16px;
+		font-weight: bold;
+		font-style: italic;
+		margin: -18px 0px 0px 45px;
+		color: white;
 		}
 		}
-		.barre{
-		margin-top:10px;
+		
+		.reslutats-suisse{
+		background-color: #C9C9C9;
+		height: 21px;
+		width: 85px;
+		margin: - 26px 0px 0px 141px;
+		padding-top:5px;
+		position:relative;
+		z-index: 5;
+		
+		.suisse1{
+		font-family: "bebasneue-webfont";
+		font-size: 18px;
+		padding: 0px 5px 0px 5px;
+		color: white;
 		}
+		
+		.suisse3{
+		font-family: "georgia";
+		font-size: 18px;
+		font-weight: bold;
+		color: #808080;
+		margin: -20px 0px 0px 30px;
+		}
+		
+		.suisse2{
+		font-family: "georgia";
+		font-size: 16px;
+		font-weight: bold;
+		font-style: italic;
+		margin: -18px 0px 0px 45px;
+		color: white;
+		}
+		}
+
+		.reslutats-non{
+		background-color: #FF6969;
+		height: 21px;
+		width: 85px;
+		margin: - 26px 0px 0px 268px;
+		padding-top:5px;
+		position:relative;
+		z-index: 5;
+		
+		.non1{
+		font-family: "bebasneue-webfont";
+		font-size: 18px;
+		padding: 0px 5px 0px 5px;
+		color: white;
+		}
+		
+		.non3{
+		font-family: "georgia";
+		font-size: 18px;
+		font-weight: bold;
+		color: #808080;
+		margin: -20px 0px 0px 33px;
+		}
+		
+		.non2{
+		font-family: "georgia";
+		font-size: 16px;
+		font-weight: bold;
+		font-style: italic;
+		margin: -18px 0px 0px 45px;
+		color: white;
+		}
+		}
+
+		
 		}
 		}
 	
@@ -85,6 +150,19 @@
 		
 		}
 
+		#tags_list_doulin{
+		margin-top:15px;
+		font-family : "gotham";
+		font-size : 18px;
+		color: white;
+		
+		li{
+		margin-right: 5px;
+		display : inline-block;
+		}
+		
+		}
+
 		#content{
 			margin-right:5px;
 			margin-top:10px;
@@ -102,27 +180,63 @@
 		margin-top: 15px;
 		margin-right:5px;	
 		border-bottom:10px solid white;
-
+		
+		li{
+		display : inline-block;
+		}
+		
 		.vote2{
 			font-family:"gotham";
 			font-size:25px;
 
 		}
 
-		.oui{
-			margin-left:10px;
-			padding-left:5px;
-			margin-top:-12px;
+		.oui-oui{
+			margin-left:30px;
+			background-color: #808080;
+			font-family: "bebasneue-webfont";
+			font-size: 22px;
+			padding: 5px 5px 5px 5px;
+			
+			.oui{
+			color: white;
+			}
+			
+			.oui:hover{
+			color: #AAD0FF
+			}
 		}
 
-		.suisse{
-			margin-left:2px;
-			margin-top:-12px;
+		.suisse-suisse{
+			margin-left:8px;
+			background-color: #FF6969;
+			font-family: "bebasneue-webfont";
+			font-size: 22px;
+			padding: 5px 15px 5px 15px;
+			
+			.suisse{
+			color: white;
+			}
+			
+			.suisse:hover{
+			color: #808080;
+			}
 		}
-
-		.non{
-			margin-left:2px;
-			margin-top:-12px;
+		
+		.non-non{
+			margin-left:8px;
+			background-color: #FFF;
+			font-family: "bebasneue-webfont";
+			font-size: 22px;
+			padding: 5px 5px 5px 5px;
+			
+			.non{
+			color: black;
+			}
+			
+			.non:hover{
+			color: #FF6969;
+			}
 		}
 		}
 
@@ -132,6 +246,7 @@
 
 		.stat1{
 			margin-top:10px;
+			margin-bottom: 15px;
 
 			.image{
 			padding-bottom:5px;
@@ -347,7 +462,7 @@
 		width: 405px;
 		margin-left: 20px;
 		font-family: "georgia";
-		font-size:16px;
+		font-size:14px;
 		background-color:#FFF;
 		border-radius:0px;
 		border: none;
@@ -516,6 +631,7 @@
 		margin-left:716px;
 		width: 80px;
 		margin-top: 20px;
+				margin-bottom: -68px;
 		font-family: "gotham";
 		font-size: 16px;
 		color: white;
@@ -537,7 +653,7 @@
 	
 	#bleu{
 	background-color:#AAD0FF;
-	margin-top:-48px;
+	margin-top:20px;
 	width: 534px;
 	min-height:151px;
 	margin-left:182px;
@@ -682,6 +798,7 @@
 		margin-left:839px;
 		width: 80px;
 		margin-top: 20px;
+		margin-bottom: -68px;
 		font-family: "gotham";
 		font-size: 16px;
 		color: white;
@@ -703,7 +820,7 @@
 	
 	#gris{
 	background-color:#D3D3D3;
-	margin-top:-48px;
+	margin-top:20px;
 	width: 534px;
 	min-height:151px;
 	margin-left:305px;
@@ -849,6 +966,7 @@
 		margin-left:348px;
 		width: 80px;
 		margin-top: 20px;
+		margin-bottom: -68px;
 		font-family: "gotham";
 		font-size: 16px;
 		color: white;
@@ -870,7 +988,7 @@
 	
 	#rouge{
 	background-color:#FF6969;
-	margin-top: -48px;
+	margin-top: 20px;
 	width: 534px;
 	min-height:151px;
 	margin-left:428px;
@@ -1022,7 +1140,7 @@
 		.image1{
 		img { width: 150px; height:150px;}
 		width:150px;
-		margin-top:20px;
+		margin-top:15px;
 		margin-left:15px;
 		border-bottom: 2px solid #FFF;
 			.image{
@@ -1033,7 +1151,7 @@
 		.image2{
 		img { width: 150px; height:150px;}
 		width:150px;
-		margin-top:20px;
+		margin-top:15px;
 		margin-right:15px;
 		border-bottom: 2px solid #FFF;
 			.image{
@@ -1054,6 +1172,9 @@
 		a:hover{
 		color:$mainColor;
 		}
+		
+		
+		
 		
 		.desc{
 		font-family:"georgia";
@@ -1083,24 +1204,36 @@
 	}
 	
 	#title2{
-		margin-top:30px;
+		margin-top:15px;
 		margin-right:0px;
-		
+		margin-left: 30px;
+		width: 420px;
+				
 		.title3{
-		padding-left:10px;
-		padding-right:10px;
-		text-align: center;
+		text-align: left;
 		 font-family:"gotham";
 		 line-height:20px;
 		 font-size:25px;
 		 color:#000000;
 		}
 		
+		
+		#tags_list_doulin{
+		margin-left: 0px;
+		margin-top:15px;
+		font-family : "gotham";
+		font-size : 18px;
+		color: white;
+		
+		li{
+		margin-right: 5px;
+		display : inline-block;
+		}
+		
+		}
 		#content{
-			padding-left:10px;
-			padding-right:10px;
-			text-align:center;
-			padding-top:20px;
+			margin-top: 15px;
+			text-align:left;
 			font-family:georgia;
 			font-size:14px;
 			font-style: italic;	
@@ -1108,8 +1241,9 @@
 		
 		#vote{
 			margin-top:10px;
-			margin-left: 20px;
-			width:400px;
+			margin-left: 0px;
+			padding-bottom: 10px;
+			border-bottom: 9px solid white;
 	
 			a:hover{
 			color:#000000;
@@ -1117,43 +1251,62 @@
 	
 		.pour-first{
 		 	float: left;
-			padding: 5px;
-			font-family:"bebasneue-webfont";
-			font-size:20px;
+			padding: 7px 15px 10px 15px;
+			font-family:"gotham";
+			font-size:18px;
 			color: white;
 			background-color:#808080;
 		}
+		
+		.pour-first1{
+		 	float: left;
+			padding: 7px 15px 10px 15px;
+			font-family:"gotham";
+			font-size:18px;
+			color: white;
+			background-color:#AAD0FF;
+		}
+		
 		.rapport-gauche{
 			float: left;
-			padding: 5px;
-			font-family:"bebasneue-webfont";
-			font-size:20px;
+			padding: 7px 5px 10px 5px;
+			font-family:"georgia";
+			font-size:18px;
+			font-style:italic;
+			font-weight: bold;
 			background-color:#FFF;
-			color:#808080;
+			color: black;
 		}
 		
 		.pour-second{
 		  float: right;
-			padding: 5px;
-			font-family:"bebasneue-webfont";
-			font-size:20px;
+			padding: 7px 15px 10px 15px;
+			font-family:"gotham";
+			font-size:18px;
 			color: white;
 			background-color:#808080;			
 		}
+		
+		.pour-second2{
+		  float: right;
+			padding: 7px 15px 10px 15px;
+			font-family:"gotham";
+			font-size:18px;
+			color: white;
+			background-color:#FF6969;			
+		}
+		
 		.rapport-droite{
 			float: right;
-			padding: 5px;
-			font-family:"bebasneue-webfont";
-			font-size:20px;
+			padding: 7px 5px 10px 5px;
+			font-family:"georgia";
+			font-size:18px;
+			font-style:italic;
+			font-weight: bold;
 			background-color:#FFF;
-			color:#808080;		
+			color: black;		
 		}
 		
-		}
-		
-		#barre{
-			margin-top: 5px;
-			margin-left:85px;
 		}
 		
 	
@@ -1161,9 +1314,8 @@
 		font-family:"bebasneue-webfont";
 		font-size:28px;
 		margin-left:85px;
-		margin-top:10px;
 		width:240px;
-		border-top:3px dashed #000000;
+		
 		.stat1{
 			margin-top:10px;
 			.image{
@@ -1757,7 +1909,6 @@
 	background-color:#EEE;
 	min-height:300px;
 	width: 485px;
-	margin-top:20px;
 	margin-left:440px;
 	margin-bottom: 10px;
 		.text{
@@ -1831,11 +1982,11 @@
 
 			
 			#equipe{
-			height:30px;
+			height:28px;
 			background-color:#AAD0FF;
 			width: 140px;
-			font-family: "bebasneue-webfont";
-			font-size: 20px;
+			font-family: "gotham";
+			font-size: 15px;
 			text-align: center;
 			padding-top:10px;
 			margin-bottom:15px;
@@ -1981,11 +2132,11 @@
 			width: 140px;
 			
 			#equipe{
-			height:30px;
+			height:28px;
 			background-color:#FF6969;
 			width: 140px;
-			font-family: "bebasneue-webfont";
-			font-size: 20px;
+			font-family: "gotham";
+			font-size: 15px;
 			text-align: center;
 			padding-top:10px;
 			margin-bottom:15px;
@@ -2125,100 +2276,140 @@
 			}
 			
 			#american-milieu-1{
-			font-family:"gotham";
-			font-size: 25px;
-			font-color: black;
-			line-height: 25px;
-			
-				.title{
-				padding-top:5px;
-				padding-left: 30px;
-				padding-right: 10px;
-				text-align: center;
-				}
-			}
-			#american-milieu-2{
-			margin-top: 20px;
-			font-family: "georgia";
-			font-style: italic;
-			font-size: 14px;
-			
-				.content{
-				padding-left: 30px;
-				padding-left: 10px;
-				text-align: center;
-				}
-			}
-			#american-milieu-3{
-				margin-left: 20px;
-				margin-right: 20px;
-				margin-top: 10px;
-				.pour-first{
-				 	float: left;
-					padding: 5px;
-					font-family:"bebasneue-webfont";
-					font-size:20px;
-					color: white;
-					background-color:#808080;
-				}
-				.rapport-gauche{
-					float: left;
-					padding: 5px;
-					font-family:"bebasneue-webfont";
-					font-size:20px;
-					background-color:#FFF;
-					color:#808080;
-				}
+				font-family:"gotham";
+				font-size: 25px;
+				font-color: black;
+				line-height: 25px;
+				margin-left: 0px;
+				margin-right:0px;
 
-				.pour-second{
-				  float: right;
-					padding: 5px;
-					font-family:"bebasneue-webfont";
-					font-size:20px;
-					color: white;
-					background-color:#808080;			
-				}
-				.rapport-droite{
-					float: right;
-					padding: 5px;
-					font-family:"bebasneue-webfont";
-					font-size:20px;
-					background-color:#FFF;
-					color:#808080;		
-				}
-			}
-			
-			#american-milieu-4{
-			margin-top: 5px;
-				
-				.blank{
-				margin-left: 50px;
-				width: 370px;
-				height: 9px;
-				background-color: white;
-				}
-			}
-			
-			#american-milieu-5{
-				font-family:"bebasneue-webfont";
-				font-size:28px;
-				margin-left:100px;
-				margin-top:10px;
-				
-				
-				.stat1{
-					margin-top:10px;
-					.image{
-					padding-bottom:5px;
-					margin-left:5px;
-					margin-right: 10px;
+
+
+					.title{
+					padding-top:5px;
+					padding-right: 10px;
+					text-align: left;
 					}
 				}
-				.stat2{
-				margin-left: 5px;
-				margin-top: 0px;
+
+				#american-milieu-4{
+				margin-left: 0px;
+				margin-right:0px;
+				margin-top:15px;
+				font-family : "gotham";
+				font-size : 18px;
+				color: white;
+
+				li{
+				margin-right: 5px;
+				display : inline-block;
 				}
-			}
+
+				}
+				
+				#american-milieu-2{
+				margin-top: 15px;
+				font-family: "georgia";
+				font-style: italic;
+				font-size: 14px;
+				margin-left: 0px;
+				margin-right:0px;
+
+					.content{
+					text-align: left;
+					}
+				}
+				#american-milieu-3{
+				margin-left: 0px;
+				margin-right:0px;
+					margin-top: 15px;
+					padding-bottom: 10px;
+					border-bottom: 9px solid white;
+
+						a:hover{
+						color:#000000;
+						}
+
+					.pour-first{
+					 	float: left;
+						padding: 7px 15px 10px 15px;
+						font-family:"gotham";
+						font-size:18px;
+						color: white;
+						background-color:#808080;
+					}
+
+					.pour-first1{
+					 	float: left;
+						padding: 7px 15px 10px 15px;
+						font-family:"gotham";
+						font-size:18px;
+						color: white;
+						background-color:#AAD0FF;
+					}
+
+					.rapport-gauche{
+						float: left;
+						padding: 7px 5px 10px 5px;
+						font-family:"georgia";
+						font-size:18px;
+						font-style:italic;
+						font-weight: bold;
+						background-color:#FFF;
+						color: black;
+					}
+
+					.pour-second{
+					  float: right;
+						padding: 7px 15px 10px 15px;
+						font-family:"gotham";
+						font-size:18px;
+						color: white;
+						background-color:#808080;			
+					}
+
+					.pour-second2{
+					  float: right;
+						padding: 7px 15px 10px 15px;
+						font-family:"gotham";
+						font-size:18px;
+						color: white;
+						background-color:#FF6969;			
+					}
+
+					.rapport-droite{
+						float: right;
+						padding: 7px 5px 10px 5px;
+						font-family:"georgia";
+						font-size:18px;
+						font-style:italic;
+						font-weight: bold;
+						background-color:#FFF;
+						color: black;		
+					}
+
+					}
+
+
+				#american-milieu-5{
+					font-family:"bebasneue-webfont";
+					font-size:28px;
+					margin-left: 0px;
+					margin-right:0px;
+					margin-bottom:15px;
+
+					.stat1{
+						.image{
+						padding-bottom:5px;
+						margin-left:5px;
+						margin-right: 10px;
+						}
+					}
+					.stat2{
+					margin-left: 5px;
+					margin-top: 0px;
+					}
+				}
 		}
 	}
 	
@@ -2552,85 +2743,125 @@
 			font-size: 25px;
 			font-color: black;
 			line-height: 25px;
+			margin-left: 15px;
+			margin-right:15px;
+
+
 			
 				.title{
 				padding-top:5px;
-				padding-left: 30px;
 				padding-right: 10px;
-				text-align: center;
-				}
-			}
-			#ld-milieu-2{
-			margin-top: 20px;
-			font-family: "georgia";
-			font-style: italic;
-			font-size: 14px;
-			
-				.content{
-				padding-left: 30px;
-				padding-left: 10px;
-				text-align: center;
-				}
-			}
-			#ld-milieu-3{
-				margin-left: 20px;
-				margin-right: 20px;
-				margin-top: 10px;
-				.pour-first{
-				 	float: left;
-					padding: 5px;
-					font-family:"bebasneue-webfont";
-					font-size:20px;
-					color: white;
-					background-color:#808080;
-				}
-				.rapport-gauche{
-					float: left;
-					padding: 5px;
-					font-family:"bebasneue-webfont";
-					font-size:20px;
-					background-color:#FFF;
-					color:#808080;
-				}
-
-				.pour-second{
-				  float: right;
-					padding: 5px;
-					font-family:"bebasneue-webfont";
-					font-size:20px;
-					color: white;
-					background-color:#808080;			
-				}
-				.rapport-droite{
-					float: right;
-					padding: 5px;
-					font-family:"bebasneue-webfont";
-					font-size:20px;
-					background-color:#FFF;
-					color:#808080;		
+				text-align: left;
 				}
 			}
 			
 			#ld-milieu-4{
-			margin-top: 5px;
-				
-				.blank{
-				margin-left: 50px;
-				width: 370px;
-				height: 9px;
-				background-color: white;
+			margin-left: 15px;
+			margin-right:15px;
+			margin-top:15px;
+			font-family : "gotham";
+			font-size : 18px;
+			color: white;
+
+			li{
+			margin-right: 5px;
+			display : inline-block;
+			}
+			
+			}
+			#ld-milieu-2{
+			margin-top: 15px;
+			font-family: "georgia";
+			font-style: italic;
+			font-size: 14px;
+			margin-left: 15px;
+			margin-right:15px;
+			
+				.content{
+				text-align: left;
 				}
 			}
+			#ld-milieu-3{
+				margin-left: 15px;
+				margin-right:15px;
+				margin-top: 15px;
+				padding-bottom: 10px;
+				border-bottom: 9px solid white;
+
+					a:hover{
+					color:#000000;
+					}
+
+				.pour-first{
+				 	float: left;
+					padding: 7px 15px 10px 15px;
+					font-family:"gotham";
+					font-size:18px;
+					color: white;
+					background-color:#808080;
+				}
+
+				.pour-first1{
+				 	float: left;
+					padding: 7px 15px 10px 15px;
+					font-family:"gotham";
+					font-size:18px;
+					color: white;
+					background-color:#AAD0FF;
+				}
+
+				.rapport-gauche{
+					float: left;
+					padding: 7px 5px 10px 5px;
+					font-family:"georgia";
+					font-size:18px;
+					font-style:italic;
+					font-weight: bold;
+					background-color:#FFF;
+					color: black;
+				}
+
+				.pour-second{
+				  float: right;
+					padding: 7px 15px 10px 15px;
+					font-family:"gotham";
+					font-size:18px;
+					color: white;
+					background-color:#808080;			
+				}
+
+				.pour-second2{
+				  float: right;
+					padding: 7px 15px 10px 15px;
+					font-family:"gotham";
+					font-size:18px;
+					color: white;
+					background-color:#FF6969;			
+				}
+
+				.rapport-droite{
+					float: right;
+					padding: 7px 5px 10px 5px;
+					font-family:"georgia";
+					font-size:18px;
+					font-style:italic;
+					font-weight: bold;
+					background-color:#FFF;
+					color: black;		
+				}
+
+				}
+			
 			
 			#ld-milieu-5{
 				font-family:"bebasneue-webfont";
 				font-size:28px;
-				margin-left:100px;
+				margin-left: 15px;
+				margin-right:15px;
 				margin-top:10px;
-				
+				margin-bottom:15px;
 				
 				.stat1{
-					margin-top:10px;
 					.image{
 					padding-bottom:5px;
 					margin-left:5px;
@@ -2786,3 +3017,571 @@
 	}
 	}
 }
+
+
+#fc{
+	#fc-title{
+		width: 760px;
+		min-height: 460px;
+		background-color:#C9C9C9;
+		margin: 30px 0px 30px 150px;
+	
+		
+		#fc-gauche{
+			margin-left: 35px;
+			width:140px;
+			margin-top: 15px;
+			
+			.image1{
+			width: 140px;
+			img { width: 140px; height:150px;}
+			border-bottom: 1px solid white;
+				
+				.image2{
+					margin-bottom:10px;
+				}
+			}
+			
+			.invitation-fermer3-fc{
+				.texte{
+				padding-top: 5px;
+				font-family: "gotham";
+				font-size: 13px;
+				text-align: center;
+				}
+				
+				.select{
+				background-color:#C9C9C9;
+				}
+				
+				#fermer-invitation-fc{
+				padding:5px;
+				color: #808080;
+				background-color: black;
+				font-family: "bebasneue-webfont";
+				font-size: 16px;
+				margin-left: 100px;
+				margin-top: -38px;
+				cursor: pointer;
+				}
+				
+				#fermer-invitation3-fc{
+				padding:5px;
+				color: #808080;
+				background-color: black;
+				font-family: "bebasneue-webfont";
+				font-size: 16px;
+				margin-left: 100px;
+				margin-top: -38px;
+				cursor: pointer;
+				}
+				
+				.act{
+				background-color:#808080;
+				color: black;
+				font-family: "bebasneue-webfont";
+				font-size: 16px;
+				margin-left: 10px;
+				}
+			}
+
+			.invitation-fermer-fc{
+				.texte{
+				padding-top: 5px;
+				font-family: "gotham";
+				font-size: 13px;
+				text-align: center;
+				}
+				
+				.select{
+				background-color:#C9C9C9;
+				}
+				
+				#fermer-invitation-fc{
+				padding:5px;
+				color: #808080;
+				background-color: black;
+				font-family: "bebasneue-webfont";
+				font-size: 16px;
+				margin-left: 100px;
+				margin-top: -38px;
+				cursor: pointer;
+				}
+				
+				#fermer-invitation3-fc{
+				padding:5px;
+				color: #808080;
+				background-color: black;
+				font-family: "bebasneue-webfont";
+				font-size: 16px;
+				margin-left: 100px;
+				margin-top: -38px;
+				cursor: pointer;
+				}
+				
+				.act{
+				background-color:#808080;
+				color: black;
+				font-family: "bebasneue-webfont";
+				font-size: 16px;
+				margin-left: 10px;
+				}
+			}
+			
+			
+			.first_user{
+			padding-top: 5px;
+			font-family: "gotham";
+			font-size: 16px;
+			text-align: center;
+			width: 140px;
+			border-bottom: 5px solid white;
+			margin-bottom:15px;
+			
+				.texte{
+				margin-bottom:10px;
+				}
+				
+				#invitation-fc{
+				cursor: pointer;
+				}
+				#invitation3-fc{
+				cursor: pointer;
+				}
+			}
+			
+			.first_grade{
+				margin-top: 10px;
+				width: 140px;
+				height:30px;
+				background-color: #808080;
+				font-family: "bebasneeue-webfont";
+				font-size: 24px;
+				color: white;
+				
+					.texte{
+					text-align: center;
+					padding-top:5px;
+					}
+			}
+		}
+		
+		#fc-droite{
+			margin-left: 43px;
+			width: 140px;
+			margin-top: 15px;
+			
+			.image1{
+			width: 140px;
+			img { width: 140px; height:150px;}
+			border-bottom: 1px solid white;
+				
+				.image2{
+					margin-bottom:10px;
+				}
+			}
+			
+			.second_user{
+			padding-top: 5px;
+			font-family: "gotham";
+			font-size: 16px;
+			text-align: center;
+			width: 140px;
+			border-bottom: 5px solid white;
+			margin-bottom:15px;
+				
+				.texte{
+				margin-bottom:10px;
+				}
+				
+				#invitation1-fc{
+				cursor: pointer;
+				}
+
+				#invitation4-fc{
+				cursor: pointer;
+				}
+			}
+			
+			.invitation-fermer1-fc{
+				.texte{
+				padding-top: 5px;
+				font-family: "gotham";
+				font-size: 13px;
+				text-align: center;
+				}
+				
+				.select{
+				background-color:#C9C9C9;
+				}
+				
+				#fermer-invitation1-fc{
+				padding:5px;
+				color: #808080;
+				background-color: black;
+				font-family: "bebasneue-webfont";
+				font-size: 16px;
+				margin-left: 100px;
+				margin-top: -38px;
+				cursor: pointer;
+				}
+				
+				.act{
+				background-color:#808080;
+				color: black;
+				font-family: "bebasneue-webfont";
+				font-size: 16px;
+				margin-left: 10px;
+				}
+			}
+			
+			
+			.invitation-fermer4-fc{
+				.texte{
+				padding-top: 5px;
+				font-family: "gotham";
+				font-size: 13px;
+				text-align: center;
+				}
+				
+				.select{
+				background-color:#C9C9C9;
+				}
+				
+				#fermer-invitation4-fc{
+				padding:5px;
+				color: #808080;
+				background-color: black;
+				font-family: "bebasneue-webfont";
+				font-size: 16px;
+				margin-left: 100px;
+				margin-top: -38px;
+				cursor: pointer;
+				}
+				
+				.act{
+				background-color:#808080;
+				color: black;
+				font-family: "bebasneue-webfont";
+				font-size: 16px;
+				margin-left: 10px;
+				}
+			}
+			.second_grade{
+				margin-top: 10px;
+				width: 140px;
+				height:30px;
+				background-color: #808080;
+				font-family: "bebasneeue-webfont";
+				font-size: 24px;
+				color: white;
+				
+					.texte{
+					text-align: center;
+					padding-top:5px;
+					}
+			}
+		}
+		
+		
+		#fc-milieu{
+			margin-left:2px;
+			width:400px;
+			#fc-image-superieure{
+				height:254px;
+				margin: 15px 0px 15px 0px;
+				img { width: 420px; height:254px;}
+
+				.image{
+				}
+
+				.image-sign{
+					img { width: 50px; height:49px;}
+					margin-top:-145px;
+					margin-left: 175px;
+				}
+
+			}
+			
+			#fc-milieu-1{
+				font-family:"gotham";
+				font-size: 25px;
+				font-color: black;
+				line-height: 25px;
+				margin-left: 0px;
+				margin-right:0px;
+
+
+
+					.title{
+					padding-top:5px;
+					padding-right: 10px;
+					text-align: left;
+					}
+				}
+
+				#fc-milieu-4{
+				margin-left: 0px;
+				margin-right:0px;
+				margin-top:15px;
+				font-family : "gotham";
+				font-size : 18px;
+				color: white;
+
+				li{
+				margin-right: 5px;
+				display : inline-block;
+				}
+
+				}
+				
+				#fc-milieu-2{
+				margin-top: 15px;
+				font-family: "georgia";
+				font-style: italic;
+				font-size: 14px;
+				margin-left: 0px;
+				margin-right:0px;
+
+					.content{
+					text-align: left;
+					}
+				}
+				#fc-milieu-3{
+				margin-left: 0px;
+				margin-right:0px;
+					margin-top: 15px;
+					padding-bottom: 10px;
+					border-bottom: 9px solid white;
+
+						a:hover{
+						color:#000000;
+						}
+
+					.pour-first{
+					 	float: left;
+						padding: 7px 15px 10px 15px;
+						font-family:"gotham";
+						font-size:18px;
+						color: white;
+						background-color:#808080;
+					}
+
+					.pour-first1{
+					 	float: left;
+						padding: 7px 15px 10px 15px;
+						font-family:"gotham";
+						font-size:18px;
+						color: white;
+						background-color:#AAD0FF;
+					}
+
+					.rapport-gauche{
+						float: left;
+						padding: 7px 5px 10px 5px;
+						font-family:"georgia";
+						font-size:18px;
+						font-style:italic;
+						font-weight: bold;
+						background-color:#FFF;
+						color: black;
+					}
+
+					.pour-second{
+					  float: right;
+						padding: 7px 15px 10px 15px;
+						font-family:"gotham";
+						font-size:18px;
+						color: white;
+						background-color:#808080;			
+					}
+
+					.pour-second2{
+					  float: right;
+						padding: 7px 15px 10px 15px;
+						font-family:"gotham";
+						font-size:18px;
+						color: white;
+						background-color:#FF6969;			
+					}
+
+					.rapport-droite{
+						float: right;
+						padding: 7px 5px 10px 5px;
+						font-family:"georgia";
+						font-size:18px;
+						font-style:italic;
+						font-weight: bold;
+						background-color:#FFF;
+						color: black;		
+					}
+
+					}
+
+
+				#fc-milieu-5{
+					font-family:"bebasneue-webfont";
+					font-size:28px;
+					margin-left: 0px;
+					margin-right:0px;
+					margin-bottom:15px;
+
+					.stat1{
+						.image{
+						padding-bottom:5px;
+						margin-left:5px;
+						margin-right: 10px;
+						}
+					}
+					.stat2{
+					margin-left: 5px;
+					margin-top: 0px;
+					}
+				}
+		}
+	}
+	
+	
+	#position-aleatoire{
+		background-color:#808080;
+		margin-left:400px;
+		font-family: "bebasneue-webfont";
+		font-size: 24px;
+		width: 270px;
+		margin-bottom: 30px;
+		
+		.numero{
+		text-align: center;
+		padding-top:5px;
+		padding-bottom: 5px;
+		
+		a:hover{
+		color: white;
+		}
+		}
+	}
+	
+	#pousse-gauche{
+		margin-left:-12px;
+	}
+	
+	#pousse-gauche2{
+		margin-left:-32px;
+	}
+	
+	#follow{
+	margin-top:-383px;
+	margin-left:910px;
+	height:  24px;
+	width: 90px;
+	background-color: #808080;
+	
+	.texte{
+		font-family: "gotham";
+		font-weight: bold;
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 8px;
+		padding-top:2px;
+		
+		.texte:hover{
+			color: black;
+		}
+	}
+	
+	.texte2{
+		font-family: "gotham";
+		font-weight: bold;
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 12px;
+		padding-top:2px;
+		
+		.texte:hover{
+			color: black;
+		}
+	}
+	.arrow-left{
+		margin-top:-20px;
+		padding-left: 78px;
+	 	width: 0; 
+	 	height: 0; 
+	 	border-top: 12px solid transparent;
+	 	border-bottom: 12px solid transparent; 
+	 	border-right:12px solid white;
+	}
+	
+	}
+	
+   	#catcat{
+	margin-top:-343px;
+	margin-left:910px;
+	height:65px;
+	width:90px;
+	background-color:#AAD0FF;
+	
+	 .arrow-left{
+		padding-left:58px;
+	 	width: 0; 
+	 	height: 0; 
+	 	border-top: 32px solid transparent;
+	 	border-bottom: 34px solid transparent; 
+	 	border-right:32px solid white;
+	 }
+	.image{
+	margin-left:10px;
+	margin-top:-55px;
+	}
+	}
+	
+	#start{
+
+		font-family:"bebasneue-webfont";
+		font-size:28px;
+		margin-left:535px;
+		margin-top:50px;
+		margin-bottom: 0px;
+		width:240px;
+		color:black;
+	}
+	
+	.tour-gauche{
+	background-color:#AAD0FF;
+	margin-top:20px;
+	width: 534px;
+	min-height:60px;
+	margin-left:150px;
+	
+	.image{
+		padding: 3px 3px 3px 3px;
+		img { width: 50px; height:50px;}
+		
+		.name{
+		font-family:"gotham";
+		font-size:18px;
+		color:#000000;
+		}
+	}
+	}
+	
+	.tour-droite{
+	background-color:#FF7575;
+	margin-top:20px;
+	width: 534px;
+	min-height:60px;
+	margin-left:376px;
+	
+	.image{
+		padding: 3px 3px 3px 3px;
+		img { width: 50px; height:50px;}
+		
+		.name{
+		font-family:"gotham";
+		font-size:18px;
+		color:#000000;
+		}
+	}
+	}	
+}
+
+
