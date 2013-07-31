@@ -3,6 +3,9 @@
 		
 		<div class="row" id="fc-title">
 			<div class="span2" id="fc-gauche">
+				<div class="row" id="equipe">
+					Parfaitement d'accord
+				</div>
 				<div class="row">
 					<div class="image1">
 						<div class="image2">
@@ -43,12 +46,14 @@
 					              join_one_challenge_path(@challenge) ,:method => :post) %></div>
 						<%end%>
 					</div>
+					<div class='first_grade'>
+						<div class='texte'><%= @challenge.grade_one%> / 10</div>
+					</div>
 				</div>
 				
-				<div class='row' id="insert-image">
-						image-a insérer
+				<div class="row" id="equipe3">
+					Plutôt</br>d'accord
 				</div>
-				
 				<div class="row">
 					<div class="image1">
 						<div class="image2">
@@ -91,7 +96,7 @@
 					</div>
 
 					<div class='first_grade'>
-						<div class='texte'><%= @challenge.grade_one%> / 10</div>
+						<div class='texte'><%= @challenge.grade_three%> / 10</div>
 					</div>
 				</div>								
 			</div>
@@ -118,47 +123,86 @@
 						<div class='content'><%= @challenge.context%></div>
 					</div>
 
-					<div class="row" id="fc-milieu-3">
+					<div class="row" id="fc-milieu-3-b">
 
-							<% if @challenge.position_taken.include?(1) && @challenge.position_taken.include?(3) %>
+							<% if @challenge.position_taken.include?(1) %>
 								<% if current_user  && @challenge.has_evaluation?(:vote_challenges, current_user) %>
-									<span class="rapport-gauche"><%= @challenge.rapport%>%</span>
+									<span class="rapport-gauche"><%= @challenge.rapport_fc%>%</span>
 									<% if @challenge.valeur_vote(current_user) == 1.0 %>
-										<a><%= link_to "Pour l'équipe 1", vote_challenge_challenge_path(@challenge, type: "up"), class: "pour-first1"%></a>
+										<a><%= link_to "#{@challenge.prime_minister.fitting_name}", vote_challenge_challenge_path(@challenge, type: "up"), class: "pour-first1"%></a>
 									<% else %>
-										<a><%= link_to "Pour l'équipe 1", vote_challenge_challenge_path(@challenge, type: "up"), class: "pour-first"%></a>
+										<a><%= link_to "#{@challenge.prime_minister.fitting_name}", vote_challenge_challenge_path(@challenge, type: "up"), class: "pour-first"%></a>
 									<% end %>
 								<% else%>
-									<div class="pour-truc"><a><%= link_to "Pour l'équipe 1", vote_challenge_challenge_path(@challenge, type: "up"), class: "pour-first"%></a></div>
+									<div class="pour-truc"><a><%= link_to "Pour #{@challenge.prime_minister.fitting_name}", vote_challenge_challenge_path(@challenge, type: "up"), class: "pour-first"%></a></div>
 								<% end %>
 							<% else %>
-								<a class="pour-first" href="#">Pour l'équipe 1</a>	
+								<a class="pour-first" href="#">Pour le nord</a>	
 							<%end%>
 
 
 
-							<% if @challenge.position_taken.include?(2) && @challenge.position_taken.include?(4) %>
+							<% if @challenge.position_taken.include?(2) %>
 								<% if current_user  && @challenge.has_evaluation?(:vote_challenges, current_user) %>
-										<span class="rapport-droite"><%= @challenge.rapport_inverse %>%</span>
+										<span class="rapport-droite"><%= @challenge.rapport_fc1 %>%</span>
 									<% if @challenge.valeur_vote(current_user) == -1.0 %>
-										<a><%= link_to "Pour l'équipe 2", vote_challenge_challenge_path(@challenge, type: "down"), class: "pour-second2"%></a>
+										<a><%= link_to "#{@challenge.first_opponent.fitting_name}", vote_challenge_challenge_path(@challenge, type: "down"), class: "pour-second2"%></a>
 									<% else %>
-										<a><%= link_to "Pour l'équipe 2", vote_challenge_challenge_path(@challenge, type: "down"), class: "pour-second"%></a>
+										<a><%= link_to "#{@challenge.first_opponent.fitting_name}", vote_challenge_challenge_path(@challenge, type: "down"), class: "pour-second"%></a>
 									<% end %>
 								<% else%>
-									<div class="pour-truc"><a><%= link_to "Pour l'équipe 2", vote_challenge_challenge_path(@challenge, type: "down"), class: "pour-second"%></a></div>
+									<div class="pour-truc"><a><%= link_to "Pour #{@challenge.first_opponent.fitting_name}", vote_challenge_challenge_path(@challenge, type: "down"), class: "pour-second"%></a></div>
 								<% end %>
 							<% else %>
-								<a class="pour-second" href="#">Pour l'équipe 2</a>	
+								<a class="pour-second" href="#">Pour l'est</a>	
 							<%end%>							
 					</div>
+
+
+					<div class="row" id="fc-milieu-3">
+
+							<% if @challenge.position_taken.include?(3) %>
+								<% if current_user  && @challenge.has_evaluation?(:vote_challenges, current_user) %>
+									<span class="rapport-gauche"><%= @challenge.rapport_fc2%>%</span>
+									<% if @challenge.valeur_vote(current_user) == 2.0 %>
+										<a><%= link_to "#{@challenge.second_prop.fitting_name}", vote_challenge_challenge_path(@challenge, type: "upup"), class: "pour-first1"%></a>
+									<% else %>
+										<a><%= link_to "#{@challenge.second_prop.fitting_name}", vote_challenge_challenge_path(@challenge, type: "upup"), class: "pour-first"%></a>
+									<% end %>
+								<% else%>
+									<div class="pour-truc"><a><%= link_to "Pour #{@challenge.second_prop.fitting_name}", vote_challenge_challenge_path(@challenge, type: "upup"), class: "pour-first"%></a></div>
+								<% end %>
+							<% else %>
+								<a class="pour-first" href="#">Vent d'ouest</a>	
+							<%end%>
+
+
+
+							<% if @challenge.position_taken.include?(4) %>
+								<% if current_user  && @challenge.has_evaluation?(:vote_challenges, current_user) %>
+										<span class="rapport-droite"><%= @challenge.rapport_fc3 %>%</span>
+									<% if @challenge.valeur_vote(current_user) == -2.0 %>
+										<a><%= link_to "#{@challenge.second_opp.fitting_name}", vote_challenge_challenge_path(@challenge, type: "downdown"), class: "pour-second2"%></a>
+									<% else %>
+										<a><%= link_to "#{@challenge.second_opp.fitting_name}", vote_challenge_challenge_path(@challenge, type: "downdown"), class: "pour-second"%></a>
+									<% end %>
+								<% else%>
+									<div class="pour-truc"><a><%= link_to "Pour #{@challenge.second_opp.fitting_name}", vote_challenge_challenge_path(@challenge, type: "downdown"), class: "pour-second"%></a></div>
+								<% end %>
+							<% else %>
+								<a class="pour-second" href="#">Pour le sud</a>	
+							<%end%>							
+					</div>
+
+
+
 
 					<div class="row" id="fc-milieu-4">
 						<div class='blank'></div>
 					</div>
 					<div class="row" id="fc-milieu-5">
 						<div class="stat1">
-							<%= @challenge.count_for+@challenge.count_against%>
+							<%= @challenge.count_for+@challenge.count_against+@challenge.count_upup+@challenge.count_downdown%>
 							<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image")%>
 							|
 
@@ -173,7 +217,9 @@
 					</div>					
 			</div>
 			<div class="span2" id="fc-droite">
-
+				<div class="row" id="equipe2">
+					 Pas du tout d'accord
+				</div>
 				<div class="row">
 					<div class="image1">
 						<div class="image2">
@@ -214,6 +260,12 @@
 					              join_two_challenge_path(@challenge) ,:method => :post) %></div>
 						<%end%>
 					</div>
+					<div class='second_grade'>
+						<div class='texte'><%= @challenge.grade_two%> / 10</div>
+					</div>
+				</div>
+				<div class="row" id="equipe4">
+					 Plutôt pas d'accord
 				</div>
 				<div class="row">
 					<div class="image1">
@@ -257,7 +309,7 @@
 					</div>
 
 					<div class='second_grade'>
-						<div class='texte'><%= @challenge.grade_two%> / 10</div>
+						<div class='texte'><%= @challenge.grade_four%> / 10</div>
 					</div>
 				</div>				
 			</div>
@@ -418,40 +470,80 @@
 				<% end %>	
 			</div>
 
-			<div class="row" id="pousse-gauche2">
+			<div class="row" id="pousse-gauche">
 				<% if @challenge.state == "fifth" %>
-					<% if signed_in? && current_user == @challenge.first_opponent %>
+					<% if signed_in? && current_user == @challenge.prime_minister %>
 						<% if !@challenge.arguments.where(position: 5).any? %>
 							<div id="start">C'est ton tour !</div>
 							<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 5 %>
 						<% else %>
-
-							<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+						<div id="start">	<%= link_to("VALIDE TON ARGUMENT".html_safe,
 					              next_challenge_path(@challenge) ,:method => :post) %></div>
-					<%= render "shared/argument_neutre_badge", argument: @challenge.fifth_argument %>
+											<%= render "shared/argument_badge", argument: @challenge.first_argument %>
 						<% end %>
 					<% else%>
-					<%end%>
-				<% elsif ["sixth","seventh","eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
-					<%= render "shared/argument_contre_badge", argument: @challenge.fifth_argument %>
-				<% end %>	
-			</div>
 
-			<div class="row" id="pousse-gauche">
+					<%end%>
+				<% elsif ["sixth","seventh","eighth","over", "judged", "judged_one"].include?(@challenge.state) %>
+					<%= render "shared/argument_badge", argument: @challenge.fifth_argument %>
+				<% end %>
+			</div>					
+
+			<div class="row" id="pousse-gauche2">
 				<% if @challenge.state == "sixth" %>
-					<% if signed_in? && current_user == @challenge.prime_minister %>
+					<% if signed_in? && current_user == @challenge.first_opponent %>
 						<% if !@challenge.arguments.where(position: 6).any? %>
 							<div id="start">C'est ton tour !</div>
 							<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 6 %>
 						<% else %>
+
 							<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
-					              finish_challenge_path(@challenge) ,:method => :post) %></div>
-							<%= render "shared/argument_badge", argument: @challenge.sixth_argument %>
+					              next_challenge_path(@challenge) ,:method => :post) %></div>
+								<%= render "shared/argument_contre_badge", argument: @challenge.sixth_argument %>
 						<% end %>
 					<% else%>
 					<%end%>
 				<% elsif ["seventh","eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
-					<%= render "shared/argument_badge", argument: @challenge.sixth_argument %>
+					<%= render "shared/argument_contre_badge", argument: @challenge.second_argument %>
+				<% end %>	
+			</div>
+
+
+			<div class="row" id="pousse-gauche">
+				<% if @challenge.state == "seventh" %>
+					<% if signed_in? && current_user == @challenge.second_prop %>
+						<% if !@challenge.arguments.where(position: 7).any? %>
+							<div id="start">C'est ton tour !</div>
+							<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 7 %>
+						<% else %>
+
+							<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+					              next_challenge_path(@challenge) ,:method => :post) %></div>
+							<%= render "shared/argument_fc1_badge", argument: @challenge.seventh_argument %>
+						<% end %>
+					<% else%>
+					<%end%>
+				<% elsif ["eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
+					<%= render "shared/argument_fc1_badge", argument: @challenge.third_argument %>
+				<% end %>	
+			</div>
+
+			<div class="row" id="pousse-gauche2">
+				<% if @challenge.state == "eighth" %>
+					<% if signed_in? && current_user == @challenge.second_opp %>
+						<% if !@challenge.arguments.where(position: 8).any? %>
+							<div id="start">C'est ton tour !</div>
+							<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 8 %>
+						<% else %>
+
+							<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+					              next_challenge_path(@challenge) ,:method => :post) %></div>
+							<%= render "shared/argument_fc2_badge", argument: @challenge.eighth_argument %>
+						<% end %>
+					<% else%>
+					<%end%>
+				<% elsif ["over", "judged", "judged_one"].include?(@challenge.state) %>
+					<%= render "shared/argument_fc2_badge", argument: @challenge.fourth_argument %>
 				<% end %>	
 			</div>
 
@@ -460,7 +552,8 @@
 
 
 
-			<% if ["first","sixth"].include?(@challenge.state)%>
+
+			<% if ["first","fifth"].include?(@challenge.state)%>
 				<% if current_user && current_user==@challenge.prime_minister%>
 				<%else%>
 				<div class="tour-gauche">
@@ -471,7 +564,7 @@
 				</div>
 				<%end%>
 				
-			<% elsif ["second", "fifth"].include?(@challenge.state)%>
+			<% elsif ["second", "sixth"].include?(@challenge.state)%>
 				<% if current_user && current_user==@challenge.first_opponent%>
 				<%else%>
 				<div class="tour-droite">
@@ -481,7 +574,7 @@
 					</div>
 				</div>
 				<%end%>
-			<% elsif @challenge.state == 'third'%>			
+			<% elsif ["third", "seventh"].include?(@challenge.state)%>			
 			    <% if current_user && current_user==@challenge.second_prop%>
 			    <%else%>
 			    <div class="tour-droite">
@@ -491,7 +584,7 @@
 			    	</div>
 			    </div>
 				<%end%>
-			<% elsif @challenge.state == 'forth'%>			
+			<% elsif ["forth", "eighth"].include?(@challenge.state)%>			
 			    <% if current_user && current_user==@challenge.second_opp%>
 			    <%else%>
 			    <div class="tour-droite">

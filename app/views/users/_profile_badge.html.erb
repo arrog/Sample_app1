@@ -1,21 +1,21 @@
 <div class="span3" id="profile-badge">
 	
 	<div class="row" id="image1">
-		<%= link_to image_tag(@user.avatar.url(:medium)), @user, class: "image"%>
+		<%= link_to image_tag(user.avatar.url(:medium)), user, class: "image"%>
 	</div>
 	<div class="row" id='nom-profile'>
-		<%= link_to @user.fitting_name, @user, class: 'texte'%>
+		<%= link_to user.fitting_name, user, class: 'texte'%>
 	</div>
 	<div class="row" id="description-profile">
-		<% if current_user && current_user == @user && @user.content == nil%>
-			<%= form_for(@user) do |f| %>
-			<%= @user.content%>
-			  <% if @user.errors.any? %>
+		<% if current_user && current_user == user && user.content == nil%>
+			<%= form_for(user) do |f| %>
+			<%= user.content%>
+			  <% if user.errors.any? %>
 			    <div id="error_explanation">
-			      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+			      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
 			      <ul>
-			      <% @user.errors.full_messages.each do |msg| %>
+			      <% user.errors.full_messages.each do |msg| %>
 			        <li><%= msg %></li>
 			      <% end %>
 			      </ul>
@@ -30,21 +30,21 @@
 			  </div>
 			<% end %>
 		<% else %>
-			<div class="texte"><%= @user.content %></div>
+			<div class="texte"><%= user.content %></div>
 		<% end %>
 	</div>
 	
 	<div class="row" id='boutons-profile'>
 
-		<% if current_user && current_user == @user%>
+		<% if current_user && current_user == user%>
 			
-		<% elsif current_user && current_user.following?(@user) %>
+		<% elsif current_user && current_user.following?(user) %>
 		<div class="boutons-sociaux">
-			<%= link_to"NE PLUS SUIVRE", unfollow_user_path(@user), class: "boutons-sociaux3"%>
+			<%= link_to"NE PLUS SUIVRE", unfollow_user_path(user), class: "boutons-sociaux3"%>
 		</div>
 		<% elsif current_user %>
 		<div class="boutons-sociaux">
-			<%= link_to"SUIVRE", follow_user_path(@user), class: "boutons-sociaux2"%>
+			<%= link_to"SUIVRE", follow_user_path(user), class: "boutons-sociaux2"%>
 		</div>
 		<% else%>
 		<div class="boutons-sociaux">
@@ -53,14 +53,14 @@
 		<% end %>
 		
 		
-		<% if current_user && current_user.in_team?(@user)%>
+		<% if current_user && current_user.in_team?(user)%>
 			<div class="boutons-sociaux">
-				<%= link_to "UN EQUIPIER", user_path(@user), class: "boutons-sociaux2"%>
+				<%= link_to "UN EQUIPIER", user_path(user), class: "boutons-sociaux2"%>
 			</div>
-		<% elsif current_user && current_user == @user%>
+		<% elsif current_user && current_user == user%>
 		<% elsif current_user %>
 		<div class="boutons-sociaux">
-			<%= link_to "FAIRE EQUIPE", team_user_path(@user), class: "boutons-sociaux2"%>
+			<%= link_to "FAIRE EQUIPE", team_user_path(user), class: "boutons-sociaux2"%>
 		</div>
 		<% else %>
 		<div class="boutons-sociaux">		
@@ -68,14 +68,14 @@
 		</div>
 		<% end %>
 		
-		<%if current_user && current_user == @user%>
-		<% elsif current_user && current_user.defier?(@user)%>
+		<%if current_user && current_user == user%>
+		<% elsif current_user && current_user.defier?(user)%>
 		<div class="boutons-sociaux">
 			<%= link_to "DEFIER", new_challenge_path, class: "boutons-sociaux2"%>
 		</div>
 		<% elsif current_user %>
 		<div class="boutons-sociaux">
-			<%= link_to "DEFIER", defier_user_path(@user), class: "boutons-sociaux2"%>
+			<%= link_to "DEFIER", defier_user_path(user), class: "boutons-sociaux2"%>
 		</div>
 		<% else %>
 		<div class="boutons-sociaux">
@@ -85,15 +85,15 @@
 	</div>
 	
 	<div class="row" id="stats-profil">
-		<div class="texte1"><%= @user.followers.count%></div> <div class="texte2">moutoners</div>
+		<div class="texte1"><%= user.followers.count%></div> <div class="texte2">moutoners</div>
 	</div>
 
 	<div class="row" id="stats-profil">
-		<div class="texte1"><%= @user.team_user.count%></div> <div class="texte2">équipes</div>
+		<div class="texte1"><%= user.team_user.count%></div> <div class="texte2">équipes</div>
 	</div>
 
 	<div class="row" id="stats-profil">
-		<div class="texte1"><%= @user.groups.count%></div> <div class="texte2">groupes</div>
+		<div class="texte1"><%= user.groups.count%></div> <div class="texte2">groupes</div>
 	</div>
 	<p></p>
 </div>

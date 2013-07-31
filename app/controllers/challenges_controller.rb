@@ -32,11 +32,14 @@ class ChallengesController < ApplicationController
   end
   
   def vote_challenge
-     value = params[:type] == "up" ? 1 : -1
+     value = params[:type] == "up" ? 1 :
+      value = params[:type] == "down" ? -1 : 
+         value = params[:type] == "upup" ? 2 :-2
      @challenge = Challenge.find(params[:id])
      @challenge.add_or_update_evaluation(:vote_challenges, value, current_user)
      @challenge.create_activity :vote, owner: current_user
      redirect_to :back, notice: "Thank you for voting"
+     
    end
   
   

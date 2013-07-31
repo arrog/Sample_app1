@@ -272,6 +272,14 @@ class Challenge < ActiveRecord::Base
     evaluations.where( target_type: self.class, target_id: self.id, value: -1.0 ).count
   end
   
+  def count_upup
+    evaluations.where( target_type: self.class, target_id: self.id, value: 2.0 ).count
+  end
+  
+  def count_downdown
+     evaluations.where( target_type: self.class, target_id: self.id, value: -2.0 ).count
+  end 
+  
   def valeur_vote(user)
     self.evaluations.where(target_type: self.class, target_id: self.id, source_id: user.id).first.value      
   end
@@ -290,4 +298,39 @@ class Challenge < ActiveRecord::Base
     100 - self.rapport
     end
   end
+
+def rapport_fc
+  if (self.count_for+self.count_against+self.count_upup+self.count_downdown) == 0
+    0
+  else
+    100*self.count_for/(self.count_for+self.count_against+self.count_upup+self.count_downdown)
+  end
+end
+
+def rapport_fc1
+  if (self.count_for+self.count_against+self.count_upup+self.count_downdown) == 0
+    0
+  else
+    100*self.count_against/(self.count_for+self.count_against+self.count_upup+self.count_downdown)
+  end
+end
+
+
+def rapport_fc2
+  if (self.count_for+self.count_against+self.count_upup+self.count_downdown) == 0
+    0
+  else
+    100*self.count_upup/(self.count_for+self.count_against+self.count_upup+self.count_downdown)
+  end
+end
+
+def rapport_fc3
+  if (self.count_for+self.count_against+self.count_upup+self.count_downdown) == 0
+    0
+  else
+    100*self.count_downdown/(self.count_for+self.count_against+self.count_upup+self.count_downdown)
+  end
+end
+
+  
 end

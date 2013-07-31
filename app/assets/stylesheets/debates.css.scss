@@ -24,7 +24,7 @@
 			
 		#stats2{
 		width:354px;
-		margin-top:-53px;
+		margin-top:5px;
 		margin-left:10px;
 		
 		.reslutats-oui{
@@ -61,7 +61,7 @@
 		}
 		
 		.reslutats-suisse{
-		background-color: #C9C9C9;
+		background-color: #808080;
 		height: 21px;
 		width: 85px;
 		margin: - 26px 0px 0px 141px;
@@ -80,7 +80,7 @@
 		font-family: "georgia";
 		font-size: 18px;
 		font-weight: bold;
-		color: #808080;
+		color: #CCC;
 		margin: -20px 0px 0px 30px;
 		}
 		
@@ -497,6 +497,7 @@
 	background-color: #EEE;
 	margin-top:15px;
 	margin-left: 162px;
+	word-wrap:break-word;
 	
 	#imageuser{
 		img { width: 42px; height:35px;}
@@ -549,7 +550,8 @@
 	background-color: #EEE;
 	margin-top:5px;
 	margin-left: 248px;
-	img { width: 45px; height:45px;}	
+	img { width: 45px; height:45px;}
+	word-wrap:break-word;	
 	
 	.image{
 	padding: 10px;
@@ -577,6 +579,7 @@
 	margin-bottom:25px;
 	margin-left: 248px;
 	img { width: 45px; height:45px;}
+	word-wrap:break-word;
 	
 	.image{
 	padding: 10px;
@@ -725,6 +728,7 @@
 		}
 		
 		.cont{
+			word-wrap:break-word;
 			padding-top:8px;
 			padding-right:5	px;
 			font-family:"georgia";
@@ -775,6 +779,7 @@
 	margin-bottom:15px;
 	
 	.toggle{
+	word-wrap:break-word;
 	background-color: white;
 	margin-left: -20px;
 	#argcontent{
@@ -883,6 +888,7 @@
 		margin-left: -35px;
 		
 		.title{
+		word-wrap:break-word;
 		padding-top:8px;
 		padding-right:5	px;
 		font-family: "georgia";
@@ -897,6 +903,7 @@
 			font-family:"georgia";
 			font-size: 14px;
 			font-style: italic;
+			word-wrap:break-word;
 		}
 	}
 	
@@ -940,8 +947,10 @@
 	#coco{
 	margin-left: -35px;
 	margin-bottom:15px;
+
 	
 	.toggle{
+	word-wrap:break-word;
 	background-color: white;
 	margin-left: -20px;
 	#argcontent{
@@ -987,6 +996,7 @@
 	}
 	
 	#rouge{
+	word-wrap:break-word;
 	background-color:#FF6969;
 	margin-top: 20px;
 	width: 534px;
@@ -2586,7 +2596,7 @@
 		
 		#ld-gauche{
 			margin-left: 35px;
-			margin-bottom:20px;
+			margin-bottom:15px;
 			.image1{
 			img { width: 150px; height:150px;}
 			border-bottom: 1px solid white;
@@ -2661,6 +2671,7 @@
 		
 		#ld-droite{
 			margin-left: 0px;
+			margin-bottom: 15px;
 			
 			.image1{
 			img { width: 150px; height:150px;}
@@ -3025,12 +3036,38 @@
 		min-height: 460px;
 		background-color:#C9C9C9;
 		margin: 30px 0px 30px 150px;
+		word-wrap:break-word;
 	
 		
 		#fc-gauche{
 			margin-left: 35px;
 			width:140px;
-			margin-top: 15px;
+			margin-bottom: 15px;
+			margin-top:15px;
+			
+			#equipe{
+			height:40px;
+			background-color:#AAD0FF;
+			width: 140px;
+			font-family: "gotham";
+			font-size: 15px;
+			text-align: center;
+			padding-top:5px;
+			margin-bottom:15px;
+
+			}
+			
+			#equipe3{
+			height:40px;
+			background-color:#CCE6FF;
+			width: 140px;
+			font-family: "gotham";
+			font-size: 15px;
+			text-align: center;
+			padding-top:5px;
+			margin-bottom:15px;
+			margin-top: 30px;
+			}
 			
 			.image1{
 			width: 140px;
@@ -3170,6 +3207,30 @@
 			margin-left: 43px;
 			width: 140px;
 			margin-top: 15px;
+			margin-bottom: 15px;
+			
+			#equipe2{
+			height:40px;
+			background-color:#FF6969;
+			width: 140px;
+			font-family: "gotham";
+			font-size: 15px;
+			text-align: center;
+			padding-top:5px;
+			margin-bottom:15px;
+			}
+			
+			#equipe4{
+			height: 40px;
+			background-color:#FFA1A1;
+			width: 140px;
+			font-family: "gotham";
+			font-size: 15px;
+			text-align: center;
+			padding-top:5px;
+			margin-bottom:15px;
+			margin-top: 30px;
+			}
 			
 			.image1{
 			width: 140px;
@@ -3347,12 +3408,12 @@
 					text-align: left;
 					}
 				}
-				#fc-milieu-3{
+
+				#fc-milieu-3-b{
 				margin-left: 0px;
 				margin-right:0px;
 					margin-top: 15px;
 					padding-bottom: 10px;
-					border-bottom: 9px solid white;
 
 						a:hover{
 						color:#000000;
@@ -3403,6 +3464,77 @@
 						font-size:18px;
 						color: white;
 						background-color:#FF6969;			
+					}
+
+					.rapport-droite{
+						float: right;
+						padding: 7px 5px 10px 5px;
+						font-family:"georgia";
+						font-size:18px;
+						font-style:italic;
+						font-weight: bold;
+						background-color:#FFF;
+						color: black;		
+					}
+
+					}
+				
+				#fc-milieu-3{
+				margin-left: 0px;
+				margin-right:0px;
+					margin-top: 15px;
+					padding-bottom: 10px;
+					border-bottom: 9px solid white;
+
+						a:hover{
+						color:#000000;
+						}
+
+					.pour-first{
+					 	float: left;
+						padding: 7px 15px 10px 15px;
+						font-family:"gotham";
+						font-size:18px;
+						color: white;
+						background-color:#808080;
+					}
+
+					.pour-first1{
+					 	float: left;
+						padding: 7px 15px 10px 15px;
+						font-family:"gotham";
+						font-size:18px;
+						color: white;
+						background-color:#CCE6FF;
+					}
+
+					.rapport-gauche{
+						float: left;
+						padding: 7px 5px 10px 5px;
+						font-family:"georgia";
+						font-size:18px;
+						font-style:italic;
+						font-weight: bold;
+						background-color:#FFF;
+						color: black;
+					}
+
+					.pour-second{
+					  float: right;
+						padding: 7px 15px 10px 15px;
+						font-family:"gotham";
+						font-size:18px;
+						color: white;
+						background-color:#808080;			
+					}
+
+					.pour-second2{
+					  float: right;
+						padding: 7px 15px 10px 15px;
+						font-family:"gotham";
+						font-size:18px;
+						color: white;
+						background-color:#FFA1A1;			
 					}
 
 					.rapport-droite{

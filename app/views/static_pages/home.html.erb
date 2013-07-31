@@ -40,6 +40,16 @@
 		  </div>
 			<%else%>
 		  <div id="connecte">
+				<div class="span3" id="badge-home">
+					<%= render "shared/user_badge", user: current_user%>
+				</div>
+				<div class="row" id="stats-profil">
+					<div class="texte5"><%= current_user.notifications%></div> <div class="texte2">notification</div>
+				</div>
+				<div class="row" id="stats-profil">
+					<div class="texte5"><%= current_user.notifications2.count%></div> <div class="texte2">défi en cours</div>
+				</div>
+				
 		  </div>
 		  <div id="video_3">
 		  </div>
