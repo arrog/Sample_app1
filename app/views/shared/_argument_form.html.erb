@@ -15,13 +15,14 @@
 	 	<%end%>
 		
 		<div class='row'>
-			<div class='span4'>
-					<%= f.text_field:title, rows:1, class: "title-newarg", placeholder: "Titre (moins de 140 caractères)" %>
+			<div class='span4' id="title-form">
+					<%= f.text_field:title, rows:1, class: "title-newarg", placeholder: "Titre (moins de 100 caractères)" %>
 			</div>
 		</div>
 		<div class='row'>
-			<div class='span5'>
-			<%= f.text_area:content, class: "text-newarg", placeholder: "Contenu de l'argumentation" %>
+			<div class='span5' id="texte-form">
+			<%= f.text_area:content, class: "text-newarg", placeholder: "Vas y! 																			 	Un minimum de 300 caractères est demandé ...
+			"%>
 			<%= f.hidden_field :position, :value => position %>
 			</div>
 		</div>

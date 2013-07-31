@@ -40,16 +40,26 @@
 		  </div>
 			<%else%>
 		  <div id="connecte">
-				<div class="span3" id="badge-home">
-					<%= render "shared/user_badge", user: current_user%>
+					<div class="row">
+						<div class="span2">
+							<div class="image1">
+								<%= link_to image_tag(current_user.avatar.url(:medium)), current_user, class: "image"%>
+							</div>
+							<div class="nom">
+								<%= link_to current_user.fitting_name, current_user, class: "nom"%>
+							</div>
+						</div>
+					</div>
+					
+				<div class="row" id="stats-profil">
+					<div class="texte5"><%= current_user.notifications%></div> <div class="texte2">Notification(s)</div>
 				</div>
 				<div class="row" id="stats-profil">
-					<div class="texte5"><%= current_user.notifications%></div> <div class="texte2">notification(s)</div>
+					<div class="texte5"><%= current_user.notifications2.count%></div> <div class="texte2">Défi(s) en cours</div>
 				</div>
 				<div class="row" id="stats-profil">
-					<div class="texte5"><%= current_user.notifications2.count%></div> <div class="texte2">défi(s) en cours</div>
-				</div>
-				
+					<div class="texte5"><%= current_user.challenges_judge.count%></div> <div class="texte2">Jury vacant</div>
+				</div>				
 		  </div>
 		  <div id="video_3">
 		  </div>

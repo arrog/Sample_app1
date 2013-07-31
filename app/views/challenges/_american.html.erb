@@ -11,8 +11,10 @@
 						<div class="image2">
 						<% if @challenge.position_taken.include?(1) %>
 							<%= image_tag @challenge.prime_minister.avatar.url(:medium), class:"image" %>
+						<%elsif current_user && current_user.in_challenge?(@challenge)%>
+							<%= image_tag("place_vide.png") %>
 						<%else%>
-							<%= image_tag ("default_medium.jpg") %>
+							<%= link_to image_tag("place_vide.png"), join_one_challenge_path(:challenge => @challenge), :method => :post %>
 						<%end%>
 						</div>
 					</div>
@@ -52,9 +54,11 @@
 						<div class="image2">
 						<% if @challenge.position_taken.include?(3) %>
 							<%= image_tag @challenge.second_prop.avatar.url(:medium), class:"image" %>
-						<%else%>
-							<%= image_tag ("default_medium.jpg") %>
-						<%end%>
+							<%elsif current_user && current_user.in_challenge?(@challenge)%>
+								<%= image_tag("place_vide.png") %>
+							<%else%>
+								<%= link_to image_tag("place_vide.png"), join_three_challenge_path(:challenge => @challenge), :method => :post %>
+							<%end%>
 						</div>
 					</div>
 
@@ -120,35 +124,47 @@
 
 							<% if @challenge.position_taken.include?(1) && @challenge.position_taken.include?(3) %>
 								<% if current_user  && @challenge.has_evaluation?(:vote_challenges, current_user) %>
-									<span class="rapport-gauche"><%= @challenge.rapport%>%</span>
 									<% if @challenge.valeur_vote(current_user) == 1.0 %>
-										<a><%= link_to "Pour l'équipe 1", vote_challenge_challenge_path(@challenge, type: "up"), class: "pour-first1"%></a>
+									<div class= "moitie-gauche1">
+										<span class="rapport-gauche"><%= @challenge.rapport%>%</span>
+										<div class="pour-truc"><a><%= link_to "Equipe 1", vote_challenge_challenge_path(@challenge, type: "up"), class: "pour-first"%></a></div>
 									<% else %>
-										<a><%= link_to "Pour l'équipe 1", vote_challenge_challenge_path(@challenge, type: "up"), class: "pour-first"%></a>
+										<div class= "moitie-gauche">
+										<span class="rapport-gauche"><%= @challenge.rapport%>%</span>
+										<div class="pour-truc"><a><%= link_to "Equipe 1", vote_challenge_challenge_path(@challenge, type: "up"), class: "pour-first"%></a></div>
 									<% end %>
 								<% else%>
-									<div class="pour-truc"><a><%= link_to "Pour l'équipe 1", vote_challenge_challenge_path(@challenge, type: "up"), class: "pour-first"%></a></div>
+									<div class= "moitie-gauche">
+									<div class="pour-truc"><a><%= link_to "Pour Equipe1", vote_challenge_challenge_path(@challenge, type: "up"), class: "pour-first"%></a></div>
 								<% end %>
 							<% else %>
-								<a class="pour-first" href="#">Pour l'équipe 1</a>	
+								<div class= "moitie-gauche">
+								<div class="pour-truc"><a class="pour-first" href="#">Pour la gauche</a></div>	
 							<%end%>
+							</div>
 
 
 
 							<% if @challenge.position_taken.include?(2) && @challenge.position_taken.include?(4) %>
 								<% if current_user  && @challenge.has_evaluation?(:vote_challenges, current_user) %>
-										<span class="rapport-droite"><%= @challenge.rapport_inverse %>%</span>
 									<% if @challenge.valeur_vote(current_user) == -1.0 %>
-										<a><%= link_to "Pour l'équipe 2", vote_challenge_challenge_path(@challenge, type: "down"), class: "pour-second2"%></a>
+									<div class="moitie-droite1">
+										<span class="rapport-droite"><%= @challenge.rapport_inverse%>%</span>
+										<div class="pour-truc"><a><%= link_to "Equipe 2", vote_challenge_challenge_path(@challenge, type: "down"), class: "pour-second"%></a></div>
 									<% else %>
-										<a><%= link_to "Pour l'équipe 2", vote_challenge_challenge_path(@challenge, type: "down"), class: "pour-second"%></a>
+									<div class="moitie-droite">
+										<span class="rapport-droite"><%= @challenge.rapport_inverse%>%</span>
+										<div class="pour-truc"><a><%= link_to "Equipe 2", vote_challenge_challenge_path(@challenge, type: "down"), class: "pour-second"%></a></div>
 									<% end %>
 								<% else%>
-									<div class="pour-truc"><a><%= link_to "Pour l'équipe 2", vote_challenge_challenge_path(@challenge, type: "down"), class: "pour-second"%></a></div>
+								<div class="moitie-droite">
+									<div class="pour-truc"><a><%= link_to "Pour Equipe 2", vote_challenge_challenge_path(@challenge, type: "down"), class: "pour-second"%></a></div>
 								<% end %>
 							<% else %>
-								<a class="pour-second" href="#">Pour l'équipe 2</a>	
-							<%end%>							
+							<div class="moitie-droite">
+							<div class="pour-truc">	<a class="pour-second" href="#">Pour la droite</a></div>
+							<%end%>	
+							</div>						
 					</div>
 
 					<div class="row" id="american-milieu-4">
@@ -179,9 +195,11 @@
 						<div class="image2">
 						<% if @challenge.position_taken.include?(2) %>
 							<%= image_tag @challenge.first_opponent.avatar.url(:medium), class:"image" %>
-						<%else%>
-							<%= image_tag ("default_medium.jpg") %>
-						<%end%>
+							<%elsif current_user && current_user.in_challenge?(@challenge)%>
+								<%= image_tag("place_vide.png") %>
+							<%else%>
+								<%= link_to image_tag("place_vide.png"), join_two_challenge_path(:challenge => @challenge), :method => :post %>
+							<%end%>
 						</div>
 					</div>
 
@@ -220,9 +238,11 @@
 						<div class="image2">
 						<% if @challenge.position_taken.include?(4) %>
 							<%= image_tag @challenge.second_opp.avatar.url(:medium), class:"image" %>
-						<%else%>
-							<%= image_tag ("default_medium.jpg") %>
-						<%end%>
+							<%elsif current_user && current_user.in_challenge?(@challenge)%>
+								<%= image_tag("place_vide.png") %>
+							<%else%>
+								<%= link_to image_tag("place_vide.png"), join_four_challenge_path(:challenge => @challenge), :method => :post %>
+							<%end%>
 						</div>
 					</div>
 

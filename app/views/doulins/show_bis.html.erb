@@ -1,34 +1,33 @@
- $(".invitation-fermer").hide()
- $(".invitation-fermer1").hide()
- $(".invitation-fermer-fc").hide()
- $(".invitation-fermer1-fc").hide()
- $(".invitation-fermer3-fc").hide()
- $(".invitation-fermer4-fc").hide()
+
+<h1>Create a debate</h1>
 
 
+##### RAJOUTER UN BOUTON APRES POUR RAJOUTER DES GENS ####
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@challenge) do |f| %>
+	  
+	  <%= render '/shared/error_messages', object: f.object %>
 
- $("#invitation3-fc").click ->
-	    $(this).parent().hide().siblings(".invitation-fermer3-fc").show()
+      <%= f.label :title %>
+      <%= f.text_field :title %>
 
- $("#fermer-invitation3-fc").click ->
-	    $(this).parent().parent().hide().siblings(".first_user").show()
+      <%= f.label :context %>
+      <%= f.text_field :context %>
 
- $("#invitation4-fc").click ->
-	    $(this).parent().hide().siblings(".invitation-fermer4-fc").show()
+      <%= f.label :categorie %>
+      <%= f.text_field :cat_id%>
 
- $("#fermer-invitation4-fc").click ->
-	    $(this).parent().parent().hide().siblings(".second_user").show()
-
-
-$("#invitation-fc").click ->
-	    $(this).parent().hide().siblings(".invitation-fermer-fc").show()
-
- $("#fermer-invitation-fc").click ->
-	    $(this).parent().parent().hide().siblings(".first_user").show()
+      <%= f.label :type_of_debate %>
+      <%= f.text_field :type_deb%>
+	  
+	  <div class="field">
+	  <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+	  <%= f.text_field :tag_list %>
+	  </div>
 	
- $("#invitation1-fc").click ->
-	    $(this).parent().hide().siblings(".invitation-fermer1-fc").show()
-
- $("#fermer-invitation1-fc").click ->
-	    $(this).parent().parent().hide().siblings(".second_user").show()
+      <%= f.submit "Create a debate", class: "btn btn-large btn-primary" %>
 	
+	<% end %>
+  </div>
+</div>

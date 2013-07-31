@@ -1,33 +1,34 @@
+<section id='new-challenge'>
+	<div class="container">
+		<%= form_for(@challenge) do |f| %>
+			<%= render '/shared/error_messages', object: f.object %>
+		<div class="row" id="intro-newchallenge">
+			<div class="texte2">Lance un défi, prends position et invite tes adversaires !</div>			
+		</div>
 
-<h1>Create a debate</h1>
 
-
-##### RAJOUTER UN BOUTON APRES POUR RAJOUTER DES GENS ####
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(@challenge) do |f| %>
-	  
-	  <%= render '/shared/error_messages', object: f.object %>
-
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-
-      <%= f.label :context %>
-      <%= f.text_field :context %>
-
-      <%= f.label :categorie %>
-      <%= f.text_field :cat_id%>
-
-      <%= f.label :type_of_debate %>
-      <%= f.text_field :type_deb%>
-	  
-	  <div class="field">
-	  <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-	  <%= f.text_field :tag_list %>
-	  </div>
-	
-      <%= f.submit "Create a debate", class: "btn btn-large btn-primary" %>
-	
-	<% end %>
-  </div>
-</div>
+		<div class="row" id="title-new">
+			<div class="row" id="title-new2">
+			      	<%= f.text_field :title, placeholder: "Titre du débat ...", class: "title", "data-max-char" => "20"%>
+				<% end %>
+			</div>
+			
+			<div class="row" id="maincontent-new">
+				<div class="content1">
+					
+				</div>
+				<div class="content2">
+					non
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="row" id="intro-newchallenge">
+			<div class="texte1"><%= ["Discussion. Moyen de confirmer les autres dans leurs erreurs", "Elever très haut le débat est une façon élégante de le perdre de vue.", "Je n'ai fait cette lettre plus longue que parce que je n'ai pas eu le temps de la faire plus courte", "Dans une discussion, vous avez toujours de votre côté des gens dont vous auriez préféré qu'ils soient de l'autre."].shuffle.first%></div>
+			
+		</div>
+		
+		
+	</div>
+</section>

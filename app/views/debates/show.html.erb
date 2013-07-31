@@ -52,13 +52,23 @@
 						</div>
 						<div class="row" id="vote">
 							<span class="vote2">VOTEZ</span>
-				 			<li class="oui-oui"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>
+							<% if current_user && @debate.valeur_vote(current_user) == 1.0 %>
+				 			<li class="oui-oui"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui2" %>
 							</li>
-
+							<% else%>
+				 			<li class="oui-oui"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>
+							</li>							
+							<% end%>
+							<% if current_user && @debate.valeur_vote(current_user) == 0.0 %>
+							<li class="suisse-suisse"><%= link_to "I", vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse2" %></li>
+							<% else%>
 							<li class="suisse-suisse"><%= link_to "I", vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %></li>
-
-							<li class="non-non"><%= link_to "NON", vote_debate_path(@debate, type: "down"), method: "post", :class => "non" %></li>
-
+							<%end%>
+							<% if current_user && @debate.valeur_vote(current_user) == -1.0 %>
+							<li class="non-non"><%= link_to "NON", vote_debate_path(@debate, type: "down"), method: "post", :class => "non2" %></li>				
+							<%else%>
+							<li class="non-non"><%= link_to "NON", vote_debate_path(@debate, type: "down"), method: "post", :class => "non" %></li>							
+							<%end%>
 						</div>
 						
 						<div class="row" id="stats">

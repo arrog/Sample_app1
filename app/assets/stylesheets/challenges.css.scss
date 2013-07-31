@@ -1,3 +1,76 @@
+#new-challenge{
+
+	#intro-newchallenge{
+		width: 900px;
+		margin-top: 15px;
+		text-align: center;
+		margin-left: 80px;
+		
+		.texte1{
+		font-family: "georgia";
+		font-size: 16px;
+		font-style: italic;
+		text-align: center
+		}
+		
+		.texte2{
+		font-family: "gotham";
+		font-size: 20px;
+		color: black;
+		margin-bottom: 20px;
+		}
+	}
+	
+	#title-new{
+	margin-left: 130px;
+	margin-top: 15px;
+	width: 800px;
+	height: 400px;
+	background-color: #AAD0FF;
+	
+		#title-new2{
+		margin-top: 15px;
+		margin-left: 15px;
+		width: 770px;
+		
+		::-webkit-input-placeholder {
+		   font-family: "gotham";
+			font-size: 19px;
+			letter-spacing: 1px;
+		}
+		
+		.title{
+		background-color: white;
+		border: none;
+		border-radius: 0px;
+		width: 750px;
+		height: 38px;
+		
+		}
+		}
+		
+		#maincontent-new{
+		margin-left: 15px;
+		margin-top:15px;
+		width: 770px;
+		
+		
+		div{
+		display: inline-block;
+		}
+			
+			.content1{
+			width: 375px;
+			margin-right: 15px;
+			}
+			.content2{
+			width: 375px;
+			}
+		}
+	}
+}
+
+
 #challenge{
 	#juges{
 		background-color:#CCC;
@@ -148,16 +221,16 @@
 	}
 	
 	#openning-context{
-	background-color:#808080;
-	height:30px;
+	background-color:#C9C9C9;
+	height:40px;
 	width: 760px;
 	margin-left:170px;
 	margin-bottom: 10px;
 	
 	.texte{
-	padding-top:5px;
+	padding-top:10px;
 	font-family: "gotham";
-	font-size:22px;
+	font-size:18px;
 	color: #000000;
 	text-align: center;
 	}
@@ -200,24 +273,24 @@
 	}
 	
 	#openning-comments{
-	background-color:#808080;
-	height:30px;
+	background-color:#C9C9C9;
+	height:40px;
 	width: 760px;
 	margin-left:170px;
 	margin-bottom: 50px;
 	
 	.comment-texte1{
-	padding-top:5px;
+	padding-top:10px;
 	font-family: "gotham";
-	font-size:22px;
+	font-size:18px;
 	color: #000000;
 	text-align: center;
 	}
 	
 	.comment-texte2{
-	padding-top:5px;
+	padding-top:10px;
 	font-family: "gotham";
-	font-size:22px;
+	font-size:18px;
 	color: #000000;
 	text-align: center;
 	}
@@ -557,7 +630,7 @@
 			
 			#american-milieu-1{
 				font-family:"gotham";
-				font-size: 25px;
+				font-size: 23px;
 				font-color: black;
 				line-height: 25px;
 				margin-left: 0px;
@@ -569,6 +642,8 @@
 					padding-top:5px;
 					padding-right: 10px;
 					text-align: left;
+					 letter-spacing:-1px;
+					line-height: 25px;
 					}
 				}
 
@@ -606,67 +681,138 @@
 					padding-bottom: 10px;
 					border-bottom: 9px solid white;
 
+					div{
+					display: inline-block;
+					}
 						a:hover{
 						color:#000000;
 						}
 
-					.pour-first{
-					 	float: left;
-						padding: 7px 15px 10px 15px;
-						font-family:"gotham";
-						font-size:18px;
+
+						.moitie-gauche{
+						width:190px;
+						background-color: #808080;
+						height: 35px;
+						font-family: "gotham";
+						font-size: 18px;
 						color: white;
-						background-color:#808080;
-					}
+						text-align: center;
 
-					.pour-first1{
-					 	float: left;
-						padding: 7px 15px 10px 15px;
-						font-family:"gotham";
-						font-size:18px;
+							.rapport-gauche{
+							height:29px;
+							padding: 7px 5px 0px 5px;
+							background-color: white;
+							color: black;
+							font-family: "georgia";
+							font-size: 16px;
+							font-style: italic;
+							font-weight: bold;
+							float: left;
+							}
+							.pour-truc{
+							padding-top: 7px;
+								.pour-first{
+								text-align: center;
+								color: white;
+
+								}
+							}
+						}
+
+
+						.moitie-gauche1{
+						width:190px;
+						background-color: #AAD0FF;
+						height: 35px;
+						font-family: "gotham";
+						font-size: 18px;
 						color: white;
-						background-color:#AAD0FF;
-					}
+						text-align: center;						
+							.rapport-gauche{
+							height:29px;
+							padding: 7px 5px 0px 5px;
+							background-color: white;
+							color: black;
+							font-family: "georgia";
+							font-size: 16px;
+							font-style: italic;
+							font-weight: bold;
+							float: left;
+							}
+						  .pour-truc{
+						  padding-top: 7px;
+						  	.pour-first{
+						  	text-align: center;
+						  	color: white;
 
-					.rapport-gauche{
-						float: left;
-						padding: 7px 5px 10px 5px;
-						font-family:"georgia";
-						font-size:18px;
-						font-style:italic;
-						font-weight: bold;
-						background-color:#FFF;
-						color: black;
-					}
+						  	}
+						  }						
 
-					.pour-second{
-					  float: right;
-						padding: 7px 15px 10px 15px;
-						font-family:"gotham";
-						font-size:18px;
+						}
+
+
+						.moitie-droite{
+						float:right;
+						width:190px;
+						background-color: #808080;
+						height: 35px;
+						font-family: "gotham";
+						font-size: 18px;
 						color: white;
-						background-color:#808080;			
-					}
+						text-align: center;
 
-					.pour-second2{
-					  float: right;
-						padding: 7px 15px 10px 15px;
-						font-family:"gotham";
-						font-size:18px;
+							.rapport-droite{
+							height:29px;
+							padding: 7px 5px 0px 5px;
+							background-color: white;
+							color: black;
+							font-family: "georgia";
+							font-size: 16px;
+							font-style: italic;
+							font-weight: bold;
+							float: right;
+							}
+							.pour-truc{
+							padding-top: 7px;
+								.pour-second{
+								text-align: center;
+								color: white;
+
+								}
+							}
+						}
+
+
+						.moitie-droite1{
+						float:right;
+						width:190px;
+						background-color: #FF6969;
+						height: 35px;
+						font-family: "gotham";
+						font-size: 18px;
 						color: white;
-						background-color:#FF6969;			
-					}
+						text-align: center;						
+							.rapport-droite{
+							height:29px;
+							padding: 7px 5px 0px 5px;
+							background-color: white;
+							color: black;
+							font-family: "georgia";
+							font-size: 16px;
+							font-style: italic;
+							font-weight: bold;
+							float: right;
+							}
+						  .pour-truc{
+						  padding-top: 7px;
+						  	.pour-second{
+						  	text-align: center;
+						  	color: white;
 
-					.rapport-droite{
-						float: right;
-						padding: 7px 5px 10px 5px;
-						font-family:"georgia";
-						font-size:18px;
-						font-style:italic;
-						font-weight: bold;
-						background-color:#FFF;
-						color: black;		
-					}
+						  	}
+						  }						
+
+						}
 
 					}
 
@@ -1021,7 +1167,7 @@
 			
 			#ld-milieu-1{
 			font-family:"gotham";
-			font-size: 25px;
+			font-size: 23px;
 			font-color: black;
 			line-height: 25px;
 			margin-left: 15px;
@@ -1033,6 +1179,8 @@
 				padding-top:5px;
 				padding-right: 10px;
 				text-align: left;
+				 letter-spacing:-1px;
+				line-height: 25px;
 				}
 			}
 			
@@ -1068,69 +1216,139 @@
 				margin-top: 15px;
 				padding-bottom: 10px;
 				border-bottom: 9px solid white;
-
+				
+				div{
+				display: inline-block;
+				}
 					a:hover{
 					color:#000000;
 					}
 
-				.pour-first{
-				 	float: left;
-					padding: 7px 15px 10px 15px;
-					font-family:"gotham";
-					font-size:18px;
+
+					.moitie-gauche{
+					width:190px;
+					background-color: #808080;
+					height: 35px;
+					font-family: "gotham";
+					font-size: 18px;
 					color: white;
-					background-color:#808080;
-				}
+					text-align: center;
 
-				.pour-first1{
-				 	float: left;
-					padding: 7px 15px 10px 15px;
-					font-family:"gotham";
-					font-size:18px;
+						.rapport-gauche{
+						height:29px;
+						padding: 7px 5px 0px 5px;
+						background-color: white;
+						color: black;
+						font-family: "georgia";
+						font-size: 16px;
+						font-style: italic;
+						font-weight: bold;
+						float: left;
+						}
+						.pour-truc{
+						padding-top: 7px;
+							.pour-first{
+							text-align: center;
+							color: white;
+							
+							}
+						}
+					}
+
+
+					.moitie-gauche1{
+					width:190px;
+					background-color: #AAD0FF;
+					height: 35px;
+					font-family: "gotham";
+					font-size: 18px;
 					color: white;
-					background-color:#AAD0FF;
-				}
+					text-align: center;						
+						.rapport-gauche{
+						height:29px;
+						padding: 7px 5px 0px 5px;
+						background-color: white;
+						color: black;
+						font-family: "georgia";
+						font-size: 16px;
+						font-style: italic;
+						font-weight: bold;
+						float: left;
+						}
+					  .pour-truc{
+					  padding-top: 7px;
+					  	.pour-first{
+					  	text-align: center;
+					  	color: white;
+                      
+					  	}
+					  }						
 
-				.rapport-gauche{
-					float: left;
-					padding: 7px 5px 10px 5px;
-					font-family:"georgia";
-					font-size:18px;
-					font-style:italic;
-					font-weight: bold;
-					background-color:#FFF;
-					color: black;
-				}
+					}
 
-				.pour-second{
-				  float: right;
-					padding: 7px 15px 10px 15px;
-					font-family:"gotham";
-					font-size:18px;
+
+					.moitie-droite{
+					float:right;
+					width:190px;
+					background-color: #808080;
+					height: 35px;
+					font-family: "gotham";
+					font-size: 18px;
 					color: white;
-					background-color:#808080;			
-				}
+					text-align: center;
 
-				.pour-second2{
-				  float: right;
-					padding: 7px 15px 10px 15px;
-					font-family:"gotham";
-					font-size:18px;
+						.rapport-droite{
+						height:29px;
+						padding: 7px 5px 0px 5px;
+						background-color: white;
+						color: black;
+						font-family: "georgia";
+						font-size: 16px;
+						font-style: italic;
+						font-weight: bold;
+						float: right;
+						}
+						.pour-truc{
+						padding-top: 7px;
+							.pour-second{
+							text-align: center;
+							color: white;
+							
+							}
+						}
+					}
+
+
+					.moitie-droite1{
+					float:right;
+					width:190px;
+					background-color: #FF6969;
+					height: 35px;
+					font-family: "gotham";
+					font-size: 18px;
 					color: white;
-					background-color:#FF6969;			
-				}
+					text-align: center;						
+						.rapport-droite{
+						height:29px;
+						padding: 7px 5px 0px 5px;
+						background-color: white;
+						color: black;
+						font-family: "georgia";
+						font-size: 16px;
+						font-style: italic;
+						font-weight: bold;
+						float: right;
+						}
+					  .pour-truc{
+					  padding-top: 7px;
+					  	.pour-second{
+					  	text-align: center;
+					  	color: white;
+                      
+					  	}
+					  }						
 
-				.rapport-droite{
-					float: right;
-					padding: 7px 5px 10px 5px;
-					font-family:"georgia";
-					font-size:18px;
-					font-style:italic;
-					font-weight: bold;
-					background-color:#FFF;
-					color: black;		
-				}
-
+					}
 				}
 			
 			
@@ -1636,9 +1854,9 @@
 			
 			#fc-milieu-1{
 				font-family:"gotham";
-				font-size: 25px;
+				font-size: 23px;
 				font-color: black;
-				line-height: 25px;
+				line-height: 23px;
 				margin-left: 0px;
 				margin-right:0px;
 
@@ -1648,6 +1866,8 @@
 					padding-top:5px;
 					padding-right: 10px;
 					text-align: left;
+					 letter-spacing:-1px;
+					line-height: 25px;
 					}
 				}
 
@@ -1685,67 +1905,138 @@
 					margin-top: 15px;
 					padding-bottom: 10px;
 
+					div{
+					display: inline-block;
+					}
 						a:hover{
 						color:#000000;
 						}
 
-					.pour-first{
-					 	float: left;
-						padding: 7px 15px 10px 15px;
-						font-family:"gotham";
-						font-size:18px;
+
+						.moitie-gauche{
+						width:190px;
+						background-color: #808080;
+						height: 35px;
+						font-family: "gotham";
+						font-size: 18px;
 						color: white;
-						background-color:#808080;
-					}
+						text-align: center;
 
-					.pour-first1{
-					 	float: left;
-						padding: 7px 15px 10px 15px;
-						font-family:"gotham";
-						font-size:18px;
+							.rapport-gauche{
+							height:29px;
+							padding: 7px 5px 0px 5px;
+							background-color: white;
+							color: black;
+							font-family: "georgia";
+							font-size: 16px;
+							font-style: italic;
+							font-weight: bold;
+							float: left;
+							}
+							.pour-truc{
+							padding-top: 7px;
+								.pour-first{
+								text-align: center;
+								color: white;
+
+								}
+							}
+						}
+
+
+						.moitie-gauche1{
+						width:190px;
+						background-color: #AAD0FF;
+						height: 35px;
+						font-family: "gotham";
+						font-size: 18px;
 						color: white;
-						background-color:#AAD0FF;
-					}
+						text-align: center;						
+							.rapport-gauche{
+							height:29px;
+							padding: 7px 5px 0px 5px;
+							background-color: white;
+							color: black;
+							font-family: "georgia";
+							font-size: 16px;
+							font-style: italic;
+							font-weight: bold;
+							float: left;
+							}
+						  .pour-truc{
+						  padding-top: 7px;
+						  	.pour-first{
+						  	text-align: center;
+						  	color: white;
 
-					.rapport-gauche{
-						float: left;
-						padding: 7px 5px 10px 5px;
-						font-family:"georgia";
-						font-size:18px;
-						font-style:italic;
-						font-weight: bold;
-						background-color:#FFF;
-						color: black;
-					}
+						  	}
+						  }						
 
-					.pour-second{
-					  float: right;
-						padding: 7px 15px 10px 15px;
-						font-family:"gotham";
-						font-size:18px;
+						}
+
+
+						.moitie-droite{
+						float:right;
+						width:190px;
+						background-color: #808080;
+						height: 35px;
+						font-family: "gotham";
+						font-size: 18px;
 						color: white;
-						background-color:#808080;			
-					}
+						text-align: center;
 
-					.pour-second2{
-					  float: right;
-						padding: 7px 15px 10px 15px;
-						font-family:"gotham";
-						font-size:18px;
+							.rapport-droite{
+							height:29px;
+							padding: 7px 5px 0px 5px;
+							background-color: white;
+							color: black;
+							font-family: "georgia";
+							font-size: 16px;
+							font-style: italic;
+							font-weight: bold;
+							float: right;
+							}
+							.pour-truc{
+							padding-top: 7px;
+								.pour-second{
+								text-align: center;
+								color: white;
+
+								}
+							}
+						}
+
+
+						.moitie-droite1{
+						float:right;
+						width:190px;
+						background-color: #FF6969;
+						height: 35px;
+						font-family: "gotham";
+						font-size: 18px;
 						color: white;
-						background-color:#FF6969;			
-					}
+						text-align: center;						
+							.rapport-droite{
+							height:29px;
+							padding: 7px 5px 0px 5px;
+							background-color: white;
+							color: black;
+							font-family: "georgia";
+							font-size: 16px;
+							font-style: italic;
+							font-weight: bold;
+							float: right;
+							}
+						  .pour-truc{
+						  padding-top: 7px;
+						  	.pour-second{
+						  	text-align: center;
+						  	color: white;
 
-					.rapport-droite{
-						float: right;
-						padding: 7px 5px 10px 5px;
-						font-family:"georgia";
-						font-size:18px;
-						font-style:italic;
-						font-weight: bold;
-						background-color:#FFF;
-						color: black;		
-					}
+						  	}
+						  }						
+
+						}
 
 					}
 				
@@ -1756,67 +2047,138 @@
 					padding-bottom: 10px;
 					border-bottom: 9px solid white;
 
+					div{
+					display: inline-block;
+					}
 						a:hover{
 						color:#000000;
 						}
 
-					.pour-first{
-					 	float: left;
-						padding: 7px 15px 10px 15px;
-						font-family:"gotham";
-						font-size:18px;
+
+						.moitie-gauche{
+						width:190px;
+						background-color: #808080;
+						height: 35px;
+						font-family: "gotham";
+						font-size: 18px;
 						color: white;
-						background-color:#808080;
-					}
+						text-align: center;
 
-					.pour-first1{
-					 	float: left;
-						padding: 7px 15px 10px 15px;
-						font-family:"gotham";
-						font-size:18px;
+							.rapport-gauche{
+							height:29px;
+							padding: 7px 5px 0px 5px;
+							background-color: white;
+							color: black;
+							font-family: "georgia";
+							font-size: 16px;
+							font-style: italic;
+							font-weight: bold;
+							float: left;
+							}
+							.pour-truc{
+							padding-top: 7px;
+								.pour-first{
+								text-align: center;
+								color: white;
+
+								}
+							}
+						}
+
+
+						.moitie-gauche1{
+						width:190px;
+						background-color: #CCE6FF;
+						height: 35px;
+						font-family: "gotham";
+						font-size: 18px;
 						color: white;
-						background-color:#CCE6FF;
-					}
+						text-align: center;						
+							.rapport-gauche{
+							height:29px;
+							padding: 7px 5px 0px 5px;
+							background-color: white;
+							color: black;
+							font-family: "georgia";
+							font-size: 16px;
+							font-style: italic;
+							font-weight: bold;
+							float: left;
+							}
+						  .pour-truc{
+						  padding-top: 7px;
+						  	.pour-first{
+						  	text-align: center;
+						  	color: black;
 
-					.rapport-gauche{
-						float: left;
-						padding: 7px 5px 10px 5px;
-						font-family:"georgia";
-						font-size:18px;
-						font-style:italic;
-						font-weight: bold;
-						background-color:#FFF;
-						color: black;
-					}
+						  	}
+						  }						
 
-					.pour-second{
-					  float: right;
-						padding: 7px 15px 10px 15px;
-						font-family:"gotham";
-						font-size:18px;
+						}
+
+
+						.moitie-droite{
+						float:right;
+						width:190px;
+						background-color: #808080;
+						height: 35px;
+						font-family: "gotham";
+						font-size: 18px;
 						color: white;
-						background-color:#808080;			
-					}
+						text-align: center;
 
-					.pour-second2{
-					  float: right;
-						padding: 7px 15px 10px 15px;
-						font-family:"gotham";
-						font-size:18px;
+							.rapport-droite{
+							height:29px;
+							padding: 7px 5px 0px 5px;
+							background-color: white;
+							color: black;
+							font-family: "georgia";
+							font-size: 16px;
+							font-style: italic;
+							font-weight: bold;
+							float: right;
+							}
+							.pour-truc{
+							padding-top: 7px;
+								.pour-second{
+								text-align: center;
+								color: white;
+
+								}
+							}
+						}
+
+
+						.moitie-droite1{
+						float:right;
+						width:190px;
+						background-color: #FFA1A1;
+						height: 35px;
+						font-family: "gotham";
+						font-size: 18px;
 						color: white;
-						background-color:#FFA1A1;			
-					}
+						text-align: center;						
+							.rapport-droite{
+							height:29px;
+							padding: 7px 5px 0px 5px;
+							background-color: white;
+							color: black;
+							font-family: "georgia";
+							font-size: 16px;
+							font-style: italic;
+							font-weight: bold;
+							float: right;
+							}
+						  .pour-truc{
+						  padding-top: 7px;
+						  	.pour-second{
+						  	text-align: center;
+						  	color: white;
 
-					.rapport-droite{
-						float: right;
-						padding: 7px 5px 10px 5px;
-						font-family:"georgia";
-						font-size:18px;
-						font-style:italic;
-						font-weight: bold;
-						background-color:#FFF;
-						color: black;		
-					}
+						  	}
+						  }						
+
+						}
 
 					}
 

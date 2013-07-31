@@ -23,14 +23,14 @@
 			}
 			
 		#stats2{
-		width:354px;
-		margin-top:5px;
-		margin-left:10px;
+		width:293px;
+		margin-top:-40px;
+		margin-left:43px;
 		
 		.reslutats-oui{
 		background-color: #AAD0FF;
 		height: 21px;
-		width: 85px;
+		width: 88px;
 		padding-top:5px;
 		position:relative;
 		z-index: 5;
@@ -40,6 +40,7 @@
 		font-size: 18px;
 		padding: 0px 5px 0px 5px;
 		color: white;
+		letter-spacing:1px;
 		}
 		
 		.oui3{
@@ -47,7 +48,7 @@
 		font-size: 18px;
 		font-weight: bold;
 		color: #808080;
-		margin: -20px 0px 0px 30px;
+		margin: -20px 0px 0px 32px;
 		}
 		
 		.oui2{
@@ -61,10 +62,10 @@
 		}
 		
 		.reslutats-suisse{
-		background-color: #808080;
+		background-color: #C9C9C9;
 		height: 21px;
 		width: 85px;
-		margin: - 26px 0px 0px 141px;
+		margin: - 26px 0px 0px 103px;
 		padding-top:5px;
 		position:relative;
 		z-index: 5;
@@ -80,8 +81,8 @@
 		font-family: "georgia";
 		font-size: 18px;
 		font-weight: bold;
-		color: #CCC;
-		margin: -20px 0px 0px 30px;
+		color: #808080;
+		margin: -20px 0px 0px 33px;
 		}
 		
 		.suisse2{
@@ -98,7 +99,7 @@
 		background-color: #FF6969;
 		height: 21px;
 		width: 85px;
-		margin: - 26px 0px 0px 268px;
+		margin: - 26px 0px 0px 202px;
 		padding-top:5px;
 		position:relative;
 		z-index: 5;
@@ -143,8 +144,10 @@
 				
 		#title2{
 		font-family: "gotham";
-		font-size: 24px;
+		font-size: 23px;
 		text-align: left;
+		line-height: 25px;
+		 letter-spacing:-1px;
 		line-height: 25px;
 		
 		
@@ -192,14 +195,19 @@
 		}
 
 		.oui-oui{
+			margin-top: -10px;
 			margin-left:30px;
 			background-color: #808080;
 			font-family: "bebasneue-webfont";
-			font-size: 22px;
-			padding: 5px 5px 5px 5px;
+			font-size: 25px;
+			padding: 5px 9px 5px 9px;
 			
 			.oui{
 			color: white;
+			}
+			
+			.oui2{
+			color: #AAD0FF;
 			}
 			
 			.oui:hover{
@@ -208,14 +216,19 @@
 		}
 
 		.suisse-suisse{
+			margin-top: -10px;
 			margin-left:8px;
 			background-color: #FF6969;
 			font-family: "bebasneue-webfont";
-			font-size: 22px;
-			padding: 5px 15px 5px 15px;
+			font-size: 25px;
+			padding: 5px 20px 5px 20px;
 			
 			.suisse{
 			color: white;
+			}
+			
+			.suisse2{
+			color: #808080;
 			}
 			
 			.suisse:hover{
@@ -224,14 +237,18 @@
 		}
 		
 		.non-non{
+			margin-top: -10px;
 			margin-left:8px;
 			background-color: #FFF;
 			font-family: "bebasneue-webfont";
-			font-size: 22px;
-			padding: 5px 5px 5px 5px;
+			font-size: 25px;
+			padding: 5px 9px 5px 9px;
 			
 			.non{
 			color: black;
+			}
+			.non2{
+			color: #FF6969;
 			}
 			
 			.non:hover{
@@ -332,23 +349,23 @@
 	
 	#voter{
 	margin-left:162px;
-	height:30px;
-	background-color: #808080;
+	height:40px;
+	background-color: #C9C9C9;
 	margin-bottom: 10px;
 	width: 780px;
 	font-family: "gotham";
-	font-size:22px;
+	font-size:18px;
 	text-align: center;
 	
 		.texte{
-			padding-top:5px;
+			padding-top:10px;
 			font-family: "gotham";
 			font-size:22px;
 			color: #000;
 			text-align: center;
 		}
 	.texte-newarg{
-	padding-top:5px;
+	padding-top:10px;
 	font-family: "gotham";
 	font-size:22px;
 	color: #000000;
@@ -356,7 +373,7 @@
 	}
 	
 	.texte2-newarg{
-	padding-top:5px;
+	padding-top:10px;
 	font-family: "gotham";
 	font-size:22px;
 	color: #000000;
@@ -424,11 +441,11 @@
 		margin-left: 142px;
 		
 		.contre{
-		margin-left: 326px;
+		margin-left: 246px;
 		}
 		
 		.suisse{
-		margin-left: 163px;
+		margin-left: 123px;
 		}
 	}	
 }

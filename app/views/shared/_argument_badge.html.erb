@@ -54,7 +54,7 @@
 						<div class="row" id="coco">
 	                 		<div class="toggle">
 							  <div id="argcontent">
-								<%= h(argument.content).gsub(/\n/, '<br/>').html_safe %>
+								<%=h(argument.content).gsub(/\n/, '<br/>').html_safe %>
 							  </div>							
 	                 		</div>
 						</div>
@@ -70,7 +70,7 @@
 	    </div>
 	
      <div class="argcoms">        
-        <div class="row">
+        <div class="row" id="argcom-pour">
 	        <div class="span8">
 		    		<% argument.argcoms.each do |argcom| %>
     	    		 <%= render "shared/argcom_badge", :argcom => argcom %>
@@ -80,6 +80,5 @@
 			    	<%end%>
 		    </div>
 		</div>
-
 	</div>
 </section>

@@ -1,51 +1,70 @@
 #new-argument{
 		
-	::-webkit-input-placeholder {
-	   font-family: "gotham";
-	}
+
 	
 	#new-argument1{
 	background-color:#AAD0FF;
 	margin-top:10px;
-	width: 454px;
-	min-height:120px;
+	width: 534px;
+	min-height:520px;
 	margin-bottom:30px;
 	}
 	
 	#new-argument2{
-	background-color:#FF7575;
+	background-color:#FF6969;
 	margin-top:10px;
-	width: 454px;
-	min-height:120px;
+	width: 534px;
+	min-height:520px;
 	margin-bottom:30px;
 	}
 	
 	#new-argument3{
 	background-color:#CCC;
 	margin-top:10px;
-	width: 454px;
-	min-height:120px;
+	width: 534px;
+	min-height:520px;
 	margin-bottom:30px;
 	}
 
 		
-		.title-newarg{
+		#title-form{
+		::-webkit-input-placeholder {
+		   font-family: "gotham";
+			font-size: 19px;
+			letter-spacing: -1px;
+		}
 		
-		width: 325px;
+		.title-newarg{		
+		width: 377px;
 		margin-top:20px;
+		height: 35px;
 		margin-left: 20px;
-		font-family: "gotham";
-		color:#000000;
-		font-size:19px;
+		font-family: "georgia";
+		font-style: italic;
+		font-weight: bold;
+		font-size:17px;
 		background-color:#FFF;
 		border-radius:0px;
 		border: none;
+		color: black;
 		}
+		}
+		
 	
-
+	#texte-form{
+		
+		::-webkit-input-placeholder {
+			padding: 10px 0px 0px 5px;
+		   font-family: "gotham";
+			font-size: 18px;
+			letter-spacing: 0px;
+			line-height: 120px;
+		}
+		
+		
 		.text-newarg{
-		height:300px;
-		width: 405px;
+		height:360px;
+		width: 473px;
 		margin-left: 20px;
 		font-family: "georgia";
 		font-size:14px;
@@ -53,12 +72,19 @@
 		border-radius:0px;
 		border: none;
 		resize:none;
+		font-size: 16px;
 		box-shadow: none;
-		
+		margin-top:10px;
+		padding: 10px;
+		color: black;
 		}
+	
+	}
+
+
 		
 		.actions-newarg{
-		width:413px;
+		width:493px;
 		margin-top:-10px;
 		margin-left:40px;
 		background-color:#FFF;
@@ -122,6 +148,9 @@
 		}
 	}
 	
+	#argcom-pour{
+	margin-left: -40px;
+	}
 	
 	#bleu{
 	background-color:#AAD0FF;
@@ -238,7 +267,7 @@
 		font-size:16px;
 		font-weight:bold;
 		padding: 5px 10px 5px 10px;
-		background-color:#A3A3A3;
+		background-color:#839AB2;
 		color:white;
 		cursor:  pointer;
 		}
@@ -319,6 +348,11 @@
 
 	}	
 	
+	#argcom-neutre{
+	margin-left: -163px;
+	}	
+
+
 	#gris{
 	background-color:#D3D3D3;
 	margin-top:20px;
@@ -435,7 +469,7 @@
 		font-size:16px;
 		font-weight:bold;
 		padding: 5px 10px 5px 10px;
-		background-color:#A3A3A3;
+		background-color:#808080;
 		color:white;
 		cursor:  pointer;
 		}
@@ -516,6 +550,10 @@
 		color: white;
 		}
 	}
+	
+	#argcom-contre{
+	margin-left: -286px;
+	}	
 	
 	#rouge{
 	word-wrap:break-word;
@@ -634,7 +672,7 @@
 		font-size:16px;
 		font-weight:bold;
 		padding: 5px 10px 5px 10px;
-		background-color:#A3A3A3;
+		background-color:#A54952;
 		color:white;
 		cursor:  pointer;
 		}
@@ -807,7 +845,7 @@
 		font-size:16px;
 		font-weight:bold;
 		padding: 5px 10px 5px 10px;
-		background-color:#A3A3A3;
+		background-color:#839AB2;
 		color:white;
 		cursor:  pointer;
 		}

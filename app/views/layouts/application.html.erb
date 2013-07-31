@@ -134,20 +134,25 @@
 	            </div>
 	          <% else %>
 	            <div id="deconnecte" class="unstyled">
-	              <%= link_to("S'IDENTIFIER", new_user_session_path, :class=>"test") %>
+					<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+						  <div class="login"><%= f.email_field :email, :autofocus => true, placeholder: "Pseudo:", class: "login-field" %></div>
+						  <div class="login"><%= f.password_field :password, placeholder: "Mot de Passe:", class: "login-field"%></div>
 	            </div>
-	          <% end %>
 			</div>
 			
 			<div class ="row", id="debat-nav">
 				<div class="row" class="span2 offset 2" style:"float:right" id="RS">
-					<div id="facebook-page">
-						<%= link_to image_tag('facebook-petit.png', :alt => 'Moutoners', :class => "image"), "http://www.facebook.com"%>
+					<div class="motdepasse">Un oubli?</div>
+					 <div><%= f.submit "OK", class: "submit-login" %></div>
+					<%end%>
+					<div class="facebook-page">
+						<%= link_to image_tag('facebook_petit.png', :alt => 'Moutoners', :class => "image"), user_omniauth_authorize_path(:facebook)%>
 					</div>
-					<div id="twitter-page">
-						<%= link_to image_tag('twitter-petit.png', :alt => 'Moutoners', :class => "image"), "http://www.twitter.com"%>
-					</div>					
 				</div>
+				<% end %>
+			<% if current_user %>
+			<div class ="row", id="debat-nav">
+			<% end %>
 				<div id="apprendre">
 					<%= content_tag(:li, :class => ("active" if current_page?(apprendre_path))) do %>
 	            	  <%= link_to apprendre_path do %>
