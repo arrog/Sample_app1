@@ -15,7 +15,7 @@ class Argument < ActiveRecord::Base
   accepts_nested_attributes_for :argcoms, allow_destroy: true
   
   validates :user_id, presence: true
-  validates :title, presence: true, length: { maximum: 140 }
+  validates :title, presence: true, length: { maximum: 100 }
   validates :content, presence: true
   
   
@@ -25,6 +25,26 @@ class Argument < ActiveRecord::Base
   
   def count_negative
      evaluations.where( target_type: self.class, target_id: self.id, value: -1.0 ).count
-   end
+  end
+  
+  def modifiable?
+    if self.position == 1 && self.argumentable.state == "first"
+      true
+    elsif self.position == 2 && self.argumentable.state == "second"
+      true
+    elsif self.position == 3 && self.argumentable.state == "third"
+      true
+    elsif self.position == 4 && self.argumentable.state == "forth"
+      true
+    elsif self.position == 5 && self.argumentable.state == "fifth"
+      true
+    elsif self.position == 6 && self.argumentable.state == "sixth"
+      true
+    elsif self.position == 7 && self.argumentable.state == "seventh"
+      true
+    elsif self.position == 8 && self.argumentable.state == "eighth"
+      true
+    end     
+  end
   
 end

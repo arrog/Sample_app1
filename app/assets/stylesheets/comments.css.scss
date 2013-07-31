@@ -1,3 +1,136 @@
-// Place all the styles related to the comments controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#argcom2{
+	min-height: 48px;
+	width: 780px;
+	background-color: #EEE;
+	margin-top:15px;
+	margin-left: 162px;
+	word-wrap:break-word;
+	
+	#imageuser{
+		img { width: 42px; height:35px;}
+		
+		.image{
+			padding: 6px;
+		}
+	}
+
+	
+	#user{
+	margin-top:-40px;
+	margin-left:60px;
+	font-family:"gotham";
+	font-size:14px;
+	padding-top:4px;
+	font-weight: bold;
+	}
+	
+	#content{
+	margin-left:160px;
+	margin-top:-40px;
+	font-family:"georgia";
+	font-size: 14px;
+	
+		.reaction{
+		border-radius:0px;
+		border: none;
+		margin: -70px 0px 0px 560px;
+		padding: 5px;
+		font-family: "gotham";
+		font-size: 18px;
+		color: black;
+		background-color: #808080;
+		}
+	}
+	
+	.text-reaction{
+	border:none;
+	border-radius: 0px;
+	background-color: #FFF;
+	width: 520px;
+	}
+	
+
+}
+
+#comment{
+	min-height: 55px;
+	background-color: #EEE;
+	margin-top:5px;
+	margin-left: 248px;
+	img { width: 45px; height:45px;}
+	word-wrap:break-word;	
+	
+	.image{
+	padding: 10px;
+	}
+	
+	#user{
+	font-family:"gotham";
+	font-size:14px;
+	padding-top:4px;
+	}
+	#content{
+	width:500px;
+	padding-bottom:10px;
+	padding-top:5px;
+	font-family:"georgia";
+	font-size: 14px;
+	text-align:justify;
+	}
+}
+
+#new-comment{
+	min-height: 75px;
+	background-color: #EEE;
+	margin-top:5px;
+	margin-bottom:25px;
+	margin-left: 248px;
+	img { width: 45px; height:45px;}
+	word-wrap:break-word;
+	
+	.image{
+	padding: 10px;
+	}
+	
+	#user{
+	font-family:"gotham";
+	font-size:14px;
+	padding-top:4px;
+	}
+	
+	.content{
+	margin: 5px 5px 5px -170px;
+	background-color: #FFF;
+	border-radius:0px;
+	height:75px;
+	width: 500px;
+	font-family:"georgia";
+	font-size: 14px;
+	border-radius:0px;
+	border: none;
+	resize:none;
+	box-shadow: none;
+	}
+	
+	.action{
+		background-color: white;
+		height: 40px;
+		width: 508px;
+		margin: -5px 0px 0px -170px;
+		
+		.actions{
+			border-radius:0px;
+			border: none;
+			margin-top: 1px;
+			margin-left: 15px;
+			padding: 5px;
+			font-family: "gotham";
+			font-size: 18px;
+			color: black;
+			background-color: #808080;
+		}
+	
+	}
+
+}
+

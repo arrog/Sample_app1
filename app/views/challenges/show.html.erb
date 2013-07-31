@@ -36,7 +36,7 @@
 							<%elsif current_user && current_user.in_challenge?(@challenge)%>
 								<div class="texte">EN ATTENTE</div>
 							<%else%>
-							<div class="texte"><%= link_to("Prends ce trône".html_safe,
+							<div class="texte"><%= link_to("Juge ce débat !".html_safe,
 			    		       						join_judge_challenge_path(@challenge) ,:method => :post) %>
 							</div>
 							<%end%>
@@ -94,10 +94,17 @@
 							</div>
 						</div>
 						<% elsif [4,8].include?(@challenge.type_deb)  && !@challenge.not_full? %>
-							<%= @challenge.first_judgment.grade %>
-							<%= @challenge.first_judgment.grade_two %>
-							<%= @challenge.first_judgment.grade_three %>
-							<%= @challenge.first_judgment.grade_four %>
+								<% if @challenge.have_first_judge? &&@challenge.first_judgment_array.any?%>
+									<%= @challenge.first_judgment.grade %>
+									<%= @challenge.first_judgment.grade_two %>
+									<%= @challenge.first_judgment.grade_three %>
+									<%= @challenge.first_judgment.grade_four %>
+								<%else%>
+								0
+								0
+								0
+								0
+								<%end%>
 						<%end%>
 					</div>
 				</div>
@@ -123,8 +130,8 @@
 							<%elsif current_user && current_user.in_challenge?(@challenge)%>
 								<div class="texte">EN ATTENTE</div>
 							<%else%>
-							<div class="texte"><%= link_to("Prends ce trône".html_safe,
-			    		       						join_judge_challenge_path(@challenge) ,:method => :post) %>
+							<div class="texte"><%= link_to("Juge ce débat !".html_safe,
+			    		       						join_judge_two_challenge_path(@challenge) ,:method => :post) %>
 							</div>
 							<%end%>
 						</div>
@@ -181,10 +188,17 @@
 								</div>
 							</div>
 							<% elsif [4,8].include?(@challenge.type_deb)  && !@challenge.not_full? %>
-						    	<%= @challenge.second_judgment.grade %>
-						    	<%= @challenge.second_judgment.grade_two %>
-					   	 		<%= @challenge.second_judgment.grade_three %>
-					   	 		<%= @challenge.second_judgment.grade_four %>
+								<% if @challenge.have_second_judge? &&@challenge.second_judgment_array.any?%>
+									<%= @challenge.second_judgment.grade %>
+									<%= @challenge.second_judgment.grade_two %>
+									<%= @challenge.second_judgment.grade_three %>
+									<%= @challenge.second_judgment.grade_four %>
+								<%else%>
+								0
+								0
+								0
+								0
+							<%end%>
 					   	 	<%end%>
 
 					</div>
@@ -211,8 +225,8 @@
 							<%elsif current_user && current_user.in_challenge?(@challenge)%>
 								<div class="texte">EN ATTENTE</div>
 							<%else%>
-							<div class="texte"><%= link_to("Prends ce trône".html_safe,
-			    		       						join_judge_challenge_path(@challenge) ,:method => :post) %>
+							<div class="texte"><%= link_to("Juge ce débat !".html_safe,
+			    		       						join_judge_three_challenge_path(@challenge) ,:method => :post) %>
 							</div>
 							<%end%>
 						</div>
@@ -269,12 +283,18 @@
 								</div>
 							</div>
 							<% elsif [4,8].include?(@challenge.type_deb) && !@challenge.not_full? %>
-						    	<%= @challenge.third_judgment.grade %>
-						    	<%= @challenge.third_judgment.grade_two %>
-					   	 		<%= @challenge.third_judgment.grade_three %>
-					   	 		<%= @challenge.third_judgment.grade_four %>
+							<% if @challenge.have_third_judge? &&@challenge.third_judgment_array.any?%>
+								<%= @challenge.third_judgment.grade %>
+								<%= @challenge.third_judgment.grade_two %>
+								<%= @challenge.third_judgment.grade_three %>
+								<%= @challenge.third_judgment.grade_four %>
+							<%else%>
+							0
+							0
+							0
+							0
 					   	 	<%end%>
-
+							<%end%>
 					</div>
 				</div>
 			</div>

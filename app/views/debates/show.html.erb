@@ -124,11 +124,17 @@
 					
 						<div class="row" id="box-argument">
 				   			<% if @debate.valeur_vote(current_user) == 1.0 %>
+								<div class="pour">
 				   				<%= render "shared/argument_form", argumentable: @debate, argument: current_user.arguments.new, position:1 %>
+								</div>								
 				   			<%elsif @debate.valeur_vote(current_user) == - 1.0 %> 
+								<div class="contre">
 				   				<%= render "shared/argument_contre_form", argumentable: @debate, argument: current_user.arguments.new, position:1 %>
+								</div>
 				   			<% else%>
+								<div class="suisse">
 				   				<%= render "shared/argument_neutre_form", argumentable: @debate, argument: current_user.arguments.new, position:1 %>
+								</div>
 				   			<% end %>
 				    	</div>
 
@@ -153,13 +159,19 @@
 		
 		<div>
 			<% @arguments.each do |argument| %>
-			<div class="row">
+			<div class="row" id="arguments-debate">
 				<% if @debate.valeur_vote(argument.user) == 1.0 %>
+				<div class="pour">
 					<%= render "shared/argument_badge", :argument => argument, :argumentable => @debate %>
+				</div>
 				<%elsif @debate.valeur_vote(argument.user) == - 1.0 %> 
+				<div class="contre">
 					<%= render "shared/argument_contre_badge", :argument => argument, :argumentable => @debate %>
+				</div>
 				<% else%>
+				<div class="suisse">
 					<%= render "shared/argument_neutre_badge", :argument => argument, :argumentable => @debate %>
+				</div>
 				<% end %>
 
 			</div>

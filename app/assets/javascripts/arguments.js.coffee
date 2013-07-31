@@ -9,13 +9,15 @@ $(document).ready ->
   $(".toggleClose2").hide()
   $(".toggle").hide()
   $(".argcoms").hide()
+  $('.modifs').hide()
+  $('.modifs2').hide()
 
 
   $(".toggleOpen").click ->
-    	$(this).hide().parent().parent().next("#coco").children(".toggle").slideDown("medium").parent().siblings("#title5").children(".cont").hide().parent().parent().parent().siblings(".toggleClose2").show().closest("#initial").siblings(".argcoms").show()
+    	$(this).hide().parent().parent().next("#coco").children(".toggle").slideDown("medium").parent().siblings("#title5").children(".cont").hide().parent().parent().parent().siblings(".toggleClose2").show().closest("#initial").siblings(".argcoms").show().siblings("#initial").children(".modifs").show().siblings(".modifs2").show()
 	    
 	 
 
   $(".arrow-up-argument").click ->
-    $(this).parents(".toggleClose2").hide().siblings("#descente").children("#descente2").children("#coco").children(".toggle").hide().parent().siblings("#title5").children(".cont").show().parent().siblings("#coco1").children(".stats").children(".toggleOpen").show().closest("#initial").siblings(".argcoms").hide()
+    $(this).parents(".toggleClose2").hide().siblings("#descente").children("#descente2").children("#coco").children(".toggle").hide().parent().siblings("#title5").children(".cont").show().parent().siblings("#coco1").children(".stats").children(".toggleOpen").show().closest("#initial").siblings(".argcoms").hide().siblings("#initial").children(".modifs").hide().siblings(".modifs2").hide()
 

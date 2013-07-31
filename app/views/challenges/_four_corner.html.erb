@@ -398,7 +398,7 @@
 					<% if signed_in? && current_user == @challenge.prime_minister %>
 						<% if !@challenge.arguments.where(position: 1).any? %>
 							<div id="start">C'est ton tour !</div>
-							<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 1 %>
+							<%= render "shared/argument_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 1 %>
 						<% else %>
 						<div id="start">	<%= link_to("VALIDE TON ARGUMENT".html_safe,
 					              next_challenge_path(@challenge) ,:method => :post) %></div>
@@ -442,12 +442,12 @@
 
 							<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
 					              next_challenge_path(@challenge) ,:method => :post) %></div>
-							<%= render "shared/argument_badge", argument: @challenge.third_argument %>
+							<%= render "shared/argument_fc1_badge", argument: @challenge.third_argument %>
 						<% end %>
 					<% else%>
 					<%end%>
 				<% elsif ["forth","fifth","sixth","seventh","eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
-					<%= render "shared/argument_badge", argument: @challenge.third_argument %>
+					<%= render "shared/argument_fc1_badge", argument: @challenge.third_argument %>
 				<% end %>	
 			</div>
 
@@ -577,7 +577,7 @@
 			<% elsif ["third", "seventh"].include?(@challenge.state)%>			
 			    <% if current_user && current_user==@challenge.second_prop%>
 			    <%else%>
-			    <div class="tour-droite">
+			    <div class="tour-gauche">
 			    	<div class="image">
 			    		<%= image_tag @challenge.second_prop.avatar.url(:small), class:"image" %>
 			    	<span class="name"><%= @challenge.second_prop.fitting_name%> prépare son argument ...</span>

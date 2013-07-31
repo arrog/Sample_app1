@@ -1,10 +1,16 @@
 <section id="argument-neutre">
 		<div class="row" id='initial'>
 			<% if current_user && current_user == argument.user %>
-				<div class="modifs">
-					<div class='texte'><%= link_to "Modifier", edit_argument_path(argument), class: "texte" %></div>
-					<div class= 'texte2'><%= link_to "Effacer", argument_path(argument), :method => :delete, class: "texte2" %></div>
-				</div>
+			<% if argument.argumentable.class == Debate %>
+			<div class="modifs">
+				<div class='texte'><%= link_to "Modifier", edit_argument_path(argument), class: "texte" %></div>
+				<div class= 'texte2'><%= link_to "Effacer", argument_path(argument), :method => :delete, class: "texte2" %></div>
+			</div>
+			<% elsif argument.modifiable? %>
+			<div class="modifs2">
+				<div class='texte'><%= link_to "Modifier", edit_argument_path(argument), class: "texte" %></div>
+			</div>
+			<% end %>
 			<% elsif current_user.try(:admin?)%>
 				<div class="modifs">
 					<div class='texte'><%= link_to "Modifier", edit_argument_path(argument), class: "texte" %></div>
@@ -24,7 +30,7 @@
 	                 <div class="span4" id="descente2">
 						<div class="row" id='title5'>
 	                 		<div class="title">
-	                 			<h2><%= argument.title%></h2>
+	                 			<%= argument.title%>
 							</div>
 							<div class="cont"><%=argument.content.split(' ').slice(0,36).join(' ')%> ...
 	                 		</div>
