@@ -202,6 +202,7 @@ class User < ActiveRecord::Base
           end
         end
       end
+      dc
     end
     
     def challenge_active
