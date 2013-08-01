@@ -1,22 +1,67 @@
 #new-challenge{
 
+	.espace{
+	height: 40px;
+	width: 40px;
+	background-color: white;
+	}
+	
+	.emotion{
+	
+	.input_hidden {
+	    position: absolute;
+	    left: -9999px;
+	}
+
+	.selected {
+	    background-color: #808080;
+	}
+
+	label {
+	    display: inline-block;
+	    cursor: pointer;
+	}
+
+	label img {
+	    padding: 3px;
+	}
+	
+	}
+	
+	.emotion2{
+	
+	.input_hidden {
+	    position: absolute;
+	    left: -9999px;
+	}
+
+	.selected {
+	    background-color: #FFF;
+	}
+
+	label {
+	    display: inline-block;
+	    cursor: pointer;
+	}
+
+	label img {
+	    padding: 3px;
+	}
+	
+	}	
+
 	#intro-newchallenge{
 		width: 900px;
-		margin-top: 15px;
+		margin-top: 30px;
 		text-align: center;
 		margin-left: 80px;
 		
-		.texte1{
-		font-family: "georgia";
-		font-size: 16px;
-		font-style: italic;
-		text-align: center
-		}
-		
 		.texte2{
-		font-family: "gotham";
+		font-family: "georgia";
+		font-style: italic;
+		font-weight: bold;
 		font-size: 20px;
-		color: black;
+		color: #000;
 		margin-bottom: 20px;
 		}
 	}
@@ -25,7 +70,7 @@
 	margin-left: 130px;
 	margin-top: 15px;
 	width: 800px;
-	height: 400px;
+	height: 360px;
 	background-color: #AAD0FF;
 	
 		#title-new2{
@@ -53,20 +98,263 @@
 		margin-left: 15px;
 		margin-top:15px;
 		width: 770px;
-		
-		
-		div{
-		display: inline-block;
-		}
 			
 			.content1{
 			width: 375px;
 			margin-right: 15px;
+			margin-left:0px;
+
+				#type-deb{
+				width: 380px;
+				height: 216px;
+				background-color: #A2C4E0;
+				margin-left:0px;
+				
+					#typedeb1{
+						font-family: "gotham";
+						margin-left: 15px;
+						margin-top: 15px;
+						width: 350px;
+						
+						
+						
+						.choix1{
+						width : 130px;
+						text-align: center;
+						padding-top: 10px;
+						padding-bottom: 10px;
+						border-bottom : 1px Solid white;
+						
+						
+						.texte{
+						width: 40px;
+						font-size: 18px;
+						color: #808080;
+						}
+						}
+						
+						.choix2{
+						margin-top:-48px;
+						margin-left: 80px;
+						width : 130px;
+						text-align: center;
+						padding-top: 10px;
+						padding-bottom: 10px;
+						border-bottom : 1px Solid white;
+
+												
+						.texte{
+						width: 40px;
+						font-size: 18px;
+						color: #808080;
+						}
+						}
+						}
+						
+						#typedeb2{
+						font-family: "gotham";
+						margin-left: 15px;
+						margin-top:-5px;
+						width: 350px;
+						border-bottom: 3px Solid white;
+						.choix3{
+						width : 130px;
+						text-align: center;
+						padding-top: 10px;
+						padding-bottom: 10px;
+
+
+						
+						.texte{
+						width: 40px;
+						font-size: 18px;
+						color: #808080;
+						}
+						}						
+						
+						
+						.choix4{
+						margin-left: 80px;
+						margin-top:0px;
+						width : 130px;
+						text-align: center;
+						padding-top: 10px;
+						padding-bottom: 10px;
+						
+						.texte{
+						width: 40px;
+						font-size: 18px;
+						color: #808080;
+						}
+						}
+					}
+					
+					.image2{
+						margin: -165px 0px 0px 165px;
+					}
+					
+					#typedeb3{
+					font-family: "georgia";
+					font-style: italic;
+					font-weight: bold;
+					margin-left: 15px;
+					width: 350px;
+					
+					
+					
+					
+					.choix1{
+					width : 130px;
+					text-align: center;
+					padding-top: 10px;
+					padding-bottom: 10px;
+					border: 1px solid white;
+					
+					
+					.texte{
+					width: 40px;
+					font-size: 18px;
+					color:#000;
+					
+					}
+					}
+					
+					.choix2{
+					margin-top:-48px;
+					margin-left: 80px;
+					width : 130px;
+					text-align: center;
+					padding-top: 10px;
+					padding-bottom: 10px;
+					border: 1px solid white;
+											
+					.texte{
+					width: 40px;
+					font-size: 18px;
+					color: #000;
+					}
+					}
+					
+					}
+					
+				}
+				
+				#tags_challenge{
+				margin-top: 23px;
+				width: 380px;
+				margin-left:0px;
+				
+				::-webkit-input-placeholder {
+				   font-family: "gotham";
+					font-size: 19px;
+					letter-spacing: 0px;
+				}
+				
+					.tags{
+					border-radius: 0px;
+					border: none;
+					background-color: white;
+					font-family: "georgia";
+					font-style: italic;
+					color: black;
+					font-size: 16px;
+					height: 35px;
+					width: 360px;
+					}
+				}
 			}
+			
+			
+			
+			
 			.content2{
-			width: 375px;
+			margin-top: -276px;
+			margin-left: 400px;
+			width: 370px;
+			
+			
+				#description-challenge{
+				margin-left:0px;
+				margin-top:0px;
+				width: 370px;
+				
+				::-webkit-input-placeholder {
+				   font-family: "gotham";
+					font-size: 22px;
+					letter-spacing: 0px;
+				}
+				
+					.description{
+					height: 125px;
+					background-color: white;
+					border: none;
+					font-family: "georgia";
+					color: black;
+					border-radius: 0px;
+					width: 362px;
+					resize:none;
+					padding-left: 5px;
+					}
+				
+				}
+				
+
+				#category_list{
+				background-color: #A2C4E0;
+				margin-left: 0px;
+				
+				.intro{
+				padding-top:5px;
+				font-family: "gotham";
+				color: white;
+				font-size: 18px;
+				padding-left: 5px;
+				margin-bottom: 6px;
+				}
+				
+				
+				label{
+				display: inline-block;
+				padding-left: 6px;
+				}
+				
+				}
+				
+				#submit-challenge{
+				margin-left: 0px;
+				margin-top: 15px;
+				
+				.action{
+				border: none;
+				border-radius:0px;
+				background-color: black;
+				text-align: center;
+				color: white;
+				font-family: "gotham";
+				font-size: 22px;
+				width: 370px;
+				padding-top: 0px;
+				height:35px;
+				}
+				}
 			}
 		}
+	}
+	
+	#intro-newchallenge2{
+		width: 900px;
+		margin-top: 30px;
+		margin-bottom: 30px;
+		text-align: center;
+		margin-left: 80px;
+		
+		.texte1{
+		font-family: "georgia";
+		font-size: 16px;
+		font-style: italic;
+		text-align: center
+		}
+	
 	}
 }
 

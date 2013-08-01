@@ -16,7 +16,9 @@
 		
 		
 		
-
+		<% if @challenge.jugebreve == 0 %>
+			Ceci est une brève (sans juge)
+		<% else%>
 		<div class="row">
 			<div class="span9 offset2" id="juges">
 				<div class="row">
@@ -299,7 +301,7 @@
 				</div>
 			</div>
 		</div>
-		
+		<%end%>
 		<div class="espace"></div>
 		
 		

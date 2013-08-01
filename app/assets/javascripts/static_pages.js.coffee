@@ -19,4 +19,14 @@ $(document).ready ->
 
   $(".ouvrir-informations").click ->
     	$(this).hide().parent().siblings("#open-infos").show().siblings("#open-infos2").show()
-	
+  
+
+  $(".emotion input:radio").addClass "input_hidden"
+  $(".emotion label").click ->
+    	$(this).addClass("selected").siblings().removeClass("selected").parent().siblings(".emotion").children().removeClass("selected")
+
+
+	  $(".emotion2 input:radio").addClass "input_hidden"
+	  $(".emotion2 label").click ->
+	    	$(this).addClass("selected").siblings().removeClass("selected").parent().siblings(".emotion2").children().removeClass("selected")
+  

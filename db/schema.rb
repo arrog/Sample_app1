@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130811164831) do
+ActiveRecord::Schema.define(:version => 20130811164832) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20130811164831) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.text     "content"
+    t.integer  "jugebreve"
   end
 
   create_table "comments", :force => true do |t|
@@ -224,6 +225,23 @@ ActiveRecord::Schema.define(:version => 20130811164831) do
 
   add_index "performances", ["user_id", "challenge_id"], :name => "index_performances_on_user_id_and_challenge_id"
 
+  create_table "redactor_assets", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "data_file_name",                  :null => false
+    t.string   "data_content_type"
+    t.integer  "data_file_size"
+    t.integer  "assetable_id"
+    t.string   "assetable_type",    :limit => 30
+    t.string   "type",              :limit => 30
+    t.integer  "width"
+    t.integer  "height"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  add_index "redactor_assets", ["assetable_type", "assetable_id"], :name => "idx_redactor_assetable"
+  add_index "redactor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_redactor_assetable_type"
+
   create_table "relationships", :force => true do |t|
     t.integer  "sender_id"
     t.integer  "reciever_id"
@@ -307,6 +325,22 @@ ActiveRecord::Schema.define(:version => 20130811164831) do
 
   create_table "tags", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "tiny_prints", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_file_size"
+    t.string   "image_content_type"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "tiny_videos", :force => true do |t|
+    t.string   "original_file_name"
+    t.string   "original_file_size"
+    t.string   "original_content_type"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
   create_table "users", :force => true do |t|

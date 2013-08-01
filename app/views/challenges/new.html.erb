@@ -2,6 +2,7 @@
 	<div class="container">
 		<%= form_for(@challenge) do |f| %>
 			<%= render '/shared/error_messages', object: f.object %>
+		
 		<div class="row" id="intro-newchallenge">
 			<div class="texte2">Lance un défi, prends position et invite tes adversaires !</div>			
 		</div>
@@ -9,26 +10,140 @@
 
 		<div class="row" id="title-new">
 			<div class="row" id="title-new2">
-			      	<%= f.text_field :title, placeholder: "Titre du débat ...", class: "title", "data-max-char" => "20"%>
-				<% end %>
+			      	<%= f.text_field :title, placeholder: "Titre du débat ...", class: "title", "data-max-char" => "20"%>	
 			</div>
 			
 			<div class="row" id="maincontent-new">
 				<div class="content1">
+					<div class="row" id="type-deb">
+						<div>
+							<div class="emotion2" id='typedeb1'>
+								<%= radio_button_tag "challenge[type_deb]", 2, @challenge.type_deb == 2 %>
+								<label for="challenge_type_deb_2" class="choix1"><span class= "texte">Duel</br> face-à-face</span></label>
+								
+								<%= radio_button_tag "challenge[type_deb]", 3, @challenge.type_deb == 3 %>
+								<label for="challenge_type_deb_3" class="choix2"><span class= "texte">Duel par équipe</span></label>
+							</div>
+							<div class="emotion2" id='typedeb2'>
+								<%= radio_button_tag "challenge[type_deb]", 4, @challenge.type_deb == 4 %>
+								<label for="challenge_type_deb_4" class="choix3"><span class= "texte">Quatre coins</br> individuel</span></label>
+					    	
+								
+								<%= radio_button_tag "challenge[type_deb]", 8, @challenge.type_deb == 8 %>
+								<label for="challenge_type_deb_8" class="choix4"><span class= "texte">Quatre coins par équipe</span></label>
+																					
+							</div>
+							<div>	<%= image_tag ("signe-defi.png"), class: "image2"%></div>
+						<div>
+						<div class="emotion2" id="typedeb3">
+							<%= radio_button_tag "challenge[jugebreve]", 0, @challenge.jugebreve == 0 %>
+							<label for="challenge_jugebreve_0" class="choix1"><span class= "texte">Brève</span></label>
+							
+							<%= radio_button_tag "challenge[jugebreve]", 1, @challenge.jugebreve == 1 %>
+							<label for="challenge_jugebreve_1" class="choix2"><span class= "texte">Avec Juges</span></label>
+						</div>						
+					</div>
 					
+					<div class="row" id="tags_challenge">
+						<%= f.text_field :tag_list, class: "tags", placeholder: "3 tags, séparés par une virgule"%>
+					</div>
 				</div>
+				
 				<div class="content2">
-					non
+					<div class="row" id="description-challenge">
+						<%= f.text_area :context, class: "description", placeholder: "Description" %>	
+					</div>
+					<div class="row" id="category_list">
+						<div class="intro">
+							Thème du débat
+						</div>
+						<div class="emotion">
+							<%= radio_button_tag "challenge[cat_id]", Cat.all.first.id, @challenge.cat_id == 1 %>
+							<label for="challenge_cat_id_1"><%= image_tag ("cat-sports.png")%></label>
+							<%= radio_button_tag "challenge[cat_id]", Cat.all.second.id, @challenge.cat_id == 2 %>
+							<label for ="challenge_cat_id_2"><%= image_tag ("cat-quotidien.png")%></label>
+							<%= radio_button_tag "challenge[cat_id]", Cat.all.third.id, @challenge.cat_id == 3 %>
+							<label for="challenge_cat_id_3"><%= image_tag ("cat-monde.png")%></label>
+							<%= radio_button_tag "challenge[cat_id]", Cat.all.fourth.id, @challenge.cat_id == 4%>
+							<label for ="challenge_cat_id_4"><%= image_tag ("cat-economie.png")%></label>
+							<%= radio_button_tag "challenge[cat_id]", Cat.all.fifth.id, @challenge.cat_id == 5 %>
+							<label for="challenge_cat_id_5"><%= image_tag ("cat-culture.png")%></label>
+							<%= radio_button_tag "challenge[cat_id]", Cat.all[5].id, @challenge.cat_id == 6 %>
+							<label for ="challenge_cat_id_6"><%= image_tag ("cat-sciences.png")%></label>
+							<%= radio_button_tag "challenge[cat_id]", Cat.all[6].id, @challenge.cat_id == 7 %>
+							<label for="challenge_cat_id_7"><%= image_tag ("cat-philosophie.png")%></label>
+							<%= radio_button_tag "challenge[cat_id]", Cat.all[7].id, @challenge.cat_id == 8 %>
+							<label for ="challenge_cat_id_8"><%= image_tag ("cat-societe.png")%></label>							
+						</div>
+					</div>
+					<div class="row" id='submit-challenge'>
+							<%= f.submit "Create a debate", class: "action" %>
+							<% end %>
+					</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		
+		<div class="row" id="intro-newchallenge2">
+			<div class="texte1"><%= ["Discussion. Moyen de confirmer les autres dans leurs erreurs", "Elever très haut le débat est une façon élégante de le perdre de vue.", "Je n'ai fait cette lettre plus longue que parce que je n'ai pas eu le temps de la faire plus courte", "Dans une discussion, vous avez toujours de votre côté des gens dont vous auriez préféré qu'ils soient de l'autre."].shuffle.first%></div>
+
+		</div>
+		
+		<section id="index-doulins">
+		<div class="row" id="open-infos">
+			<div class="span11" id="informations-doulin">
+				<div class="span3" id="informations-doulin1">
+					<div class="texte">
+						Les Défis Dialectiques
+						comment ça marche ?				
+					</div>
+					<div class="texte2">
+						1- Je créé un défi</br>
+						2 - J'attends que le défi soit complet </br>
+						3- Une joute oratoire sans pitié !</br>
+					</div>
+				</div>
+
+				<div class="span4" id="informations-doulin2">
+				</div>
+				<div class="span4" id="informations-doulin3">
+				</div>
+				<div class="span1" id="fermer-explication">
+					
 				</div>
 			</div>
 		</div>
 		
-		
-		<div class="row" id="intro-newchallenge">
-			<div class="texte1"><%= ["Discussion. Moyen de confirmer les autres dans leurs erreurs", "Elever très haut le débat est une façon élégante de le perdre de vue.", "Je n'ai fait cette lettre plus longue que parce que je n'ai pas eu le temps de la faire plus courte", "Dans une discussion, vous avez toujours de votre côté des gens dont vous auriez préféré qu'ils soient de l'autre."].shuffle.first%></div>
-			
+		<div class="row" id="open-infos2">
+			<div class="span11" id="informations-doulin">
+				<div class="span3" id="informations-doulin1">
+					<div class="texte">
+						<%= link_to "Créér un nouveau défi", new_challenge_path, class: "texte"%>
+					</div>
+					<div class="texte2">
+						1- Je choisis mon type de défi</br>
+						2- Je remplis les caractéristiques</br>
+						3- J'invite des débatteurs </br>
+						4- J'attends mon tour, en surveillant les notifications</br>
+					</div>
+				</div>
+
+				<div class="span4" id="informations-doulin2">
+				</div>
+				<div class="span4" id="informations-doulin3">
+				</div>
+				<div class="span1" id="fermer-explication1">
+					
+				</div>
+			</div>
 		</div>
+		</section>
 		
+		<div class="espace"></div>
 		
 	</div>
 </section>
+

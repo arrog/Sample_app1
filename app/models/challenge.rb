@@ -2,7 +2,7 @@ class Challenge < ActiveRecord::Base
   
   include PublicActivity::Common
   
-  attr_accessible :context, :title, :type_deb, :performances_attributes, :tag_list, :cat_id, :invitations_attributes, :state, :avatar, :content
+  attr_accessible :context, :title, :type_deb, :performances_attributes, :tag_list, :cat_id, :invitations_attributes, :state, :avatar, :jugebreve, :content
   
   acts_as_taggable
   acts_as_followable
