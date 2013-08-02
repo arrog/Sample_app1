@@ -1,7 +1,5 @@
 #argcom2{
-::-webkit-input-placeholder {
-   font-family: "gotham";
-}
+
 	min-height: 48px;
 	width: 780px;
 	background-color: #EEE;
@@ -32,6 +30,10 @@
 	font-family:"georgia";
 	font-size: 14px;
 	
+	::-webkit-input-placeholder {
+	   font-family: "gotham";
+		font-size: 18px;
+	}
 		.reaction{
 		border-radius:0px;
 		border: none;
