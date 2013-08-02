@@ -1,0 +1,112 @@
+#group-badge1{
+	.badge2{
+		height: 133px;
+		width: 427px;
+		border-radius: 0px;
+		padding-top: 10px;
+
+		.image{
+		margin-left:0px;
+		margin-top:0px;
+		position: relative;
+		}
+		.image2{
+		margin-left:0px;
+		margin-top:-145px;
+		position:relative;
+		z-index: 1;
+		}
+		
+		#title-group{
+		margin-left:14px;
+		width: 400px;
+		margin-top: -100px;
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		
+		.title{
+			font-family: "gotham";
+			color: black;
+			font-size: 25px;
+		}
+		
+		.content{
+			font-family: "georgia";
+			font-size: 14px;
+			font-style: italic;
+			color: black;
+			margin-top: 10px;
+		}
+		}
+	}
+	
+	.containant2{
+	margin-left: 430px;
+	margin-top: -133px;
+	height: 133px;
+	margin-bottom: 100px;
+	width: 200px;
+	
+		.rejoindre{
+		background-color: #C9C9C9;
+		font-family:"gotham";
+		color: white;
+		font-size: 18px;
+		height: 30px;
+		padding-top: 10px;
+		font-weight: bold;
+		text-align: center;
+		
+			.join{
+			color: white;
+			}
+		}
+		.icones-users{
+		margin-top: 8px;
+		background-color: #EEE;
+		height: 85px;
+		width: 200px;
+		
+		.ligne1{
+			margin-top: 0px;
+			img { width: 42px; height:35px;}
+			
+			li{
+			display: inline-block;
+			margin-left: 4px;
+			margin-top: 5px;
+			}
+			
+			#lastuserprof{
+			float: right;
+			margin-bottom: 4px;
+			margin-right: 4px;
+			background-color: #808080;
+			width: 42px;
+			height: 28px;
+			font-family:"bebasneue-webfont";
+			text-align:center;
+			color: white;
+			font-size: 27px;
+			padding-top: 7px;
+			}
+			
+		}
+
+		}
+
+	}
+}
+
+
+#index-groups{
+
+	#pousse-droite{
+	margin-left:210px;
+	width: 630px;
+	height: 165px;
+	border-bottom: 1px dashed black;
+	margin-bottom: 15px;
+	}
+}
