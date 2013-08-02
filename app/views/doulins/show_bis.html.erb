@@ -1,35 +1,163 @@
-<section id="group-badge">
-	<div class="container">
-  		<div class="row">
-			<div class="span4" id="group-badge1">
-				<div class="span2" id="group-badge2">
-					GROUP
-					<%= group.users.count %>
-				</div>	
-				<div class="span3" id="title">
-    			<h3><%= link_to group.title, group %></h3>
+<div class="container"> 
+ 
+ <div class ="row"> 
+  
+  <div class="span4", style="float:left">
+	<div class="row" id="ligne1">
+		<div id="Notifications" class="span1">
+			<div id="image">
+				<%= image_tag('notifications-1.png') %>
+			</div>
+			<div id="chiffre">
+				<% if current_user %>
+					<%= link_to current_user.notifications, notifications_user_path(current_user), class: "chiffre"%>
+				<%else%>
+					0
+				<%end%>
+			</div>
 
-				<h4><%= group.description %>
-				</div>
+		</div>
+		<div id="Notifications2" class="span1">
+			<div id="image">
+				<%= image_tag('notifications-2.png') %>
 			</div>
-			 <div class = "row">
-				<div class = "span2" id="group-badge3">
-					<% if current_user && current_user.in_group_accepted?(group)%>
-						<%= link_to "ACTUALITE DU GROUPE", group_path(group)%>
-					<% elsif current_user && current_user.in_group_rejected?(group)%>
-						<%= link_to "DEMANDE REFUSEE", group_path(group) %>
-					<%elsif current_user && current_user.in_group?(group)%>
-						<%= link_to "DEMANDE EN COURS"%>
-					<% else %>
-						<%= link_to "REJOINDRE LE GROUPE", rejoindre_group_path(group)%>
-					<% end %>
-				<div>
-			</div>
-			<div class ="row">
-				<div class ="span2" id="group-badge4">
-				<%= image_tag group.users.first.avatar.url(:tiny)%>
-				</div>
+			<div id="chiffre">
+				<% if current_user %>
+					<%= link_to current_user.notifications, notifications_user_path(current_user), class: "chiffre"%>
+				<%else%>
+					0
+				<%end%>
 			</div>
 		</div>
 	</div>
-</section>
+	
+	<div class="row" id="ligne2">
+		<div id="Notifications3" class="span1">
+			<div id="image">
+				<%= image_tag('notifications-3.png') %>
+			</div>
+			<div id="chiffre">
+				<% if current_user %>
+					<%= link_to current_user.notifications, notifications_user_path(current_user), class: "chiffre" %>
+				<%else%>
+					0
+				<%end%>
+			</div>
+		</div>
+		<div id="Notifications4" class="span1">
+			<div id="image">
+				<%= image_tag('notifications-4.png') %>
+			</div>
+			<div id="chiffre">
+				<% if current_user %>
+					<%= link_to current_user.notifications, notifications_user_path(current_user), class: "chiffre"%>
+				<%else%>
+					0
+				<%end%>
+			</div>
+		</div>
+	</div>	
+
+	<div class ="row" id="search">
+		<div id="gris">
+			<div class="loupe">
+				<%= image_tag('search-tag.png') %>
+			</div>
+		</div>
+		<div>
+  			<%= form_tag ("/search_results"), :method => "get", :id=>"search-form" do %>
+        	
+			  <%= text_field_tag ("search") , nil, :id=>"search-text",
+			    :onblur=>"if(this.value=='')this.setAttribute('class', 'search_input');",
+			    :onfocus=>"this.setAttribute('class', 'search_input_clear');",
+				placeholder: "Chercher un débat"
+			 %>
+			<% end %>
+		</div>
+	</div>
+  </div>
+
+  <div class="span4">
+	<div class="span3">
+  	<div id="logo", class="img-circle">
+          <%= link_to image_tag('logo.png', :alt => 'Moutoners'), root_path %>
+    </div>
+	</div>
+  </div>
+    
+  <div class ="span4", style:"float:right" id="adroite">
+	<div class ="row">
+	  <% if user_signed_in? %>
+        <div id="user-nav" class="btn-group">
+            <%= link_to current_user.fitting_name, current_user, class: "white" %>
+          <a id="dropdown" class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Profil", user_path(current_user) %></li>
+            <li><%= link_to "Déconnexion", destroy_user_session_path, :method=>'delete' %></li>
+          </ul>
+        </div>
+      <% else %>
+        <div id="deconnecte" class="unstyled">
+			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+				  <div class="login"><%= f.email_field :email, :autofocus => true, placeholder: "Pseudo:", class: "login-field" %></div>
+				  <div class="login"><%= f.password_field :password, placeholder: "Mot de Passe:", class: "login-field"%></div>
+        </div>
+	</div>
+	
+	<div class ="row", id="debat-nav">
+		<div class="row" class="span2 offset 2" style:"float:right" id="RS">
+			<div class="motdepasse">Un oubli?</div>
+			 <div><%= f.submit "OK", class: "submit-login" %></div>
+			<%end%>
+			<div class="facebook-page">
+				<%= link_to image_tag('facebook_petit.png', :alt => 'Moutoners', :class => "image"), user_omniauth_authorize_path(:facebook)%>
+			</div>
+		</div>
+		<% end %>
+	<% if current_user %>
+	<div class ="row", id="debat-nav">
+	<% end %>
+		<div id="apprendre">
+			<%= content_tag(:li, :class => ("active" if current_page?(apprendre_path))) do %>
+        	  <%= link_to apprendre_path do %>
+        	    <%= content_tag(:strong, "APPRENDRE A DEBATTRE") %>
+        	  <% end %>
+        	<% end %>
+		</div>
+	</div>
+  </div>
+ </div>
+
+
+ <div class ="row"> 
+   <div class = "span11", id = "navigation">
+ 	<div class = "span11">
+     <ul id="main-nav" class="unstyled">
+		
+
+         <li><%= link_to "TIMELINE", list_path, class: "black" %></li>
+		
+		<li class="tiret">|</li>
+		
+		 <li><%= link_to "LES EXPERTS", experts_path, class: "black" %></li>
+		
+		<li class="tiret">|</li>
+
+         <li><%= link_to "DEBATS OUVERTS", debats_path, class: "black" %></li>
+		
+		<li class="tiret">|</li>
+
+         <li><%= link_to "DEFIS", dialectiques_path, class: "black" %></li>
+		
+		<li class="tiret">|</li>
+
+
+         <li class="last"><%= link_to "LES GROUPES", groups_path, class: "black" %></li>
+       </ul>
+ 	</div>
+   </div>
+ </div>
+
+</div>

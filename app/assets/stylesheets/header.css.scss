@@ -1,152 +1,220 @@
 header {
-  height: 250px;
+  height: 262px;
   position: relative;
   
+  #tout-enhaut{
+	height: 212px;
+	background-color: #AAD0FF;
+	margin-left: 0px;
+	
+	.gauche{
+	width: 600px;
+	#try2{
+		margin-left:33px;
+		margin-top: 23px;
+	}
+	
+	#try3{
+		margin-left:33px;
+		margin-top: 23px;
+		
+		
+		.titre{
+			font-family: "gotham";
+			font-size: 48px;
+			color: black;
+			.title{
+				color: black;
+			}
+			
+			.titre:hover{
+			color: black;
+			}
+		}
+		
+		.facebook-page1{
+			margin-left:283px;
+			margin-top: -19px;
+		}
+		
+		.twitter-page1{
+			margin-left:317px;
+			margin-top: -29px;
+		}
+		
+		.linkedin-page1{
+			margin-left:351px;
+			margin-top: -28px;
+		}
+	}
+	
+	#try4{
+	margin-top: 18px;
+	margin-left: 33px;
+	
+		
+		div {
+		display: inline-block;
+		}
+		
+	.nom{
+		width: 184px;
+		height: 22px;
+		padding-top: 5px;
+		background-color: white;
+		font-family: "gotham";
+		font-size: 17px;
+		text-align: center;
+		
+	}
+	
+	.nom2{
+		width: 191px;
+		height: 23px;
+		padding-top: 4px;
+		background-color: #A3A3A3;
+		color: black;
+		font-family: "gotham";
+		font-size: 15px;
+		text-align: center;
+		
+		.chiffre{
+			font-size: 20px;
+			color: white;
+			padding-right: 10px;
+		}
+	}
+		
+	.login{
+	::-webkit-input-placeholder {
+	   font-family: "gotham";
+	   color: black;
+	}
+		.login-field{
+			width: 168px;
+			border-radius: 0px;
+			background-color: white;
+			font-family: "georgia";
+			font-size: 15px;
+			color: black;
+			height: 25px;
+			border: none;
+			}
+			
+			.submit-login{
+			border-radius: 0px;
+			border: none;
+			background-color: black;
+			font-family: "gotham";
+			font-size: 12px;
+			color: white;
+			height: 24px;
+			}
+	  }
+	 }
+	#try5{
+	margin-top: -25px;
+	margin-left: 33px;
+			.texte{
+			width: 184px;
+			padding-left: 5px;
+			font-family: "gotham";
+			font-weight: bold;
+			font-size:11px;
+			}
+		div {
+		display: inline-block;
+		}
+	}
+	
+	#try6{
+	margin-top: 5px;
+	margin-left: 33px;
+
+			.texte{
+			width: 184px;
+			padding-left: 0px;
+			font-family: "gotham";
+			font-weight: bold;
+			font-size:11px;
+				text-align: center;
+			}
+		div {
+		display: inline-block;
+		}
+	}
+	}
+	
+	.droite{
+		margin-top: -103px;
+		width: 400px;
+		float: right;
+		margin-right: 25px;
+		
+			#apprendre{
+				float: right;
+				height:28px;
+				width: 185px;
+				background-color:#A3A3A3;
+				text-align:center;
+				margin-top: 0px;
+				font-family: "gotham";
+				font-weight: bold;
+				color: white;
+				font-size: 15px;
+				text-align: center;
+				padding-top: 7px;
+				
+					.apprendre{
+						color: white;
+					}
+				}
+				
+				#search{
+				float:right;
+				width: 225px;
+				margin-top:10px;
+				height: 35px;
+				
+				::-webkit-input-placeholder {
+				   font-family: "gotham";
+					font-size: 15px;
+					font-weight: bold;
+					font-color: #A3A3A3;
+				}	
+					#search-text{
+						  text-align: center;
+			        	  border-radius: 0px;
+						  border: none;
+			        	  width: 166px;
+			        	  height: 35px;
+			        	  font-family: 'georgia';
+			        	  font-size:15px;
+			        	  color: black;
+			        	  background-color:white;
+			        	}
+					.loupe{
+					float:right;
+					margin-top: 0px;
+					height: 35px;
+					width:39px;
+					background-color: #A3A3A3;
+						.loupe2{
+						padding-top:5px;
+						padding-left: 5px;
+						}
+					}
+			
+				}
+	}
+}
   
-  @include subtle-link;
-  
-  .container {
-  background-color: #FFF;
 
-  #logo {
-	margin-top:37px;
-	margin-left:65px;
 
-    }
 
-	#gris{
-	  background-color:#808080;
-	  margin-top: 5px;
-	  margin-left: 60px;
-	  width: 232px;
-	  height: 35px;
+
 	
-		.loupe{
-		padding-left:190px;
-		padding-top: 3px;  
-		}
-	}
-		
-	#search-form{
-	}
-	
-	#search-text{
-	  border-radius: 0px;
-	  margin-top: -46px;
-	  margin-left: 65px;
-	  width: 152px;
-	  height: 27px;
-	  font-family: 'gotham';
-	  font-size:14px;
-	  color: black;
-	  background-color:white;
-	}
-	
-	#ligne1{
-	margin-top: 30px;
-	#Notifications{
-		margin-top: 7px;
-		margin-left: 60px;
-		background-color: #FF6969;
-		height:38px;
-		width:66px;
-		
-		#image { 
-		margin-top: 3px;
-		margin-left: 9px;
-		}
-		
-		#chiffre { 
-		margin-top: -23px;
-		margin-left: 45px;
-		font-family: 'bebasneue-webfont';
-		font-size:25px;
-		color: white;
 
-		.chiffre{
-			color: white;
-		}		
-		}
-	}
-	
-	#Notifications2{
-		margin-top: 7px;
-		margin-left: 6px;
-		background-color: #FF6969;
-		height:38px;
-		width:66px;
-		
-		#image { 
-		margin-top: 3px;
-		margin-left: 9px;
-		}
-		
-		#chiffre { 
-		margin-top: -23px;
-		margin-left: 45px;
-		font-family: 'bebasneue-webfont';
-		font-size:25px;
-		color: white;
-
-		.chiffre{
-			color: white;
-		}
-
-		}
-	}	
-	}
-
-	#ligne2{
-	#Notifications3{
-		margin-top: 7px;
-		margin-left: 60px;
-		background-color: #FF6969;
-		height:38px;
-		width:66px;
-		
-		#image { 
-		margin-top: 3px;
-		margin-left: 7px;
-		}
-		
-		#chiffre { 
-		margin-top: -24px;
-		margin-left: 45px;
-		font-family: 'bebasneue-webfont';
-		font-size:25px;
-		color: white;
-		
-		.chiffre{
-			color: white;
-		}
-		}
-	}	
-
-	#Notifications4{
-		margin-top: 7px;
-		margin-left: 6px;
-		background-color: #FF6969;
-		height:38px;
-		width:66px;
-		
-		#image { 
-		margin-top: 3px;
-		margin-left: 9px;
-		}
-		
-		#chiffre { 
-		margin-top: -24px;
-		margin-left: 45px;
-		font-family: 'bebasneue-webfont';
-		font-size:25px;
-		color: white;
-	
-		.chiffre{
-			color: white;
-		}		
-		}
-	}	
-	}
 
     
     #adroite{
@@ -314,5 +382,4 @@ header {
     }
 
 
-  }
 }
