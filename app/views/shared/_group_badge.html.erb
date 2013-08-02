@@ -1,35 +1,81 @@
-<section id="group-badge">
-	<div class="container">
-  		<div class="row">
-			<div class="span4" id="group-badge1">
-				<div class="span2" id="group-badge2">
-					GROUP
-					<%= group.users.count %>
-				</div>	
-				<div class="span3" id="title">
-    			<h3><%= link_to group.title, group %></h3>
-
-				<h4><%= group.description %>
-				</div>
+<section id='group-badge1'>
+	<div class="badge2">
+		<%= image_tag group.avatar.url(:large), class: "image"%>
+		<%= image_tag "group_badge.png", class: "image2"%>
+		<div class="row" id="title-group">
+			<div class="title"><%= link_to group.title, group, class: "title"%></div>
+			<div class="content"><%= group.description%></div>
+		</div>
+	</div>
+	<div class="containant2">
+		<div class="rejoindre">
+			<% if current_user && current_user.in_group_accepted?(group)%>
+				<%= link_to "Actualité du groupe", group_path(group), class: "join"%>
+			<% elsif current_user && current_user.in_group_rejected?(group)%>
+				<%= link_to "Banni du groupe", group_path(group), class: "join"%>
+			<%elsif current_user && current_user.in_group?(group)%>
+				<span class="join">Demande en cours</span>
+			<% else %>
+				<%= link_to "Rejoindre le groupe", rejoindre_group_path(group), class: "join"%>
+			<% end %>
+		</div>
+		
+		<div class="icones-users">
+			<div class="ligne1">
+				<li class="imageuser">
+					<% if group.users.count >=1 %>
+					<%= link_to image_tag(group.users.first.avatar.url(:small)), group.users.first, class: "image1"%>
+					<%end%>
+					</li>
+					
+					<li class="imageuser">
+						<% if group.users.count >=2 %>
+						<%= link_to image_tag(group.users.second.avatar.url(:small)), group.users.second, class: "image2"%>
+						<%end%>
+						</li>
+					
+						<li class="imageuser">
+							<% if group.users.count >=3 %>
+							<%= link_to image_tag(group.users.third.avatar.url(:small)), group.users.third, class: "image3"%>
+							<%end%>
+							</li>
+				
+					
+					<li class="imageuser">
+						<% if group.users.count >=4 %>
+						<%= link_to image_tag(group.users.fourth.avatar.url(:small)), group.users.fourth, class: "image4"%>
+						<%end%>
+						</li>
+					
 			</div>
-			 <div class = "row">
-				<div class = "span2" id="group-badge3">
-					<% if current_user && current_user.in_group_accepted?(group)%>
-						<%= link_to "ACTUALITE DU GROUPE", group_path(group)%>
-					<% elsif current_user && current_user.in_group_rejected?(group)%>
-						<%= link_to "DEMANDE REFUSEE", group_path(group) %>
-					<%elsif current_user && current_user.in_group?(group)%>
-						<%= link_to "DEMANDE EN COURS"%>
-					<% else %>
-						<%= link_to "REJOINDRE LE GROUPE", rejoindre_group_path(group)%>
-					<% end %>
-				<div>
+			<div class="ligne1">
+				<li class="imageuser">
+					<% if group.users.count >=5 %>
+					<%= link_to image_tag(group.users[4].avatar.url(:small)), group.users[5], class: "image1"%>
+					<%end%>
+					</li>
+					
+					<li class="imageuser">
+						<% if group.users.count >=6 %>
+						<%= link_to image_tag(group.users[5].avatar.url(:small)), group.users[6], class: "image2"%>
+						<%end%>
+						</li>
+					
+						<li class="imageuser">
+							<% if group.users.count >=7 %>
+							<%= link_to image_tag(group.users[6].avatar.url(:small)), group.users[7], class: "image3"%>
+							<%end%>
+						</li>
+				
+					
+					<li class="imageuser" id="lastuserprof">
+						<%=group.users.count%>
+					
+					</li>
+					
 			</div>
-			<div class ="row">
-				<div class ="span2" id="group-badge4">
-				<%= image_tag group.users.first.avatar.url(:tiny)%>
-				</div>
-			</div>
+			
+			
 		</div>
 	</div>
 </section>

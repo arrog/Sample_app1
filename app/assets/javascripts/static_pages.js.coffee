@@ -7,8 +7,9 @@ jQuery ->
 
 $(document).ready ->
  $ ->
-  $(".ouvrir-informations").hide()
 
+  $("#open-infos").hide() 
+  $("#open-infos2").hide() 
 
   $("#fermer-explication").click ->
     	$(this).parent().parent().hide().siblings("#intro-doulin").children(".ouvrir-informations").show()
@@ -29,4 +30,8 @@ $(document).ready ->
 	  $(".emotion2 input:radio").addClass "input_hidden"
 	  $(".emotion2 label").click ->
 	    	$(this).addClass("selected").siblings().removeClass("selected").parent().siblings(".emotion2").children().removeClass("selected")
-  
+	
+		  $(".choix1").addClass("selected")
+		  $(".emotion3 input:radio").addClass "input_hidden"
+		  $(".emotion3 label").click ->
+		    	$(this).addClass("selected").siblings().removeClass("selected")

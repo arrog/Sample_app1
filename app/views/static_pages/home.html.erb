@@ -52,13 +52,13 @@
 					</div>
 					
 				<div class="row" id="stats-profil">
-					<div class="texte5"><%= current_user.notifications%></div> <div class="texte2">Notification(s)</div>
+					<div class="texte5"><%= link_to current_user.notifications, current_user, class: "texte5"%></div> <div class="texte2">Notification(s)</div>
 				</div>
 				<div class="row" id="stats-profil">
-					<div class="texte5"><%= current_user.notifications2.count%></div> <div class="texte2">Défi(s) en cours</div>
+					<div class="texte5"><%= link_to current_user.notifications2.count, current_user, class: "texte5"%></div> <div class="texte2">Défi(s) en cours</div>
 				</div>
 				<div class="row" id="stats-profil">
-					<div class="texte5"><%= current_user.challenges_judge.count%></div> <div class="texte2">Jury vacant</div>
+					<div class="texte5"><%= link_to current_user.challenges_judge.count, current_user, class: "texte5"%></div> <div class="texte2">Jury vacant</div>
 				</div>				
 		  </div>
 		  <div id="video_3">

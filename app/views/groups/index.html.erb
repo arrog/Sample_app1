@@ -1,7 +1,22 @@
-<%= link_to "créér un groupe", new_group_path%>
+<section id="index-groups">
+	<div class="container">
+		<div class="row">
+			<div class="text1">
+			<%= link_to "créér un groupe", new_group_path%>
+			</div>
+			<div class="text2">
+				Index des troupeaux
+			</div>
+		</div>
+		
+		<% @groups.each do |g|%>
+		<div class="row" id="pousse-droite">
+			<%= render "shared/group_badge", group: g%>
+		</div>
+		<%end%>
+	</div>
+</section>
 
-<% @groups.each do |g|%>
 	
-	<%= render "shared/group_badge", group: g%>
 	
-<%end%>
+	

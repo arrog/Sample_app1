@@ -110,7 +110,11 @@ class User < ActiveRecord::Base
     end
     
     def in_challenge?(challenge)
-      challenges.find_by_id(challenge.id)
+      if challenges.find_by_id(challenge.id) == nil
+        false
+      else
+        true
+      end
     end
     
     def in_challenge_expert?(doulin)
@@ -296,14 +300,14 @@ class User < ActiveRecord::Base
     
     def invitation_request
       a=[]
-      reverse_invitations.where(state: "unseen").each do |l|
+      b=reverse_invitations.where(state: "unseen") + reverse_invitations.where(state: "accepted")
+      b.each do |l|
         if self.in_challenge?(l.challenge)
           a
         else
           a = a + [l]
         end
       end
-      a
         
     end
     

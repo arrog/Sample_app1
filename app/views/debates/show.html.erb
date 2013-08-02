@@ -10,7 +10,7 @@
 						
 					    <div class="image1">	
 							<%= image_tag("ouvert-image.png", alt: "Moutoners", class: "image")%>							
-						
+							<%= image_tag("imageod.png", alt: "Moutoners", class: "image2")%>
 							<div id="stats2">								
 
 								<% if @debate.evaluations.any?%>
@@ -21,7 +21,7 @@
 								</div>
 								
 								<div class="reslutats-suisse">
-									<div class="suisse1">I</div>
+									<div class="suisse1"><%= image_tag "croix-suisse.png"%></div>
 									<div class="suisse3">|</div>
 									<div class="suisse2"><%=100*@debate.count_neutral / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%</div>
 								</div>
@@ -60,9 +60,9 @@
 							</li>							
 							<% end%>
 							<% if current_user && @debate.valeur_vote(current_user) == 0.0 %>
-							<li class="suisse-suisse"><%= link_to "I", vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse2" %></li>
+							<li class="suisse-suisse"><%= link_to image_tag("croix-suisse-01.png"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse2" %></li>
 							<% else%>
-							<li class="suisse-suisse"><%= link_to "I", vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %></li>
+							<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %></li>
 							<%end%>
 							<% if current_user && @debate.valeur_vote(current_user) == -1.0 %>
 							<li class="non-non"><%= link_to "NON", vote_debate_path(@debate, type: "down"), method: "post", :class => "non2" %></li>				
@@ -74,11 +74,11 @@
 						<div class="row" id="stats">
 							<div class="stat1">
 								<%= @debate.count_for+@debate.count_against + @debate.count_neutral%>
-								<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image")%>
+								<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image")%>
 								|
 
 								<span class="stat2"><%= @debate.arguments.count%></span>
-								<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image")%>
+								<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image")%>
 								|
 
 								<span class="stat2"><%= @debate.argcoms.count%></span>

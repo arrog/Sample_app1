@@ -1,33 +1,35 @@
+<section id="group-badge">
+	<div class="container">
+  		<div class="row">
+			<div class="span4" id="group-badge1">
+				<div class="span2" id="group-badge2">
+					GROUP
+					<%= group.users.count %>
+				</div>	
+				<div class="span3" id="title">
+    			<h3><%= link_to group.title, group %></h3>
 
-<h1>Create a debate</h1>
-
-
-##### RAJOUTER UN BOUTON APRES POUR RAJOUTER DES GENS ####
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(@challenge) do |f| %>
-	  
-	  <%= render '/shared/error_messages', object: f.object %>
-
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-
-      <%= f.label :context %>
-      <%= f.text_field :context %>
-
-      <%= f.label :categorie %>
-      <%= f.text_field :cat_id%>
-
-      <%= f.label :type_of_debate %>
-      <%= f.text_field :type_deb%>
-	  
-	  <div class="field">
-	  <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-	  <%= f.text_field :tag_list %>
-	  </div>
-	
-      <%= f.submit "Create a debate", class: "btn btn-large btn-primary" %>
-	
-	<% end %>
-  </div>
-</div>
+				<h4><%= group.description %>
+				</div>
+			</div>
+			 <div class = "row">
+				<div class = "span2" id="group-badge3">
+					<% if current_user && current_user.in_group_accepted?(group)%>
+						<%= link_to "ACTUALITE DU GROUPE", group_path(group)%>
+					<% elsif current_user && current_user.in_group_rejected?(group)%>
+						<%= link_to "DEMANDE REFUSEE", group_path(group) %>
+					<%elsif current_user && current_user.in_group?(group)%>
+						<%= link_to "DEMANDE EN COURS"%>
+					<% else %>
+						<%= link_to "REJOINDRE LE GROUPE", rejoindre_group_path(group)%>
+					<% end %>
+				<div>
+			</div>
+			<div class ="row">
+				<div class ="span2" id="group-badge4">
+				<%= image_tag group.users.first.avatar.url(:tiny)%>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

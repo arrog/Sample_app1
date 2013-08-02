@@ -18,7 +18,7 @@
 					<div class="row" id="type-deb">
 						<div>
 							<div class="emotion2" id='typedeb1'>
-								<%= radio_button_tag "challenge[type_deb]", 2, @challenge.type_deb == 2 %>
+								<%= radio_button_tag "challenge[type_deb]", 2, @challenge.type_deb == 2, :checked => 2 %>
 								<label for="challenge_type_deb_2" class="choix1"><span class= "texte">Duel</br> face-à-face</span></label>
 								
 								<%= radio_button_tag "challenge[type_deb]", 3, @challenge.type_deb == 3 %>
@@ -35,8 +35,8 @@
 							</div>
 							<div>	<%= image_tag ("signe-defi.png"), class: "image2"%></div>
 						<div>
-						<div class="emotion2" id="typedeb3">
-							<%= radio_button_tag "challenge[jugebreve]", 0, @challenge.jugebreve == 0 %>
+						<div class="emotion3" id="typedeb3">
+							<%= radio_button_tag "challenge[jugebreve]", 0, @challenge.jugebreve == 0, :checked => 0 %>
 							<label for="challenge_jugebreve_0" class="choix1"><span class= "texte">Brève</span></label>
 							
 							<%= radio_button_tag "challenge[jugebreve]", 1, @challenge.jugebreve == 1 %>
@@ -45,7 +45,7 @@
 					</div>
 					
 					<div class="row" id="tags_challenge">
-						<%= f.text_field :tag_list, class: "tags", placeholder: "3 tags, séparés par une virgule"%>
+						<%= f.text_field :tag_list, class: "tags", placeholder: "Tag1, Tag2, Tag3 ..."%>
 					</div>
 				</div>
 				
@@ -58,8 +58,8 @@
 							Thème du débat
 						</div>
 						<div class="emotion">
-							<%= radio_button_tag "challenge[cat_id]", Cat.all.first.id, @challenge.cat_id == 1 %>
-							<label for="challenge_cat_id_1"><%= image_tag ("cat-sports.png")%></label>
+							<%= radio_button_tag "challenge[cat_id]", Cat.all.first.id, @challenge.cat_id == 1, :checked => 1%>
+							<label for="challenge_cat_id_1" class="choix1"><%= image_tag ("cat-sports.png")%></label>
 							<%= radio_button_tag "challenge[cat_id]", Cat.all.second.id, @challenge.cat_id == 2 %>
 							<label for ="challenge_cat_id_2"><%= image_tag ("cat-quotidien.png")%></label>
 							<%= radio_button_tag "challenge[cat_id]", Cat.all.third.id, @challenge.cat_id == 3 %>
@@ -93,7 +93,7 @@
 		</div>
 		
 		<section id="index-doulins">
-		<div class="row" id="open-infos">
+		<div class="row">
 			<div class="span11" id="informations-doulin">
 				<div class="span3" id="informations-doulin1">
 					<div class="texte">
@@ -117,7 +117,7 @@
 			</div>
 		</div>
 		
-		<div class="row" id="open-infos2">
+		<div class="row">
 			<div class="span11" id="informations-doulin">
 				<div class="span3" id="informations-doulin1">
 					<div class="texte">

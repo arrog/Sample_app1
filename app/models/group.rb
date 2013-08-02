@@ -6,12 +6,12 @@ class Group < ActiveRecord::Base
   has_many :users, through: :memberships, :uniq => true
  
   has_attached_file :avatar,
-                    :styles =>  { :large => "600x300>", :medium => "165x165>"},
+                    :styles =>  { :large => "427x133>", :medium => "165x165>"},
                     :storage => :s3,
                     :s3_credentials => "#{Rails.root}/config/s3.yml",
                     :path => ":class/:attachment/:id/:style.:extension",
                     :bucket => 'group-avatar',
-                    :default_url => "default_:style.jpg",
+                    :default_url => "group_:style.jpg",
                     :s3_permissions => :private,
                     :s3_host_name => 's3-eu-west-1.amazonaws.com'
                     

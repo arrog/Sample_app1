@@ -48,43 +48,55 @@
 								<% if @doulin.have_first? %>
 								
 									<% if current_user  && @doulin.has_evaluation?(:vote_experts, current_user) %>
-										<span class="rapport-gauche"><%= @doulin.rapport%>%</span>
 										<% if @doulin.valeur_vote(current_user) == 1.0 %>
-											<a><%= link_to "#{@doulin.first_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "up"), class: "pour-first1"%></a>
+										<div class= "moitie-gauche1">
+											<span class="rapport-gauche"><%= @doulin.rapport%>%</span>
+											<div class="pour-truc"><a><%= link_to "#{@doulin.first_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "up"), class: "pour-first"%></a></div>
 										<% else %>
-											<a><%= link_to "#{@doulin.first_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "up"), class: "pour-first"%></a>
+											<div class= "moitie-gauche">
+											<span class="rapport-gauche"><%= @doulin.rapport%>%</span>
+											<div class="pour-truc"><a><%= link_to "#{@doulin.first_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "up"), class: "pour-first"%></a></div>
 										<% end %>
 									<% else%>
+										<div class= "moitie-gauche">
 										<div class="pour-truc"><a><%= link_to "Pour #{@doulin.first_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "up"), class: "pour-first"%></a></div>
 									<% end %>
 								<% else %>
-									<a class="pour-first" href="#">POUR LA GAUCHE</a>	
+									<div class= "moitie-gauche">
+									<div class="pour-truc"><a class="pour-first" href="#">Pour la gauche</a></div>	
 								<%end%>
+								</div>
 
 								<% if @doulin.have_second? %>
 									<% if current_user  && @doulin.has_evaluation?(:vote_experts, current_user) %>
-											<span class="rapport-droite"><%= @doulin.rapport_inverse %>%</span>
 										<% if @doulin.valeur_vote(current_user) == -1.0 %>
-											<a><%= link_to "#{@doulin.second_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "down"), class: "pour-second2"%></a>
+										<div class="moitie-droite1">
+											<span class="rapport-droite"><%= @doulin.rapport_inverse%>%</span>
+											<div class="pour-truc"><a><%= link_to "#{@doulin.second_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "down"), class: "pour-second"%></a></div>
 										<% else %>
-											<a><%= link_to "#{@doulin.second_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "down"), class: "pour-second"%></a>
+										<div class="moitie-droite">
+											<span class="rapport-droite"><%= @doulin.rapport_inverse%>%</span>
+											<div class="pour-truc"><a><%= link_to "#{@doulin.second_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "down"), class: "pour-second"%></a></div>
 										<% end %>
 									<% else%>
+									<div class="moitie-droite">
 										<div class="pour-truc"><a><%= link_to "Pour #{@doulin.second_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "down"), class: "pour-second"%></a></div>
 									<% end %>
 								<% else %>
-									<a class="pour-second" href="#">POUR LA DROITE</a>	
-								<%end%>
+								<div class="moitie-droite">
+								<div class="pour-truc">	<a class="pour-second" href="#">Pour la droite</a></div>
+								<%end%>	
+								</div>
 							</div>
 			
 							<div class="row" id="stats">
 								<div class="stat1">
 									<%= @doulin.count_for+@doulin.count_against%>
-									<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image")%>
+									<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image")%>
 									|
 							
 									<span class="stat2"><%= @doulin.arguments.count%></span>
-									<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image")%>
+									<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image")%>
 									|
 							
 									<span class="stat2"><%= @doulin.comments.count%></span>

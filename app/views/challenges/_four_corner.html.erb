@@ -146,7 +146,7 @@
 								<% end %>
 							<% else %>
 								<div class= "moitie-gauche">
-								<div class="pour-truc"><a class="pour-first" href="#">Pour le Nord</a></div>	
+								<div class="pour-truc"><a class="pour-first" href="#"></a></div>	
 							<%end%>
 							</div>
 
@@ -169,7 +169,7 @@
 								<% end %>
 							<% else %>
 							<div class="moitie-droite">
-							<div class="pour-truc">	<a class="pour-second" href="#">Pour l'est</a></div>
+							<div class="pour-truc">	<a class="pour-second" href="#"></a></div>
 							<%end%>	
 							</div>						
 					</div>
@@ -194,7 +194,7 @@
 								<% end %>
 							<% else %>
 								<div class= "moitie-gauche">
-								<div class="pour-truc"><a class="pour-first" href="#">Vent d'ouest</a></div>	
+								<div class="pour-truc"><a class="pour-first" href="#"></a></div>	
 							<%end%>
 							</div>
 
@@ -217,7 +217,7 @@
 								<% end %>
 							<% else %>
 							<div class="moitie-droite">
-							<div class="pour-truc">	<a class="pour-second" href="#">Pour le sud</a></div>
+							<div class="pour-truc">	<a class="pour-second" href="#"></a></div>
 							<%end%>	
 							</div>						
 					</div>
@@ -231,11 +231,11 @@
 					<div class="row" id="fc-milieu-5">
 						<div class="stat1">
 							<%= @challenge.count_for+@challenge.count_against+@challenge.count_upup+@challenge.count_downdown%>
-							<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image")%>
+							<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image")%>
 							|
 
 							<span class="stat2"><%= @challenge.arguments.count%></span>
-							<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image")%>
+							<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image")%>
 							|
 
 							<span class="stat2"><%= @challenge.comments.count%></span>

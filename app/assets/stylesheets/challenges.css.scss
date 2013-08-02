@@ -14,7 +14,7 @@
 	}
 
 	.selected {
-	    background-color: #808080;
+	    background-color: #FF6969;
 	}
 
 	label {
@@ -28,6 +28,30 @@
 	
 	}
 	
+	.emotion3{
+	
+	.input_hidden {
+	    position: absolute;
+	    left: -9999px;
+	}
+
+	.selected {
+	    background-color: #FF6969;
+	}
+
+	label {
+	    display: inline-block;
+	    cursor: pointer;
+	}
+
+	label img {
+	    padding: 3px;
+	}
+	
+	}
+	
+	
+	
 	.emotion2{
 	
 	.input_hidden {
@@ -36,7 +60,7 @@
 	}
 
 	.selected {
-	    background-color: #FFF;
+	    background-color: #FF6969;
 	}
 
 	label {
@@ -90,6 +114,10 @@
 		border-radius: 0px;
 		width: 750px;
 		height: 38px;
+		font-family: "gotham";
+		font-size: 20px;
+		font-style: italic;
+		color: black;
 		
 		}
 		}
@@ -123,13 +151,13 @@
 						text-align: center;
 						padding-top: 10px;
 						padding-bottom: 10px;
-						border-bottom : 1px Solid white;
+						border-bottom : 1px Solid #808080;
 						
 						
 						.texte{
 						width: 40px;
 						font-size: 18px;
-						color: #808080;
+						color: #FFF;
 						}
 						}
 						
@@ -140,13 +168,13 @@
 						text-align: center;
 						padding-top: 10px;
 						padding-bottom: 10px;
-						border-bottom : 1px Solid white;
+						border-bottom : 1px Solid #808080;
 
 												
 						.texte{
 						width: 40px;
 						font-size: 18px;
-						color: #808080;
+						color: #FFF;
 						}
 						}
 						}
@@ -168,7 +196,7 @@
 						.texte{
 						width: 40px;
 						font-size: 18px;
-						color: #808080;
+						color: #FFF;
 						}
 						}						
 						
@@ -184,7 +212,7 @@
 						.texte{
 						width: 40px;
 						font-size: 18px;
-						color: #808080;
+						color: #FFF;
 						}
 						}
 					}
@@ -197,8 +225,9 @@
 					font-family: "georgia";
 					font-style: italic;
 					font-weight: bold;
-					margin-left: 15px;
-					width: 350px;
+					width: 380px;
+					background-color: white;
+					height: 40px;
 					
 					
 					
@@ -208,7 +237,7 @@
 					text-align: center;
 					padding-top: 10px;
 					padding-bottom: 10px;
-					border: 1px solid white;
+					margin-left: 15px;
 					
 					
 					.texte{
@@ -221,12 +250,11 @@
 					
 					.choix2{
 					margin-top:-48px;
-					margin-left: 80px;
+					margin-left: 86px;
 					width : 130px;
 					text-align: center;
 					padding-top: 10px;
 					padding-bottom: 10px;
-					border: 1px solid white;
 											
 					.texte{
 					width: 40px;
@@ -268,7 +296,7 @@
 			
 			
 			.content2{
-			margin-top: -276px;
+			margin-top: -270px;
 			margin-left: 400px;
 			width: 370px;
 			
@@ -285,7 +313,7 @@
 				}
 				
 					.description{
-					height: 125px;
+					height: 124px;
 					background-color: white;
 					border: none;
 					font-family: "georgia";
@@ -293,6 +321,8 @@
 					border-radius: 0px;
 					width: 362px;
 					resize:none;
+					font-size: 16px;
+					font-style: italic;
 					padding-left: 5px;
 					}
 				
@@ -309,7 +339,7 @@
 				color: white;
 				font-size: 18px;
 				padding-left: 5px;
-				margin-bottom: 6px;
+				margin-bottom: 8px;
 				}
 				
 				
@@ -322,7 +352,7 @@
 				
 				#submit-challenge{
 				margin-left: 0px;
-				margin-top: 15px;
+				margin-top: 8px;
 				
 				.action{
 				border: none;
@@ -1106,23 +1136,24 @@
 
 
 				#american-milieu-5{
-					font-family:"bebasneue-webfont";
-					font-size:28px;
-					margin-left: 0px;
-					margin-right:0px;
-					margin-bottom:15px;
-
-					.stat1{
-						.image{
-						padding-bottom:5px;
-						margin-left:5px;
-						margin-right: 10px;
-						}
+				font-family:"bebasneue-webfont";
+				font-size:28px;
+				margin-left: 70px;
+				margin-right:15px;
+				margin-top:10px;
+				margin-bottom:15px;
+				
+				.stat1{
+					.image{
+					padding-bottom:5px;
+					margin-left:7px;
+					margin-right: 20px;
 					}
-					.stat2{
-					margin-left: 5px;
-					margin-top: 0px;
-					}
+				}
+				.stat2{
+				margin-left: 10px;
+				margin-top: 0px;
+				}
 				}
 		}
 	}
@@ -1216,7 +1247,7 @@
 	 }
 	.image{
 	margin-left:10px;
-	margin-top:-55px;
+	margin-top:-48px;
 	}
 	}
 	
@@ -1643,7 +1674,7 @@
 			#ld-milieu-5{
 				font-family:"bebasneue-webfont";
 				font-size:28px;
-				margin-left: 15px;
+				margin-left: 70px;
 				margin-right:15px;
 				margin-top:10px;
 				margin-bottom:15px;
@@ -1651,12 +1682,12 @@
 				.stat1{
 					.image{
 					padding-bottom:5px;
-					margin-left:5px;
-					margin-right: 10px;
+					margin-left:7px;
+					margin-right: 20px;
 					}
 				}
 				.stat2{
-				margin-left: 5px;
+				margin-left: 10px;
 				margin-top: 0px;
 				}
 			}
@@ -1751,7 +1782,7 @@
 	 }
 	.image{
 	margin-left:10px;
-	margin-top:-55px;
+	margin-top:-48px;
 	}
 	}
 	
@@ -2472,23 +2503,24 @@
 
 
 				#fc-milieu-5{
-					font-family:"bebasneue-webfont";
-					font-size:28px;
-					margin-left: 0px;
-					margin-right:0px;
-					margin-bottom:15px;
-
-					.stat1{
-						.image{
-						padding-bottom:5px;
-						margin-left:5px;
-						margin-right: 10px;
-						}
+				font-family:"bebasneue-webfont";
+				font-size:28px;
+				margin-left: 70px;
+				margin-right:15px;
+				margin-top:10px;
+				margin-bottom:15px;
+				
+				.stat1{
+					.image{
+					padding-bottom:5px;
+					margin-left:7px;
+					margin-right: 20px;
 					}
-					.stat2{
-					margin-left: 5px;
-					margin-top: 0px;
-					}
+				}
+				.stat2{
+				margin-left: 10px;
+				margin-top: 0px;
+				}
 				}
 		}
 	}
@@ -2582,7 +2614,7 @@
 	 }
 	.image{
 	margin-left:10px;
-	margin-top:-55px;
+	margin-top:-48px;
 	}
 	}
 	
