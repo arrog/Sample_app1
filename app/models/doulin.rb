@@ -1,7 +1,7 @@
 class Doulin < ActiveRecord::Base
   include ::PublicActivity::Common
     
-  attr_accessible :content, :title, :tag_list, :cat_id, :avatar, :context
+  attr_accessible :content, :title, :tag_list, :cat_id, :avatar, :context, :state
   
   acts_as_taggable
   acts_as_followable
