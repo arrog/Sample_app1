@@ -1,6 +1,6 @@
 class ArgumentsController < ApplicationController
  before_filter :load_argumentable, except: [:edit, :destroy]
- before_filter :authenticate_user!, only: [:new, :create, :destroy, :like]
+ before_filter :authenticate_user!, only: [:new, :edit, :create, :destroy, :like]
  before_filter :correct_user, only: [:edit]
   def new
     @argument = @argumentable.arguments.new

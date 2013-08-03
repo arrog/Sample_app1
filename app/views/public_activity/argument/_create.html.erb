@@ -2,7 +2,16 @@
 	<% if activity.trackable%>
 	  	<div class="span4" id="intro-activities">
 		<div class="texte"><%= link_to activity.owner.fitting_name, activity.owner %> a contribué au débat </div></div>
-		<div class="row"><%= render "shared/debate_badge", debate: activity.trackable.argumentable %></div>
+		<div class="row"><%= render "shared/debate_badge", debate: activity.trackable.argumentable%>
+		<% if activity.trackable.argumentable.valeur_vote(activity.owner) == 1.0 %>
+			<div class="row" id="pour-arg"><%= render "shared/argument_badge", argument: activity.trackable %></div>
+		<%elsif activity.trackable.argumentable.valeur_vote(activity.owner) == - 1.0 %> 
+		<div class="row" id="pour-arg"><%= render "shared/argument_contre_badge", argument: activity.trackable %></div>
+		<% else%>
+		<div class="row" id="pour-arg"><%= render "shared/argument_neutre_badge", argument: activity.trackable %></div>
+		<% end %>
+		
+		
 		
 	<% end %>
 </section>

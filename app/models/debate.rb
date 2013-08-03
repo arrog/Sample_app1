@@ -62,6 +62,10 @@ class Debate < ActiveRecord::Base
     self.evaluations.where(target_type: self.class, target_id: self.id, source_id: user.id).first.value      
   end
   
+  def in_deb?(user)
+    evaluations.where(target_type: self.class, target_id: self.id, source_id: user.id).any?
+  end
+  
   def rapport_oui
     if self.count_for == 0
       0

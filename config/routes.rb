@@ -118,7 +118,12 @@ SampleApp::Application.routes.draw do
   resources :comments
     
   resources :microposts, only: [:create, :destroy]
-  resources :relationships, only: [:create, :destroy]
+  resources :relationships do
+    member do
+      match 'accept'
+      match 'reject'
+    end
+  end
   
   root to: 'static_pages#home'
 
@@ -129,7 +134,7 @@ SampleApp::Application.routes.draw do
   match '/cgu',    to: 'static_pages#cgu'
   match '/faq',    to: 'static_pages#faq'
   match '/presse',    to: 'static_pages#presse'
-  
+  match '/login',    to: 'static_pages#login'
   match '/list',    to: 'static_pages#list'
   match '/experts',    to: 'static_pages#list_doulins'
   match '/dialectiques',    to: 'static_pages#list_challenges'

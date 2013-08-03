@@ -1,5 +1,5 @@
 header {
-  height: 262px;
+  height: 267px;
   position: relative;
   
   #tout-enhaut{
@@ -70,8 +70,8 @@ header {
 	
 	.nom2{
 		width: 191px;
-		height: 23px;
-		padding-top: 4px;
+		height: 24px;
+		padding-top: 3px;
 		background-color: #A3A3A3;
 		color: black;
 		font-family: "gotham";
@@ -149,7 +149,7 @@ header {
 		margin-top: -103px;
 		width: 400px;
 		float: right;
-		margin-right: 25px;
+		margin-right: 33px;
 		
 			#apprendre{
 				float: right;
@@ -210,138 +210,6 @@ header {
 }
   
 
-
-
-
-	
-
-
-    
-    #adroite{
-	margin-top:37px;
-	
-	#user-nav {    
-	  margin-left:91px;
-	  background-color: #000000;
-      height:26px;
-	  width: 170px;
-	  font-family: 'gotham';
-	  color: white;
-	  text-align:center;
-      line-height: 25px;
-	  font-size: 15px;
-	  margin-bottom: 10px;
-	margin-top:50px;
-	
-	.white{
-	color: white;
-	}
-	
-    }
-
-	#deconnecte{
-		margin-top: -20px;
-		margin-left:111px;
-		height: 100px;
-		
-		.login{
-		::-webkit-input-placeholder {
-		   font-family: "gotham";
-		   color: black;
-		}
-			.login-field{
-				width: 178px;
-				border-radius: 0px;
-				background-color: white;
-				font-family: "gotham";
-				font-size: 15px;
-				color: black;
-				height: 25px;
-				}
-		}	
-	}
-	
-	#dropdown{
-	border-radius: 0px;
-	margin-left: 175px;
-	margin-top: -25px;
-		
-	}
-
-
-	#debat-nav{
-	
-	#RS{
-		width: 200px;
-		margin-left:111px;
-		margin-top:-33px;
-		div{
-		display: inline-block;
-		}
-		
-		.motdepasse{
-		background-color: #FF6969;
-		font-family: "gotham";
-		font-size: 15px;
-		color: white;
-		width: 115px;
-		height: 21px;
-		padding-top:3px;
-		text-align: center;
-		}
-		
-		.submit-login{
-		background-color: #C9C9C9;
-		color: white;
-		font-style: "gotham";
-		font-size: 15px;
-		height: 24px;
-		border-radius: 0px;
-		border: none;
-		margin-top: 5px;
-		}
-		
-		.facebook-page{
-		margin-top: 5px;
-		float: right;
-		}
-	}
-	
-	#apprendre{
-		height:34px;
-		width: 200px;
-		background-color:#808080;
-		text-align:center;
-		margin-top: 3px;
-		margin-left: 111px;
-		
-		li {
-	        display: inline-block;
-	        a {
-	          strong {
-				font-family: 'gotham';
-	            display: block;
-	            font-size: 12px;
-	            line-height: 35px;
-	            @include title;
-				color:white;
-	          }
-	        }
-	      }
-
-	      li.active, li:hover {
-	        a {
-	          text-decoration: none;        
-	          strong {
-	            color: #000000;
-	          }
-	        }
-		  }
-	}
-	}
-	}
-    
-	
 	#navigation{
 	margin-top: 10px;
 	margin-left: 60px;

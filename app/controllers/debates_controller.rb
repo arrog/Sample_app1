@@ -1,7 +1,8 @@
 class DebatesController < ApplicationController
+  before_filter :store_location
   before_filter :allowed, only: :show
-  before_filter :verify_is_admin,  only: [:new, :edit, :create, :destroy, :update, :index]
-  before_filter :authenticate_user!, only: [:vote]
+  before_filter :verify_is_admin,  only: [:new, :edit, :create, :destroy, :update, :index, :publish]
+  before_filter :authenticate_user!, only: [:vote, :follow, :unfollow]
 
   has_scope :permission_debate
     

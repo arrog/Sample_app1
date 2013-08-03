@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
   has_many :reverse_invitations, foreign_key: "reciever_id", class_name:  "Invitation", dependent:   :destroy
   
   has_attached_file :avatar,
-                    :styles =>  { :large => "300x300>", :medium => "165x165>", :small => "35x35>", :tiny => "30x30>" },
+                    :styles =>  { :large => "300x300>", :medium => "150x150>", :small => "50x50>", :tiny => "30x30>" },
                     :storage => :s3,
                     :s3_credentials => "#{Rails.root}/config/s3.yml",
                     :path => ":class/:attachment/:id/:style.:extension",
@@ -65,10 +65,10 @@ class User < ActiveRecord::Base
     validates :email, presence: true
     
     def fitting_name
-      if self.name.split.size > 1
-        [self.name.split.first.split('').first,'.', self.name.split.last.split('').first(8)].join
-      else
+      if self.name.split.count == 1
         self.name.split('').first(12).join
+      else
+        [self.name.split.first.split('').first,'.', self.name.split.last.split('').first(8)].join
       end
     end
       
@@ -106,23 +106,19 @@ class User < ActiveRecord::Base
     end
     
     def debating?(debate)
-      debates.find_by_id(debate.id)
+      debates.where(id = debate.id).any?
     end
     
     def in_challenge?(challenge)
-      if challenges.find_by_id(challenge.id) == nil
-        false
-      else
-        true
-      end
+      challenges.where(id: challenge.id).any?
     end
     
     def in_challenge_expert?(doulin)
-      doulin.find_by_id(doulin.id)
+      doulins.where(id: doulin.id).any?
     end
       
     def juge_challenge?(challenge)
-      performances.find_by_challenge_id(challenge.id).position > 100
+      ["100", "101", "102"].include?(performances.find_by_challenge_id(challenge.id).position)
     end
     
     def has_judged?(challenge)
@@ -350,7 +346,7 @@ class User < ActiveRecord::Base
       where(auth.slice(:provider, :uid)).first_or_create do |user|
         user.provider = auth.provider
         user.uid = auth.uid
-        user.name = auth.info.firstname
+        user.name = auth.info.name
         user.email = auth.info.email
       end
     end

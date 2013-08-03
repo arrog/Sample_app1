@@ -77,6 +77,9 @@
 						<% end %>
 					</div>
 			</div>
+			
+
+			
 			<div class="droite">
 				<div class ="row", id="debat-nav">
 					<div id="apprendre">
@@ -136,33 +139,24 @@
         <%= content_for?(:content) ? yield(:content) : yield %>
       </section>
     </div>
-    
+
     <footer>
-      <section id="social_links">
-        <div class="container">
-          <div id="icons">
-            <ul class="unstyled">
-              <%= content_tag(:li, link_to("", "http://www.facebook.com/cupofteach", :id => "facebook", :target => "_blank")) %>
-              <%= content_tag(:li, link_to("", "http://www.twitter.com/cupofteach", :id => "twitter", :target => "_blank")) %>
-              <%= content_tag(:li, link_to("", "http://www.pinterest.com", :id => "pinterest", :target => "_blank")) %>
-              <%= content_tag(:li, link_to("", "http://vimeo.com/cupofteach", :id => "vimeo", :target => "_blank")) %>
-              <%= content_tag(:li, link_to("", "http://www.linkedin.com/company/2597764", :id => "linkedin", :target => "_blank")) %>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section id="footer_content">
-        <div class="container">
-          <ul class="unstyled">
-            
-            <li><%= link_to "Blog", "http://blog.cupofteach.com" %></li>
-            <li><%= link_to "FAQ", faq_path %></li>
-            <li><%= link_to "CGU", cgu_path %></li>
-            <li><%= link_to "Presse", presse_path %></li>
-            <li><%= link_to "Contact", contact_path %></li>
-          </ul>
-        </div>
-      </section>
-    </footer>
-  </body>
+		<div class="container">
+			<div class="row" id="footer2">
+				<div class="row" id="footer3">
+					<li class="first"><%= link_to "Qui sommes-nous?", about_path, class: "lien"%></li>
+					<li class: "tiret">|<li>
+					<li><%= link_to "F.A.Q.", faq_path, class: "lien"%></li>
+					<li class: "tiret">|<li>
+					<li><%= link_to "Communiqué de presse", presse_path, class: "lien"%></li>										
+					<li class: "tiret">|<li>
+					<li><%= link_to "Contact", contact_path, class: "lien"%></li>										
+					<li class: "tiret">|<li>
+					<li><%= link_to "C.G.U.", cgu_path, class: "lien"%></li>										
+					<li class: "tiret">|<li>
+					<li><%= link_to "Déontologie du débat", help_path, class: "lien"%></li>	
+				</div>																					
+			</div>
+		</div>
+	</footer>
 </html>

@@ -15,7 +15,7 @@ class Group < ActiveRecord::Base
                     :s3_permissions => :private,
                     :s3_host_name => 's3-eu-west-1.amazonaws.com'
                     
-  validates_presence_of :title
+  validates :title, presence: true, length: { maximum: 100 }
   validates_presence_of :description
   #validates_presence_of :avatar
   

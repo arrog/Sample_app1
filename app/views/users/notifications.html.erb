@@ -77,7 +77,9 @@
 				<% @user.team_request.each do |relationship|%>
 				<section id="notifications">
 					<div class="span4" id="intro-notifications">
-					 <div class="texte"><%= link_to relationship.sender.fitting_name, relationship.sender, class: "texte"%> vous propose de faire une équipe</div></div>
+					 <div class="texte"><%= link_to relationship.sender.fitting_name, relationship.sender, class: "texte"%> vous propose de faire une équipe</div>
+						<div class="action-notification"><%= link_to "ok", accept_relationship_path(relationship), class: "notification-link"%></div>
+						<div class="action-notification2"><%= link_to "non", reject_relationship_path(relationship), class: "notification-link"%></div></div>
 				<div class="row"><%= render "shared/user_badge", user: relationship.sender%></div>
 				</section>
 				<%end%>	

@@ -1,5 +1,5 @@
 class DoulinsController < ApplicationController
-  before_filter :authenticate_user!, only: [:vote_expert]
+  before_filter :authenticate_user!, only: [:vote_expert, :follow, :unfollow, :next, :start, :finish]
   before_filter :allowed, only: :show
   before_filter :verify_is_admin,  except: [:show, :vote_expert, :start, :next, :finish, :follow, :unfollow]
   

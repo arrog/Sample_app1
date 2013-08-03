@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
-  
+  before_filter :store_location
+    
   has_scope :permission_doulin
   has_scope :permission_debate
   
