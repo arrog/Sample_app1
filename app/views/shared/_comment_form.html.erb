@@ -8,11 +8,11 @@
 					<%= image_tag ("default_small.jpg")%>
 				<% end%>
 			</div>
-			<div class="span2" id="user">
+			<div class="span1" id="user">
 				<% if current_user%>
-					<%= current_user.name%>
+					<%= current_user.fitting_name%>
 				<% elsif %>
-					Connecte-toi
+					Connecte toi
 				<% end%>
 			</div>
 			<div class="span4" id="content">
@@ -24,12 +24,13 @@
 					<%= f.hidden_field :commentable_type, :value => type %>
 				 
 				 	<div class="action">
-						<%= f.submit "Valider", class: "actions" %>
+						<%= f.submit "OK", class: "actions" %>
 					</div>
 				</div>
 				<% end %>
 				</div>
 		</div>
+
 	</div>
 </section>
 

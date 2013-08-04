@@ -17,7 +17,7 @@
 			<%= form_for(argcom) do |f| %>
 			  <%= render 'shared/error_messages', object: f.object %>
 
-			    <%= f.text_field :content, placeholder: "Réaction à l'argument (140 caractères)", class: "text-reaction" %>
+			    <%= f.text_field :content, placeholder: "Réaction à l'argument", class: "text-reaction" %>
 				<%= f.hidden_field :argument_id, :value => argument.id %>
 			  	<%= f.submit "OK", class: "reaction" %>
 			<% end %>

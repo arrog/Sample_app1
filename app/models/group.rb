@@ -6,7 +6,7 @@ class Group < ActiveRecord::Base
   has_many :users, through: :memberships, :uniq => true
  
   has_attached_file :avatar,
-                    :styles =>  { :large => "427x133>", :medium => "165x165>"},
+                    :styles =>  { :huge => "596x321", :large => "427x133>", :medium => "165x165>"},
                     :storage => :s3,
                     :s3_credentials => "#{Rails.root}/config/s3.yml",
                     :path => ":class/:attachment/:id/:style.:extension",

@@ -1,25 +1,36 @@
 <section id="doulin-badge">
-	<div class="row">
-		<div class="span2" id="image-gauche">
-			<%= image_tag doulin.first_user.avatar.url(:medium), class: "gauche" %>
-		</div>
-		
-		<div class="span3" id="doulin-badge1">
-			<div class="title">
-				<%= link_to doulin.title, doulin, class: "title"%>
+	<div class="row" id="doulinnn">
+		<div class="span6" id="doulin-badge2">
+			<div class="span2" id="image-gauche">
+				<div class="row" id="image-doulinuser">
+					<%= image_tag doulin.first_user.avatar.url(:medium), class: "gauche" %>
+				</div>
+				<div class="row" id="badge2">
+					<div class='texte'><%= link_to doulin.first_user.fitting_name, doulin.first_user, class: "nom1"%>
+					</div>
+					<div class="arrow-left"></div>
+				</div>
 			</div>
-			<div class="nom1">
-				<%= link_to doulin.first_user.name, doulin.first_user, class: "nom1"%>
+			
+			<div class="span4" id="doulin-badge1">
+				<%= image_tag ("defi-badge-01.png"), class: "image"%>
+				<div class="title">
+					<%= link_to doulin.title, doulin, class: "title2"%>
+				</div>
+				
 			</div>
-			<div class="nom2">
-				<%= link_to doulin.second_user.name, doulin.second_user, class: "nom2"%>
+			
+			<div class="span2" id="image-droite">
+				<div class="row" id="image-doulinuser">
+					<%= image_tag doulin.second_user.avatar.url(:medium), class: "gauche" %>
+				</div>
+				<div class="row" id="badge2">
+					<div class='texte'><%= link_to doulin.second_user.fitting_name, doulin.second_user, class: "nom1"%>
+					</div>
+					<div class="arrow-right"></div>
+				</div>
 			</div>
 		</div>
-		
-		<div class="span2" id='image-droite'>
-			<%= image_tag doulin.second_user.avatar.url(:medium), class: "droite" %>
-		</div>
-		
 		<div class="span1">
 			<div class="follow">
 			<% if current_user && current_user.following?(doulin)%>

@@ -22,6 +22,7 @@ header {
 		.titre{
 			font-family: "gotham";
 			font-size: 48px;
+			line-spacing: -25px;
 			color: black;
 			.title{
 				color: black;
@@ -70,18 +71,21 @@ header {
 	
 	.nom2{
 		width: 191px;
-		height: 24px;
-		padding-top: 3px;
+		height: 22px;
+		padding-top: 5px;
 		background-color: #A3A3A3;
 		color: black;
 		font-family: "gotham";
 		font-size: 15px;
 		text-align: center;
+		color: white;
+		font-weight: bold;
 		
 		.chiffre{
-			font-size: 20px;
-			color: white;
+			font-size: 15px;
+			color: black;
 			padding-right: 10px;
+			font-weight: regular;
 		}
 	}
 		
@@ -128,8 +132,8 @@ header {
 	}
 	
 	#try6{
-	margin-top: 5px;
-	margin-left: 33px;
+	margin-top: 0px;
+	margin-left: -20px;
 
 			.texte{
 			width: 184px;

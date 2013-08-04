@@ -145,24 +145,24 @@
 
 		width:350px;	
 		margin-left:-1px;
-		margin-top: 20px;
+		margin-top: 15px;
 		margin-left:40px;
 				
 		#title2{
 		font-family: "gotham";
 		font-size: 23px;
 		text-align: left;
-		line-height: 25px;
+		line-height: 23px;
 		 letter-spacing:-1px;
-		line-height: 25px;
 		
 		
 		}
 
 		#tags_list_doulin{
-		margin-top:15px;
+		margin-top:10px;
 		font-family : "gotham";
 		font-size : 18px;
+		font-weight: bold;
 		color: white;
 			.tags{
 			color: white;
@@ -179,19 +179,19 @@
 			margin-right:5px;
 			margin-top:10px;
 			font-family:georgia;
-			font-size:16px;
+			font-size:14px;
 			font-style: italic;
 				.content{
-				padding-bottom:15px;
+				padding-bottom:10px;
 				}
-			border-bottom:10px solid white;
+			border-bottom:8px solid white;
 		}
 
 		#vote{
 		height: 35px;
 		margin-top: 15px;
 		margin-right:5px;	
-		border-bottom:10px solid white;
+		border-bottom:8px solid white;
 		
 		li{
 		display : inline-block;
@@ -214,16 +214,24 @@
 			.oui{
 			color: white;
 			}
+		}
+		
+		.oui-oui:hover{
+		background-color: #AAD0FF;
+		}
+		.oui-oui2{
+			margin-top: -5px;
+			margin-left:30px;
+			background-color: #AAD0FF;
+			font-family: "bebasneue-webfont";
+			font-size: 25px;
+			padding: 5px 9px 5px 9px;
 			
-			.oui2{
-			color: #AAD0FF;
-			}
-			
-			.oui:hover{
-			color: #AAD0FF
+			.oui{
+			color: white;
 			}
 		}
-
+		
 		.suisse-suisse{
 			margin-top: -5px;
 			margin-left:8px;
@@ -235,13 +243,21 @@
 			.suisse{
 			color: white;
 			}
+		}
+		
+		.suisse-suisse:hover{
+		background-color: #808080;
+		}
+		.suisse-suisse2{
+			margin-top: -5px;
+			margin-left:8px;
+			background-color: #808080;
+			font-family: "bebasneue-webfont";
+			font-size: 25px;
+			padding: 5px 12px 5px 12px;
 			
-			.suisse2{
-			color: #808080;
-			}
-			
-			.suisse:hover{
-			color: #808080;
+			.suisse{
+			color: white;
 			}
 		}
 		
@@ -256,14 +272,24 @@
 			.non{
 			color: black;
 			}
-			.non2{
-			color: #FF6969;
+		}
+			
+			.non-non:hover{
+			background-color: #FF6969;
 			}
 			
-			.non:hover{
-			color: #FF6969;
-			}
-		}
+			.non-non2{
+				margin-top: -5px;
+				margin-left:8px;
+				background-color: #FF6969;
+				font-family: "bebasneue-webfont";
+				font-size: 25px;
+				padding: 5px 9px 5px 9px;
+
+				.non{
+				color: black;
+				}
+			}	
 		}
 
 		#stats{
@@ -272,7 +298,7 @@
 
 		.stat1{
 			margin-top:10px;
-			margin-bottom: 15px;
+			margin-bottom: 10px;
 
 			.image{
 			padding-bottom:5px;
@@ -302,12 +328,8 @@
 		color: #FFF;
 		padding-left: 8px;
 		padding-top:2px;
-		
-		.texte:hover{
-			color: black;
-		}
 	}
-	
+
 	.texte2{
 		font-family: "gotham";
 		font-weight: bold;
@@ -320,6 +342,11 @@
 			color: black;
 		}
 	}
+	.follow:hover{
+		background-color: black;
+	}
+	
+	
 	.arrow-left{
 		margin-top:-20px;
 		padding-left: 78px;
@@ -376,7 +403,7 @@
 	.texte-newarg{
 	padding-top:10px;
 	font-family: "gotham";
-	font-size:22px;
+	font-size:18px;
 	color: #000000;
 	text-align: center;
 	}
@@ -384,7 +411,7 @@
 	.texte2-newarg{
 	padding-top:10px;
 	font-family: "gotham";
-	font-size:22px;
+	font-size:18px;
 	color: #000000;
 	text-align: center;
 	}

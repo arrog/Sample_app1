@@ -53,19 +53,19 @@
 						<div class="row" id="vote">
 							<span class="vote2">VOTEZ</span>
 							<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == 1.0 %>
-				 			<li class="oui-oui"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui2" %>
+				 			<li class="oui-oui2"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>
 							</li>
 							<% else%>
 				 			<li class="oui-oui"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>
 							</li>							
 							<% end%>
 							<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == 0.0 %>
-							<li class="suisse-suisse"><%= link_to image_tag("croix-suisse-01.png"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse2" %></li>
+							<li class="suisse-suisse2"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %></li>
 							<% else%>
 							<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %></li>
 							<%end%>
 							<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == -1.0 %>
-							<li class="non-non"><%= link_to "NON", vote_debate_path(@debate, type: "down"), method: "post", :class => "non2" %></li>				
+							<li class="non-non2"><%= link_to "NON", vote_debate_path(@debate, type: "down"), method: "post", :class => "non" %></li>				
 							<%else%>
 							<li class="non-non"><%= link_to "NON", vote_debate_path(@debate, type: "down"), method: "post", :class => "non" %></li>							
 							<%end%>
@@ -93,13 +93,15 @@
 	 	</div>
 	   
 		<div class="span1" id="follow">
+			<div class="follow">
 	   		<% if current_user && current_user.following?(@debate)%>
 	   			<div class="texte2"><%= link_to"Fuir", unfollow_debate_path(@debate), class: "texte"%></div>
 	   		<% else %>
 	   			<div class="texte"><%= link_to"Suivre", follow_debate_path(@debate), class: "texte"%></div>
 	   		<% end %>
 	   			<div class="arrow-left"></div>
-	   </div>
+	   		</div>
+	</div>
 	
 	   	<div class="span1" id="catcat">
 			<div class="arrow-left"></div>   		

@@ -29,7 +29,7 @@ $(document).ready ->
 
 	  $(".emotion2 input:radio").addClass "input_hidden"
 	  $(".emotion2 label").click ->
-	    	$(this).addClass("selected").siblings().removeClass("selected").parent().siblings(".emotion2").children().removeClass("selected")
+	    	$(this).removeClass("non-selected").addClass("selected").siblings().removeClass("selected").addClass("non-selected").parent().siblings(".emotion2").children().removeClass("selected").addClass("non-selected")
 	
 		  $(".choix1").addClass("selected")
 		  $(".emotion3 input:radio").addClass "input_hidden"

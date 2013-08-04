@@ -111,8 +111,8 @@
 					</div>
 					
 					<div class="row" id="american-milieu-4">
-						<% @challenge.tag_list.each do |l|%>
-							<li><%=l%></li>
+						<% @challenge.tags.each do |l|%>
+							<li><%= link_to l.name, list_path(:view =>'tag', :tag => l.name), class: "tags"%></li>
 						<% end%>
 					</div>
 					
@@ -306,12 +306,14 @@
 
 
 		<div class="span1" id="follow">
+			<div class="follow">
 	   		<% if current_user && current_user.following?(@challenge)%>
 	   			<div class="texte2"><%= link_to"Fuir", unfollow_challenge_path(@challenge), class: "texte"%></div>
 	   		<% else %>
 	   			<div class="texte"><%= link_to"Suivre", follow_challenge_path(@challenge), class: "texte"%></div>
 	   		<% end %>
 	   			<div class="arrow-left"></div>
+			</div>
 	   </div>
 
 

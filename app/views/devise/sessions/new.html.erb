@@ -6,14 +6,14 @@
 	</div>
 	
 	<div class="facebook">
-		<span>via</span><%=link_to "FACEBOOK", user_omniauth_authorize_path(:facebook),
+		<span>Connectez-vous via</br></span><%=link_to image_tag("facebook-blanc.png"), user_omniauth_authorize_path(:facebook),
 		  													class: "via"%>
 	</div>
 	
 	<div class="row" id="sign_in2">
 		<div class="span3" id="sign_in3">
 			<div class="row" id="sign_in4">
-				<span class="texte1">Connecte toi !</span>
+				<span class="texte1">Connectez-vous !</span>
 			</div>
 			<div class="row" id= "sign_in4">
 				<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
@@ -32,6 +32,7 @@
 		</div>
 
 		<div class="span3" id="sign_up">
+			<div class="espace"></div>
 			<div class="row" id="sign_in4">
 				<span class="texte1"> Inscris toi !</span>
 			</div>
@@ -51,10 +52,12 @@
 				
 			<% end%>
 			</div>
+			<div class="espace"></div>
 		</div>	
 	</div>
 	<div class="logo2">
 		<%= link_to (image_tag "gros-mouton-01.png"), root_path%>
+		<div class="titre"><%= link_to "moutoners", root_path, class: "title"%></div>
 	</div>
 		
 </div>

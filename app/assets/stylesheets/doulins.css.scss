@@ -98,6 +98,11 @@
 		font-family : "gotham";
 		font-size : 18px;
 		color: white;
+		font-weight: bold;
+		
+		.tags{
+			color: white;
+		}
 		
 		li{
 		margin-right: 5px;
@@ -285,6 +290,9 @@
 	width: 90px;
 	background-color: #808080;
 	
+	.follow:hover{
+	background-color: black;
+	}
 	.texte{
 		font-family: "gotham";
 		font-weight: bold;
@@ -292,10 +300,7 @@
 		color: #FFF;
 		padding-left: 8px;
 		padding-top:2px;
-		
-		.texte:hover{
-			color: black;
-		}
+
 	}
 	
 	.texte2{
@@ -305,10 +310,7 @@
 		color: #FFF;
 		padding-left: 12px;
 		padding-top:2px;
-		
-		.texte:hover{
-			color: black;
-		}
+
 	}
 	.arrow-left{
 		margin-top:-20px;
@@ -349,19 +351,19 @@
 		margin-left:85px;
 		margin-top:10px;
 		width:240px;
-		color:$mainColor;
+		color:#C9C9C9;
 	}
 	
 	.tour-gauche{
 	background-color:#AAD0FF;
 	margin-top:20px;
-	width: 534px;
-	min-height:70px;
+	width: 383px;
+	min-height:52px;
 	margin-left:150px;
 	
 	.image{
-		padding: 3px 3px 3px 3px;
-		img { width: 50px; height:50px;}
+		padding: 5px 5px 5px 5px;
+		img { width: 42px; height:35px;}
 		
 		.name{
 		font-family:"gotham";
@@ -374,13 +376,13 @@
 	.tour-droite{
 	background-color:#FF7575;
 	margin-top:20px;
-	width: 534px;
-	min-height:70px;
+	width: 383px;
+	min-height:52px;
 	margin-left:401px;
 	
 	.image{
-		padding: 3px 3px 3px 3px;
-		img { width: 50px; height:50px;}
+		padding: 5px;
+		img { width: 42px; height:35px;}
 		
 		.name{
 		font-family:"gotham";
@@ -393,23 +395,23 @@
 	.espace{
 	height:30px;
 	width: 300px;
-	margin-left : 350px;
+	margin-left : 410px;
 	margin-top: 75px;
 	border-top: 1px solid;
 	}
 	
 	#openning-context{
-	background-color:#808080;
-	height:30px;
+	background-color:#C9C9C9;
+	height:40px;
 	width: 785px;
 	margin-top:20px;
 	margin-left:170px;
 	margin-bottom: 5px;
 	
 	.texte{
-	padding-top:5px;
+	padding-top:10px;
 	font-family: "gotham";
-	font-size:22px;
+	font-size:18px;
 	color: #000000;
 	text-align: center;
 	}
@@ -453,24 +455,25 @@
 	}
 	
 	#openning-comments{
-	background-color:#808080;
-	height:30px;
+	background-color:#C9C9C9;
+	height:40px;
 	width: 785px;
 	margin-left:170px;
 	margin-bottom: 20px;
+	margin-top: 25px;
 	
 	.comment-texte1{
-	padding-top:5px;
+	padding-top:10px;
 	font-family: "gotham";
-	font-size:22px;
+	font-size:18px;
 	color: #000000;
 	text-align: center;
 	}
 	
 	.comment-texte2{
-	padding-top:5px;
+	padding-top:10px;
 	font-family: "gotham";
-	font-size:22px;
+	font-size:18px;
 	color: #000000;
 	text-align: center;
 	}

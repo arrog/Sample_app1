@@ -35,8 +35,8 @@
 							<div class="title3"><%= link_to @doulin.title, @doulin, class: "title3"%></div>
 							
 							<div class="row" id="tags_list_doulin">
-								<% @doulin.tag_list.each do |l|%>
-									<li><%=l%></li>
+								<% @doulin.tags.each do |l|%>
+									<li><%= link_to l.name, list_path(:view =>'tag', :tag => l.name), class: "tags"%></li>
 								<% end%>
 							</div>
 							
@@ -134,12 +134,14 @@
 	 	</div>				
 
 		<div class="span1" id="follow">
+			<div class="follow">
 	   		<% if current_user && current_user.following?(@doulin)%>
 	   			<div class="texte2"><%= link_to"Fuir", unfollow_doulin_path(@doulin), class: "texte"%></div>
 	   		<% else %>
 	   			<div class="texte"><%= link_to"Suivre", follow_doulin_path(@doulin), class: "texte"%></div>
 	   		<% end %>
 	   			<div class="arrow-left"></div>
+			</div>
 	   </div>
 
 	   	<div class="span1" id="catcat">
@@ -346,8 +348,11 @@
 					<%= render "shared/comment_badge", comment: m%>
 			    <% end %>
 			</div>
-
+			<% if current_user %>
 			<div class="row"><%= render "shared/comment_form", commentable: @doulin, type: Doulin, comment: @doulin.comments.new%></div>
+			<%else%>
+			<div class="span3 offset4"><%= link_to "Pour réagir, il faut se connecter", new_session_path(resource_name)%></div>
+			<% end %>
 			
 			<div class="row" id ="openning-comments">
 				<div class="comment-texte1">Afficher plus de commentaires</div>
@@ -361,7 +366,6 @@
 		
 		</div>
 		<div>
-		</br></br>	</br>		</br>		</br>
 		</div>
 	</div>
 </section>

@@ -1,21 +1,45 @@
 <section>
 	<div class="span7" id="comment">
 		<div class="row">
-			<div class="span1" id="imageuser">
-				<%= image_tag comment.user.avatar.url(:small), class: "image" %>
+			<div class="span3" id="gauche-comment">
+				<div class="row">
+					<div class="span1" id="imageuser">
+						<%= image_tag comment.user.avatar.url(:small), class: "image" %>
+					</div>
+					<div class="span1" id="user">
+						<%= comment.user.fitting_name%>
+					</div>
+				</div>
+				<div class="row" id="stats-comments">
+					<%= comment.count_positive %>
+				  <% if current_user && comment.has_evaluation?(:like_comment, current_user) && comment.valeur_vote(current_user) == 1.0%>
+				  <%= link_to image_tag("like-argument-01.png"), like_comment_comment_path(comment, type: "up"), method: "post"%> <span class="texte">|</span>
+				  <% else %>
+					<%= link_to image_tag("like-argument.png"), like_comment_comment_path(comment, type: "up"), method: "post"%> <span class="texte">|</span>
+				  <% end %>
+				  <%= comment.count_negative %>
+				  <% if current_user && comment.has_evaluation?(:like_comment, current_user) && comment.valeur_vote(current_user) == -1.0%>
+				  <%=link_to image_tag("dislike-argument-01.png"), like_comment_comment_path(comment, type: "down"), method: "post" %>
+				  <% else%>
+				  <%=link_to image_tag("dislike-argument.png"), like_comment_comment_path(comment, type: "down"), method: "post" %>
+				  <% end %>
+				</div>
 			</div>
-			<div class="span2" id="user">
-				<%= comment.user.name%>
-			</div>
-			<div class="span6" id="content">
-				<%= comment.content %>
+			<div class="span4" id="content">
+				<%= h Rinku.auto_link(comment.content).gsub(/\n/, '<br/>').html_safe  %>
 				</br>
 				<% if current_user?(comment.user) %>
 			    <%= link_to "delete", comment, method: :delete,
 			                                     data: { confirm: "You sure?" },
 			                                     title: comment.content %>
 			  <% end %>
-				</div>
+			</div>
 		</div>
+	</div>
+	<div class="row" id="erase">
+		<% if current_user?(comment.user) || current_user.try(:admin?)%>
+			<div class="texte1"><%= link_to "Modifier", edit_comment_path(comment), class: "texte1" %></li>
+			<div class="texte2"><%= link_to "Effacer", comment_path(comment), :method => :delete, class: "texte3" %></div>
+		<% end%>
 	</div>
 </section>

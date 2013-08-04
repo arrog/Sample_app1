@@ -63,26 +63,80 @@
 		min-height: 55px;
 	background-color: #EEE;
 	margin-top:5px;
-	margin-left: 248px;
-	img { width: 45px; height:45px;}
+	margin-left: 270px;
+	
 	word-wrap:break-word;	
-	
-	.image{
-	padding: 10px;
+	#gauche-comment{
+		width:155px;
+		#imageuser{
+		width: 55px;
+		img { width: 42px; height:35px;}
+			.image{
+			padding: 10px;
+			}
+		}
+
+		#user{
+		font-family:"gotham";
+		font-size:14px;
+		padding-top:8px;
+		overflow: hidden;
+		}
+		
+		#stats-comments{
+		margin-left: 10px;
+		font-family: "bebasneue-font";
+		font-size: 27px;
+			.texte{
+			font-family: "georgia";
+			color: #808080;
+			}
+		}
 	}
+
 	
-	#user{
-	font-family:"gotham";
-	font-size:14px;
-	padding-top:4px;
-	}
 	#content{
-	width:500px;
-	padding-bottom:10px;
-	padding-top:5px;
+	word-wrap:break-word;
+	width: 440px;
+	margin-left: 5px;
+	margin-top: 10px;
+	background-color: white;
+	min-height: 70px;
+	padding: 10px;
 	font-family:"georgia";
 	font-size: 14px;
 	text-align:justify;
+	margin-bottom: 10px;
+	}
+	
+}
+
+#erase{
+	margin-left: 270px;
+	width: 80px;
+	font-family: "gotham";
+	font-size: 16px;
+	color: white;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 15px;
+	
+	.texte1{
+	padding-top: 2px;
+	height: 22px;
+	background-color: #839AB2;
+	color: white;
+	}
+	
+	.texte2{
+
+	margin: -19px 0px 0px 80px;
+	padding-top: 2px;
+	height: 22px;
+		.texte3{
+			padding: 3px 12px 3px 12px;
+				background-color: #C9C9C9;
+		}
 	}
 }
 
@@ -90,27 +144,31 @@
 	min-height: 75px;
 	background-color: #EEE;
 	margin-top:5px;
-	margin-bottom:25px;
-	margin-left: 248px;
-	img { width: 45px; height:45px;}
+	margin-left: 270px;
+	img { width: 42px; height: 35px;}
 	word-wrap:break-word;
 	
-	.image{
-	padding: 10px;
+	#imageuser{
+	width: 45px;
+	padding: 10px 0px 0px 10px;
+		.image{
+		}
 	}
 	
 	#user{
 	font-family:"gotham";
 	font-size:14px;
-	padding-top:4px;
+	padding-top:8px;
+	width: 70px;
+	overflow: hidden;
 	}
 	
 	.content{
-	margin: 5px 5px 5px -170px;
+	margin: -12px 5px 5px -5px;
 	background-color: #FFF;
 	border-radius:0px;
-	height:75px;
-	width: 500px;
+	height:70px;
+	width: 452px;
 	font-family:"georgia";
 	font-size: 14px;
 	border-radius:0px;
@@ -122,14 +180,15 @@
 	.action{
 		background-color: white;
 		height: 40px;
-		width: 508px;
-		margin: -5px 0px 0px -170px;
+		width: 460px;
+		margin: -5px 0px 0px -5px;
 		
 		.actions{
+			float: right;
 			border-radius:0px;
 			border: none;
 			margin-top: 1px;
-			margin-left: 15px;
+			margin-right: 15px;
 			padding: 5px;
 			font-family: "gotham";
 			font-size: 18px;

@@ -18,7 +18,13 @@ class CommentsController < ApplicationController
     @comment.destroy
     redirect_to :back
   end
-  
+
+  def like_comment
+    value = params[:type] == "up" ? 1 : -1
+    @comment = Comment.find(params[:id])
+    @comment.add_or_update_evaluation(:like_comment, value, current_user)
+    redirect_to :back, notice: "Thank you for liking"
+  end  
   
   private
 

@@ -1,4 +1,22 @@
-
+<section id="show-group">
+	<div class="container">
+		<div class="row" id="group-header">
+			<div class="image1">
+			<%= image_tag @group.avatar.url(:huge), class: "image"%>
+			</div>
+			<div class="image2">
+				<%= image_tag "group-header-01.png", class: "image1"%>
+				<div class='text'><%= link_to @group.title, @group, class: 'text'%></div>
+			</div>
+		</div>
+		<div class='row'>
+			<div class="span3">
+			</div>
+			<div class="span7">
+			</div>
+		</div>
+	</div>
+</section>
 <%= @group.title%>
 <% if current_user && current_user.admin_group?(@group) %>
 

@@ -14,7 +14,7 @@
 	}
 
 	.selected {
-	    background-color: #FF6969;
+	    background-color: #AAD0FF;
 	}
 
 	label {
@@ -27,29 +27,6 @@
 	}
 	
 	}
-	
-	.emotion3{
-	
-	.input_hidden {
-	    position: absolute;
-	    left: -9999px;
-	}
-
-	.selected {
-	    background-color: #FF6969;
-	}
-
-	label {
-	    display: inline-block;
-	    cursor: pointer;
-	}
-
-	label img {
-	    padding: 3px;
-	}
-	
-	}
-	
 	
 	
 	.emotion2{
@@ -60,9 +37,14 @@
 	}
 
 	.selected {
-	    background-color: #FF6969;
+	    background-color: #FFF;
+		color: black;
 	}
-
+	
+	.non-selected{
+		 background-color: #000;
+		color: #C9C9C9;
+	}
 	label {
 	    display: inline-block;
 	    cursor: pointer;
@@ -94,7 +76,7 @@
 	margin-left: 130px;
 	margin-top: 15px;
 	width: 800px;
-	height: 360px;
+	height: 350px;
 	background-color: #AAD0FF;
 	
 		#title-new2{
@@ -124,87 +106,78 @@
 		
 		#maincontent-new{
 		margin-left: 15px;
-		margin-top:15px;
+		margin-top:0px;
 		width: 770px;
-			
-			.content1{
-			width: 375px;
+		padding-bottom: 10px;
+		border-bottom: 4px solid white;
+		
+			#content1{
+			width: 380px;
 			margin-right: 15px;
 			margin-left:0px;
 
 				#type-deb{
 				width: 380px;
 				height: 216px;
-				background-color: #A2C4E0;
 				margin-left:0px;
 				
 					#typedeb1{
 						font-family: "gotham";
-						margin-left: 15px;
-						margin-top: 15px;
-						width: 350px;
+						margin-left: 0px;
+						margin-top: 0px;
+						width: 380px;
 						
-						
-						
-						.choix1{
-						width : 130px;
+
+
+						#choix1{
+						width : 185px;
 						text-align: center;
 						padding-top: 10px;
 						padding-bottom: 10px;
-						border-bottom : 1px Solid #808080;
-						
-						
+			
 						.texte{
 						width: 40px;
 						font-size: 18px;
-						color: #FFF;
+						
 						}
 						}
 						
-						.choix2{
-						margin-top:-48px;
-						margin-left: 80px;
-						width : 130px;
+						#choix2{
+						float: right;
+						width : 185px;
 						text-align: center;
 						padding-top: 10px;
 						padding-bottom: 10px;
-						border-bottom : 1px Solid #808080;
 
 												
 						.texte{
 						width: 40px;
 						font-size: 18px;
-						color: #FFF;
 						}
 						}
 						}
 						
 						#typedeb2{
 						font-family: "gotham";
-						margin-left: 15px;
-						margin-top:-5px;
-						width: 350px;
-						border-bottom: 3px Solid white;
-						.choix3{
-						width : 130px;
+						margin-top:5px;
+						width: 380px;
+
+						
+						#choix3{
+						width : 185px;
 						text-align: center;
 						padding-top: 10px;
 						padding-bottom: 10px;
-
-
-						
 						.texte{
 						width: 40px;
 						font-size: 18px;
-						color: #FFF;
 						}
 						}						
 						
 						
-						.choix4{
-						margin-left: 80px;
-						margin-top:0px;
-						width : 130px;
+						#choix4{
+						float: right;
+						width : 185px;
 						text-align: center;
 						padding-top: 10px;
 						padding-bottom: 10px;
@@ -212,98 +185,48 @@
 						.texte{
 						width: 40px;
 						font-size: 18px;
-						color: #FFF;
 						}
 						}
 					}
-					
-					.image2{
-						margin: -165px 0px 0px 165px;
+				}	
+					#category_list{
+					background-color: #C9C9C9;
+					margin-left: 0px;
+					margin-top: 5px;
+
+					.intro{
+					padding-top:5px;
+					font-family: "gotham";
+					color: white;
+					font-size: 18px;
+					padding-left: 10px;
+					margin-bottom: 8px;
 					}
-					
-					#typedeb3{
-					font-family: "georgia";
-					font-style: italic;
-					font-weight: bold;
-					width: 380px;
-					background-color: white;
-					height: 40px;
-					
-					
-					
-					
+
 					.choix1{
-					width : 130px;
-					text-align: center;
-					padding-top: 10px;
-					padding-bottom: 10px;
-					margin-left: 15px;
-					
-					
-					.texte{
-					width: 40px;
-					font-size: 18px;
-					color:#000;
-					
+					margin-left: 10px;
 					}
+					label{
+					display: inline-block;
+					padding-left: 6px;
 					}
-					
-					.choix2{
-					margin-top:-48px;
-					margin-left: 86px;
-					width : 130px;
-					text-align: center;
-					padding-top: 10px;
-					padding-bottom: 10px;
-											
-					.texte{
-					width: 40px;
-					font-size: 18px;
-					color: #000;
+
 					}
-					}
-					
-					}
-					
-				}
-				
-				#tags_challenge{
-				margin-top: 23px;
-				width: 380px;
-				margin-left:0px;
-				
-				::-webkit-input-placeholder {
-				   font-family: "gotham";
-					font-size: 19px;
-					letter-spacing: 0px;
-				}
-				
-					.tags{
-					border-radius: 0px;
-					border: none;
-					background-color: white;
-					font-family: "georgia";
-					font-style: italic;
-					color: black;
-					font-size: 16px;
-					height: 35px;
-					width: 360px;
-					}
-				}
+
 			}
 			
 			
 			
 			
-			.content2{
-			margin-top: -270px;
+			#content2{
+			margin-top: -252px;
 			margin-left: 400px;
 			width: 370px;
+			height: 255px;
 			
 			
 				#description-challenge{
 				margin-left:0px;
-				margin-top:0px;
 				width: 370px;
 				
 				::-webkit-input-placeholder {
@@ -328,31 +251,75 @@
 				
 				}
 				
+					
+					#typedeb3{
+					font-family: "georgia";
+					font-style: italic;
+					font-weight: bold;
+					width: 370px;
+					background-color: red;
+					height: 30px;
+					margin-top: 3px;
+					
+					
+					
+					
+					#choix5{
+					float: left;
+					width : 185px;
+					text-align: center;
+					padding-top: 5px;
+					padding-bottom: 5px;
+					
+					
+					.texte{
+					width: 40px;
+					font-size: 18px;
+					
+					}
+					}
+					
+					#choix6{
+					float: right;
+					width : 185px;
+					text-align: center;
+					padding-top: 5px;
+					padding-bottom: 5px;
+											
+					.texte{
+					width: 40px;
+					font-size: 18px;
+					}
+					}
+					
+					}
 
-				#category_list{
-				background-color: #A2C4E0;
-				margin-left: 0px;
-				
-				.intro{
-				padding-top:5px;
-				font-family: "gotham";
-				color: white;
-				font-size: 18px;
-				padding-left: 5px;
-				margin-bottom: 8px;
-				}
-				
-				
-				label{
-				display: inline-block;
-				padding-left: 6px;
-				}
-				
-				}
-				
+					#tags_challenge{
+					margin-top: 8px;
+					width: 370px;
+					margin-left:0px;
+
+					::-webkit-input-placeholder {
+					   font-family: "gotham";
+						font-size: 19px;
+						letter-spacing: 0px;
+					}
+
+						.tags{
+						border-radius: 0px;
+						border: none;
+						background-color: white;
+						font-family: "georgia";
+						font-style: italic;
+						color: black;
+						font-size: 16px;
+						height: 30px;
+						width: 350px;
+						}
+					}
 				#submit-challenge{
 				margin-left: 0px;
-				margin-top: 8px;
+				margin-top: 0px;
 				
 				.action{
 				border: none;
@@ -364,7 +331,7 @@
 				font-size: 22px;
 				width: 370px;
 				padding-top: 0px;
-				height:35px;
+				height:30px;
 				}
 				}
 			}
@@ -544,6 +511,7 @@
 	width: 760px;
 	margin-left:170px;
 	margin-bottom: 10px;
+	margin-top: 25px;
 	
 	.texte{
 	padding-top:10px;
@@ -971,7 +939,11 @@
 				margin-top:15px;
 				font-family : "gotham";
 				font-size : 18px;
+				font-weight: bold;
 				color: white;
+					.tags{
+					color: white;
+					}
 
 				li{
 				margin-right: 5px;
@@ -1193,6 +1165,10 @@
 	width: 90px;
 	background-color: #808080;
 	
+	.follow:hover{
+		background-color: black;
+	}
+	
 	.texte{
 		font-family: "gotham";
 		font-weight: bold;
@@ -1200,10 +1176,6 @@
 		color: #FFF;
 		padding-left: 8px;
 		padding-top:2px;
-		
-		.texte:hover{
-			color: black;
-		}
 	}
 	
 	.texte2{
@@ -1214,9 +1186,6 @@
 		padding-left: 12px;
 		padding-top:2px;
 		
-		.texte:hover{
-			color: black;
-		}
 	}
 	.arrow-left{
 		margin-top:-20px;
@@ -1265,13 +1234,13 @@
 	.tour-gauche{
 	background-color:#AAD0FF;
 	margin-top:20px;
-	width: 534px;
-	min-height:60px;
+	width: 383px;
+	min-height:52px;
 	margin-left:150px;
 	
 	.image{
-		padding: 3px 3px 3px 3px;
-		img { width: 50px; height:50px;}
+		padding: 5px 5px 5px 5px;
+		img { width: 42px; height:35px;}
 		
 		.name{
 		font-family:"gotham";
@@ -1284,13 +1253,13 @@
 	.tour-droite{
 	background-color:#FF7575;
 	margin-top:20px;
-	width: 534px;
-	min-height:60px;
-	margin-left:376px;
+	width: 383px;
+	min-height:52px;
+	margin-left:401px;
 	
 	.image{
-		padding: 3px 3px 3px 3px;
-		img { width: 50px; height:50px;}
+		padding: 5px;
+		img { width: 42px; height:35px;}
 		
 		.name{
 		font-family:"gotham";
@@ -1298,7 +1267,7 @@
 		color:#000000;
 		}
 	}
-	}	
+	}
 }
 
 
@@ -1509,7 +1478,11 @@
 			margin-top:15px;
 			font-family : "gotham";
 			font-size : 18px;
+			font-weight: bold;
 			color: white;
+				.tags{
+				color: white;
+				}
 
 			li{
 			margin-right: 5px;
@@ -1729,6 +1702,10 @@
 	width: 90px;
 	background-color: #808080;
 	
+	.follow:hover{
+		background-color: black;
+	}
+	
 	.texte{
 		font-family: "gotham";
 		font-weight: bold;
@@ -1736,10 +1713,6 @@
 		color: #FFF;
 		padding-left: 8px;
 		padding-top:2px;
-		
-		.texte:hover{
-			color: black;
-		}
 	}
 	
 	.texte2{
@@ -1749,10 +1722,7 @@
 		color: #FFF;
 		padding-left: 12px;
 		padding-top:2px;
-		
-		.texte:hover{
-			color: black;
-		}
+	
 	}
 	.arrow-left{
 		margin-top:-20px;
@@ -1800,13 +1770,13 @@
 	.tour-gauche{
 	background-color:#AAD0FF;
 	margin-top:20px;
-	width: 534px;
-	min-height:60px;
+	width: 383px;
+	min-height:52px;
 	margin-left:150px;
 	
 	.image{
-		padding: 3px 3px 3px 3px;
-		img { width: 50px; height:50px;}
+		padding: 5px 5px 5px 5px;
+		img { width: 42px; height:35px;}
 		
 		.name{
 		font-family:"gotham";
@@ -1819,13 +1789,13 @@
 	.tour-droite{
 	background-color:#FF7575;
 	margin-top:20px;
-	width: 534px;
-	min-height:60px;
-	margin-left:376px;
+	width: 383px;
+	min-height:52px;
+	margin-left:401px;
 	
 	.image{
-		padding: 3px 3px 3px 3px;
-		img { width: 50px; height:50px;}
+		padding: 5px;
+		img { width: 42px; height:35px;}
 		
 		.name{
 		font-family:"gotham";
@@ -2196,7 +2166,11 @@
 				margin-top:15px;
 				font-family : "gotham";
 				font-size : 18px;
+				font-weight: bold;
 				color: white;
+					.tags{
+					color: white;
+					}
 
 				li{
 				margin-right: 5px;
@@ -2560,6 +2534,9 @@
 	width: 90px;
 	background-color: #808080;
 	
+	.follow:hover{
+		background-color: black;
+	}
 	.texte{
 		font-family: "gotham";
 		font-weight: bold;
@@ -2568,9 +2545,6 @@
 		padding-left: 8px;
 		padding-top:2px;
 		
-		.texte:hover{
-			color: black;
-		}
 	}
 	
 	.texte2{
@@ -2580,10 +2554,7 @@
 		color: #FFF;
 		padding-left: 12px;
 		padding-top:2px;
-		
-		.texte:hover{
-			color: black;
-		}
+	
 	}
 	.arrow-left{
 		margin-top:-20px;
@@ -2632,13 +2603,13 @@
 	.tour-gauche{
 	background-color:#AAD0FF;
 	margin-top:20px;
-	width: 534px;
-	min-height:60px;
+	width: 383px;
+	min-height:52px;
 	margin-left:150px;
 	
 	.image{
-		padding: 3px 3px 3px 3px;
-		img { width: 50px; height:50px;}
+		padding: 5px 5px 5px 5px;
+		img { width: 42px; height:35px;}
 		
 		.name{
 		font-family:"gotham";
@@ -2651,13 +2622,13 @@
 	.tour-droite{
 	background-color:#FF7575;
 	margin-top:20px;
-	width: 534px;
-	min-height:60px;
-	margin-left:376px;
+	width: 383px;
+	min-height:52px;
+	margin-left:401px;
 	
 	.image{
-		padding: 3px 3px 3px 3px;
-		img { width: 50px; height:50px;}
+		padding: 5px;
+		img { width: 42px; height:35px;}
 		
 		.name{
 		font-family:"gotham";
@@ -2665,7 +2636,7 @@
 		color:#000000;
 		}
 	}
-	}	
+	}
 }
 
 

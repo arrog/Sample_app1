@@ -115,7 +115,12 @@ SampleApp::Application.routes.draw do
   end
   
   resources :argcoms
-  resources :comments
+  
+  resources :comments do
+    member do
+      match 'like_comment'
+    end
+  end
     
   resources :microposts, only: [:create, :destroy]
   resources :relationships do

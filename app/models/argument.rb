@@ -19,6 +19,10 @@ class Argument < ActiveRecord::Base
   validates :content, presence: true
   
   
+  def valeur_vote(user)
+    self.evaluations.where(target_type: self.class, target_id: self.id, source_id: user.id).first.value      
+  end  
+
   def count_positive
     evaluations.where( target_type: self.class, target_id: self.id, value: 1.0 ).count
   end

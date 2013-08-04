@@ -319,8 +319,12 @@
 					<%= render "shared/comment_badge", comment: m%>
 			    <% end %>
 			</div>
-
+			
+			<% if current_user %>
 			<div class="row"><%= render "shared/comment_form", commentable: @challenge, type: Challenge, comment: @challenge.comments.new%></div>
+			<%else%>
+			<div class="span3 offset4"><%= link_to "Pour réagir, il faut se connecter", new_sessions_path(resource_name)%></div>
+			<% end %>
 			
 			<div class="row" id ="openning-comments">
 				<div class="comment-texte1">Afficher plus de commentaires</div>
