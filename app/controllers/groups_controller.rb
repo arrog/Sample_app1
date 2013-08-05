@@ -19,6 +19,12 @@ class GroupsController < ApplicationController
     
   def show
       @group = Group.find(params[:id])
+      @debate = Debate.new
+      @challenge = Challenge.new
+  end
+  
+  def members
+      @group = Group.find(params[:id])
   end
   
   def index

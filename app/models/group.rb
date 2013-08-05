@@ -4,6 +4,7 @@ class Group < ActiveRecord::Base
   
   has_many :memberships
   has_many :users, through: :memberships, :uniq => true
+  has_many :microposts
  
   has_attached_file :avatar,
                     :styles =>  { :huge => "596x321", :large => "427x133>", :medium => "165x165>"},
@@ -33,5 +34,17 @@ class Group < ActiveRecord::Base
   
   def invite!(user)
     memberships.create(user_id: user.id, state:"invited")
+  end
+  
+  def group_debates
+    Debate.where(group: self.id)
+  end
+  
+  def group_challenges
+    Challenge.where(group: self.id)
+  end
+  
+  def group_toinvite
+    User.all - self.users
   end
 end

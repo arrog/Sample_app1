@@ -625,3 +625,266 @@
 
 
 
+#debate-form{
+
+
+.emotion{
+
+.input_hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+.selected {
+    background-color: #AAD0FF;
+}
+
+label {
+    display: inline-block;
+    cursor: pointer;
+}
+
+label img {
+    padding: 3px;
+}
+
+}
+ 	#intro-newdebate{
+ 		width: 900px;
+ 		margin-top: 30px;
+ 		text-align: center;
+ 		margin-left: 80px;
+ 		
+ 		.texte2{
+ 		font-family: "georgia";
+ 		font-style: italic;
+ 		font-weight: bold;
+ 		font-size: 20px;
+ 		color: #000;
+ 		margin-bottom: 20px;
+ 		}
+ 	}
+
+
+	#title-new{
+	margin-left: 130px;
+	margin-top: 15px;
+	width: 800px;
+	height: 275px;
+	background-color: #AAD0FF;
+
+		#title-new2{
+		margin-top: 15px;
+		margin-left: 15px;
+		width: 770px;
+
+		::-webkit-input-placeholder {
+		   font-family: "gotham";
+			font-size: 19px;
+			letter-spacing: 1px;
+		}
+
+		.title{
+		background-color: white;
+		border: none;
+		border-radius: 0px;
+		width: 750px;
+		height: 38px;
+		font-family: "gotham";
+		font-size: 20px;
+		font-style: italic;
+		color: black;
+		}
+		}
+		
+		
+		
+		#maincontent-new{
+		margin-left: 15px;
+		margin-top:0px;
+		width: 770px;
+		padding-bottom: 10px;
+		border-bottom: 4px solid white;
+
+			#content1{
+			width: 380px;
+			margin-left:0px;
+			float:right;
+			
+					
+					#tags_challenge{
+					margin-top: 8px;
+					width: 380px;
+					margin-left:0px;
+
+					::-webkit-input-placeholder {
+					   font-family: "gotham";
+						font-size: 19px;
+						letter-spacing: 0px;
+					}
+
+						.tags{
+						border-radius: 0px;
+						border: none;
+						background-color: white;
+						font-family: "georgia";
+						font-style: italic;
+						color: black;
+						font-size: 16px;
+						height: 30px;
+						width: 360px;
+						}
+					}
+					
+					#category_list{
+					background-color: #C9C9C9;
+					margin-left: 0px;
+					margin-top: 5px;
+                
+					.intro{
+					padding-top:5px;
+					font-family: "gotham";
+					color: white;
+					font-size: 18px;
+					padding-left: 10px;
+					margin-bottom: 8px;
+					}
+                
+					.choix1{
+					margin-left: 10px;
+					}
+					label{
+					display: inline-block;
+					padding-left: 6px;
+					}
+                
+					}
+			}
+			
+			#content2{
+			margin-top: 5px;
+			margin-left: 0px;
+			width: 370px;
+
+				#rajouter-image{
+				margin-left:0px;
+				font-family: "gotham";
+				
+					.field-image{
+					border-radius:0px;
+					font-family: "gotham";
+					font-size: 13px;
+					}
+					
+					
+				}
+				#description-challenge{
+				margin-left:0px;
+				width: 370px;
+
+				::-webkit-input-placeholder {
+				   font-family: "gotham";
+					font-size: 22px;
+					letter-spacing: 0px;
+				}
+
+					.description{
+					height: 107px;
+					background-color: white;
+					border: none;
+					font-family: "georgia";
+					color: black;
+					border-radius: 0px;
+					width: 362px;
+					resize:none;
+					font-size: 16px;
+					font-style: italic;
+					padding-left: 5px;
+					}
+
+				}
+			}
+			
+		}
+	}
+	
+	#submit-challenge{
+	margin-left: 340px;
+	margin-top: 15px;
+
+	.action{
+	border: none;
+	border-radius:0px;
+	background-color: black;
+	text-align: center;
+	color: white;
+	font-family: "gotham";
+	font-size: 22px;
+	width: 380px;
+	padding-top: 0px;
+	height:30px;
+	}
+	}
+	
+	#openning-context{
+	background-color:#AAD0FF;
+	height:40px;
+	margin-left: 150px;
+	margin-top: 15px;
+	width: 800px;
+	margin-bottom: 5px;
+	
+	.texte{
+	padding-top:10px;
+	font-family: "gotham";
+	font-size:18px;
+	color: #000000;
+	text-align: center;
+	}
+	
+	.arrow-up-context {
+		margin-left:700px;
+		margin-top:-18px;
+		width: 0; 
+		height: 0; 
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		cursor:  pointer;
+		border-bottom: 15px solid #FFF;
+	}
+
+	.arrow-down-context {
+		margin-left:700px;
+		margin-top:-15px;
+		width: 0; 
+		height: 0; 
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		cursor:  pointer;
+		border-top: 15px solid #FFF;
+	}
+	}
+	
+	#effective-context{
+	background-color:#EEE;
+	min-height:300px;
+	width: 485px;
+	margin-top:20px;
+	margin-left:470px;
+	margin-bottom: 10px;
+		.text{
+		font-family:"georgia";
+		font-size: 14px;
+		text-align: justify;
+		padding: 10px 25px 10px 25px;
+		}
+	}
+	.edit2{
+	margin-top:15px;
+	width:430px;
+	height:490px;
+	background-color:white;
+	border-radius:0px;
+	resize: none;
+	}
+}

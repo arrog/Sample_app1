@@ -138,20 +138,361 @@
 #show-group{
 	
 	#group-header{
-	margin: 20px 0px 0px 232px;
+	margin: 20px 0px 0px 204px;
+	img{width: 653px;}
 	}
+	.image{
 	
+	}
+	.image9{
+	img{width: 653px; height: 321px;}
+	}
 	.image2{
-	height: 400px;
-	width: 596px;
+	height: 143px;
+	width: 653px;
 	margin-top: -120px;
 	text-align: center;
+	img{width: 653px;}
 		.text{
 		margin-top: -50px;
 		font-family: "gotham";
 		font-size: 25px;
 		color: black;
 		
+		}
+	}
+	
+	#badge-show{
+	margin-left: 224px;
+	background-color: #C9C9C9;
+	width: 165px;
+	min-height: 450px;
+	border-radius: 12px;
+	margin-bottom: 30px;
+	
+		#badge1{
+		margin: 10px 10px 0px 10px;
+		cursor: pointer;
+			.texte{
+			background-color: black;
+			Color: white;
+			font-family: "gotham";
+			font-size: 16px;
+			font-weight: bold;
+			padding-left: 5px;
+			height:24px;
+			padding-top: 5px;
+			
+			.link{
+			color: white;
+			}
+			}
+			
+			.texte2{
+			text-align: center;
+			background-color: black;
+			Color: white;
+			font-family: "gotham";
+			font-size: 14px;
+			font-weight: bold;
+			height:24px;
+			padding-top: 5px;
+			}
+		}
+		
+		#stat-group{
+			margin-left: 10px;
+			margin-right: 10px;
+			padding-bottom: 17px;
+			margin-top: 10px;
+			font-family: "gotham";
+			font-size: 16px;
+			border-bottom: 1px solid white;
+
+			.texte{
+				margin-top:0px;
+				margin-left: 5px;
+				background-color: #808080;
+				text-align: center;
+				color: white;
+				font-family: "bebasneue-webfont";
+				font-size: 27px;
+				padding: 7px 8px 7px 8px;
+				width: 27px;
+			}
+
+			.texte2{
+				margin-left: 60px;
+				margin-top: -24px;
+			}
+			.texte3{
+				width:90px;
+				background-color:red;
+				float: right;
+				margin-left: 60px;
+				margin-top: -35px;
+			}
+		}
+		
+		#stat-group1{
+			margin-left: 10px;
+			margin-right: 10px;
+			padding-bottom: 10px;
+			margin-top: 10px;
+			font-family: "gotham";
+			font-size: 16px;
+			border-bottom: 1px solid white;
+
+			.texte{
+				margin-top:0px;
+				margin-left: 5px;
+				background-color: #808080;
+				text-align: center;
+				color: white;
+				font-family: "bebasneue-webfont";
+				font-size: 27px;
+				padding: 7px 8px 7px 8px;
+				width: 27px;
+			}
+
+			.texte3{
+				width:90px;
+				float: right;
+				margin-left: 60px;
+				margin-top: -35px;
+			}
+		}
+		
+		#content-group{
+			margin-left:10px;
+			margin-right: 10px;
+			margin-top: 10px;
+			font-family: "georgia";
+			font-size: 13px;
+			font-style: italic;
+			text-overflow: ellipsis;
+			overflow : hidden;
+			word-wrap:break-word;
+			min-height: 60px;
+			padding-bottom:10px;
+			border-bottom: 9px solid white;
+		}
+		
+		#icones-users{
+		margin-top: 8px;
+		height: 127px;
+		margin-left: 10px;
+		margin-right: 10px;
+		
+		.ligne1{
+			margin-top: 0px;
+			img { width: 42px; height:35px;}
+			
+			li{
+			display: inline-block;
+			margin-left: 3px;
+			margin-top: 5px;
+			}
+			
+			
+		}
+
+		}
+		
+		#voir-tous{
+			margin-left: 10px;
+			margin-right: 10px;
+			margin-top: 9px;
+			margin-bottom: 10px;
+			font-family: "gotham";
+			font-size: 14px;
+			font-weight: bold;
+			color: white;
+			background-color:#A3A3A3;
+			height: 28px;
+			padding-top:7px;
+			text-align: center;
+			
+				.texte{
+				color: white;
+				}
+		}
+	}
+	
+	#revenir-augroupe{
+		margin-left: 204px;
+		margin-top: 30px;
+		width: 170px;
+		margin-bottom: 20px;
+		height: 28px;
+		font-family: "gotham";
+		padding: 7px 7px 0px 7px;
+		font-size: 18px;
+		background-color: black;
+			.link{
+			color: white;
+			}
+		
+	}
+	
+	#developpement-bis{
+	margin-left: 204px;
+	width: 653px;
+		li{
+		margin-right:39px;
+		display: inline-block;
+		}
+	}
+	
+	#developpement{
+		#new-micropost{
+			background-color: #C9C9C9;
+			margin-left:0px;
+			margin-top:0px;
+			width: 470px;
+			height: 162px;
+			margin-bottom: 20px;
+			
+			#userid{
+			margin-left: 0px;
+			width: 124px;
+			min-height: 125px;
+			.user{
+			margin-top:13px;
+			margin-left:13px;
+			width:100px;
+			img { width: 100px; height:83px;}
+			border-bottom: 2px solid #FFF;
+				.image{
+				padding-bottom:4px;
+				}
+			}
+			.nom-user{
+			padding-left:3px;
+			width:100px;
+			font-family:"gotham";
+			font-size:14px;
+			text-align:center;
+			margin-left: 10px;
+			color: black;
+			text-overflow: ellipsis;
+			overflow : hidden;
+			}
+			}
+			
+			#micropostnew{
+			width:346px;
+			margin-left:0px;
+				
+				.field1{
+				margin-top:13px;
+				::-webkit-input-placeholder {
+				   font-family: "gotham";
+					font-size: 15px;
+					letter-spacing: 0px;
+					font-weight: bold;
+				}
+				.field{
+					width: 325px;
+					height: 95px;
+					border: none;
+					border-radius: 0px;
+					background-color: white;
+					resize: none;
+					margin-left: 0px;
+					margin-top: 0px;
+					font-family: "georgia";
+					font-size: 13px;
+				}
+				}
+				
+				.submit{
+					margin-top: 3px;
+					background-color:#A3A3A3;
+					font-family:"gotham";
+					font-size: 16px;
+					font-weight: bold;
+					padding: 2px 8px 2px 8px;
+					border: none;
+					border-radius: 0px;
+					color: white;
+					margin-left: 279px;
+				}
+
+			}
+				
+		}
+		#sharing-badges{
+			width: 800px;
+			margin-top: 0px;
+			margin-left: 0px;
+			margin-bottom:8px;
+		}
+
+	}
+	#create-debate{
+	
+		#profile-header{
+		margin-top: 17px;
+		margin-bottom: 40px;
+		font-family: "gotham";
+		font-style: italic;
+		font-weight: bold;
+		font-size: 20px;
+		margin-left:200px;
+
+
+		li {
+	      display: inline-block;
+		  padding-right: 20px;
+				cursor : pointer;
+	    }
+
+		.tiret{
+		color: #808080;
+		font-size: 21px;
+		}
+
+	    li.active, li:hover {
+			text-decoration:underline;
+	    }
+		}
+		
+		#fermer-barredebat{
+		margin-left:130px;
+		height:40px;
+		background-color: #C9C9C9;
+		margin-bottom: 10px;
+		width: 800px;
+		font-family: "gotham";
+		font-size:18px;
+		text-align: center;
+		cursor: pointer;
+			.texte{
+				padding-top:10px;
+				font-family: "gotham";
+				font-size:22px;
+				color: #000;
+				text-align: center;
+			}
+		.texte{
+		padding-top:10px;
+		font-family: "gotham";
+		font-size:18px;
+		color: #000000;
+		text-align: center;
+		}
+
+		.arrow-up {
+			margin-left:700px;
+			margin-top:-18px;
+			width: 0; 
+			height: 0; 
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			cursor:  pointer;
+			border-bottom: 15px solid #FFF;
+		}
 		}
 	}
 }

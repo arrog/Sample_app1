@@ -1,0 +1,88 @@
+<section id="form-challenge">
+	<%=form_for(challenge) do |f| %>
+		<%= render '/shared/error_messages', object: f.object %>
+		<%= f.hidden_field :group, value: value%>
+	
+	<div class="row" id="intro-newchallenge">
+		<div class="texte2">Lance un défi, prends position et invite tes adversaires !</div>			
+	</div>
+	
+	
+	<div class="row" id="title-new">
+		<div class="row" id="title-new2">
+		      	<%= f.text_field :title, placeholder: "Titre du débat ...", class: "title", "data-max-char" => "20"%>	
+		</div>
+		
+		<div class="row" id="maincontent-new">
+			<div class="span5" id="content1">
+				<div class="row" id="type-deb">
+					<div>
+						<div class="emotion2" id='typedeb1'>
+							<%= radio_button_tag "challenge[type_deb]", 2, challenge.type_deb == 2, :checked => 2 %>
+							<label for="challenge_type_deb_2" class="selected" id="choix1"><span class= "texte">Duel</br> face-à-face</span><%= image_tag ("new-challenge.png"), class: "image"%>
+								</label>
+							
+							<%= radio_button_tag "challenge[type_deb]", 3, challenge.type_deb == 3 %>
+							<label for="challenge_type_deb_3" class="non-selected" id="choix2"><span class= "texte">Duel</br>par équipe</span><%= image_tag ("new-challenge.png"), class: "image"%></label>
+						</div>
+						<div class="emotion2" id='typedeb2'>
+							<%= radio_button_tag "challenge[type_deb]", 4, challenge.type_deb == 4 %>
+							<label for="challenge_type_deb_4" class="non-selected" id="choix3"><span class= "texte">Quatre coins</br> individuel</span><%= image_tag ("new-challenge.png"), class: "image"%></label>
+				    	
+							
+							<%= radio_button_tag "challenge[type_deb]", 8, challenge.type_deb == 8 %>
+							<label for="challenge_type_deb_8" class="non-selected" id="choix4"><span class= "texte">Quatre coins par équipe</span><%= image_tag ("new-challenge.png"), class: "image"%></label>
+																				
+						</div>
+					<div>	
+				</div>
+				<div class="row" id="category_list">
+					<div class="intro">
+						Thème du débat
+					</div>
+					<div class="emotion">
+						<%= radio_button_tag "challenge[cat_id]", Cat.all.first.id, challenge.cat_id == 1, :checked => 1%>
+						<label for="challenge_cat_id_1" class="choix1"><%= image_tag ("cat-sports.png")%></label>
+						<%= radio_button_tag "challenge[cat_id]", Cat.all.second.id, challenge.cat_id == 2 %>
+						<label for ="challenge_cat_id_2"><%= image_tag ("cat-quotidien.png")%></label>
+						<%= radio_button_tag "challenge[cat_id]", Cat.all.third.id, challenge.cat_id == 3 %>
+						<label for="challenge_cat_id_3"><%= image_tag ("cat-monde.png")%></label>
+						<%= radio_button_tag "challenge[cat_id]", Cat.all.fourth.id, challenge.cat_id == 4%>
+						<label for ="challenge_cat_id_4"><%= image_tag ("cat-economie.png")%></label>
+						<%= radio_button_tag "challenge[cat_id]", Cat.all.fifth.id, challenge.cat_id == 5 %>
+						<label for="challenge_cat_id_5"><%= image_tag ("cat-culture.png")%></label>
+						<%= radio_button_tag "challenge[cat_id]", Cat.all[5].id, challenge.cat_id == 6 %>
+						<label for ="challenge_cat_id_6"><%= image_tag ("cat-sciences.png")%></label>
+						<%= radio_button_tag "challenge[cat_id]", Cat.all[6].id, challenge.cat_id == 7 %>
+						<label for="challenge_cat_id_7"><%= image_tag ("cat-philosophie.png")%></label>
+						<%= radio_button_tag "challenge[cat_id]", Cat.all[7].id, challenge.cat_id == 8 %>
+						<label for ="challenge_cat_id_8"><%= image_tag ("cat-societe.png")%></label>							
+					</div>
+				</div>
+			</div>
+			
+			<div class= "span5" id="content2">
+				<div class="row" id="description-challenge">
+					<%= f.text_area :context, class: "description", placeholder: "Description" %>	
+				</div>
+				<div class="emotion2" id="typedeb3">
+					<%= radio_button_tag "challenge[jugebreve]", 0, challenge.jugebreve == 0, :checked => 0 %>
+					<label for="challenge_jugebreve_0" class="selected" id="choix5"><span class= "texte">Débat Bref</span></label>
+					
+					<%= radio_button_tag "challenge[jugebreve]", 1, challenge.jugebreve == 1 %>
+					<label for="challenge_jugebreve_1" class="non-selected" id="choix6"><span class= "texte">Avec Juges</span></label>
+				</div>
+				<div class="row" id="tags_challenge">
+					<%= f.text_field :tag_list, class: "tags", placeholder: "Tag1, Tag2, Tag3 ..."%>
+				</div>
+				<div class="row" id='submit-challenge'>
+						<%= f.submit "Créér le débat", class: "action" %>
+						<% end %>
+				</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</section>

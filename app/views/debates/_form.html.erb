@@ -1,73 +1,73 @@
-<section id="open-debate">
-	<div class="container">
-	<%= form_for @debate, :html => { :class => 'form-horizontal' } do |f| %>	
-	 <div class="row">
-		<div class="span10 offset1">
-			<div id="title">
-				<div class="row">
-					
-					<div class="span5" id="gauche-ouvert">
-						
-					    <div class="image1">	
-							<%= image_tag("ouvert-image.png", alt: "Moutoners", class: "image")%>
-							<%= f.file_field :avatar %>								
+<section id="debate-form">
+	<%= form_for(@debate) do |f| %>
+		<%= render '/shared/error_messages', object: f.object %>
+		<%= f.hidden_field :group, value: group%>
 
-						</div>
-					</div>
-					
-					<div class="span5" id="droite-ouvert">
-						<div class="row" id="title2">
-							<%= f.text_field :title, :class => 'edit1' %>
-						</div>
-						<div class="row" id="content">
-							<div class="content"><%= f.text_field :content, :class => 'edit1' %></div>
-						</div>
-
-						
-						<div class="row" id="stats">
-							<div class="stat1">
-									TAGS:<%= f.text_area :tag_list, :class => 'edit1' %>
-							</div>
-						</div>
-						
-					</div>
-					
-	 			</div>
-	 		</div>
-	 	</div>				
-	   	<div class="span1" id="catcat">
-			<div class="arrow-left"></div>   		
-	   		<div class="image">
-	   		<% if @debate.cat_id == 1 %>
-	   			<%= link_to image_tag("cat-sports.png", :alt => 'Moutoners'), list_path(:cat => 1)%>
-	   		<%elsif @debate.cat_id == 2 %>
-	   			<%= link_to image_tag("cat-quotidien.png", :alt => 'Moutoners'), list_path(:cat => 2)%>
-	   		<%elsif @debate.cat_id == 3 %>
-	   			<%= link_to image_tag("cat-monde.png", :alt => 'Moutoners'), list_path(:cat => 3)%>
-	   		<%elsif @debate.cat_id == 4 %>
-	   			<%= link_to image_tag("cat-economie.png", :alt => 'Moutoners'), list_path(:cat => 4)%>
-	   		<%elsif @debate.cat_id == 5 %>
-	   			<%= link_to image_tag("cat-culture.png", :alt => 'Moutoners'), list_path(:cat => 5)%>
-	   		<%elsif @debate.cat_id == 6 %>
-	   		 	<%= link_to image_tag("cat-sciences.png", :alt => 'Moutoners'), list_path(:cat => 6)%>
-	   		<%elsif @debate.cat_id == 7 %>
-	   			<%= link_to image_tag("cat-philosophie.png", :alt => 'Moutoners'), list_path(:cat => 7)%>
-	   		<%elsif @debate.cat_id == 8 %>
-	   			<%= link_to image_tag("cat-societe.png", :alt => 'Moutoners'), list_path(:cat => 8)%>
-	   		<%end%>
-	   		</div>
-		</br>	
-		<p><%= f.text_area :cat_id, :class => 'edit0' %></p>
-	   	</div>
-
-		</div>			
-		
-			  <div class="form-actions">
-			    <%= f.submit "VALIDER", :class => 'btn btn-primary' %>
-			    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-			                doulins_path, :class => 'btn' %>
-			  </div>
-		<% end%>
-
+	<div class="row" id="intro-newdebate">
+		<div class="texte2">Lance un débat interne au groupe!</div>			
 	</div>
+
+	<div class="row" id="title-new">
+		<div class="row" id="title-new2">
+		      	<%= f.text_field :title, placeholder: "Titre du débat ...", class: "title", "data-max-char" => "20"%>	
+		</div>
+
+		<div class="row" id="maincontent-new">
+			<div class="span5" id="content1">
+				<div class="row" id="category_list">
+					<div class="intro">
+						Thème du débat
+					</div>
+					<div class="emotion">
+						<%= radio_button_tag "debate[cat_id]", Cat.all.first.id, @debate.cat_id == 1, :checked => 1%>
+						<label for="debate_cat_id_1" class="choix1"><%= image_tag ("cat-sports.png")%></label>
+						<%= radio_button_tag "debate[cat_id]", Cat.all.second.id, @debate.cat_id == 2 %>
+						<label for ="debate_cat_id_2"><%= image_tag ("cat-quotidien.png")%></label>
+						<%= radio_button_tag "debate[cat_id]", Cat.all.third.id, @debate.cat_id == 3 %>
+						<label for="debate_cat_id_3"><%= image_tag ("cat-monde.png")%></label>
+						<%= radio_button_tag "debate[cat_id]", Cat.all.fourth.id, @debate.cat_id == 4%>
+						<label for ="debate_cat_id_4"><%= image_tag ("cat-economie.png")%></label>
+						<%= radio_button_tag "debate[cat_id]", Cat.all.fifth.id, @debate.cat_id == 5 %>
+						<label for="debate_cat_id_5"><%= image_tag ("cat-culture.png")%></label>
+						<%= radio_button_tag "debate[cat_id]", Cat.all[5].id, @debate.cat_id == 6 %>
+						<label for ="debate_cat_id_6"><%= image_tag ("cat-sciences.png")%></label>
+						<%= radio_button_tag "debate[cat_id]", Cat.all[6].id, @debate.cat_id == 7 %>
+						<label for="debate_cat_id_7"><%= image_tag ("cat-philosophie.png")%></label>
+						<%= radio_button_tag "debate[cat_id]", Cat.all[7].id, @debate.cat_id == 8 %>
+						<label for ="debate_cat_id_8"><%= image_tag ("cat-societe.png")%></label>							
+					</div>
+				</div>
+				<div class="row" id="tags_challenge">
+					<%= f.text_field :tag_list, class: "tags", placeholder: "Tag1, Tag2, Tag3 ..."%>
+				</div>
+
+			</div>
+			<div class= "span5" id="content2">
+				<div class="row" id="description-challenge">
+					<%= f.text_area :content, class: "description", placeholder: "Introduire le débat" %>						</div>
+				<div class="row" id="rajouter-image">
+						Rajouter une image</br>
+						<%= f.file_field :avatar, placeholder: "Rajouter une image", class: "field-image"%>
+				</div>
+				
+				
+			</div>						
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="row" id ="openning-context">
+			<div class="texte">Rajouter un contexte</div>
+			<div class="arrow-down-context"></div>
+			<div class="arrow-up-context"></div>
+		</div>
+		<div class "row" id="to-be-closed">
+			<div id="effective-context"><div class="text"><%= f.text_area :content, :class => 'edit2'%></div></div>
+		</div>
+	</div>
+	
+	<div class="row" id='submit-challenge'>
+			<%= f.submit "Créér le débat", class: "action" %>
+	</div>		
+			<% end %>	
 </section>

@@ -24,7 +24,7 @@ SampleApp::Application.routes.draw do
   resources :admins
   
   resources :groups do
-    resources :users do
+    resources :users do      
       member do
         get :invite_group
       end
@@ -32,6 +32,7 @@ SampleApp::Application.routes.draw do
     member do
       get :rejoindre
       get :rajouter
+      get :members
     end
   end
   

@@ -1,7 +1,7 @@
 class Debate < ActiveRecord::Base
   include ::PublicActivity::Common
     
-  attr_accessible :content, :title, :type_of_debate, :tag_list, :cat_id, :avatar, :state
+  attr_accessible :content, :title, :type_of_debate, :tag_list, :cat_id, :avatar, :state, :group, :context
   
   acts_as_taggable
   acts_as_followable
@@ -35,7 +35,7 @@ class Debate < ActiveRecord::Base
   
   paginates_per 10
   
-  scope :permission_debate, -> { where(:state => "online")}
+  scope :permission_debate, -> { where(:state => "online", :group => nil )}
   
   state_machine initial: :offline do
 

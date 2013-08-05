@@ -1,11 +1,4 @@
-#new-challenge{
-
-	.espace{
-	height: 40px;
-	width: 40px;
-	background-color: white;
-	}
-	
+#form-challenge{
 	.emotion{
 	
 	.input_hidden {
@@ -42,7 +35,7 @@
 	}
 	
 	.non-selected{
-		 background-color: #000;
+		 background-color: #808080;
 		color: #C9C9C9;
 	}
 	label {
@@ -337,6 +330,17 @@
 			}
 		}
 	}
+}
+
+#new-challenge{
+
+	.espace{
+	height: 40px;
+	width: 40px;
+	background-color: white;
+	}
+	
+
 	
 	#intro-newchallenge2{
 		width: 900px;

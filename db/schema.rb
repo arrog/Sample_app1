@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130811164832) do
+ActiveRecord::Schema.define(:version => 20130811164836) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20130811164832) do
     t.datetime "avatar_updated_at"
     t.text     "content"
     t.integer  "jugebreve"
+    t.integer  "group"
   end
 
   create_table "comments", :force => true do |t|
@@ -98,6 +99,8 @@ ActiveRecord::Schema.define(:version => 20130811164832) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "group"
+    t.text     "context"
   end
 
   create_table "doulins", :force => true do |t|
@@ -210,6 +213,7 @@ ActiveRecord::Schema.define(:version => 20130811164832) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "group_id"
   end
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
