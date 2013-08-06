@@ -3,10 +3,6 @@
 		<%= render '/shared/error_messages', object: f.object %>
 		<%= f.hidden_field :group, value: group%>
 
-	<div class="row" id="intro-newdebate">
-		<div class="texte2">Lance un débat interne au groupe!</div>			
-	</div>
-
 	<div class="row" id="title-new">
 		<div class="row" id="title-new2">
 		      	<%= f.text_field :title, placeholder: "Titre du débat ...", class: "title", "data-max-char" => "20"%>	

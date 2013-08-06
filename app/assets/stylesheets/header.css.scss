@@ -4,68 +4,51 @@ header {
   
   #tout-enhaut{
 	height: 212px;
-	background-color: #AAD0FF;
+	background-color: #FFF;
 	margin-left: 0px;
 	
-	.gauche{
-	width: 600px;
-	#try2{
-		margin-left:33px;
-		margin-top: 23px;
-	}
-	
-	#try3{
-		margin-left:33px;
-		margin-top: 23px;
-		
-		
-		.titre{
+
+	#milieu{
+	width: 260px;
+	margin: 30px 0px 0px 383px;
+		#try2{
+			margin-left:76px;
+			margin-top: 23px;
+		}
+		#titre{
 			font-family: "gotham";
 			font-size: 48px;
-			line-spacing: -25px;
+			letter-spacing: -1px;
 			color: black;
+			margin-left: 0px;
+			margin-top: 16px;
 			.title{
 				color: black;
 			}
-			
-			.titre:hover{
-			color: black;
-			}
 		}
-		
-		.facebook-page1{
-			margin-left:283px;
-			margin-top: -19px;
-		}
-		
-		.twitter-page1{
-			margin-left:317px;
-			margin-top: -29px;
-		}
-		
-		.linkedin-page1{
-			margin-left:351px;
-			margin-top: -28px;
+		.titre:hover{
+		color: black;
 		}
 	}
 	
+	#gauche{
+	width: 300px;
+	margin-top: -85px;
+	width: 352px;
+	
 	#try4{
 	margin-top: 18px;
-	margin-left: 33px;
-	
-		
-		div {
-		display: inline-block;
-		}
-		
+	margin-left: 33px;	
+
 	.nom{
-		width: 184px;
+		width: 191px;
 		height: 22px;
 		padding-top: 5px;
-		background-color: white;
+		background-color: #AAD0FF;
 		font-family: "gotham";
 		font-size: 17px;
 		text-align: center;
+		margin-bottom: 15px;
 		
 	}
 	
@@ -97,11 +80,11 @@ header {
 		.login-field{
 			width: 168px;
 			border-radius: 0px;
-			background-color: white;
+			background-color: #EEE;
 			font-family: "georgia";
 			font-size: 15px;
 			color: black;
-			height: 25px;
+			height: 28px;
 			border: none;
 			}
 			
@@ -112,12 +95,13 @@ header {
 			font-family: "gotham";
 			font-size: 12px;
 			color: white;
-			height: 24px;
+			height: 28px;
+			margin-left: 10px;
 			}
 	  }
 	 }
 	#try5{
-	margin-top: -25px;
+	margin-top: -23px;
 	margin-left: 33px;
 			.texte{
 			width: 184px;
@@ -132,7 +116,7 @@ header {
 	}
 	
 	#try6{
-	margin-top: 0px;
+	margin-top: 10px;
 	margin-left: -20px;
 
 			.texte{
@@ -149,11 +133,28 @@ header {
 	}
 	}
 	
-	.droite{
-		margin-top: -103px;
-		width: 400px;
-		float: right;
-		margin-right: 33px;
+	#droite{
+	margin-top: -133px;
+	width: 230px;
+	float: right;
+	margin-right: 33px;
+		#try3{
+			margin-left:3px;
+			float: right;
+			div{
+			display: inline-block;
+			}
+			.facebook-page1{
+			}
+
+			.twitter-page1{
+			}
+
+			.linkedin-page1{
+			}
+		}
+		
+
 		
 			#apprendre{
 				float: right;
@@ -161,7 +162,7 @@ header {
 				width: 185px;
 				background-color:#A3A3A3;
 				text-align:center;
-				margin-top: 0px;
+				margin-top: 10px;
 				font-family: "gotham";
 				font-weight: bold;
 				color: white;
@@ -184,7 +185,7 @@ header {
 				   font-family: "gotham";
 					font-size: 15px;
 					font-weight: bold;
-					font-color: #A3A3A3;
+					color: #A3A3A3;
 				}	
 					#search-text{
 						  text-align: center;
@@ -195,7 +196,7 @@ header {
 			        	  font-family: 'georgia';
 			        	  font-size:15px;
 			        	  color: black;
-			        	  background-color:white;
+			        	  background-color:#EEE;
 			        	}
 					.loupe{
 					float:right;

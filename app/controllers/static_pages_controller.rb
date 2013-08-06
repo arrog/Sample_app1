@@ -48,7 +48,7 @@ class StaticPagesController < ApplicationController
         @doulins = Doulin.permission_doulin
     end
     
-    @lists = (@doulins + @debates + @challenges).shuffle  
+    @lists = (@doulins + @debates + @challenges).shuffle.paginate(:page => params[:page], :per_page =>8)
   end
   
   def list_doulins
@@ -56,7 +56,7 @@ class StaticPagesController < ApplicationController
       @current_category = Cat.find(params[:cat])
       @doulins = Doulin.where(:cat_id => @current_category.id).permission_doulin
     else
-      @doulins = Doulin.permission_doulin
+      @doulins = Doulin.permission_doulin.paginate(:page => params[:page], :per_page =>8)
     end
   end
   
@@ -65,7 +65,7 @@ class StaticPagesController < ApplicationController
       @current_category = Cat.find(params[:cat])
       @debates = Debate.where(:cat_id => @current_category.id).permission_debate
     else
-      @debates = Debate.permission_debate
+      @debates = Debate.permission_debate.paginate(:page => params[:page], :per_page =>8)
     end
   end
   
@@ -74,7 +74,7 @@ class StaticPagesController < ApplicationController
       @current_category = Cat.find(params[:cat])
       @challenges = Challenge.where(:cat_id => @current_category.id)
     else
-      @challenges = Challenge.all
+      @challenges = Challenge.all.paginate(:page => params[:page], :per_page =>8)
     end
   end
   

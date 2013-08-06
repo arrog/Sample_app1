@@ -49,22 +49,6 @@
 	
 	}	
 
-	#intro-newchallenge{
-		width: 900px;
-		margin-top: 30px;
-		text-align: center;
-		margin-left: 80px;
-		
-		.texte2{
-		font-family: "georgia";
-		font-style: italic;
-		font-weight: bold;
-		font-size: 20px;
-		color: #000;
-		margin-bottom: 20px;
-		}
-	}
-	
 	#title-new{
 	margin-left: 130px;
 	margin-top: 15px;
@@ -333,6 +317,24 @@
 }
 
 #new-challenge{
+
+
+#intro-newchallenge{
+	width: 900px;
+	margin-top: 30px;
+	text-align: center;
+	margin-left: 80px;
+	
+	.texte2{
+	font-family: "georgia";
+	font-style: italic;
+	font-weight: bold;
+	font-size: 20px;
+	color: #000;
+	margin-bottom: 20px;
+	}
+}
+
 
 	.espace{
 	height: 40px;

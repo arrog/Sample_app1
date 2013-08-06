@@ -30,6 +30,18 @@ module ApplicationHelper
      @devise_mapping ||= Devise.mappings[:user]
     end
     
+    def pageless(total_pages, url=nil, container=nil)
+       opts = {
+         :totalPages => total_pages,
+         :url        => url,
+         :loaderMsg  => 'Chargement ...',
+         :loaderImage => image_path("logo.png")
+       }
+
+       container && opts[:container] ||= container
+
+       javascript_tag("$('#results').pageless(#{opts.to_json});")
+     end
  
 end
 

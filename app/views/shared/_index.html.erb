@@ -2,7 +2,7 @@
       <% if object.any? %>
 		</br>
         <% object.each do |ob| %>
-		<div class="liste">
+		<div class="lists">
 			 <% if ob.class == Debate %>
 			 	<%= render "shared/debate_badge", :debate => ob %>
 			<% elsif ob.class == Doulin %>

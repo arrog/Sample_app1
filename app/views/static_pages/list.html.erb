@@ -1,5 +1,4 @@
 <div class="container" id="index-doulins">
-	
 	<div class="row" id="intro-doulin">
 		<div class="texte">Un fil d'actualité personnalisé</div>
 	</div>
@@ -8,9 +7,13 @@
 					<div class="span3">
 						<%= render "shared/menu_cat"%>
 					</div>
-	
+						
+											
 					<div class="span8" id="list">
 						<%= render "shared/index", :object => @lists %>
+						<%= will_paginate @lists, previous_label: h("<"), next_label: h(">") %>	
 					</div>
+					
 				</div>
+			
 </div>

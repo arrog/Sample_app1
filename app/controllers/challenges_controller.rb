@@ -43,15 +43,10 @@ class ChallengesController < ApplicationController
    end
   
   
-  def index
-    if params[:cat] && !params[:cat].empty?
-      @current_category = Cat.find(params[:cat])
-      @challenges = Challenge.where(:cat_id => @current_category.id)
-    else
-      @challenges = Challenge.all
+   def index
+     @challenges = Challenge.order("title").page(params[:page]).per_page(5)
     end
-  end
-  
+
   def destroy
       Challenge.find(params[:id]).destroy
       flash[:success] = "Debate deleted."

@@ -306,4 +306,4 @@ DEPENDENCIES
   twitter-bootstrap-rails
   uglifier (= 1.2.3)
   unicorn
-  will_paginate (= 3.0.3)
+  will_paginate (> 3.0)

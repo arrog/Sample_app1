@@ -92,6 +92,7 @@
 	
 					<div class="span8" id="list">
 						<%= render "shared/index", :object => @challenges %>
+						<%= will_paginate @challenges, previous_label: h("<"), next_label: h(">") %>	
 					</div>
 				</div>
 </div>

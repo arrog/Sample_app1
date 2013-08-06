@@ -39,6 +39,7 @@
 	
 					<div class="span8" id="list">
 						<%= render "shared/index", :object => @doulins %>
+						<%= will_paginate @doulins, previous_label: h("<"), next_label: h(">") %>	
 					</div>
 				</div>
 </div>
