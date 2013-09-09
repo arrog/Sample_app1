@@ -287,11 +287,11 @@ class User < ActiveRecord::Base
     
     ## INVITATION ET TEAM REQUEST
     def join_group
-      []#a faire
+      []
     end
     
     def invitation_group
-        []#A faire
+      []
     end
     
     def invitation_request

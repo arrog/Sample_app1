@@ -141,7 +141,7 @@ class UsersController < ApplicationController
   end
   
   def load_group
-    resource, id = request.path.split('/')[1, 2]
+    resource, id= request.path.split('/')[1, 2]
     @group = resource.singularize.classify.constantize.find(id)
   end
 end

@@ -47,4 +47,8 @@ class Group < ActiveRecord::Base
   def group_toinvite
     User.all - self.users
   end
+  
+  def inviter(user)
+    Membership.create(group_id: self.id, user_id: user.id, role:"invited",)
+  end
 end

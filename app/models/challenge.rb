@@ -69,10 +69,18 @@ class Challenge < ActiveRecord::Base
   
   
   def places
-    if type_deb == 3
-      return type_deb + 4
+    if jugebreve ==0
+      if type_deb == 3
+        return type_deb + 1
+      else
+        return type_deb
+      end
     else
-      return type_deb + 3
+      if type_deb == 3
+        return type_deb + 4
+      else
+        return type_deb + 3
+      end
     end
   end
   

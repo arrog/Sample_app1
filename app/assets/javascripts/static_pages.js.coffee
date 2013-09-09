@@ -9,7 +9,8 @@ $(document).ready ->
  $ ->
 
   $("#open-infos").hide() 
-  $("#open-infos2").hide() 
+  $("#open-infos2").hide()
+  
 
   $("#fermer-explication").click ->
     	$(this).parent().parent().hide().siblings("#intro-doulin").children(".ouvrir-informations").show()
@@ -35,3 +36,6 @@ $(document).ready ->
 		  $(".emotion3 input:radio").addClass "input_hidden"
 		  $(".emotion3 label").click ->
 		    	$(this).addClass("selected").siblings().removeClass("selected")
+
+  $(".challenge-bouton1").click ->
+	    $(".lists-challenge-open").hide()

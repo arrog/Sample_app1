@@ -15,18 +15,26 @@
 		<% if current_user && current_user.admin_group?(@group)%>
 		<div class="row">
 			Rajoute des personnes au groupe
-			<% @group.group_toinvite.shuffle.each do |l|%>
+			<% @group.group_toinvite.shuffle.each do |user|%>
 				<%= render "shared/user_badge", user: user%>
 					+ lien pour les inviter
 			<% end%>
 		</div>
 		<%end%>
 		<div class="row" id="developpement-bis">
+				<% @group.group_toinvite.shuffle.each do |user|%>
+					<%= render "shared/user_badge", user: user%>
+					<%= user.id%><%= @group.id%>
+						<%= link_to "inviter", invite_group_group_user_path(@group, user)%>
+					<% end%>
 				<% @group.users.each do |user|%>
+				<%= user.id%>
+				<%= link_to "inviter", invite_group_group_user_path(user)%>
 					<li>
 					<%= render "shared/user_badge", user: user%>
 					<% if current_user && current_user.admin_group?(@group) %>
-						<%= link_to "RAJOUTER QUELQU'UN EN RESPONSABLE DU GROUP", rajouter_group_path(@group) %>	
+						<%= link_to "RAJOUTER QUELQU'UN EN RESPONSABLE DU GROUP", rajouter_group_path(@group) %>
+							
 					<% end %>
 					</li>
 				<% end %>

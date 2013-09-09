@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
   before_filter :admin_user,   only: [:rajouter]
-  
+
   def new
     @group = Group.new
   end
@@ -45,7 +45,6 @@ class GroupsController < ApplicationController
   def rajouter
     @group = Group.find(params[:id])
   end
-  
   
   private
 

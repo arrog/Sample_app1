@@ -2,18 +2,18 @@
 		<% content_for :main_content do %>
 <div id="sign_in">
 	<div class="row" id="sign_in1">
-		Il faut être connecté pour faire cela
+		Il faut être connecté(e)
 	</div>
 	
 	<div class="facebook">
-		<span>Connectez-vous via</br></span><%=link_to image_tag("facebook-blanc.png"), user_omniauth_authorize_path(:facebook),
+		<span>Connecte-toi via</br></span><%=link_to image_tag("facebook-blanc.png"), user_omniauth_authorize_path(:facebook),
 		  													class: "via"%>
 	</div>
 	
 	<div class="row" id="sign_in2">
 		<div class="span3" id="sign_in3">
 			<div class="row" id="sign_in4">
-				<span class="texte1">Connectez-vous !</span>
+				<span class="texte1">Déjà un mouton?</span>
 			</div>
 			<div class="row" id= "sign_in4">
 				<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>

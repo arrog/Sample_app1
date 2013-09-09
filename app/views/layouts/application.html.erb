@@ -60,10 +60,10 @@
 							
 					</div>
 					<div class="row" id="try5">
-						<div class="texte"><%= link_to "Connexion via facebook", user_omniauth_authorize_path(:facebook), class: "lien"%>
-						</div>
-						<div class="texte"><%= link_to "Mot de passe oublié?", root_path, class: "lien"%>
-						</div>
+						<span class="texte"><%= link_to "via facebook", user_omniauth_authorize_path(:facebook), class: "lien"%></span><span class="texte">|
+						</span>
+						<span class="texte"><%= link_to "Mot de passe oublié?", root_path, class: "lien"%>
+						</span>
 							<% end%>
 						<% end %>
 					</div>

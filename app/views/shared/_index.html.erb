@@ -2,13 +2,21 @@
       <% if object.any? %>
 		</br>
         <% object.each do |ob| %>
-		<div class="lists">
 			 <% if ob.class == Debate %>
+			<div class="lists-debates">
 			 	<%= render "shared/debate_badge", :debate => ob %>
 			<% elsif ob.class == Doulin %>
+			<div class="lists-doulins">
 				<%= render "shared/doulin_badge", :doulin => ob %>
-			<% elsif ob.class == Challenge %>
+			<% elsif ob.class == Challenge && ob.not_full?%>
+					<div class="lists-challenge-open">
 				 <%= render "shared/challenge_badge", :challenge => ob %>
+			<% elsif ob.class == Challenge && ob.jugebreve == 0 %>
+					<div class="lists-challenge-breves">
+				 <%= render "shared/challenge_badge", :challenge => ob %>
+			<% elsif ob.class == Challenge%>
+				<div class="lists-challenges">
+					 <%= render "shared/challenge_badge", :challenge => ob %>
 			<% end %>
 		</div>
 		<% end %>

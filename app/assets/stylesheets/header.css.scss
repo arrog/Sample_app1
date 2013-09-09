@@ -1,10 +1,9 @@
 header {
-  height: 267px;
+  height: 237px;
   position: relative;
   
   #tout-enhaut{
-	height: 212px;
-	background-color: #FFF;
+	height: 182px;
 	margin-left: 0px;
 	
 
@@ -33,7 +32,7 @@ header {
 	
 	#gauche{
 	width: 300px;
-	margin-top: -85px;
+	margin-top: -92px;
 	width: 352px;
 	
 	#try4{
@@ -100,23 +99,25 @@ header {
 			}
 	  }
 	 }
+	
 	#try5{
 	margin-top: -23px;
 	margin-left: 33px;
+	
+	div {
+	display: inline-block;
+	}
 			.texte{
 			width: 184px;
-			padding-left: 5px;
+			padding-left: 4px;
 			font-family: "gotham";
 			font-weight: bold;
-			font-size:11px;
+			font-size:12px;
 			}
-		div {
-		display: inline-block;
-		}
+
 	}
 	
 	#try6{
-	margin-top: 10px;
 	margin-left: -20px;
 
 			.texte{
@@ -134,7 +135,7 @@ header {
 	}
 	
 	#droite{
-	margin-top: -133px;
+	margin-top: -122px;
 	width: 230px;
 	float: right;
 	margin-right: 33px;
