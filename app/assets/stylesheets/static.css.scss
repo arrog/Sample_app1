@@ -240,9 +240,7 @@ text-align: center;
     }  
 }
 
-#explanation1{
-	margin-bottom: 30px;
-}  
+	 
   .explanation1 {
 	margin-top: 30px;
 	margin-left:70px;
@@ -270,8 +268,8 @@ text-align: center;
 	font-size: 18px;
 	color: white;
 	z-index:3;
-	
 	}
+	
 	.image{
 	position:relative;
 	margin-top:-23px;
@@ -346,16 +344,17 @@ text-align: center;
 	z-index:2;
 	}
   }	
-  
+
 
 	#best-debates1{
-	margin-left: 247px;
+	margin-left: 208px;
+	margin-top: 20px;
     text-align: center;
 	font-family:"gotham";
 	font-size:18px;
 	height: 29px;
 	width: 318px;
-	background-color: #C9C9C9;
+	background-color: #C1C1C1;
 	font-color: #000000;
 	font-weight: bold;
 	line-height: 30px;
@@ -363,13 +362,27 @@ text-align: center;
 	
 	#best-debates2{
 	margin-top:-29px;
-	margin-left: 577px;
+	margin-left: 538px;
     text-align: center;
 	font-family:"gotham";
 	font-size:18px;
 	height: 29px;
 	width: 318px;
-	background-color: #C9C9C9;
+	background-color: #C1C1C1;
+	font-color: #000000;
+	font-weight: bold;
+	line-height: 30px;
+	}
+	
+	#best-debates4{
+	margin-top:-29px;
+	margin-left: 366px;
+    text-align: center;
+	font-family:"gotham";
+	font-size:18px;
+	height: 29px;
+	width: 318px;
+	background-color: #C1C1C1;
 	font-color: #000000;
 	font-weight: bold;
 	line-height: 30px;
@@ -380,10 +393,10 @@ text-align: center;
 	margin-bottom:50px;
 		
 		#catcatcat{
-		margin-left: 247px;
+		margin-left: 208px;
 		}
 		#best-debates3{
-		margin-left:425px;
+		margin-left:386px;
 		margin-top:-415px;
 		}
 	}
