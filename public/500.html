@@ -18,8 +18,38 @@
 
 <body>
   <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <h1>klnjbhluvgkycfjtxdrsw.</h1>
+<section id="erreurs">
+  <%= render :partial => "shared/flash_messages" %>
+
+  <div class="container">
+	<div class="row">
+		<div class="row" id="intro">
+			Toutes nos excuses.
+		</div>
+	</div>
+    <div class="row">
+      <div class="span4" id ="petit-abo">
+		<div class="cadre13">
+			<div class="titre">
+			Erreur 500.
+			</div>
+			<div class="sous-titre">
+			<%= (["La bergerie est pleine. Trop de moutons.","Le serveur a laché. Notre meilleur agent est sur le coup.","Les serveurs: le pire ennemi des startups."]).shuffle.first%>
+			</div>
+		</div>
+	  </div>
+    </div>
+
+
+	<div class="row" id="intro2">
+		<%= link_to "Cliquez ici pour revenir dans le droit chemin.", root_path %>
+	</div>
+	<div class="row" id="photo-abonnement">
+	<%= link_to (image_tag('moutons-abonnement.png', :alt => 'Moutoners')), root_path %>
+	</div>
   </div>
+
+</section>
+
 </body>
 </html>
