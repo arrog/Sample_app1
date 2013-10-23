@@ -106,7 +106,7 @@
 
 	margin-left:0px;
 	margin-top:15px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	text-align: center;
 	
 	.text1{
@@ -115,14 +115,23 @@
 	font-size: 16px;
 	font-weight: bold;
 	font-style: italic;
+	margin-bottom:20px;
 	}
 	
-	.text1{
-	font-family: "georgia";
+	.text2{
+	width: 427px;
+	background-color: #AAD0FF;
+	margin-left: 210px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+	}
+	
+	.text3{
+	color: black;
+	font-family: "gotham";
 	text-align: center;
-	font-size: 16px;
-	font-weight: bold;
-	font-style: italic;
+	font-size: 19px;
 	}
 	}
 	
@@ -346,7 +355,7 @@
 	
 	#developpement{
 		#new-micropost{
-			background-color: #C9C9C9;
+			background-color: #EEE;
 			margin-left:0px;
 			margin-top:0px;
 			width: 470px;
@@ -412,7 +421,7 @@
 					font-family:"gotham";
 					font-size: 16px;
 					font-weight: bold;
-					padding: 2px 8px 2px 8px;
+					padding: 2px 8px 5px 8px;
 					border: none;
 					border-radius: 0px;
 					color: white;
@@ -496,4 +505,65 @@
 		}
 		}
 	}
+}
+
+#micropost-render{
+	
+	#comment{
+		::-webkit-input-placeholder {
+		   font-family: "gotham";
+		}
+		background-color: #EEE;
+		margin-left:0px;
+		margin-top:0px;
+		width: 470px;
+		min-height: 162px;
+		margin-bottom: 20px;
+
+		word-wrap:break-word;	
+		#gauche-comment{
+			width:155px;
+			#imageuser{
+			width: 55px;
+			img { width: 42px; height:35px;}
+				.image{
+				padding: 10px;
+				}
+			}
+
+			#user{
+			font-family:"gotham";
+			font-size:14px;
+			padding-top:8px;
+			overflow: hidden;
+			}
+
+			#stats-comments{
+			margin-left: 10px;
+			font-family: "bebasneue-font";
+			font-size: 27px;
+				.texte{
+				font-family: "georgia";
+				color: #808080;
+				}
+			}
+		}
+
+
+		#content{
+		word-wrap:break-word;
+		width: 440px;
+		margin-left: 5px;
+		margin-top: 10px;
+		background-color: white;
+		min-height: 70px;
+		padding: 10px;
+		font-family:"georgia";
+		font-size: 14px;
+		text-align:justify;
+		margin-bottom: 10px;
+		}
+
+	}
+
 }

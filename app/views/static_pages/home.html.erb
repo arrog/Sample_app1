@@ -4,7 +4,7 @@
   <div class="container">
 	<div class="row">
 		<div class="row" id="intro">
-		Argumente. Conteste. Vote. Défie. Juge. Débats.
+			Mieux vaut être un mouton noir, qu'un mouton de panurge.
 		</div>
 	</div>
     <div class="row">
@@ -36,8 +36,24 @@
 			</div>
 		  </div>
 			
-          <div id="video_2">
+          <div id="video0">
+				<div class="introduction1">
+				<span class="texte">Soignez votre logorrhée.</span>
+				</div>
+
+				<%= image_tag("fleche-droite.png", class: "image")%>
+				<div class="texte2">Argumente. Conteste. Vote. Défie. Juge. Débats.</div>
 		  </div>
+		
+		  <div id="video1">
+				<div class="introduction1">
+				<span class="texte">Va te faire foutre.</span>
+				</div>
+				<%= image_tag("fleche-gauche.png", class: "image1")%>
+				<%= image_tag("fleche-droite.png", class: "image")%>
+				<div class="texte2">Argumente. Conteste. Vote. Défie. Juge. Débats.</div>
+		  </div>
+		
 			<%else%>
 		  <div id="connecte">
 					<div class="row">
@@ -72,17 +88,23 @@
     <div class="row" id ="explanation1">
 
         <div class="explanation1">
+		<%= link_to image_tag('ouvertb.jpg'), debats_path, class: "image1-expl"%>
+		<%= link_to image_tag('ouvertbleu.jpg'), debats_path, class: "image2-expl"%>
 		  <div class="texte">Débats Ouverts</div>
-          <div class="image"> <%= image_tag('baniere-explication.png', :alt => 'Moutoners') %></div>
+          <div class="image"><%= image_tag('baniere-explication.png', :alt => 'Moutoners') %></div>
         </div>
 
         <div class="explanation2">
+		<%= link_to image_tag('defisb.jpg'), dialectiques_path, class: "image1-expl"%>
+		<%= link_to image_tag('defisbleu.jpg'), dialectiques_path, class: "image2-expl"%>
 		  <div class="texte">Défis</div>
           <div class="image"><%= image_tag('baniere-explication.png', :alt => 'Moutoners') %></div>
         </div>
 
         <div class="explanation3">
-		  <div class="texte">Les Experts</div>	
+		<%= link_to image_tag('expertsb.jpg'), experts_path, class: "image1-expl"%>
+		<%= link_to image_tag('expertsbleu.jpg'), experts_path, class: "image2-expl"%>
+		<div class="texte">Les Experts</div>	
           <div class="image"><%= image_tag('baniere-explication.png', :alt => 'Moutoners') %></div>
         </div>
 

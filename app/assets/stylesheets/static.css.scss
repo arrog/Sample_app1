@@ -23,12 +23,70 @@ text-align: center;
 	margin-top:10px;
 	border-radius: 13px;
 	
-	#video_2{
+	#video0{
 	width: 550px;
 	height: 358px;
 	margin-top: - 378px;
 	margin-left: 300px;
     background-color: #FFF;
+		
+		.image{
+		margin-top: -80px;
+		float: right;
+		margin-right: 20px;
+		}
+		
+		.image1{
+		margin-top: -80px;
+		float: left;
+		margin-left: 20px;
+		}
+		
+		.introduction1{
+		margin-left: 70px;
+		margin-right: 70px;
+		padding-top: 90px;
+		font-family: "gotham";
+		font-size: 36px;
+		line-height: 36px;
+		padding-bottom: 40px;
+		border-bottom: 2px dashed black;
+		}
+		.texte2{
+		margin-left: 70px;
+		margin-right: 70px;
+		padding-top: 30px;
+		font-family: "gotham";
+		font-size: 16px;
+		font-weight	: bold;
+		}
+	}
+	
+	#video1{
+	width: 550px;
+	height: 358px;
+	margin-top: - 378px;
+	margin-left: 300px;
+    background-color: #FFF;
+
+		.introduction1{
+		margin-left: 70px;
+		margin-right: 70px;
+		padding-top: 90px;
+		font-family: "gotham";
+		font-size: 36px;
+		line-height: 36px;
+		padding-bottom: 40px;
+		border-bottom: 2px dashed black;
+		}
+		.texte2{
+		margin-left: 70px;
+		margin-right: 70px;
+		padding-top: 30px;
+		font-family: "gotham";
+		font-size: 16px;
+		font-weight	: bold;
+		}
 	}
 
 	#connecte{
@@ -183,7 +241,7 @@ text-align: center;
 }
 
 #explanation1{
-
+	margin-bottom: 30px;
 }  
   .explanation1 {
 	margin-top: 30px;
@@ -193,11 +251,19 @@ text-align: center;
 	height: 175px;
 	width: 260px;
     padding: 16px 22px 0px 22px;
-	background-color: #C9C9C9;
+
+	
+	.image1-expl{
+	margin-top:0px;
+	}
+	.image2-expl{
+	margin-top:0px;
+	}
 	
 	.texte{
 	position:relative;
-	padding-top: 140px;
+	margin-top: -40px;
+	padding-top: 0px;
 	line-height: 20px;
 	font-weight: bold;
 	font-family:"gotham";
@@ -210,7 +276,7 @@ text-align: center;
 	position:relative;
 	margin-top:-23px;
 	z-index:2;
-	}	
+	}
   }
   
   .explanation2 {
@@ -221,11 +287,17 @@ text-align: center;
 	height: 175px;
 	width: 260px;
     padding: 16px 22px 0px 22px;
-	background-color: #C9C9C9;
+
+	.image1-expl{
+	margin-top:0px;
+	}
+	.image2-expl{
+	margin-top:0px;
+	}
 	
 	.texte{
 	position:relative;
-	padding-top: 140px;
+	margin-top: -40px;
 	line-height: 20px;
 	font-weight: bold;
 	font-family:"gotham";
@@ -249,11 +321,17 @@ text-align: center;
 	height: 175px;
 	width: 260px;
     padding: 16px 22px 0px 22px;
-	background-color: #C9C9C9;
+	
+	.image1-expl{
+	margin-top:0px;
+	}
+	.image2-expl{
+	margin-top:0px;
+	}
 	
 	.texte{
 	position:relative;
-	padding-top: 140px;
+	margin-top: -40px;
 	line-height: 20px;
 	font-weight: bold;
 	font-family:"gotham";
@@ -269,24 +347,6 @@ text-align: center;
 	}
   }	
   
-  .explanation1:hover {
-    background-color: #808080;
-    box-shadow: -3px 3px 15px -4px #000 inset;
-//    .border-radius;
-  }
-
-  .explanation2:hover {
-    background-color: #808080;
-    box-shadow: -3px 3px 15px -4px #000 inset;
-//    .border-radius;
-  }
-
-  .explanation3:hover {
-    background-color: #808080;
-    box-shadow: -3px 3px 15px -4px #000 inset;
-//    .border-radius;
-  }
-	
 
 	#best-debates1{
 	margin-left: 247px;
@@ -331,7 +391,7 @@ text-align: center;
 	
 
 #for-badges{
-	margin-left: 180px;
+	margin-left: 150px;
 	
 	#list{
 	width: 640px;
@@ -410,8 +470,8 @@ text-align: center;
 	#intro-doulin{
 
 	margin-left:0px;
-	margin-top:35px;
-	margin-bottom: 20px;
+	margin-top:30px;
+	margin-bottom: 10px;
 	
 	.texte{
 	font-family: "georgia";

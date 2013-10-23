@@ -37,7 +37,7 @@ class Group < ActiveRecord::Base
   end
   
   def group_debates
-    Debate.where(group: self.id)
+    Debate.where(group: self.id) + self.microposts
   end
   
   def group_challenges

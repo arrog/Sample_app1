@@ -23,12 +23,12 @@ class Debate < ActiveRecord::Base
                         :maximum => 3
 
   has_attached_file :avatar,
-                    :styles =>  { :large => "600x300>", :medium => "165x165>"},
+                    :styles =>  { :large => "600x300>", :medium => "374*222>"},
                     :storage => :s3,
                     :s3_credentials => "#{Rails.root}/config/s3.yml",
                     :path => ":class/:attachment/:id/:style.:extension",
                     :bucket => 'open-debate-avatar',
-                    :default_url => "default_:style.jpg",
+                    :default_url => "imageod.png",
                     :s3_permissions => :private,
                     :s3_host_name => 's3-eu-west-1.amazonaws.com'
   

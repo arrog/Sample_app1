@@ -1,18 +1,10 @@
 <section id="challenge-badge">
   		<div class="row">
 			<div class="span6" id="challenge-badge1">
+				<%= link_to image_tag("image-ld.png"), challenge, class: "image"%>
 				<div class="row">
 					<div class="span1" id="challenge-badge2">
 						<%= image_tag("signe-defi.png", alt: "Moutoners")%>
-						<div class="jugeoubref">
-							<div class="arrow-right"></div>
-							<% if challenge.jugebreve == 1%>
-							<div class="texte">Avec juges</div>
-							<% else%>
-							<div class="texte">Débat bref</div>
-							<% end%>
-							<div class="arrow-left"></div>
-						</div>
 					</div>
 					<div class="span4">
 						<div class="texte">

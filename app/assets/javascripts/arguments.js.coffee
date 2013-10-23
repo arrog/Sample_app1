@@ -21,3 +21,7 @@ $(document).ready ->
   $(".arrow-up-argument").click ->
     $(this).parents(".toggleClose2").hide().siblings("#descente").children("#descente2").children("#coco").children(".toggle").hide().parent().siblings("#title5").children(".cont").show().parent().siblings("#coco1").children(".stats").children(".toggleOpen").show().closest("#initial").siblings(".argcoms").hide().siblings("#initial").children(".modifs").hide().siblings(".modifs2").hide()
 
+
+  $(".toggleClose").click ->
+    $(this).parents(".toggleClose2").hide().siblings("#descente").children("#descente2").children("#coco").children(".toggle").hide().parent().siblings("#title5").children(".cont").show().parent().siblings("#coco1").children(".stats").children(".toggleOpen").show().closest("#initial").siblings(".argcoms").hide().siblings("#initial").children(".modifs").hide().siblings(".modifs2").hide()
+

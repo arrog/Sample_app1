@@ -10,7 +10,17 @@ $(document).ready ->
 
   $("#open-infos").hide() 
   $("#open-infos2").hide()
+  $("#video1").hide()
+  $(".image2-expl").hide()
+
+
+  $(".image1-expl").mouseover ->
+    	$(this).hide().siblings(".image2-expl").show()
+
+  $(".image2-expl").mouseout ->
+    	$(this).hide().siblings(".image1-expl").show()
   
+
 
   $("#fermer-explication").click ->
     	$(this).parent().parent().hide().siblings("#intro-doulin").children(".ouvrir-informations").show()

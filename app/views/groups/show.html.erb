@@ -117,6 +117,7 @@
 					<div class="span4" id='micropostnew'>
 						<div class="field1">
 					    	<%= f.text_area :content, placeholder: " Quelque chose à dire?", class: "field" %>
+							<%= f.hidden_field :group_id, :value => @group.id %>
 						</div>
 						<div class="row">
 							<%= f.submit "publier", class: "submit" %>
@@ -126,10 +127,19 @@
 				</div>
 				<% end %>
 				<% @group.group_debates.each do |l| %>
+					<%= l.class%>
 					<div class="row" id='sharing-badges'>
-						<%= render "shared/debate_badge", debate: l%>
+							 <% if l.class == Debate %>
+							 	<%= render "shared/debate_badge", :debate => l %>
+							<% elsif l.class == Doulin %>
+								<%= render "shared/doulin_badge", :doulin => l %>
+							<% elsif l.class == Challenge %>
+								<%= render "shared/challenge_badge", :challenge => l %>
+							<% elsif l.class == Micropost %>
+									<%= render "shared/micropost", :micropost => l %>
+							<% end %>
 					</div>
-				<% end %>				
+				<% end %>	
 			</div>
 		</div>
 	</div>
