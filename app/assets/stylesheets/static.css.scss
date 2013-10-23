@@ -375,7 +375,8 @@ text-align: center;
 	}
 	
 	#best-debates4{
-	margin-top:-29px;
+	margin-bottom: 50px;
+	margin-top: 10px;
 	margin-left: 366px;
     text-align: center;
 	font-family:"gotham";
@@ -390,7 +391,6 @@ text-align: center;
 	
 
 	#en-bas{
-	margin-bottom:50px;
 		
 		#catcatcat{
 		margin-left: 208px;
@@ -545,3 +545,162 @@ text-align: center;
 	}
 }
 
+
+#abonnements{
+
+	#intro{
+		font-family: "georgia";
+		font-size: 16px;
+		font-style: italic;
+		font-weight: bold;
+		margin-top:23px;
+		width:1060px;
+		margin-left: 20px;
+		text-align: center;
+	}
+	
+	#intro2{
+	    padding-bottom: 15px;
+	    width: 460px;
+		font-family: "georgia";
+		font-size: 16px;
+		font-style: italic;
+		font-weight: bold;
+		margin-top:23px;
+		margin-left: 340px;
+		text-align: center;
+		border-bottom: 1px dashed;
+	}	
+
+	#abobo{
+		font-family: "gotham";
+		font-size: 48px;
+		margin-top:50px;
+		width:1060px;
+		margin-left: 20px;
+		text-align: center;
+	}
+	
+	#petit-abo{
+	height: 157px;
+	width: 340px;
+	border-radius: 13px;
+	background-color: #AAD0FF;
+	margin-top: 50px;
+	margin-left: 202px;
+	
+	.offre2{
+	width:205px;
+	height: 25px;
+	background-color: #C1C1C1;
+	font-family: gotham;
+	font-size: 18px;
+	padding-top: 4px;
+	text-align: center;
+	margin-left:66px;
+	position: relative;
+	z-index: 2;
+	}
+	
+	.cadre13{
+	height: 127px;
+	width: 302px;
+	border-radius: 13px;
+	background-color: #FFF;
+	margin-left: 19px;
+	margin-top: -15px;
+	position: relative;
+	z-index: 1;
+	
+		.titre{
+		font-family: "gotham";
+		font-size: 36px;
+		text-align: center;
+		padding-top: 40px;
+		}
+		
+		.sous-titre{
+		font-family: "georgia";
+		font-size: 16px;
+		font-style: italic;
+		font-weight: bold;
+		padding-top:20px;
+		text-align: center;
+		
+		}
+	}
+	
+	}	
+	
+	#grand-abo{
+	height: 157px;
+	width: 340px;
+	border-radius: 13px;
+	background-color: #AAD0FF;
+	margin-top: 50px;
+	margin-left: 18px;
+	
+	.offre2{
+	width:232px;
+	height: 25px;
+	background-color: #C1C1C1;
+	font-family: gotham;
+	font-size: 18px;
+	padding-top: 4px;
+	text-align: center;
+	margin-left:66px;
+	position: relative;
+	z-index: 2;
+	}
+	
+	.cadre13{
+	height: 127px;
+	width: 302px;
+	border-radius: 13px;
+	background-color: #FFF;
+	margin-left: 19px;
+	margin-top: -15px;
+	position: relative;
+	z-index: 1;
+	
+		.titre{
+		font-family: "gotham";
+		font-size: 36px;
+		text-align: center;
+		padding-top: 40px;
+		}
+		
+		.sous-titre{
+		font-family: "georgia";
+		font-size: 16px;
+		font-style: italic;
+		font-weight: bold;
+		padding-top:20px;
+		text-align: center;
+		
+		}
+	}
+	
+	}
+
+  #promesses{
+  margin-left: 364px;
+  margin-top: 50px;
+  padding-top: 10px;
+  margin-bottom: 30px;
+  padding-left: 25px;
+  background-color: #ADD0FF;
+  height: 130px;
+  width: 335px;
+  color: black;
+  font-family: "gotham";
+  font-size: 34px;
+  line-height: 40px;
+  }
+
+  #photo-abonnement{
+  width: 110px;
+  margin-top: 35px;
+  margin-left: 470px;
+  }
+}

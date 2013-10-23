@@ -136,7 +136,7 @@ SampleApp::Application.routes.draw do
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
-  match '/apprendre', to: 'static_pages#apprendre_a_debattre'
+  match '/abonnements', to: 'static_pages#apprendre_a_debattre'
   match '/cgu',    to: 'static_pages#cgu'
   match '/faq',    to: 'static_pages#faq'
   match '/presse',    to: 'static_pages#presse'
