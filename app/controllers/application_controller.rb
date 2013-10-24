@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
     session[:previous_url] || root_path
   end
   
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
+  
 end

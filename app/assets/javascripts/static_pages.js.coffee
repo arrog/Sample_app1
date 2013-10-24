@@ -10,7 +10,12 @@ $(document).ready ->
 
   $("#open-infos").hide() 
   $("#open-infos2").hide()
-  $("#video1").hide()
+  $("#video01").hide()
+  $("#video02").hide()
+  $("#video03").hide()
+  $("#video2_01").hide()
+  $("#video2_02").hide()
+  $("#video2_03").hide()
   $(".image2-expl").hide()
 
 
@@ -20,6 +25,25 @@ $(document).ready ->
   $(".image2-expl").mouseout ->
     	$(this).hide().siblings(".image1-expl").show()
   
+
+  $(".fleche01").click ->
+    	$(this).parent().hide().siblings("#video01").show()
+
+  $(".fleche02").click ->
+    	$(this).parent().hide().siblings("#video02").show()
+
+  $(".fleche03").click ->
+	   	$(this).parent().hide().siblings("#video03").show()
+
+  $(".fleche10").click ->
+    	$(this).parent().hide().siblings("#video2_01").show()
+
+
+  $(".fleche11").click ->
+    	$(this).parent().hide().siblings("#video2_02").show()
+
+  $(".fleche12").click ->
+    	$(this).parent().hide().siblings("#video2_03").show()
 
 
   $("#fermer-explication").click ->

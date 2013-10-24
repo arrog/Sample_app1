@@ -38,21 +38,34 @@
 			
           <div id="video0">
 				<div class="introduction1">
-				<span class="texte">Soignez votre logorrhée.</span>
+				<span class="texte"><%= @citations.first %></span>
 				</div>
 
-				<%= image_tag("fleche-droite.png", class: "image")%>
+				<%= image_tag("fleche-droite.png", class: "fleche01")%>
 				<div class="texte2">Argumente. Conteste. Vote. Défie. Juge. Débats.</div>
 		  </div>
 		
-		  <div id="video1">
+		  <div id="video01">
 				<div class="introduction1">
-				<span class="texte">Va te faire foutre.</span>
+				<span class="texte"> <%= @citations.second%></span>
 				</div>
-				<%= image_tag("fleche-gauche.png", class: "image1")%>
-				<%= image_tag("fleche-droite.png", class: "image")%>
+				<%= image_tag("fleche-droite.png", class: "fleche02")%>
 				<div class="texte2">Argumente. Conteste. Vote. Défie. Juge. Débats.</div>
 		  </div>
+
+		  <div id="video02">
+				<div class="introduction1">
+				<span class="texte"> <%= @citations.third%></span>
+				</div>
+				<%= image_tag("fleche-droite.png", class: "fleche03")%>
+				<div class="texte2">Argumente. Conteste. Vote. Défie. Juge. Débats.</div>
+		  </div>
+		  <div id="video03">
+				<div class="introduction1">
+				<span class="texte"> <%= @citations.last%></span>
+				</div>
+				<div class="texte2">Argumente. Conteste. Vote. Défie. Juge. Débats.</div>
+		  </div>				
 		
 			<%else%>
 		  <div id="connecte">
@@ -77,8 +90,42 @@
 					<div class="texte5"><%= link_to current_user.challenges_judge.count, current_user, class: "texte5"%></div> <div class="texte2">Jury vacant</div>
 				</div>				
 		  </div>
-		  <div id="video_3">
+		  <div id="video2_0">
+				<div class="intro"><%= @citations2.first[0] %></div>
+				<div class="introduction1">
+				<span class="texte"><%= @citations2.first[1] %></span>
+				</div>
+
+				<%= image_tag("fleche-droite.png", class: "fleche10")%>
+				<div class="texte2"><%= @citations2.first[2] %></div>
 		  </div>
+		  <div id="video2_01">
+				<div class="intro"><%= @citations2.second[0] %></div>
+				<div class="introduction1">
+				<span class="texte"><%= @citations2.second[1] %></span>
+				</div>
+
+				<%= image_tag("fleche-droite.png", class: "fleche11")%>
+				<div class="texte2"><%= @citations2.second[2] %></div>
+		  </div>
+		  <div id="video2_02">
+				<div class="intro"><%= @citations2.third[0] %></div>
+				<div class="introduction1">
+				<span class="texte"><%= @citations2.third[1] %></span>
+				</div>
+
+				<%= image_tag("fleche-droite.png", class: "fleche12")%>
+				<div class="texte2"><%= @citations2.third[2] %></div>
+		  </div>
+		  <div id="video2_03">
+				<div class="intro"><%= @citations2.last[0] %></div>
+				<div class="introduction1">
+				<span class="texte"><%= @citations2.last[1] %></span>
+				</div>
+
+				<div class="texte2"><%= @citations2.last[2] %></div>
+		  </div>
+		
 			<%end%>	
 				
 		</div>
