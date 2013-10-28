@@ -62,13 +62,7 @@
 				<div class="row" id="description-challenge">
 					<%= f.text_area :context, class: "description", placeholder: "Description" %>	
 				</div>
-				<div class="emotion2" id="typedeb3">
-					<%= radio_button_tag "challenge[jugebreve]", 0, challenge.jugebreve == 0, :checked => 0 %>
-					<label for="challenge_jugebreve_0" class="selected" id="choix5"><span class= "texte">Débat Bref</span></label>
-					
-					<%= radio_button_tag "challenge[jugebreve]", 1, challenge.jugebreve == 1 %>
-					<label for="challenge_jugebreve_1" class="non-selected" id="choix6"><span class= "texte">Avec Juges</span></label>
-				</div>
+
 				<div class="row" id="tags_challenge">
 					<%= f.text_field :tag_list, class: "tags", placeholder: "Tag1, Tag2, Tag3 ..."%>
 				</div>

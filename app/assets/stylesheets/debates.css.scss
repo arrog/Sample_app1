@@ -4,13 +4,20 @@
 	}
 	
 	#title{
-	background-color: #C9C9C9;
+	background-color: #FFF;
 	min-height:260px;
 	width: 780px;
 	margin-top:20px;
-	margin-left:62px;
+	margin-left:47px;
 	margin-bottom: 30px;
 
+	
+	border-style: solid;
+	border-width: 14px;
+	-moz-border-image: url(border.png) 10 repeat;
+	-webkit-border-image: url(border.png) 10 repeat;
+	-o-border-image: url(border.png) 10 repeat;
+	border-image: url(border.png) 13 fill repeat;
 		
 		.image1{
 		background-color: #C9C9C9;
@@ -323,10 +330,12 @@
 	
 	#follow{
 	margin-top:-235px;
-	margin-left:942px;
+	margin-left:948px;
 	height:  24px;
 	width: 90px;
 	background-color: #808080;
+	position: relative;
+	z-index:1;
 	
 	.texte{
 		font-family: "gotham";
@@ -368,8 +377,8 @@
 	
 	
 	#catcat{
-	margin-top:-195px;
-	margin-left:942px;
+	margin-top:-215px;
+	margin-left:949px;
 	height:65px;
 	width:90px;
 	background-color:#AAD0FF;

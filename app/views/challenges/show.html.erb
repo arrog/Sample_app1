@@ -1,3 +1,5 @@
+<%= @challenge.comments.count%>
+
 <section id="challenge">
 	<div class="container">
 
@@ -308,20 +310,20 @@
 		<div class='row'>
 			<div class="row" id="comments-to-close">
 				<% if @challenge.comments.any?%> 
-					<%= render "shared/comment_badge", comment:@challenge.comments.first%>
+					<%= render "comments/comment", comment:@challenge.comments.last%>
 					<%if @challenge.comments.count > 1 %>
-						<%= render "shared/comment_badge", comment:@challenge.comments.second%>
+						<%= render "comments/comment", comment:@challenge.comments.second%>
 					<% end%>
 				<%end%>					
 			</div>
 			<div class="row" id="comments-to-open">
 				<% @challenge.comments.each do |m| %>
-					<%= render "shared/comment_badge", comment: m%>
+					<%= render "comments/comment", comment: m %>
 			    <% end %>
 			</div>
 			
 			<% if current_user %>
-			<div class="row"><%= render "shared/comment_form", commentable: @challenge, type: Challenge, comment: @challenge.comments.new%></div>
+			<div class="row" id="okok"><%= render "shared/comment_form", commentable: @challenge, type: Challenge, comment: @challenge.comments.new%></div>
 			<%else%>
 
 			<% end %>

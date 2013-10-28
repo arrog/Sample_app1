@@ -2,15 +2,15 @@ class CommentsController < ApplicationController
   before_filter :authenticate_user!, only: [:create, :destroy]
   before_filter :correct_user,   only: :destroy
   
-
   def create
         @comment = Comment.new(params[:comment])
         @comment.user = current_user
+          
         if @comment.save
-          flash[:success] = "Comment created!"
-          redirect_to :back
+          @comments = @comment.commentable.comments 
+          render :partial => "comments/comment", :locals => { :comment => @comment }, :layout => false, :status => :created
         else
-          render 'static_pages/home'
+          render :js => "alert('error saving comment');"
         end
   end
 

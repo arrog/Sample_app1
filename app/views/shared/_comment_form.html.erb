@@ -15,8 +15,8 @@
 					Connecte toi
 				<% end%>
 			</div>
-			<div class="span4" id="content">
-				<%= form_for comment do |f| %>
+			<div class="span4" id="comment-form">
+				<%= form_for comment, remote: true do |f| %>
 				  <%= render 'shared/error_messages', object: f.object %>
 				  <div class="field">
 				    <%= f.text_area :content, placeholder: "Réagis!", class: "content" %>
