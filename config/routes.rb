@@ -146,6 +146,10 @@ SampleApp::Application.routes.draw do
   match '/dialectiques',    to: 'static_pages#list_challenges'
   match '/debats',    to: 'static_pages#list_debates'
   
+  match '/404', :to => 'errors#not_found'
+  match '/422', :to => 'errors#server_error'
+  match '/500', :to => 'errors#server_error'
+  
   get 'tags/:tag', to: 'static_pages#list', as: :tag
   
   match "/search_results/" => "static_pages#search_results", :via => :get, :as =>"search_results"

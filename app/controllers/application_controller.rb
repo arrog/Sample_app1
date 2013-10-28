@@ -20,17 +20,4 @@ class ApplicationController < ActionController::Base
     session[:previous_url] || root_path
   end
   
-  unless Rails.application.config.consider_all_requests_local
-      rescue_from ActiveRecord::RecordNotFound,
-                  ActionController::RoutingError,
-                  ActionController::UnknownController,
-                  ActionController::UnknownAction,
-                  ActionController::MethodNotAllowed do |exception|
-
-        # Put loggers here, if desired.
-        redirect_to faq_path
-        
-      end
-    end
-  
 end
