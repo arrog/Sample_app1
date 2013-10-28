@@ -28,8 +28,8 @@ class ApplicationController < ActionController::Base
                   ActionController::MethodNotAllowed do |exception|
 
         # Put loggers here, if desired.
-
         redirect_to faq_path
+        
       end
     end
   
