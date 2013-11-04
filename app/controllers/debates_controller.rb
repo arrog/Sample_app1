@@ -65,11 +65,14 @@ class DebatesController < ApplicationController
   
   def vote
      value = params[:type] == "up" ? 1 :
-        value = params[:type] == "down" ? -1 : 0
+     value = params[:type] == "down" ? -1 : 0
      @debate = Debate.find(params[:id])
      @debate.add_or_update_evaluation(:votes, value, current_user)
      @debate.create_activity :vote, owner: current_user
-     redirect_to :back, notice: "Thank you for voting"
+     respond_to do |format|
+       format.html {redirect_to :back}
+       format.js
+     end
   end
   
   def publish

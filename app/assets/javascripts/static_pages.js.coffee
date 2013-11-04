@@ -9,7 +9,7 @@ $(document).ready ->
  $ ->
 
   $("#open-infos").hide() 
-  $("#open-infos2").hide()
+  $("#open-infos2").hide() 
   $("#video01").hide()
   $("#video02").hide()
   $("#video03").hide()

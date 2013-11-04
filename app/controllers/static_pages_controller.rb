@@ -84,6 +84,15 @@ class StaticPagesController < ApplicationController
     end
   end
   
+  def list_ajoindre
+    if params[:cat] && !params[:cat].empty?
+      @current_category = Cat.find(params[:cat])
+      @challenges = Challenge.where(:cat_id => @current_category.id).incomplete
+    else
+      @challenges = Challenge.incomplete.all.paginate(:page => params[:page], :per_page =>8)
+    end
+  end
+  
   
   def search_results
     @challenges = Challenge.tagged_with("#{params[:search]}")

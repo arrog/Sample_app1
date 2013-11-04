@@ -653,6 +653,96 @@ text-align: center;
 		background-color: #C9C9C9;
 		height: 270px;
 		
+		
+		#informations-challenge{
+		margin: 15px 0px 0px 0px;
+		border-bottom: 1px Dashed black;
+		
+			#textexp{
+			margin-left: 40px;
+			padding-bottom:15px;
+			font-family: "gotham";
+			font-size: 19px;
+			line-height: 22px;
+			}
+			
+			#fermer-explication{
+			font-family: "gotham";
+			font-size: 16px;
+			margin-top: 5px;
+			margin-left: 70px;
+			width:5px;
+			cursor: pointer;
+			font-family: "helvetica-light";
+			font-size: 20px;
+			
+			}
+			
+			#fermer-explication1{
+			font-family: "gotham";
+			font-size: 16px;
+			margin-top: 5px;
+			margin-left: 70px;
+			width:5px;
+			cursor: pointer;
+			font-family: "helvetica-light";
+			font-size: 20px;
+			
+			}
+		}
+		#ouvrons-encore{
+		.image-gauche{
+			margin-left: 40px;
+			margin-top:30px;
+		}
+		
+		.titre{
+		margin-left: 40px;
+		height: 28px;
+		margin-top: 70px;
+		background-color: #808080;
+		font-family: "gotham";
+		font-size: 17px;
+		text-align: center;
+		padding-top: 7px;
+		
+			.challenge{
+			color: white;
+			padding-top: 30px;
+			}
+		}
+		
+		.sous-titre{
+		margin-left: 40px;
+		font-family: "georgia";
+		font-size: 14px;
+		font-style: italic;
+		margin-top: 15px;
+		}
+		}
+		
+		.image1{
+		height: 90px;
+		width: 150px;
+		margin-top: 15px;
+		margin-left: 15px;
+		background-color: #808080;
+		}
+		.titre1{
+		margin-left: 15px;
+		font-family: "gotham";
+		font-size: 15px;
+		margin-top: 5px;
+		}
+		
+		.soustitre1{
+		margin-left: 15px;
+		margin-top: 5px;
+		font-family: "georgia";
+		font-size: 14px;
+		font-style: italic;
+		}
+		
 		#informations-doulin1{
 			margin-top: 75px;
 			margin-left: 20px;
@@ -751,30 +841,52 @@ text-align: center;
 	}
 	
 	#challenge-header{
-		margin-top: 30px;
-		margin-bottom: 40px;
-		font-family: "georgia";
-		font-style: italic;
+		margin-top: 10px;
+		font-family: "gotham";
+		font-size: 18px;
+		margin-left:193px;
+		
+		#challengebutton{
+		margin-left: 0px;
+		margin-top: 20px;
+	    text-align: center;
+		font-family:"gotham";
+		font-size:18px;
+		height: 29px;
+		width: 238px;
+		background-color: #C1C1C1;
+		font-color: #000000;
 		font-weight: bold;
-		font-size: 20px;
-		margin-left:200px;
-
-
-		li {
-	      display: inline-block;
-		  padding-right: 20px;
-				cursor : pointer;
-
-	    }
-
-		.tiret{
-		color: #808080;
-		font-size: 21px;
+		line-height: 30px;
 		}
-
-	    li.active, li:hover {
-			text-decoration:underline;
-	    }
+		
+		#challengebutton1{
+		margin-left: 250px;
+		margin-top: -29px;
+	    text-align: center;
+		font-family:"gotham";
+		font-size:18px;
+		height: 29px;
+		width: 238px;
+		background-color: #C1C1C1;
+		font-color: #000000;
+		font-weight: bold;
+		line-height: 30px;
+		}
+		
+		#challengebutton2{
+		margin-left: 500px;
+		margin-top: -29px;
+	    text-align: center;
+		font-family:"gotham";
+		font-size:18px;
+		height: 29px;
+		width: 238px;
+		background-color: #C1C1C1;
+		font-color: #000000;
+		font-weight: bold;
+		line-height: 30px;
+		}
 	}
 }
 

@@ -14,13 +14,13 @@
 		<%end%>
 		
 		
-		<div class="espace"></div>
+		
 		
 		
 		
 		<% if @challenge.jugebreve == 0 %>
-			Ceci est une brève (sans juge)
 		<% else%>
+		<div class="espace"></div>
 		<div class="row">
 			<div class="span9 offset2" id="juges">
 				<div class="row">
@@ -306,7 +306,7 @@
 		<%end%>
 		<div class="espace"></div>
 		
-					<div class="span3 offset4"><%= link_to "Pour réagir, il faut se connecter", new_session_path(resource_name)%></div>
+		
 		<div class='row'>
 			<div class="row" id="comments-to-close">
 				<% if @challenge.comments.any?%> 
@@ -325,7 +325,9 @@
 			<% if current_user %>
 			<div class="row" id="okok"><%= render "shared/comment_form", commentable: @challenge, type: Challenge, comment: @challenge.comments.new%></div>
 			<%else%>
-
+			<div class="row" id="allezvousconnecter">
+				<%= link_to "Pour réagir, il faut se connecter", new_session_path(resource_name), class: "ok"%>
+			</div>
 			<% end %>
 			
 			<div class="row" id ="openning-comments">

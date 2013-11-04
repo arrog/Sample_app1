@@ -144,6 +144,7 @@ SampleApp::Application.routes.draw do
   match '/list',    to: 'static_pages#list'
   match '/experts',    to: 'static_pages#list_doulins'
   match '/dialectiques',    to: 'static_pages#list_challenges'
+  match '/incomplets', to:'static_pages#list_ajoindre'
   match '/debats',    to: 'static_pages#list_debates'
   
   match '/404', :to => 'errors#not_found'
