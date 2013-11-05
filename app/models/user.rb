@@ -49,6 +49,8 @@ class User < ActiveRecord::Base
   has_many :invitations, foreign_key: "sender_id", dependent: :destroy
   has_many :reverse_invitations, foreign_key: "reciever_id", class_name:  "Invitation", dependent:   :destroy
   
+  has_many :flags
+  
   has_attached_file :avatar,
                     :styles =>  { :large => "300x300>", :medium => "150x150>", :small => "50x50>", :tiny => "30x30>" },
                     :storage => :s3,
@@ -300,11 +302,13 @@ class User < ActiveRecord::Base
       b.each do |l|
         if self.in_challenge?(l.challenge)
           a
+        elsif l.challenge.position_taken.include?(l.position)
+          a
         else
           a = a + [l]
         end
       end
-        
+        a
     end
     
     def team_request

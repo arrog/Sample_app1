@@ -1,4 +1,3 @@
-<div id="vote_count"><%= @debate.count_for%></div>
 <section id="open-debate">
 	<div class="container">
 	
@@ -55,10 +54,10 @@
 						<div class="row" id="vote">
 							<span class="vote2">VOTEZ</span>
 							<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == 1.0 %>
-				 			<li class="oui-oui2"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :remote => true, :class => "oui" %>
+				 			<li class="oui-oui2"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>
 							</li>
 							<% else%>
-				 			<li class="oui-oui"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :remote => true, :class => "oui" %>
+				 			<li class="oui-oui"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>
 							</li>							
 							<% end%>
 							<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == 0.0 %>

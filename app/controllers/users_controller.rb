@@ -20,6 +20,21 @@ class UsersController < ApplicationController
       end
   end
   
+  def sesdefis
+    @user = User.find(params[:id])
+    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: @user.id, trackable_type: "Challenge", key: "challenge.join")
+  end
+  
+  def sesvotes
+    @user = User.find(params[:id])
+    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: @user.id, key: ["debate.vote", "challenge.vote"])
+  end  
+
+  def sesdebatsouverts
+    @user = User.find(params[:id])
+    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: @user.id, trackable_type: "Argument", key: "argument.create")
+  end
+  
   def notifications
     @user = User.find(params[:id])
   end

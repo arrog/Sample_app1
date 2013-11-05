@@ -7,6 +7,7 @@ class Argument < ActiveRecord::Base
   belongs_to :user
   belongs_to :argumentable, polymorphic: true
   has_many :argcoms
+  has_many :flags
   
   has_reputation :likes, source: :user, aggregated_by: :sum
   has_many :evaluations, class_name: "ReputationSystem::Evaluation", as: :target

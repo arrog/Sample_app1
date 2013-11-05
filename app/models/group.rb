@@ -36,6 +36,14 @@ class Group < ActiveRecord::Base
     memberships.create(user_id: user.id, state:"invited")
   end
   
+  def gdebates
+  Debate.where(group: self.id)
+  end
+  
+  def gchallenges
+  Challenge.where(group: self.id)
+  end
+  
   def group_debates
     Debate.where(group: self.id) + self.microposts
   end

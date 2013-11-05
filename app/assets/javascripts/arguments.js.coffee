@@ -11,12 +11,26 @@ $(document).ready ->
   $(".argcoms").hide()
   $('.modifs').hide()
   $('.modifs2').hide()
+  $('.effacersur').hide()
+  $('.signalisation').hide()
+  $('.finalementnon2').hide()
+  
+  
+  $(".flags").mouseover ->
+    	$(this).hide().siblings(".signalisation").show().siblings(".finalementnon2").show()
+
+  $(".effacer").click ->
+    	$(this).hide().siblings('.texte').hide().siblings('.effacersur').show()
+
+  $(".finalementnon").click ->
+    	$(this).parent().hide().siblings('.texte').show().siblings('.effacer').show()
+
+  $(".finalementnon2").click ->
+    	$(this).parent().hide()
 
 
   $(".toggleOpen").click ->
-    	$(this).hide().parent().parent().next("#coco").children(".toggle").slideDown("medium").parent().siblings("#title5").children(".cont").hide().parent().parent().parent().siblings(".toggleClose2").show().closest("#initial").siblings(".argcoms").show().siblings("#initial").children(".modifs").show().siblings(".modifs2").show()
-	    
-	 
+    	$(this).hide().parent().parent().next("#coco").children(".toggle").slideDown("medium").parent().siblings("#title5").children(".cont").hide().parent().parent().parent().siblings(".toggleClose2").show().closest("#initial").siblings(".argcoms").show().siblings("#initial").children(".modifs").show()
 
   $(".arrow-up-argument").click ->
     $(this).parents(".toggleClose2").hide().siblings("#descente").children("#descente2").children("#coco").children(".toggle").hide().parent().siblings("#title5").children(".cont").show().parent().siblings("#coco1").children(".stats").children(".toggleOpen").show().closest("#initial").siblings(".argcoms").hide().siblings("#initial").children(".modifs").hide().siblings(".modifs2").hide()

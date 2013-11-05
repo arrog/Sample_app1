@@ -124,24 +124,33 @@
 	li {
       display: inline-block;
 	  margin-right: 30px;
-			cursor : pointer;
-	padding:5px 15px;
-
+	cursor : pointer;
+	padding:7px 3px;
+	color: white;
     }
 	
-	.tiret{
-	color: #808080;
-	font-size: 21px;
+	.a{color: white;}
+	
+	.active{
+	background-color: #AAD0FF;
+	color: black;
+	padding:5px 15px;
 	}
-  
-    li.active, li:hover {
-		background-color: #AAD0FF;
-		color: black;
-    }
 
+   li:hover {
+		background-color: #AAD0FF;
+		color: #000;
+		text-decoration:underline;
+    }
+	
+	.text3:hover{
+	background-color: #AAD0FF;
+	color: #000;
+	text-decoration:underline;
+	}
 	.text3{
 	color: #000;
-	text-decoration:none;
+	text-decoration:underline;
 	}
 }
 
@@ -266,6 +275,12 @@
 
 	.div{
 	diplay: inline-block;
+	}
+	
+	#container-activ3{
+	margin-top:0px;
+	width: 650px;
+	margin-left: 20px;
 	}
 	
 	#container-activ2{

@@ -19,8 +19,13 @@ class GroupsController < ApplicationController
     
   def show
       @group = Group.find(params[:id])
+      @debates = @group.gdebates
+      @challenges = @group.gchallenges
+      @microposts = @group.microposts
+      @total = (@microposts + @debates + @challenges).shuffle 
       @debate = Debate.new
       @challenge = Challenge.new
+      
   end
   
   def members

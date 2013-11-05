@@ -126,8 +126,7 @@
 					<% end %>
 				</div>
 				<% end %>
-				<% @group.group_debates.each do |l| %>
-					<%= l.class%>
+				<% @total.each do |l| %>
 					<div class="row" id='sharing-badges'>
 							 <% if l.class == Debate %>
 							 	<%= render "shared/debate_badge", :debate => l %>

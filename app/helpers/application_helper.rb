@@ -22,6 +22,14 @@ module ApplicationHelper
      :user
     end
     
+    def cp(path)
+      if current_page?(path)
+        "active"
+      else
+        "text3"
+      end
+    end
+    
     def resource
      @resource ||= User.new
     end

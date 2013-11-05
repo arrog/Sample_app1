@@ -20,23 +20,19 @@
 					</div>
 
 					<div class='invitation-fermer-fc'>
-						<div class="texte">
-						<% if current_user && current_user.performances.where(position:3, challenge_id: @challenge.id).any? %>
-							Forme un duo de choc
-						<% else %>
-							Invite un adversaire à ta taille
-						<% end%>
-						</div>
-						<% if current_user%>
-						<%= form_for @challenge.invitations.new do |f|%>
-						<%= f.select(:reciever_id, current_user.circle.collect {|a| [a.fitting_name, a.id]}) %>
+							<% if current_user && current_user.circle == []%>
+							<div class="texte">Il faut se faire un cercle de connaissances sur moutoners!</div>
+							<% elsif current_user %>
+							<div class="texte"> Un peu de niveau hein? </div>
+							<%= form_for @challenge.invitations.new do |f|%>
+							<%= f.select(:reciever_id, current_user.circle.collect {|a| [a.fitting_name, a.id]}, { :include_blank=>true }, { :class => 'selector'}) %>
 
-						<%= f.hidden_field :position, :value => 1 %>
-						<%= f.hidden_field :challenge_id, :value => @challenge.id %>
-						<%= f.hidden_field :sender_id, :value => current_user.id %>
-					  	<%= f.submit "Inviter", :class => 'act' %> <div id="fermer-invitation-fc">FERMER</div>
-						<%end%>
-						<% end%>
+							<%= f.hidden_field :position, :value => 1 %>
+							<%= f.hidden_field :challenge_id, :value => @challenge.id %>
+							<%= f.hidden_field :sender_id, :value => current_user.id %>
+						  	<%= f.submit "INVITER", :class => 'act' %> <div id="fermer-invitation-fc">FERMER</div>
+							<%end%>
+							<% end%>
 					</div>
 					<div class="first_user">
 						<% if @challenge.position_taken.include?(1)%>
@@ -48,9 +44,11 @@
 					              join_one_challenge_path(@challenge) ,:method => :post) %></div>
 						<%end%>
 					</div>
+					<% if @challenge.jugebreve == 1%>
 					<div class='first_grade'>
 						<div class='texte'><%= @challenge.grade_one%> / 10</div>
 					</div>
+					<% end %>
 				</div>
 				
 				<div class="row" id="equipe3">
@@ -70,23 +68,19 @@
 					</div>
 
 					<div class='invitation-fermer3-fc'>
-						<div class="texte">
-						<% if current_user && current_user.performances.where(position:1, challenge_id: @challenge.id).any?%>
-							Forme un duo de choc
-						<% else %>
-							Invite un adversaire à ta taille
-						<% end%>
-						</div>
-						<% if current_user%>
-						<%= form_for @challenge.invitations.new do |f|%>
-						<%= f.select(:reciever_id, current_user.circle.collect {|a| [a.fitting_name, a.id]}) %>
+							<% if current_user && current_user.circle == []%>
+							<div class="texte">Il faut se faire un cercle de connaissances sur moutoners!</div>
+							<% elsif current_user %>
+							<div class="texte"> Un peu de niveau hein? </div>
+							<%= form_for @challenge.invitations.new do |f|%>
+							<%= f.select(:reciever_id, current_user.circle.collect {|a| [a.fitting_name, a.id]}, { :include_blank=>true }, { :class => 'selector'}) %>
 
-						<%= f.hidden_field :position, :value => 3 %>
-						<%= f.hidden_field :challenge_id, :value => @challenge.id %>
-						<%= f.hidden_field :sender_id, :value => current_user.id %>
-					  	<%= f.submit "Inviter", :class => 'act' %> <div id="fermer-invitation3-fc">FERMER</div>
-						<%end%>
-						<% end%>
+							<%= f.hidden_field :position, :value => 3 %>
+							<%= f.hidden_field :challenge_id, :value => @challenge.id %>
+							<%= f.hidden_field :sender_id, :value => current_user.id %>
+						  	<%= f.submit "INVITER", :class => 'act' %> <div id="fermer-invitation3-fc">FERMER</div>
+							<%end%>
+							<% end%>
 					</div>
 					<div class="first_user">
 						<% if @challenge.position_taken.include?(3)%>
@@ -98,10 +92,12 @@
 					              join_three_challenge_path(@challenge) ,:method => :post) %></div>
 						<%end%>
 					</div>
-
+					
+					<% if @challenge.jugebreve == 1%>
 					<div class='first_grade'>
 						<div class='texte'><%= @challenge.grade_three%> / 10</div>
 					</div>
+					<% end %>
 				</div>								
 			</div>
 			
@@ -262,23 +258,19 @@
 					</div>
 
 					<div class='invitation-fermer1-fc'>
-						<div class="texte">
-						<% if current_user && current_user.performances.where(position:4, challenge_id: @challenge.id).any? %>
-							Forme un duo de choc
-						<% else %>
-							Invite un adversaire à ta taille
-						<% end%>
-						</div>
-						<% if current_user%>
-						<%= form_for @challenge.invitations.new do |f|%>
-						<%= f.select(:reciever_id, current_user.circle.collect {|a| [a.fitting_name, a.id]}) %>
+							<% if current_user && current_user.circle == []%>
+							<div class="texte">Il faut se faire un cercle de connaissances sur moutoners!</div>
+							<% elsif current_user %>
+							<div class="texte"> Un peu de niveau hein? </div>
+							<%= form_for @challenge.invitations.new do |f|%>
+							<%= f.select(:reciever_id, current_user.circle.collect {|a| [a.fitting_name, a.id]}, { :include_blank=>true }, { :class => 'selector'}) %>
 
-						<%= f.hidden_field :position, :value => 2 %>
-						<%= f.hidden_field :challenge_id, :value => @challenge.id %>
-						<%= f.hidden_field :sender_id, :value => current_user.id %>
-					  	<%= f.submit "Inviter", :class => 'act' %> <div id="fermer-invitation1-fc">FERMER</div>
-						<%end%>
-						<% end%>
+							<%= f.hidden_field :position, :value => 2 %>
+							<%= f.hidden_field :challenge_id, :value => @challenge.id %>
+							<%= f.hidden_field :sender_id, :value => current_user.id %>
+						  	<%= f.submit "INVITER", :class => 'act' %> <div id="fermer-invitation1-fc">FERMER</div>
+							<%end%>
+							<% end%>
 					</div>
 					<div class="second_user">
 						<% if @challenge.position_taken.include?(2)%>
@@ -290,9 +282,12 @@
 					              join_two_challenge_path(@challenge) ,:method => :post) %></div>
 						<%end%>
 					</div>
+					
+					<% if @challenge.jugebreve == 1%>
 					<div class='second_grade'>
 						<div class='texte'><%= @challenge.grade_two%> / 10</div>
 					</div>
+					<% end %>
 				</div>
 				<div class="row" id="equipe4">
 					 Plutôt pas d'accord
@@ -311,23 +306,19 @@
 					</div>
 
 					<div class='invitation-fermer4-fc'>
-						<div class="texte">
-						<% if current_user && current_user.performances.where(position:2, challenge_id: @challenge.id).any?%>
-							Forme un duo de choc
-						<% else %>
-							Invite un adversaire à ta taille
-						<% end%>
-						</div>
-						<% if current_user%>
-						<%= form_for @challenge.invitations.new do |f|%>
-						<%= f.select(:reciever_id, current_user.circle.collect {|a| [a.fitting_name, a.id]}) %>
+							<% if current_user && current_user.circle == []%>
+							<div class="texte">Il faut se faire un cercle de connaissances sur moutoners!</div>
+							<% elsif current_user %>
+							<div class="texte"> Un peu de niveau hein? </div>
+							<%= form_for @challenge.invitations.new do |f|%>
+							<%= f.select(:reciever_id, current_user.circle.collect {|a| [a.fitting_name, a.id]}, { :include_blank=>true }, { :class => 'selector'}) %>
 
-						<%= f.hidden_field :position, :value => 4 %>
-						<%= f.hidden_field :challenge_id, :value => @challenge.id %>
-						<%= f.hidden_field :sender_id, :value => current_user.id %>
-					  	<%= f.submit "Inviter", :class => 'act' %> <div id="fermer-invitation4-fc">FERMER</div>
-						<%end%>
-						<% end%>
+							<%= f.hidden_field :position, :value => 4 %>
+							<%= f.hidden_field :challenge_id, :value => @challenge.id %>
+							<%= f.hidden_field :sender_id, :value => current_user.id %>
+						  	<%= f.submit "INVITER", :class => 'act' %> <div id="fermer-invitation4-fc">FERMER</div>
+							<%end%>
+							<% end%>
 					</div>
 					<div class="second_user">
 						<% if @challenge.position_taken.include?(4)%>
@@ -339,10 +330,11 @@
 					              join_four_challenge_path(@challenge) ,:method => :post) %></div>
 						<%end%>
 					</div>
-
+					<% if @challenge.jugebreve == 1%>
 					<div class='second_grade'>
 						<div class='texte'><%= @challenge.grade_four%> / 10</div>
 					</div>
+					<% end %>
 				</div>				
 			</div>
 		</div>

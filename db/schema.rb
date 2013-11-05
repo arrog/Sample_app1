@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130811164836) do
+ActiveRecord::Schema.define(:version => 20131105144343) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20130811164836) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.integer  "position"
+    t.integer  "flagg"
   end
 
   add_index "arguments", ["argumentable_id", "argumentable_type"], :name => "index_arguments_on_argumentable_id_and_argumentable_type"
@@ -123,6 +124,13 @@ ActiveRecord::Schema.define(:version => 20130811164836) do
     t.integer  "position"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "flags", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "argument_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "follows", :force => true do |t|

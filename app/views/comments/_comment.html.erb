@@ -27,12 +27,6 @@
 			</div>
 			<div class="span4" id="content">
 				<%= h Rinku.auto_link(comment.content).gsub(/\n/, '<br/>').html_safe  %>
-				</br>
-				<% if current_user?(comment.user) %>
-			    <%= link_to "delete", comment, method: :delete,
-			                                     data: { confirm: "You sure?" },
-			                                     title: comment.content %>
-			  <% end %>
 			</div>
 		</div>
 	</div>

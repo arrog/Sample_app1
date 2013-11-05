@@ -8,9 +8,7 @@ class CommentsController < ApplicationController
           
         if @comment.save
           @comments = @comment.commentable.comments 
-          render :partial => "comments/comment", :locals => { :comment => @comment }, :layout => false, :status => :created
-        else
-          render :js => "alert('error saving comment');"
+          redirect_to :back
         end
   end
 

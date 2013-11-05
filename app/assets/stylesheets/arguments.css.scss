@@ -102,27 +102,92 @@
 
 #argument-pour{
 
+	
+	
 	.modifs{
 		margin-left:534px;
-		width: 80px;
 		margin-top: 20px;
-				margin-bottom: -68px;
+		margin-bottom: -70px;
 		font-family: "gotham";
 		font-size: 16px;
 		color: white;
 		font-weight: bold;
 		text-align: center;
 		
+		.flags{
+		height: 50px;
+		width: 48px;
+		}
+		.finalementnon2{
+		padding-top: 2px;
+		height: 22px;
+		background-color: #839AB2;
+		color: white;
+		width: 80px;
+		cursor: pointer;
+		}
+		
+		.signalisation{
+		padding-top: 2px;
+		height: 24px;
+		width: 80px;
+		background-color: #C9C9C9;
+		color: white;
+		cursor: pointer;
+		font-family: "gotham";
+		font-size: 16px;
+		border-radius:0px;
+		border: none;
+		}
+		
+		.finalementnon{
+		padding-top: 2px;
+		height: 22px;
+		background-color: #839AB2;
+		color: white;
+		width: 80px;
+		cursor: pointer;
+		}
+		
 		.texte{
 		padding-top: 2px;
 		height: 22px;
 		background-color: #839AB2;
 		color: white;
+		width: 80px;		
+		cursor: pointer;
 		}
 		.texte2{
+		padding-top: 2px;
 		height: 24px;
+		width: 80px;
 		background-color: #C9C9C9;
 		color: white;
+		cursor: pointer;
+		font-family: "gotham";
+		font-size: 16px;
+		border-radius:0px;
+		border: none;
+		}
+		
+		.effacer{
+		padding-top: 2px;
+		height: 24px;
+		width: 80px;
+		background-color: #C9C9C9;
+		color: white;
+		cursor: pointer;
+		}
+		
+		.effacersur{
+			.texte3{
+			width: 300px;
+			background-color: black;
+			height: 22px;
+			padding-top: 2px;
+			color: white;
+			
+			}
 		}	
 	}
 	
@@ -304,7 +369,6 @@
 	
 	.modifs{
 		margin-left:534px;
-		width: 80px;
 		margin-top: 20px;
 		margin-bottom: -68px;
 		font-family: "gotham";
@@ -313,16 +377,83 @@
 		font-weight: bold;
 		text-align: center;
 		
-		.texte{
+		.flags{
+		height: 48px;
+		width: 48px;
+		}
+		
+		.effacer{
+		width: 80px;
+		height: 22px;
+		padding-top: 2px;
+		background-color: #C9C9C9;
+		color: white;
+		cursor: pointer;
+		}
+		
+		.finalementnon{
+		width: 80px;
 		padding-top: 2px;
 		height: 22px;
 		background-color: #808080;
 		color: white;
+		cursor: pointer;
 		}
-		.texte2{
-		height: 24px;
+		
+		.finalementnon2{
+		width: 80px;
+		padding-top: 2px;
+		height: 22px;
+		background-color: #808080;
+		color: white;
+		cursor: pointer;
+		}
+		
+		.signalisation{
+		width: 80px;
+		height: 22px;
+		padding-top: 2px;
 		background-color: #C9C9C9;
 		color: white;
+		cursor: pointer;
+		font-family: "gotham";
+		font-size: 16px;
+		border-radius:0px;
+		border: none;
+		}
+		
+		.texte{
+		width: 80px;
+		padding-top: 2px;
+		height: 22px;
+		background-color: #808080;
+		color: white;
+		cursor: pointer;
+		}
+		.texte2{
+		width: 80px;
+		height: 22px;
+		padding-top: 2px;
+		background-color: #C9C9C9;
+		color: white;
+		cursor: pointer;
+		cursor: pointer;
+		font-family: "gotham";
+		font-size: 16px;
+		border-radius:0px;
+		border: none;
+		}
+		
+		.effacersur{
+			.texte3{
+			margin-left: -50px;
+			width: 300px;
+			background-color: black;
+			height: 22px;
+			padding-top: 2px;
+			color: white;
+			
+			}
 		}	
 	}
 	
@@ -508,7 +639,6 @@
 	
 	.modifs{
 		margin-left:-80px;
-		width: 80px;
 		margin-top: 20px;
 		margin-bottom: -68px;
 		font-family: "gotham";
@@ -517,17 +647,90 @@
 		font-weight: bold;
 		text-align: center;
 		
-		.texte{
+		.flags{
+		margin-left: 32px;
+		height: 48px;
+		width: 48px;
+		}
+		
+		.finalementnon{
+		width: 80px;
 		padding-top: 2px;
 		height: 22px;
 		background-color: #A54952;
 		color: white;
+		cursor: pointer;
 		}
-		.texte2{
-		height: 24px;
+		.effacer{
+		width: 80px;
+		height: 22px;
+		padding-top: 2px;
 		background-color: #C9C9C9;
 		color: white;
+		cursor: pointer;
+		}
+		
+		.finalementnon2{
+		width: 80px;
+		padding-top: 2px;
+		height: 22px;
+		background-color: #A54952;
+		color: white;
+		cursor: pointer;
+		}
+		.signalisation{
+		width: 80px;
+		height: 22px;
+		padding-top: 2px;
+		background-color: #C9C9C9;
+		color: white;
+		cursor: pointer;
+		font-family: "gotham";
+		font-size: 16px;
+		border-radius:0px;
+		border: none;
+		}
+		
+		.texte{
+		width: 80px;
+		padding-top: 2px;
+		height: 22px;
+		background-color: #A54952;
+		color: white;
+		cursor: pointer;
+		}
+		.texte2{
+		width: 80px;
+		height: 22px;
+		padding-top: 2px;
+		background-color: #C9C9C9;
+		color: white;
+		cursor: pointer;
+		font-family: "gotham";
+		font-size: 16px;
+		border-radius:0px;
+		border: none;
 		}	
+
+		.texte4{
+		width: 80px;
+		height: 22px;
+		padding-top: 2px;
+		background-color: #C9C9C9;
+		color: white;
+		cursor: pointer;
+		}
+		
+		.effacersur{
+			.texte3{
+			width: 300px;
+			background-color: black;
+			height: 22px;
+			padding-top: 2px;
+			color: white;
+			
+			}
+		}
 	}
 
 	.modifs2{

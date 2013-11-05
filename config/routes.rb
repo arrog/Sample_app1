@@ -18,10 +18,14 @@ SampleApp::Application.routes.draw do
         get :activities
         get :active
         get :my_groups
+        get :sesdefis
+        get :sesvotes
+        get :sesdebatsouverts
       end
   end  
   
   resources :admins
+  resources :flags
   
   resources :groups do
     resources :users do      

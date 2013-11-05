@@ -60,10 +60,20 @@
 	::-webkit-input-placeholder {
 	   font-family: "gotham";
 	}
-		min-height: 55px;
+	min-height: 55px;
 	background-color: #EEE;
 	margin-top:5px;
 	margin-left: 270px;
+	
+	#content{
+	width: 435px;
+	margin-top: 10px;
+	font-family:"georgia";
+	font-size: 13px;
+	padding-top: 5px;
+	padding-left: 5px;
+	min-height: 60px;
+	background-color: white;}
 	
 	word-wrap:break-word;	
 	#gauche-comment{

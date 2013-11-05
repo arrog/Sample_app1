@@ -11,17 +11,22 @@
 								<%= micropost.user.fitting_name%>
 							</div>
 						</div>
-
-					<div class="span4" id="content">
-						<%= h Rinku.auto_link(micropost.content).gsub(/\n/, '<br/>').html_safe  %>
-						</br>
+					</div>
+					<div class="span2" id="deletecomment">
 						<% if current_user?(micropost.user) %>
-					    <%= link_to "delete", micropost, method: :delete,
-					                                     data: { confirm: "You sure?" },
-					                                     title: micropost.content %>
+					    <%= link_to "EFFACER", micropost, method: :delete,
+					                                     data: { confirm: "Tu es sûr(e)?" },
+					                                     title: micropost.content, class: "effacer"%>
 					  <% end %>
 					</div>
 				</div>
+				<div class="row">
+					<div class="span4" id="content">
+						<%= h Rinku.auto_link(micropost.content).gsub(/\n/, '<br/>').html_safe  %>
+						</br>
+					</div>
+				</div>
+					
 			</div>		
 	<% end%>
 </div>

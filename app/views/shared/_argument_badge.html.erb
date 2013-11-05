@@ -4,7 +4,20 @@
 				<% if argument.argumentable.class == Debate %>
 				<div class="modifs">
 					<div class='texte'><%= link_to "Modifier", edit_argument_path(argument), class: "texte" %></div>
-					<div class= 'texte2'><%= link_to "Effacer", argument_path(argument), :method => :delete, class: "texte2" %></div>
+					<div class="effacer" id="effacer">
+						Effacer
+					</div>
+					<div class="effacersur">
+						<div class='texte3'>
+							Etes vous surs de vouloir effacer?
+						</div>
+						<div class="finalementnon">
+							 Non
+						</div>
+						<div class="texte2">
+							<%= link_to "Effacer", argument_path(argument), :method => :delete, class: "texte2" %>
+						</div>
+					</div>
 				</div>
 				<% elsif argument.modifiable? %>
 				<div class="modifs2">
@@ -14,8 +27,30 @@
 				<% elsif current_user.try(:admin?)%>
 					<div class="modifs">
 						<div class='texte'><%= link_to "Modifier", edit_argument_path(argument), class: "texte" %></div>
-						<div class= 'texte2'><%= link_to "Effacer", argument_path(argument), :method => :delete, class: "texte2" %></div>
+						<div class="texte2" id="effacer">
+							<%= link_to "Effacer", argument_path(argument), :method => :delete, class: "texte2" %>
+						</div>
 					</div>
+				<% else %>
+					<div class='modifs'>
+						<div class="flags">
+							<%= image_tag("flag-01.png", class: "image")%>
+						</div>
+					<% if current_user %>
+						<div class="finalementnon2">
+							 Non
+						</div>
+						<div class="signalisation">
+							<%= form_for (Flag.new) do |f| %>
+							  <%= render 'shared/error_messages', object: f.object %>
+
+							    <%= f.hidden_field :user_id, :value => current_user.id %>
+								<%= f.hidden_field :argument_id, :value => argument.id %>
+							  	<%= f.submit "Signaler", class: "texte2" %>
+							<% end %>
+						</div>
+					<% end %>
+				    </div>
 				<% end%>
 			
 				<div class id="bleu">
