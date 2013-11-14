@@ -651,7 +651,7 @@ text-align: center;
 		width: 950px;
 		margin: 30px 0px 0px 70px;
 		background-color: #C9C9C9;
-		height: 270px;
+		min-height: 270px;
 		
 		
 		#informations-challenge{
@@ -693,7 +693,7 @@ text-align: center;
 		#ouvrons-encore{
 		.image-gauche{
 			margin-left: 40px;
-			margin-top:30px;
+			margin-top:0px;
 		}
 		
 		.titre{
@@ -892,7 +892,122 @@ text-align: center;
 
 
 #abonnements{
-
+	#isabelle{
+	margin-top: -100px;
+	position: relative;
+	z-index: 1;
+	
+	.image{margin-top: -90px;
+			margin-left: 150px;}
+	}
+	
+	#raison3{
+	margin-left: 180px;
+	margin-top: 80px;
+	
+	.circle {
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		background-color: #AAD0FF;
+		
+		.image{
+		margin-left:25px;
+		margin-top: 25px;
+		}
+		
+		.text{
+		font-family: "gotham";
+		font-size: 23px;
+		margin-left: 45px;
+		margin-top: -35px;
+		}
+	}
+	
+	
+	.text2{
+	font-family: "gotham";
+	font-size: 20px;
+	text-align: left;
+	width: 450px;
+	margin-top: -90px;
+	margin-left: 120px;
+	line-height: 25px;
+	}
+	}
+	
+	
+	#raison2{
+	margin-left: 300px;
+	margin-top: 60px;
+	
+	.circle {
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		background-color: #AAD0FF;
+		
+		.image{
+		margin-left:25px;
+		margin-top: 25px;
+		}
+		
+		.text{
+		font-family: "gotham";
+		font-size: 23px;
+		margin-left: 45px;
+		margin-top: -35px;
+		}
+	}
+	
+	
+	.text2{
+	font-family: "gotham";
+	font-size: 20px;
+	text-align: left;
+	width: 450px;
+	margin-top: -90px;
+	margin-left: 120px;
+	line-height: 25px;
+	}
+	}
+	
+	
+	
+	#raison1{
+	margin-left: 180px;
+	margin-top: 30px;
+	.circle {
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		background-color: #AAD0FF;
+		
+		.image{
+		margin-left:25px;
+		margin-top: 25px;
+		}
+		
+		.text{
+		font-family: "gotham";
+		font-size: 23px;
+		margin-left: 45px;
+		margin-top: -35px;
+		}
+	}
+	
+	
+	.text2{
+	font-family: "gotham";
+	font-size: 20px;
+	text-align: left;
+	width: 450px;
+	margin-top: -90px;
+	margin-left: 120px;
+	line-height: 25px;
+	}
+	}
+	
 	#intro{
 		font-family: "georgia";
 		font-size: 16px;
@@ -914,7 +1029,6 @@ text-align: center;
 		margin-top:23px;
 		margin-left: 340px;
 		text-align: center;
-		border-bottom: 1px dashed;
 	}	
 
 	#abobo{
@@ -924,6 +1038,17 @@ text-align: center;
 		width:1060px;
 		margin-left: 20px;
 		text-align: center;
+	}
+	
+	#abobo1{
+		font-family: "gotham";
+		font-size: 48px;
+		margin-top:50px;
+		width:502px;
+		margin-left: 300px;
+		padding-bottom: 50px;
+		text-align: center;
+		border-bottom: 1px Dashed;
 	}
 	
 	#petit-abo{
@@ -1030,7 +1155,7 @@ text-align: center;
 
   #promesses{
   margin-left: 364px;
-  margin-top: 50px;
+  margin-top: -50px;
   padding-top: 10px;
   margin-bottom: 30px;
   padding-left: 25px;

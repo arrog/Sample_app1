@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+         :recoverable, :rememberable, :trackable, :omniauthable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :admin, :content
 
@@ -61,10 +61,6 @@ class User < ActiveRecord::Base
                     :s3_permissions => :private,
                     :s3_host_name => 's3-eu-west-1.amazonaws.com'
                     
-                    
-
-    validates :name, presence: true, length: { maximum: 50 }
-    validates :email, presence: true
     
     def fitting_name
       if self.name.split.count == 1

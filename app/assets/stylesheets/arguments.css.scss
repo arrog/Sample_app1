@@ -1,5 +1,20 @@
 #new-argument{
+	
+	.error-messages-newarg{
+		.text{
+		font-family: "gotham";
+		font-size: 30px;
+		text-align: center;
+		margin-left: 30px;
+		margin-bottom: 30px;
+		}
 		
+		li{font-family:"georgia";
+		margin-top: 30px;
+			color: #FF6969;
+			font-size: 13px;
+			font-style: italic;}
+	}
 	#new-argument1{
 	background-color:#AAD0FF;
 	margin-top:10px;
@@ -1081,3 +1096,8 @@
 	}
 }
 
+#correction{
+.centrons-tout{margin-left: 300px;
+			  margin-top: 40px;}
+
+}

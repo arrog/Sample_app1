@@ -1,20 +1,32 @@
-<div id="essai">
-	<button class="bouton">
-		challenge
-	</button>
-	
-	<div id="vacation">
-	    <% @lists.each do |ob| %>
-			<% if ob.class == Debate %>
-	
-	<div class="debate active">
-		 	<%= render "shared/debate_badge", :debate => ob %>
+<section id="erreurs">
+  <%= render :partial => "shared/flash_messages" %>
+  
+  <div class="container">
+	<div class="row">
+		<div class="row" id="intro">
+			Toutes nos excuses.
+		</div>
 	</div>
-			<% elsif ob.class == Challenge %>
-	<div id="challenge" class="active">
-			 <%= render "shared/challenge_badge", :challenge => ob %>
+    <div class="row">
+      <div class="span4" id ="petit-abo">
+		<div class="cadre13">
+			<div class="titre">
+			Erreur 404
+			</div>
+			<div class="sous-titre">
+			<%= (["Ce n'est pas là. Enfin, ça y'est plus. Bref.","Sarah conner? C'est à coté","Eh Oui. Vous êtes une brebis égarée."]).shuffle.first%>
+			</div>
+		</div>
+	  </div>
+    </div>
+
+
+	<div class="row" id="intro2">
+		<%= link_to "Cliquez ici pour revenir dans le droit chemin.", root_path %>
 	</div>
-	<% end %>
-	<% end %>
+	<div class="row" id="photo-abonnement">
+	<%= link_to (image_tag('moutons-abonnement.png', :alt => 'Moutoners')), root_path %>
 	</div>
-</div>
+  </div>
+
+</section>

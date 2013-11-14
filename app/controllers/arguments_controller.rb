@@ -1,9 +1,10 @@
 class ArgumentsController < ApplicationController
- before_filter :load_argumentable, except: [:edit, :destroy]
+ before_filter :load_argumentable, except: [:edit, :destroy, :new]
  before_filter :authenticate_user!, only: [:new, :edit, :create, :destroy, :like]
  before_filter :correct_user, only: [:edit]
+ 
   def new
-    @argument = @argumentable.arguments.new
+    @argument = Argument.new
   end
   
   def show
@@ -24,7 +25,7 @@ class ArgumentsController < ApplicationController
         redirect_to @argumentable
       else
         flash[:errors]
-        redirect_to :back
+        render "new" 
       end
   end
   

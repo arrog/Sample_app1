@@ -12,7 +12,7 @@ class StaticPagesController < ApplicationController
     @doulin = Doulin.last
     @debate = Debate.first
     @users = User.all
-    @citations = ["Apprenez l'art de la tatane dialectique", "Soignez votre logorrhée", "Ils ne donnent plus de laine, mais leur avis.", "The first rule about moutoners: you do talk about moutoners."].shuffle
+    @citations = ["Apprenez l'art de la tatane dialectique","Soignez votre logorrhée", "Ils ne donnent plus de laine, mais leur avis.", "The first rule about moutoners: you do talk about moutoners."].shuffle
     @citations2 =[["Les Groupes","Avez-vous tenté de rejoindre un groupe ?","Les groupes permettent de rencontrer et de discuter avec d’autres moutoners, de former des équipes, créer des débats entre membres, bref, d’apporter une dose de convivalité à votre quête dialectique."],["LES DEFIS","Avez-vous participé
     à un défi ?","Vous pouvez défiez vos amis, vos ennemis, ou de parfaits inconnus, en organisantde vraies joutes dialectiques. Vous pouvez choisir d’être évalués par un jury, ou soumettrevos arguments au vote du public, qui déclareront le vainqueur."],["LES DEBATS OUVERTS","  Avez-vous participé
       à un débat ouvert ?","Les débats ouverts vous permettent de vous exprimer de manière argumentée surun sujet que le site vous propose. Prenez parti, soyez pour, soyez contre, soyez nipour ni contre, bien au contraire, et argumentez en fonction."],["LES EXPERTS","Avez-vous suivi un débat expert ?", "Vous pouvez suivre un débat expert, voter pour l’intellectuel que vous jugez le pluspertinent, et réagir en temps réel aux arguments de chacun."]].shuffle
@@ -95,10 +95,18 @@ class StaticPagesController < ApplicationController
   
   
   def search_results
-    @challenges = Challenge.tagged_with("#{params[:search]}")
-    @debates = Debate.tagged_with("#{params[:search]}")
-    @doulins = Doulin.tagged_with("#{params[:search]}")
+    @tag_challenges = Challenge.tagged_with("#{params[:search]}")
+    @title_search = Challenge.where(:title => params[:search])
+    @challenges = @tag_challenges +   @title_search
+
+    @tag_debates = Debate.tagged_with("#{params[:search]}")
+    @title_debates = Debate.where(:title => params[:search]) 
+    @debates = @tag_debates + @title_debates
     
+    @tag_doulins = Doulin.tagged_with("#{params[:search]}")
+    @title_doulins = Doulin.where(:title => params[:search])
+    @doulins = Doulin.tagged_with("#{params[:search]}")
+      
     @lists = (@doulins + @debates + @challenges).shuffle 
   end
   

@@ -50,7 +50,7 @@ class ChallengesController < ApplicationController
   def destroy
       Challenge.find(params[:id]).destroy
       flash[:success] = "Debate deleted."
-      redirect_to debates_url
+      redirect_to root_path
   end
   
   

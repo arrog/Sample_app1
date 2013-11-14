@@ -19,7 +19,7 @@
 						</div>
 						<div class="first_user">
 							<% if @doulin.have_first? %>
-								<a><%= link_to @doulin.first_user.name, @doulin.first_user, class: "first_user"%></a>
+								<a><%= link_to @doulin.first_user.fitting_name, @doulin.first_user, class: "first_user"%></a>
 									<p class='desc'><%= @doulin.first_user.content%></p>
 							<%else%>
 								<% if current_user.try(:admin)%>
@@ -116,7 +116,7 @@
 						</div>
 						<div class="second_user">
 							<% if @doulin.have_second? %>
-								<a><%= link_to @doulin.second_user.name, @doulin.second_user, class: "second_user"%></a>
+								<a><%= link_to @doulin.second_user.fitting_name, @doulin.second_user, class: "second_user"%></a>
 									<p class='desc'><%= @doulin.second_user.content%></p>
 							<%else%>
 								<% if current_user.try(:admin)%>
