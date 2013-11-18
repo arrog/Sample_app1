@@ -72,9 +72,16 @@
 				</section>
 				<%end%>
 
-
+				<% @user.join_group.each do |group| %>
+				<section id="notifications">
+					<div class="span4" id="intro-notifications">
+					 		<div class="texte"><%= link_to group.user.fitting_name, group.user, class: "texte"%> veut rejoindre le groupe</div></div>
+					<div class="row"><%= render "shared/group_badge2", group: group.group %></div>
+				</section>	
+				<% end%>
 
 				<% @user.team_request.each do |relationship|%>
+				<%= relationship.state %>
 				<section id="notifications">
 					<div class="span4" id="intro-notifications">
 					 <div class="texte"><%= link_to relationship.sender.fitting_name, relationship.sender, class: "texte"%> vous propose de faire une équipe</div>

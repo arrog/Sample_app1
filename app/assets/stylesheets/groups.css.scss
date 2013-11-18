@@ -4,6 +4,7 @@
 		width: 427px;
 		border-radius: 0px;
 		padding-top: 10px;
+		margin-bottom: 50px;
 
 		.image{
 		margin-left:0px;
@@ -43,7 +44,7 @@
 	
 	.containant2{
 	margin-left: 435px;
-	margin-top: -133px;
+	margin-top: -183px;
 	height: 133px;
 	margin-bottom: 100px;
 	width: 200px;
@@ -145,6 +146,53 @@
 }
 
 #show-group{
+
+	#profile-header2{
+	margin-top: 17px;
+	margin-bottom: 40px;
+	font-family: "gotham";
+	margin-left: 140px;
+	font-size: 20px;
+	padding-bottom: 20px;
+	border-bottom: $borderDashed;
+	width:400px;
+
+	.notifications-profile{
+	margin-left: 140px;
+	}
+
+	li {
+      display: inline-block;
+	  margin-right: 30px;
+	cursor : pointer;
+	padding:7px 3px;
+	color: black;
+    }
+
+	.a{color: white;}
+
+	.active{
+	background-color: #AAD0FF;
+	color: black;
+	padding:5px 15px;
+	}
+
+   li:hover {
+		background-color: #AAD0FF;
+		color: #000;
+		text-decoration:underline;
+    }
+
+	.text3:hover{
+	background-color: #AAD0FF;
+	color: #000;
+	text-decoration:underline;
+	}
+	.text3{
+	color: #000;
+	text-decoration:underline;
+	}
+	}
 	
 	#group-header{
 	margin: 20px 0px 0px 204px;
@@ -182,12 +230,13 @@
 		#badge1{
 		margin: 10px 10px 0px 10px;
 		cursor: pointer;
+			
 			.texte{
 			background-color: black;
 			Color: white;
-			font-family: "gotham";
-			font-size: 16px;
-			font-weight: 700;
+			font-family:"gotham-Bold";
+			font-size: 14px;
+			text-align: center;
 			padding-left: 5px;
 			height:24px;
 			padding-top: 5px;
@@ -201,9 +250,9 @@
 			text-align: center;
 			background-color: black;
 			Color: white;
-			font-family: "gotham";
-			font-size: 14px;
+			font-family:"gotham";
 			font-weight: bold;
+			font-size: 14px;
 			height:24px;
 			padding-top: 5px;
 			}

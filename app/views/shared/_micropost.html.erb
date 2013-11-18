@@ -12,13 +12,15 @@
 							</div>
 						</div>
 					</div>
-					<div class="span2" id="deletecomment">
+					
 						<% if current_user?(micropost.user) %>
+						<div class="span2" id="deletecomment">
 					    <%= link_to "EFFACER", micropost, method: :delete,
 					                                     data: { confirm: "Tu es sûr(e)?" },
 					                                     title: micropost.content, class: "effacer"%>
+						</div>
 					  <% end %>
-					</div>
+
 				</div>
 				<div class="row">
 					<div class="span4" id="content">

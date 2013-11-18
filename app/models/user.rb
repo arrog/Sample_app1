@@ -285,7 +285,13 @@ class User < ActiveRecord::Base
     
     ## INVITATION ET TEAM REQUEST
     def join_group
-      []
+      a = []
+      memberships.where(role:"admin").each do  |l|
+        l.group.memberships.where(state: "unseen").each do |m|
+          a = a + [m]
+        end
+      end
+      a
     end
     
     def invitation_group

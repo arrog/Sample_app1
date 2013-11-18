@@ -1,0 +1,10 @@
+<section id='group-badge1'>
+	<div class="badge2">
+		<%= image_tag group.avatar.url(:large), class: "image"%>
+		<%= image_tag "group_badge.png", class: "image2"%>
+		<div class="row" id="title-group">
+			<div class="title"><%= link_to group.title, group, class: "title"%></div>
+			<div class="content"><%= group.description%></div>
+		</div>
+	</div>
+</section>

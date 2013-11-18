@@ -10,12 +10,12 @@
 			</div>
 		</div>
 		<div class="row" id="create-debate">
-					<ul class ="row" id ="profile-header">
+					<ul class ="row" id ="profile-header2">
 							<li class="defi-groupnav">
 								 Défi interne
 								</li>
 					    	<li class="tiret">|</li>
-							<li class= "debat-groupnav">
+							<li class= "debat-groupnav" id="onverra">
 								Débat Ouvert
 							</li>
 					</ul>
@@ -56,7 +56,7 @@
 					<%elsif current_user && current_user.in_group?(@group)%>
 						<span class="texte2">Demande en cours</span>
 					<% else %>
-						<%= link_to "rejoindre le groupe", rejoindre_group_path(@group), class: "texte2"%>
+						<%= link_to "En faire partie", rejoindre_group_path(@group), class: "texte2"%>
 					<% end %></div>
 				</div>
 				<div class="row" id="icones-users">

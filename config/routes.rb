@@ -47,6 +47,13 @@ SampleApp::Application.routes.draw do
     end
   end
   
+  resources :relationships do
+    member do
+      match 'accept'
+      match 'reject'
+    end
+  end
+  
   resources :memberships do
     member do
       match 'accept'

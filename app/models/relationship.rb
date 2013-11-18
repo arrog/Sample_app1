@@ -1,7 +1,7 @@
 class Relationship < ActiveRecord::Base
 # Sender et Recivever sont inversés
 
-  attr_accessible :reciever_id, :sender_id, :value, :state
+  attr_accessible :reciever_id, :sender_id, :value
   
   belongs_to :reciever, class_name: "User"
   belongs_to :sender, class_name: "User"
@@ -12,6 +12,7 @@ class Relationship < ActiveRecord::Base
      end  
      event :reject do
        transition :unseen => :rejected
+       transition :accepted => :rejected
      end
    end
   

@@ -22,14 +22,12 @@ class RelationshipsController < ApplicationController
   
   def accept
      @relationship = Relationship.find(params[:id])
-     @challenge = @relationship.challenge
      @relationship.accept
-     redirect_to :back
+     
   end
    
   def reject
      @relationship = Relationship.find(params[:id])
-     @challenge = @relationship.challenge
      @relationship.reject
      redirect_to :back
   end
