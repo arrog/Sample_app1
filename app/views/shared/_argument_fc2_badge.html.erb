@@ -1,4 +1,4 @@
-<section id="argument-neutre">
+<section id="argument-fc2">
 		<div class="row" id='initial'>
 			<% if current_user && current_user == argument.user %>
 			<% if argument.argumentable.class == Debate %>
@@ -53,7 +53,8 @@
 			    </div>
 			<% end%>
 			
-		     <div class id="gris">
+			
+		     <div class id="rouge">
 		        <div class="row" id="descente">
 	                 <div class="span2">
 	                 	<div class="user">
@@ -87,8 +88,9 @@
 							  <% end %>
 
 
+
 							  <%= image_tag("box-texte.png", class: "box")%>
-							  <%= image_tag("vote-suisse.png", class: "oui")%>	
+							  <%= image_tag("vote-non.png", class: "oui")%>	
 									
 							  <div class='toggleOpen'>Lire la suite...</div>								
 	                 		</div>
@@ -113,7 +115,7 @@
 
 	    </div>
      <div class="argcoms">        
-        <div class="row" id="argcom-neutre">
+        <div class="row" id="argcom-contre">
 	        <div class="span8">
 		    		<% argument.argcoms.each do |argcom| %>
     	    		 <%= render "shared/argcom_badge", :argcom => argcom %>

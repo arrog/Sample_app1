@@ -74,10 +74,19 @@
 						</div>
 						<div class="row" id="coco1">
 		        			<div class="stats">
-							  <%= argument.count_positive %>
-							  <%= link_to image_tag("like-argument.png"), like_argument_path(argument, type: "up"), method: "post"%> |
+								<%= argument.count_positive %>
+							  <% if current_user && argument.has_evaluation?(:likes, current_user) && argument.valeur_vote(current_user) == 1.0%>
+							  <%= link_to image_tag("like-argument-01.png"), like_argument_path(argument, type: "up"), method: "post"%> <span class="texte">|</span>
+							  <% else %>
+								<%= link_to image_tag("like-argument.png"), like_argument_path(argument, type: "up"), method: "post"%> <span class="texte">|</span>
+							  <% end %>
 							  <%= argument.count_negative %>
+							  <% if current_user && argument.has_evaluation?(:likes, current_user) && argument.valeur_vote(current_user) == -1.0%>
+							  <%=link_to image_tag("dislike-argument-01.png"), like_argument_path(argument, type: "down"), method: "post" %>
+							  <% else%>
 							  <%=link_to image_tag("dislike-argument.png"), like_argument_path(argument, type: "down"), method: "post" %>
+							  <% end %>
+
 
 
 							  <%= image_tag("box-texte.png", class: "box")%>

@@ -49,6 +49,13 @@
 							  	<%= f.submit "Signaler", class: "texte2" %>
 							<% end %>
 						</div>
+					<% else%>
+						<div class="finalementnon2">
+							<%= link_to('Non')%>
+						</div>
+						<div class="signalisation">
+							<%= link_to('Signaler', new_session_path(resource_name))%>
+						</div>
 					<% end %>
 				    </div>
 				<% end%>

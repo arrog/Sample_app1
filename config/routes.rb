@@ -49,8 +49,8 @@ SampleApp::Application.routes.draw do
   
   resources :relationships do
     member do
-      match 'accept'
-      match 'reject'
+      match :accepter
+      match :rejeter
     end
   end
   
@@ -135,15 +135,10 @@ SampleApp::Application.routes.draw do
   end
     
   resources :microposts, only: [:create, :destroy]
-  resources :relationships do
-    member do
-      match 'accept'
-      match 'reject'
-    end
-  end
   
   root to: 'static_pages#home'
-
+  
+  match '/presentation',    to: 'static_pages#presentation'
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'

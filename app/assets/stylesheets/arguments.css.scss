@@ -923,10 +923,107 @@
 }
 
 
-#argument-fc1{
+
+#argument-fc2{
+	
+	.modifs{
+		margin-left:-80px;
+		margin-top: 20px;
+		margin-bottom: -68px;
+		font-family: "gotham";
+		font-size: 16px;
+		color: white;
+		font-weight: bold;
+		text-align: center;
+		
+		.flags{
+		margin-left: 32px;
+		height: 48px;
+		width: 48px;
+		}
+		
+		.finalementnon{
+		width: 80px;
+		padding-top: 2px;
+		height: 22px;
+		background-color: #A54952;
+		color: white;
+		cursor: pointer;
+		}
+		.effacer{
+		width: 80px;
+		height: 22px;
+		padding-top: 2px;
+		background-color: #C9C9C9;
+		color: white;
+		cursor: pointer;
+		}
+		
+		.finalementnon2{
+		width: 80px;
+		padding-top: 2px;
+		height: 22px;
+		background-color: #A54952;
+		color: white;
+		cursor: pointer;
+		}
+		.signalisation{
+		width: 80px;
+		height: 22px;
+		padding-top: 2px;
+		background-color: #C9C9C9;
+		color: white;
+		cursor: pointer;
+		font-family: "gotham";
+		font-size: 16px;
+		border-radius:0px;
+		border: none;
+		}
+		
+		.texte{
+		width: 80px;
+		padding-top: 2px;
+		height: 22px;
+		background-color: #A54952;
+		color: white;
+		cursor: pointer;
+		}
+		.texte2{
+		width: 80px;
+		height: 22px;
+		padding-top: 2px;
+		background-color: #C9C9C9;
+		color: white;
+		cursor: pointer;
+		font-family: "gotham";
+		font-size: 16px;
+		border-radius:0px;
+		border: none;
+		}	
+
+		.texte4{
+		width: 80px;
+		height: 22px;
+		padding-top: 2px;
+		background-color: #C9C9C9;
+		color: white;
+		cursor: pointer;
+		}
+		
+		.effacersur{
+			.texte3{
+			width: 300px;
+			background-color: black;
+			height: 22px;
+			padding-top: 2px;
+			color: white;
+			
+			}
+		}
+	}
 
 	.modifs2{
-		margin-left:534px;
+		margin-left:-80px;
 		width: 80px;
 		margin-top: 20px;
 		margin-bottom: -44px;
@@ -939,17 +1036,21 @@
 		.texte{
 		padding-top: 2px;
 		height: 22px;
-		background-color: #839AB2;
+		background-color: #A54952;
 		color: white;
 		}
-
 	}
 	
-	#bleu{
-	background-color:#CCE6FF;
-	margin-top:20px;
+	#argcom-contre{
+	margin-left: -286px;
+	}	
+	
+	#rouge{
+	word-wrap:break-word;
+	background-color:#FFA1A1;
+	margin-top: 20px;
 	width: 534px;
-	min-height:151px;
+	min-height:170px;
 	margin-left:0px;
 	
 	.toggleClose2{
@@ -1052,6 +1153,272 @@
 		margin-left:7px;
 		}
 
+		
+		.toggleOpen{
+		width: 112px;
+		margin-left:222px;
+		margin-top:-31px;
+		font-family:"gotham";
+		font-size:16px;
+		font-weight:bold;
+		padding: 5px 10px 5px 10px;
+		background-color:#A54952;
+		color:white;
+		cursor:  pointer;
+		}
+		.toggleOpen:hover{
+		     color:black;}
+
+	}
+	
+	}	
+
+
+	#coco{
+	margin-left: -35px;
+	margin-bottom:15px;
+	
+	.toggle{
+	background-color: white;
+	margin-left: -20px;
+	#argcontent{
+	padding: 15px;
+	margin-top:20px;
+	text-align: left;
+	padding-bottom:10px;
+	font-family:"georgia";
+	}
+	
+	}
+
+	}
+
+	}
+}
+
+
+
+
+
+#argument-fc1{	
+	
+	.modifs{
+		margin-left:534px;
+		margin-top: 20px;
+		margin-bottom: -70px;
+		font-family: "gotham";
+		font-size: 16px;
+		color: white;
+		font-weight: bold;
+		text-align: center;
+		
+		.flags{
+		height: 50px;
+		width: 48px;
+		}
+		.finalementnon2{
+		padding-top: 2px;
+		height: 22px;
+		background-color: #839AB2;
+		color: white;
+		width: 80px;
+		cursor: pointer;
+		}
+		
+		.signalisation{
+		padding-top: 2px;
+		height: 24px;
+		width: 80px;
+		background-color: #C9C9C9;
+		color: white;
+		cursor: pointer;
+		font-family: "gotham";
+		font-size: 16px;
+		border-radius:0px;
+		border: none;
+		}
+		
+		.finalementnon{
+		padding-top: 2px;
+		height: 22px;
+		background-color: #839AB2;
+		color: white;
+		width: 80px;
+		cursor: pointer;
+		}
+		
+		.texte{
+		padding-top: 2px;
+		height: 22px;
+		background-color: #839AB2;
+		color: white;
+		width: 80px;		
+		cursor: pointer;
+		}
+		.texte2{
+		padding-top: 2px;
+		height: 24px;
+		width: 80px;
+		background-color: #C9C9C9;
+		color: white;
+		cursor: pointer;
+		font-family: "gotham";
+		font-size: 16px;
+		border-radius:0px;
+		border: none;
+		}
+		
+		.effacer{
+		padding-top: 2px;
+		height: 24px;
+		width: 80px;
+		background-color: #C9C9C9;
+		color: white;
+		cursor: pointer;
+		}
+		
+		.effacersur{
+			.texte3{
+			width: 300px;
+			background-color: black;
+			height: 22px;
+			padding-top: 2px;
+			color: white;
+			
+			}
+		}	
+	}
+	
+
+	.modifs2{
+		margin-left:534px;
+		width: 80px;
+		margin-top: 20px;
+		margin-bottom: -44px;
+		font-family: "gotham";
+		font-size: 16px;
+		color: white;
+		font-weight: bold;
+		text-align: center;
+		
+		.texte{
+		padding-top: 2px;
+		height: 22px;
+		background-color: #839AB2;
+		color: white;
+		}
+	}
+	
+	#argcom-pour{
+	margin-left: -40px;
+	}
+	
+	#bleu{
+	background-color:#CCE6FF;
+	margin-top:20px;
+	width: 534px;
+	min-height:170px;
+	margin-left:0px;
+	
+	.toggleClose2{
+	width: 533px;
+	height: 25px;
+	margin-left:1px;
+	margin-top:5px;
+	border-top: 1px dashed;
+	padding-top:5px;
+	font-family:"gotham";
+	font-size:18px;
+	text-align:right;
+	
+	.toggleClose{
+	text-align:right;
+	padding-right:100px;
+	cursor:  pointer;
+	a{color:#000000;}
+	margin-bottom:5px;
+	}
+	
+	.arrow-up-argument{
+		margin-left: 460px;
+		margin-top:-18px;
+		margin-bottom: 10px;
+		width: 0; 
+		height: 0; 
+		border-left: 8px solid transparent;
+		border-right: 8px solid transparent;
+		cursor:  pointer;
+		border-bottom: 12px solid #FFF;
+	}
+	}
+	
+	.user{
+	margin-top:13px;
+	margin-left:13px;
+	width:100px;
+	img { width: 100px; height:83px;}
+	border-bottom: 2px solid #FFF;
+		.image{
+		padding-bottom:4px;
+		}
+	}
+	.nom-user{
+	padding-left:3px;
+	width:100px;
+	margin-bottom:10px;
+	font-family:"gotham";
+	font-size:14px;
+	text-align:center;
+	margin-left: 10px;
+	color: black;
+	text-overflow: ellipsis;
+	overflow : hidden;
+	}
+	
+	#title5{
+		margin-left: -35px;
+		word-wrap:break-word;
+		max-height: 140px;
+		min-height:50px;
+		overflow : hidden;
+		margin-top: 13px;
+		
+		.title{
+		padding-right:5	px;
+		font-family: "georgia";
+		font-size: 19px;
+		font-weight: bold;
+		font-style: italic;
+		letter-spacing:-1px;
+		line-height: 20px;
+		}
+		
+		.cont{
+			word-wrap:break-word;
+			padding-top:8px;
+			padding-right:5	px;
+			font-family:"georgia";
+			font-size: 14px;
+			font-style: italic;
+		}
+	}
+	
+	#coco1{
+		margin-left: -35px;
+		margin-top: 10px;
+		
+	.stats{
+		font-family:"bebasneue-webfont";
+		font-size:26px;
+		float:right;
+
+		.box{
+		margin-left:10px;
+		padding-top: 4px;
+		}
+		.oui{
+		margin-left:7px;
+		}
 		
 		.toggleOpen{
 		width: 112px;

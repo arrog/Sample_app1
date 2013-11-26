@@ -396,10 +396,24 @@
 	
 	#developpement-bis{
 	margin-left: 204px;
-	width: 653px;
+	width: 783px;
+		
 		li{
-		margin-right:39px;
+		margin-right:68px;
 		display: inline-block;
+		}
+		
+		.invitation{
+		width: 160px;
+		height:30px;
+		padding-left: 10px;
+		padding-top: 10px;
+		background-color: #FF7575;
+		font-style: italic;
+		font-size: 15px;
+		font-family: "georgia";
+		margin-top: -30px;
+		margin-bottom: 30px;
 		}
 	}
 	

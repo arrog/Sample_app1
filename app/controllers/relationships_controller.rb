@@ -11,6 +11,10 @@ class RelationshipsController < ApplicationController
         end
   end
 
+  def show
+    @relationship = Relationship.find(params[:id])
+  end
+  
   def destroy
     @user = Relationship.find(params[:id]).followed
     current_user.unfollow!(@user)
@@ -20,17 +24,18 @@ class RelationshipsController < ApplicationController
         end
   end
   
-  def accept
+  def accepter
      @relationship = Relationship.find(params[:id])
-     @relationship.accept
-     
-  end
-   
-  def reject
-     @relationship = Relationship.find(params[:id])
-     @relationship.reject
+     @relationship.accepter
      redirect_to :back
   end
+   
+  def rejeter
+     @relationship = Relationship.find(params[:id])
+     @relationship.rejeter
+     redirect_to :back
+  end
+  
   
   private
 

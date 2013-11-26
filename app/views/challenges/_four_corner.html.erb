@@ -487,12 +487,12 @@
 
 							<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
 					              next_challenge_path(@challenge) ,:method => :post) %></div>
-							<%= render "shared/argument_contre_badge", argument: @challenge.fourth_argument %>
+							<%= render "shared/argument_fc2_badge", argument: @challenge.fourth_argument %>
 						<% end %>
 					<% else%>
 					<%end%>
 				<% elsif ["fifth","sixth","seventh","eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
-					<%= render "shared/argument_contre_badge", argument: @challenge.fourth_argument %>
+					<%= render "shared/argument_fc2_badge", argument: @challenge.fourth_argument %>
 				<% end %>	
 			</div>
 
@@ -505,7 +505,7 @@
 						<% else %>
 						<div id="start">	<%= link_to("VALIDE TON ARGUMENT".html_safe,
 					              next_challenge_path(@challenge) ,:method => :post) %></div>
-											<%= render "shared/argument_badge", argument: @challenge.first_argument %>
+											<%= render "shared/argument_badge", argument: @challenge.fifth_argument %>
 						<% end %>
 					<% else%>
 
@@ -530,7 +530,7 @@
 					<% else%>
 					<%end%>
 				<% elsif ["seventh","eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
-					<%= render "shared/argument_contre_badge", argument: @challenge.second_argument %>
+					<%= render "shared/argument_contre_badge", argument: @challenge.sixth_argument %>
 				<% end %>	
 			</div>
 
@@ -550,7 +550,7 @@
 					<% else%>
 					<%end%>
 				<% elsif ["eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
-					<%= render "shared/argument_fc1_badge", argument: @challenge.third_argument %>
+					<%= render "shared/argument_fc1_badge", argument: @challenge.seventh_argument %>
 				<% end %>	
 			</div>
 
@@ -563,13 +563,13 @@
 						<% else %>
 
 							<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
-					              next_challenge_path(@challenge) ,:method => :post) %></div>
+					              finish_challenge_path(@challenge) ,:method => :post) %></div>
 							<%= render "shared/argument_fc2_badge", argument: @challenge.eighth_argument %>
 						<% end %>
 					<% else%>
 					<%end%>
 				<% elsif ["over", "judged", "judged_one"].include?(@challenge.state) %>
-					<%= render "shared/argument_fc2_badge", argument: @challenge.fourth_argument %>
+					<%= render "shared/argument_fc2_badge", argument: @challenge.eighth_argument %>
 				<% end %>	
 			</div>
 

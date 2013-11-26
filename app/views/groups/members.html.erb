@@ -22,16 +22,11 @@
 		</div>
 		<%end%>
 		<div class="row" id="developpement-bis">
-				<% @group.group_toinvite.shuffle.each do |user|%>
-					<%= render "shared/user_badge", user: user%>
-					<%= user.id%><%= @group.id%>
-						<%= link_to "inviter", invite_group_group_user_path(@group, user)%>
-					<% end%>
 				<% @group.users.each do |user|%>
-				<%= user.id%>
-				<%= link_to "inviter", invite_group_group_user_path(user)%>
+
 					<li>
 					<%= render "shared/user_badge", user: user%>
+									<div class="invitation"><%= link_to "inviter",invite_group_group_user_path(user), class: "invitation"%></div>
 					<% if current_user && current_user.admin_group?(@group) %>
 						<%= link_to "RAJOUTER QUELQU'UN EN RESPONSABLE DU GROUP", rajouter_group_path(@group) %>
 							

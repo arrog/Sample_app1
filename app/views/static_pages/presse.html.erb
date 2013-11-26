@@ -1,32 +1,119 @@
-<section id="erreurs">
+<section id="presentation-1">
   <%= render :partial => "shared/flash_messages" %>
   
   <div class="container">
+	<div class="row" id="presentation1">
+		<%= image_tag("presentation-centrale6-01.png")%>
+	</div>
 	<div class="row">
-		<div class="row" id="intro">
-			Toutes nos excuses.
+		<div class="row" id="abobo">
+			Le débat sur le Web, en plein Boom!
 		</div>
 	</div>
     <div class="row">
-      <div class="span4" id ="petit-abo">
+      <div class="span4" id ="small-abo">
+		<div class="offre2">
+			Le débat en France
+		</div>
 		<div class="cadre13">
-			<div class="titre">
-			Erreur 404
-			</div>
 			<div class="sous-titre">
-			<%= (["Ce n'est pas là. Enfin, ça y'est plus. Bref.","Sarah conner? C'est à coté","Eh Oui. Vous êtes une brebis égarée."]).shuffle.first%>
+				6 millions de personnes participent activement à des forums.
+				</br></br>
+				50 mille personnes participent aux débats réels.
 			</div>
 		</div>
-	  </div>
+		
+		<div class="offre1">
+			Sur le web
+		</div>
+		<div class="cadre13">
+			<div class="sous-titre">
+				De nombreux forums politiques, mais sclérosés.
+				</br></br>
+				Les commentaires sur les pages facebook en augmentation de 7%.
+				</br></br>
+				Schisme dans les médias : offre freemium: service et ligne éditoriale de qualités; ou alors l'hégémonie du clic.
+			</div>
+		</div>
+		
+		<div class="offre1">
+			Dans la vraie vie
+		</div>
+		<div class="cadre13">
+			<div class="sous-titre">
+				Les colloques politiques en nette perte d'affluence ces 5 dernières années.
+				</br></br>
+				Le nombre de rencontres et débats artistiques augmente environ de 5% sur les 3 dernières années.
+			</div>
+		</div>
+		
+		
+	   </div>
+	
+      <div class="span4" id ="big-abo">
+		<div class="offre2">
+			Les Concurrents
+		</div>
+		<div class="cadre13">
+			<div class="sous-titre">
+				Emergence de nouveaux sites de débats sur les deux dernières années. Notamment en France.
+				</br></br>
+				Les sites d'informations se dotent de leurs propres plateformes de débat dans le monde.
+			</div>
+		</div>
+		<div class="offre1">
+			En France
+		</div>
+		<div class="cadre13">
+			<div class="sous-titre">
+				Newsring, concurrent surpuissant, mais en crise. Comparativement ne donne accès qu'aux débats "ouverts".
+				</br></br>
+				Le Monde, lance sa propre plateforme de débats, en Janvier 2014. Comparativement, ils n'auront que des débats "experts".
+			</div>
+		</div>
+		
+		<div class="offre1">
+			Dans le monde
+		</div>
+		<div class="cadre13">
+			<div class="sous-titre">
+				New York Times et Economist, ont lancé leur plateforme de débat semblable à celle du monde.
+				</br></br>
+				L'UE a lancé son site de débats "défis".
+			</div>
+		</div>
+	
+	
+	  </div>	
     </div>
 
-
-	<div class="row" id="intro2">
-		<%= link_to "Cliquez ici pour revenir dans le droit chemin.", root_path %>
+	<div class="row">
+		<div class="row" id="abobo">
+			Quel mouton viser ?
+		</div>
 	</div>
-	<div class="row" id="photo-abonnement">
-	<%= link_to (image_tag('moutons-abonnement.png', :alt => 'Moutoners')), root_path %>
+	
+	
+	<div class="row" id="pousse-gauche">
+	<%= render "shared/argument_badge", argument: @argument1 %>	
 	</div>
+	<div class="row" id="pousse-droite">
+		<%= render "shared/argument_contre_badge", argument: @argument2 %>
+	</div>
+	
+	<div class="row">
+		<div class="row" id="photo-abonnement">
+		<%= link_to (image_tag('moutons-abonnement.png', :alt => 'Moutoners')), root_path %>
+		</div>
+		<div class="row" id="intro2">
+		 Cible: En marketing, ce qu'il faut toucher pour ne pas couler. 
+		</div>
+	</div>
+	
+	<div class="row" id="presentation1">
+		<%= link_to(image_tag("presentation-centrale7-01.png"), abonnements_path)%>
+	</div>
+	
   </div>
 
 </section>

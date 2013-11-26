@@ -1,32 +1,107 @@
-<section id="erreurs">
+<section id="presentation-1">
   <%= render :partial => "shared/flash_messages" %>
   
   <div class="container">
+	<div class="row" id="presentation1">
+		<%= link_to(image_tag("presentation-centrale2-01.png"), about_path)%>
+	</div>
 	<div class="row">
 		<div class="row" id="intro">
-			Toutes nos excuses.
+			Le constat: Un manque cruel de plateforme d'échanges d'idées, d'opinions et d'arguments.
+		</div>
+		<div class="row" id="abobo">
+			Un Réseau social du débat !
 		</div>
 	</div>
     <div class="row">
       <div class="span4" id ="petit-abo">
+		<div class="offre2">
+			Les Forums
+		</div>
 		<div class="cadre13">
-			<div class="titre">
-			Erreur 404
-			</div>
 			<div class="sous-titre">
-			<%= (["Ce n'est pas là. Enfin, ça y'est plus. Bref.","Sarah conner? C'est à coté","Eh Oui. Vous êtes une brebis égarée."]).shuffle.first%>
+				Des forums caduques : Pas d'interactions entre les forumeurs.
+				</br></br>
+				Pas de modérateurs, pas de buts, digressions et pourrissage récurrents.
+			</div>
+		</div>
+	  </div>
+      <div class="span4" id ="grand-abo">
+		<div class="offre2">
+			Moutoners
+		</div>
+		<div class="cadre13">
+			<div class="sous-titre">
+				Une ligne éditoriale de qualité, des débats contrôlés, des experts avisés, et une communauté !
 			</div>
 		</div>
 	  </div>
     </div>
 
+    <div class="row">
+      <div class="span4" id ="petit-abo">
+		<div class="offre2">
+			Les Réseaux Sociaux
+		</div>
+		<div class="cadre13">
+			<div class="sous-titre">
+				Le nivellement par le bas sur les réseaux sociaux, car pollués et non reglémentés.
+				</br></br>
+				Des plateformes non adaptées au long débat, mais au quick-chatting.
+				
+			</div>
+		</div>
+	  </div>
+      <div class="span4" id ="grand-abo">
+		<div class="offre2">
+			Moutoners
+		</div>
+		<div class="cadre13">
+			<div class="sous-titre">
+				Une plateforme pensée pour le débat. Des utilisateus, qui ne viennent que pour débattre.
+			</div>
+		</div>
+	  </div>
+    </div>
 
-	<div class="row" id="intro2">
-		<%= link_to "Cliquez ici pour revenir dans le droit chemin.", root_path %>
+    <div class="row">
+      <div class="span4" id ="petit-abo">
+		<div class="offre2">
+			Les Médias
+		</div>
+		<div class="cadre13">
+			<div class="sous-titre">
+				Un sentiment général que la sphère médiatico-politique ne comprends pas ce que ressent et désire le peuple.
+				</br></br>
+				Un lecteur trop passif.
+			</div>
+		</div>
+	  </div>
+      <div class="span4" id ="grand-abo">
+		<div class="offre2">
+			Moutoners
+		</div>
+		<div class="cadre13">
+			<div class="sous-titre">
+				Le pouvoir à la parole du peuple. Une sorte de cahiers de doléance, de "Dazibao" du web.
+			</div>
+		</div>
+	  </div>
+    </div>
+
+	<div class="row" id="promesses">
+		Apprendre</br>Rencontrer</br>S'amuser
 	</div>
-	<div class="row" id="photo-abonnement">
-	<%= link_to (image_tag('moutons-abonnement.png', :alt => 'Moutoners')), root_path %>
+	<div class="row">
+		<div class="row" id="intro2">
+		Le Troupeau de Panurge a fini noyé. Le but de moutoners est de donner à notre société une bouteille d'oxygène, pour respirer un peu d'air frais.
+		</div>
 	</div>
+	
+	<div class="row" id="presentation1">
+		<%= link_to(image_tag("presentation-centrale3-01.png"), faq_path)%>
+	</div>
+	
   </div>
 
 </section>

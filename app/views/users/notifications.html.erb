@@ -27,8 +27,25 @@
 					<section id="notifications">
 						<div class="span4" id="intro-notifications">
 							<div class= "texte">Tu confirmes l'invitation pour: </div>
-							<div class="action-notification"><%= link_to("oui".html_safe,
-				              join_one_challenge_path(invitation.challenge) ,:method => :post, class: "notification-link") %></div>
+							<div class="action-notification">
+							<% if invitation.position == 1 %>
+								<%= link_to("oui".html_safe, join_one_challenge_path(invitation.challenge) ,:method => :post, class: "notification-link") %>
+							<% elsif invitation.position == 2%>
+								<%= link_to("oui".html_safe, join_two_challenge_path(invitation.challenge) ,:method => :post, class: "notification-link") %>
+							<% elsif invitation.position == 3%>
+								<%= link_to("oui".html_safe, join_three_challenge_path(invitation.challenge) ,:method => :post, class: "notification-link") %>
+							<% elsif invitation.position == 4%>
+								<%= link_to("oui".html_safe, join_four_challenge_path(invitation.challenge) ,:method => :post, class: "notification-link") %>	
+							<% elsif invitation.position == 5%>
+								<%= link_to("oui".html_safe, join_five_challenge_path(invitation.challenge) ,:method => :post, class: "notification-link") %>
+							<% elsif invitation.position == 6%>
+								<%= link_to("oui".html_safe, join_six_challenge_path(invitation.challenge) ,:method => :post, class: "notification-link") %>
+							<% elsif invitation.position == 7%>
+								<%= link_to("oui".html_safe, join_seven_challenge_path(invitation.challenge) ,:method => :post, class: "notification-link") %>
+							<% elsif invitation.position == 8%>
+								<%= link_to("oui".html_safe, join_eight_challenge_path(invitation.challenge) ,:method => :post, class: "notification-link") %>
+							<% end %>																
+				</div>
 							<div class="action-notification2"><%= link_to "non", reject_invitation_path(invitation), class: "notification-link"%></div>
 						</div>
 						<div class="row">
@@ -75,19 +92,24 @@
 				<% @user.join_group.each do |group| %>
 				<section id="notifications">
 					<div class="span4" id="intro-notifications">
-					 		<div class="texte"><%= link_to group.user.fitting_name, group.user, class: "texte"%> veut rejoindre le groupe</div></div>
+					 		<div class="texte"><%= link_to group.user.fitting_name, group.user, class: "texte"%> veut rejoindre le groupe</div>
+								<div class="action-notification"><%= link_to "OUI", accept_membership_path(group), class: "notification-link"%></div>
+								<div class="action-notification2"><%= link_to "NON", reject_membership_path(group), class: "notification-link"%></div>
+					</div>
 					<div class="row"><%= render "shared/group_badge2", group: group.group %></div>
 				</section>	
 				<% end%>
 
 				<% @user.team_request.each do |relationship|%>
-				<%= relationship.state %>
+
 				<section id="notifications">
 					<div class="span4" id="intro-notifications">
 					 <div class="texte"><%= link_to relationship.sender.fitting_name, relationship.sender, class: "texte"%> vous propose de faire une équipe</div>
-						<div class="action-notification"><%= link_to "ok", accept_relationship_path(relationship), class: "notification-link"%></div>
-						<div class="action-notification2"><%= link_to "non", reject_relationship_path(relationship), class: "notification-link"%></div></div>
-				<div class="row"><%= render "shared/user_badge", user: relationship.sender%></div>
+					</div>
+						<div class="action-notification3"><%= link_to "OUI", accepter_relationship_path(relationship), class: "notification-link1"%></div>
+						<div class="action-notification4"><%= link_to "NON", rejeter_relationship_path(relationship), class: "notification-link1"%></div>
+						<div class="blanc"></div>
+						<div class="row"><%= render "shared/user_badge", user: relationship.sender%></div>
 				</section>
 				<%end%>	
 					

@@ -1,85 +1,134 @@
 <section id="argument-fc1">
-		<div class="row" id='initial'>
-				<% if current_user && current_user == argument.user %>
-				<% if argument.argumentable.class == Debate %>
-				<div class="modifs">
-					<div class='texte'><%= link_to "Modifier", edit_argument_path(argument), class: "texte" %></div>
-					<div class= 'texte2'><%= link_to "Effacer", argument_path(argument), :method => :delete, class: "texte2" %></div>
-				</div>
-				<% elsif argument.modifiable? %>
-				<div class="modifs2">
-					<div class='texte'><%= link_to "Modifier", edit_argument_path(argument), class: "texte" %></div>
-				</div>
-				<% end %>
-				<% elsif current_user.try(:admin?)%>
+			<div class="row" id='initial'>
+					<% if current_user && current_user == argument.user %>
+					<% if argument.argumentable.class == Debate %>
 					<div class="modifs">
 						<div class='texte'><%= link_to "Modifier", edit_argument_path(argument), class: "texte" %></div>
-						<div class= 'texte2'><%= link_to "Effacer", argument_path(argument), :method => :delete, class: "texte2" %></div>
-					</div>
-				<% end%>
-				
-		     <div class id="bleu">
-		        <div class="row" id="descente">
-	                 <div class="span2">
-	                 	<div class="user">
-							<%= image_tag argument.user.avatar.url(:medium), class: "image" %>
+						<div class="effacer" id="effacer">
+							Effacer
 						</div>
-						<div class="nom-user">
-	                 	<%= link_to argument.user.fitting_name, argument.user %>
-	                 	</div>
-	                 </div>
-	                 <div class="span4" id="descente2">
-						<div class="row" id='title5'>
-	                 		<div class="title">
-	                 			<%= argument.title%>
+						<div class="effacersur">
+							<div class='texte3'>
+								Etes vous surs de vouloir effacer?
 							</div>
-							<div class="cont"><%=argument.content.split(' ').slice(0,36).join(' ')%> ...
-	                 		</div>
+							<div class="finalementnon">
+								 Non
+							</div>
+							<div class="texte2">
+								<%= link_to "Effacer", argument_path(argument), :method => :delete, class: "texte2" %>
+							</div>
 						</div>
-						<div class="row" id="coco1">
-		        			<div class="stats">
-							  <%= argument.count_positive %>
-							  <%= link_to image_tag("like-argument.png"), like_argument_path(argument, type: "up"), method: "post"%> |
-							  <%= argument.count_negative %>
-							  <%=link_to image_tag("dislike-argument.png"), like_argument_path(argument, type: "down"), method: "post" %>
+					</div>
+					<% elsif argument.modifiable? %>
+					<div class="modifs2">
+						<div class='texte'><%= link_to "Modifier", edit_argument_path(argument), class: "texte" %></div>
+					</div>
+					<% end %>
+					<% elsif current_user.try(:admin?)%>
+						<div class="modifs">
+							<div class='texte'><%= link_to "Modifier", edit_argument_path(argument), class: "texte" %></div>
+							<div class="texte2" id="effacer">
+								<%= link_to "Effacer", argument_path(argument), :method => :delete, class: "texte2" %>
+							</div>
+						</div>
+					<% else %>
+						<div class='modifs'>
+							<div class="flags">
+								<%= image_tag("flag-01.png", class: "image")%>
+							</div>
+						<% if current_user %>
+							<div class="finalementnon2">
+								 Non
+							</div>
+							<div class="signalisation">
+								<%= form_for (Flag.new) do |f| %>
+								  <%= render 'shared/error_messages', object: f.object %>
+
+								    <%= f.hidden_field :user_id, :value => current_user.id %>
+									<%= f.hidden_field :argument_id, :value => argument.id %>
+								  	<%= f.submit "Signaler", class: "texte2" %>
+								<% end %>
+							</div>
+						<% else%>
+							<div class="finalementnon2">
+								<%= link_to('Non')%>
+							</div>
+							<div class="signalisation">
+								<%= link_to('Signaler', new_session_path(resource_name))%>
+							</div>
+						<% end %>
+					    </div>
+					<% end%>
+
+					<div class id="bleu">
+			        <div class="row" id="descente">
+		                 <div class="span2">
+		                 	<div class="user">
+								<%= image_tag argument.user.avatar.url(:medium), class: "image" %>
+							</div>
+							<div class="nom-user">
+		                 	<%= link_to argument.user.fitting_name, argument.user %>
+		                 	</div>
+		                 </div>
+		                 <div class="span4" id="descente2">
+							<div class="row" id='title5'>
+		                 		<div class="title">
+		                 			<%= argument.title%>
+								</div>
+								<div class="cont"><%=argument.content.split(' ').slice(0,36).join(' ')%> ...
+		                 		</div>
+							</div>
+							<div class="row" id="coco1">
+			        			<div class="stats">
+									<%= argument.count_positive %>
+								  <% if current_user && argument.has_evaluation?(:likes, current_user) && argument.valeur_vote(current_user) == 1.0%>
+								  <%= link_to image_tag("like-argument-01.png"), like_argument_path(argument, type: "up"), method: "post"%> <span class="texte">|</span>
+								  <% else %>
+									<%= link_to image_tag("like-argument.png"), like_argument_path(argument, type: "up"), method: "post"%> <span class="texte">|</span>
+								  <% end %>
+								  <%= argument.count_negative %>
+								  <% if current_user && argument.has_evaluation?(:likes, current_user) && argument.valeur_vote(current_user) == -1.0%>
+								  <%=link_to image_tag("dislike-argument-01.png"), like_argument_path(argument, type: "down"), method: "post" %>
+								  <% else%>
+								  <%=link_to image_tag("dislike-argument.png"), like_argument_path(argument, type: "down"), method: "post" %>
+								  <% end %>
 
 
-							  <%= image_tag("box-texte.png", class: "box")%>
-							  <%= image_tag("vote-oui.png", class: "oui")%>	
-									
-							  <div class='toggleOpen'>Lire la suite...</div>								
-	                 		</div>
-						</div>
-						
-						<div class="row" id="coco">
-	                 		<div class="toggle">
-							  <div id="argcontent">
-								<%= h Rinku.auto_link(argument.content).gsub(/\n/, '<br/>').html_safe %>
-							  </div>							
-	                 		</div>
-						</div>
-						
-	                 </div>
-		     	</div>
-		
-				<div class="toggleClose2">
-					<div class="toggleClose"><a>Refermer l'argument</a></div>
-					<div class="arrow-up-argument"></div>
-				</div>
-	         </div>
-	    </div>
-	
-     <div class="argcoms">        
-        <div class="row">
-	        <div class="span8">
-		    		<% argument.argcoms.each do |argcom| %>
-    	    		 <%= render "shared/argcom_badge", :argcom => argcom %>
-    	    		<% end %>
-					<% if signed_in? && argument.argumentable_type == "Debate"%>
-			    		<%= render "shared/argcom_form", :argcom => argument.argcoms.new, :argument => argument %>
-			    	<%end%>
+								  <%= image_tag("box-texte.png", class: "box")%>
+								  <%= image_tag("vote-oui.png", class: "oui")%>	
+
+								  <div class='toggleOpen'>Lire la suite...</div>								
+		                 		</div>
+							</div>
+
+							<div class="row" id="coco">
+		                 		<div class="toggle">
+								  <div id="argcontent">
+									<%=h Rinku.auto_link(argument.content).gsub(/\n/, '<br/>').html_safe %>
+								  </div>							
+		                 		</div>
+							</div>
+
+		                 </div>
+			     	</div>
+
+					<div class="toggleClose2">
+						<div class="toggleClose"><a>Refermer l'argument</a></div>
+						<div class="arrow-up-argument"></div>
+					</div>
+		         </div>
 		    </div>
-		</div>
 
-	</div>
-</section>
+	     <div class="argcoms">        
+	        <div class="row" id="argcom-pour">
+		        <div class="span8">
+			    		<% argument.argcoms.each do |argcom| %>
+	    	    		 <%= render "shared/argcom_badge", :argcom => argcom %>
+	    	    		<% end %>
+						<% if signed_in? && argument.argumentable_type == "Debate"%>
+				    		<%= render "shared/argcom_form", :argcom => argument.argcoms.new, :argument => argument %>
+				    	<%end%>
+			    </div>
+			</div>
+		</div>
+	</section>

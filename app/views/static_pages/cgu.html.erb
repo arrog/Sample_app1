@@ -1,32 +1,102 @@
-<section id="erreurs">
+<section id="presentation-1">
   <%= render :partial => "shared/flash_messages" %>
   
   <div class="container">
+	<div class="row" id="presentation1">
+		<%= image_tag("presentation-centrale11-01.png")%>
+	</div>
 	<div class="row">
-		<div class="row" id="intro">
-			Toutes nos excuses.
+		<div class="row" id="abobo">
+			Les Médias, Les Think Tank et l'Education
 		</div>
 	</div>
-    <div class="row">
-      <div class="span4" id ="petit-abo">
-		<div class="cadre13">
-			<div class="titre">
-			Erreur 404
-			</div>
-			<div class="sous-titre">
-			<%= (["Ce n'est pas là. Enfin, ça y'est plus. Bref.","Sarah conner? C'est à coté","Eh Oui. Vous êtes une brebis égarée."]).shuffle.first%>
-			</div>
+  	
+	<div class="row" id="raison1">
+		<div class="circle">
+			<%=image_tag("billetboule-01.png", class: "image")%>
+			<div class="text">1</div>
 		</div>
+		<div class="text2">Nous discutons avec plusieurs médias actuellement pour un partenariat avec Moutoners. En échange d'une API Moutoners, ils organisent des débats conjointement sur Moutoners et leur site web.
+		</div>
+	</div>
+	
+	<div class="row">
+      <div class="span11" id ="holy">
+	   <div id="video">
+	     <div id="connecte">
+	   			<div class="row" id="lesphotos">
+					<%= link_to image_tag('defisb.jpg'), dialectiques_path, class: "image1-expl"%>
+					<%= link_to image_tag('defisbleu.jpg'), dialectiques_path, class: "image2-expl"%>
+	   			</div>
+	   			<div class="row" id="lesphotos">
+					<%= link_to image_tag('expertsb.jpg'), dialectiques_path, class: "image1-expl"%>
+					<%= link_to image_tag('expertsbleu.jpg'), dialectiques_path, class: "image2-expl"%>
+	   			</div>
+	   			<div class="row" id="lesphotos">
+					<%= link_to image_tag('ouvertb.jpg'), dialectiques_path, class: "image1-expl"%>
+					<%= link_to image_tag('ouvertbleu.jpg'), debats_path, class: "image2-expl"%>					
+	   			</div>			
+	     </div>
+	     <div id="video2_0">
+	   		<div class="intro"><%= @citations2.first[0] %></div>
+	   		<div class="introduction1">
+	   		<span class="texte"><%= @citations2.first[1] %></span>
+	   		</div>
+       
+	   		<%= image_tag("fleche-droite.png", class: "fleche10")%>
+	   		<div class="texte2"><%= @citations2.first[2] %></div>
+	     </div>
+	     <div id="video2_01">
+	   		<div class="intro"><%= @citations2.second[0] %></div>
+	   		<div class="introduction1">
+	   		<span class="texte"><%= @citations2.second[1] %></span>
+	   		</div>
+       
+	   		<%= image_tag("fleche-droite.png", class: "fleche11")%>
+	   		<div class="texte2"><%= @citations2.second[2] %></div>
+	     </div>
+	     <div id="video2_02">
+	   		<div class="intro"><%= @citations2.third[0] %></div>
+	   		<div class="introduction1">
+	   		<span class="texte"><%= @citations2.third[1] %></span>
+	   		</div>
+       
+	   		<%= image_tag("fleche-droite.png", class: "fleche12")%>
+	   		<div class="texte2"><%= @citations2.third[2] %></div>
+	     </div>
+	     <div id="video2_03">
+	   		<div class="intro"><%= @citations2.last[0] %></div>
+	   		<div class="introduction1">
+	   		<span class="texte"><%= @citations2.last[1] %></span>
+	   		</div>
+       
+	   		<div class="texte2"><%= @citations2.last[2] %></div>
+	     </div>
+	   </div>
 	  </div>
-    </div>
-
-
-	<div class="row" id="intro2">
-		<%= link_to "Cliquez ici pour revenir dans le droit chemin.", root_path %>
 	</div>
-	<div class="row" id="photo-abonnement">
-	<%= link_to (image_tag('moutons-abonnement.png', :alt => 'Moutoners')), root_path %>
+	<div class="row" id="raison1">
+		<div class="circle">
+			<%=image_tag("billetboule-01.png", class: "image")%>
+			<div class="text">2</div>
+		</div>
+		<div class="text2">Suite aux recommandations du jury précédent, nous avons entamé des discussions avec des partis politiques et des think tank. Certains voudraient avoir leur propre plateforme de débat calquée sur Moutoners, D'autres sont d'accord pour avoir un groupe sur Moutoners, avec un accord financier permettant à tous leurs membres d'avoir un compte Premium.
+		</div>
 	</div>
+	<div class="row" id="raison1">
+		<div class="circle">
+			<%=image_tag("billetboule-01.png", class: "image")%>
+			<div class="text">3</div>
+		</div>
+		<div class="text2">Pour l'éducation et notamment les devoirs en langues étrangères, Moutoners pourraient être utile ! Nous allons proposer aux professeurs des groupes secrets, que seul les personnes qui y seront invités pourront voir. Ainsi ils pourront débattre, discuter, se défieret se corriger entre eux.
+		</div>
+	</div>
+	
+	
+	<div class="row" id="presentation1">
+		<%= link_to(image_tag("presentation-centrale10-01.png"), contact_path)%>
+	</div>
+	
   </div>
 
 </section>

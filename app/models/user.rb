@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :avatar
   
   has_many :relationships, foreign_key: "sender_id", dependent: :destroy
-  has_many :relationships, foreign_key: "reciever_id",dependent: :destroy
+  has_many :reverse_relationships, foreign_key: "reciever_id", class_name:  "Relationship", dependent:   :destroy
   has_many :contacts, through: :relationships, source: :reciever
   has_many :contacted, through: :relationships, source: :sender
   
@@ -83,8 +83,20 @@ class User < ActiveRecord::Base
        Relationship.create!(reciever_id: other_user.id, value:-1, sender_id: self.id)
     end
     
-    def contact
-      #A travailler
+    def contacts
+      a = []
+      self.team_user.each do |l|
+        a= [l.sender]+[l.reciever]+ a
+      end
+      a
+    end
+    
+    def contacted
+      a = []
+      self.team_user.each do |l|
+        a= [l.sender]+[l.reciever]+ a
+      end
+      a
     end
     
     def circle
@@ -95,8 +107,12 @@ class User < ActiveRecord::Base
       (Relationship.where(reciever_id: other_user.id, value:1, sender_id: self.id)+ Relationship.where(sender_id: other_user.id, value:1, reciever_id: self.id)).any?
     end
     
+    def adversaire
+      relationships.where(value:-1) + reverse_relationships.where(value:-1)
+    end
+    
     def team_user
-      Relationship.where(value:1, sender_id: self.id) + Relationship.where(value:1, reciever_id: self.id)
+      relationships.where(value:1) + reverse_relationships.where(value:1)
     end
     
     def defier?(other_user)
@@ -261,7 +277,7 @@ class User < ActiveRecord::Base
       if l.state == "online"
       elsif l.first_user == self && ["first", "third", "fifth", "seventh"].include?(l.state)
         dou = dou +[l]
-      elsif l.second_user == self && ["second", "fourth", "sixth", "eighth"].include?(l.state)
+      elsif l.second_user == self && ["second", "forth", "sixth", "eighth"].include?(l.state)
         dou = dou + [l]
       end
      end
@@ -314,7 +330,7 @@ class User < ActiveRecord::Base
     end
     
     def team_request
-      relationships.where(state:"unseen", reciever_id: self.id, value:1)
+      reverse_relationships.where(state:"unseen", value:1)
     end
     
     def notifications1

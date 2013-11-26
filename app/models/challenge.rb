@@ -35,7 +35,7 @@ class Challenge < ActiveRecord::Base
   
   paginates_per 10
   
-  scope :open_challenges, -> { where(:state => ["first","second","third","fourth","fifth","sixth","seventh","eighth"], group: nil)}
+  scope :open_challenges, -> { where(:state => ["first","second","third","forth","fifth","sixth","seventh","eighth"], group: nil)}
   scope :incomplete, -> { where(:state => ["incomplete"]) }
     
   state_machine initial: :incomplete do

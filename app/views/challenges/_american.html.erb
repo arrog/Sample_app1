@@ -244,7 +244,7 @@
 						<%= form_for @challenge.invitations.new do |f|%>
 						<%= f.select(:reciever_id, current_user.circle.collect {|a| [a.fitting_name, a.id]}, { :include_blank=>true }, { :class => 'selector'}) %>
 
-						<%= f.hidden_field :position, :value => 3 %>
+						<%= f.hidden_field :position, :value => 4 %>
 						<%= f.hidden_field :challenge_id, :value => @challenge.id %>
 						<%= f.hidden_field :sender_id, :value => current_user.id %>
 					  	<%= f.submit "INVITER", :class => 'act' %> <div id="fermer-invitation4-american">FERMER</div>
@@ -494,7 +494,7 @@
 			<% elsif @challenge.state == 'third'%>			
 			    <% if current_user && current_user==@challenge.second_prop%>
 			    <%else%>
-			    <div class="tour-droite">
+			    <div class="tour-gauche">
 			    	<div class="image">
 			    		<%= image_tag @challenge.second_prop.avatar.url(:small), class:"image" %>
 			    	<span class="name"><%= @challenge.second_prop.fitting_name%> prépare son argument ...</span>

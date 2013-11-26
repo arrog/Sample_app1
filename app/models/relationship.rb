@@ -6,14 +6,17 @@ class Relationship < ActiveRecord::Base
   belongs_to :reciever, class_name: "User"
   belongs_to :sender, class_name: "User"
 
-   state_machine initial: :unseen do   
-     event :accept do
-       transition :unseen => :accepted
-     end  
-     event :reject do
-       transition :unseen => :rejected
-       transition :accepted => :rejected
-     end
-   end
+  state_machine initial: :unseen do   
+    
+    event :accepter do
+      transition :unseen => :accepted
+    end  
+    
+    event :rejeter do
+      transition :accepted => :rejected
+      transition :unseen => :rejected
+    end
+  
+  end
   
 end

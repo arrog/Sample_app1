@@ -1,3 +1,8 @@
+#presentation1{
+width: 772px;
+margin: 30px 0px 30px 150px;
+}
+
 #intro{
 font-family: "georgia";
 font-size: 16px;
@@ -919,7 +924,7 @@ text-align: center;
 		.text{
 		font-family: "gotham";
 		font-size: 23px;
-		margin-left: 45px;
+		margin-left: 44px;
 		margin-top: -35px;
 		}
 	}
@@ -955,7 +960,7 @@ text-align: center;
 		.text{
 		font-family: "gotham";
 		font-size: 23px;
-		margin-left: 45px;
+		margin-left: 44px;
 		margin-top: -35px;
 		}
 	}
@@ -1044,7 +1049,7 @@ text-align: center;
 		font-family: "gotham";
 		font-size: 48px;
 		margin-top:50px;
-		width:502px;
+		width:510px;
 		margin-left: 300px;
 		padding-bottom: 50px;
 		text-align: center;
@@ -1247,4 +1252,382 @@ margin-left: 470px;
 }
 
 
+}
+
+#presentation-2{
+	
+	#intro{
+		font-family: "georgia";
+		font-size: 16px;
+		font-style: italic;
+		font-weight: bold;
+		margin-top:23px;
+		width:1060px;
+		margin-left: 20px;
+		text-align: center;
+	}
+	
+	#intro2{
+	    padding-bottom: 15px;
+	    width: 1060px;
+		font-family: "georgia";
+		font-size: 16px;
+		font-style: italic;
+		font-weight: bold;
+		margin-top:23px;
+		text-align: center;
+		margin-left: 20px;
+	}
+	
+	#lesphotos{
+	margin-left:10px;
+	width: 150px;
+	padding-top:5px;
+	padding-bottom: 10px;
+	margin-right: 10px;
+	border-bottom: 1px Solid white;
+	}
+
+}
+
+#presentation-1{
+	#lesphotos{
+	margin-left:10px;
+	width: 150px;
+	padding-top:5px;
+	padding-bottom: 10px;
+	margin-right: 10px;
+	border-bottom: 1px Solid white;
+	}
+	
+	#photo-abonnement{
+  width: 110px;
+  margin-top: 35px;
+  margin-left: 470px;
+  }
+	#pousse-gauche{
+	margin-top: 30px;
+	margin-left: 200px;
+	}
+	#pousse-droite{
+	margin-left: 400px;
+	}
+	#intro{
+		font-family: "georgia";
+		font-size: 16px;
+		font-style: italic;
+		font-weight: bold;
+		margin-top:23px;
+		width:1060px;
+		margin-left: 20px;
+		text-align: center;
+	}
+	
+	#intro2{
+	    padding-bottom: 15px;
+	    width: 1060px;
+		font-family: "georgia";
+		font-size: 16px;
+		font-style: italic;
+		font-weight: bold;
+		margin-top:23px;
+		text-align: center;
+		margin-left: 20px;
+	}	
+
+	#abobo{
+		font-family: "gotham";
+		font-size: 48px;
+		margin-top:50px;
+		width:1060px;
+		margin-left: 20px;
+		text-align: center;
+	}
+	
+	#abobo1{
+		font-family: "gotham";
+		font-size: 48px;
+		margin-top:50px;
+		width:510px;
+		margin-left: 300px;
+		padding-bottom: 50px;
+		text-align: center;
+		border-bottom: 1px Dashed;
+	}
+	
+	#petit-abo{
+	min-height: 157px;
+	width: 340px;
+	border-radius: 13px;
+	background-color: #FF6969;
+	margin-top: 50px;
+	margin-left: 202px;
+	
+	.offre2{
+	width:205px;
+	height: 25px;
+	background-color: #C1C1C1;
+	font-family: gotham;
+	font-size: 18px;
+	padding-top: 4px;
+	text-align: center;
+	margin-left:66px;
+	position: relative;
+	z-index: 2;
+	}
+	
+	.cadre13{
+	min-height: 127px;
+	width: 302px;
+	border-radius: 13px;
+	background-color: #FFF;
+	margin-left: 19px;
+	margin-top: -15px;
+	position: relative;
+	z-index: 1;
+	
+		.titre{
+		font-family: "gotham";
+		font-size: 36px;
+		text-align: center;
+		padding-top: 40px;
+		}
+		
+		.sous-titre{
+		font-family: "georgia";
+		font-size: 16px;
+		font-style: italic;
+		padding: 30px 5px 5px 5px;	
+		text-align: left;
+		
+		}
+	}
+	
+	}	
+	
+	#small-abo{
+	min-height: 157px;
+	width: 340px;
+	border-radius: 13px;
+	background-color: #DDD;
+	margin-top: 50px;
+	margin-left: 202px;
+	
+	.offre2{
+	width:205px;
+	height: 25px;
+	background-color: #AAD0FF;
+	font-family: gotham;
+	font-size: 18px;
+	padding-top: 4px;
+	text-align: center;
+	margin-left:66px;
+	position: relative;
+	z-index: 2;
+	}
+	.offre1{
+	width:205px;
+	height: 25px;
+	background-color: #CCC;
+	font-family: gotham;
+	font-size: 18px;
+	padding-top: 4px;
+	text-align: center;
+	margin-left:66px;
+	position: relative;
+	z-index: 2;
+	}
+	
+	.cadre13{
+	min-height: 127px;
+	width: 302px;
+	border-radius: 13px;
+	background-color: #FFF;
+	margin-left: 19px;
+	margin-bottom: 15px;
+	margin-top: -15px;
+	position: relative;
+	z-index: 1;
+	
+		.titre{
+		font-family: "gotham";
+		font-size: 36px;
+		text-align: center;
+		padding-top: 40px;
+		}
+		
+		.sous-titre{
+		font-family: "georgia";
+		font-size: 16px;
+		font-style: italic;
+		padding: 30px 5px 15px 5px;	
+		text-align: left;
+		
+		}
+	}
+	
+	}
+	
+	#big-abo{
+	min-height: 157px;
+	width: 340px;
+	border-radius: 13px;
+	background-color: #DDD;
+	margin-top: 50px;
+	margin-left: 50px;
+	
+	.offre2{
+	width:205px;
+	height: 25px;
+	background-color: #AAD0FF;
+	font-family: gotham;
+	font-size: 18px;
+	padding-top: 4px;
+	text-align: center;
+	margin-left:66px;
+	position: relative;
+	z-index: 2;
+	}
+	.offre1{
+	width:205px;
+	height: 25px;
+	background-color: #CCC;
+	font-family: gotham;
+	font-size: 18px;
+	padding-top: 4px;
+	text-align: center;
+	margin-left:66px;
+	position: relative;
+	z-index: 2;
+	}
+	
+	.cadre13{
+	min-height: 127px;
+	width: 302px;
+	border-radius: 13px;
+	background-color: #FFF;
+	margin-left: 19px;
+	margin-bottom: 15px;
+	margin-top: -15px;
+	position: relative;
+	z-index: 1;
+	
+		.titre{
+		font-family: "gotham";
+		font-size: 36px;
+		text-align: center;
+		padding-top: 40px;
+		}
+		
+		.sous-titre{
+		font-family: "georgia";
+		font-size: 16px;
+		font-style: italic;
+		padding: 30px 5px 15px 5px;	
+		text-align: left;
+		
+		}
+	}
+	
+	}
+	
+	#grand-abo{
+	height: 157px;
+	width: 340px;
+	border-radius: 13px;
+	background-color: #AAD0FF;
+	margin-top: 50px;
+	margin-left: 50px;
+	
+	.offre2{
+	width:232px;
+	height: 25px;
+	background-color: #C1C1C1;
+	font-family: gotham;
+	font-size: 18px;
+	padding-top: 4px;
+	text-align: center;
+	margin-left:66px;
+	position: relative;
+	z-index: 2;
+	}
+	
+	.cadre13{
+	height: 127px;
+	width: 302px;
+	border-radius: 13px;
+	background-color: #FFF;
+	margin-left: 19px;
+	margin-top: -15px;
+	position: relative;
+	z-index: 1;
+	
+		.titre{
+		font-family: "gotham";
+		font-size: 36px;
+		text-align: center;
+		padding-top: 40px;
+		}
+		
+		.sous-titre{
+		font-family: "georgia";
+		font-size: 16px;
+		font-style: italic;
+		padding: 50px 5px 5px 5px;	
+		text-align: left;
+		}
+	}
+	
+	}
+
+  #promesses{
+  margin-left: 424px;
+  margin-top: 30px;
+  padding-top: 10px;
+  margin-bottom: 30px;
+  padding-left: 25px;
+  background-color: #ADD0FF;
+  height: 130px;
+  width: 215px;
+  color: black;
+  font-family: "gotham";
+  font-size: 34px;
+  line-height: 40px;
+  }
+
+	
+	#raison1{
+	margin-left: 180px;
+	margin-top: 100px;
+	margin-bottom: 30px;
+	.circle {
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		background-color: #AAD0FF;
+		
+		.image{
+		margin-left:25px;
+		margin-top: 25px;
+		}
+		
+		.text{
+		font-family: "gotham";
+		font-size: 23px;
+		margin-left: 45px;
+		margin-top: -35px;
+		}
+	}
+	
+	
+	.text2{
+	font-family: "georgia";
+	font-size: 20px;
+	text-align: left;
+	width: 650px;
+	margin-top: -90px;
+	margin-left: 120px;
+	line-height: 25px;
+	}
+	}
 }

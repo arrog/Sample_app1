@@ -1,32 +1,77 @@
-<section id="erreurs">
+<section id="presentation-2">
   <%= render :partial => "shared/flash_messages" %>
   
   <div class="container">
+	<div class="row" id="presentation1">
+		<%= image_tag("presentation-centrale4-01.png")%>
+	</div>
 	<div class="row">
 		<div class="row" id="intro">
-			Toutes nos excuses.
+			Argumente. Conteste. Vote. Défie. Juge. Débats.	
 		</div>
 	</div>
-    <div class="row">
-      <div class="span4" id ="petit-abo">
-		<div class="cadre13">
-			<div class="titre">
-			Erreur 404.
-			</div>
-			<div class="sous-titre">
-			<%= (["Ce n'est pas là. Enfin, ça y'est plus. Bref.","Sarah conner? C'est à coté","Eh Oui. Vous êtes une brebis égarée."]).shuffle.first%>
-			</div>
-		</div>
+	
+	<div class="row">
+      <div class="span11" id ="holy">
+	   <div id="video">
+	     <div id="connecte">
+	   			<div class="row" id="lesphotos">
+					<%= link_to image_tag('defisb.jpg'), dialectiques_path, class: "image1-expl"%>
+					<%= link_to image_tag('defisbleu.jpg'), dialectiques_path, class: "image2-expl"%>
+	   			</div>
+	   			<div class="row" id="lesphotos">
+					<%= link_to image_tag('expertsb.jpg'), dialectiques_path, class: "image1-expl"%>
+					<%= link_to image_tag('expertsbleu.jpg'), dialectiques_path, class: "image2-expl"%>
+	   			</div>
+	   			<div class="row" id="lesphotos">
+					<%= link_to image_tag('ouvertb.jpg'), dialectiques_path, class: "image1-expl"%>
+					<%= link_to image_tag('ouvertbleu.jpg'), debats_path, class: "image2-expl"%>					
+	   			</div>			
+	     </div>
+	     <div id="video2_0">
+	   		<div class="intro"><%= @citations2.first[0] %></div>
+	   		<div class="introduction1">
+	   		<span class="texte"><%= @citations2.first[1] %></span>
+	   		</div>
+       
+	   		<%= image_tag("fleche-droite.png", class: "fleche10")%>
+	   		<div class="texte2"><%= @citations2.first[2] %></div>
+	     </div>
+	     <div id="video2_01">
+	   		<div class="intro"><%= @citations2.second[0] %></div>
+	   		<div class="introduction1">
+	   		<span class="texte"><%= @citations2.second[1] %></span>
+	   		</div>
+       
+	   		<%= image_tag("fleche-droite.png", class: "fleche11")%>
+	   		<div class="texte2"><%= @citations2.second[2] %></div>
+	     </div>
+	     <div id="video2_02">
+	   		<div class="intro"><%= @citations2.third[0] %></div>
+	   		<div class="introduction1">
+	   		<span class="texte"><%= @citations2.third[1] %></span>
+	   		</div>
+       
+	   		<%= image_tag("fleche-droite.png", class: "fleche12")%>
+	   		<div class="texte2"><%= @citations2.third[2] %></div>
+	     </div>
+	     <div id="video2_03">
+	   		<div class="intro"><%= @citations2.last[0] %></div>
+	   		<div class="introduction1">
+	   		<span class="texte"><%= @citations2.last[1] %></span>
+	   		</div>
+       
+	   		<div class="texte2"><%= @citations2.last[2] %></div>
+	     </div>
+	   </div>
 	  </div>
-    </div>
-
-
-	<div class="row" id="intro2">
-		<%= link_to "Cliquez ici pour revenir dans le droit chemin.", root_path %>
 	</div>
-	<div class="row" id="photo-abonnement">
-	<%= link_to (image_tag('moutons-abonnement.png', :alt => 'Moutoners')), root_path %>
+
+	
+	<div class="row" id="presentation1">
+		<%= link_to(image_tag("presentation-centrale5-01.png"), presse_path)%>
 	</div>
+	
   </div>
 
 </section>
