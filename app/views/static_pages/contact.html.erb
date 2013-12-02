@@ -1,15 +1,92 @@
-<section id="presentation-1">
-  <%= render :partial => "shared/flash_messages" %>
-  
+<section id="abonnements">
   <div class="container">
-	<div class="row" id="presentation1">
-		<%= image_tag("presentation-centrale12-01.png")%>
-	</div>
 	
 	<div class="row" id="presentation1">
-		<%= link_to(image_tag("presentation-centrale13-01.png"), help_path)%>
+		<%= image_tag("presentation-centrale16-01.png")%>
 	</div>
 	
-  </div>
+	<div class="row">
+		<div class="row" id="intro">
+			L'équipe
+		</div>
+	</div>
 
+	<div class="row" id="notre-contact">
+		<div class="contacter">
+			<div class="image-1">
+				<%= image_tag ("douglas.png")%>
+			</div>
+		</div>
+		<div class="contacter1">
+			<div class="image-1">
+				<%= image_tag ("photo-equipe.JPG")%>
+			</div>
+		</div>
+		<div class="contacter2">
+			<div class="image-1">
+				<%= image_tag ("david.png")%>
+			</div>
+		</div>
+	</div>
+	<div class="row" id="notre-contact">
+		<li class="nom">
+			Douglas Hoare
+		</li>
+		<li class="nom">
+			Paul Ghorra
+		</li>
+		<li class="nom">
+			David Hoare
+		</li>
+	</div>
+	<div class="row" id="notre-contact">
+		<li class="nom2">
+			Olivier de Serres.</br>
+			Design et ligne éditoriale.
+		</li>
+		<li class="nom2">
+			Ecole Centrale de Paris.</br>
+			Geek et Commercial.
+		</li>
+		<li class="nom2">
+			Olivier de Serres.</br>
+			Design et Stratégie.
+		</li>
+	</div>
+
+	<div class="row">
+		<div class="row" id="intro">
+			Faites vite avant que l'on devienne torp importants.
+		</div>
+	</div>
+		
+	<div class="row">
+		<div class="nous-ecrire">
+			Vous pouvez nous écrire :
+		</div>
+		<div class="nous-ecrire1">
+			p_ghorra@hotmail.com
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="nous-ecrire2">
+			<%= link_to "Rejoignez nous sur facebook", " www.facebook.com", class: "nom"%>
+		</div>
+	</div>
+	
+	<div class="row" id="tiret-tiret"></div>
+	
+	<div class="row" id="intro">
+		La genèse
+	</div>
+	
+	<div class="row" id="histoiregenese">
+		<div class="texte">Ca a commencé en suivant les débats pendant la présidentielle, un peu partout sur le web. Le niveau était ahurissant. On s'est dit "pire, tu peux pas". Alors on a fait mieux.</div>
+	</div>
+	
+	<div class="row" id="photo-abonnement">
+	<%= image_tag('moutons-abonnement.png', :alt => 'Moutoners') %>
+	</div>
+  </div>
 </section>

@@ -94,11 +94,7 @@
 					</div>
 				</div>
 				<div class="row" id="voir-tous">
-					<% if current_user && current_user.admin_group?(@group)%>
-						<%= link_to "Ajouter un membre", rajouter_group_path(@group), class: "texte" %>
-					<% else %>
 						<%= link_to "voir tous ...", members_group_path(@group), class: "texte" %>
-					<%end%>
 				</div>				
 			</div>
 			<div class="span7" id="developpement">

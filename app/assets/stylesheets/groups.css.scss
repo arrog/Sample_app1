@@ -1,4 +1,4 @@
-#group-badge1{
+	 #group-badge1{
 	.badge2{
 		height: 133px;
 		width: 427px;
@@ -381,13 +381,30 @@
 	#revenir-augroupe{
 		margin-left: 204px;
 		margin-top: 30px;
-		width: 170px;
+		width: 155px;
 		margin-bottom: 20px;
 		height: 28px;
 		font-family: "gotham";
 		padding: 7px 7px 0px 7px;
-		font-size: 18px;
+		font-size: 16px;
 		background-color: black;
+			.link{
+			color: white;
+			}
+		
+	}
+	
+	#revenir-augroupe2{
+		margin-left: 204px;
+		margin-top: 30px;
+		width: 310px;
+		height: 28px;
+		color: white;
+		margin-bottom: 20px;
+		font-family: "gotham";
+		padding: 7px 7px 0px 7px;
+		font-size: 18px;
+		background-color: #AAD0FF;
 			.link{
 			color: white;
 			}
@@ -410,7 +427,7 @@
 		padding-top: 10px;
 		background-color: #FF7575;
 		font-style: italic;
-		font-size: 15px;
+		font-size: 14px;
 		font-family: "georgia";
 		margin-top: -30px;
 		margin-bottom: 30px;

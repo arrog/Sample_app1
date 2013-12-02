@@ -1,15 +1,72 @@
-<section id="presentation-1">
-  <%= render :partial => "shared/flash_messages" %>
-  
+<section id="abonnements">
   <div class="container">
+	
 	<div class="row" id="presentation1">
 		<%= image_tag("presentation-centrale14-01.png")%>
 	</div>
 	
-	<div class="row" id="presentation1">
-		<%= link_to(image_tag("presentation-centrale15-01.png"), presentation_path)%>
+	<div class="row">
+		<div class="row" id="intro">
+			Soyez doux comme des agneaux.
+		</div>
+		<div class="row" id="abobo1">
+			La Charte </br>du Parfait Mouton.
+		</div>
+	</div>
+		
+	<div class="row" id="raison4">
+		<div class="circle">
+			<%=image_tag("billetboule-01.png", class: "image")%>
+			<div class="text">1</div>
+		</div>
+		<div class="text2">
+			Nous ne disposons uniquement d'un droit d'affichage (CGU). Vous êtes responsables de vos propros.
+		</div>
 	</div>
 	
-  </div>
+	<div class="row" id="raison4">
+		<div class="circle">
+			<%=image_tag("billetboule-01.png", class: "image")%>
+			<div class="text">2</div>
+		</div>
+		<div class="text2">
+			Ben, déjà il faut respecter les lois en vigueur: Racisme, Homophobie ...
+		</div>
+	</div>
 
+	<div class="row" id="raison4">
+		<div class="circle">
+			<%=image_tag("billetboule-01.png", class: "image")%>
+			<div class="text">3</div>
+		</div>
+		<div class="text2">
+			Ensuite, ce serait cool de ne pas insulter les autres utilisateurs.
+		</div>
+	</div>
+
+	<div class="row" id="raison4">
+		<div class="circle">
+			<%=image_tag("billetboule-01.png", class: "image")%>
+			<div class="text">4</div>
+		</div>
+		<div class="text2">
+			Sans vouloir faire nos vichystes et encourager la délation, signaler les dérives.
+		</div>
+	</div>		
+
+	<div class="row" id="raison4">
+		<div class="circle">
+			<%=image_tag("billetboule-01.png", class: "image")%>
+			<div class="text">5</div>
+		</div>
+		<div class="text2">
+			Toute personne qui ne respecte pas ces règles, verra sa cotisation reversée à une association de son choix et sera bannie de ce site.
+		</div>
+	</div>
+	
+	<div class="row" id="tiret-tiret"></div>
+	<div class="row" id="photo-abonnement">
+	<%= image_tag('moutons-abonnement.png', :alt => 'Moutoners') %>
+	</div>
+  </div>
 </section>

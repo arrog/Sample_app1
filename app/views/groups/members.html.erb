@@ -12,27 +12,36 @@
 		<div class="row" id="revenir-augroupe">
 			<%= link_to "Revenir au groupe", @group, class: "link"%>
 		</div>
-		<% if current_user && current_user.admin_group?(@group)%>
-		<div class="row">
-			Rajoute des personnes au groupe
-			<% @group.group_toinvite.shuffle.each do |user|%>
-				<%= render "shared/user_badge", user: user%>
-					+ lien pour les inviter
-			<% end%>
-		</div>
-		<%end%>
+
 		<div class="row" id="developpement-bis">
 				<% @group.users.each do |user|%>
-
 					<li>
 					<%= render "shared/user_badge", user: user%>
-									<div class="invitation"><%= link_to "inviter",invite_group_group_user_path(user), class: "invitation"%></div>
+		
 					<% if current_user && current_user.admin_group?(@group) %>
-						<%= link_to "RAJOUTER QUELQU'UN EN RESPONSABLE DU GROUP", rajouter_group_path(@group) %>
-							
+					<div class="invitation">
+						<%= link_to "Désigner Responsable", rajouter_group_path(@group), class: "invitation"%>
+					</div>
 					<% end %>
 					</li>
 				<% end %>
 		</div>
+		
+		<% if current_user && current_user.admin_group?(@group)%>
+		<div class="row" id="revenir-augroupe2">
+			Inviter de nouvelles personnes
+		</div>
+		<div class="row" id="developpement-bis">
+				<% @group.group_toinvite.shuffle.each do |user|%>
+					<li>
+					<%= render "shared/user_badge", user: user%>
+					<div class="invitation"><%= link_to "inviter",invite_group_group_user_path(user), class: "invitation"%></div>
+					</li>
+				<% end %>
+		</div>
+		<% end %>
+		
+
+		
 	</div>
 </section>

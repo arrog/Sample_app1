@@ -906,6 +906,184 @@ text-align: center;
 			margin-left: 150px;}
 	}
 	
+	
+	#faqq{
+		margin-left: 270px;
+		margin-top: 45px;
+		
+		.blanc{
+			width: 0; 
+			height: 0; 
+			border-top: 12px solid transparent;
+			border-bottom: 12px solid transparent;
+			position: relative;
+			z-index: 1;
+			border-left: 11px solid white;
+		}
+		.bleu{
+			margin-top:-24px;
+			height: 24px;
+			width: 39px;
+			background-color: #AAD0FF;
+		}
+		
+		.titre{
+		font-family: "gotham";
+		font-size: 26px;
+		margin-top: -40px;
+		margin-left: 70px;
+		line-height: 28px;
+		width: 500px;
+		padding-bottom: 20px;
+		border-bottom: 1px dashed black;
+		}
+		
+		.texte{
+		font-family: "georgia";
+		margin-top: 20px;
+		font-size: 16px;
+		line-height: 24px;
+		width: 500px;
+		margin-left: 70px;
+		}
+	}
+	
+	#histoiregenese{
+		width: 600px;
+		height: 157px;
+		background-color: #AAD0FF;
+		margin-left:  247px;
+		margin-top: 30px;
+		
+		.texte{
+		font-family: "georgia";
+		font-weight: bold;
+		font-size: 16px;
+		padding: 40px;
+		line-height: 25px;
+		}
+	}
+	
+	.nous-ecrire{
+	width: 300px;
+	height: 30px;
+	font-family: "gotham";
+	font-size: 20px;
+	padding-top: 8px;
+	padding-left: 15px;
+	text-align: left;
+	color: white;
+	margin: 40px 0px 0px 208px;
+	letter-spacing: 1px;
+	background-color: #AAD0FF;
+	}
+	
+	.nous-ecrire1{
+	width: 300px;
+	height: 30px;
+	font-family: "gotham";
+	font-size: 20px;
+	padding-top: 8px;
+	padding-left: 15px;
+	text-align: left;
+	color: black;
+	margin: -38px 0px 0px 567px;
+	letter-spacing: 1px;
+	background-color: #C9C9C9;
+	}
+	
+	.nous-ecrire2{
+	width: 370px;
+	height: 30px;
+	font-family: "gotham";
+	font-size: 20px;
+	padding-top: 8px;
+	padding-left: 15px;
+	text-align: left;
+	color: black;
+	margin: 30px 0px 0px 337px;
+	letter-spacing: 1px;
+	background-color: #AAD0FF;
+	
+		.nom{color: #000;}
+	}
+	
+	#notre-contact{
+
+		li
+		{display: inline-block;}
+		margin-left: 187px;
+		margin-top: 30px;
+		
+		.nom{
+		font-family: "gotham";
+		font-size: 20px;
+		margin-right: 40px;
+		width: 200px;
+		text-align: center;
+		}
+		
+		.nom2{
+		font-family: "georgia";
+		font-size: 13px;
+		margin-right: 40px;
+		width: 200px;
+		text-align: center;
+		}
+		.contacter{
+		border-radius: 12px;
+		margin-right: 40px;
+		width: 200px;
+		height: 230px;
+		background-color: #AAD0FF;
+		
+			.image-1{
+			width:170px;
+			img{height: 200px; width: 170px;}
+			padding: 15px 0px 0px 15px;
+			position: relative;
+			z-index: 2;
+			border: 1px white Solid;
+			}
+		}
+		.contacter1{
+		border-radius: 12px;
+		margin-right: 40px;
+		width: 200px;
+		height: 230px;
+		background-color: #AAD0FF;
+		margin: -230px 0px 0px 240px;
+		
+			.image-1{
+			width:170px;
+			img{height: 200px; width: 170px;}
+			padding: 15px 0px 0px 15px;
+			position: relative;
+			z-index: 2;
+			border: 1px white Solid;
+			}
+		}
+		
+		.contacter2{
+		border-radius: 12px;
+		margin-right: 40px;
+		width: 200px;
+		height: 230px;
+		background-color: #AAD0FF;
+		margin: -230px 0px 0px 480px;
+		
+			.image-1{
+			width:170px;
+			img{height: 200px; width: 170px;}
+			padding: 15px 0px 0px 15px;
+			position: relative;
+			z-index: 2;
+			border: 1px white Solid;
+			}
+		}
+	}
+
+	
 	#raison3{
 	margin-left: 180px;
 	margin-top: 80px;
@@ -971,6 +1149,48 @@ text-align: center;
 	font-size: 20px;
 	text-align: left;
 	width: 450px;
+	margin-top: -90px;
+	margin-left: 120px;
+	line-height: 25px;
+	}
+	}
+	
+	#tiret-tiret{
+	margin-top: 100px;
+	margin-left: 350px;
+	width: 350px;
+	border-bottom: 1px dashed black;
+	}
+	
+	#raison4{
+	margin-left: 230px;
+	margin-top: 60px;
+	
+	.circle {
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		background-color: #AAD0FF;
+		
+		.image{
+		margin-left:25px;
+		margin-top: 25px;
+		}
+		
+		.text{
+		font-family: "gotham";
+		font-size: 23px;
+		margin-left: 44px;
+		margin-top: -35px;
+		}
+	}
+	
+	
+	.text2{
+	font-family: "georgia";
+	font-size: 20px;
+	text-align: left;
+	width: 550px;
 	margin-top: -90px;
 	margin-left: 120px;
 	line-height: 25px;
@@ -1049,6 +1269,7 @@ text-align: center;
 		font-family: "gotham";
 		font-size: 48px;
 		margin-top:50px;
+		line-height: 48px;
 		width:510px;
 		margin-left: 300px;
 		padding-bottom: 50px;
@@ -1305,9 +1526,19 @@ margin-left: 470px;
   margin-top: 35px;
   margin-left: 470px;
   }
+
+	#photo-abonnement1{
+  margin-top: 35px;
+  margin-left: 270px;
+	margin-bottom: -100px;
+  }
 	#pousse-gauche{
 	margin-top: 30px;
 	margin-left: 200px;
+	}
+	#pousse-milieu{
+	margin-top: 30px;
+	margin-left: 280px;
 	}
 	#pousse-droite{
 	margin-left: 400px;
@@ -1342,6 +1573,7 @@ margin-left: 470px;
 		width:1060px;
 		margin-left: 20px;
 		text-align: center;
+		line-height: 50px;
 	}
 	
 	#abobo1{

@@ -25,7 +25,7 @@ class ArgumentsController < ApplicationController
         redirect_to @argumentable
       else
         flash[:errors]
-        render "new" 
+        render "edit" 
       end
   end
   

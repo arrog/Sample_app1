@@ -1,7 +1,25 @@
 <section id="correction">
 <div class="container">
 	<div class="centrons-tout">
-	<%= render "shared/argument_neutre_form", argumentable: @argumentable, argument: @argument, position: 0 %>
+	<% if @argument.argumentable.class == Debate %>
+		<%= render "shared/argument_neutre_form", argumentable: @argumentable, argument: @argument, position: 0 %>
+	<% elsif  !@argument.argumentable.arguments.where(position: 1).any?%>
+		<%= render "shared/argument_neutre_form", argumentable: @argumentable, argument: @argument, position: 1 %>
+	<% elsif  !@argument.argumentable.arguments.where(position: 2).any?%>
+		<%= render "shared/argument_neutre_form", argumentable: @argumentable, argument: @argument, position: 2 %>
+	<% elsif  !@argument.argumentable.arguments.where(position: 3).any?%>
+		<%= render "shared/argument_neutre_form", argumentable: @argumentable, argument: @argument, position: 3 %>
+	<% elsif  !@argument.argumentable.arguments.where(position: 4).any?%>
+		<%= render "shared/argument_neutre_form", argumentable: @argumentable, argument: @argument, position: 4 %>
+	<% elsif  !@argument.argumentable.arguments.where(position: 5).any?%>
+		<%= render "shared/argument_neutre_form", argumentable: @argumentable, argument: @argument, position: 5 %>
+	<% elsif  !@argument.argumentable.arguments.where(position: 6).any?%>
+		<%= render "shared/argument_neutre_form", argumentable: @argumentable, argument: @argument, position: 6 %>
+	<% elsif  !@argument.argumentable.arguments.where(position: 7).any?%>
+		<%= render "shared/argument_neutre_form", argumentable: @argumentable, argument: @argument, position: 7 %>					  	
+	<% elsif  !@argument.argumentable.arguments.where(position: 8).any?%>
+		<%= render "shared/argument_neutre_form", argumentable: @argumentable, argument: @argument, position:  8%>
+	<% end%>
 	</div>
 </div>
 </section>
