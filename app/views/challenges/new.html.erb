@@ -9,61 +9,96 @@
 		
 		<div class="row" id="intro-newchallenge2">
 			<div class="texte1"><%= ["Discussion. Moyen de confirmer les autres dans leurs erreurs.", "Elever très haut le débat est une façon élégante de le perdre de vue.", "Je n'ai fait cette lettre plus longue que parce que je n'ai pas eu le temps de la faire plus courte", "Dans une discussion, vous avez toujours de votre côté des gens dont vous auriez préféré qu'ils soient de l'autre."].shuffle.first%></div>
-
 		</div>
-		
-		<section id="index-doulins">
-		<div class="row">
-			<div class="span11" id="informations-doulin">
-				<div class="span3" id="informations-doulin1">
-					<div class="texte">
-						Les Défis Dialectiques
-						comment ça marche ?				
-					</div>
-					<div class="texte2">
-						1- Je créé un défi</br>
-						2 - J'attends que le défi soit complet </br>
-						3- Une joute oratoire sans pitié !</br>
-					</div>
-				</div>
-
-				<div class="span4" id="informations-doulin2">
-				</div>
-				<div class="span4" id="informations-doulin3">
-				</div>
-				<div class="span1" id="fermer-explication">
-					
-				</div>
-			</div>
 		</div>
-		
-		<div class="row">
-			<div class="span11" id="informations-doulin">
-				<div class="span3" id="informations-doulin1">
-					<div class="texte">
-						<%= link_to "Créér un nouveau défi", new_challenge_path, class: "texte"%>
-					</div>
-					<div class="texte2">
-						1- Je choisis mon type de défi</br>
-						2- Je remplis les caractéristiques</br>
-						3- J'invite des débatteurs </br>
-						4- J'attends mon tour, en surveillant les notifications</br>
-					</div>
-				</div>
-
-				<div class="span4" id="informations-doulin2">
-				</div>
-				<div class="span4" id="informations-doulin3">
-				</div>
-				<div class="span1" id="fermer-explication1">
-					
-				</div>
-			</div>
-		</div>
-		</section>
-		
-		<div class="espace"></div>
 		
 	</div>
 </section>
 
+<div class="container" id="index-doulins">
+	<div class="row" id="open-infos">
+		<div class="span11" id="informations-doulin">
+			<div class="row" id="informations-challenge">
+				<div class ="span9" id="textexp">
+					Les Défis, comment ça marche ?				
+				</div>
+			 	<div class="span1" id="fermer-explication">
+				X
+				</div>
+		    </div>
+			<div class="row" id="ouvrons-encore">
+				<div class="image-gauche">
+					<%= image_tag("explication-1-01.png", class: "fleche10")%>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row" id="open-infos2">
+		<div class="span11" id="informations-doulin">
+			<div class="row" id="informations-challenge">
+				<div class ="span9" id="textexp">
+					La Création de défis.			
+				</div>
+			 	<div class="span1" id="fermer-explication1">
+				X
+				</div>
+		    </div>
+			<div class="row" id="ouvrons-encore">
+				<div class="span3">
+					<div class="titre">
+					<%= link_to "Créer un défi", new_challenge_path, class: "challenge"%>
+					</div>
+					<div class="sous-titre">
+					Créez votre propre débat, pour défier vos amis.
+					</div>
+				</div>
+				<div class="span2">
+					<div class="image1">
+					<%= image_tag("explication2-01.png", class: "challenge")%>
+					</div>
+					<div class="titre1">
+						Forme de débat
+					</div>
+					<div class="soustitre1">
+						Choisissez entre les quatre formes de débats proposés.
+					</div>
+				</div>
+				<div class="span2">
+					<div class="image1">
+					<%= image_tag("explication3-01.png", class: "challenge")%>
+					</div>
+					<div class="titre1">
+						Le thème
+					</div>
+					<div class="soustitre1">
+						Définition du thème et des paramètres.
+					</div>
+				</div>
+				<div class="span2">
+					<div class="image1">
+					<%= image_tag("explication4-01.png", class: "challenge")%>
+					</div>
+					<div class="titre1">
+						Les participants
+					</div>
+					<div class="soustitre1">
+						Qui sera avec vous? Contre vous?
+					</div>
+				</div>
+				<div class="span2">
+					<div class="image1">
+					<%= image_tag("explication5-01.png", class: "challenge")%>
+					</div>
+					<div class="titre1">
+						Participer et vaincre
+					</div>
+					<div class="soustitre1">
+						L'art d'avoir toujours raison.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

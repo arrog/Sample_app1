@@ -23,7 +23,7 @@ class StaticPagesController < ApplicationController
     @argument2 = Argument.find(96)
     @argument3 = Argument.find(100)
     @argument4 = Argument.find(101)
-    @citations2 =[["Les petis blogs","Les petits blogs spécialisés sont une bonne rampe de lancement","Nous avons déjà trouvé un accord avec Bulles de savoir (philosophie) et avec DumDum (musique)."],["LES GROS MEDIAS","Ils seront primordiaux pour que Moutoners prenne son envol","Nous sommes en discussion avec Deux gros médias, Le Point et Atlantico. Mais les négociations n'avancent pas, ils attendent de voir comment va évoluer le projet."],["LES RESEAUX SOCIAUX SPECIALISES","Une synergie et une mutualisation des forces évidente.","Nous ciblons plusieurs cibles. Notamment Babelio, Vodkaster, senscritique et longueur d'onde."],["LES SEMIS GROS","Les Semi-gros sont notre priorité.", "Les sites d'informations  de taille intermédiaire, comme Slate, Evene ou Politis, qui ont une ligne éditoriale de qualité mais qui ont du mal à offrir un plus à leurs lecteurs, sont notre soucis actuels. Nous n'avons pour l'instant aucun contact."]].shuffle
+    @citations2 =["Evolution du nombre d'abonnés", "Coût d'acquisition / Rentabilité", "Evolution du chiffre d'affaires", "Flux de trésorerie"]
   end
 
   def cgu

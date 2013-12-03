@@ -178,38 +178,6 @@
 		Nous ne ferons jamais commerce de vos informations.
 		</div>
 	</div>
-	<div class="row" id="abobo1">
-		Pourquoi s'abonner?
-	</div>
-	<div class="row" id="raison1">
-		<div class="circle">
-			<%=image_tag("billetboule-01.png", class: "image")%>
-			<div class="text">1</div>
-		</div>
-		<div class="text2">Avoir accès à tous les débats, les groupes,
-		les événements et les fonctionnalités de Moutoners.
-		</div>
-	</div>
-	<div class="row" id="raison2">
-		<div class="circle">
-			<%=image_tag("billetboule-01.png", class: "image")%>
-			<div class="text">2</div>
-		</div>
-		<div class="text2">Faire partie du cercle fermé des débatteurs Moutoners.
-		</div>
-	</div>
-	<div class="row" id="raison3">
-		<div class="circle">
-			<%=image_tag("billetboule-01.png", class: "image")%>
-			<div class="text">3</div>
-		</div>
-		<div class="text2">Nous aider à maintenir une ligne éditorialede qualité, en étant indépendant de la pub !
-		</div>
-	</div>
-	
-	<div class="row" id="photo-abonnement">
-	<%= image_tag('moutons-abonnement.png', :alt => 'Moutoners') %>
-	</div>
   </div>
 
 </section>
@@ -271,9 +239,29 @@
 			<div class="text">1</div>
 		</div>
 		<div class="text2"><h2>Viralité</h2>
-			Suite
+			Suite à des sondages effectués et à des analytics sur la version beta, nous avons pu déterminer les différents coefficients de viralité: nous avons une viralité de 0,3!
 		</div>
 	</div>
+
+	<div class="row" id="raison1">
+		<div class="circle">
+			<%=image_tag("billetboule-01.png", class: "image")%>
+			<div class="text">2</div>
+		</div>
+		<div class="text2"><h2>Tournoi</h2>
+			Nous allons organiser avec la fédération francophone de débats, un tournoi dialectique sur Moutoners, entre les différentes universités!
+		</div>
+	</div>	
+
+	<div class="row" id="raison1">
+		<div class="circle">
+			<%=image_tag("billetboule-01.png", class: "image")%>
+			<div class="text">3</div>
+		</div>
+		<div class="text2"><h2>Joutes</h2>
+			Dans nos bureaux, nous allons organiser 1 fois par semaine des joutes oratoires dialectiques en partenariat avec le Flux de Paris, pour sensibiliser à l'art de la dialectique?
+		</div>
+	</div>	
 	
   </div>
 
@@ -285,6 +273,78 @@
 	<div class="row" id="presentation1">
 		<%= image_tag("presentation-centrale12-01.png")%>
 	</div>
+	
+	<div class="row">
+		<div class="row" id="abobo">
+			Quelques Chiffres
+		</div>
+	</div>
+	<div class="row">
+		<div class="row" id="intro">
+			Argumente. Conteste. Vote. Défie. Juge. Débats.	
+		</div>
+	</div>
+	
+	<div class="row">
+      <div class="span11" id ="holy">
+	   <div id="video">
+	     <div id="connecte">
+	   			<div class="row" id="lesphotos">
+					<%= link_to image_tag('defisb.jpg'), dialectiques_path, class: "image1-expl"%>
+					<%= link_to image_tag('defisbleu.jpg'), dialectiques_path, class: "image2-expl"%>
+	   			</div>
+	   			<div class="row" id="lesphotos">
+					<%= link_to image_tag('expertsb.jpg'), dialectiques_path, class: "image1-expl"%>
+					<%= link_to image_tag('expertsbleu.jpg'), dialectiques_path, class: "image2-expl"%>
+	   			</div>
+	   			<div class="row" id="lesphotos">
+					<%= link_to image_tag('ouvertb.jpg'), dialectiques_path, class: "image1-expl"%>
+					<%= link_to image_tag('ouvertbleu.jpg'), debats_path, class: "image2-expl"%>					
+	   			</div>			
+	     </div>
+	     <div id="video2_0">
+	   		<div class="intro"><%= @citations2.first %></div>
+       		<div class="image">
+				<%= image_tag("courbe1-01.png")%>
+			</div>
+	   		<%= image_tag("fleche-droite.png", class: "fleche10")%>
+	     </div>
+	     <div id="video2_01">
+	   		<div class="intro"><%= @citations2.second %></div>
+       		<div class="image">
+				<%= image_tag("courbe2-01.png")%>
+			</div>
+       
+	   		<%= image_tag("fleche-droite.png", class: "fleche11")%>
+	     </div>
+	
+	     <div id="video2_02">
+	   		<div class="intro"><%= @citations2.third %></div>
+			<div class="image">
+				<%= image_tag("courbe3-01.png")%>
+			</div>
+	   		<%= image_tag("fleche-droite.png", class: "fleche12")%>
+	     </div>
+		
+		 <div id="video2_03">
+	   		<div class="intro"><%= @citations2.fourth %></div>
+       		<div class="image">
+				<%= image_tag("courbe4-01.png")%>
+			</div>
+	     </div>
+	
+	   </div>
+	  </div>
+	</div>
+	
+  </div>
+
+</section>
+
+<section id="presentation-1">
+  <%= render :partial => "shared/flash_messages" %>
+  
+  <div class="container">
 	
 	<div class="row" id="presentation1">
 		<%= link_to(image_tag("presentation-centrale13-01.png"), help_path)%>

@@ -314,6 +314,67 @@
 			}
 		}
 	}
+	#openning-context{
+	background-color:#AAD0FF;
+	height:40px;
+	margin-left: 150px;
+	margin-top: 15px;
+	width: 800px;
+	margin-bottom: 5px;
+	
+	.texte{
+	padding-top:10px;
+	font-family: "gotham";
+	font-size:18px;
+	color: #000000;
+	text-align: center;
+	}
+	
+	.arrow-up-context {
+		margin-left:700px;
+		margin-top:-18px;
+		width: 0; 
+		height: 0; 
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		cursor:  pointer;
+		border-bottom: 15px solid #FFF;
+	}
+
+	.arrow-down-context {
+		margin-left:700px;
+		margin-top:-15px;
+		width: 0; 
+		height: 0; 
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		cursor:  pointer;
+		border-top: 15px solid #FFF;
+	}
+	}
+	
+	#effective-context{
+	background-color:#EEE;
+	min-height:300px;
+	width: 485px;
+	margin-top:20px;
+	margin-left:470px;
+	margin-bottom: 10px;
+		.text{
+		font-family:"georgia";
+		font-size: 14px;
+		text-align: justify;
+		padding: 10px 25px 10px 25px;
+		}
+	}
+	.edit2{
+	margin-top:15px;
+	width:430px;
+	height:490px;
+	background-color:white;
+	border-radius:0px;
+	resize: none;
+	}
 }
 
 #new-challenge{
@@ -1356,6 +1417,7 @@
 		}
 	}
 	}
+	
 }
 
 

@@ -231,7 +231,11 @@ text-align: center;
 	margin-top: - 353px;
 	margin-left: 210px;
     background-color: #FFF;
-
+		
+		.image{
+		margin: 20px;
+		img{width: 550px; height: 260px;}
+		}
 		.fleche10{
 		margin-top: -10px;
 		float: right;
@@ -274,7 +278,12 @@ text-align: center;
 	margin-top: - 353px;
 	margin-left: 210px;
     background-color: #FFF;
-
+		
+		.image{
+		margin: 20px;
+		img{width: 550px; height: 260px;}
+		}
+		
 		.fleche11{
 		margin-top: -10px;
 		float: right;
@@ -318,6 +327,12 @@ text-align: center;
 	margin-left: 210px;
     background-color: #FFF;
 
+		.image{
+		margin: 20px;
+		img{width: 550px; height: 260px;}
+		}
+		
+
 		.fleche12{
 		margin-top: -10px;
 		float: right;
@@ -360,6 +375,12 @@ text-align: center;
 	margin-top: - 353px;
 	margin-left: 210px;
     background-color: #FFF;
+
+		.image{
+		margin: 20px 20px 20px 0px;
+		img{width: 550px; height: 260px;}
+		}
+		
 
 		.fleche13{
 		margin-top: -10px;
@@ -1529,7 +1550,7 @@ margin-left: 470px;
 
 	#photo-abonnement1{
   margin-top: 35px;
-  margin-left: 270px;
+  margin-left: 320px;
 	margin-bottom: -100px;
   }
 	#pousse-gauche{
