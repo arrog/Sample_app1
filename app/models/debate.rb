@@ -35,8 +35,9 @@ class Debate < ActiveRecord::Base
   
   paginates_per 10
   
-  scope :permission_debate, -> { where(:state => "online", :group => nil )}
+  scope :permission_debate, -> { where(:state => "online", :group => 0 )}
   
+ 
   state_machine initial: :offline do
 
      event :publish do

@@ -66,8 +66,10 @@ SampleApp::Application.routes.draw do
     resources :arguments
     member do 
       match 'vote'
+      match 'publish'
       get :follow
       get :unfollow
+      
     end
   end
 
