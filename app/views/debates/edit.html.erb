@@ -1,5 +1,12 @@
-<%- model_class = Debate -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human %></h1>
+<div class="container">
+	<h2>Create a debate</h2>
+	
+	<%= render "debates/form", value: nil, debate: @debate, group: @debate.group%>
+	</br>
+	</br>
+	
+	<h2>Create a doulin</h2>
+	
+	<%= render "doulins/form"%>
+	
 </div>
-<%= render :partial => 'form' %>
