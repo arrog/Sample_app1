@@ -19,10 +19,10 @@ class StaticPagesController < ApplicationController
   end
 
   def presse
-    @argument1 = Argument.find(95)
-    @argument2 = Argument.find(96)
-    @argument3 = Argument.find(100)
-    @argument4 = Argument.find(101)
+    @argument1 = Argument.find(1)
+    @argument2 = Argument.find(2)
+    @argument3 = Argument.find(3)
+    @argument4 = Argument.find(4)
     @citations2 =["Evolution du nombre d'abonnés", "Coût d'acquisition / Rentabilité", "Evolution du chiffre d'affaires", "Flux de trésorerie"]
   end
 
