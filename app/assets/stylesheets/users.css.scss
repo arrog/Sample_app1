@@ -251,6 +251,54 @@
 		margin-top: 15px;
 		border-bottom: 1px solid white;
 		
+		.actions{
+		margin-top:0px;
+			.actions2{
+			border-radius:0px;
+			background-color: black;
+			color: $mainColor;
+			border:none;
+			}
+		}
+		
+		.field{
+		position: relative;
+		cursor: pointer;
+		
+			.field1{
+			opacity: 0;
+		    cursor: pointer;
+		    position: absolute;
+		    top: 0;
+		    z-index: 2;
+			}
+			
+			.field2{
+			font-style: italic;
+			font-family: "georgia";
+			padding: 7px;
+			width: 135px;
+			background-color: white;
+			border-radius: 0px;
+			border: none;
+			cursor: pointer;
+			}
+		}
+
+		
+		.boutons-sociaux-image{
+		font-family: "gotham";
+		font-size: 13px;
+		margin-bottom: 15px;
+		cursor: pointer;
+		
+		.boutons-sociaux2{
+		color: white;
+		padding: 5px 10px 5px 10px;
+		background-color: black;
+		}
+		}
+		
 		.boutons-sociaux{
 		font-family: "gotham";
 		font-size: 16px;

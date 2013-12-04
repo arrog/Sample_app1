@@ -1,5 +1,5 @@
 <section id="argument-neutre">
-		<div class="row" id='initial'>
+	<div class="row" id='initial'>
 			<% if current_user && current_user == argument.user %>
 			<% if argument.argumentable.class == Debate %>
 			<div class="modifs">
@@ -48,6 +48,13 @@
 							<%= f.hidden_field :argument_id, :value => argument.id %>
 						  	<%= f.submit "Signaler", class: "texte2" %>
 						<% end %>
+					</div>
+				<% else%>
+					<div class="finalementnon2">
+						<%= link_to('Non')%>
+					</div>
+					<div class="signalisation">
+						<%= link_to('Signaler', new_session_path(resource_name))%>
 					</div>
 				<% end %>
 			    </div>

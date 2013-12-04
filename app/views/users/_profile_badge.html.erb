@@ -3,32 +3,46 @@
 	<div class="row" id="image1">
 		<%= link_to image_tag(user.avatar.url(:medium)), user, class: "image"%>
 	</div>
-	<% if current_user && current_user == user %>
-		<%= form_for(user) do |f| %>
-		<%= user.content%>
-		  <% if user.errors.any? %>
-		    <div id="error_explanation">
-		      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-		      <ul>
-		      <% user.errors.full_messages.each do |msg| %>
-		        <li><%= msg %></li>
-		      <% end %>
-		      </ul>
-		    </div>
-		  <% end %>
-
-		  <div class="field">
-		    <%= f.file_field :avatar, placeholder: "Rajouter une image", class: "field-image" %>
-		  </div>
-		  <div class="actions">
-		    <%= f.submit "OK", class: "actions2" %>
-		  </div>
-		<% end %>
-	<% end%>
 	<div class="row" id='nom-profile'>
 		<%= link_to user.fitting_name, user, class: 'texte'%>
 	</div>
+	
+	<% if current_user && current_user == user %>
+	<div class="row" id="boutons-profile">
+		<div class="boutons-sociaux-image">
+			<div class="boutons-sociaux2">
+				NOUVELLE IMAGE
+			</div>
+		</div>
+		<div class="nouvelle-image">
+			<%= form_for(user) do |f| %>
+			<%= user.content%>
+			  <% if user.errors.any? %>
+			    <div id="error_explanation">
+			      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+			      <ul>
+			      <% user.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      </ul>
+			    </div>
+			  <% end %>
+
+			  <div class="field">
+				<div class="field1">
+			    	<%= f.file_field :avatar, placeholder: "Rajouter une image" %>
+				</div>
+				<div class="field2">Choisir un fichier</div>
+			  </div>
+			  <div class="actions">
+			    <%= f.submit "OK", class: "actions2" %>
+			  </div>
+			<% end %>
+		</div>
+	</div>
+	<% end%>
+
 	<div class="row" id="description-profile">
 		<% if current_user && current_user == user && user.content == nil%>
 			<%= form_for(user) do |f| %>

@@ -82,13 +82,13 @@
 					</div>
 					
 				<div class="row" id="stats-profil">
-					<div class="texte5"><%= link_to current_user.notifications, current_user, class: "texte5"%></div> <div class="texte2">Notification(s)</div>
+					<div class="texte5"><%= link_to current_user.notifications, current_user, class: "texte5"%></div> <div class="texte2"><%= link_to "Notifications", current_user, class: "texte2"%></div>
 				</div>
 				<div class="row" id="stats-profil">
-					<div class="texte5"><%= link_to current_user.notifications2.count, current_user, class: "texte5"%></div> <div class="texte2">Défi(s) en cours</div>
+					<div class="texte5"><%= link_to current_user.notifications2.count, current_user, class: "texte5"%></div> <div class="texte2"><%= link_to "Défi(s) en cours", current_user, class: "texte2"%></div>
 				</div>
 				<div class="row" id="stats-profil">
-					<div class="texte5"><%= link_to current_user.invitation_request.count, current_user, class: "texte5"%></div> <div class="texte2">Invitations</div>
+					<div class="texte5"><%= link_to current_user.invitation_request.count, current_user, class: "texte5"%></div> <div class="texte2"><%= link_to "Invitation(s)", current_user, class: "texte2"%></div>
 				</div>				
 		  </div>
 		  <div id="video2_0">

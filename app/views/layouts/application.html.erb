@@ -47,7 +47,7 @@
 						<% if current_user %>
 						<div class="nom"><%= link_to current_user.fitting_name, current_user, class: "title"%>
 						</div>
-						<div class="nom2"><%= link_to current_user.notifications, notifications_user_path(current_user), class: "chiffre"%> notification(s)
+						<div class="nom2"><%= link_to current_user.notifications, notifications_user_path(current_user), class: "chiffre"%> <%= link_to "notification(s)", notifications_user_path(current_user), class: "nom2"%>
 						</div>
 					</div>
 					<div class="row" id="try6">
