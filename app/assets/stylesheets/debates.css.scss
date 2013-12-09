@@ -18,7 +18,7 @@
 	-webkit-border-image: url(border.png) 10 repeat;
 	-o-border-image: url(border.png) 10 repeat;
 	border-image: url(border.png) 13 fill repeat;
-		
+	
 		.image1{
 		background-color: #C9C9C9;
 		height:222px;
@@ -167,9 +167,8 @@
 
 		#tags_list_doulin{
 		margin-top:10px;
-		font-family : "gotham";
+		font-family : "gotham-Bold";
 		font-size : 18px;
-		font-weight: bold;
 		color: white;
 			.tags{
 			color: white;
@@ -322,30 +321,26 @@
 	}
 	
 	#follow{
-	margin-top:-235px;
-	margin-left:948px;
-	height:  24px;
+	margin-top:-239px;
+	margin-left:947px;
+	height:  25px;
 	width: 90px;
 	background-color: #808080;
-	position: relative;
-	z-index:1;
 	
 	.texte{
-		font-family: "gotham";
-		font-weight: bold;
+		font-family: "gotham-Bold";
 		font-size: 16px;
 		color: #FFF;
 		padding-left: 8px;
-		padding-top:2px;
+		padding-top:4px;
 	}
 
 	.texte2{
-		font-family: "gotham";
-		font-weight: bold;
+		font-family: "gotham-Bold";
 		font-size: 16px;
 		color: #FFF;
 		padding-left: 12px;
-		padding-top:2px;
+		padding-top:4px;
 		
 		.texte:hover{
 			color: black;
@@ -371,7 +366,7 @@
 	
 	#catcat{
 	margin-top:-215px;
-	margin-left:949px;
+	margin-left:946px;
 	height:65px;
 	width:90px;
 	background-color:#AAD0FF;
