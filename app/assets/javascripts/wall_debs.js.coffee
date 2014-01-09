@@ -27,10 +27,68 @@ $(document).ready ->
   $(".invitation-fermer1-fc").hide()
   $(".invitation-fermer3-fc").hide()
   $(".invitation-fermer4-fc").hide()
+  $(".invitation-fermer-british").hide()
+  $(".invitation-fermer1-british").hide()
+  $(".invitation-fermer3-british").hide()
+  $(".invitation-fermer4-british").hide()
+  $(".invitation-fermer2-british").hide()
+  $(".invitation-fermer12-british").hide()
+  $(".invitation-fermer32-british").hide()
+  $(".invitation-fermer42-british").hide()
 
 
 
 
+  $("#invitation-british").click ->
+	    $(this).parent().parent().hide().siblings(".invitation-fermer-british").show()
+
+  $("#fermer-invitation-british").click ->
+	    $(this).parent().parent().hide().siblings(".image1").show()
+	
+  $("#invitation2-british").click ->
+	    $(this).parent().parent().hide().siblings(".invitation-fermer2-british").show()
+
+  $("#fermer-invitation2-british").click ->
+	    $(this).parent().parent().hide().siblings(".image1").show()
+
+  $("#invitation3-british").click ->
+  	    $(this).parent().parent().hide().siblings(".invitation-fermer3-british").show()
+
+  $("#fermer-invitation3-british").click ->
+  	    $(this).parent().parent().hide().siblings(".image1").show()
+
+  $("#invitation32-british").click ->
+  	    $(this).parent().parent().hide().siblings(".invitation-fermer32-british").show()
+
+  $("#fermer-invitation32-british").click ->
+  	    $(this).parent().parent().hide().siblings(".image1").show()
+
+
+  $("#invitation1-british").click ->
+ 	    $(this).parent().parent().hide().siblings(".invitation-fermer1-british").show()
+
+  $("#fermer-invitation1-british").click ->
+ 	    $(this).parent().parent().hide().siblings(".image1").show()
+
+  $("#invitation12-british").click ->
+ 	    $(this).parent().parent().hide().siblings(".invitation-fermer12-british").show()
+
+  $("#fermer-invitation12-british").click ->
+ 	    $(this).parent().parent().hide().siblings(".image1").show()
+
+  $("#invitation4-british").click ->
+   	    $(this).parent().parent().hide().siblings(".invitation-fermer4-british").show()
+
+  $("#fermer-invitation4-british").click ->
+   	    $(this).parent().parent().hide().siblings(".image1").show()
+
+  $("#invitation42-british").click ->
+   	    $(this).parent().parent().hide().siblings(".invitation-fermer42-british").show()
+
+  $("#fermer-invitation42-british").click ->
+   	    $(this).parent().parent().hide().siblings(".image1").show()  
+ 
+	
 
   $("#invitation3-fc").click ->
 	    $(this).parent().hide().siblings(".invitation-fermer3-fc").show()

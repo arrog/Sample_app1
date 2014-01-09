@@ -19,6 +19,7 @@ gem 'public_activity'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'thin'
 gem 'rinku'
+gem 'social-share-button'
 
 group :development, :test do
   gem 'annotate', '2.5.0'

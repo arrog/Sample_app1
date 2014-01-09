@@ -1,13 +1,32 @@
+<%= social_share_button_tag(@challenge.title) %>
+
 <section id="challenge">
 	<div class="container">
 
 		<% if @challenge.type_deb == 2%>
+		<div class="row" id="typechallenge">
+			<%= image_tag 'bannire_type-01.png'%>
+			<span class="texte4"> Lincoln Douglas Debate </span>
+		</div>
 			<%= render "challenges/lincoln_douglas", challenge: @challenge %>
 		<%elsif @challenge.type_deb == 3 %>
+		<div class="row" id="typechallenge">
+			<%= image_tag 'bannire_type-01.png'%>
+			<span class="texte3"> American Parliamentary Debate</span>
+		</div>
 			<%= render "challenges/american", challenge: @challenge %>
 		<%elsif @challenge.type_deb == 4 %>
+		<div class="row" id="typechallenge">
+			<%= image_tag 'bannire_type-01.png'%>
+			<span class="texte"> Four corners Debate </span>
+		</div>
 			<%= render "challenges/four_corner", challenge: @challenge %>
 		<%elsif @challenge.type_deb == 8 %>
+			<div class="row" id="typechallenge">
+				<%= image_tag 'bannire_type-01.png'%>
+				<span class="texte2"> British Parliamentary Debate</span>
+			</div>
+			
 			<%= render "challenges/british", challenge: @challenge %>
 		<%end%>
 		

@@ -38,6 +38,10 @@ class StaticPagesController < ApplicationController
   def help
   end
   
+  def challenge
+    @debates= Debate.all
+  end
+  
   def about
       @citations2 =[["Les Groupes","Avez-vous tenté de rejoindre un groupe ?","Les groupes permettent de rencontrer et de discuter avec d’autres moutoners, créer des débats entre membres, bref, d’apporter une dose de convivalité à votre quête dialectique."],["LES DEFIS","Avez-vous participé
       à un défi ?","Vous pouvez défiez vos amis, vos ennemis, ou de parfaits inconnus, en organisantde vraies joutes dialectiques. Il existe 4 Types de défis (voir FAQ)."],["LES DEBATS OUVERTS","  Avez-vous participé

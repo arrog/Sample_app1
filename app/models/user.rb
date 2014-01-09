@@ -257,13 +257,13 @@ class User < ActiveRecord::Base
             cha = cha + [l]
           elsif l.second_opp == self && ["forth"].include?(l.state)
             cha = cha + [l]
-          elsif l.third_prop == self && ["first", "fifth"].include?(l.state)
+          elsif l.third_prop == self && ["fifth"].include?(l.state)
             cha = cha +[l]
-          elsif l.third_prop == self && ["second", "sixth"].include?(l.state)
+          elsif l.third_opp == self && ["sixth"].include?(l.state)
             cha = cha + [l]
-          elsif l.fourth_prop == self && ["third", "seventh"].include?(l.state)
+          elsif l.fourth_prop == self && ["seventh"].include?(l.state)
             cha = cha + [l]
-          elsif l.fourth_prop == self && ["forth", "eighth"].include?(l.state)
+          elsif l.fourth_opp == self && ["eighth"].include?(l.state)
             cha = cha + [l]
           end
         end 

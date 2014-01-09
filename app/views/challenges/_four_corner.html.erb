@@ -62,7 +62,7 @@
 							<%elsif current_user && current_user.in_challenge?(@challenge)%>
 								<%= image_tag("place_vide.png") %>
 							<%else%>
-								<%= link_to image_tag("place_vide.png"), join_two_challenge_path(:challenge => @challenge), :method => :post %>
+								<%= link_to image_tag("place_vide.png"), join_three_challenge_path(:challenge => @challenge), :method => :post %>
 							<%end%>
 						</div>
 					</div>
@@ -103,7 +103,7 @@
 			
 			<div class="span5" id= "fc-milieu">
 					<div class="row" id="fc-image-superieure">
-						<%= image_tag "image-ld.png", class: "image"%>
+						<%= image_tag "lambstack.jpg", class: "image"%>
 						<div class="image-sign">
 							<%= image_tag("signe-defi.png", alt: "Moutoners", class: "image2")%>
 						</div>
@@ -337,28 +337,7 @@
 					<% end %>
 				</div>				
 			</div>
-		</div>
-		
-		<% unless current_user && current_user.in_challenge?(@challenge)%>
-		<% if @challenge.users.count < 4%>
-			<% numéro = @challenge.four_corner_position_left.shuffle.first %>
-			<div class="row" id="position-aleatoire">
-			<% if numéro == 1 %>
-				<div class="numero"><a><%= link_to("PRENDRE PARTI ALEATOIREMENT".html_safe,
-		              join_one_challenge_path(@challenge) ,:method => :post) %></a></div>
-			<% elsif numéro == 2 %>
-				<div class="numero"><a><%= link_to("PRENDRE PARTI ALEATOIREMENT".html_safe,
-		              join_two_challenge_path(@challenge) ,:method => :post) %></a></div>
-			<% elsif numéro == 2 %>
-				<div class="numero"><a><%= link_to("PRENDRE PARTI ALEATOIREMENT".html_safe,
-				      join_three_challenge_path(@challenge) ,:method => :post) %></a></div>
-			<% elsif numéro == 2 %>
-				<div class="numero"><a><%= link_to("PRENDRE PARTI ALEATOIREMENT".html_safe,
-					  join_four_challenge_path(@challenge) ,:method => :post) %></a></div>		
-			<% end %>
-			</div>
-		<% end %>
-		<%end%>		
+		</div>	
 
 
 		<div class="span1" id="follow">

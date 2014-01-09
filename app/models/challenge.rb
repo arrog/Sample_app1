@@ -339,6 +339,5 @@ def rapport_fc3
     100*self.count_downdown/(self.count_for+self.count_against+self.count_upup+self.count_downdown)
   end
 end
-
   
 end

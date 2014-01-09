@@ -228,6 +228,7 @@ GEM
       multi_json (~> 1.0)
       rubyzip
       websocket (~> 1.0.4)
+    social-share-button (0.1.5)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -300,6 +301,7 @@ DEPENDENCIES
   rinku
   rspec-rails (= 2.11.0)
   sass-rails (= 3.2.5)
+  social-share-button
   sqlite3 (= 1.3.5)
   state_machine
   thin
