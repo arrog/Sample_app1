@@ -133,6 +133,14 @@
 	 		</div>
 	 	</div>				
 
+		<div class="span1" id="share">
+				<div class="ok">
+				<%=image_tag('facebook_petit.png', :alt => 'Moutoners', class: "image")%>)
+				<div class="okk"><%= social_share_button_tag(@doulin.title) %></div></div>
+				<div class="texte">Partager
+				<div class="okk"><%= social_share_button_tag(@doulin.title) %></div></div>
+		</div>
+		
 		<div class="span1" id="follow">
 			<div class="follow">
 	   		<% if current_user && current_user.following?(@doulin)%>

@@ -94,7 +94,7 @@
 			
 			<div class="span5" id= "american-milieu">
 					<div class="row" id="american-image-superieure">
-						<%= image_tag "jeu_de_paume.jpg", class: "image"%>
+						<%= image_tag "american-01.png", class: "image"%>
 						<div class="image-sign">
 							<%= image_tag("signe-defi.png", alt: "Moutoners", class: "image2")%>
 						</div>
@@ -271,7 +271,13 @@
 			</div>
 		</div>
 			
-
+		<div class="span1" id="share">
+				<div class="ok">
+				<%=image_tag('facebook_petit.png', :alt => 'Moutoners', class: "image")%>)
+				<div class="okk"><%= social_share_button_tag(@challenge.title) %></div></div>
+				<div class="texte">Partager
+				<div class="okk"><%= social_share_button_tag(@challenge.title) %></div></div>
+		</div>
 
 		<div class="span1" id="follow">
 			<div class="follow">
