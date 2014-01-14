@@ -37,7 +37,8 @@ class Doulin < ActiveRecord::Base
   
                         
   scope :permission_doulin, -> { where(:state => ["online", "first", "third", "fifth", "seventh","second", "forth", "sixth", "eighth","over"]) }
-
+  scope :homepage, -> { where(:state => ["homepage"]) }
+  
   paginates_per 10
   
   state_machine initial: :offline do

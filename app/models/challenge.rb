@@ -37,6 +37,7 @@ class Challenge < ActiveRecord::Base
   
   scope :open_challenges, -> { where(:state => ["first","second","third","forth","fifth","sixth","seventh","eighth"], group: nil)}
   scope :incomplete, -> { where(:state => ["incomplete"]) }
+  scope :homepage, -> { where(:state => ["homepage"]) }  
     
   state_machine initial: :incomplete do
     
@@ -66,7 +67,7 @@ class Challenge < ActiveRecord::Base
     end
     
     event :promote do
-      transition :online => :homepage
+      transition :incomplete => :homepage
       transition :first => :homepage
       transition :second => :homepage
       transition :third => :homepage
@@ -76,6 +77,7 @@ class Challenge < ActiveRecord::Base
       transition :seventh => :homepage
       transition :eighth => :homepage
       transition :over => :homepage
+      transition :judged => :homepage
     end
   
   end

@@ -8,9 +8,9 @@ class StaticPagesController < ApplicationController
   
   def home
     @cats = Cat.all
-    @challenge = Challenge.first
-    @doulin = Doulin.first
-    @debate = Debate.first
+    @challenge = Challenge.homepage.last
+    @doulin = Doulin.homepage.last
+    @debate = Debate.homepage.last
     @citations = ["Apprenez l'art de la tatane dialectique.","Soignez votre logorrhée.", "Ils ne donnent plus de laine, mais leur avis.", "The first rule about moutoners: you do talk about moutoners."].shuffle
     @citations2 =[["Les Groupes","Avez-vous tenté de rejoindre un groupe ?","Les groupes permettent de rencontrer et de discuter avec d’autres moutoners, créer des débats entre membres, bref, d’apporter une dose de convivalité à votre quête dialectique."],["LES DEFIS","Avez-vous participé
     à un défi ?","Vous pouvez défiez vos amis, vos ennemis, ou de parfaits inconnus, en organisantde vraies joutes dialectiques. Il existe 4 Types de défis (voir FAQ)."],["LES DEBATS OUVERTS","  Avez-vous participé

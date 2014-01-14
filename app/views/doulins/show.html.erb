@@ -1,5 +1,5 @@
 <% if current_user && current_user.try(:admin?)%>
-	<%= link_to "promote", publish_debate_path(@debate)%>
+	<%= link_to "promote", promote_doulin_path(@doulin)%>
 <% end %>
 
 <section id="doulin">

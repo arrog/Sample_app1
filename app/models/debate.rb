@@ -36,7 +36,7 @@ class Debate < ActiveRecord::Base
   paginates_per 10
   
   scope :permission_debate, -> { where(:state => "online", :group => [nil, '0'] )}
-  
+  scope :homepage, -> { where(:state => ["homepage"]) }  
  
   state_machine initial: :offline do
 
@@ -47,7 +47,6 @@ class Debate < ActiveRecord::Base
      event :promote do
        transition :online => :homepage
      end
-
    end
   
   
