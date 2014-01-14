@@ -211,7 +211,7 @@
 			
 			<div class="span5" id= "british-milieu">
 					<div class="row" id="british-image-superieure">
-						<%= image_tag "Orateur.jpg", class: "image"%>
+						<%= image_tag "british-01.jpg", class: "image"%>
 						<div class="image-sign">
 							<%= image_tag("signe-defi.png", alt: "Moutoners", class: "image2")%>
 						</div>
@@ -556,9 +556,7 @@
 
 		<div class="span1" id="share">
 				<div class="ok">
-				<%=image_tag('facebook_petit.png', :alt => 'Moutoners', class: "image")%>)
-				<div class="okk"><%= social_share_button_tag(@challenge.title) %></div></div>
-				<div class="texte">Partager
+				<%=image_tag('facebook_petit.png', :alt => 'Moutoners', class: "image")%>
 				<div class="okk"><%= social_share_button_tag(@challenge.title) %></div></div>
 		</div>
 
@@ -644,7 +642,7 @@
 					<% if signed_in? && current_user == @challenge.first_opponent %>
 						<% if !@challenge.arguments.where(position: 2).any? %>
 							<div id="start">C'est ton tour !</div>
-							<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 2 %>
+							<%= render "shared/argument_contre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 2 %>
 						<% else %>
 
 							<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
@@ -664,7 +662,7 @@
 					<% if signed_in? && current_user == @challenge.second_prop %>
 						<% if !@challenge.arguments.where(position: 3).any? %>
 							<div id="start">C'est ton tour !</div>
-							<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 3 %>
+							<%= render "shared/argument_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 3 %>
 						<% else %>
 
 							<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
@@ -683,7 +681,7 @@
 					<% if signed_in? && current_user == @challenge.second_opp %>
 						<% if !@challenge.arguments.where(position: 4).any? %>
 							<div id="start">C'est ton tour !</div>
-							<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 4 %>
+							<%= render "shared/argument_contre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 4 %>
 						<% else %>
 
 							<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
@@ -702,7 +700,7 @@
 					<% if signed_in? && current_user == @challenge.third_prop %>
 						<% if !@challenge.arguments.where(position: 5).any? %>
 							<div id="start">C'est ton tour !</div>
-							<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 5 %>
+							<%= render "shared/argument_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 5 %>
 						<% else %>
 						<div id="start">	<%= link_to("VALIDE TON ARGUMENT".html_safe,
 					              next_challenge_path(@challenge) ,:method => :post) %></div>
@@ -721,7 +719,7 @@
 					<% if signed_in? && current_user == @challenge.third_opp %>
 						<% if !@challenge.arguments.where(position: 6).any? %>
 							<div id="start">C'est ton tour !</div>
-							<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 6 %>
+							<%= render "shared/argument_contre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 6 %>
 						<% else %>
 
 							<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
@@ -741,7 +739,7 @@
 					<% if signed_in? && current_user == @challenge.fourth_prop %>
 						<% if !@challenge.arguments.where(position: 7).any? %>
 							<div id="start">C'est ton tour !</div>
-							<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 7 %>
+							<%= render "shared/argument_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 7 %>
 						<% else %>
 
 							<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
@@ -760,7 +758,7 @@
 					<% if signed_in? && current_user == @challenge.fourth_opp %>
 						<% if !@challenge.arguments.where(position: 8).any? %>
 							<div id="start">C'est ton tour !</div>
-							<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 8 %>
+							<%= render "shared/argument_contre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 8 %>
 						<% else %>
 
 							<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,

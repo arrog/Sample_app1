@@ -1,3 +1,599 @@
 // Place all the styles related to the cats controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#lddd{
+	#ld-title{
+		width: 760px;
+		min-height: 460px;
+		background-color:#C9C9C9;
+		margin: 30px 0px 30px 150px;
+		
+		
+		#ld-image-superieure{
+			margin: 15px;
+			width: 730px;
+			height: 185px;
+			background-color:white;
+			img { width: 730px; height:185px;}
+			
+			.image{
+
+			}
+			
+			.image-sign{
+				img { width: 50px; height:49px;}
+				margin-top:-115px;
+				margin-left: 345px;
+			}
+
+		}
+		
+		#ld-gauche{
+			margin-left: 35px;
+			margin-bottom:15px;
+			.image1{
+			img { width: 150px; height:150px;}
+			border-bottom: 1px solid white;
+				
+				.image2{
+					margin-bottom:10px;
+				}
+			}
+			
+			.invitation-fermer{
+			.texte{
+			padding-top: 5px;
+			font-family: "georgia";
+			font-size: 13px;
+			font-style: italic;
+			text-align: center;
+			}
+			
+			.selector{
+			margin-top: 10px;
+			margin-bottom: 10px;
+			font-family: "gotham";
+			background-color: #808080;
+			border: none;
+			border-radius: 0px;
+			width: 150px;
+			}
+			
+			.select{
+			background-color:#C9C9C9;
+			}
+			
+			#fermer-invitation{
+			padding:4px;
+			color: #808080;
+			background-color: black;
+			font-family: "gotham";
+			font-size: 14px;
+			width: 58px;
+			margin-left: 80px;
+			margin-top: -36px;
+			cursor: pointer;
+			}
+			
+			.act{
+			background-color:#808080;
+			color: black;
+			font-family: "gotham";
+			font-size: 14px;
+			margin-left: 0px;
+			width: 68px;
+			border-radius: 0px;
+			hieght: 40px;
+			}
+			}
+			.first_user{
+			padding-top: 5px;
+			font-family: "gotham";
+			font-size: 16px;
+			text-align: center;
+			border-bottom: 5px solid white;
+			
+				.texte{
+				margin-bottom:10px;
+				}
+				
+				#invitation{
+				cursor: pointer;
+				}
+			}
+			
+			.first_grade{
+				margin-top: 10px;
+				width: 150px;
+				height:30px;
+				background-color: #808080;
+				font-family: "bebasneeue-webfont";
+				font-size: 24px;
+				color: white;
+				
+					.texte{
+					text-align: center;
+					padding-top:5px;
+					}
+			}
+		}
+		
+		#ld-droite{
+			margin-left: 0px;
+			margin-bottom: 15px;
+			
+			.image1{
+			img { width: 150px; height:150px;}
+			border-bottom: 1px solid white;
+				
+				.image2{
+					margin-bottom:10px;
+				}
+			}
+			
+			.second_user{
+			padding-top: 5px;
+			font-family: "gotham";
+			font-size: 16px;
+			text-align: center;
+			border-bottom: 5px solid white;
+				
+				.texte{
+				margin-bottom:10px;
+				}
+				
+				#invitation1{
+				cursor: pointer;
+				}
+			}
+			
+			.invitation-fermer1{
+				.texte{
+				padding-top: 5px;
+				font-family: "georgia";
+				font-size: 13px;
+				font-style: italic;
+				text-align: center;
+				}
+				
+				.selector{
+				margin-top: 10px;
+				margin-bottom: 10px;
+				font-family: "gotham";
+				background-color: #808080;
+				border: none;
+				border-radius: 0px;
+				width: 150px;
+				}
+				
+				.select{
+				background-color:#C9C9C9;
+				}
+				
+				#fermer-invitation1{
+				padding:4px;
+				color: #808080;
+				background-color: black;
+				font-family: "gotham";
+				font-size: 14px;
+				width: 58px;
+				margin-left: 80px;
+				margin-top: -36px;
+				cursor: pointer;
+				}
+				
+				.act{
+				background-color:#808080;
+				color: black;
+				font-family: "gotham";
+				font-size: 14px;
+				margin-left: 0px;
+				width: 68px;
+				border-radius: 0px;
+				hieght: 40px;
+				}
+			}
+			.second_grade{
+				margin-top: 10px;
+				width: 150px;
+				height:30px;
+				background-color: #808080;
+				font-family: "bebasneeue-webfont";
+				font-size: 24px;
+				color: white;
+				
+					.texte{
+					text-align: center;
+					padding-top:5px;
+					}
+			}
+		}
+		
+		
+		#ld-milieu{
+			margin-left:0px;
+			
+			#ld-milieu-1{
+			font-family:"gotham";
+			font-size: 23px;
+			font-color: black;
+			line-height: 25px;
+			margin-left: 15px;
+			margin-right:15px;
+
+
+			
+				.title{
+				padding-top:5px;
+				padding-right: 10px;
+				text-align: left;
+				 letter-spacing:-1px;
+				line-height: 25px;
+				}
+			}
+			
+			#ld-milieu-4{
+			margin-left: 15px;
+			margin-right:15px;
+			margin-top:15px;
+			font-family : "gotham-Bold";
+			font-size : 18px;
+			color: white;
+				.tags{
+				color: white;
+				}
+
+			li{
+			margin-right: 5px;
+			display : inline-block;
+			}
+			
+			}
+			#ld-milieu-2{
+			margin-top: 15px;
+			font-family: "georgia";
+			font-style: italic;
+			font-size: 14px;
+			margin-left: 15px;
+			margin-right:15px;
+			
+				.content{
+				text-align: left;
+				}
+			}
+			#ld-milieu-3{
+				margin-left: 15px;
+				margin-right:15px;
+				margin-top: 15px;
+				padding-bottom: 10px;
+				border-bottom: 9px solid white;
+				
+				div{
+				display: inline-block;
+				}
+					a:hover{
+					color:#000000;
+					}
+
+
+					.moitie-gauche{
+					width:190px;
+					background-color: #808080;
+					height: 35px;
+					font-family: "gotham";
+					font-size: 18px;
+					color: white;
+					text-align: center;
+
+						.rapport-gauche{
+						height:29px;
+						padding: 7px 5px 0px 5px;
+						background-color: white;
+						color: black;
+						font-family: "georgia";
+						font-size: 16px;
+						font-style: italic;
+						font-weight: bold;
+						float: left;
+						}
+						.pour-truc{
+						padding-top: 7px;
+							.pour-first{
+							text-align: center;
+							color: white;
+							
+							}
+						}
+					}
+
+
+					.moitie-gauche1{
+					width:190px;
+					background-color: #AAD0FF;
+					height: 35px;
+					font-family: "gotham";
+					font-size: 18px;
+					color: white;
+					text-align: center;						
+						.rapport-gauche{
+						height:29px;
+						padding: 7px 5px 0px 5px;
+						background-color: white;
+						color: black;
+						font-family: "georgia";
+						font-size: 16px;
+						font-style: italic;
+						font-weight: bold;
+						float: left;
+						}
+					  .pour-truc{
+					  padding-top: 7px;
+					  	.pour-first{
+					  	text-align: center;
+					  	color: white;
+                      
+					  	}
+					  }						
+
+					}
+
+
+					.moitie-droite{
+					float:right;
+					width:190px;
+					background-color: #808080;
+					height: 35px;
+					font-family: "gotham";
+					font-size: 18px;
+					color: white;
+					text-align: center;
+
+						.rapport-droite{
+						height:29px;
+						padding: 7px 5px 0px 5px;
+						background-color: white;
+						color: black;
+						font-family: "georgia";
+						font-size: 16px;
+						font-style: italic;
+						font-weight: bold;
+						float: right;
+						}
+						.pour-truc{
+						padding-top: 7px;
+							.pour-second{
+							text-align: center;
+							color: white;
+							
+							}
+						}
+					}
+
+
+					.moitie-droite1{
+					float:right;
+					width:190px;
+					background-color: #FF6969;
+					height: 35px;
+					font-family: "gotham";
+					font-size: 18px;
+					color: white;
+					text-align: center;						
+						.rapport-droite{
+						height:29px;
+						padding: 7px 5px 0px 5px;
+						background-color: white;
+						color: black;
+						font-family: "georgia";
+						font-size: 16px;
+						font-style: italic;
+						font-weight: bold;
+						float: right;
+						}
+					  .pour-truc{
+					  padding-top: 7px;
+					  	.pour-second{
+					  	text-align: center;
+					  	color: white;
+                      
+					  	}
+					  }						
+
+					}
+				}
+			
+			
+			#ld-milieu-5{
+				font-family:"bebasneue-webfont";
+				font-size:28px;
+				margin-left: 70px;
+				margin-right:15px;
+				margin-top:10px;
+				margin-bottom:15px;
+				
+				.stat1{
+					.image{
+					padding-bottom:5px;
+					margin-left:7px;
+					margin-right: 20px;
+					}
+				}
+				.stat2{
+				margin-left: 10px;
+				margin-top: 0px;
+				}
+			}
+		}
+	}
+	
+	#position-aleatoire{
+		background-color:#808080;
+		margin-left:400px;
+		font-family: "bebasneue-webfont";
+		font-size: 24px;
+		width: 270px;
+		margin-bottom: 30px;
+		
+		.numero{
+		text-align: center;
+		padding-top:5px;
+		padding-bottom: 5px;
+		
+		a:hover{
+		color: white;
+		}
+		}
+	}
+	
+	#pousse-gauche{
+		margin-left:170px;
+	}
+	
+	#pousse-gauche2{
+		margin-left:396px;
+	}
+
+	#share{
+	margin-top: -385px;
+	margin-left: 909px;
+	
+	.texte{
+	margin-top: -34px;
+	margin-left: 28px;
+	background-color: #000;
+	height: 24px;
+	width: 80px;
+	font-family: "gotham";
+	font-size: 16px;
+	color: #FFF;
+	padding-left: 8px;
+	padding-top:4px;
+		
+		.okk{
+		margin-top: -30px;
+		opacity:0;
+		}
+	}
+
+	
+	.ok{
+	position: relative;
+	z-index:0;
+	.okk{
+	margin-top: -30px;
+	opacity:0;
+	}
+	}
+	}
+
+
+	#follow{
+	margin-top:-345px;
+	margin-left:910px;
+	height:  25px;
+	width: 90px;
+	background-color: #808080;
+	
+	.follow:hover{
+		background-color: black;
+	}
+	
+	.texte{
+		font-family: "gotham-Bold";
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 8px;
+		padding-top:4px;
+	}
+	
+	.texte2{
+		font-family: "gotham-Bold";
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 12px;
+		padding-top:2px;
+	
+	}
+	.arrow-left{
+		margin-top:-20px;
+		padding-left: 78px;
+	 	width: 0; 
+	 	height: 0; 
+	 	border-top: 12px solid transparent;
+	 	border-bottom: 12px solid transparent; 
+	 	border-right:12px solid white;
+	}
+	
+	}	
+   	#catcat{
+	margin-top:-305px;
+	margin-left:910px;
+	height:65px;
+	width:90px;
+	background-color:#AAD0FF;
+	
+	 .arrow-left{
+		padding-left:58px;
+	 	width: 0; 
+	 	height: 0; 
+	 	border-top: 32px solid transparent;
+	 	border-bottom: 34px solid transparent; 
+	 	border-right:32px solid white;
+	 }
+	.image{
+	margin-left:10px;
+	margin-top:-48px;
+	}
+	}
+	
+	#start{
+
+		font-family:"bebasneue-webfont";
+		font-size:28px;
+		margin-left:335px;
+		margin-top:50px;
+		margin-bottom: 0px;
+		width:240px;
+		color:black;
+	}
+	
+	.tour-gauche{
+	background-color:#AAD0FF;
+	margin-top:20px;
+	width: 383px;
+	min-height:52px;
+	margin-left:150px;
+	
+	.image{
+		padding: 5px 5px 5px 5px;
+		img { width: 42px; height:35px;}
+		
+		.name{
+		font-family:"gotham";
+		font-size:18px;
+		color:#000000;
+		}
+	}
+	}
+	
+	.tour-droite{
+	background-color:#FF7575;
+	margin-top:20px;
+	width: 383px;
+	min-height:52px;
+	margin-left:527px;
+	
+	.image{
+		padding: 5px;
+		img { width: 42px; height:35px;}
+		
+		.name{
+		font-family:"gotham";
+		font-size:18px;
+		color:#000000;
+		}
+	}
+	}
+}

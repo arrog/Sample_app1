@@ -14,38 +14,7 @@ $borderRightShadow: #FFF 1px 0px 0;
 
 $widgetBorder: 1px solid #BAB8B0;
 
-$icons-cat-layout: horizontal;
-$icons-cat-spacing: 12px;
-@import "icons-cat/*.png";
-@include all-icons-cat-sprites;
-i[class*="icons-cat"] {
-  display: inline-block;
-  border: none;
-  width: 64px;
-  height: 64px;
-}
 
-$icons-32-layout: horizontal;
-$icons-32-spacing: 20px;
-@import "icons-32/*.png";
-@include all-icons-32-sprites;
-i[class*="icons-32"] {
-  display: inline-block;
-  border: none;
-  width: 32px;
-  height: 32px;
-}
-
-$icons-24-layout: horizontal;
-$icons-24-spacing: 20px;
-@import "icons-24/*.png";
-@include all-icons-24-sprites;
-i[class*="icons-24"] {
-  display: inline-block;
-  border: none;
-  height: 24px;
-  width: 24px;
-}
 
 @mixin title {
   text-transform: uppercase;

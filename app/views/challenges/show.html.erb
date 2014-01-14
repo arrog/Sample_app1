@@ -1,4 +1,6 @@
-
+<% if current_user && current_user.try(:admin?)%>
+	<%= link_to "promote", publish_debate_path(@debate)%>
+<% end %>
 
 <section id="challenge">
 	<div class="container">

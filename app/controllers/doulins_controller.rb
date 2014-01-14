@@ -100,6 +100,12 @@ class DoulinsController < ApplicationController
       redirect_to :back
    end
    
+   def promote
+      @doulin = Doulin.find(params[:id])
+      @doulin.promote
+      redirect_to :back
+   end
+   
    def follow
      @doulin = Doulin.find(params[:id])
      if current_user

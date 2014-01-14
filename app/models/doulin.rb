@@ -26,11 +26,11 @@ class Doulin < ActiveRecord::Base
   
 
   has_attached_file :avatar,
-                    :styles =>  { :medium => "165x165>"},
+                    :styles =>  { :medium => "165x165>", :large => "600x300>"},
                     :storage => :s3,
                     :s3_credentials => "#{Rails.root}/config/s3.yml",
                     :path => ":class/:attachment/:id/:style.:extension",
-                    :bucket => 'challenge-avatar',
+                    :bucket => 'open-debate-avatar',
                     :default_url => "default_:style.jpg",
                     :s3_permissions => :private,
                     :s3_host_name => 's3-eu-west-1.amazonaws.com'
@@ -67,6 +67,18 @@ class Doulin < ActiveRecord::Base
       transition :sixth => :over
       transition :eighth => :over
     end
+    event :promote do
+      transition :online => :homepage
+      transition :first => :homepage
+      transition :second => :homepage
+      transition :third => :homepage
+      transition :forth => :homepage
+      transition :fifth => :homepage
+      transition :sixth => :homepage
+      transition :seventh => :homepage
+      transition :eighth => :homepage
+      transition :over => :homepage
+    end                              
   end
   
   def valeur_vote(user)

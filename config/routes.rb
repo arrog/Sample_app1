@@ -67,6 +67,7 @@ SampleApp::Application.routes.draw do
     member do 
       match 'vote'
       match 'publish'
+      match 'promote'
       get :follow
       get :unfollow
       
@@ -84,13 +85,14 @@ SampleApp::Application.routes.draw do
     resources :repliques
     member do
        match 'vote_expert'
+       match 'promote'        
        match 'publish'
        match 'ready'
        match 'start'
        match 'finish'
        match 'next'
        get :follow
-       get :unfollow
+       get :unfollow      
     end
   end
    
@@ -118,6 +120,7 @@ SampleApp::Application.routes.draw do
         match 'join_judge'
         match 'join_judge_two'
         match 'join_judge_three'
+        match 'promote'
         get :follow
         get :unfollow
       end

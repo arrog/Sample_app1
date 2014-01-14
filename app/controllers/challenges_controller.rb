@@ -54,6 +54,12 @@ class ChallengesController < ApplicationController
   end
   
   
+  def promote
+    @challenge = Challenge.find(params[:id])
+    @challenge.promote
+    redirect_to challenge_path(@challenge)
+  end
+  
   def starting
     @challenge = Challenge.find(params[:id])
     @challenge.starting

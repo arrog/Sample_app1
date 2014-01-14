@@ -1,5 +1,18 @@
 #doulin{
 	
+	
+	#typechallenge{
+	margin-top: 20px;
+	margin-left: 323px;
+	
+	.texte{
+	font-family: "gotham-Bold";
+	font-size: 20px;
+	margin-left: -300px;
+	color: white;
+	}
+	}
+	
 	#title{
 	background-color: #C9C9C9;
 	min-height:270px;
@@ -7,6 +20,20 @@
 	margin-top:20px;
 	margin-left:70px;
 	margin-bottom: 15px;
+	
+		#imagesup{
+		width: 755px;
+		margin-left:15px;
+
+		height: 320px;
+			img { width: 755px; height:280px;}
+			
+			.image{
+			margin-top: 15px;
+			border-bottom: 3px Solid white;
+			padding-bottom: 10px;
+			}
+		}
 	
 		.image1{
 		img { width: 150px; height:150px;}

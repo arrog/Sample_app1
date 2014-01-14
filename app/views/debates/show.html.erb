@@ -1,3 +1,7 @@
+<% if current_user && current_user.try(:admin?)%>
+	<%= link_to "promote", publish_debate_path(@debate)%>
+<% end %>
+
 <section id="open-debate">
 	<div class="container">
 	
@@ -95,9 +99,7 @@
 	   
 		<div class="span1" id="share">
 				<div class="ok">
-				<%=image_tag('facebook_petit.png', :alt => 'Moutoners', class: "image")%>)
-				<div class="okk"><%= social_share_button_tag(@debate.title) %></div></div>
-				<div class="texte">Partager
+				<%=image_tag('facebook_petit.png', :alt => 'Moutoners', class: "image")%>
 				<div class="okk"><%= social_share_button_tag(@debate.title) %></div></div>
 		</div>
 		

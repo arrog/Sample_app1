@@ -9,9 +9,8 @@ class StaticPagesController < ApplicationController
   def home
     @cats = Cat.all
     @challenge = Challenge.first
-    @doulin = Doulin.last
+    @doulin = Doulin.first
     @debate = Debate.first
-    @users = User.all
     @citations = ["Apprenez l'art de la tatane dialectique.","Soignez votre logorrhée.", "Ils ne donnent plus de laine, mais leur avis.", "The first rule about moutoners: you do talk about moutoners."].shuffle
     @citations2 =[["Les Groupes","Avez-vous tenté de rejoindre un groupe ?","Les groupes permettent de rencontrer et de discuter avec d’autres moutoners, créer des débats entre membres, bref, d’apporter une dose de convivalité à votre quête dialectique."],["LES DEFIS","Avez-vous participé
     à un défi ?","Vous pouvez défiez vos amis, vos ennemis, ou de parfaits inconnus, en organisantde vraies joutes dialectiques. Il existe 4 Types de défis (voir FAQ)."],["LES DEBATS OUVERTS","  Avez-vous participé
@@ -39,7 +38,7 @@ class StaticPagesController < ApplicationController
   end
   
   def challenge
-    @debates= Debate.all
+    @debates= Debate.permission_debate
   end
   
   def about
@@ -68,7 +67,7 @@ class StaticPagesController < ApplicationController
         @doulins = Doulin.permission_doulin
     end
     
-    @lists = (@doulins + @debates + @challenges).shuffle.paginate(:page => params[:page], :per_page =>8)
+    @lists = (@doulins + @debates + @challenges).sort { |x,y| y.created_at <=> x.created_at }.paginate(:page => params[:page], :per_page =>8)
   end
   
   def list_doulins
@@ -76,7 +75,7 @@ class StaticPagesController < ApplicationController
       @current_category = Cat.find(params[:cat])
       @doulins = Doulin.where(:cat_id => @current_category.id).permission_doulin
     else
-      @doulins = Doulin.permission_doulin.paginate(:page => params[:page], :per_page =>8)
+      @doulins = Doulin.permission_doulin.sort { |x,y| y.created_at <=> x.created_at }.paginate(:page => params[:page], :per_page =>8)
     end
   end
   
@@ -85,7 +84,7 @@ class StaticPagesController < ApplicationController
       @current_category = Cat.find(params[:cat])
       @debates = Debate.where(:cat_id => @current_category.id).permission_debate
     else
-      @debates = Debate.permission_debate.paginate(:page => params[:page], :per_page =>8)
+      @debates = Debate.permission_debate.sort { |x,y| y.created_at <=> x.created_at }.paginate(:page => params[:page], :per_page =>8)
     end
   end
   
@@ -94,7 +93,7 @@ class StaticPagesController < ApplicationController
       @current_category = Cat.find(params[:cat])
       @challenges = Challenge.where(:cat_id => @current_category.id)
     else
-      @challenges = Challenge.all.paginate(:page => params[:page], :per_page =>8)
+      @challenges = Challenge.all.sort { |x,y| y.created_at <=> x.created_at }.paginate(:page => params[:page], :per_page =>8)
     end
   end
   
@@ -103,7 +102,7 @@ class StaticPagesController < ApplicationController
       @current_category = Cat.find(params[:cat])
       @challenges = Challenge.where(:cat_id => @current_category.id).incomplete
     else
-      @challenges = Challenge.incomplete.all.paginate(:page => params[:page], :per_page =>8)
+      @challenges = Challenge.incomplete.all.sort { |x,y| y.created_at <=> x.created_at }.paginate(:page => params[:page], :per_page =>8)
     end
   end
   

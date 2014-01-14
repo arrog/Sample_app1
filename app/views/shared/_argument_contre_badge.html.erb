@@ -105,9 +105,22 @@
 						
 						<div class="row" id="coco">
 	                 		<div class="toggle">
-							  <div id="argcontent">
-								<%= h Rinku.auto_link(argument.content).gsub(/\n/, '<br/>').html_safe %>
-							  </div>							
+								<%if argument.avatar == "default_argument-01.png" %>
+								  <div id="argcontent">
+									<%=h Rinku.auto_link(argument.content).gsub(/\n/, '<br/>').html_safe %>
+								  </div>
+								<% else %>
+								  <div id="argcontent">
+										<div class="image">
+											<%= image_tag(argument.avatar.url, class: "image") %>
+											<div class="texte"><%= argument.legende_graphe%></div>
+										</div>
+
+										</br>
+										<%=h Rinku.auto_link(argument.content).gsub(/\n/, '<br/>').html_safe %>
+								  </div>
+
+								<% end %>						
 	                 		</div>
 						</div>
 						

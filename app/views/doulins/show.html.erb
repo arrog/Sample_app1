@@ -1,11 +1,22 @@
+<% if current_user && current_user.try(:admin?)%>
+	<%= link_to "promote", publish_debate_path(@debate)%>
+<% end %>
+
 <section id="doulin">
 	<div class="container">
 	<% if current_user.try(:admin?)%>
 		<a><%= link_to "modifier les informations", edit_doulin_path(@doulin), class: "edit3"%></a>
 	<%end%>
+	<div class="row" id="typechallenge">
+		<%= image_tag 'bannire_type-01.png'%>
+		<span class="texte"> Débat d'experts ! </span>
+	</div>
 	 <div class="row">
 		<div class="span10 offset1">
 			<div id="title">
+				<div class="row" id="imagesup">
+					<%= image_tag @doulin.avatar.url(:large), class:"image" %>
+				</div>
 				<div class="row">
 					
 					<div class="span2">
@@ -135,9 +146,7 @@
 
 		<div class="span1" id="share">
 				<div class="ok">
-				<%=image_tag('facebook_petit.png', :alt => 'Moutoners', class: "image")%>)
-				<div class="okk"><%= social_share_button_tag(@doulin.title) %></div></div>
-				<div class="texte">Partager
+				<%=image_tag('facebook_petit.png', :alt => 'Moutoners', class: "image")%>
 				<div class="okk"><%= social_share_button_tag(@doulin.title) %></div></div>
 		</div>
 		

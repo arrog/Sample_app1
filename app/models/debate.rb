@@ -43,6 +43,10 @@ class Debate < ActiveRecord::Base
      event :publish do
        transition :offline => :online
      end
+     
+     event :promote do
+       transition :online => :homepage
+     end
 
    end
   

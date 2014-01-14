@@ -84,7 +84,7 @@
 			</br>	
 			<p><%= f.text_area :cat_id, :class => 'edit0' %></p>
 	   	</div>
-	
+		<%= f.file_field :avatar, placeholder: "Rajouter une image" %>
 		<div class="row">
 			<div class="span6 offset4">
 				<%= f.label :tag_list, "Tags (separated by commas)" %><br />

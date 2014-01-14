@@ -14,7 +14,19 @@ $(document).ready ->
   $('.effacersur').hide()
   $('.signalisation').hide()
   $('.finalementnon2').hide()
+  $('.argument-photo').hide()
+  $('.argument-video').hide()
   
+
+  $(".box-pic").click ->
+    	$(this).parent().parent().siblings("#a-ouvrir-argumentforme").children('.argument-texte').hide().siblings('.argument-video').hide().siblings('.argument-photo').show()
+
+  $(".box-video").click ->
+    	$(this).parent().parent().siblings("#a-ouvrir-argumentforme").children('.argument-texte').hide().siblings('.argument-photo').hide().siblings('.argument-video').show()
+
+  $(".box-texte").click ->
+    	$(this).parent().parent().siblings("#a-ouvrir-argumentforme").children('.argument-video').hide().siblings('.argument-photo').hide().siblings('.argument-texte').show()
+
   
   $(".flags").mouseover ->
     	$(this).hide().siblings(".signalisation").show().siblings(".finalementnon2").show()

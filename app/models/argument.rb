@@ -2,7 +2,7 @@ class Argument < ActiveRecord::Base
   
   include PublicActivity::Common
   
-  attr_accessible :content, :title, :position, :argcoms_attributes
+  attr_accessible :content, :title, :position, :argcoms_attributes, :avatar, :titre_graphe, :legende_graphe
   
   belongs_to :user
   belongs_to :argumentable, polymorphic: true
@@ -14,6 +14,16 @@ class Argument < ActiveRecord::Base
   
   
   accepts_nested_attributes_for :argcoms, allow_destroy: true
+  
+  has_attached_file :avatar,
+                    :styles =>  { :large => "600x300>", :medium => "374*222>"},
+                    :storage => :s3,
+                    :s3_credentials => "#{Rails.root}/config/s3.yml",
+                    :path => ":class/:attachment/:id/:style.:extension",
+                    :bucket => 'open-debate-avatar',
+                    :default_url => "default_argument-01.png",
+                    :s3_permissions => :private,
+                    :s3_host_name => 's3-eu-west-1.amazonaws.com'
   
   validates :user_id, presence: true
   validates :title, presence: true, length: { maximum: 100 }

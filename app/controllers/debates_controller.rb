@@ -81,6 +81,12 @@ class DebatesController < ApplicationController
       redirect_to debate_path(@debate)
   end
   
+  def promote
+      @debate = Debate.find(params[:id])
+      @debate.promote
+      redirect_to debate_path(@debate)
+  end
+  
   def follow
     @debate = Debate.find(params[:id])
     if current_user
