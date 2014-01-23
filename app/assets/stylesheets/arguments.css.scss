@@ -269,6 +269,548 @@
 		
 }
 
+#new-argument-video{
+	
+	.error-messages-newarg{
+		.text{
+		font-family: "gotham";
+		font-size: 30px;
+		text-align: center;
+		margin-left: 30px;
+		margin-bottom: 30px;
+		}
+		
+		li{font-family:"georgia";
+		margin-top: 30px;
+			color: #FF6969;
+			font-size: 13px;
+			font-style: italic;}
+	}
+	#new-argument1{
+	background-color:#AAD0FF;
+	margin-top:10px;
+	width: 534px;
+	min-height:570px;
+	margin-bottom:30px;
+	}
+	
+	#new-argument2{
+	background-color:#FF6969;
+	margin-top:10px;
+	width: 534px;
+	min-height:570px;
+	margin-bottom:30px;
+	}
+	
+	#new-argument3{
+	background-color:#C9C9C9;
+	margin-top:10px;
+	width: 534px;
+	min-height:570px;
+	margin-bottom:30px;
+	}
+		
+		#forme-argument{
+			height: 38px;
+			width: 397px;
+			margin-left: 40px;
+			margin-top:20px;
+			background-color: #FFF;
+			
+			.box-texte{
+			margin-left: 280px;
+			margin-top: -24px;
+			cursor: pointer;
+			}
+			
+			.box-pic{
+			margin-left: 320px;
+			margin-top: -33px;
+			cursor: pointer;	
+			}
+			
+			.box-video{
+			margin-left: 360px;
+			margin-top: -33px;
+			cursor: pointer;	
+			}
+			
+			
+			.texte{
+			
+			padding-top: 9px;
+			padding-left: 10px;
+			font-family: "gotham-Bold";
+			font-size: 24px;
+			font-style: italic;
+			letter-spacing: -2px;
+			color: #CCC;
+			font-style: italic;
+			font-weight: bold;
+			}
+		}
+		
+		#title-form{
+		::-webkit-input-placeholder {
+			font-size: 24px;
+			letter-spacing: -2px;
+		}
+
+		.title-newarg{
+		margin-top:10px;		
+		width: 377px;
+		height: 35px;
+		margin-left: 20px;
+		font-family: "gotham-Bold";
+		font-style: italic;
+		font-weight: bold;
+		font-size:17px;
+		background-color:#FFF;
+		border-radius:0px;
+		border: none;
+		color: black;
+		}
+		}
+		
+		
+		.actions-newarg{
+		width:493px;
+		margin-top:-10px;
+		margin-left:40px;
+		background-color:#FFF;
+		position: relative;
+		z-index:1;
+		}
+		.actions{
+		margin-left:10px;
+		border-radius: 0px;
+		background-color:#808080;
+		font-family: "gotham-Bold";
+		font-size:16px;
+		color: #000000;
+		color: white;
+		}
+		
+		
+		.argument-photo{
+		height:380px;
+		width: 488px;
+		background-color: white;
+		margin-left:40px;
+		padding: 5px 0px 0px 5px;
+		
+			.image{
+			position: relative;
+			z-index:0;
+			margin-top: -32px;
+			margin-left: 10px;
+			}
+		
+			.field{
+			cursor: pointer;
+			margin-left: 313px;
+			position: relative;
+			z-index:1;
+
+				.field1{
+				opacity: 0;
+			    cursor: pointer;
+			    position: absolute;
+			    top: 0;
+			    z-index: 2;
+				}
+
+				.field2{
+				font-style: italic;
+				font-family: "georgia";
+				padding: 7px;
+				width: 135px;
+				background-color: #AAD0FF;
+				border-radius: 0px;
+				border: none;
+				cursor: pointer;
+				text-align: center;
+				}
+			}
+			
+			.legende{
+				
+				::-webkit-input-placeholder {
+					font-size: 14px;
+					letter-spacing: 0px;
+					padding-left: 3px;
+				}
+
+				.texte_legende{
+				height:20px;
+				width: 444px;
+				margin-left: 10px;
+				background-color:#EEE;
+				font-family: "georgia";
+				font-style: italic;
+				border-radius:0px;
+				border: none;
+				resize:none;
+				font-size: 14px;
+				box-shadow: none;
+				margin-top:10px;
+				color: black;
+				}
+			}
+			
+			.content{
+			margin-top: -10px;
+			::-webkit-input-placeholder {
+				font-size: 16px;
+				letter-spacing: 0px;
+				padding-left: 3px;
+			}
+
+			.texte_content{
+			height:140px;
+			width: 444px;
+			margin-left: 10px;
+			background-color:#EEE;
+			font-family: "georgia";
+			border-radius:0px;
+			border: none;
+			resize:none;
+			font-size: 16px;
+			box-shadow: none;
+			margin-top:10px;
+			color: black;
+			}
+			
+			}
+
+		}
+		
+		.argument-video{
+		height:385px;
+		width: 488px;
+		background-color: white;
+		margin-left:40px;
+		padding: 5px 0px 0px 5px;
+		
+		.title{
+		font-family: 'gotham';
+		font-size: 20px;
+		color: black;
+		}
+		
+		.texte{
+		margin-top: 30px;
+		font-family: "georgia";
+		font-size: 16px;
+		}
+		}
+		
+		.argument-texte{
+			
+			#texte-form{
+							margin-top:-8px;
+
+				::-webkit-input-placeholder {
+					padding: 3px 0px 0px 5px;
+					font-size: 18px;
+					letter-spacing: 0px;
+				}
+				
+				.text-newarg{
+				height:360px;
+				width: 473px;
+				margin-left: 20px;
+				padding: 10px 0px 0px 5px;
+				background-color:#FFF;
+				font-family: "georgia";
+				border-radius:0px;
+				border: none;
+				resize:none;
+				font-size: 16px;
+				box-shadow: none;
+				margin-top:10px;
+				padding: 10px;
+				color: black;
+				}
+
+			}
+		
+		}
+		
+		
+}
+
+#new-argument-photo{
+	
+	.error-messages-newarg{
+		.text{
+		font-family: "gotham";
+		font-size: 30px;
+		text-align: center;
+		margin-left: 30px;
+		margin-bottom: 30px;
+		}
+		
+		li{font-family:"georgia";
+		margin-top: 30px;
+			color: #FF6969;
+			font-size: 13px;
+			font-style: italic;}
+	}
+	#new-argument1{
+	background-color:#AAD0FF;
+	margin-top:10px;
+	width: 534px;
+	min-height:570px;
+	margin-bottom:30px;
+	}
+	
+	#new-argument2{
+	background-color:#FF6969;
+	margin-top:10px;
+	width: 534px;
+	min-height:570px;
+	margin-bottom:30px;
+	}
+	
+	#new-argument3{
+	background-color:#C9C9C9;
+	margin-top:10px;
+	width: 534px;
+	min-height:570px;
+	margin-bottom:30px;
+	}
+		
+		#forme-argument{
+			height: 38px;
+			width: 397px;
+			margin-left: 40px;
+			margin-top:20px;
+			background-color: #FFF;
+			
+			.box-texte{
+			margin-left: 280px;
+			margin-top: -24px;
+			cursor: pointer;
+			}
+			
+			.box-pic{
+			margin-left: 320px;
+			margin-top: -33px;
+			cursor: pointer;	
+			}
+			
+			.box-video{
+			margin-left: 360px;
+			margin-top: -33px;
+			cursor: pointer;	
+			}
+			
+			
+			.texte{
+			
+			padding-top: 9px;
+			padding-left: 10px;
+			font-family: "gotham-Bold";
+			font-size: 24px;
+			font-style: italic;
+			letter-spacing: -2px;
+			color: #CCC;
+			font-style: italic;
+			font-weight: bold;
+			}
+		}
+		
+		#title-form{
+		::-webkit-input-placeholder {
+			font-size: 24px;
+			letter-spacing: -2px;
+		}
+
+		.title-newarg{
+		margin-top:10px;		
+		width: 377px;
+		height: 35px;
+		margin-left: 20px;
+		font-family: "gotham-Bold";
+		font-style: italic;
+		font-weight: bold;
+		font-size:17px;
+		background-color:#FFF;
+		border-radius:0px;
+		border: none;
+		color: black;
+		}
+		}
+		
+		
+		.actions-newarg{
+		width:493px;
+		margin-top:-10px;
+		margin-left:40px;
+		background-color:#FFF;
+		position: relative;
+		z-index:1;
+		}
+		.actions{
+		margin-left:10px;
+		border-radius: 0px;
+		background-color:#808080;
+		font-family: "gotham-Bold";
+		font-size:16px;
+		color: #000000;
+		color: white;
+		}
+		
+		
+		.argument-photo{
+		height:380px;
+		width: 488px;
+		background-color: white;
+		margin-left:40px;
+		padding: 5px 0px 0px 5px;
+		
+			.image{
+			position: relative;
+			z-index:0;
+			margin-top: -32px;
+			margin-left: 10px;
+			}
+		
+			.field{
+			cursor: pointer;
+			margin-left: 313px;
+			position: relative;
+			z-index:1;
+
+				.field1{
+				opacity: 0;
+			    cursor: pointer;
+			    position: absolute;
+			    top: 0;
+			    z-index: 2;
+				}
+
+				.field2{
+				font-style: italic;
+				font-family: "georgia";
+				padding: 7px;
+				width: 135px;
+				background-color: #AAD0FF;
+				border-radius: 0px;
+				border: none;
+				cursor: pointer;
+				text-align: center;
+				}
+			}
+			
+			.legende{
+				
+				::-webkit-input-placeholder {
+					font-size: 14px;
+					letter-spacing: 0px;
+					padding-left: 3px;
+				}
+
+				.texte_legende{
+				height:20px;
+				width: 444px;
+				margin-left: 10px;
+				background-color:#EEE;
+				font-family: "georgia";
+				font-style: italic;
+				border-radius:0px;
+				border: none;
+				resize:none;
+				font-size: 14px;
+				box-shadow: none;
+				margin-top:10px;
+				color: black;
+				}
+			}
+			
+			.content{
+			margin-top: -10px;
+			::-webkit-input-placeholder {
+				font-size: 16px;
+				letter-spacing: 0px;
+				padding-left: 3px;
+			}
+
+			.texte_content{
+			height:140px;
+			width: 444px;
+			margin-left: 10px;
+			background-color:#EEE;
+			font-family: "georgia";
+			border-radius:0px;
+			border: none;
+			resize:none;
+			font-size: 16px;
+			box-shadow: none;
+			margin-top:10px;
+			color: black;
+			}
+			
+			}
+
+		}
+		
+		.argument-video{
+		height:385px;
+		width: 488px;
+		background-color: white;
+		margin-left:40px;
+		padding: 5px 0px 0px 5px;
+		
+		.title{
+		font-family: 'gotham';
+		font-size: 20px;
+		color: black;
+		}
+		
+		.texte{
+		margin-top: 30px;
+		font-family: "georgia";
+		font-size: 16px;
+		}
+		}
+		
+		.argument-texte{
+			
+			#texte-form{
+							margin-top:-8px;
+
+				::-webkit-input-placeholder {
+					padding: 3px 0px 0px 5px;
+					font-size: 18px;
+					letter-spacing: 0px;
+				}
+				
+				.text-newarg{
+				height:360px;
+				width: 473px;
+				margin-left: 20px;
+				padding: 10px 0px 0px 5px;
+				background-color:#FFF;
+				font-family: "georgia";
+				border-radius:0px;
+				border: none;
+				resize:none;
+				font-size: 16px;
+				box-shadow: none;
+				margin-top:10px;
+				padding: 10px;
+				color: black;
+				}
+
+			}
+		
+		}
+		
+		
+}
+
 #argument-pour{
 
 	

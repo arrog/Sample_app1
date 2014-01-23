@@ -1,16 +1,24 @@
 <section id="video_signup">
-  <%= render :partial => "shared/flash_messages" %>
-  
+  <%= render :partial => "shared/flash_messages" %>  
   <div class="container">
+	
 
+	
 	<div class="row">
 		<div class="row" id="intro">
 			Mieux vaut être un mouton noir, qu'un mouton de panurge.
 		</div>
 	</div>
+
+	<div class="row">
+		<div class="en-ce-moment">
+			<%= render "shared/home_badge", :debate => @debate%>
+		</div>
+	</div>
+	
     <div class="row">
       <div class="span11" id ="holy">
-        
+  
 		<div id="video">
 		<% if !signed_in?%>
           <div id="hero">
@@ -39,35 +47,39 @@
 			
           <div id="video0">
 				<div class="introduction1">
-				<span class="texte"><%= @citations.first %></span>
+				<span class="texte"><%= @citations.first[0] %></span>
 				</div>
 
 				<%= image_tag("fleche-droite.png", class: "fleche01")%>
-				<div class="texte2">Argumente. Conteste. Vote. Défie. Juge. Débats.</div>
+				<div class="test-zahi">
+				<div class="texte2"><%= @citations.first[1] %><span class="texte3"> entre moutons.</span></div>
+				</div>
+				
 		  </div>
 		
 		  <div id="video01">
 				<div class="introduction1">
-				<span class="texte"> <%= @citations.second%></span>
+				<span class="texte"> <%= @citations.first[0]%></span>
 				</div>
 				<%= image_tag("fleche-droite.png", class: "fleche02")%>
-				<div class="texte2">Argumente. Conteste. Vote. Défie. Juge. Débats.</div>
+				<div class="texte2"><%= @citations.first[1] %><span class="texte3"> en duels.</span></div>
 		  </div>
 
 		  <div id="video02">
 				<div class="introduction1">
-				<span class="texte"> <%= @citations.third%></span>
+				<span class="texte"> <%= @citations.first[0]%></span>
 				</div>
 				<%= image_tag("fleche-droite.png", class: "fleche03")%>
-				<div class="texte2">Argumente. Conteste. Vote. Défie. Juge. Débats.</div>
+				<div class="texte2"><%= @citations.first[1] %><span class="texte3">  en groupe.</span></div>
 		  </div>
+						
 		  <div id="video03">
 				<div class="introduction1">
-				<span class="texte"> <%= @citations.last%></span>
+				<span class="texte"> <%= @citations.first[0]%></span>
 				</div>
-				<div class="texte2">Argumente. Conteste. Vote. Défie. Juge. Débats.</div>
-		  </div>				
-		
+				<div class="texte2"><%= @citations.first[1] %><span class="texte3"> entre amis.</span></div>
+		  </div>
+				
 			<%else%>
 		  <div id="connecte">
 					<div class="row">
@@ -132,7 +144,7 @@
 		</div>
 	  </div>
     </div>
-
+	
     <div class="row" id ="explanation1">
 
         <div class="explanation1">
@@ -140,6 +152,7 @@
 		<%= link_to image_tag('ouvertbleu.jpg'), debats_path, class: "image2-expl"%>
 		  <div class="texte">Débats Ouverts</div>
           <div class="image"><%= image_tag('baniere-explication.png', :alt => 'Moutoners') %></div>
+		  <div class="texte2"></div>
         </div>
 
         <div class="explanation2">

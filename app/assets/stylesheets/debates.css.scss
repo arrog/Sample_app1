@@ -926,3 +926,233 @@ label img {
 	resize: none;
 	}
 }
+
+
+#home-badge{
+
+#encemoment{
+margin-left: 10px;
+margin-top: 10px;
+width: 566px;
+padding-bottom: 8px;
+border-bottom: 1px Solid black;
+
+	.title{
+	font-family: "gotham-Bold";
+	font-size: 20px;
+	text-align: left;
+	line-height: 23px;
+	 letter-spacing:-1px;	
+	}
+	
+	.suivant{
+	width: 149px;
+	height: 24px;
+	background-color: #808080;
+	margin-top: -25px;
+	margin-left: 415px;
+	font-family: "georgia";
+	font-size: 16px;
+		
+		.text{
+		padding-left: 10px;
+		padding-top: 3px;
+		}
+		.flechehome{
+		margin-top: -38px;
+		margin-left:130px;
+		cursor: pointer;
+		}
+	}
+}
+#gauche-ouvert{
+width: 272px;
+}
+
+#title{
+background-color: #FFF;
+min-height:220px;
+width: 585px;
+margin-top:20px;
+margin-bottom: 30px;
+
+
+border-style: solid;
+border-width: 14px;
+-moz-border-image: url(border2.png) 10 repeat;
+-webkit-border-image: url(border2.png) 10 repeat;
+-o-border-image: url(border2.png) 10 repeat;
+border-image: url(border2.png) 13 fill repeat;
+
+	.image1{
+	height:152px;
+	width:256px;
+	margin-top:15px;
+	margin-left:15px;
+	
+		
+		.image{
+		margin-top: -175px;
+		img { width: 256px; height:155px;
+		}
+		image0{
+		
+		}
+			position:relative;
+			z-index: 1;
+		}
+	}
+
+}
+
+#droite-ouvert{
+
+	width:270px;	
+	margin-left:-1px;
+	margin-top: 15px;
+	margin-left:40px;
+			
+	#title2{
+	font-family: "gotham";
+	font-size: 20px;
+	text-align: left;
+	line-height: 23px;
+	 letter-spacing:-1px;
+	
+	
+	}
+
+	#tags_list_doulin{
+	margin-top:10px;
+	font-family : "gotham-Bold";
+	font-size : 16px;
+	color: white;
+		.tags{
+		color: white;
+		}
+	
+	li{
+	margin-right: 5px;
+	display : inline-block;
+	}
+	
+	}
+
+	#content{
+		margin-right:5px;
+		margin-top:10px;
+		font-family:georgia;
+		font-size:14px;
+		font-style: italic;
+			.content{
+			padding-bottom:10px;
+			}
+		border-bottom:8px solid white;
+	}
+
+
+	#vote{
+	height: 35px;
+	margin-top: 15px;
+	margin-right:5px;	
+	
+	li{
+	display : inline-block;
+	}
+	
+	.vote2{
+		font-family:"gotham";
+		font-size:25px;
+
+	}
+
+	.oui-oui{
+		margin-top: -5px;
+		margin-left:30px;
+		background-color: #808080;
+		font-family: "bebasneue-webfont";
+		font-size: 25px;
+		padding: 5px 9px 5px 9px;
+		
+		.oui{
+		color: white;
+		}
+	}
+	
+	.oui-oui:hover{
+	background-color: #AAD0FF;
+	}
+	.oui-oui2{
+		margin-top: -5px;
+		margin-left:30px;
+		background-color: #AAD0FF;
+		font-family: "bebasneue-webfont";
+		font-size: 25px;
+		padding: 5px 9px 5px 9px;
+		
+		.oui{
+		color: white;
+		}
+	}
+	
+	.suisse-suisse{
+		margin-top: -5px;
+		margin-left:8px;
+		background-color: #FF6969;
+		font-family: "bebasneue-webfont";
+		font-size: 25px;
+		padding: 5px 12px 5px 12px;
+		
+		.suisse{
+		color: white;
+		}
+	}
+	
+	.suisse-suisse:hover{
+	background-color: #808080;
+	}
+	.suisse-suisse2{
+		margin-top: -5px;
+		margin-left:8px;
+		background-color: #808080;
+		font-family: "bebasneue-webfont";
+		font-size: 25px;
+		padding: 5px 12px 5px 12px;
+		
+		.suisse{
+		color: white;
+		}
+	}
+	
+	.non-non{
+		margin-top: -5px;
+		margin-left:8px;
+		background-color: #FFF;
+		font-family: "bebasneue-webfont";
+		font-size: 25px;
+		padding: 5px 9px 5px 9px;
+		
+		.non{
+		color: black;
+		}
+	}
+		
+		.non-non:hover{
+		background-color: #FF6969;
+		}
+		
+		.non-non2{
+			margin-top: -5px;
+			margin-left:8px;
+			background-color: #FF6969;
+			font-family: "bebasneue-webfont";
+			font-size: 25px;
+			padding: 5px 9px 5px 9px;
+
+			.non{
+			color: black;
+			}
+		}	
+	}
+}
+}

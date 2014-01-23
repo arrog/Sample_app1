@@ -18,7 +18,7 @@
     
     <link rel="shortcut icon" href="/assets/favicon.png" type="image/x-icon" />
     
-    <title>Moutoners | Viens débattre </title>
+    <title>Moutoners</title>
     
     <!--[if lt IE 9]>
       <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -110,24 +110,20 @@
 		 	    <ul id="main-nav" class="unstyled">
          	
          	
-		 	        <li><%= link_to "TIMELINE", list_path, class: "black" %></li>
+		 	        <li class='first'><%= link_to "ACCUEIL", root_path, class: "black" %></li>
          	
 		 	   	<li class="tiret">|</li>
          	
-		 	   	 <li><%= link_to "LES EXPERTS", experts_path, class: "black" %></li>
+		 	   	 <li><%= link_to "LES DÉBATS OUVERTS", debats_path, class: "black" %></li>
          	
 		 	   	<li class="tiret">|</li>
          	
-		 	        <li><%= link_to "DEBATS OUVERTS", debats_path, class: "black" %></li>
+		 	        <li><%= link_to "LES JOUTES VERBALES", dialectiques_path, class: "black" %></li>
          	
-		 	   	<li class="tiret">|</li>
-         	
-		 	        <li><%= link_to "DEFIS", dialectiques_path, class: "black" %></li>
-         	
-		 	   	<li class="tiret">|</li>
-         	
+		 	   	<li class="tiret">|</li>   	
          	
 		 	        <li class="last"><%= link_to "LES GROUPES", groups_path, class: "black" %></li>
+		
 		 	      </ul>
 		 		</div>
 		 	  </div>

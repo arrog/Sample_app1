@@ -14,9 +14,10 @@ margin-left: 20px;
 text-align: center;
 }
 
+
 #holy{
 	margin-left: 115px;
-	margin-top: 15px;
+	margin-top: 5px;
 }
 
   
@@ -41,7 +42,7 @@ text-align: center;
 		margin-right: 25px;
 		cursor: pointer;
 		}
-		
+
 		.introduction1{
 		margin-left: 70px;
 		margin-right: 50px;
@@ -52,13 +53,21 @@ text-align: center;
 		padding-bottom: 40px;
 		border-bottom: 2px dashed black;
 		}
-		.texte2{
-		margin-left: 70px;
-		margin-right: 70px;
-		padding-top: 30px;
-		font-family: "gotham-Bold";
-		font-size: 16px;
-		}
+		
+			.texte2{
+			margin-left: 70px;
+			margin-right: 70px;
+			padding-top: 40px;
+			font-family: "gotham";
+			font-size: 30px;
+			line-height: 30px;
+			color: #808080;
+
+			.texte3{
+			color: #BBB;
+			font-family: "gotham-Bold";			
+			}
+			}
 	}
 	
 	#video01{
@@ -74,7 +83,7 @@ text-align: center;
 		margin-right: 25px;
 		cursor: pointer;
 		}
-		
+
 		.introduction1{
 		margin-left: 70px;
 		margin-right: 50px;
@@ -85,13 +94,21 @@ text-align: center;
 		padding-bottom: 40px;
 		border-bottom: 2px dashed black;
 		}
-		.texte2{
-		margin-left: 70px;
-		margin-right: 70px;
-		padding-top: 30px;
-		font-family: "gotham-Bold";
-		font-size: 16px;
-		}
+		
+			.texte2{
+			margin-left: 70px;
+			margin-right: 70px;
+			padding-top: 40px;
+			font-family: "gotham";
+			font-size: 30px;
+			line-height: 30px;
+			color: #808080;
+
+			.texte3{
+			color: #BBB;
+			font-family: "gotham-Bold";			
+			}
+			}
 	}
 	
 	#video02{
@@ -107,7 +124,7 @@ text-align: center;
 		margin-right: 25px;
 		cursor: pointer;
 		}
-		
+
 		.introduction1{
 		margin-left: 70px;
 		margin-right: 50px;
@@ -118,13 +135,21 @@ text-align: center;
 		padding-bottom: 40px;
 		border-bottom: 2px dashed black;
 		}
-		.texte2{
-		margin-left: 70px;
-		margin-right: 70px;
-		padding-top: 30px;
-		font-family: "gotham-Bold";
-		font-size: 16px;
-		}
+		
+			.texte2{
+			margin-left: 70px;
+			margin-right: 70px;
+			padding-top: 40px;
+			font-family: "gotham";
+			font-size: 30px;
+			line-height: 30px;
+			color: #808080;
+
+			.texte3{
+			color: #bbb;
+			font-family: "gotham-Bold";			
+			}
+			}
 	}
 	
 	#video03{
@@ -134,13 +159,13 @@ text-align: center;
 	margin-left: 300px;
     background-color: #FFF;
 		
-		.fleche04{
+		.fleche01{
 		margin-top: -10px;
 		float: right;
 		margin-right: 25px;
 		cursor: pointer;
 		}
-		
+
 		.introduction1{
 		margin-left: 70px;
 		margin-right: 50px;
@@ -151,15 +176,23 @@ text-align: center;
 		padding-bottom: 40px;
 		border-bottom: 2px dashed black;
 		}
-		.texte2{
-		margin-left: 70px;
-		margin-right: 70px;
-		padding-top: 30px;
-		font-family: "gotham-Bold";
-		font-size: 16px;
-		}
-	}
+		
+			.texte2{
+			margin-left: 70px;
+			margin-right: 70px;
+			padding-top: 40px;
+			font-family: "gotham";
+			font-size: 30px;
+			line-height: 30px;
+			color: #808080;
 
+			.texte3{
+			color: #BBB;
+			font-family: "gotham-Bold";			
+			}
+			}
+	}
+	
 	#connecte{
 	margin-top: 20px;
 	margin-left:20px;
@@ -489,10 +522,12 @@ text-align: center;
     }  
 }
 
-	 
+	.en-ce-moment{
+	margin-left: 165px;
+	}
+	
   .explanation1 {
-	margin-top: 30px;
-	margin-left:70px;
+	margin-left:60px;
 	margin-bottom: 30px;
     text-align: center;
 	height: 175px;
@@ -593,7 +628,7 @@ text-align: center;
 
 
 	#best-debates1{
-	margin-left: 208px;
+	margin-left: 201px;
 	margin-top: 20px;
     text-align: center;
 	font-family:"gotham-Bold";
@@ -607,7 +642,7 @@ text-align: center;
 	
 	#best-debates2{
 	margin-top:-29px;
-	margin-left: 538px;
+	margin-left: 531px;
     text-align: center;
 	font-family:"gotham-Bold";
 	font-size:18px;
@@ -636,10 +671,10 @@ text-align: center;
 	#en-bas{
 		
 		#catcatcat{
-		margin-left: 208px;
+		margin-left: 201px;
 		}
 		#best-debates3{
-		margin-left:386px;
+		margin-left:379px;
 		margin-top:-415px;
 		}
 	}
@@ -648,8 +683,9 @@ text-align: center;
 
 #for-badges{
 	margin-left: 150px;
-	
+
 	#list{
+	
 	width: 640px;
 	margin-left:-35px;
 	}
@@ -659,7 +695,7 @@ text-align: center;
 #index-doulins{
 	#informations-doulin{
 		width: 950px;
-		margin: 30px 0px 0px 70px;
+		margin: 30px 0px 30px 70px;
 		background-color: #C9C9C9;
 		min-height: 270px;
 		
@@ -817,7 +853,6 @@ text-align: center;
 
 	margin-left:0px;
 	margin-top:30px;
-	margin-bottom: 10px;
 	
 	.texte{
 	font-family: "georgia";

@@ -14,19 +14,18 @@ $(document).ready ->
   $('.effacersur').hide()
   $('.signalisation').hide()
   $('.finalementnon2').hide()
-  $('.argument-photo').hide()
-  $('.argument-video').hide()
+  $('#new-argument-photo').hide()
+  $('#new-argument-video').hide()
   
 
   $(".box-pic").click ->
-    	$(this).parent().parent().siblings("#a-ouvrir-argumentforme").children('.argument-texte').hide().siblings('.argument-video').hide().siblings('.argument-photo').show()
+    	$(this).parents().parent().parent().parent().siblings("#new-argument-photo").show().siblings('#new-argument').hide().siblings('#new-argument-video').hide()
 
   $(".box-video").click ->
-    	$(this).parent().parent().siblings("#a-ouvrir-argumentforme").children('.argument-texte').hide().siblings('.argument-photo').hide().siblings('.argument-video').show()
+    $(this).parents().parent().parent().parent().siblings("#new-argument-video").show().siblings('#new-argument').hide().siblings('#new-argument-photo').hide()
 
   $(".box-texte").click ->
-    	$(this).parent().parent().siblings("#a-ouvrir-argumentforme").children('.argument-video').hide().siblings('.argument-photo').hide().siblings('.argument-texte').show()
-
+    $(this).parents().parent().parent().parent().siblings("#new-argument").show().siblings('#new-argument-photo').hide().siblings('#new-argument-video').hide()	
   
   $(".flags").mouseover ->
     	$(this).hide().siblings(".signalisation").show().siblings(".finalementnon2").show()
