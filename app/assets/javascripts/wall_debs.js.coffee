@@ -37,8 +37,6 @@ $(document).ready ->
   $(".invitation-fermer42-british").hide()
 
 
-
-
   $("#invitation-british").click ->
 	    $(this).parent().parent().hide().siblings(".invitation-fermer-british").show()
 
@@ -172,3 +170,6 @@ $(document).ready ->
 
   $(".arrow-up-comments").click ->
 	    $(this).hide().siblings(".arrow-down-comments").show().siblings(".comment-texte2").hide().siblings(".comment-texte1").show().parent().siblings("#comments-to-open").hide().siblings("#comments-to-close").slideDown("slow")
+
+  $("#votervoter").mouseover ->
+	    $(this).children(".arrow-down-newarg").hide().siblings(".texte-newarg").hide().siblings(".arrow-up-newarg").show().siblings('.texte2-newarg').show().parent().siblings("#box-argument").slideDown("slow")

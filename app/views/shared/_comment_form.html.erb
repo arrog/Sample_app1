@@ -19,7 +19,7 @@
 				<%= form_for comment do |f| %>
 				  <%= render 'shared/error_messages', object: f.object %>
 				  <div class="field">
-				    <%= f.text_area :content, placeholder: "Réagis!", class: "content" %>
+				    <%= f.text_area :content, placeholder: "Votre réaction", class: "content" %>
 					<%= f.hidden_field :commentable_id, :value => commentable.id %>
 					<%= f.hidden_field :commentable_type, :value => type %>
 				 

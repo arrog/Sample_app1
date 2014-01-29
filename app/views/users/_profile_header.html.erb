@@ -7,7 +7,7 @@
 
 		<li class= "boutons-pending">
 
-			<%= link_to "En Cours", active_user_path(@user), class: cp(active_user_path(@user))%>
+			<%= link_to "Débats suivis", active_user_path(@user), class: cp(active_user_path(@user))%>
 		</li>
 		
 		
@@ -19,7 +19,7 @@
 		<li class="bouttons-profile">
 			<%= link_to "Mon Activité", activities_user_path(@user), class: cp(activities_user_path(@user))%>
 		</li>
-		
+	
 	<% else %>
 
 		<li class="notifications-profile">
@@ -33,7 +33,7 @@
 
     	
 		<li class= "boutons-pending">
-			<%= link_to "Ses Défis",  sesdefis_user_path(@user), class: cp(sesdefis_user_path(@user))%>
+			<%= link_to "Ses Joutes",  sesdefis_user_path(@user), class: cp(sesdefis_user_path(@user))%>
 		</li>
     	
     	

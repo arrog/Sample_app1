@@ -8,15 +8,8 @@
 			<div>
 				<%= render "profile_badge", user: @user%>	
 			</div>
-			<div class="span8" id="container-activ3">
-				
-				<% @user.challenges.open_challenges.each do |challenge| %>
-					<%= render "shared/challenge_badge", challenge: challenge  %>
-				<%end%>
-				
-				<% unless @user.challenges.open_challenges.any? %>
-					Pas de défi en cours pour le moment
-				<% end%>
+			<div class="span8" id="container-activ3">			
+					<%= render "shared/index", object: @object  %>
 			</div>
 		</div>
 

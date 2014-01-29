@@ -35,17 +35,58 @@ class Debate < ActiveRecord::Base
   
   paginates_per 10
   
-  scope :permission_debate, -> { where(:state => "online", :group => [nil, '0'] )}
-  scope :homepage, -> { where(:state => ["homepage"]) }  
- 
+  scope :permission_debate, -> { where(:state => ["homepage1","homepage2","homepage3","homepage4","homepage5","online"], :group => [nil, '0'] )}
+  scope :homepage1, -> { where(:state => ["homepage1"]) }  
+  scope :homepage2, -> { where(:state => ["homepage2"]) }  
+  scope :homepage3, -> { where(:state => ["homepage3"]) }  
+  scope :homepage4, -> { where(:state => ["homepage4"]) }  
+  scope :homepage5, -> { where(:state => ["homepage5"]) }  
+         
   state_machine initial: :offline do
 
      event :publish do
        transition :offline => :online
      end
      
-     event :promote do
-       transition :online => :homepage
+     event :promote1 do
+       transition :online => :homepage1
+       transition :homepage => :homepage1       
+       transition :homepage2 => :homepage1
+       transition :homepage3 => :homepage1
+       transition :homepage4 => :homepage1
+       transition :homepage5 => :homepage1                     
+     end
+     event :promote2 do
+       transition :online => :homepage2
+       transition :homepage => :homepage2       
+       transition :homepage1 => :homepage2
+       transition :homepage3 => :homepage2
+       transition :homepage4 => :homepage2
+       transition :homepage5 => :homepage2       
+     end
+     event :promote3 do
+       transition :online => :homepage3
+       transition :homepage => :homepage3     
+       transition :homepage2 => :homepage3
+       transition :homepage1 => :homepage3
+       transition :homepage4 => :homepage3
+       transition :homepage5 => :homepage3       
+     end
+     event :promote4 do
+       transition :online => :homepage4
+       transition :homepage => :homepage4      
+       transition :homepage2 => :homepage4
+       transition :homepage3 => :homepage4
+       transition :homepage1 => :homepage4
+       transition :homepage5 => :homepage4       
+     end
+     event :promote5 do
+       transition :online => :homepage5
+       transition :homepage => :homepage5      
+       transition :homepage2 => :homepage5
+       transition :homepage3 => :homepage5
+       transition :homepage4 => :homepage5
+       transition :homepage1 => :homepage5       
      end
    end
   

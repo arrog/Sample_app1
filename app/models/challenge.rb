@@ -67,15 +67,6 @@ class Challenge < ActiveRecord::Base
     end
     
     event :promote do
-      transition :incomplete => :homepage
-      transition :first => :homepage
-      transition :second => :homepage
-      transition :third => :homepage
-      transition :forth => :homepage
-      transition :fifth => :homepage
-      transition :sixth => :homepage
-      transition :seventh => :homepage
-      transition :eighth => :homepage
       transition :over => :homepage
       transition :judged => :homepage
     end
@@ -118,6 +109,10 @@ class Challenge < ActiveRecord::Base
   
   def juges
     self.performances.where(position:100).count+self.performances.where(position:101).count+self.performances.where(position:102).count
+  end
+  
+  def challenge_toinvite
+    User.all - self.users
   end
   
   def lincoln_douglas_position_left

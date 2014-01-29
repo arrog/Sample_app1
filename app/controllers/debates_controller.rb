@@ -1,7 +1,7 @@
 class DebatesController < ApplicationController
   before_filter :store_location
   before_filter :allowed, only: :show
-  before_filter :verify_is_admin,  only: [:new, :edit, :create, :destroy, :update, :index, :publish]
+  before_filter :verify_is_admin,  only: [:new, :edit, :destroy, :update, :index, :publish]
   before_filter :authenticate_user!, only: [:vote, :follow, :unfollow]
 
   has_scope :permission_debate
@@ -81,9 +81,33 @@ class DebatesController < ApplicationController
       redirect_to debate_path(@debate)
   end
   
-  def promote
+  def promote1
       @debate = Debate.find(params[:id])
-      @debate.promote
+      @debate.promote1
+      redirect_to debate_path(@debate)
+  end
+
+  def promote2
+      @debate = Debate.find(params[:id])
+      @debate.promote2
+      redirect_to debate_path(@debate)
+  end
+
+  def promote3
+      @debate = Debate.find(params[:id])
+      @debate.promote3
+      redirect_to debate_path(@debate)
+  end  
+
+  def promote4
+      @debate = Debate.find(params[:id])
+      @debate.promote4
+      redirect_to debate_path(@debate)
+  end
+
+  def promote5
+      @debate = Debate.find(params[:id])
+      @debate.promote5
       redirect_to debate_path(@debate)
   end
   

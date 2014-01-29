@@ -277,7 +277,7 @@
 					margin-left:0px;
 
 					::-webkit-input-placeholder {
-					   font-family: "gotham";
+					   font-family: "gotham-Bold";
 						font-size: 19px;
 						letter-spacing: 0px;
 					}
@@ -425,9 +425,50 @@
 
 #challenge{
 
+	#inviterchallenge{
+		margin-left: 204px;
+		margin-top: 30px;
+		width: 280px;
+		height: 28px;
+		color: black;
+		margin-bottom: 20px;
+		font-family: "gotham-Bold";
+		padding: 7px 7px 0px 7px;
+		font-size: 18px;
+		background-color: #808080;
+			.link{
+			color: white;
+			}
+		
+	}
+	
+	#developpement-bis{
+	margin-left: 204px;
+	width: 783px;
+		
+		li{
+		margin-right:68px;
+		display: inline-block;
+		}
+		
+		.invitation{
+		width: 160px;
+		height:30px;
+		padding-left: 10px;
+		padding-top: 10px;
+		background-color: #FF7575;
+		font-style: italic;
+		font-size: 14px;
+		font-family: "georgia";
+		margin-top: -30px;
+		margin-bottom: 30px;
+		}
+	}
+	
 	#typechallenge{
 	margin-top: 20px;
 	margin-left: 343px;
+	margin-bottom: 25px;
 	
 	.texte{
 	font-family: "gotham-Bold";
@@ -602,8 +643,8 @@
 	}
 	.espace{
 	height:30px;
-	width: 300px;
-	margin-left : 410px;
+	width: 240px;
+	margin-left : 424px;
 	margin-top: 75px;
 	border-top: 1px solid;
 	}
@@ -686,7 +727,7 @@
 	font-family: "gotham";
 	font-size:18px;
 	color: #000000;
-	text-align: center;
+	margin-left:255px;
 	}
 	
 	.comment-texte2{
@@ -694,7 +735,7 @@
 	font-family: "gotham";
 	font-size:18px;
 	color: #000000;
-	text-align: center;
+	margin-left:250px;
 	}
 	
 	.arrow-up-comments {
@@ -889,6 +930,9 @@
 			width: 140px;
 			border-bottom: 5px solid white;
 			margin-bottom:15px;
+			div:hover{
+			text-decoration: underline;
+			}
 			
 				.texte{
 				margin-bottom:10px;
@@ -952,6 +996,9 @@
 			width: 140px;
 			border-bottom: 5px solid white;
 			margin-bottom:15px;
+			div:hover{
+			text-decoration: underline;
+			}
 				
 				.texte{
 				margin-bottom:10px;
@@ -1343,8 +1390,18 @@
 	}
 	
 	#share{
-	margin-top: -425px;
-	margin-left: 909px;
+	margin-left: 420px;
+	margin-bottom: 20px;
+	background-color: #AAD0FF;
+	height:50px;
+	width: 240px;
+	border-radius: 12px;
+	padding-top:15px;
+ 	text-align: center;
+	color: black;
+	line-height: 20px;
+	font-family:"gotham-Bold";
+	font-size: 18px;
 	
 	.texte{
 	margin-top: -34px;
@@ -1360,7 +1417,7 @@
 		
 		.okk{
 		margin-top: -30px;
-		opacity:0;
+		opacity:1;
 		}
 	}
 
@@ -1371,7 +1428,12 @@
 	.okk{
 	margin-top: -30px;
 	opacity:0;
+	
+	.social-share-button{
+	margin-left:-20px;
 	}
+	}
+	
 	}
 	}
 	
@@ -1437,13 +1499,62 @@
 	}
 	
 	#start{
-
 		font-family:"bebasneue-webfont";
 		font-size:28px;
-		margin-left:335px;
+		margin-left:450px;
 		margin-top:50px;
 		margin-bottom: 0px;
 		width:240px;
+		color:black;
+	}
+
+	#start2{
+		background-color: #AAD0FF;
+		font-family:"Bebasneue-webfont";
+		padding: 5px 0px 5px 10px;
+		font-size:26px;
+		margin-top:50px;
+		margin-left: -20px;
+		margin-bottom: 0px;
+		width:524px;
+		color:black;
+		text-decoration: underline;		
+	}
+	
+	#start1{
+		background-color: #FF7575;
+		font-family:"Bebasneue-webfont";
+		padding: 5px 0px 5px 10px;
+		font-size:26px;
+		margin-top:50px;
+		margin-left: -20px;
+		margin-bottom: 0px;
+		width:524px;
+		color:black;
+		text-decoration: underline;
+	}
+	
+	#start3{
+		background-color: #AAD0FF;
+		font-family:"bebasneue-webfont";
+		padding: 5px;
+		font-size:28px;
+		margin-left:450px;
+		margin-top:50px;
+		margin-bottom: 0px;
+		width:145px;
+		color:black;
+	}
+	
+	#start4{
+		background-color: #FF7575;
+		font-family:"bebasneue-webfont";
+		padding: 5px;
+		font-size:28px;
+		margin-left:450px;
+		margin-top:50px;
+		margin-bottom: 0px;
+		width:145px;
 		color:black;
 	}
 	
@@ -1579,6 +1690,9 @@
 			font-size: 16px;
 			text-align: center;
 			border-bottom: 5px solid white;
+			div:hover{
+			text-decoration: underline;
+			}
 			
 				.texte{
 				margin-bottom:10px;
@@ -1624,6 +1738,9 @@
 			font-size: 16px;
 			text-align: center;
 			border-bottom: 5px solid white;
+			div:hover{
+			text-decoration: underline;
+			}
 				
 				.texte{
 				margin-bottom:10px;
@@ -1941,8 +2058,18 @@
 	}
 
 	#share{
-	margin-top: -385px;
-	margin-left: 909px;
+	margin-left: 420px;
+	margin-bottom: 20px;
+	background-color: #AAD0FF;
+	height:50px;
+	width: 240px;
+	border-radius: 12px;
+	padding-top:15px;
+ 	text-align: center;
+	color: black;
+	line-height: 20px;
+	font-family:"gotham-Bold";
+	font-size: 18px;
 	
 	.texte{
 	margin-top: -34px;
@@ -1958,7 +2085,7 @@
 		
 		.okk{
 		margin-top: -30px;
-		opacity:0;
+		opacity:1;
 		}
 	}
 
@@ -1969,7 +2096,12 @@
 	.okk{
 	margin-top: -30px;
 	opacity:0;
+	
+	.social-share-button{
+	margin-left:-20px;
 	}
+	}
+	
 	}
 	}
 
@@ -2032,15 +2164,64 @@
 	margin-top:-48px;
 	}
 	}
-	
-	#start{
 
+	#start{
 		font-family:"bebasneue-webfont";
 		font-size:28px;
-		margin-left:335px;
+		margin-left:450px;
 		margin-top:50px;
 		margin-bottom: 0px;
 		width:240px;
+		color:black;
+	}
+
+	#start2{
+		background-color: #AAD0FF;
+		font-family:"Bebasneue-webfont";
+		padding: 5px 0px 5px 10px;
+		font-size:26px;
+		margin-top:50px;
+		margin-left: -20px;
+		margin-bottom: 0px;
+		width:524px;
+		color:black;
+		text-decoration: underline;		
+	}
+	
+	#start1{
+		background-color: #FF7575;
+		font-family:"Bebasneue-webfont";
+		padding: 5px 0px 5px 10px;
+		font-size:26px;
+		margin-top:50px;
+		margin-left: -20px;
+		margin-bottom: 0px;
+		width:524px;
+		color:black;
+		text-decoration: underline;
+	}
+	
+	#start3{
+		background-color: #AAD0FF;
+		font-family:"bebasneue-webfont";
+		padding: 5px;
+		font-size:28px;
+		margin-left:450px;
+		margin-top:50px;
+		margin-bottom: 0px;
+		width:145px;
+		color:black;
+	}
+	
+	#start4{
+		background-color: #FF7575;
+		font-family:"bebasneue-webfont";
+		padding: 5px;
+		font-size:28px;
+		margin-left:450px;
+		margin-top:50px;
+		margin-bottom: 0px;
+		width:145px;
 		color:black;
 	}
 	
@@ -2190,6 +2371,7 @@
 			font-size: 13px;
 			font-style: italic;
 			text-align: center;
+
 			}
 			
 			.selector{
@@ -2240,6 +2422,10 @@
 			width: 140px;
 			border-bottom: 5px solid white;
 			margin-bottom:15px;
+			
+			div:hover{
+			text-decoration: underline;
+			}
 			
 				.texte{
 				margin-bottom:10px;
@@ -2317,6 +2503,9 @@
 			border-bottom: 5px solid white;
 			margin-bottom:15px;
 				
+			div:hover{
+			text-decoration: underline;
+			}
 				.texte{
 				margin-bottom:10px;
 				}
@@ -2850,8 +3039,18 @@
 	}
 	
 	#share{
-	margin-top: -425px;
-	margin-left: 909px;
+	margin-left: 420px;
+	margin-bottom: 20px;
+	background-color: #AAD0FF;
+	height:50px;
+	width: 240px;
+	border-radius: 12px;
+	padding-top:15px;
+ 	text-align: center;
+	color: black;
+	line-height: 20px;
+	font-family:"gotham-Bold";
+	font-size: 18px;
 	
 	.texte{
 	margin-top: -34px;
@@ -2867,7 +3066,7 @@
 		
 		.okk{
 		margin-top: -30px;
-		opacity:0;
+		opacity:1;
 		}
 	}
 
@@ -2878,7 +3077,12 @@
 	.okk{
 	margin-top: -30px;
 	opacity:0;
+	
+	.social-share-button{
+	margin-left:-20px;
 	}
+	}
+	
 	}
 	}
 	
@@ -2943,13 +3147,62 @@
 	}
 	
 	#start{
-
 		font-family:"bebasneue-webfont";
 		font-size:28px;
-		margin-left:335px;
+		margin-left:450px;
 		margin-top:50px;
 		margin-bottom: 0px;
 		width:240px;
+		color:black;
+	}
+
+	#start2{
+		background-color: #AAD0FF;
+		font-family:"Bebasneue-webfont";
+		padding: 5px 0px 5px 10px;
+		font-size:26px;
+		margin-top:50px;
+		margin-left: -20px;
+		margin-bottom: 0px;
+		width:524px;
+		color:black;
+		text-decoration: underline;		
+	}
+	
+	#start1{
+		background-color: #FF7575;
+		font-family:"Bebasneue-webfont";
+		padding: 5px 0px 5px 10px;
+		font-size:26px;
+		margin-top:50px;
+		margin-left: -20px;
+		margin-bottom: 0px;
+		width:524px;
+		color:black;
+		text-decoration: underline;
+	}
+	
+	#start3{
+		background-color: #AAD0FF;
+		font-family:"bebasneue-webfont";
+		padding: 5px;
+		font-size:28px;
+		margin-left:450px;
+		margin-top:50px;
+		margin-bottom: 0px;
+		width:145px;
+		color:black;
+	}
+	
+	#start4{
+		background-color: #FF7575;
+		font-family:"bebasneue-webfont";
+		padding: 5px;
+		font-size:28px;
+		margin-left:450px;
+		margin-top:50px;
+		margin-bottom: 0px;
+		width:145px;
 		color:black;
 	}
 	
@@ -3259,6 +3512,10 @@
 				padding-top: 10px;
 				text-align:left;
 				
+				div:hover{
+				text-decoration: underline;
+				}
+				
 				#invitation-british{
 				cursor: pointer;
 				}
@@ -3271,6 +3528,10 @@
 				font-size: 16px;
 				padding-top: 10px;
 				text-align:right;
+				
+				div:hover{
+				text-decoration: underline;
+				}
 				
 				#invitation2-british{
 				cursor: pointer;
@@ -3357,6 +3618,10 @@
 				padding-top: 10px;
 				text-align:left;
 				
+				div:hover{
+				text-decoration: underline;
+				}
+				
 				#invitation1-british{
 				cursor: pointer;
 				}
@@ -3369,6 +3634,10 @@
 				font-size: 16px;
 				padding-top: 10px;
 				text-align:right;
+				
+				div:hover{
+				text-decoration: underline;
+				}
 				
 				#invitation12-british{
 				cursor: pointer;
@@ -3999,8 +4268,18 @@
 	}
 	
 	#share{
-	margin-top: -425px;
-	margin-left: 909px;
+	margin-left: 420px;
+	margin-bottom: 20px;
+	background-color: #AAD0FF;
+	height:50px;
+	width: 240px;
+	border-radius: 12px;
+	padding-top:15px;
+ 	text-align: center;
+	color: black;
+	line-height: 20px;
+	font-family:"gotham-Bold";
+	font-size: 18px;
 	
 	.texte{
 	margin-top: -34px;
@@ -4016,7 +4295,7 @@
 		
 		.okk{
 		margin-top: -30px;
-		opacity:0;
+		opacity:1;
 		}
 	}
 
@@ -4027,7 +4306,12 @@
 	.okk{
 	margin-top: -30px;
 	opacity:0;
+	
+	.social-share-button{
+	margin-left:-20px;
 	}
+	}
+	
 	}
 	}
 	
@@ -4094,13 +4378,62 @@
 	}
 	
 	#start{
-
 		font-family:"bebasneue-webfont";
 		font-size:28px;
-		margin-left:335px;
+		margin-left:450px;
 		margin-top:50px;
 		margin-bottom: 0px;
 		width:240px;
+		color:black;
+	}
+
+	#start2{
+		background-color: #AAD0FF;
+		font-family:"Bebasneue-webfont";
+		padding: 5px 0px 5px 10px;
+		font-size:26px;
+		margin-top:50px;
+		margin-left: -20px;
+		margin-bottom: 0px;
+		width:524px;
+		color:black;
+		text-decoration: underline;		
+	}
+	
+	#start1{
+		background-color: #FF7575;
+		font-family:"Bebasneue-webfont";
+		padding: 5px 0px 5px 10px;
+		font-size:26px;
+		margin-top:50px;
+		margin-left: -20px;
+		margin-bottom: 0px;
+		width:524px;
+		color:black;
+		text-decoration: underline;
+	}
+	
+	#start3{
+		background-color: #AAD0FF;
+		font-family:"bebasneue-webfont";
+		padding: 5px;
+		font-size:28px;
+		margin-left:450px;
+		margin-top:50px;
+		margin-bottom: 0px;
+		width:145px;
+		color:black;
+	}
+	
+	#start4{
+		background-color: #FF7575;
+		font-family:"bebasneue-webfont";
+		padding: 5px;
+		font-size:28px;
+		margin-left:450px;
+		margin-top:50px;
+		margin-bottom: 0px;
+		width:145px;
 		color:black;
 	}
 	

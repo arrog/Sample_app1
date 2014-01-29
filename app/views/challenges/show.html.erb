@@ -33,7 +33,38 @@
 		<%end%>
 		
 		
-		
+		<% if @challenge.not_full? %>
+			<div class="row">
+			<div class="row" id ="openning-comments">
+				<div class="comment-texte1">Le débat est encore incomplet</div>
+			</div>
+			</div>
+			<% if current_user && current_user.in_challenge?(@challenge)%>
+				<div class="row" id="inviterchallenge">
+					Invitez de nouvelles personnes
+				</div>
+				<div class="row" id="developpement-bis">
+						<% @challenge.challenge_toinvite.shuffle.each do |user|%>
+							<li>
+							<%= render "shared/user_badge", user: user%>
+							<div class="invitation"><%= link_to "inviter",invite_group_group_user_path(user), class: "invitation"%></div>
+							</li>
+						<% end %>
+				</div>
+			<%end%>
+		<% elsif @challenge.state == ["first","second","third","forth","fifth","sixth","seventh","eighth"]%>
+		<div class="row">
+		<div class="row" id ="openning-comments">
+			<div class="comment-texte1">Le débat est en cours</div>
+		</div>
+		</div>
+		<% else %>
+		<div class="row">
+			<div class="row" id ="openning-comments">
+				<div class="comment-texte1">Le débat est clos</div>
+			</div>
+		</div>
+		<%end%>
 		
 		
 		

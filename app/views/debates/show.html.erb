@@ -1,10 +1,19 @@
-<% if current_user && current_user.try(:admin?)%>
-	<%= link_to "promote", promote_debate_path(@debate)%>
-<% end %>
+
+
 
 <section id="open-debate">
 	<div class="container">
-	
+		<% if current_user && current_user.try(:admin?)%>
+		<div id="share2">
+					<div><%= link_to "promote1", promote1_debate_path(@debate), class: "text"%>  </div>
+					<div><%= link_to "promote2", promote2_debate_path(@debate), class: "text"%>  </div>
+					<div><%= link_to "promote3", promote3_debate_path(@debate), class: "text"%>  </div>
+					<div><%= link_to "promote4", promote4_debate_path(@debate), class: "text"%>  </div>
+					<div><%= link_to "promote5", promote5_debate_path(@debate), class: "text"%>  </div>
+					<div><%= link_to "edit",edit_debate_path(@debate), class: "text"%>    </div>                                                        
+		</div>                                                                
+		<% end %>		
+		
 	 <div class="row">
 		<div class="span10 offset1">
 			<div id="title">
@@ -60,19 +69,26 @@
 							<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == 1.0 %>
 				 			<li class="oui-oui2"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>
 							</li>
-							<% else%>
-				 			<li class="oui-oui"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>
-							</li>							
+							<% elsif current_user%>
+				 			<li class="oui-oui"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>	
+							</li>	
+							<% else %>
+								<li class="oui-oui"><%= link_to "OUI", new_user_session_path, :class => "oui" %>						
 							<% end%>
 							<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == 0.0 %>
 							<li class="suisse-suisse2"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %></li>
-							<% else%>
+							<% elsif current_user%>
 							<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %></li>
+							<% else%>
+							<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), new_user_session_path, method: "post", class: "suisse" %></li>
 							<%end%>
+							
 							<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == -1.0 %>
-							<li class="non-non2"><%= link_to "NON", vote_debate_path(@debate, type: "down"), method: "post", :class => "non" %></li>				
+							<li class="non-non2"><%= link_to "NON", vote_debate_path(@debate, type: "down"), method: "post", :class => "non" %></li>	
+							<%elsif current_user%>
+							<li class="non-non"><%= link_to "NON", vote_debate_path(@debate, type: "down"), method: "post", :class => "non" %></li>			
 							<%else%>
-							<li class="non-non"><%= link_to "NON", vote_debate_path(@debate, type: "down"), method: "post", :class => "non" %></li>							
+							<li class="non-non"><%= link_to "NON", new_user_session_path, method: "post", :class => "non" %></li>							
 							<%end%>
 						</div>
 						
@@ -96,12 +112,6 @@
 	 			</div>
 	 		</div>
 	 	</div>
-	   
-		<div class="span1" id="share">
-				<div class="ok">
-				<%=image_tag('facebook_petit.png', :alt => 'Moutoners', class: "image")%>
-				<div class="okk"><%= social_share_button_tag(@debate.title) %></div></div>
-		</div>
 		
 		<div class="span1" id="follow">
 			<div class="follow">
@@ -112,7 +122,7 @@
 	   		<% end %>
 	   			<div class="arrow-left"></div>
 	   		</div>
-	</div>
+		</div>
 	
 	   	<div class="span1" id="catcat">
 			<div class="arrow-left"></div>   		
@@ -137,8 +147,14 @@
 	   		</div>
 	   	</div>
 
-		</div>			
-		
+		</div>
+					
+		<div id="share">
+			<span>Partagez le débat sur</br></span>
+				<div class="ok">
+				<%=image_tag('facebook-blanc.png', :alt => 'Moutoners', class: "image")%>
+				<div class="okk"><%= social_share_button_tag(@debate.title) %></div></div>
+		</div>
 
 		
 		<div class="row" id="arguments">
@@ -161,7 +177,7 @@
 				   			<% end %>
 				    	</div>
 
-						<div class="row" id="voter">
+						<div class="row" id="votervoter">
 							<div class="texte-newarg">Contribue au débat!</div>
 							<div class='texte2-newarg'>J'argumenterai plus tard</div>
 							<div class="arrow-down-newarg"></div>
@@ -169,16 +185,39 @@
 						</div>
 				
 					<% else  %>
-						<div class="row" id="voter">
-							<% if current_user%>			
-							<div class="texte">Vote, puis contribue au débat!</div>
-							<%else%>
-							<div class="texte"><%= link_to 'Vote, puis contribue au débat', new_user_session_path, class: "texte" %></div>
-							<%end%>
+						<div class="row" id="votervoter">						
+							<div class="row" id="vote">
+								<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == 1.0 %>
+					 			<li class="oui-oui2"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>
+								</li>
+								<% elsif current_user%>
+					 			<li class="oui-oui"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>	
+								</li>	
+								<% else %>
+									<li class="oui-oui"><%= link_to "OUI", new_user_session_path, :class => "oui" %>						
+								<% end%>
+								<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == 0.0 %>
+								<li class="suisse-suisse2"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %></li>
+								<% elsif current_user%>
+								<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %></li>
+								<% else%>
+								<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), new_user_session_path, method: "post", class: "suisse" %></li>
+								<%end%>
+
+								<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == -1.0 %>
+								<li class="non-non2"><%= link_to "NON", vote_debate_path(@debate, type: "down"), method: "post", :class => "non" %></li>	
+								<%elsif current_user%>
+								<li class="non-non"><%= link_to "NON", vote_debate_path(@debate, type: "down"), method: "post", :class => "non" %></li>			
+								<%else%>
+								<li class="non-non"><%= link_to "NON", new_user_session_path, method: "post", :class => "non" %></li>							
+								<%end%>
+							</div>
 						</div>
+						
 					<%end%>					
 		</div>
 		
+
 		
 		<div>
 			<% @arguments.each do |argument| %>

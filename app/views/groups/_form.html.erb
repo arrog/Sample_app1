@@ -1,0 +1,35 @@
+<div class="container">
+<div id="group-creation">
+	<div class="row" id="sign_in1">
+		Devenez un berger, choyez votre troupeau
+	</div>
+	
+	<div class="row" id="sign_in2">
+		<div id="sign_in3">
+			<div class="row" id="sign_in4">
+				<span class="texte1"> Créez votre groupe</span>
+			</div>
+			<div class="row" id= "sign_in4">
+				<%= form_for(@group) do |f| %>
+				<%= f.text_field :title, :autofocus => true, placeholder: "Titre du groupe:", class: "login-field" %>
+			</div>
+			<div class="row" id= "sign_in4">
+				<%= f.text_field :description, placeholder: "Description du groupe:", class: "login-field1"%>
+			</div>
+			<div class="row" id= "sign_in4">
+				<span class="texte2">Rajoutez une photo:</span><%= f.file_field :avatar, placeholder: "Rajouter une image", class: "field-image"%>
+				<output id="list"></output>
+			</div>
+			<div class="row" id= "sign_in4">
+					<%= f.submit "CRÉER", class: "submit-login" %>
+				<% end%>
+			</div>
+		</div>
+
+	</div>
+	<div class="logo2">
+		<%= link_to (image_tag "gros-mouton-01.png"), root_path%>
+		<div class="titre"><%= link_to "moutoners", root_path, class: "title"%></div>
+	</div>
+		
+</div>

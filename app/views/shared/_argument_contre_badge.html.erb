@@ -9,7 +9,7 @@
 				</div>
 				<div class="effacersur">
 					<div class='texte3'>
-						Etes vous surs de vouloir effacer?
+						Etes vous sûr(e) de vouloir effacer?
 					</div>
 					<div class="finalementnon">
 						 Non
@@ -93,11 +93,6 @@
 							  <% else%>
 							  <%=link_to image_tag("dislike-argument.png"), like_argument_path(argument, type: "down"), method: "post" %>
 							  <% end %>
-
-
-
-							  <%= image_tag("box-texte.png", class: "box")%>
-							  <%= image_tag("vote-non.png", class: "oui")%>	
 									
 							  <div class='toggleOpen'>Lire la suite...</div>								
 	                 		</div>
@@ -105,7 +100,7 @@
 						
 						<div class="row" id="coco">
 	                 		<div class="toggle">
-								<%if argument.avatar == "default_argument-01.png" %>
+								<% if argument.flagg == nil %>
 								  <div id="argcontent">
 									<%=h Rinku.auto_link(argument.content).gsub(/\n/, '<br/>').html_safe %>
 								  </div>

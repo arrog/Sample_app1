@@ -40,26 +40,26 @@
 	}
 		
 		#forme-argument{
-			height: 38px;
-			width: 397px;
+			height: 36px;
+			width: 130px;
 			margin-left: 40px;
 			margin-top:20px;
 			background-color: #FFF;
 			
 			.box-texte{
-			margin-left: 280px;
-			margin-top: -24px;
+			margin-left: 10px;
+			margin-top: -8px;
 			cursor: pointer;
 			}
 			
 			.box-pic{
-			margin-left: 320px;
+			margin-left: 50px;
 			margin-top: -33px;
 			cursor: pointer;	
 			}
 			
 			.box-video{
-			margin-left: 360px;
+			margin-left: 90px;
 			margin-top: -33px;
 			cursor: pointer;	
 			}
@@ -70,7 +70,7 @@
 			padding-top: 9px;
 			padding-left: 10px;
 			font-family: "gotham-Bold";
-			font-size: 24px;
+			font-size: 20px;
 			font-style: italic;
 			letter-spacing: -2px;
 			color: #CCC;
@@ -310,45 +310,45 @@
 	margin-bottom:30px;
 	}
 		
-		#forme-argument{
-			height: 38px;
-			width: 397px;
-			margin-left: 40px;
-			margin-top:20px;
-			background-color: #FFF;
-			
-			.box-texte{
-			margin-left: 280px;
-			margin-top: -24px;
-			cursor: pointer;
-			}
-			
-			.box-pic{
-			margin-left: 320px;
-			margin-top: -33px;
-			cursor: pointer;	
-			}
-			
-			.box-video{
-			margin-left: 360px;
-			margin-top: -33px;
-			cursor: pointer;	
-			}
-			
-			
-			.texte{
-			
-			padding-top: 9px;
-			padding-left: 10px;
-			font-family: "gotham-Bold";
-			font-size: 24px;
-			font-style: italic;
-			letter-spacing: -2px;
-			color: #CCC;
-			font-style: italic;
-			font-weight: bold;
-			}
+	#forme-argument{
+		height: 36px;
+		width: 130px;
+		margin-left: 40px;
+		margin-top:20px;
+		background-color: #FFF;
+		
+		.box-texte{
+		margin-left: 10px;
+		margin-top: -8px;
+		cursor: pointer;
 		}
+		
+		.box-pic{
+		margin-left: 50px;
+		margin-top: -33px;
+		cursor: pointer;	
+		}
+		
+		.box-video{
+		margin-left: 90px;
+		margin-top: -33px;
+		cursor: pointer;	
+		}
+		
+		
+		.texte{
+		
+		padding-top: 9px;
+		padding-left: 10px;
+		font-family: "gotham-Bold";
+		font-size: 20px;
+		font-style: italic;
+		letter-spacing: -2px;
+		color: #CCC;
+		font-style: italic;
+		font-weight: bold;
+		}
+	}
 		
 		#title-form{
 		::-webkit-input-placeholder {
@@ -551,12 +551,14 @@
 		margin-bottom: 30px;
 		}
 		
-		li{font-family:"georgia";
-		margin-top: 30px;
+		li{
+			font-family:"georgia";
+			margin-top: 30px;
 			color: #FF6969;
 			font-size: 13px;
 			font-style: italic;}
 	}
+	
 	#new-argument1{
 	background-color:#AAD0FF;
 	margin-top:10px;
@@ -581,45 +583,45 @@
 	margin-bottom:30px;
 	}
 		
-		#forme-argument{
-			height: 38px;
-			width: 397px;
-			margin-left: 40px;
-			margin-top:20px;
-			background-color: #FFF;
-			
-			.box-texte{
-			margin-left: 280px;
-			margin-top: -24px;
-			cursor: pointer;
-			}
-			
-			.box-pic{
-			margin-left: 320px;
-			margin-top: -33px;
-			cursor: pointer;	
-			}
-			
-			.box-video{
-			margin-left: 360px;
-			margin-top: -33px;
-			cursor: pointer;	
-			}
-			
-			
-			.texte{
-			
-			padding-top: 9px;
-			padding-left: 10px;
-			font-family: "gotham-Bold";
-			font-size: 24px;
-			font-style: italic;
-			letter-spacing: -2px;
-			color: #CCC;
-			font-style: italic;
-			font-weight: bold;
-			}
+	#forme-argument{
+		height: 36px;
+		width: 130px;
+		margin-left: 40px;
+		margin-top:20px;
+		background-color: #FFF;
+		
+		.box-texte{
+		margin-left: 10px;
+		margin-top: -8px;
+		cursor: pointer;
 		}
+		
+		.box-pic{
+		margin-left: 50px;
+		margin-top: -33px;
+		cursor: pointer;	
+		}
+		
+		.box-video{
+		margin-left: 90px;
+		margin-top: -33px;
+		cursor: pointer;	
+		}
+		
+		
+		.texte{
+		
+		padding-top: 9px;
+		padding-left: 10px;
+		font-family: "gotham-Bold";
+		font-size: 20px;
+		font-style: italic;
+		letter-spacing: -2px;
+		color: #CCC;
+		font-style: italic;
+		font-weight: bold;
+		}
+	}
 		
 		#title-form{
 		::-webkit-input-placeholder {
@@ -1023,11 +1025,12 @@
 		font-family:"bebasneue-webfont";
 		font-size:26px;
 		float:right;
-
+			
 		.box{
 		margin-left:10px;
 		padding-top: 4px;
 		}
+		
 		.oui{
 		margin-left:7px;
 		}
@@ -1304,13 +1307,14 @@
 		}
 		.oui{
 		margin-left:7px;
+		margin-top: 3px;
 		}
 
 		
 		.toggleOpen{
 		width: 112px;
 		margin-left:222px;
-		margin-top:-31px;
+		margin-top:-36px;
 		font-family:"gotham-Bold";
 		font-size:16px;
 		padding: 5px 10px 5px 10px;

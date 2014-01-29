@@ -17,7 +17,7 @@
 
 		<div class='row'>
 			<div class="span4" id="forme-argument">
-				<div class='texte'>TYPE D'ARGUMENT</div>
+				<div class='texte'></div>
 				<div class="box-texte"><%= image_tag("box-texte.png")%></div>
 				<div class="box-pic"><%= image_tag("box-pic-01.png")%></div>
 				<div class="box-video"><%= image_tag("boxe-video-01.png")%></div>									
@@ -68,7 +68,7 @@
 
 		<div class='row'>
 			<div class="span4" id="forme-argument">
-				<div class='texte'>TYPE D'ARGUMENT</div>
+				<div class='texte'></div>
 				<div class="box-texte"><%= image_tag("box-texte.png")%></div>
 				<div class="box-pic"><%= image_tag("box-pic-01.png")%></div>
 				<div class="box-video"><%= image_tag("boxe-video-01.png")%></div>									
@@ -83,10 +83,10 @@
 		<div class='row' id='a-ouvrir-argumentforme'>
 			<div class='argument-photo'>
 					<div class="field">
-						<div class="field1">
+						<div class="field2">
 				    		<%= f.file_field :avatar, placeholder: "Rajouter une image" %>
 						</div>
-						<div class="field2">Choisir un fichier</div>
+						
 					</div>
 					<%= image_tag "forme_argument-01.png", class: "image"%>
 					<div class="legende">
@@ -94,6 +94,8 @@
 					</div>
 					<div class="content">
 						<%= f.text_area :content, class: "texte_content", placeholder: "Expliquez l'apport de la photo dans le débat ... "%>
+						<%= f.hidden_field :position, :value => position %>
+						<%= f.hidden_field :flagg, :value => 1 %>
 					</div>
 			</div>
 		</div>
@@ -126,7 +128,7 @@
 
 		<div class='row'>
 			<div class="span4" id="forme-argument">
-				<div class='texte'>TYPE D'ARGUMENT</div>
+				<div class='texte'></div>
 				<div class="box-texte"><%= image_tag("box-texte.png")%></div>
 				<div class="box-pic"><%= image_tag("box-pic-01.png")%></div>
 				<div class="box-video"><%= image_tag("boxe-video-01.png")%></div>									

@@ -2,9 +2,6 @@
   <%= render :partial => "shared/flash_messages" %>
   
   <div class="container">
-	<div class="row" id="presentation1">
-		<%= link_to(image_tag("presentation-centrale2-01.png"), about_path)%>
-	</div>
 	<div class="row">
 		<div class="row" id="intro">
 			Le constat: Un manque cruel de plateforme d'échanges d'idées, d'opinions et d'arguments.
@@ -92,11 +89,6 @@
 	<div class="row" id="promesses">
 		Apprendre</br>Rencontrer</br>S'amuser
 	</div>
-	<div class="row">
-		<div class="row" id="intro2">
-		Le Troupeau de Panurge a fini noyé.
-		</div>
-	</div>
   </div>
 
 </section>
@@ -104,9 +96,7 @@
   <%= render :partial => "shared/flash_messages" %>
   
   <div class="container">
-	<div class="row" id="presentation1">
-		<%= image_tag("presentation-centrale4-01.png")%>
-	</div>
+
 	<div class="row">
 		<div class="row" id="intro">
 			Argumente. Conteste. Vote. Défie. Juge. Débats.	
@@ -153,25 +143,12 @@
 	   		<div class="introduction1">
 	   		<span class="texte"><%= @citations2.third[1] %></span>
 	   		</div>
-       
-	   		<%= image_tag("fleche-droite.png", class: "fleche12")%>
+   
 	   		<div class="texte2"><%= @citations2.third[2] %></div>
 	     </div>
-	     <div id="video2_03">
-	   		<div class="intro"><%= @citations2.last[0] %></div>
-	   		<div class="introduction1">
-	   		<span class="texte"><%= @citations2.last[1] %></span>
-	   		</div>
-       
-	   		<div class="texte2"><%= @citations2.last[2] %></div>
-	     </div>
+
 	   </div>
 	  </div>
-	</div>
-
-	
-	<div class="row" id="presentation1">
-		<%= link_to(image_tag("presentation-centrale5-01.png"), presse_path)%>
 	</div>
 	
   </div>

@@ -8,13 +8,17 @@ class StaticPagesController < ApplicationController
   
   def home
     @cats = Cat.all
-    @challenge = Challenge.homepage.last
+    @challenge = Challenge.homepage.reverse!.first
+    @challenge1 = Challenge.homepage.reverse![1]
+    @challenge2 = Challenge.homepage.reverse![2]
     @doulin = Doulin.homepage.last
-    @debate = Debate.homepage.last
-    @citations = [["Soignez votre logorrhée.","Débattez"],["Ils ne donnent plus de laine, mais leur avis.","Débattez"]].shuffle()
-    @citations2 =[["Les Groupes","Avez-vous tenté de rejoindre un groupe ?","Les groupes permettent de rencontrer et de discuter avec d’autres moutoners, créer des débats entre membres, bref, d’apporter une dose de convivalité à votre quête dialectique."],["LES DEFIS","Avez-vous participé
-    à un défi ?","Vous pouvez défiez vos amis, vos ennemis, ou de parfaits inconnus, en organisantde vraies joutes dialectiques. Il existe 4 Types de défis (voir FAQ)."],["LES DEBATS OUVERTS","  Avez-vous participé
-      à un débat ouvert ?","Les débats ouverts vous permettent de vous exprimer de manière argumentée surun sujet que le site vous propose. Prenez parti, soyez pour, soyez contre, soyez nipour ni contre, bien au contraire, et argumentez en fonction."],["LES EXPERTS","Avez-vous suivi un débat expert ?", "Vous pouvez suivre un débat expert, voter pour l’intellectuel que vous jugez le pluspertinent, et réagir en temps réel aux arguments de chacun."]].shuffle
+    @debate = Debate.homepage1.reverse!.first
+    @debate1 = Debate.homepage2.reverse!.first
+    @debate2 = Debate.homepage3.reverse!.first
+    @debate3 = Debate.homepage4.reverse!.first
+    @debate4 = Debate.homepage5.reverse!.first
+    @citations = ["Soignez votre logorrhée.","Ils ne donnent plus de laine, mais leur avis."].shuffle()
+    @citations2 =[["LES GROUPES","Un mini-moutoners dans moutoners.","Les groupes permettent de rencontrer et de discuter avec d’autres moutoners, créer des débats et joutes entre membres."],["LES JOUTES VERBALES","Des débats codifiés en comité réduit.","Vous pouvez défiez vos amis, vos ennemis, ou de parfaits inconnus, en organisantde vraies joutes dialectiques. Il existe 4 types de défis: 1x1, 2x2, 4x1, 4x2."],["LES DEBATS OUVERTS","Des débats ouverts pour gens d'esprit.","Nous proposons des débats auxquels tout le monde peut participer: soyez pour, soyez contre ou suisse et argumentez en fonction."]].shuffle
   end
 
   def presse
@@ -42,9 +46,7 @@ class StaticPagesController < ApplicationController
   end
   
   def about
-      @citations2 =[["Les Groupes","Avez-vous tenté de rejoindre un groupe ?","Les groupes permettent de rencontrer et de discuter avec d’autres moutoners, créer des débats entre membres, bref, d’apporter une dose de convivalité à votre quête dialectique."],["LES DEFIS","Avez-vous participé
-      à un défi ?","Vous pouvez défiez vos amis, vos ennemis, ou de parfaits inconnus, en organisantde vraies joutes dialectiques. Il existe 4 Types de défis (voir FAQ)."],["LES DEBATS OUVERTS","  Avez-vous participé
-        à un débat ouvert ?","Les débats ouverts vous permettent de vous exprimer de manière argumentée surun sujet que le site vous propose. Prenez parti, soyez pour, soyez contre, soyez nipour ni contre, bien au contraire, et argumentez en fonction."],["LES EXPERTS","Avez-vous suivi un débat expert ?", "Vous pouvez suivre un débat expert, voter pour l’intellectuel que vous jugez le pluspertinent, et réagir en temps réel aux arguments de chacun."]].shuffle
+    @citations2 =[["LES GROUPES","Un mini-moutoners dans moutoners.","Les groupes permettent de rencontrer et de discuter avec d’autres moutoners, créer des débats et joutes entre membres."],["LES JOUTES VERBALES","Des débats codifiés en comité réduit.","Vous pouvez défiez vos amis, vos ennemis, ou de parfaits inconnus, en organisantde vraies joutes dialectiques. Il existe 4 types de défis: 1x1, 2x2, 4x1, 4x2."],["LES DEBATS OUVERTS","Des débats ouverts pour gens d'esprit.","Nous proposons des débats auxquels tout le monde peut participer: soyez pour, soyez contre ou suisse et argumentez en fonction."]].shuffle
     end
   
   def contact
@@ -111,7 +113,9 @@ class StaticPagesController < ApplicationController
     @tag_challenges = Challenge.tagged_with("#{params[:search]}")
     @title_search = Challenge.where(:title => params[:search])
     @challenges = @tag_challenges +   @title_search
-
+    
+    @users= User.where(name: params[:search])
+    
     @tag_debates = Debate.tagged_with("#{params[:search]}")
     @title_debates = Debate.where(:title => params[:search]) 
     @debates = @tag_debates + @title_debates

@@ -14,7 +14,6 @@ margin-left: 20px;
 text-align: center;
 }
 
-
 #holy{
 	margin-left: 115px;
 	margin-top: 5px;
@@ -240,7 +239,7 @@ text-align: center;
 				padding-left: 3px;
 				padding-top: 8px;
 				text-align: center;
-				font-family: "bebasneue-webfont";
+				font-family: "georgia";
 				font-size: 20px;
 				color: white;
 			}
@@ -248,7 +247,12 @@ text-align: center;
 			.texte2{
 				margin-left: 7px;
 				margin-bottom: 15px;
+				a:hover{
+					text-decoration:underline;
+					color: #000;
+				}
 			}
+			
 		}
 		
 		
@@ -524,6 +528,27 @@ text-align: center;
 
 	.en-ce-moment{
 	margin-left: 165px;
+	margin-right: 20px;
+	}
+	
+	.en-ce-moment1{
+	margin-left: 165px;
+		margin-right: 20px;
+	}
+	
+	.en-ce-moment2{
+	margin-left: 165px;
+		margin-right: 20px;
+	}
+	
+	.en-ce-moment3{
+	margin-left: 165px;
+		margin-right: 20px;
+	}
+	
+	.en-ce-moment4{
+	margin-left: 165px;
+		margin-right: 20px;
 	}
 	
   .explanation1 {
@@ -638,6 +663,7 @@ text-align: center;
 	background-color: #C1C1C1;
 	font-color: #000000;
 	line-height: 30px;
+	cursor: pointer;
 	}
 	
 	#best-debates2{
@@ -651,12 +677,14 @@ text-align: center;
 	background-color: #C1C1C1;
 	font-color: #000000;
 	line-height: 30px;
+	cursor: pointer;
+	
 	}
 	
 	#best-debates4{
 	margin-bottom: 50px;
 	margin-top: 10px;
-	margin-left: 366px;
+	margin-left: 359px;
     text-align: center;
 	font-family:"gotham-Bold";
 	font-size:18px;
@@ -665,6 +693,10 @@ text-align: center;
 	background-color: #C1C1C1;
 	font-color: #000000;
 	line-height: 30px;
+	a:hover{
+		text-decoration:underline;
+		color: #000;
+	}
 	}
 	
 
@@ -677,6 +709,11 @@ text-align: center;
 		margin-left:379px;
 		margin-top:-415px;
 		}
+		
+		#best-debates5{
+		margin-left:379px;
+		margin-top:-415px;
+		}
 	}
 	
 	
@@ -685,17 +722,242 @@ text-align: center;
 	margin-left: 150px;
 
 	#list{
-	
-	width: 640px;
+			width: 640px;
 	margin-left:-35px;
 	}
+		#list-users{
+		margin-top: 20px;
+		width: 640px;
+		margin-left:-35px;
+		}
 }
 
 
 #index-doulins{
+
+	#informations-doulin1{
+		width: 950px;
+		margin: 25px 0px 30px 70px;
+	
+		#informations-challenge1{
+		margin: 0px 0px 0px 0px;
+		
+
+		#sign_in2{
+			margin-left: 0px;
+			background-color: #AAD0FF;
+			width: 950px;			
+			border-radius: 13px;
+			min-height: 300px;
+						
+			#gauche-expl{
+			width: 277px;	
+			min-height: 300px;
+			padding-right: 15px;
+			padding-bottom: 15px;
+			border-right:3px Solid white; 
+
+				#sign_in3{
+				margin-top: 50px;
+				margin-left: 10px;
+				border-bottom: 1px Dashed black;
+				padding-bottom: 10px;
+				.texte1{
+				font-family: "gotham";
+				font-size: 25px;
+				}
+				.texte2{
+				line-height: 25px;
+				font-family: "gotham-Bold";
+				font-size: 25px;
+				color: #FFF;
+				}
+				}
+				#sign_in31{
+				margin-top: 50px;
+				width: 220px;
+				margin-left: 25px;
+				padding-bottom: 10px;
+				border-bottom: 1px Dashed black;
+								
+				.texte1{
+				font-family: "gotham";
+				font-size: 25px;
+				}
+				.texte2{
+				line-height: 25px;
+				font-family: "gotham-Bold";
+				font-size: 25px;
+				color: #FFF;
+				}
+				}
+				#sign_in33{
+				margin-top: 50px;
+				width: 200px;
+				margin-left: 40px;
+				padding-bottom: 10px;
+				border-bottom: 1px Dashed black;
+								
+				.texte1{
+				font-family: "gotham";
+				font-size: 25px;
+				}
+				.texte2{
+				line-height: 25px;
+				font-family: "gotham-Bold";
+				font-size: 25px;
+				color: #FFF;
+				}
+				}
+				
+				#sign_in32{
+				width: 160px;
+				margin-top: 50px;
+				margin-left:50px;
+				border-bottom: 1px Dashed black;
+				padding-bottom: 10px;
+				.texte1{
+				font-family: "gotham";
+				font-size: 25px;
+				}
+				.texte2{
+				line-height: 25px;
+				font-family: "gotham-Bold";
+				font-size: 25px;
+				color: #FFF;
+				}
+				}
+				
+				#sign_5{
+				margin-left: 0px;
+				margin-top: 20px;
+					img{width: 280px; height: 163px;}
+				}
+				#sign_51{
+				margin-left: 40px;
+				margin-top: 20px;
+				img{width: 185px; height: 33px;}
+				}
+				#sign_52{
+				margin-left: 80px;
+				margin-top: 20px;
+				img{width: 110px; height:110px;}
+				}
+				#sign_53{
+				margin-left: 10px;
+				margin-top: 52px;
+				margin-bottom: 50px;
+				img{width: 260px; height:45px;}
+				}
+				#sign_54{
+				margin-left: 85px;
+				margin-top: 20px;
+				img{width: 100px; height:80px;}
+				}
+				
+				#sign_4{
+				margin-left: 0px;
+				margin-top: 15px;
+				text-align: center;
+
+					.texte{
+					width: 184px;
+					padding-left: 5px;
+					font-family: "georgia";
+					font-size:16px;
+					}
+				}
+			}
+			
+			#gauche-expl2{
+			width: 277px;	
+			min-height: 300px;
+			padding-right: 15px;
+			
+			#fermer-explication{
+			margin-top: -33px;
+			margin-bottom: 15px;
+			margin-left: 260px;
+			font-family: "gotham";
+			font-size: 16px;
+			width:5px;
+			cursor: pointer;
+			font-family: "helvetica-light";
+			font-size: 20px;
+			color: white;
+			}
+
+				#sign_in3{
+				margin-top: 50px;
+				margin-left: 10px;
+				padding-bottom: 10px;
+				border-bottom: 1px Dashed black;				
+
+				.texte1{
+				font-family: "gotham";
+				font-size: 25px;
+				}
+				.texte2{
+				line-height: 25px;
+				font-family: "gotham-Bold";
+				font-size: 25px;
+				color: #FFF;
+				}
+				}
+				
+				#sign_in31{
+				margin-top: 50px;
+				margin-left: 65px;
+				width: 140px;
+				padding-bottom: 10px;
+				border-bottom: 1px Dashed black;
+
+				.texte1{
+				font-family: "gotham";
+				font-size: 25px;
+				}
+				.texte2{
+				line-height: 25px;
+				font-family: "gotham-Bold";
+				font-size: 25px;
+				color: #FFF;
+				}
+				}
+				
+				
+				#sign_5{
+				margin-left: 0px;
+				margin-top: 40px;
+				margin-bottom: 40px;				
+				}
+				
+				#sign_51{
+				margin-left: 0px;
+				margin-top: 20px;
+				}
+				
+				#sign_4{
+				margin-left: 0px;
+				margin-top: 15px;
+				text-align: center;
+
+					.texte{
+					width: 184px;
+					padding-left: 5px;
+					font-family: "georgia";
+					font-size:16px;
+					}
+				}
+			}
+		}				
+
+		}
+		
+	}
+	
 	#informations-doulin{
 		width: 950px;
-		margin: 30px 0px 30px 70px;
+		margin: 0px 0px 20px 70px;
 		background-color: #C9C9C9;
 		min-height: 270px;
 		
@@ -707,10 +969,12 @@ text-align: center;
 			#textexp{
 			margin-left: 40px;
 			padding-bottom:15px;
-			font-family: "gotham";
+			font-family: "gotham-Bold";
 			font-size: 19px;
+			margin-top: 5px;
 			line-height: 22px;
 			}
+			
 			
 			#fermer-explication{
 			font-family: "gotham";
@@ -736,12 +1000,19 @@ text-align: center;
 			
 			}
 		}
-		#ouvrons-encore{
-		.image-gauche{
-			margin-left: 40px;
-			margin-top:0px;
+		
+		
+		#ouvrons-encore1{
+		height: 230px;
+		width: 946px;
+		background-color: white;
+		margin-left: 0px;
+		border-left: 2px Solid #AAD0FF;
+		border-right: 2px Solid #AAD0FF;
+		border-bottom: 2px Solid #AAD0FF;
 		}
 		
+		#ouvrons-encore{		
 		.titre{
 		margin-left: 40px;
 		height: 28px;
@@ -851,12 +1122,12 @@ text-align: center;
 	
 	#intro-doulin{
 
-	margin-left:0px;
+	margin-left:355px;
 	margin-top:30px;
 	
 	.texte{
 	font-family: "georgia";
-	text-align: center;
+	text-align: left;
 	font-size: 16px;
 	font-weight: bold;
 	font-style: italic;
@@ -886,49 +1157,25 @@ text-align: center;
 	}
 	
 	#challenge-header{
-		margin-top: 10px;
 		font-family: "gotham";
 		font-size: 18px;
-		margin-left:193px;
+		margin-left:193px;	
 		
-		#challengebutton{
-		margin-left: 0px;
-		margin-top: 20px;
-	    text-align: center;
-		font-family:"gotham-Bold";
-		font-size:18px;
-		height: 29px;
-		width: 238px;
-		background-color: #C1C1C1;
-		font-color: #000000;
-		line-height: 30px;
+		li{
+		display: inline-block;
+		padding-right:22px;
+		color: black;
+		}
+		.active{
+		background-color: #AAD0FF;
+		color: black;
+		padding:5px 15px;
 		}
 		
-		#challengebutton1{
-		margin-left: 250px;
-		margin-top: -29px;
-	    text-align: center;
-		font-family:"gotham-Bold";
-		font-size:18px;
-		height: 29px;
-		width: 238px;
-		background-color: #C1C1C1;
-		font-color: #000000;
-		line-height: 30px;
-		}
-		
-		#challengebutton2{
-		margin-left: 500px;
-		margin-top: -29px;
-	    text-align: center;
-		font-family:"gotham-Bold";
-		font-size:18px;
-		height: 29px;
-		width: 238px;
-		background-color: #C1C1C1;
-		font-color: #000000;
-		line-height: 30px;
-		}
+		a:hover {
+		text-decoration:underline;
+		color: #000;
+      }
 	}
 }
 

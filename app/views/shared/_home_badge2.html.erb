@@ -1,0 +1,59 @@
+<section id="home-badge">
+	 <div class="row">
+		<div class="span10 offset1">
+			<div id="title">
+				
+				<div class="row" id="encemoment">
+					<div class="title">EN CE MOMENT SUR MOUTONERS ...</div>
+					<div class="suivant"><div class="text">Débat suivant</div>
+										<%=image_tag("fleche-droite.png", class: "flechehome2")%>
+					</div>
+				</div>
+				
+				<div class="row">
+					
+					<div class="span5" id="gauche-ouvert">
+						
+					    <div class="image1">	
+							<%= link_to image_tag(debate.avatar.url(:medium)), debate, class: "image"%>
+						</div>
+					</div>
+					
+					<div class="span5" id="droite-ouvert">
+
+						<div class="row" id="title2">
+							<%= link_to debate.title, debate, class: "title3"%>
+						</div>
+						<div class="row" id="content">
+							<div class="content"><%= debate.content%></div>
+						</div>
+						
+						<div class="row" id="vote">
+							<span class="vote2">VOTEZ</span>
+							<% if current_user && debate.in_deb?(current_user) && debate.valeur_vote(current_user) == 1.0 %>
+				 			<li class="oui-oui2"><%= link_to "OUI", vote_debate_path(debate, type: "up"), method: "post", :class => "oui" %>
+							</li>
+							<% else%>
+				 			<li class="oui-oui"><%= link_to "OUI", vote_debate_path(debate, type: "up"), method: "post", :class => "oui" %>
+							</li>							
+							<% end%>
+							<% if current_user && debate.in_deb?(current_user) && debate.valeur_vote(current_user) == 0.0 %>
+							<li class="suisse-suisse2"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(debate, type: "neutral"), method: "post", class: "suisse" %></li>
+							<% else%>
+							<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(debate, type: "neutral"), method: "post", class: "suisse" %></li>
+							<%end%>
+							<% if current_user && debate.in_deb?(current_user) && debate.valeur_vote(current_user) == -1.0 %>
+							<li class="non-non2"><%= link_to "NON", vote_debate_path(debate, type: "down"), method: "post", :class => "non" %></li>				
+							<%else%>
+							<li class="non-non"><%= link_to "NON", vote_debate_path(debate, type: "down"), method: "post", :class => "non" %></li>							
+							<%end%>
+						</div>
+						
+					</div>
+					
+	 			</div>
+	 		</div>
+	 	</div>
+
+	</div>
+</section>

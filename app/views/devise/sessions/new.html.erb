@@ -6,14 +6,14 @@
 	</div>
 	
 	<div class="facebook">
-		<span>Connecte-toi via</br></span><%=link_to image_tag("facebook-blanc.png"), user_omniauth_authorize_path(:facebook),
+		<span>Connectez-vous via</br></span><%=link_to image_tag("facebook-blanc.png"), user_omniauth_authorize_path(:facebook),
 		  													class: "via"%>
 	</div>
 	
 	<div class="row" id="sign_in2">
 		<div class="span3" id="sign_in3">
 			<div class="row" id="sign_in4">
-				<span class="texte1">Déjà un mouton?</span>
+				<span class="texte1">Déjà mouton?</span>
 			</div>
 			<div class="row" id= "sign_in4">
 				<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
@@ -34,7 +34,7 @@
 		<div class="span3" id="sign_up">
 			<div class="espace"></div>
 			<div class="row" id="sign_in4">
-				<span class="texte1"> Inscris toi !</span>
+				<span class="texte1"> Inscrivez-Vous !</span>
 			</div>
 			<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 			  <%= devise_error_messages! %>

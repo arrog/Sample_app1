@@ -100,7 +100,7 @@ class User < ActiveRecord::Base
     end
     
     def circle
-      (self.contacts+self.contacted+ self.user_followers + self.following_user).uniq - [self]
+      User.all - [self]
     end
     
     def in_team?(other_user)

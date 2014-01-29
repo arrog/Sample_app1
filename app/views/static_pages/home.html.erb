@@ -1,8 +1,8 @@
 <section id="video_signup">
+	
   <%= render :partial => "shared/flash_messages" %>  
   <div class="container">
 	
-
 	
 	<div class="row">
 		<div class="row" id="intro">
@@ -14,7 +14,20 @@
 		<div class="en-ce-moment">
 			<%= render "shared/home_badge", :debate => @debate%>
 		</div>
+		<div class="en-ce-moment1">
+			<%= render "shared/home_badge1", :debate => @debate1 %>
+		</div>
+		<div class="en-ce-moment2">
+			<%= render "shared/home_badge2", :debate => @debate2%>
+		</div>
+		<div class="en-ce-moment3">
+			<%= render "shared/home_badge3", :debate => @debate3%>
+		</div>
+		<div class="en-ce-moment4">
+			<%= render "shared/home_badge4", :debate => @debate4%>
+		</div>	
 	</div>
+		
 	
     <div class="row">
       <div class="span11" id ="holy">
@@ -47,38 +60,13 @@
 			
           <div id="video0">
 				<div class="introduction1">
-				<span class="texte"><%= @citations.first[0] %></span>
+				<span class="texte"><%= @citations.first %></span>
 				</div>
 
-				<%= image_tag("fleche-droite.png", class: "fleche01")%>
-				<div class="test-zahi">
-				<div class="texte2"><%= @citations.first[1] %><span class="texte3"> entre moutons.</span></div>
-				</div>
+				<div class="texte2">Débattez<span id="mydiv" class="texte3"> <span class="rotate"> en public., en groupe., entre amis., entre ennemis.,entre équipes.</span></div>
 				
 		  </div>
-		
-		  <div id="video01">
-				<div class="introduction1">
-				<span class="texte"> <%= @citations.first[0]%></span>
-				</div>
-				<%= image_tag("fleche-droite.png", class: "fleche02")%>
-				<div class="texte2"><%= @citations.first[1] %><span class="texte3"> en duels.</span></div>
-		  </div>
 
-		  <div id="video02">
-				<div class="introduction1">
-				<span class="texte"> <%= @citations.first[0]%></span>
-				</div>
-				<%= image_tag("fleche-droite.png", class: "fleche03")%>
-				<div class="texte2"><%= @citations.first[1] %><span class="texte3">  en groupe.</span></div>
-		  </div>
-						
-		  <div id="video03">
-				<div class="introduction1">
-				<span class="texte"> <%= @citations.first[0]%></span>
-				</div>
-				<div class="texte2"><%= @citations.first[1] %><span class="texte3"> entre amis.</span></div>
-		  </div>
 				
 			<%else%>
 		  <div id="connecte">
@@ -126,17 +114,7 @@
 				<div class="introduction1">
 				<span class="texte"><%= @citations2.third[1] %></span>
 				</div>
-
-				<%= image_tag("fleche-droite.png", class: "fleche12")%>
 				<div class="texte2"><%= @citations2.third[2] %></div>
-		  </div>
-		  <div id="video2_03">
-				<div class="intro"><%= @citations2.last[0] %></div>
-				<div class="introduction1">
-				<span class="texte"><%= @citations2.last[1] %></span>
-				</div>
-
-				<div class="texte2"><%= @citations2.last[2] %></div>
 		  </div>
 		
 			<%end%>	
@@ -158,14 +136,14 @@
         <div class="explanation2">
 		<%= link_to image_tag('defisb.jpg'), dialectiques_path, class: "image1-expl"%>
 		<%= link_to image_tag('defisbleu.jpg'), dialectiques_path, class: "image2-expl"%>
-		  <div class="texte">Défis</div>
+		  <div class="texte">Joutes Verbales</div>
           <div class="image"><%= image_tag('baniere-explication.png', :alt => 'Moutoners') %></div>
         </div>
 
         <div class="explanation3">
-		<%= link_to image_tag('expertsb.jpg'), experts_path, class: "image1-expl"%>
-		<%= link_to image_tag('expertsbleu.jpg'), experts_path, class: "image2-expl"%>
-		<div class="texte">Les Experts</div>	
+		<%= link_to image_tag('expertsb.jpg'), groups_path, class: "image1-expl"%>
+		<%= link_to image_tag('expertsbleu.jpg'), groups_path, class: "image2-expl"%>
+		<div class="texte">Groupes</div>	
          <div class="image"><%= image_tag('baniere-explication.png', :alt => 'Moutoners') %></div>
         </div>
 
@@ -174,11 +152,11 @@
 	<div class="row">
 		
 	   <div id="best-debates1">
-	   	Débats les plus suivis
+	   	Les joutes oratoires
 	   </div>
 	 
 	   <div id="best-debates2">
-	   	Débats experts à venir
+	   	Les débats ouverts
 	   </div>
 	</div>
 	
@@ -188,8 +166,13 @@
 	
 		<div id="best-debates3">	
     	    	<%= render "shared/challenge_badge", :challenge => @challenge%>
-				<%= render "shared/debate_badge", :debate => @debate%>
-				<%= render "shared/doulin_badge", :doulin => @doulin%>
+				<%= render "shared/challenge_badge", :challenge => @challenge1%>
+				<%= render "shared/challenge_badge", :challenge => @challenge2%>
+		</div>
+		<div id="best-debates5">	
+    	    	<%= render "shared/debate_badge", :debate => @debate%>
+				<%= render "shared/debate_badge", :debate => @debate1%>
+				<%= render "shared/debate_badge", :debate => @debate2%>
 		</div>
 	</div>
 	

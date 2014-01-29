@@ -3,14 +3,19 @@
 	<div class="row" id="intro-doulin">
 		<div class="texte">Résultat de la recherche</div>
 	</div>
-	
+				
 				<div class="row" id= "for-badges">
 					<div class="span3">
 						<%= render "shared/menu_cat"%>
 					</div>
-	
 					<div class="span8" id="list">
 						<%= render "shared/index", :object => @lists %>
 					</div>
+					<div class="span8" id="list-users">
+						<% @users.each do |l|%>
+							<%= render "shared/user_badge", :user => l%>
+						<% end%>
+					</div>
 				</div>
+
 </div>

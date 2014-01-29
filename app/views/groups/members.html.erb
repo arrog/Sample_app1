@@ -29,7 +29,7 @@
 		
 		<% if current_user && current_user.admin_group?(@group)%>
 		<div class="row" id="revenir-augroupe2">
-			Inviter de nouvelles personnes
+			Invitez de nouvelles personnes
 		</div>
 		<div class="row" id="developpement-bis">
 				<% @group.group_toinvite.shuffle.each do |user|%>

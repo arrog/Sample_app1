@@ -1,5 +1,13 @@
 <section id="ld">
 	<div class="container">
+		
+		<div id="share">
+			<span>Partagez le débat sur</br></span>
+				<div class="ok">
+				<%=image_tag('facebook-blanc.png', :alt => 'Moutoners', class: "image")%>
+				<div class="okk"><%= social_share_button_tag(@challenge.title) %></div></div>
+		</div>
+		
 	<div class="row" id="ld-title">
 		
 		<div class="row" id="ld-image-superieure">
@@ -181,12 +189,6 @@
 	</div>
 
 
-	<div class="span1" id="share">
-			<div class="ok">
-			<%=image_tag('facebook_petit.png', :alt => 'Moutoners', class: "image")%>
-			<div class="okk"><%= social_share_button_tag(@challenge.title) %></div></div>
-	</div>
-
 		<div class="span1" id="follow">
 			<div class="follow">
 	   		<% if current_user && current_user.following?(@challenge)%>
@@ -220,9 +222,10 @@
 	   		<%end%>
 	   		</div>
 	   	</div>
-		
-		<div class="row">
 
+	
+		<% if !@challenge.context == nil%>
+		<div class="row">
 			<div class "row" id="to-be-closed">
 				<div id="effective-context"><div class="text"><%= h(@challenge.content).gsub(/\n/, '<br/>').html_safe%></div></div>
 			</div>
@@ -232,6 +235,7 @@
 				<div class="arrow-up-context"></div>
 			</div>
 		</div>
+		<% end %>
 		
 		
 			<% if @challenge.state =="incomplete" && !@challenge.not_full?%>
@@ -248,10 +252,10 @@
 			<% if @challenge.state == "first" %>
 				<% if signed_in? && current_user == @challenge.prime_minister %>
 					<% if !@challenge.arguments.where(position: 1).any? %>
-						<div id="start">C'est ton tour !</div>
+						<div id="start3">C'est ton tour !</div>
 						<%= render "shared/argument_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 1 %>
 					<% else %>
-					<div id="start">	<%= link_to("VALIDE TON ARGUMENT".html_safe,
+					<div id="start2">	<%= link_to("Il faut valider l'argument. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 										<%= render "shared/argument_badge", argument: @challenge.first_argument %>
 					<% end %>
@@ -267,11 +271,11 @@
 			<% if @challenge.state == "second" %>
 				<% if signed_in? && current_user == @challenge.first_opponent %>
 					<% if !@challenge.arguments.where(position: 2).any? %>
-						<div id="start">C'est ton tour !</div>
+						<div id="start4">C'est ton tour !</div>
 						<%= render "shared/argument_contre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 2 %>
 					<% else %>
 						
-						<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+						<div id="start1"><%= link_to("Il faut valider l'argument. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 							<%= render "shared/argument_contre_badge", argument: @challenge.second_argument %>
 					<% end %>
@@ -290,7 +294,7 @@
 						<%= render "shared/argument_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 3 %>
 					<% else %>
 
-						<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+						<div id="start2"><%= link_to("Il faut valider l'argument. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 						<%= render "shared/argument_badge", argument: @challenge.third_argument %>
 					<% end %>
@@ -309,7 +313,7 @@
 						<%= render "shared/argument_contre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 4 %>
 					<% else %>
 
-						<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+						<div id="start1"><%= link_to("Il faut valider l'argument. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 						<%= render "shared/argument_contre_badge", argument: @challenge.fourth_argument %>
 					<% end %>
@@ -328,7 +332,7 @@
 						<%= render "shared/argument_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 5 %>
 					<% else %>
 						
-						<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+						<div id="start2"><%= link_to("Il faut valider l'argument. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 				<%= render "shared/argument_badge", argument: @challenge.fifth_argument %>
 					<% end %>
@@ -346,7 +350,7 @@
 						<div id="start">C'est ton tour !</div>
 						<%= render "shared/argument_contre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 6 %>
 					<% else %>
-						<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+						<div id="start1"><%= link_to("Il faut valider l'argument. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 						<%= render "shared/argument_contre_badge", argument: @challenge.sixth_argument %>
 					<% end %>
@@ -364,7 +368,7 @@
 						<div id="start">C'est ton tour !</div>
 						<%= render "shared/argument_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 7 %>
 					<% else %>
-						<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+						<div id="start2"><%= link_to("Il faut valider l'argument. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 							<%= render "shared/argument_neutre_badge", argument: @challenge.seventh_argument %>
 					<% end %>
@@ -382,7 +386,7 @@
 						<div id="start">C'est ton tour !</div>
 						<%= render "shared/argument_contre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 8 %>
 					<% else %>
-						<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+						<div id="start1"><%= link_to("Il faut valider l'argument. Il sera ensuite non-modifiable.".html_safe,
 				              finish_challenge_path(@challenge) ,:method => :post) %></div>
 						<%= render "shared/argument_contre_badge", argument: @challenge.eighth_argument %>
 					<% end %>

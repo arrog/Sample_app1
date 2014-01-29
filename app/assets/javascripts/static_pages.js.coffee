@@ -6,6 +6,7 @@
 jQuery ->
 
 $(document).ready ->
+
  $ ->
 
   $("#video01").hide()
@@ -15,7 +16,16 @@ $(document).ready ->
   $("#video2_02").hide()
   $("#video2_03").hide()
   $(".image2-expl").hide()
+  $('.en-ce-moment1').hide()
+  $('.en-ce-moment2').hide()
+  $('.en-ce-moment3').hide()
+  $('.en-ce-moment4').hide()
+  $('#best-debates5').hide()
 
+  $(".rotate").textrotator
+  		animation: "flipUp"
+  		separator: ","
+  		speed: 3000
 
   $(".image1-expl").mouseover ->
     	$(this).hide().siblings(".image2-expl").show()
@@ -23,6 +33,23 @@ $(document).ready ->
   $(".image2-expl").mouseout ->
     	$(this).hide().siblings(".image1-expl").show()
   
+  $("#best-debates1").click ->
+	    $(this).parent().siblings("#en-bas").children("#best-debates5").hide().siblings("#best-debates3").show()
+
+  $("#best-debates2").click ->
+	    $(this).parent().siblings("#en-bas").children("#best-debates3").hide().siblings("#best-debates5").show()
+
+  $(".flechehome").click ->
+	    $(this).parents(".en-ce-moment").hide().siblings(".en-ce-moment1").show()
+
+  $(".flechehome1").click ->
+	    $(this).parents(".en-ce-moment1").hide().siblings(".en-ce-moment2").show()
+
+  $(".flechehome2").click ->
+	    $(this).parents(".en-ce-moment2").hide().siblings(".en-ce-moment3").show()
+
+  $(".flechehome3").click ->
+	    $(this).parents(".en-ce-moment3").hide().siblings(".en-ce-moment4").show()		
 
   $(".fleche01").click ->
     	$(this).parent().hide().siblings("#video01").show()
@@ -45,7 +72,7 @@ $(document).ready ->
 
 
   $("#fermer-explication").click ->
-    	$(this).parent().parent().hide().siblings("#intro-doulin").children(".ouvrir-informations").show()
+    	$(this).parent().parent().parent().hide()
  
   $("#fermer-explication1").click ->
 	    $(this).parent().parent().hide().siblings("#intro-doulin").children(".ouvrir-informations").show()

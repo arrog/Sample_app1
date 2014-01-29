@@ -1,32 +1,68 @@
 <div class="container" id="index-doulins">
 	<div class="row" id="intro-doulin">
-		<div class="texte">Joutes oratoires</div>
+		<div class="texte">Débats codifiés en comité réduit</div>
 	</div>
 	
 	<div class="row" id="open-infos">
-		<div class="span11" id="informations-doulin">
-			<div class="row" id="informations-challenge">
-				<div class ="span9" id="textexp">
-					Les Défis, comment ça marche ?				
-				</div>
-			 	<div class="span1" id="fermer-explication">
-				X
-				</div>
-		    </div>
-			<div class="row" id="ouvrons-encore">
-				<div class="image-gauche">
-					<%= image_tag("explication-1-01.png", class: "fleche10")%>
+		<div class="span11" id="informations-doulin1">
+			<div class="row" id="informations-challenge1">
 				
+				<div class="row" id="sign_in2">
+					<div class="span4" id="gauche-expl">
+					
+						<div class="row" id="sign_in33">
+							<span class="texte1">Inscrivez-vous</span><span class="texte2"> et participez,</span>
+						</div>
+						<div class="row" id="sign_5">
+							<%= image_tag("image4-explcha-01.png")%>
+						</div>
+						<div class="row" id="sign_4">
+							<span class="texte">Vous pouvez rejoindre une joute, ou en créer une nouvelle. Vous pouvez aussi inviter vos amis.</span>
+						</div>
+					</div>
+					
+					<div class="span4" id="gauche-expl">
+					
+						<div class="row" id="sign_in31">
+							<span class="texte1">Soyez éloquents</span><span class="texte2"> et argumentez.</span>
+						</div>
+						<div class="row" id="sign_51">
+							<%= image_tag("image2-explcha-01.png", class: "image")%>
+						</div>
+						<div class="row" id="sign_4">
+							<span class="texte">Des notifications vous signalent que c'est votre tour. Une fois votre argument validé, il est non modifiable.</span>
+						</div>
+						<div class="row" id="sign_52">
+							<%= image_tag("image3-explcha-01.png")%>
+						</div>
+					</div>
+					
+					<div class="span4" id="gauche-expl2">
+					
+						<div class="row" id="sign_in3">
+							<div id="fermer-explication">
+							X
+							</div>
+							<span class="texte1">Spectateur ? Votez</span><span class="texte2"> et départagez.</span>
+						</div>
+						<div class="row" id="sign_5">
+							<%= image_tag("image6-explcha-01.png")%>
+						</div>
+						<div class="row" id="sign_4">
+							<span class="texte">Vous pouvez voter pour l'équipe (ou la personne) qui vous a convaincu(e). Le suffrage universel décide de tout.</span>
+						</div>
+					</div>
 				</div>
-			</div>
+
+		  </div>
 		</div>
-	</div>
+	 </div>
 	
 	<div class="row" id="open-infos2">
 		<div class="span11" id="informations-doulin">
 			<div class="row" id="informations-challenge">
 				<div class ="span9" id="textexp">
-					La Création de défis.			
+					La Création de joutes.			
 				</div>
 			 	<div class="span1" id="fermer-explication1">
 				X
@@ -35,7 +71,7 @@
 			<div class="row" id="ouvrons-encore">
 				<div class="span3">
 					<div class="titre">
-					<%= link_to "Créer un défi", new_challenge_path, class: "challenge"%>
+					<%= link_to "Créer une joute", new_challenge_path, class: "challenge"%>
 					</div>
 					<div class="sous-titre">
 					Créez votre propre débat, pour défier vos amis.
@@ -94,23 +130,9 @@
 
 	
 	<ul class ="row" id ="challenge-header">
-			
-			<div class="row">
-
-			   <div id="challengebutton">
-			   	<%= link_to "Tous les défis", dialectiques_path%>
-			   </div>
-
-			   <div id="challengebutton1">
-			   					<%= link_to 'Rejoindre un débat', incomplets_path%>
-			   </div>
-			
-				<div id="challengebutton2">
-				<%= link_to "Nouveau défi", new_challenge_path, class: "challenge-bouton"%>
-				</div>
-			</div>
-			
-
+		 	        <li class='first'><%= link_to "Toutes les joutes", root_path, class: cp(dialectiques_path)%></li>
+		 	   	 	<li><%= link_to "Rejoindre un débat", incomplets_path, class: cp(incomplets_path) %></li>         	
+		 	        <li><%= link_to "Nouvelle joute", new_challenge_path, class: cp(new_challenge_path) %></li>
 	</ul>
 	
 				<div class="row" id= "for-badges">

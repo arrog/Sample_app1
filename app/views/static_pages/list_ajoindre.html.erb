@@ -1,120 +1,13 @@
 <div class="container" id="index-doulins">
-	<div class="row" id="open-infos">
-		<div class="span11" id="informations-doulin">
-			<div class="row" id="informations-challenge">
-				<div class ="span9" id="textexp">
-					Les Défis, comment ça marche ?				
-				</div>
-			 	<div class="span1" id="fermer-explication">
-				X
-				</div>
-		    </div>
-			<div class="row" id="ouvrons-encore">
-				<div class="image-gauche">
-					<%= image_tag("explication-1-01.png", class: "fleche10")%>
-				
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div class="row" id="open-infos2">
-		<div class="span11" id="informations-doulin">
-			<div class="row" id="informations-challenge">
-				<div class ="span9" id="textexp">
-					La Création de défis.			
-				</div>
-			 	<div class="span1" id="fermer-explication1">
-				X
-				</div>
-		    </div>
-			<div class="row" id="ouvrons-encore">
-				<div class="span3">
-					<div class="titre">
-					<%= link_to "Créer un défi", new_challenge_path, class: "challenge"%>
-					</div>
-					<div class="sous-titre">
-					Créez votre propre débat, pour défier vos amis.
-					</div>
-				</div>
-				<div class="span2">
-					<div class="image1">
-					<%= image_tag("explication2-01.png", class: "challenge")%>
-					</div>
-					<div class="titre1">
-						Forme de débat
-					</div>
-					<div class="soustitre1">
-						Choisissez entre les quatre formes de débats proposés.
-					</div>
-				</div>
-				<div class="span2">
-					<div class="image1">
-					<%= image_tag("explication3-01.png", class: "challenge")%>
-					</div>
-					<div class="titre1">
-						Le thème
-					</div>
-					<div class="soustitre1">
-						Définition du thème et des paramètres.
-					</div>
-				</div>
-				<div class="span2">
-					<div class="image1">
-					<%= image_tag("explication4-01.png", class: "challenge")%>
-					</div>
-					<div class="titre1">
-						Les participants
-					</div>
-					<div class="soustitre1">
-						Qui sera avec vous? Contre vous?
-					</div>
-				</div>
-				<div class="span2">
-					<div class="image1">
-					<%= image_tag("explication5-01.png", class: "challenge")%>
-					</div>
-					<div class="titre1">
-						Participer et vaincre
-					</div>
-					<div class="soustitre1">
-						L'art d'avoir toujours raison.
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	
-	
 	<div class="row" id="intro-doulin">
-		<div class="texte">Débats Ouverts pour gens d'esprit</div>
-		<div class="ouvrir-informations">
-			<div class="circle">
-					<div class="texte2">
-						?
-					</div>
-			</div>
-		</div>
+		<div class="texte">Débats codifiés en comité réduit</div>
 	</div>
+	</br>
+	</br>
 	<ul class ="row" id ="challenge-header">
-			
-			<div class="row">
-
-			   <div id="challengebutton">
-			   	<%= link_to "Tous les défis", dialectiques_path%>
-			   </div>
-
-			   <div id="challengebutton1">
-				<%= link_to 'Rejoindre un débat', incomplets_path%>
-			   </div>
-			
-				<div id="challengebutton2">
-				<%= link_to "Nouveau défi", new_challenge_path, class: "challenge-bouton"%>
-				</div>
-			</div>
-			
-
+		 	        <li class='first'><%= link_to "Toutes les joutes", root_path, class: cp(dialectiques_path)%></li>
+		 	   	 	<li><%= link_to "Rejoindre un débat", incomplets_path, class: cp(incomplets_path) %></li>         	
+		 	        <li><%= link_to "Nouvelle joute", new_challenge_path, class: cp(new_challenge_path) %></li>
 	</ul>
 	
 				<div class="row" id= "for-badges">

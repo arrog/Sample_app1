@@ -34,7 +34,7 @@
 
 				<% if invitation.state == "unseen" && !@user.in_challenge?(invitation.challenge)%>
 					<div class="span4" id="intro-notifications">
-						<div class="texte">	<%= invitation.sender.fitting_name%> vous invite à prendre parti dans le défi :</div>
+						<div class="texte">	<%= invitation.sender.fitting_name%> vous invite à prendre parti dans la joute :</div>
 						<div class="action-notification"><%= link_to "ok", accept_invitation_path(invitation), class: "notification-link"%></div>
 						<div class="action-notification2"><%= link_to "non", reject_invitation_path(invitation), class: "notification-link"%></div>
 					</div>
@@ -53,7 +53,7 @@
 						
 			<% @user.debat_pret.each do |challenge|%>
 				<div class="span4" id="intro-notifications">
-					<div class="texte">Ce défi est prêt! Tu peux commencer: </div></div>
+					<div class="texte">Tout le monde est prêt! Tu peux commencer: </div></div>
 				<div class="row"><%= render "shared/challenge_badge", challenge: challenge %></div>
 			<%end%>
 
@@ -101,7 +101,7 @@
 <% @user.reverse_invitations.each do |l|%>
 	<%= l.state%><%=l.id%><%= l.position%>
 	<% if l.position == 1 && l.state == "unseen" %>
-		<%= l.sender.name%> vous invite à prendre la 1ère position dans le défi :
+		<%= l.sender.name%> vous invite à prendre la 1ère position dans la joute :
 		<%= render "shared/challenge_badge", challenge: l.challenge %>. Acceptez-vous ce défi?
 		<%= link_to "oui", accept_invitation_path(l)%>
 		<%= link_to "non", reject_invitation_path(l)%>
@@ -112,7 +112,7 @@
               join_one_challenge_path(l.challenge) ,:method => :post) %>
 		<%= link_to "non", reject_invitation_path(l)%>
 	<% elsif l.position == 2 && l.state == "unseen" %>
-		<%= l.sender.name%> vous invite à prendre la Seconde position dans le défi :
+		<%= l.sender.name%> vous invite à prendre la Seconde position dans la joute :
 		<%= render "shared/challenge_badge", challenge: l.challenge %>. Acceptez-vous ce défi?
 		<%= link_to "oui", accept_invitation_path(l)%>
 		<%= link_to "non", reject_invitation_path(l)%>

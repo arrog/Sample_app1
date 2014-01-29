@@ -41,6 +41,7 @@ class UsersController < ApplicationController
   
   def active
     @user = User.find(params[:id])
+    @object = @user.all_following
   end
   
   def my_groups

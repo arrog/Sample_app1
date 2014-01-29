@@ -2,7 +2,7 @@ class Argument < ActiveRecord::Base
   
   include PublicActivity::Common
   
-  attr_accessible :content, :title, :position, :argcoms_attributes, :avatar, :titre_graphe, :legende_graphe
+  attr_accessible :content, :title, :position, :argcoms_attributes, :avatar, :titre_graphe, :legende_graphe, :flagg
   
   belongs_to :user
   belongs_to :argumentable, polymorphic: true

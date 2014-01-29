@@ -67,7 +67,11 @@ SampleApp::Application.routes.draw do
     member do 
       match 'vote'
       match 'publish'
-      match 'promote'
+      match 'promote1'
+      match 'promote2'
+      match 'promote3'
+      match 'promote4'
+      match 'promote5'                  
       get :follow
       get :unfollow
       

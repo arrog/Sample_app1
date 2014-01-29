@@ -23,7 +23,10 @@
     <!--[if lt IE 9]>
       <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
+	<link href='simpletextrotator.css' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="jquery.simple-text-rotator.js"></script>
+	
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -110,19 +113,19 @@
 		 	    <ul id="main-nav" class="unstyled">
          	
          	
-		 	        <li class='first'><%= link_to "ACCUEIL", root_path, class: "black" %></li>
+		 	        <li class='first'><%= link_to "ACCUEIL", root_path, class: cp(root_path)%></li>
          	
 		 	   	<li class="tiret">|</li>
          	
-		 	   	 <li><%= link_to "LES DÉBATS OUVERTS", debats_path, class: "black" %></li>
+		 	   	 <li><%= link_to "LES DÉBATS OUVERTS", debats_path, class: cp(debats_path) %></li>
          	
 		 	   	<li class="tiret">|</li>
          	
-		 	        <li><%= link_to "LES JOUTES VERBALES", dialectiques_path, class: "black" %></li>
+		 	        <li><%= link_to "LES JOUTES VERBALES", dialectiques_path, class: cp(dialectiques_path) %></li>
          	
 		 	   	<li class="tiret">|</li>   	
          	
-		 	        <li class="last"><%= link_to "LES GROUPES", groups_path, class: "black" %></li>
+		 	        <li class="last"><%= link_to "LES GROUPES", groups_path, class: cp(groups_path) %></li>
 		
 		 	      </ul>
 		 		</div>
@@ -140,7 +143,7 @@
 		<div class="container">
 			<div class="row" id="footer2">
 				<div class="row" id="footer3">
-					<li class="first"><%= link_to "Moutoners, hein?", about_path, class: "lien"%></li>
+					<li class="first"><%= link_to "Moutoners, pardon?", about_path, class: "lien"%></li>
 					<li class: "tiret">|<li>
 					<li><%= link_to "F.A.Q.", faq_path, class: "lien"%></li>
 					<li class: "tiret">|<li>

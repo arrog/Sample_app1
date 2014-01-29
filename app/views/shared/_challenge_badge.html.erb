@@ -1,21 +1,33 @@
 <section id="challenge-badge">
   		<div class="row">
+
 			<div class="span6" id="challenge-badge1">
 
 				<% if challenge.type_deb == 2%>
 					<%= link_to image_tag("image-ld-01.png"), challenge, class: "image"%>
 				<%elsif challenge.type_deb == 3 %>
-					<%= link_to image_tag("2048-01.jpg"), challenge, class: "image"%>
+					<%= link_to image_tag("vintage.jaune1-01.png"), challenge, class: "image"%>
 				<%elsif challenge.type_deb == 4 %>
 					<%= link_to image_tag("2048(1)-01.png"), challenge, class: "image"%>
 				<%elsif challenge.type_deb == 8 %>
 					<%= link_to image_tag("british-01.png"), challenge, class: "image"%>
 				<%end%>
 				
-				
 				<div class="row">
 					<div class="span1" id="challenge-badge2">
 						<%= image_tag("signe-defi.png", alt: "Moutoners")%>
+					</div>
+					<div class="banniere">
+						<% if challenge.type_deb == 2%>
+							<%= image_tag("banniere-1vs1.png", class: "image")%>
+						<%elsif challenge.type_deb == 3 %>
+							<%= image_tag("banniere-2vs2.png", class: "image")%>
+						<%elsif challenge.type_deb == 4 %>
+							<%= image_tag("banniere-4vs1.png", class: "image")%>
+						<%elsif challenge.type_deb == 8 %>
+							<%= image_tag("banniere-4vs3.png", class: "image")%>
+						<%end%>
+
 					</div>
 					<div class="span4">
 						<div class="texte">
@@ -23,7 +35,6 @@
 							<div class="title">
 	    						<%= link_to challenge.title, challenge, class: "title2"%>
 							</div>
-
 						</div>
 					</div>
 					
