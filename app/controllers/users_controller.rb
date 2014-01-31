@@ -41,7 +41,10 @@ class UsersController < ApplicationController
   
   def active
     @user = User.find(params[:id])
-    @object = @user.all_following
+    @object1 = @user.all_following
+    @object2 = @user.challenges
+    @object3 = @user.debates
+    @object= (@object1 + @object2+ @object3).sort { |x,y| y.created_at <=> x.created_at }
   end
   
   def my_groups

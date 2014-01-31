@@ -25,7 +25,7 @@ $(document).ready ->
   $(".rotate").textrotator
   		animation: "flipUp"
   		separator: ","
-  		speed: 3000
+  		speed: 2000
 
   $(".image1-expl").mouseover ->
     	$(this).hide().siblings(".image2-expl").show()

@@ -1,24 +1,4 @@
-<% provide(:title, 'Sign up') %>
-<h1>Create a debate</h1>
+<div class="container">
 
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(@debate) do |f| %>
-	  
-	  <%= render '/shared/error_messages', object: f.object %>
-
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-
-      <%= f.label :content %>
-      <%= f.text_field :content %>
-
-      <%= f.label :type_of_debate %>
-      <%= f.text_field :type_of_debate%>
-
-      <%= f.submit "Create a debate", class: "btn btn-large btn-primary" %>
-
-    <% end %>
-
-  </div>
+	<%= render "form", value: nil, debate: @debate, group: "0"%>
 </div>

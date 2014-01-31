@@ -1,12 +1,13 @@
 <section id="challenge">
 	<div class="container">
-		<div id="share2">
 		<% if current_user && current_user.try(:admin?)%>
+		<div id="share2">
 			<%= link_to "promote", promote_challenge_path(@challenge)%>
 			<%= link_to "edit", edit_challenge_path(@challenge)%>
 			<%= link_to "destroy", challenge_path(@challenge), :method=>'delete'%>
+				</div>
 		<% end %>
-		</div>
+
 		
 		<% if @challenge.type_deb == 2%>
 		<div class="row" id="typechallenge">
@@ -49,7 +50,98 @@
 						<% @challenge.challenge_toinvite.shuffle.each do |user|%>
 							<li>
 							<%= render "shared/user_badge", user: user%>
-							<div class="invitation"><%= link_to "inviter",invite_group_group_user_path(user), class: "invitation"%></div>
+							
+							<% if @challenge.performances.where(position:1) == []%>
+							<%= form_for @challenge.invitations.new do |f|%>
+							<%= f.hidden_field :reciever_id, :value => user.id %>
+							<%= f.hidden_field :position, :value => 1%>
+							<%= f.hidden_field :challenge_id, :value => @challenge.id %>
+							<%= f.hidden_field :sender_id, :value => current_user.id %>
+						  	<div class="invitation">
+							<%= f.submit "Inviter 1ère position", :class => 'invitation2' %>
+							</div>
+							<%end%>
+							<%end%>	
+							
+							<% if @challenge.performances.where(position:2) == []%>
+							<%= form_for @challenge.invitations.new do |f|%>
+							<%= f.hidden_field :reciever_id, :value => user.id %>
+							<%= f.hidden_field :position, :value => 2%>
+							<%= f.hidden_field :challenge_id, :value => @challenge.id %>
+							<%= f.hidden_field :sender_id, :value => current_user.id %>
+						  	<div class="invitation">
+							<%= f.submit "Inviter 2ème position", :class => 'invitation2' %>
+							</div>
+							<% end %>
+							<%end%>
+							
+							<% if @challenge.performances.where(position:3) == [] && [3,4,8].include?(@challenge.type_deb) %>
+							<%= form_for @challenge.invitations.new do |f|%>
+							<%= f.hidden_field :reciever_id, :value => user.id %>
+							<%= f.hidden_field :position, :value => 3%>
+							<%= f.hidden_field :challenge_id, :value => @challenge.id %>
+							<%= f.hidden_field :sender_id, :value => current_user.id %>
+						  	<div class="invitation">
+							<%= f.submit "Inviter 3ème position", :class => 'invitation2' %></div>
+							<%end%>
+							<%end%>
+
+							<% if @challenge.performances.where(position:4) == [] && [3,4,8].include?(@challenge.type_deb) %>
+							<%= form_for @challenge.invitations.new do |f|%>
+							<%= f.hidden_field :reciever_id, :value => user.id %>
+							<%= f.hidden_field :position, :value => 4%>
+							<%= f.hidden_field :challenge_id, :value => @challenge.id %>
+							<%= f.hidden_field :sender_id, :value => current_user.id %>
+						  	<div class="invitation">
+							<%= f.submit "Inviter 4ème position", :class => 'invitation2' %></div>
+							<% end%>
+							<%end%>	
+							
+							<% if @challenge.performances.where(position:5) == [] && [8].include?(@challenge.type_deb) %>
+							<%= form_for @challenge.invitations.new do |f|%>
+							<%= f.hidden_field :reciever_id, :value => user.id %>
+							<%= f.hidden_field :position, :value => 5%>
+							<%= f.hidden_field :challenge_id, :value => @challenge.id %>
+							<%= f.hidden_field :sender_id, :value => current_user.id %>
+						  	<div class="invitation">
+							<%= f.submit "Inviter 5ème position", :class => 'invitation2' %></div>
+							<% end%>
+							<%end%>
+							
+							<% if @challenge.performances.where(position:6) == [] && [8].include?(@challenge.type_deb) %>
+							<%= form_for @challenge.invitations.new do |f|%>
+							<%= f.hidden_field :reciever_id, :value => user.id %>
+							<%= f.hidden_field :position, :value => 6%>
+							<%= f.hidden_field :challenge_id, :value => @challenge.id %>
+							<%= f.hidden_field :sender_id, :value => current_user.id %>
+						  	<div class="invitation">
+							<%= f.submit "Inviter 6ème position", :class => 'invitation2' %></div>
+							<% end%>
+							<%end%>
+							
+							<% if @challenge.performances.where(position:7) == [] && [8].include?(@challenge.type_deb) %>
+							<%= form_for @challenge.invitations.new do |f|%>
+							<%= f.hidden_field :reciever_id, :value => user.id %>
+							<%= f.hidden_field :position, :value => 7%>
+							<%= f.hidden_field :challenge_id, :value => @challenge.id %>
+							<%= f.hidden_field :sender_id, :value => current_user.id %>
+						  	<div class="invitation">
+							<%= f.submit "Inviter 7ème position", :class => 'invitation2' %></div>
+							<% end%>
+							<%end%>
+							
+							<% if @challenge.performances.where(position:8) == [] && [8].include?(@challenge.type_deb) %>
+							<%= form_for @challenge.invitations.new do |f|%>
+							<%= f.hidden_field :reciever_id, :value => user.id %>
+							<%= f.hidden_field :position, :value => 8%>
+							<%= f.hidden_field :challenge_id, :value => @challenge.id %>
+							<%= f.hidden_field :sender_id, :value => current_user.id %>
+						  	<div class="invitation">
+							<%= f.submit "Inviter 8ème position", :class => 'invitation2' %></div>
+							<% end%>
+							<%end%>
+																												
+							
 							</li>
 						<% end %>
 				</div>
