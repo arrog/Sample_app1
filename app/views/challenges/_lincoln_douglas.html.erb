@@ -379,7 +379,7 @@
 					<% end %>
 				<% else%>
 				<%end%>
-			<% elsif ["eighth" ,"over", "judged", "judged_one".include?(@challenge.state) %>
+			<% elsif ["eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
 				<%= render "shared/argument_badge", argument: @challenge.seventh_argument %>
 			<% end %>	
 		</div>
