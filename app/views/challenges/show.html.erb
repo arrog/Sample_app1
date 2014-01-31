@@ -1,10 +1,13 @@
-<% if current_user && current_user.try(:admin?)%>
-	<%= link_to "promote", promote_challenge_path(@challenge)%>
-<% end %>
-
 <section id="challenge">
 	<div class="container">
-
+		<div id="share2">
+		<% if current_user && current_user.try(:admin?)%>
+			<%= link_to "promote", promote_challenge_path(@challenge)%>
+			<%= link_to "edit", edit_challenge_path(@challenge)%>
+			<%= link_to "destroy", challenge_path(@challenge), :method=>'delete'%>
+		<% end %>
+		</div>
+		
 		<% if @challenge.type_deb == 2%>
 		<div class="row" id="typechallenge">
 			<%= image_tag 'bannire_type-01.png'%>
@@ -32,11 +35,10 @@
 			<%= render "challenges/british", challenge: @challenge %>
 		<%end%>
 		
-		
 		<% if @challenge.not_full? %>
 			<div class="row">
 			<div class="row" id ="openning-comments">
-				<div class="comment-texte1">Le débat est encore incomplet</div>
+				<div class="comment-texte1">Le débat est encore incomplet.</div>
 			</div>
 			</div>
 			<% if current_user && current_user.in_challenge?(@challenge)%>
@@ -52,16 +54,16 @@
 						<% end %>
 				</div>
 			<%end%>
-		<% elsif @challenge.state == ["first","second","third","forth","fifth","sixth","seventh","eighth"]%>
+		<% elsif @challenge.state == "judged" || @challenge.state == "homepage"%>
 		<div class="row">
 		<div class="row" id ="openning-comments">
-			<div class="comment-texte1">Le débat est en cours</div>
+			<div class="comment-texte1">Le débat est clos.</div>
 		</div>
 		</div>
 		<% else %>
 		<div class="row">
 			<div class="row" id ="openning-comments">
-				<div class="comment-texte1">Le débat est clos</div>
+				<div class="comment-texte1">Le débat est en cours.</div>
 			</div>
 		</div>
 		<%end%>

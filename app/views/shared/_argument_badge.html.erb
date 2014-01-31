@@ -100,7 +100,7 @@
 						
 						<div class="row" id="coco">
 	                 		<div class="toggle">
-							<% if argument.flagg == nil %>
+							<% if argument.avatar.url == "default_argument-01.png" %>
 							  <div id="argcontent">
 								<%=h Rinku.auto_link(argument.content).gsub(/\n/, '<br/>').html_safe %>
 							  </div>

@@ -35,7 +35,105 @@ $(document).ready ->
   $(".invitation-fermer12-british").hide()
   $(".invitation-fermer32-british").hide()
   $(".invitation-fermer42-british").hide()
+  $(".bulle1").hide()
+  $(".bulle2").hide()
+  $(".bulle3").hide()
 
+  $(".image-bulle31").mouseover ->
+	    $(this).parents("#british").children(".container").children("#explications").children(".bulle1").show()
+
+  $(".image-bulle31").mouseout ->
+	    $(this).parents("#british").children(".container").children("#explications").children(".bulle1").hide()
+
+
+ $(".image-bulle32").mouseover ->
+	    $(this).parents("#british").children(".container").children("#explications").children(".bulle2").show()
+
+ $(".image-bulle32").mouseout ->
+	    $(this).parents("#british").children(".container").children("#explications").children(".bulle2").hide()
+
+ $(".image-bulle33").mouseover ->
+	    $(this).parents("#british").children(".container").children("#explications").children(".bulle3").show()
+
+ $(".image-bulle33").mouseout ->
+	    $(this).parents("#british").children(".container").children("#explications").children(".bulle3").hide() 
+
+ $(".image-bulle21").mouseover ->
+	    $(this).parents("#fc").children(".container").children("#explications").children(".bulle1").show()
+
+  $(".image-bulle21").mouseout ->
+	    $(this).parents("#fc").children(".container").children("#explications").children(".bulle1").hide()
+
+
+ $(".image-bulle22").mouseover ->
+	    $(this).parents("#fc").children(".container").children("#explications").children(".bulle2").show()
+
+ $(".image-bulle22").mouseout ->
+	    $(this).parents("#fc").children(".container").children("#explications").children(".bulle2").hide()
+
+ $(".image-bulle23").mouseover ->
+	    $(this).parents("#fc").children(".container").children("#explications").children(".bulle3").show()
+
+ $(".image-bulle23").mouseout ->
+	    $(this).parents("#fc").children(".container").children("#explications").children(".bulle3").hide()
+
+
+  $(".image-bulle11").mouseover ->
+	    $(this).parents("#american").children(".container").children("#explications").children(".bulle1").show()
+
+  $(".image-bulle11").mouseout ->
+	    $(this).parents("#american").children(".container").children("#explications").children(".bulle1").hide()
+
+
+ $(".image-bulle12").mouseover ->
+	    $(this).parents("#american").children(".container").children("#explications").children(".bulle2").show()
+
+ $(".image-bulle12").mouseout ->
+	    $(this).parents("#american").children(".container").children("#explications").children(".bulle2").hide()
+
+ $(".image-bulle13").mouseover ->
+	    $(this).parents("#american").children(".container").children("#explications").children(".bulle3").show()
+
+ $(".image-bulle13").mouseout ->
+	    $(this).parents("#american").children(".container").children("#explications").children(".bulle3").hide()
+
+
+ $(".image-bulle01").mouseover ->
+	    $(this).parents("#ld").children(".container").children("#explications").children(".bulle1").show()
+
+ $(".image-bulle01").mouseout ->
+	    $(this).parents("#ld").children(".container").children("#explications").children(".bulle1").hide()
+
+
+ $(".image-bulle02").mouseover ->
+	    $(this).parents("#ld").children(".container").children("#explications").children(".bulle2").show()
+
+ $(".image-bulle02").mouseout ->
+	    $(this).parents("#ld").children(".container").children("#explications").children(".bulle2").hide()
+
+ $(".image-bulle03").mouseover ->
+	    $(this).parents("#ld").children(".container").children("#explications").children(".bulle3").show()
+
+ $(".image-bulle03").mouseout ->
+	    $(this).parents("#ld").children(".container").children("#explications").children(".bulle3").hide()
+
+  $(".image-bulle1").mouseover ->
+	    $(this).parents("#open-debate").children(".container").children("#explications").children(".bulle1").show()
+	
+  $(".image-bulle1").mouseout ->
+    	$(this).parents("#open-debate").children(".container").children("#explications").children(".bulle1").hide()	
+	  
+	$(".image-bulle2").mouseover ->
+		    $(this).parents("#open-debate").children(".container").children("#explications").children(".bulle2").show()
+
+	  $(".image-bulle2").mouseout ->
+	    	$(this).parents("#open-debate").children(".container").children("#explications").children(".bulle2").hide()
+	
+		  $(".image-bulle3").mouseover ->
+			    $(this).parents("#open-debate").children(".container").children("#explications").children(".bulle3").show()
+
+		  $(".image-bulle3").mouseout ->
+		    	$(this).parents("#open-debate").children(".container").children("#explications").children(".bulle3").hide()	
 
   $("#invitation-british").click ->
 	    $(this).parent().parent().hide().siblings(".invitation-fermer-british").show()

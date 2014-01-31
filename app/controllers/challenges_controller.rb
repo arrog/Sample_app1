@@ -31,6 +31,9 @@ class ChallengesController < ApplicationController
   def update
   end
   
+  def edit
+  end
+  
   def vote_challenge
      value = params[:type] == "up" ? 1 :
       value = params[:type] == "down" ? -1 : 

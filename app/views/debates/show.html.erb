@@ -1,6 +1,3 @@
-
-
-
 <section id="open-debate">
 	<div class="container">
 		<% if current_user && current_user.try(:admin?)%>
@@ -95,15 +92,15 @@
 						<div class="row" id="stats">
 							<div class="stat1">
 								<%= @debate.count_for+@debate.count_against + @debate.count_neutral%>
-								<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image")%>
+								<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image-bulle1")%>
 								|
 
 								<span class="stat2"><%= @debate.arguments.count%></span>
-								<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image")%>
+								<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image-bulle2")%>
 								|
 
 								<span class="stat2"><%= @debate.argcoms.count%></span>
-								<%= image_tag("icone-debat-2.png", alt: "Moutoners", class: "image")%>
+								<%= image_tag("icone-debat-2.png", alt: "Moutoners", class: "image-bulle3")%>
 							</div>
 						</div>
 						
@@ -148,6 +145,11 @@
 	   	</div>
 
 		</div>
+		<div class="row" id="explications">
+			<%= image_tag("bulle-explication-01.png", class: "bulle1")%>
+			<%= image_tag("bulle-explication1-01.png", class: "bulle2")%>
+			<%= image_tag("bulle-explication0-01.png", class: "bulle3")%>													
+		</div>		
 					
 		<div id="share">
 			<span>Partagez le débat sur</br></span>
@@ -155,6 +157,7 @@
 				<%=image_tag('facebook-blanc.png', :alt => 'Moutoners', class: "image")%>
 				<div class="okk"><%= social_share_button_tag(@debate.title) %></div></div>
 		</div>
+		
 
 		
 		<div class="row" id="arguments">
@@ -187,26 +190,18 @@
 					<% else  %>
 						<div class="row" id="votervoter">						
 							<div class="row" id="vote">
-								<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == 1.0 %>
-					 			<li class="oui-oui2"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>
-								</li>
-								<% elsif current_user%>
-					 			<li class="oui-oui"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>	
-								</li>	
+								<li>Pour contribuer, il faut d'abord voter:   </li>	
+								<% if current_user %>
+					 			<li class="oui-oui"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>									
 								<% else %>
-									<li class="oui-oui"><%= link_to "OUI", new_user_session_path, :class => "oui" %>						
+								<li class="oui-oui"><%= link_to "OUI", new_user_session_path, :class => "oui" %>		
 								<% end%>
-								<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == 0.0 %>
-								<li class="suisse-suisse2"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %></li>
-								<% elsif current_user%>
-								<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %></li>
+								<% if current_user %>
+								<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %>
 								<% else%>
-								<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), new_user_session_path, method: "post", class: "suisse" %></li>
+								<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), new_user_session_path, method: "post", class: "suisse" %>
 								<%end%>
-
-								<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == -1.0 %>
-								<li class="non-non2"><%= link_to "NON", vote_debate_path(@debate, type: "down"), method: "post", :class => "non" %></li>	
-								<%elsif current_user%>
+								<% if current_user %>
 								<li class="non-non"><%= link_to "NON", vote_debate_path(@debate, type: "down"), method: "post", :class => "non" %></li>			
 								<%else%>
 								<li class="non-non"><%= link_to "NON", new_user_session_path, method: "post", :class => "non" %></li>							

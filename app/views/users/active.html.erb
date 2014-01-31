@@ -8,8 +8,20 @@
 			<div>
 				<%= render "profile_badge", user: @user%>	
 			</div>
-			<div class="span8" id="container-activ3">			
-					<%= render "shared/index", object: @object  %>
+			<div class="span8" id="container-activ3">
+				<% if @object.any? %>
+				</br>
+		        <% @object.each do |ob| %>
+					 <% if ob.class == Debate %>
+					 	<%= render "shared/debate_badge", :debate => ob %>
+					<% elsif ob.class == Doulin %>
+						<%= render "shared/doulin_badge", :doulin => ob %>
+					<% elsif ob.class == Challenge %>
+						<%= render "shared/challenge_badge", :challenge => ob %>
+					<% end %>
+				<% end %>
+		      <% end %>
+		      
 			</div>
 		</div>
 

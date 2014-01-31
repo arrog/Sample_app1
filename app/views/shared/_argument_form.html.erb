@@ -16,16 +16,28 @@
 	<div class="span6" id='new-argument1'>
 
 		<div class='row'>
-			<div class="span4" id="forme-argument">
-				<div class='texte'></div>
-				<div class="box-texte"><%= image_tag("box-texte.png")%></div>
-				<div class="box-pic"><%= image_tag("box-pic-01.png")%></div>
-				<div class="box-video"><%= image_tag("boxe-video-01.png")%></div>									
+			<div class='span4' id="title-form">
+					<%= f.text_field :title, rows:1, class: "title-newarg", placeholder: "Ici, le titre de l'argument" %>
 			</div>
 		</div>
+		
 		<div class='row'>
-			<div class='span4' id="title-form">
-					<%= f.text_field :title, rows:1, class: "title-newarg", placeholder: "TITRE DE L'ARGUMENT" %>
+			<div class="span4" id="forme-argument">
+				<div class='texte'> Rajouter une image :</div>
+				<div class="box-pic"><%= image_tag("box-pic-01.png")%></div>							
+			</div>
+		</div>
+		
+		<div class="row" id="a-ouvrir-image">
+			<div class='argument-photo'>
+					<div class="field">
+						<div class="field2">
+				    		<%= f.file_field :avatar, placeholder: "Rajouter une image" %>
+						</div>
+					</div>
+					<div class="legende">
+						<%= f.text_area :legende_graphe, class: "texte_legende", placeholder: "Légende et auteur de la photo"%>
+					</div>
 			</div>
 		</div>
 		
@@ -48,116 +60,3 @@
 		</div>
 	</div>
 </section>
-
-<section id="new-argument-photo">
-	
-
-		<%= form_for [argumentable, argument] do |f| %>
-		
-		<% if argument.errors.any? %>
-		<div class="error-messages-newarg">
-			<h2>Quelques petites erreurs : </h2>
-			<ul>
-				<% argument.errors.full_messages.each do |msg|%>
-					<li><%= msg %></li>
-				<%end%>
-			</ul>
-		</div>
-	 	<%end%>
-	<div class="span6" id='new-argument1'>
-
-		<div class='row'>
-			<div class="span4" id="forme-argument">
-				<div class='texte'></div>
-				<div class="box-texte"><%= image_tag("box-texte.png")%></div>
-				<div class="box-pic"><%= image_tag("box-pic-01.png")%></div>
-				<div class="box-video"><%= image_tag("boxe-video-01.png")%></div>									
-			</div>
-		</div>
-		<div class='row'>
-			<div class='span4' id="title-form">
-					<%= f.text_field :title, rows:1, class: "title-newarg", placeholder: "TITRE DE L'ARGUMENT" %>
-			</div>
-		</div>
-		
-		<div class='row' id='a-ouvrir-argumentforme'>
-			<div class='argument-photo'>
-					<div class="field">
-						<div class="field2">
-				    		<%= f.file_field :avatar, placeholder: "Rajouter une image" %>
-						</div>
-						
-					</div>
-					<%= image_tag "forme_argument-01.png", class: "image"%>
-					<div class="legende">
-						<%= f.text_area :legende_graphe, class: "texte_legende", placeholder: "Légende et auteur de la photo"%>
-					</div>
-					<div class="content">
-						<%= f.text_area :content, class: "texte_content", placeholder: "Expliquez l'apport de la photo dans le débat ... "%>
-						<%= f.hidden_field :position, :value => position %>
-						<%= f.hidden_field :flagg, :value => 1 %>
-					</div>
-			</div>
-		</div>
-		
-		<div class='row'>
-			<div class='actions-newarg'>
-			<%= f.submit'PUBLIER', :class => 'actions'%>
-			<% end %>
-		 	</div>
-		</div>
-	</div>
-</section>
-
-<section id="new-argument-video">
-	
-
-		<%= form_for [argumentable, argument] do |f| %>
-		
-		<% if argument.errors.any? %>
-		<div class="error-messages-newarg">
-			<h2>Quelques petites erreurs : </h2>
-			<ul>
-				<% argument.errors.full_messages.each do |msg|%>
-					<li><%= msg %></li>
-				<%end%>
-			</ul>
-		</div>
-	 	<%end%>
-	<div class="span6" id='new-argument1'>
-
-		<div class='row'>
-			<div class="span4" id="forme-argument">
-				<div class='texte'></div>
-				<div class="box-texte"><%= image_tag("box-texte.png")%></div>
-				<div class="box-pic"><%= image_tag("box-pic-01.png")%></div>
-				<div class="box-video"><%= image_tag("boxe-video-01.png")%></div>									
-			</div>
-		</div>
-		<div class='row'>
-			<div class='span4' id="title-form">
-					<%= f.text_field :title, rows:1, class: "title-newarg", placeholder: "TITRE DE L'ARGUMENT" %>
-			</div>
-		</div>
-		
-		<div class='row' id='a-ouvrir-argumentforme'>
-				<div class= 'argument-video'>
-					<div class="title">
-						Vous avez choisi l'argument vidéo
-					</div>
-					<div class="texte">
-						Nous sommes désolé:</br> Mais pour les arguments 'vidéos' il faut pouvoir suivre en termes de serveurs et de bandes passantes ... Prochainement on espère !
-					</div>
-				</div>
-		</div>
-		
-		<div class='row'>
-			<div class='actions-newarg'>
-			<%= f.submit'PUBLIER', :class => 'actions'%>
-			<% end %>
-		 	</div>
-		</div>
-	</div>
-</section>
-
-
