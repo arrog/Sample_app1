@@ -424,7 +424,7 @@
 					<% else%>
 
 					<%end%>
-				<% elsif ["second","third","forth","fifth","sixth","seventh","eighth","over", "judged", "judged_one"].include?(@challenge.state) %>
+				<% elsif ["second","third","forth","fifth","sixth","seventh","eighth","over", "judged", "judged_one","homepage"].include?(@challenge.state) %>
 					<%= render "shared/argument_badge", argument: @challenge.first_argument %>
 				<% end %>
 			</div>					
@@ -443,7 +443,7 @@
 						<% end %>
 					<% else%>
 					<%end%>
-				<% elsif ["third","forth","fifth","sixth","seventh","eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
+				<% elsif ["third","forth","fifth","sixth","seventh","eighth" ,"over", "judged", "judged_one","homepage"].include?(@challenge.state) %>
 					<%= render "shared/argument_contre_badge", argument: @challenge.second_argument %>
 				<% end %>	
 			</div>
@@ -463,7 +463,7 @@
 						<% end %>
 					<% else%>
 					<%end%>
-				<% elsif ["forth","fifth","sixth","seventh","eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
+				<% elsif ["forth","fifth","sixth","seventh","eighth" ,"over", "judged", "judged_one","homepage"].include?(@challenge.state) %>
 					<%= render "shared/argument_fc1_badge", argument: @challenge.third_argument %>
 				<% end %>	
 			</div>
@@ -482,7 +482,7 @@
 						<% end %>
 					<% else%>
 					<%end%>
-				<% elsif ["fifth","sixth","seventh","eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
+				<% elsif ["fifth","sixth","seventh","eighth" ,"over", "judged", "judged_one","homepage"].include?(@challenge.state) %>
 					<%= render "shared/argument_fc2_badge", argument: @challenge.fourth_argument %>
 				<% end %>	
 			</div>
@@ -501,7 +501,7 @@
 					<% else%>
 
 					<%end%>
-				<% elsif ["sixth","seventh","eighth","over", "judged", "judged_one"].include?(@challenge.state) %>
+				<% elsif ["sixth","seventh","eighth","over", "judged", "judged_one","homepage"].include?(@challenge.state) %>
 					<%= render "shared/argument_badge", argument: @challenge.fifth_argument %>
 				<% end %>
 			</div>					
@@ -520,7 +520,7 @@
 						<% end %>
 					<% else%>
 					<%end%>
-				<% elsif ["seventh","eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
+				<% elsif ["seventh","eighth" ,"over", "judged", "judged_one","homepage"].include?(@challenge.state) %>
 					<%= render "shared/argument_contre_badge", argument: @challenge.sixth_argument %>
 				<% end %>	
 			</div>
@@ -540,7 +540,7 @@
 						<% end %>
 					<% else%>
 					<%end%>
-				<% elsif ["eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
+				<% elsif ["eighth" ,"over", "judged", "judged_one","homepage"].include?(@challenge.state) %>
 					<%= render "shared/argument_fc1_badge", argument: @challenge.seventh_argument %>
 				<% end %>	
 			</div>
@@ -559,7 +559,7 @@
 						<% end %>
 					<% else%>
 					<%end%>
-				<% elsif ["over", "judged", "judged_one"].include?(@challenge.state) %>
+				<% elsif ["over", "judged", "judged_one","homepage"].include?(@challenge.state) %>
 					<%= render "shared/argument_fc2_badge", argument: @challenge.eighth_argument %>
 				<% end %>	
 			</div>
