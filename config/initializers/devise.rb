@@ -4,7 +4,7 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
-  config.mailer_sender = "please-change-me-at-config-initializers-devise@example.com"
+  config.mailer_sender = "paul@moutoners.fr"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
@@ -14,6 +14,7 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
+  require 'omniauth-google-oauth2'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
@@ -215,6 +216,9 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   config.omniauth :facebook, "200803726740237", "df514a9073bd117a31338bf26d92b8a0"
+  config.omniauth :google_oauth2, "433403447315-p7gnka3viph8km7o0ifptbjmlhio0o2i.apps.googleusercontent.com", "433403447315-p7gnka3viph8km7o0ifptbjmlhio0o2i@developer.gserviceaccount.com
+  ", { access_type: "offline", approval_prompt: "" }
+
   
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

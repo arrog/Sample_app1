@@ -62,7 +62,9 @@
 	
 				<div class="row" id= "for-badges">
 					<div class="span3">
+						<% cache "menu_cat" do %>
 						<%= render "shared/menu_cat"%>
+						<% end%>
 					</div>
 	
 					<div class="span8" id="list">

@@ -38,6 +38,13 @@ $(document).ready ->
   $(".bulle1").hide()
   $(".bulle2").hide()
   $(".bulle3").hide()
+  $("#hover-categorie").hide()
+
+  $("#catcat").mouseover ->
+	    $(this).siblings("#hover-categorie").show()
+
+  $("#catcat").mouseout ->
+	    $(this).siblings("#hover-categorie").hide()	
 
   $(".image-bulle31").mouseover ->
 	    $(this).parents("#british").children(".container").children("#explications").children(".bulle1").show()

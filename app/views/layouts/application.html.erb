@@ -50,8 +50,13 @@
 						<% if current_user %>
 						<div class="nom"><%= link_to current_user.fitting_name, current_user, class: "title"%>
 						</div>
+						<% if current_user.notifications == 0%>
 						<div class="nom2"><%= link_to current_user.notifications, notifications_user_path(current_user), class: "chiffre"%> <%= link_to "notification(s)", notifications_user_path(current_user), class: "nom2"%>
 						</div>
+						<% else%>
+						<div class="nom3"><%= link_to current_user.notifications, notifications_user_path(current_user), class: "chiffre"%> <%= link_to "notification(s)", notifications_user_path(current_user), class: "nom3"%>
+						</div>
+						<% end%>						
 					</div>
 					<div class="row" id="try6">
 						<div class="texte"><%= link_to "Déconnexion",destroy_user_session_path, :method=>'delete'%>

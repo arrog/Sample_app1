@@ -4,19 +4,29 @@
         <% object.each do |ob| %>
 			 <% if ob.class == Debate %>
 			<div class="lists-debates">
-			 	<%= render "shared/debate_badge", :debate => ob %>
+				<% cache [ob] do %>
+			 		<%= render "shared/debate_badge", :debate => ob %>
+				<% end %>
 			<% elsif ob.class == Doulin %>
 			<div class="lists-doulins">
+				<% cache [ob] do %>
 				<%= render "shared/doulin_badge", :doulin => ob %>
+				<% end %>
 			<% elsif ob.class == Challenge && ob.not_full?%>
-					<div class="lists-challenge-open">
+			<div class="lists-challenge-open">
+				<% cache [ob] do %>
 				 <%= render "shared/challenge_badge", :challenge => ob %>
+				<% end%>
 			<% elsif ob.class == Challenge && ob.jugebreve == 0 %>
-					<div class="lists-challenge-breves">
-				 <%= render "shared/challenge_badge", :challenge => ob %>
+			<div class="lists-challenge-breves">
+				<% cache [ob] do%>
+				 	<%= render "shared/challenge_badge", :challenge => ob %>
+				<% end %>
 			<% elsif ob.class == Challenge%>
 				<div class="lists-challenges">
+				<% cache [ob] do %>
 					 <%= render "shared/challenge_badge", :challenge => ob %>
+				<% end %>
 			<% end %>
 		</div>
 		<% end %>

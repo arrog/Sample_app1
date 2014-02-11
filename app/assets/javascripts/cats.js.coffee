@@ -8,7 +8,7 @@ $(document).ready ->
  $ ->
   $("#create-debate").hide()
 
-  $("#badge1").click ->
+  $("#lancerundebat").click ->
     $(this).parent().parent().hide().siblings("#group-header").hide().siblings("#create-debate").show().children(".papa-debat").hide()
 
   $("#fermer-barredebat").click ->

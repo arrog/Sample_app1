@@ -40,6 +40,7 @@
 				 			<li class="oui-oui"><%= link_to "OUI", new_user_session_path, :class => "oui" %>
 							</li>														
 							<% end%>
+
 							<% if current_user && debate.in_deb?(current_user) && debate.valeur_vote(current_user) == 0.0 %>
 							<li class="suisse-suisse2"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(debate, type: "neutral"), method: "post", class: "suisse" %></li>
 							<% elsif current_user%>
@@ -54,6 +55,7 @@
 							<% else%>
 							<li class="non-non"><%= link_to "NON", new_user_session_path, :class => "non" %></li>														
 							<%end%>
+							<div class="suissse">SUISSE</div>
 						</div>
 						
 					</div>

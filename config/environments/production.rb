@@ -51,6 +51,7 @@ SampleApp::Application.configure do
 
   # Use a different cache store in production
   # config.cache_store = :mem_cache_store
+  config.cache_store = :dalli_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
@@ -75,4 +76,18 @@ SampleApp::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => "in.mailjet.com",
+    :port                 => 587,
+    :user_name            => 'b1b5d95160d78393f099444b4edcd251',
+    :password             => '29ac6e95fcee4c4836a0a68fb434e363',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true  }
+    
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default :charset => "utf-8"
+  config.action_mailer.default_url_options = { :host => 'moutoners.com' }
 end

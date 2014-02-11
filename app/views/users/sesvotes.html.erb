@@ -12,6 +12,7 @@
 				<% @activities.each do |activity| %>
 					<%= render_activity activity %>
 				<%end%>
+			<%= will_paginate @activities, previous_label: h("<"), next_label: h(">") %>	
 			
 			</div>
 		</div>

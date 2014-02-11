@@ -8,9 +8,9 @@
 				<%elsif challenge.type_deb == 3 %>
 					<%= link_to image_tag("vintage.jaune1-01.png"), challenge, class: "image"%>
 				<%elsif challenge.type_deb == 4 %>
-					<%= link_to image_tag("2048(1)-01.png"), challenge, class: "image"%>
+					<%= link_to image_tag("2048(01)-01.png"), challenge, class: "image"%>
 				<%elsif challenge.type_deb == 8 %>
-					<%= link_to image_tag("british-01.png"), challenge, class: "image"%>
+					<%= link_to image_tag("british-01-01.png"), challenge, class: "image"%>
 				<%end%>
 				
 				<div class="row">
@@ -31,7 +31,7 @@
 					</div>
 					<div class="span4">
 						<div class="texte">
-							<%= image_tag("text-badge.png", alt: "Moutoners", class: "image")%>
+							<%= link_to (image_tag("text-badge.png", alt: "Moutoners", class: "image")), challenge%>
 							<div class="title">
 	    						<%= link_to challenge.title, challenge, class: "title2"%>
 							</div>

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+after_create :send_welcome_email 
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :omniauthable
@@ -21,18 +22,18 @@ class User < ActiveRecord::Base
   has_many :contacted, through: :relationships, source: :sender
   
   has_many :microposts, dependent: :destroy
-  has_many :judgements
+  has_many :judgements, dependent: :destroy
   
   has_many :arguments, dependent: :destroy
   has_many :debates, through: :arguments, source: :argumentable, source_type: :'Debate'
   
-  has_many :expertises
+  has_many :expertises, dependent: :destroy
   has_many :doulins, through: :expertises, :uniq => true
   
-  has_many :memberships
+  has_many :memberships, dependent: :destroy
   has_many :groups, through: :memberships, :uniq => true
   
-  has_many :performances
+  has_many :performances, dependent: :destroy
   has_many :challenges, through: :performances, :uniq => true
   has_many :judgments
   
@@ -66,7 +67,7 @@ class User < ActiveRecord::Base
       if self.name.split.count == 1
         self.name.split('').first(12).join
       else
-        [self.name.split.first.split('').first,'.', self.name.split.last.split('').first(8)].join
+        [self.name.split.first.split('').first,' ', self.name.split.last.split('').first(8)].join
       end
     end
       
@@ -364,6 +365,27 @@ class User < ActiveRecord::Base
       a=a/l
     end
     
+    
+    def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
+        data = access_token.info
+        user = User.where(:provider => access_token.provider, :uid => access_token.uid ).first
+        if user
+          return user
+        else
+          registered_user = User.where(:email => access_token.info.email).first
+          if registered_user
+            return registered_user
+          else
+            user = User.create(name: data["name"],
+              provider:access_token.provider,
+              email: data["email"],
+              uid: access_token.uid ,
+              password: Devise.friendly_token[0,20],
+            )
+          end
+       end
+    end
+    
     def self.from_omniauth(auth)
       where(auth.slice(:provider, :uid)).first_or_create do |user|
         user.provider = auth.provider
@@ -401,6 +423,10 @@ private
 
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
+    end
+    
+    def send_welcome_email
+        UserMailer.signup_confirmation(self).deliver
     end
     
     

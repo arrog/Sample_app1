@@ -72,6 +72,8 @@ class ChallengesController < ApplicationController
   def next
     @challenge = Challenge.find(params[:id])
     @challenge.next
+    @user = @challenge.speaking
+    TourMailer.votre_tour(@user, @challenge).deliver
     redirect_to challenge_path(@challenge)
   end
     
@@ -91,6 +93,10 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
     current_user.join_position_one!(@challenge)
     @challenge.create_activity :join, owner: current_user
+    if !@challenge.not_full?
+      @user = @challenge.prime_minister
+      TourMailer.votre_tour(@user, @challenge).deliver
+    end
     redirect_to @challenge
   end
   
@@ -98,6 +104,10 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
     current_user.join_position_two!(@challenge)
     @challenge.create_activity :join, owner: current_user
+    if !@challenge.not_full?
+      @user = @challenge.prime_minister
+      TourMailer.votre_tour(@user, @challenge).deliver
+    end
     redirect_to @challenge
   end
   
@@ -105,6 +115,10 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
     current_user.join_position_three!(@challenge)
     @challenge.create_activity :join, owner: current_user
+    if !@challenge.not_full?
+      @user = @challenge.prime_minister
+      TourMailer.votre_tour(@user, @challenge).deliver
+    end
     redirect_to @challenge
   end
   
@@ -112,6 +126,10 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
     current_user.join_position_four!(@challenge)
     @challenge.create_activity :join, owner: current_user
+    if !@challenge.not_full?
+      @user = @challenge.prime_minister
+      TourMailer.votre_tour(@user, @challenge).deliver
+    end
     redirect_to @challenge
   end
   
@@ -119,6 +137,10 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
     current_user.join_position_five!(@challenge)
     @challenge.create_activity :join, owner: current_user
+    if !@challenge.not_full?
+      @user = @challenge.prime_minister
+      TourMailer.votre_tour(@user, @challenge).deliver
+    end
     redirect_to @challenge
   end
   
@@ -126,6 +148,10 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
     current_user.join_position_six!(@challenge)
     @challenge.create_activity :join, owner: current_user
+    if !@challenge.not_full?
+      @user = @challenge.prime_minister
+      TourMailer.votre_tour(@user, @challenge).deliver
+    end
     redirect_to @challenge
   end
   
@@ -133,6 +159,10 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
     current_user.join_position_seven!(@challenge)
     @challenge.create_activity :join, owner: current_user
+    if !@challenge.not_full?
+      @user = @challenge.prime_minister
+      TourMailer.votre_tour(@user, @challenge).deliver
+    end
     redirect_to @challenge
   end
   
@@ -140,6 +170,10 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
     current_user.join_position_eight!(@challenge)
     @challenge.create_activity :join, owner: current_user
+    if !@challenge.not_full?
+      @user = @challenge.prime_minister
+      TourMailer.votre_tour(@user, @challenge).deliver
+    end
     redirect_to @challenge
   end
   

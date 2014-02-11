@@ -14,7 +14,7 @@
 		</div>
 
 		<div class="row" id="developpement-bis">
-				<% @group.users.each do |user|%>
+				<% @group.group_users.each do |user|%>
 					<li>
 					<%= render "shared/user_badge", user: user%>
 		

@@ -20,6 +20,9 @@ gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'thin'
 gem 'rinku'
 gem 'social-share-button'
+gem 'rack-mini-profiler'
+gem 'shareable'
+gem 'dalli'
 
 group :development, :test do
   gem 'annotate', '2.5.0'
@@ -44,6 +47,7 @@ group :assets do
   gem 'omniauth-twitter'
   gem 'omniauth-viadeo'
   gem 'omniauth-linkedin'
+  gem "omniauth-google-oauth2"
 
 end
 

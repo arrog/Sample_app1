@@ -38,7 +38,7 @@
 					</div>
 				<% if current_user %>
 					<div class="finalementnon2">
-						 Non
+						 Annuler
 					</div>
 					<div class="signalisation">
 						<%= form_for (Flag.new) do |f| %>
@@ -75,6 +75,8 @@
 	                 		<div class="title">
 	                 			<%= argument.title%>
 							</div>
+							<span class="date"><%= argument.created_at.strftime("%H:%M")%></span> -
+							<span class="date"><%= argument.created_at.strftime("%d %b. %Y")%></span>
 							<div class="cont"><%=argument.content.split(' ').slice(0,36).join(' ')%> ...
 	                 		</div>
 						</div>

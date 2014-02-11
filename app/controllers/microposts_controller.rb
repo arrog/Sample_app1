@@ -9,7 +9,7 @@ class MicropostsController < ApplicationController
           redirect_to :back
         else
           @feed_items = []
-          render 'static_pages/home'
+          redirect_to :back
         end
   end
 

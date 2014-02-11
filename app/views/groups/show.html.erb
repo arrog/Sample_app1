@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="row" id="group-header">
 			<div class="image1">
-			<%= image_tag @group.avatar.url(:huge), class: "image"%>
+				<%= image_tag @group.avatar.url(:huge), class: "image"%>
 			</div>
 			<div class="image2">
 				<%= image_tag "group-header-01.png", class: "image9"%>
@@ -34,71 +34,90 @@
 		<div class="row" id="papa1">
 			<div class="span3" id="badge-show">
 				<div class="row" id="badge1">
-					<div class="texte">Lancer un débat</div>
+					<div class="texte">Actualité</div>
 				</div>
 				<div class="row" id="stat-group">
-					<div class="texte"><%= @group.users.count%></div>
-					<div class="texte2">moutons</div>
+					<div class="texte"><%= @group.group_users.count%></div>
+					<div class="texte2">membres</div>
 				</div>
 				<div class="row" id="stat-group1">
-					<div class="texte"><%= @group.group_debates.count%></div>
+					<div class="texte"><%= @group.group_debates2.count%></div>
 					<div class="texte3">débats internes</div>
 				</div>
 				<div class="row" id="content-group">
 					<%= @group.description%>
 				</div>
-				<div class="row" id="badge1">
-					<div class="texte2">
+
 					<% if current_user && current_user.in_group_accepted?(@group)%>
-						<%= link_to "Actualité", group_path(@group), class: "texte2"%>
+
 					<% elsif current_user && current_user.in_group_rejected?(@group)%>
+					<div class="row" id="badge1">
+						<div class="texte2">					
 						<%= link_to "Banni du groupe", group_path(@group), class: "texte2"%>
+						</div>
+					</div>
 					<%elsif current_user && current_user.in_group?(@group)%>
+					<div class="row" id="badge1">
+						<div class="texte2">					
 						<span class="texte2">Demande en cours</span>
+						</div>
+					</div>
 					<% else %>
-						<%= link_to "En faire partie", rejoindre_group_path(@group), class: "texte2"%>
-					<% end %></div>
-				</div>
+					<div class="row" id="badge1">
+						<div class="texte2">
+						<%= link_to "Rejoindre", rejoindre_group_path(@group), class: "texte2"%>
+						</div>
+					</div>
+					<% end %>
+
+
 				<div class="row" id="icones-users">
 					<div class="ligne1">
 						<li class="imageuser">
-							<% if @group.users.count >=1 %>
+							<% if @group.group_users.count >=1 %>
 							<%= link_to image_tag(@group.users.first.avatar.url(:small)), @group.users.first, class: "image1"%>
 							<%end%>
 							</li>
 							<li class="imageuser">
-								<% if @group.users.count >=2 %>
+								<% if @group.group_users.count >=2 %>
 								<%= link_to image_tag(@group.users.second.avatar.url(:small)), @group.users.second, class: "image2"%>
 								<%end%>
 								</li>
 								<li class="imageuser">
-									<% if @group.users.count >=3 %>
+									<% if @group.group_users.count >=3 %>
 									<%= link_to image_tag(@group.users.third.avatar.url(:small)), @group.users.third, class: "image3"%>
 									<%end%>
 									</li>
 					</div>
 					<div class="ligne1">
 						<li class="imageuser">
-							<% if @group.users.count >=4 %>
+							<% if @group.group_users.count >=4 %>
 							<%= link_to image_tag(@group.users[3].avatar.url(:small)), @group.users[3], class: "image1"%>
 							<%end%>
 							</li>
 							<li class="imageuser">
-								<% if @group.users.count >=5 %>
+								<% if @group.group_users.count >=5 %>
 								<%= link_to image_tag(@group.users[4].avatar.url(:small)), @group.users[4], class: "image2"%>
 								<%end%>
 								</li>
 								<li class="imageuser">
-									<% if @group.users.count >=6 %>
+									<% if @group.group_users.count >=6 %>
 									<%= link_to image_tag(@group.users[5].avatar.url(:small)), @group.users[5], class: "image3"%><%end%></li>
 					</div>
 				</div>
 				<div class="row" id="voir-tous">
+					<% if current_user && current_user.admin_group?(@group)%>
+						<%= link_to "Inviter à rejoindre", members_group_path(@group), class: "texte" %>
+					<% else%>
 						<%= link_to "voir tous ...", members_group_path(@group), class: "texte" %>
+					<% end %>
 				</div>				
 			</div>
 			<div class="span7" id="developpement">
 				<% if current_user && current_user.in_group?(@group)%>
+				<div class="row" id="lancerundebat">
+					Lancer un débat
+				</div>
 				<div class="row" id="new-micropost">
 					<%= form_for(@group.microposts.new) do |f| %>
 					<%= render 'shared/error_messages', object: f.object %>

@@ -161,6 +161,7 @@ SampleApp::Application.routes.draw do
   match '/dialectiques',    to: 'static_pages#list_challenges'
   match '/incomplets', to:'static_pages#list_ajoindre'
   match '/debats',    to: 'static_pages#list_debates'
+  match '/challenge',    to: 'static_pages#challenge'
   
   match '/404', :to => 'errors#not_found'
   match '/422', :to => 'errors#server_error'

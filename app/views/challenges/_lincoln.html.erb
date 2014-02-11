@@ -11,7 +11,10 @@
 		
 		<div class="row" id= "ld-info">
 			
-			<div class="span2" id="ld-gauche">			
+			<div class="span2" id="ld-gauche">
+				<div class="row" id="equipe">
+					Equipe Contre
+				</div>			
 				<div class="image1">
 					<div class="image2">
 					<% if @challenge.position_taken.include?(1) %>
@@ -132,7 +135,10 @@
 				</div>	
 			</div>
 			
-			<div class="span2" id="ld-droite">			
+			<div class="span2" id="ld-droite">	
+				<div class="row" id="equipe">
+					Equipe Contre
+				</div>		
 				<div class="image1">
 					<div class="image2">
 					<% if @challenge.position_taken.include?(2) %>

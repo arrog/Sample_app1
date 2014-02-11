@@ -42,6 +42,7 @@ header {
 	margin-left: 33px;	
 
 	.nom{
+		word-wrap:break-word;
 		width: 191px;
 		height: 22px;
 		padding-top: 5px;
@@ -62,7 +63,7 @@ header {
 		width: 191px;
 		height: 22px;
 		padding-top: 5px;
-		background-color: #FF7575;
+		background-color: #C9C9C9;
 		font-family: "gotham-Bold";
 		font-size: 15px;
 		text-align: center;
@@ -75,6 +76,24 @@ header {
 			font-weight: regular;
 		}
 	}
+	
+	.nom3{
+		width: 191px;
+		height: 22px;
+		padding-top: 5px;
+		background-color: #FF7575;
+		font-family: "gotham-Bold";
+		font-size: 15px;
+		text-align: center;
+		color: white;
+		
+		.chiffre{
+			font-size: 15px;
+			color: black;
+			padding-right: 10px;
+			font-weight: regular;
+		}
+	}	
 		
 	.login{
 	::-webkit-input-placeholder {

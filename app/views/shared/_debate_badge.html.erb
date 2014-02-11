@@ -4,7 +4,7 @@
 				<%= link_to image_tag(debate.avatar.url(:medium)), debate, class: "image"%>
 				<div class="row">
 					<div id="debate-badge2">
-						<%= image_tag("signe-ouvert.png", alt: "Moutoners", class: "image")%>
+						<%= link_to(image_tag("signe-ouvert.png", alt: "Moutoners", class: "image"), debate)%>
 					</div>
 					
 					<div class="span4">
@@ -14,7 +14,7 @@
 	    						<%= link_to debate.title, debate, class: "title2"%>
 							</div>
 							<div class="context">
-							<%= debate.content %>
+							<%= link_to debate.content, debate %>
 							</div>
 						</div>
 					</div>

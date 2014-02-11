@@ -35,7 +35,17 @@
 				</div>
 				<div class="row" id="category_list">
 					<div class="intro">
-						Thème du débat
+						Thème du débat :
+					</div>
+					<div class="categorie">
+						<span class="cat1">sport		  </span>
+						<span class="cat2">quotidien   </span>
+						<span class="cat3">monde       </span>
+						<span class="cat4">éco         </span>
+						<span class="cat5">culture     </span>
+						<span class="cat6">sciences    </span>
+						<span class="cat7">philo       </span>
+						<span class="cat8">société     </span>
 					</div>
 					<div class="emotion">
 						<%= radio_button_tag "challenge[cat_id]", Cat.all.first.id, challenge.cat_id == 1, :checked => 1%>
@@ -84,7 +94,7 @@
 			<div class="arrow-up-context"></div>
 		</div>
 		<div class "row" id="to-be-closed">
-			<div id="effective-context"><div class="text"><%= f.text_area :context, :class => 'edit2'%></div></div>
+			<div id="effective-context"><div class="text"><%= f.text_area :content, :class => 'edit2', placeholder: "Rajouter un contexte"%></div></div>
 			<% end %>
 		</div>
 	</div>

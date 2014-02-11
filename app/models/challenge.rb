@@ -9,12 +9,12 @@ class Challenge < ActiveRecord::Base
   
   belongs_to :cat
   
-  has_many :invitations
-  has_many :performances
+  has_many :invitations, dependent: :destroy
+  has_many :performances, dependent: :destroy
   has_many :users, through: :performances
   
   has_many :arguments, as: :argumentable
-  has_many :judgments
+  has_many :judgments, dependent: :destroy
   has_many :repliques, as: :replicable
   has_many :comments, as: :commentable
   
@@ -233,6 +233,85 @@ class Challenge < ActiveRecord::Base
     arguments.where(position:8).first
   end
   
+  def speaking
+    if self.type_deb == 2
+      self.speaking_ld
+    elsif self.type_deb ==3
+      self.speaking_american
+    elsif self.type_deb == 4
+      self.speaking_fc
+    elsif self.type_deb == 8
+      self.speaking_british
+    end
+  end
+  
+  def speaking_british
+    if self.state == "first"
+      self.first_opponent
+    elsif self.state == "second"
+      self.second_prop      
+    elsif self.state == "third"
+      self.second_opp
+    elsif self.state == "forth"
+      self.third_prop
+    elsif self.state == "fifth"
+      self.third_opp
+    elsif self.state == "sixth"
+      self.fourth_prop
+    elsif self.state == "seventh"
+      self.fourth_opp
+    end                          
+  end
+  
+  def speaking_american
+    if self.state == "first"
+      self.first_opponent
+    elsif self.state == "second"
+      self.second_prop      
+    elsif self.state == "third"
+      self.second_opp
+    elsif self.state == "forth"
+      self.first_opponent
+    elsif self.state == "fifth"
+      self.prime_minister
+    end                          
+  end
+
+  def speaking_fc
+    if self.state == "first"
+      self.first_opponent
+    elsif self.state == "second"
+      self.second_prop      
+    elsif self.state == "third"
+      self.second_opp
+    elsif self.state == "forth"
+      self.prime_minister
+    elsif self.state == "fifth"
+      self.first_opponent
+    elsif self.state == "sixth"
+      self.second_prop
+    elsif self.state == "seventh"
+      self.second_opp
+    end                         
+  end    
+  
+  def speaking_ld
+    if self.state == "first"
+      self.first_opponent
+    elsif self.state == "second"
+      self.prime_minister      
+    elsif self.state == "third"
+      self.first_opponent
+    elsif self.state == "forth"
+      self.prime_minister
+    elsif self.state == "fifth"
+      self.first_opponent
+    elsif self.state == "sixth"
+      self.prime_minister
+    elsif self.state == "seventh"
+      self.first_opponent
+    end                         
+  end
   
   def grade_one
     a = 0

@@ -86,7 +86,7 @@
 		margin-top:0px;
 		width: 770px;
 		padding-bottom: 10px;
-		border-bottom: 4px solid white;
+		
 		
 			#content1{
 			width: 380px;
@@ -179,6 +179,36 @@
 					padding-left: 10px;
 					margin-bottom: 8px;
 					}
+					
+					.categorie{
+					color: black;
+					font-style: italic;
+					font-family: "georgia";
+					margin-left: 13px;
+					
+					.cat2{
+					margin-left: 5px;
+					}
+					
+					.cat4{
+					margin-left: 6px;
+					}
+					
+					.cat5{
+					margin-left: 12px;
+					}
+					
+					.cat6{
+					margin-left: 5px;
+					}
+					.cat7{
+					margin-left: 3px;
+					}
+					
+					.cat8{
+					margin-left: 3px;
+					}
+					}
 
 					.choix1{
 					margin-left: 10px;
@@ -196,7 +226,7 @@
 			
 			
 			#content2{
-			margin-top: -252px;
+			margin-top: -268px;
 			margin-left: 400px;
 			width: 370px;
 			height: 255px;
@@ -213,7 +243,7 @@
 				}
 				
 					.description{
-					height: 157px;
+					height: 172px;
 					background-color: white;
 					border: none;
 					font-family: "georgia";
@@ -301,7 +331,7 @@
 				.action{
 				border: none;
 				border-radius:0px;
-				background-color: black;
+				background-color: #FF7575;
 				text-align: center;
 				color: white;
 				font-family: "gotham";
@@ -355,10 +385,10 @@
 	
 	#effective-context{
 	background-color:#EEE;
-	min-height:300px;
-	width: 485px;
+	min-height:150px;
+	width: 800px;
 	margin-top:20px;
-	margin-left:470px;
+	margin-left:150px;
 	margin-bottom: 10px;
 		.text{
 		font-family:"georgia";
@@ -369,11 +399,12 @@
 	}
 	.edit2{
 	margin-top:15px;
-	width:430px;
-	height:490px;
+	width:730px;
+	height:200px;
 	background-color:white;
 	border-radius:0px;
 	resize: none;
+	border: none;
 	}
 }
 
@@ -446,13 +477,14 @@
 	#inviterchallenge{
 		margin-left: 204px;
 		margin-top: 30px;
-		width: 280px;
+		width: 320px;
 		height: 28px;
 		color: black;
 		margin-bottom: 20px;
 		font-family: "gotham-Bold";
 		padding: 7px 7px 0px 7px;
 		font-size: 18px;
+		text-align: center;
 		background-color: #808080;
 
 			.link{
@@ -487,14 +519,19 @@
 		width: 170px;
 		height:40px;
 		margin: -10px 0px 0px -10px;
-		background-color: #FF7575;
+		background-color: #808080;
 		font-style: italic;
 		font-size: 14px;
 		font-family: "georgia";
 		border: none;
 		border-radius: 0px;	
 		color: black;
-		}	
+		}
+		
+		.invitation2:hover{
+		background-color: #FF7575;
+		text-decoration: underline;
+		}
 		}
 	}
 	
@@ -765,6 +802,41 @@
 	padding-left: 15px;
 	
 	}
+
+		#openning-comments3{
+		background-color:#839AB2;
+		height:40px;
+		width: 760px;
+		margin-left:170px;
+		margin-bottom: 50px;
+		margin-top: 20px;
+
+		.comment-texte1{
+		padding-top:10px;
+		font-family: "gotham";
+		font-size:18px;
+		color: #000000;
+		margin-left:255px;
+		}
+
+		.comment-texte2{
+		padding-top:10px;
+		font-family: "gotham";
+		font-size:18px;
+		color: #000000;
+		margin-left:250px;
+		}
+
+		.comment-texte3{
+		padding-top:10px;
+		font-family: "gotham";
+		font-size:18px;
+		color: #000000;
+	text-align: center;
+		}
+		}
+
+
 	
 	#openning-comments{
 	background-color:#C9C9C9;
@@ -1213,6 +1285,7 @@ text-align: center;
 				line-height: 25px;
 				margin-left: 0px;
 				margin-right:0px;
+				word-wrap:break-word;
 
 
 
@@ -1222,6 +1295,7 @@ text-align: center;
 					text-align: left;
 					 letter-spacing:-1px;
 					line-height: 25px;
+							word-wrap:break-word;
 					}
 				}
 
@@ -1253,6 +1327,7 @@ text-align: center;
 
 					.content{
 					text-align: left;
+							word-wrap:break-word;
 					}
 				}
 				#american-milieu-3{
@@ -1261,6 +1336,7 @@ text-align: center;
 					margin-top: 15px;
 					padding-bottom: 10px;
 					border-bottom: 9px solid white;
+							word-wrap:break-word;
 
 					div{
 					display: inline-block;
@@ -1566,6 +1642,45 @@ text-align: center;
 	
 	}
 	
+	#hover-categorie{
+	margin-top:-263px;
+	margin-left:910px;
+	height:  25px;
+	width: 90px;
+	background-color: #808080;
+	
+	.follow:hover{
+		background-color: black;
+	}
+	
+	.texte{
+		font-family: "gotham-Bold";
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 8px;
+		padding-top:4px;
+	}
+	
+	.texte2{
+		font-family: "gotham-Bold";
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 12px;
+		padding-top:4px;
+		
+	}
+	.arrow-left{
+		margin-top:-20px;
+		padding-left: 78px;
+	 	width: 0; 
+	 	height: 0; 
+	 	border-top: 12px solid transparent;
+	 	border-bottom: 12px solid transparent; 
+	 	border-right:12px solid white;
+	}
+	
+	}
+	
    	#catcat{
 	margin-top:-343px;
 	margin-left:910px;
@@ -1718,6 +1833,18 @@ text-align: center;
 		#ld-gauche{
 			margin-left: 35px;
 			margin-bottom:15px;
+			
+			#equipe{
+			height:25px;
+			background-color:#AAD0FF;
+			width: 150px;
+			font-family: "gotham";
+			font-size: 15px;
+			text-align: center;
+			padding-top:5px;
+			margin-bottom:15px;
+			margin-left: 0px;
+			}
 			.image1{
 			img { width: 150px; height:150px;}
 			border-bottom: 1px solid white;
@@ -1811,6 +1938,18 @@ text-align: center;
 		#ld-droite{
 			margin-left: 0px;
 			margin-bottom: 15px;
+			
+			#equipe{
+			height:25px;
+			background-color:#FF6969;
+			width: 150px;
+			font-family: "gotham";
+			font-size: 15px;
+			text-align: center;
+			padding-top:5px;
+			margin-bottom:15px;
+			margin-left: 0px;
+			}
 			
 			.image1{
 			img { width: 150px; height:150px;}
@@ -2224,6 +2363,43 @@ text-align: center;
 	}
 	}
 
+	#hover-categorie{
+	margin-top:-225px;
+	margin-left:910px;
+	height:  25px;
+	width: 90px;
+	background-color: #808080;
+	
+	.follow:hover{
+		background-color: black;
+	}
+	
+	.texte{
+		font-family: "gotham-Bold";
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 8px;
+		padding-top:4px;
+	}
+	
+	.texte2{
+		font-family: "gotham-Bold";
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 12px;
+		padding-top:4px;
+	
+	}
+	.arrow-left{
+		margin-top:-20px;
+		padding-left: 78px;
+	 	width: 0; 
+	 	height: 0; 
+	 	border-top: 12px solid transparent;
+	 	border-bottom: 12px solid transparent; 
+	 	border-right:12px solid white;
+	}	
+	}
 
 	#follow{
 	margin-top:-345px;
@@ -2260,9 +2436,9 @@ text-align: center;
 	 	border-top: 12px solid transparent;
 	 	border-bottom: 12px solid transparent; 
 	 	border-right:12px solid white;
-	}
-	
 	}	
+	}
+		
    	#catcat{
 	margin-top:-305px;
 	margin-left:910px;
@@ -3234,6 +3410,37 @@ text-align: center;
 	}
 	}
 	
+	#hover-categorie{
+	margin-top:-263px;
+	margin-left:910px;
+	height:  25px;
+	width: 90px;
+	background-color: #808080;
+	
+	.follow:hover{
+		background-color: black;
+	}
+	.texte{
+		font-family: "gotham-Bold";
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 8px;
+		padding-top:4px;
+		
+	}
+
+	.arrow-left{
+		margin-top:-20px;
+		padding-left: 78px;
+	 	width: 0; 
+	 	height: 0; 
+	 	border-top: 12px solid transparent;
+	 	border-bottom: 12px solid transparent; 
+	 	border-right:12px solid white;
+	}
+	
+	}
+
 	#follow{
 	margin-top:-383px;
 	margin-left:910px;
@@ -3731,8 +3938,7 @@ text-align: center;
 			
 			#equipe4{
 			height: 40px;
-			background-color:#FF9090
-			;
+			background-color:#FF9090;
 			width: 140px;
 			font-family: "gotham";
 			font-size: 15px;
@@ -4490,7 +4696,36 @@ text-align: center;
 	}
 	}
 	
+	#hover-categorie{
+	margin-top:-263px;
+	margin-left:910px;
+	height:  25px;
+	width: 90px;
+	background-color: #808080;
 	
+	.follow:hover{
+		background-color: black;
+	}
+	.texte{
+		font-family: "gotham-Bold";
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 8px;
+		padding-top:4px;
+		
+	}
+
+	.arrow-left{
+		margin-top:-20px;
+		padding-left: 78px;
+	 	width: 0; 
+	 	height: 0; 
+	 	border-top: 12px solid transparent;
+	 	border-bottom: 12px solid transparent; 
+	 	border-right:12px solid white;
+	}
+	
+	}	
 	
 	#follow{
 	margin-top:-383px;

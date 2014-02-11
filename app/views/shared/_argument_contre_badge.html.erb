@@ -51,7 +51,7 @@
 					</div>
 				<% else%>
 					<div class="finalementnon2">
-						<%= link_to('Non')%>
+						<%= link_to('Annuler')%>
 					</div>
 					<div class="signalisation">
 						<%= link_to('Signaler', new_session_path(resource_name))%>
@@ -76,6 +76,8 @@
 	                 		<div class="title">
 	                 			<%= argument.title%>
 							</div>
+							<span class="date"><%= argument.created_at.strftime("%H:%M")%></span> -
+							<span class="date"><%= argument.created_at.strftime("%d %b. %Y")%></span>
 							<div class="cont"><%=argument.content.split(' ').slice(0,36).join(' ')%> ...
 	                 		</div>
 						</div>

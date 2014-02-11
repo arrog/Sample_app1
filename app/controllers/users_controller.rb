@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!, only: [:index, :edit, :update, :following, :followers, :follow, :unfollow, :team, :defier, :invite_group]
   before_filter :correct_user,   only: [:edit, :update, :notifications]
-  before_filter :admin_user,     only: :destroy
+  before_filter :admin_user,     only: [:destroy, :index]
   before_filter :load_group, only: :invite_group
   
   
@@ -22,17 +22,17 @@ class UsersController < ApplicationController
   
   def sesdefis
     @user = User.find(params[:id])
-    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: @user.id, trackable_type: "Challenge", key: "challenge.join")
+    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: @user.id, trackable_type: "Challenge", key: "challenge.join").sort { |x,y| y.created_at <=> x.created_at }.paginate(:page => params[:page], :per_page =>8)
   end
   
   def sesvotes
     @user = User.find(params[:id])
-    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: @user.id, key: ["debate.vote", "challenge.vote"])
+    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: @user.id, key: ["debate.vote", "challenge.vote"]).sort { |x,y| y.created_at <=> x.created_at }.paginate(:page => params[:page], :per_page =>8)
   end  
 
   def sesdebatsouverts
     @user = User.find(params[:id])
-    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: @user.id, trackable_type: "Argument", key: "argument.create")
+    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: @user.id, trackable_type: "Argument", key: "argument.create").sort { |x,y| y.created_at <=> x.created_at }.paginate(:page => params[:page], :per_page =>8)
   end
   
   def notifications
@@ -44,7 +44,7 @@ class UsersController < ApplicationController
     @object1 = @user.all_following
     @object2 = @user.challenges
     @object3 = @user.debates
-    @object= (@object1 + @object2+ @object3).sort { |x,y| y.created_at <=> x.created_at }
+    @object= (@object1 + @object2+ @object3).sort { |x,y| y.created_at <=> x.created_at }.paginate(:page => params[:page], :per_page =>8)
   end
   
   def my_groups
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
   def activities
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
-    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: @user.id)
+    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: @user.id).paginate(:page => params[:page], :per_page =>8)
   end
   
   def show

@@ -592,7 +592,32 @@
 	   			<%= link_to image_tag("cat-societe.png", :alt => 'Moutoners'), list_path(:cat => 8)%>
 	   		<%end%>
 	   		</div>
-	   	</div>		
+	   	</div>
+
+		<div class="span1" id="hover-categorie">
+			<div class="follow">
+	   			<div class="texte">
+	   				<% if @challenge.cat_id == 1 %>
+			   			sport
+			   		<%elsif @challenge.cat_id == 2 %>
+			   			style
+			   		<%elsif @challenge.cat_id == 3 %>
+			   			monde
+			   		<%elsif @challenge.cat_id == 4 %>
+			   			éco
+			   		<%elsif @challenge.cat_id == 5 %>
+			   			culture
+			   		<%elsif @challenge.cat_id == 6 %>
+			   		 	sciences
+			   		<%elsif @challenge.cat_id == 7 %>
+			   			philo
+			   		<%elsif @challenge.cat_id == 8 %>
+			   			société
+			   		<%end%>
+	   			</div>
+	   			<div class="arrow-left"></div>
+	   		</div>
+		</div>			
 	
 		<div class="row" id="explications">
 			<%= image_tag("bulle-explication-01.png", class: "bulle1")%>
