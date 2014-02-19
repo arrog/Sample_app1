@@ -23,30 +23,23 @@
 							<%= link_to image_tag(@debate.avatar.url(:medium)), @debate, class: "image"%>
 							<%= image_tag("ouvert-image.png", alt: "Moutoners", class: "image")%>							
 
-							<div id="stats2">								
+						</div>
+						
+						<div class="row" id="statss">
+							<div id="stats">
+							<div class="stat1">
+								<%= @debate.count_for+@debate.count_against + @debate.count_neutral%>
+								<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image-bulle1")%>
+								|
 
-								<% if @debate.evaluations.any?%>
-								<div class="reslutats-oui">
-									<div class="oui1">OUI</div>
-									<div class="oui3">|</div>
-									<div class="oui2"><%=100*@debate.count_for / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%</div>
-								</div>
-								
-								<div class="reslutats-suisse">
-									<div class="suisse1"><%= image_tag "croix-suisse.png"%></div>
-									<div class="suisse3">|</div>
-									<div class="suisse2"><%=100*@debate.count_neutral / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%</div>
-								</div>
+								<span class="stat2"><%= @debate.arguments.count%></span>
+								<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image-bulle2")%>
+								|
 
-
-								<div class="reslutats-non">
-									<div class="non1">NON</div>
-									<div class="non3">|</div>
-									<div class="non2"><%=100*@debate.count_against / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%</div>
-								</div>
-								<%end%>
-									
-						     </div>
+								<span class="stat2"><%= @debate.argcoms.count%></span>
+								<%= image_tag("icone-debat-2.png", alt: "Moutoners", class: "image-bulle3")%>
+							</div>
+							</div>
 						</div>
 					</div>
 					
@@ -56,7 +49,7 @@
 						</div>
 						<div class="row" id="tags_list_doulin">
 							<% @debate.tags.each do |l|%>
-								<li><%= link_to l.name, list_path(:view =>'tag', :tag => l.name), class: "tags"%></li>
+								<li><%= link_to "##{l.name}", list_path(:view =>'tag', :tag => l.name), class: "tags"%></li>
 							<% end%>
 						</div>
 						<div class="row" id="content">
@@ -88,23 +81,37 @@
 							<%else%>
 							<li class="non-non"><%= link_to "NON", new_user_session_path, method: "post", :class => "non" %></li>							
 							<%end%>
-							<div class="suissse">SUISSE</div>
+							
+							<% if current_user && @debate.in_deb?(current_user)%>
+							<% else %>
+								<div class="suissse">SUISSE</div>
+							<% end %>
 						</div>
-						
-						<div class="row" id="stats">
-							<div class="stat1">
-								<%= @debate.count_for+@debate.count_against + @debate.count_neutral%>
-								<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image-bulle1")%>
-								|
 
-								<span class="stat2"><%= @debate.arguments.count%></span>
-								<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image-bulle2")%>
-								|
+						<div class="row" id="stats2">								
 
-								<span class="stat2"><%= @debate.argcoms.count%></span>
-								<%= image_tag("icone-debat-2.png", alt: "Moutoners", class: "image-bulle3")%>
+							<% if @debate.evaluations.any?%>
+							<div class="reslutats-oui">
+								<div class="oui1">OUI</div>
+								<div class="oui3">|</div>
+								<div class="oui2"><%=100*@debate.count_for / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%</div>
 							</div>
-						</div>
+							
+							<div class="reslutats-suisse">
+								<div class="suisse1"><%= image_tag "croix-suisse.png"%></div>
+								<div class="suisse3">|</div>
+								<div class="suisse2"><%=100*@debate.count_neutral / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%</div>
+							</div>
+
+
+							<div class="reslutats-non">
+								<div class="non1">NON</div>
+								<div class="non3">|</div>
+								<div class="non2"><%=100*@debate.count_against / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%</div>
+							</div>
+							<%end%>
+								
+					     </div>
 						
 					</div>
 					

@@ -27,7 +27,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
   
   def failure
-    redirect_to cgu_path
+    @user = User.find_for_google_oauth2(request.env["omniauth.auth"], current_user)
   end
   
 end

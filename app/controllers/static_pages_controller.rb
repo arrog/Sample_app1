@@ -23,7 +23,7 @@ class StaticPagesController < ApplicationController
     @debate3 = Debate.homepage4.reverse!.first
     @debate4 = Debate.homepage5.reverse!.first
     @citations = ["Soignez votre logorrhée.","Ils ne donnent plus de laine, mais leur avis."].shuffle()
-    @citations2 =[["LES GROUPES","Un mini-moutoners dans moutoners.","Les groupes permettent de rencontrer et de discuter avec d’autres moutoners, créer des débats et joutes entre membres."],["LES JOUTES VERBALES","Des débats codifiés en comité réduit.","Vous pouvez défiez vos amis, vos ennemis, ou de parfaits inconnus, en organisant de vraies joutes dialectiques. Il existe 4 types de défis: 1x1, 2x2, 4x1, 4x2."],["LES DEBATS OUVERTS","Des débats ouverts pour gens d'esprit.","Nous proposons des débats auxquels tout le monde peut participer: soyez pour, soyez contre ou suisse et argumentez en fonction."]].shuffle
+    @citations2 =[["LES GROUPES","Un mini-moutoners dans moutoners.","Les groupes permettent de rencontrer et de discuter avec d’autres moutoners, créer des débats et joutes entre membres."],["LES JOUTES VERBALES","Des débats codifiés en comité réduit.","Vous pouvez défier vos amis, vos ennemis, ou de parfaits inconnus, en organisant de vraies joutes dialectiques. Il existe 4 types de défis: 1x1, 2x2, 4x1, 4x2."],["LES DEBATS OUVERTS","Des débats ouverts pour gens d'esprit.","Nous proposons des débats auxquels tout le monde peut participer: soyez pour, soyez contre ou suisse et argumentez en fonction."]].shuffle
   end
 
   def presse

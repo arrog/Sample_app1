@@ -120,7 +120,7 @@
 					
 					<div class="row" id="fc-milieu-4">
 						<% @challenge.tags.each do |l|%>
-							<li><%= link_to l.name, list_path(:view =>'tag', :tag => l.name), class: "tags"%></li>
+							<li><%= link_to "##{l.name}", list_path(:view =>'tag', :tag => l.name), class: "tags"%></li>
 						<% end%>
 					</div>
 					

@@ -517,6 +517,9 @@ text-align: center;
 		width: 260px;
 		padding-top:15px;
      	text-align: center;
+		line-height: 20px;
+		font-family:"gotham-Bold";
+		font-size: 18px;
 		
 		.via{
 		line-height: 20px;
@@ -653,8 +656,15 @@ text-align: center;
 	z-index:2;
 	}
   }	
-
-
+	
+	#besties{
+		
+		div:hover {
+		text-decoration:underline;
+		color: #000;
+    }
+	
+	
 	#best-debates1{
 	margin-left: 201px;
 	margin-top: 20px;
@@ -662,25 +672,27 @@ text-align: center;
 	font-family:"gotham-Bold";
 	font-size:18px;
 	height: 29px;
+	background-color: #AAD0FF;
 	width: 318px;
-	background-color: #C1C1C1;
-	font-color: #000000;
+	color: black;
 	line-height: 30px;
 	cursor: pointer;
 	}
 	
 	#best-debates2{
-	margin-top:-29px;
+	margin-top: -29px;
 	margin-left: 531px;
     text-align: center;
 	font-family:"gotham-Bold";
 	font-size:18px;
 	height: 29px;
 	width: 318px;
-	background-color: #C1C1C1;
-	font-color: #000000;
+	background-color: #AAD0FF;
+	color: black;
 	line-height: 30px;
 	cursor: pointer;
+	
+	}
 	
 	}
 	

@@ -70,7 +70,7 @@
 					<div class="row" id="try5">
 						<span class="texte"><%= link_to "via facebook", user_omniauth_authorize_path(:facebook), class: "lien"%></span><span class="texte">|
 						</span>
-						<span class="texte"><%= link_to "Mot de passe oublié?", root_path, class: "lien"%>
+						<span class="texte"><%= link_to "via google", user_omniauth_authorize_path(:google_oauth2), class: "lien"%>
 						</span>
 							<% end%>
 						<% end %>
@@ -80,13 +80,12 @@
 			<div id="droite">
 				<div class="row" id="try3">
 					<div class="facebook-page1">
-						<%= link_to image_tag('facebook_petit.png', :alt => 'Moutoners'), "www.facebook.com"%>
+						<%= link_to image_tag('facebook_petit.png', :alt => 'Moutoners'), "http://www.facebook.com/moutoners"%>
 					</div>
 					<div class="twitter-page1">
-						<%= link_to image_tag('twitter_petit.png', :alt => 'Moutoners'), "www.facebook.com"%>
+						<%= link_to image_tag('twitter_petit.png', :alt => 'Moutoners'), "https://twitter.com/moutoners"%>
 					</div>
 					<div class="linkedin-page1">
-						<%= link_to image_tag('linkedin_petit.png', :alt => 'Moutoners'), "http://www.facebook.com/create"%>
 					</div>
 				</div>
 				<div class ="row", id="debat-nav">

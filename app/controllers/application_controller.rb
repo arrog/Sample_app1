@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   after_filter :store_location
 
   # Force signout to prevent CSRF attacks
-
+  
   def handle_unverified_request
     sign_out
     super

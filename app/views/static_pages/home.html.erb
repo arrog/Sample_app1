@@ -32,8 +32,7 @@
 			    <%= f.password_field :password, placeholder:"MOT DE PASSE", class: "fields2" %>
 			  </div>
 			  <div><%= f.submit "VALIDER", :class => "validation"%></div>
-			  <div class="inscriptionface"><%= link_to "INSCRIPTION VIA FACEBOOK", user_omniauth_authorize_path(:facebook),
-			  													class: "via"%></div>
+			  <div class="inscriptionface">INSCRIPTION VIA <%= link_to "FACEBOOK", user_omniauth_authorize_path(:facebook),class: "via"%> ou <%= link_to "GOOGLE", user_omniauth_authorize_path(:google_oauth2),class: "via"%></div>
 			    <% end %>
 			</div>
 		  </div>
@@ -149,7 +148,7 @@
 
     </div>
 
-	<div class="row">
+	<div class="row" id="besties">
 		
 	   <div id="best-debates1">
 	   	Les joutes oratoires

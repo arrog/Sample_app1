@@ -6,10 +6,9 @@
 	</div>
 	
 	<div class="facebook">
-		<span>Connectez-vous via</br></span><%=link_to image_tag("facebook-blanc.png"), user_omniauth_authorize_path(:facebook),
-		  													class: "via"%>
+		<span>Connectez-vous via</br></span>
+		<%=link_to "facebook", user_omniauth_authorize_path(:facebook),class: "via"%> ou <%=link_to "google", user_omniauth_authorize_path(:google_oauth2),class: "via"%>
 	</div>
-
 	
 	<div class="row" id="sign_in2">
 		<div class="span3" id="sign_in3">

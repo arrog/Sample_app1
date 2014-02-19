@@ -35,113 +35,50 @@
 				z-index: 1;
 			}
 			
-		#stats2{
-		width:293px;
-		margin-top:-60px;
-		margin-left:43px;
-		
-		.reslutats-oui{
-		background-color: #AAD0FF;
-		height: 21px;
-		width: 90px;
-		padding-top:5px;
-		position:relative;
-		z-index: 5;
-		
-		.oui1{
-		font-family: "bebasneue-webfont";
-		font-size: 18px;
-		padding: 0px 5px 0px 5px;
-		color: white;
-		letter-spacing:1px;
 		}
 		
-		.oui3{
-		font-family: "georgia";
-		font-size: 18px;
-		font-weight: bold;
-		color: #808080;
-		margin: -20px 0px 0px 32px;
-		}
+		#statss{
+		position: relative;
+		background-color: red;
+		z-index: 10;
+		margin-left: 15px;
+		width: 374px;
 		
-		.oui2{
-		font-family: "georgia";
-		font-size: 16px;
-		font-weight: bold;
-		font-style: italic;
-		margin: -18px 0px 0px 45px;
-		color: white;
-		}
-		}
 		
-		.reslutats-suisse{
-		background-color: #C9C9C9;
-		height: 21px;
-		width: 90px;
-		margin: - 26px 0px 0px 103px;
-		padding-top:5px;
-		position:relative;
-		z-index: 5;
-		
-		.suisse1{
-		font-family: "bebasneue-webfont";
-		font-size: 18px;
-		padding: 0px 5px 0px 8px;
-		color: white;
-		}
-		
-		.suisse3{
-		font-family: "georgia";
-		font-size: 18px;
-		font-weight: bold;
-		color: #808080;
-		margin: -20px 0px 0px 33px;
-		}
-		
-		.suisse2{
-		font-family: "georgia";
-		font-size: 16px;
-		font-weight: bold;
-		font-style: italic;
-		margin: -18px 0px 0px 45px;
-		color: white;
-		}
+		#stats{
+		font-family:"bebasneue-webfont";
+		font-size:28px;
+		margin-top: -38px;
+		position: relative;
+		background-color: #808080;
+		height: 38px;
+		min-width: 290px;
+		z-index: 1;
+		opacity: 0.8;
+
+		.stat1{
+			margin-left: 60px;
+			
+			.image-bulle1{
+			padding-bottom:5px;
+			margin-left:5px;
+			margin-right: 5px;
+			}
+			.image-bulle2{
+			padding-bottom:5px;
+			margin-left:5px;
+			margin-right: 5px;
+			}
+			.image-bulle3{
+			padding-bottom:5px;
+			margin-left:5px;
+			}
 		}
 
-		.reslutats-non{
-		background-color: #FF6969;
-		height: 21px;
-		width: 90px;
-		margin: - 26px 0px 0px 202px;
-		padding-top:5px;
-		position:relative;
-		z-index: 5;
-		
-		.non1{
-		font-family: "bebasneue-webfont";
-		font-size: 18px;
-		padding: 0px 5px 0px 5px;
-		color: white;
+		.stat2{
+		margin-left: 10px;
+		margin-top: 0px;
 		}
-		
-		.non3{
-		font-family: "georgia";
-		font-size: 18px;
-		font-weight: bold;
-		color: #808080;
-		margin: -20px 0px 0px 33px;
-		}
-		
-		.non2{
-		font-family: "georgia";
-		font-size: 16px;
-		font-weight: bold;
-		font-style: italic;
-		margin: -18px 0px 0px 45px;
-		color: white;
-		}
-		}
-
 		
 		}
 		}
@@ -170,7 +107,7 @@
 		#tags_list_doulin{
 		margin-top:10px;
 		font-family : "gotham-Bold";
-		font-size : 18px;
+		font-size : 16px;
 		color: white;
 			.tags{
 			color: white;
@@ -225,13 +162,13 @@
 		}
 		
 		.oui-oui:hover{
-		background-color: #FF7575;
+		background-color: #AAD0FF;
 		color: black;
 		}
 		.oui-oui2{
 			margin-top: -5px;
 			margin-left:30px;
-			background-color: #FF7575;
+			background-color: #AAD0FF;
 			font-family: "bebasneue-webfont";
 			font-size: 25px;
 			padding: 5px 9px 5px 9px;
@@ -244,7 +181,7 @@
 		
 	
 		.suissse{
-		margin-left:177px;
+		margin-left:178px;
 		margin-top: -3px;
 		font-family: "gotham";
 		font-size: 10px;
@@ -265,13 +202,13 @@
 		}
 		
 		.suisse-suisse:hover{
-		background-color: #FF7575;
+		background-color: black;
 		color: black;
 		}
 		.suisse-suisse2{
 			margin-top: -5px;
 			margin-left:8px;
-			background-color: #FF7575;
+			background-color: black;
 			font-family: "bebasneue-webfont";
 			font-size: 25px;
 			padding: 5px 12px 5px 12px;
@@ -311,37 +248,116 @@
 				}
 			}	
 		}
-
-		#stats{
-		font-family:"bebasneue-webfont";
-		font-size:28px;
-
-		.stat1{
-			margin-top:10px;
-			margin-bottom: 10px;
-
-			.image-bulle1{
-			padding-bottom:5px;
-			margin-left:7px;
-			margin-right: 20px;
-			}
-			.image-bulle2{
-			padding-bottom:5px;
-			margin-left:7px;
-			margin-right: 20px;
-			}
-			.image-bulle3{
-			padding-bottom:5px;
-			margin-left:7px;
-			margin-right: 20px;
-			}
+		
+		#stats2{
+		width:293px;
+		margin-top:15px;
+		
+		.reslutats-oui{
+		background-color: #AAD0FF;
+		height: 21px;
+		width: 90px;
+		padding-top:5px;
+		position:relative;
+		z-index: 5;
+		
+		.oui1{
+		font-family: "bebasneue-webfont";
+		font-size: 18px;
+		padding: 0px 5px 0px 5px;
+		color: white;
+		letter-spacing:1px;
+		}
+		
+		.oui3{
+		font-family: "georgia";
+		font-size: 18px;
+		font-weight: bold;
+		color: #808080;
+		margin: -20px 0px 0px 32px;
+		}
+		
+		.oui2{
+		font-family: "georgia";
+		font-size: 16px;
+		font-weight: bold;
+		font-style: italic;
+		margin: -18px 0px 0px 45px;
+		color: white;
+		}
+		}
+		
+		.reslutats-suisse{
+		background-color: #808080;
+		height: 21px;
+		width: 90px;
+		margin: - 26px 0px 0px 103px;
+		padding-top:5px;
+		position:relative;
+		z-index: 5;
+		
+		.suisse1{
+		font-family: "bebasneue-webfont";
+		font-size: 18px;
+		padding: 0px 5px 0px 8px;
+		color: white;
+		}
+		
+		.suisse3{
+		font-family: "georgia";
+		font-size: 18px;
+		font-weight: bold;
+		color: black;
+		margin: -20px 0px 0px 33px;
+		}
+		
+		.suisse2{
+		font-family: "georgia";
+		font-size: 16px;
+		font-weight: bold;
+		font-style: italic;
+		margin: -18px 0px 0px 45px;
+		color: white;
+		}
 		}
 
-		.stat2{
-		margin-left: 10px;
-		margin-top: 0px;
+		.reslutats-non{
+		background-color: #FF6969;
+		height: 21px;
+		width: 90px;
+		margin: - 26px 0px 0px 202px;
+		padding-top:5px;
+		position:relative;
+		z-index: 5;
+		
+		.non1{
+		font-family: "bebasneue-webfont";
+		font-size: 18px;
+		padding: 0px 5px 0px 5px;
+		color: white;
+		}
+		
+		.non3{
+		font-family: "georgia";
+		font-size: 18px;
+		font-weight: bold;
+		color: #808080;
+		margin: -20px 0px 0px 33px;
+		}
+		
+		.non2{
+		font-family: "georgia";
+		font-size: 16px;
+		font-weight: bold;
+		font-style: italic;
+		margin: -18px 0px 0px 45px;
+		color: white;
 		}
 		}
+
+		
+		}
+	
 	}
 
 	#hover-categorie{
@@ -443,21 +459,21 @@
 	}
 	
 	#explications{
-	margin-left: 550px;
-	margin-top:-60px;
+	margin-left: 200px;
+	margin-top:-40px;
 	position: relative;
 	z-index: 10;
 	
 		.bulle1{
-		margin-top:-70px;
+		margin-top:-60px;
 		}
 		.bulle2{
 		margin-top:-70px;
-		margin-left: 115px;
+		margin-left: 95px;
 		}
 		.bulle3{
 		margin-top:-70px;
-		margin-left: 230px;		
+		margin-left: 190px;		
 		}
 	}
 	
@@ -584,7 +600,7 @@
 	}
 	
 	.oui-oui:hover{
-	background-color: #FF7575;
+	background-color: #AAD0FF;
 	}
 	.oui-oui2{
 		margin-top: -5px;
@@ -613,7 +629,7 @@
 	}
 	
 	.suisse-suisse:hover{
-	background-color: #FF7575;
+	background-color: black;
 	}
 	.suisse-suisse2{
 		margin-top: -5px;
@@ -1165,7 +1181,7 @@ label img {
 #encemoment{
 margin-left: 10px;
 margin-top: 10px;
-width: 566px;
+width: 581px;
 padding-bottom: 8px;
 border-bottom: 1px Solid black;
 
@@ -1182,7 +1198,7 @@ border-bottom: 1px Solid black;
 	height: 30px;
 	background-color: #FF7575;
 	margin-top: -28px;
-	margin-left: 415px;
+	margin-left: 430px;
 	font-family: "georgia";
 	font-size: 18px;
 		
@@ -1219,7 +1235,7 @@ width: 272px;
 #title{
 background-color: #FFF;
 min-height:220px;
-width: 585px;
+width: 600px;
 margin-top:20px;
 margin-bottom: 30px;
 
@@ -1233,14 +1249,14 @@ border-image: url(border2.png) 13 fill repeat;
 
 	.image1{
 	height:152px;
-	width:256px;
+	width:271px;
 	margin-top:15px;
 	margin-left:15px;
 	
 		
 		.image{
 		margin-top: -175px;
-		img { width: 256px; height:155px;
+		img { width: 271px; height:155px;
 		}
 		image0{
 		
@@ -1248,16 +1264,129 @@ border-image: url(border2.png) 13 fill repeat;
 			position:relative;
 			z-index: 1;
 		}
+		
 	}
+	#stats2{
+	width:293px;
+	margin-top:-23px;
+	margin-left: 15px;
+	opacity: 0.8;
+	position:relative;
+	z-index: 2;
+	
+	.reslutats-oui{
+	background-color: #FFF;
+	height: 21px;
+	width: 90px;
+	padding-top:5px;
+	position:relative;
+	z-index: 5;
+	
+	.oui1{
+	font-family: "bebasneue-webfont";
+	font-size: 18px;
+	padding: 0px 5px 0px 5px;
+	color: black;
+	letter-spacing:1px;
+	}
+	
+	.oui3{
+	font-family: "georgia";
+	font-size: 18px;
+	font-weight: bold;
+	color: #808080;
+	margin: -20px 0px 0px 32px;
+	}
+	
+	.oui2{
+	font-family: "georgia";
+	font-size: 16px;
+	font-weight: bold;
+	font-style: italic;
+	margin: -18px 0px 0px 45px;
+	color: black;
+	}
+	}
+	
+	.reslutats-suisse{
+	background-color: #808080;
+	height: 21px;
+	width: 90px;
+	margin: - 26px 0px 0px 90px;
+	padding-top:5px;
+	position:relative;
+	z-index: 5;
+	
+	.suisse1{
+	font-family: "bebasneue-webfont";
+	font-size: 18px;
+	padding: 0px 5px 0px 8px;
+	color: white;
+	}
+	
+	.suisse3{
+	font-family: "georgia";
+	font-size: 18px;
+	font-weight: bold;
+	color: black;
+	margin: -20px 0px 0px 33px;
+	}
+	
+	.suisse2{
+	font-family: "georgia";
+	font-size: 16px;
+	font-weight: bold;
+	font-style: italic;
+	margin: -18px 0px 0px 45px;
+	color: white;
+	}
+	}
+
+	.reslutats-non{
+	background-color: #FF6969;
+	height: 21px;
+	width: 90px;
+	margin: - 26px 0px 0px 180px;
+	padding-top:5px;
+	position:relative;
+	z-index: 5;
+	
+	.non1{
+	font-family: "bebasneue-webfont";
+	font-size: 18px;
+	padding: 0px 5px 0px 5px;
+	color: white;
+	}
+	
+	.non3{
+	font-family: "georgia";
+	font-size: 18px;
+	font-weight: bold;
+	color: #808080;
+	margin: -20px 0px 0px 33px;
+	}
+	
+	.non2{
+	font-family: "georgia";
+	font-size: 16px;
+	font-weight: bold;
+	font-style: italic;
+	margin: -18px 0px 0px 45px;
+	color: white;
+	}
+	}
+
+	
+	}
+	
 
 }
 
 #droite-ouvert{
 
 	width:270px;	
-	margin-left:-1px;
 	margin-top: 15px;
-	margin-left:40px;
+	margin-left:55px;
 			
 	#title2{
 	font-family: "gotham";
@@ -1298,8 +1427,7 @@ border-image: url(border2.png) 13 fill repeat;
 			}
 		border-bottom:8px solid white;
 	}
-
-
+	
 	#vote{
 	height: 35px;
 	margin-top: 15px;
@@ -1329,12 +1457,12 @@ border-image: url(border2.png) 13 fill repeat;
 	}
 	
 	.oui-oui:hover{
-	background-color: #FF7575;
+	background-color: #FFF;
 	}
 	.oui-oui2{
 		margin-top: -5px;
 		margin-left:30px;
-		background-color: #FF7575;
+		background-color: #FFF;
 		font-family: "bebasneue-webfont";
 		font-size: 25px;
 		padding: 5px 9px 5px 9px;
@@ -1366,12 +1494,12 @@ border-image: url(border2.png) 13 fill repeat;
 	}
 	
 	.suisse-suisse:hover{
-	background-color: #FF7575;
+	background-color: black;
 	}
 	.suisse-suisse2{
 		margin-top: -5px;
 		margin-left:8px;
-		background-color: #FF7575;
+		background-color: black;
 		font-family: "bebasneue-webfont";
 		font-size: 25px;
 		padding: 5px 12px 5px 12px;

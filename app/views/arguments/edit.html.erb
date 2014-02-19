@@ -3,21 +3,21 @@
 	<div class="centrons-tout">
 	<% if @argument.argumentable.class == Debate %>
 		<%= render "shared/argument_form", argumentable: @argumentable, argument: @argument, position: 0 %>
-	<% elsif  !@argument.argumentable.arguments.where(position: 1).any?%>
+	<% elsif  @argument.position == 1%>
 		<%= render "shared/argument_form", argumentable: @argumentable, argument: @argument, position: 1 %>
-	<% elsif  !@argument.argumentable.arguments.where(position: 2).any?%>
+	<% elsif  @argument.position == 2%>
 		<%= render "shared/argument_form", argumentable: @argumentable, argument: @argument, position: 2 %>
-	<% elsif  !@argument.argumentable.arguments.where(position: 3).any?%>
+	<% elsif  @argument.position == 3%>
 		<%= render "shared/argument_form", argumentable: @argumentable, argument: @argument, position: 3 %>
-	<% elsif  !@argument.argumentable.arguments.where(position: 4).any?%>
+	<% elsif  @argument.position == 4%>
 		<%= render "shared/argument_form", argumentable: @argumentable, argument: @argument, position: 4 %>
-	<% elsif  !@argument.argumentable.arguments.where(position: 5).any?%>
+	<% elsif  @argument.position == 5%>
 		<%= render "shared/argument_form", argumentable: @argumentable, argument: @argument, position: 5 %>
-	<% elsif  !@argument.argumentable.arguments.where(position: 6).any?%>
+	<% elsif  @argument.position == 6%>
 		<%= render "shared/argument_form", argumentable: @argumentable, argument: @argument, position: 6 %>
-	<% elsif  !@argument.argumentable.arguments.where(position: 7).any?%>
+	<% elsif  @argument.position == 7%>
 		<%= render "shared/argument_form", argumentable: @argumentable, argument: @argument, position: 7 %>					  	
-	<% elsif  !@argument.argumentable.arguments.where(position: 8).any?%>
+	<% elsif  @argument.position == 8%>
 		<%= render "shared/argument_form", argumentable: @argumentable, argument: @argument, position:  8%>
 	<% end%>
 	</div>

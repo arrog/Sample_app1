@@ -377,9 +377,7 @@ after_create :send_welcome_email
             return registered_user
           else
             user = User.create(name: data["name"],
-              provider:access_token.provider,
               email: data["email"],
-              uid: access_token.uid ,
               password: Devise.friendly_token[0,20],
             )
           end

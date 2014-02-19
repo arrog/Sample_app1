@@ -17,6 +17,30 @@
 					    <div class="image1">	
 							<%= link_to image_tag(debate.avatar.url(:medium)), debate, class: "image"%>
 						</div>
+						<div class="row" id="stats2">								
+
+							<% if debate.evaluations.any?%>
+							<div class="reslutats-oui">
+								<div class="oui1">OUI</div>
+								<div class="oui3">|</div>
+								<div class="oui2"><%=100*debate.count_for / (debate.count_neutral + debate.count_for + debate.count_against)%>%</div>
+							</div>
+							
+							<div class="reslutats-suisse">
+								<div class="suisse1"><%= image_tag "croix-suisse.png"%></div>
+								<div class="suisse3">|</div>
+								<div class="suisse2"><%=100*debate.count_neutral / (debate.count_neutral + debate.count_for + debate.count_against)%>%</div>
+							</div>
+
+
+							<div class="reslutats-non">
+								<div class="non1">NON</div>
+								<div class="non3">|</div>
+								<div class="non2"><%=100*debate.count_against / (debate.count_neutral + debate.count_for + debate.count_against)%>%</div>
+							</div>
+							<%end%>
+								
+					     </div>
 					</div>
 					
 					<div class="span5" id="droite-ouvert">
@@ -40,6 +64,7 @@
 				 			<li class="oui-oui"><%= link_to "OUI", new_user_session_path, :class => "oui" %>
 							</li>														
 							<% end%>
+
 							<% if current_user && debate.in_deb?(current_user) && debate.valeur_vote(current_user) == 0.0 %>
 							<li class="suisse-suisse2"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(debate, type: "neutral"), method: "post", class: "suisse" %></li>
 							<% elsif current_user%>
@@ -54,7 +79,7 @@
 							<% else%>
 							<li class="non-non"><%= link_to "NON", new_user_session_path, :class => "non" %></li>														
 							<%end%>
-														<div class="suissse">SUISSE</div>
+							<div class="suissse">SUISSE</div>
 						</div>
 						
 					</div>

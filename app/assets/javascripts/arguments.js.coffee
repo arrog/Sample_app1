@@ -10,7 +10,6 @@ $(document).ready ->
   $(".toggle").hide()
   $(".argcoms").hide()
   $('.modifs').hide()
-  $('.modifs2').hide()
   $('.effacersur').hide()
   $('.signalisation').hide()
   $('.finalementnon2').hide()
