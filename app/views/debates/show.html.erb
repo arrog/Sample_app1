@@ -56,6 +56,7 @@
 							<div class="content"><%= @debate.content%></div>
 						</div>
 						<div class="row" id="vote">
+							<div class="suissse">SUISSE</div>
 							<span class="vote2">VOTEZ</span>
 							<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == 1.0 %>
 				 			<li class="oui-oui2"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>
@@ -71,7 +72,7 @@
 							<% elsif current_user%>
 							<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %></li>
 							<% else%>
-							<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), new_user_session_path, method: "post", class: "suisse" %></li>
+							<li class="suisse-suisse1"><%= link_to image_tag("croix-suisse.png"), new_user_session_path, method: "post", class: "suisse" %></li>
 							<%end%>
 							
 							<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == -1.0 %>
@@ -81,37 +82,21 @@
 							<%else%>
 							<li class="non-non"><%= link_to "NON", new_user_session_path, method: "post", :class => "non" %></li>							
 							<%end%>
-							
-							<% if current_user && @debate.in_deb?(current_user)%>
-							<% else %>
-								<div class="suissse">SUISSE</div>
-							<% end %>
+						
+							<div class="row" id="vote">								
+
+								<% if @debate.evaluations.any?%>
+									<li class="oui-oui3"><%=100*@debate.count_for / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%</li>
+
+									<li class="suisse-suisse3"><%=100*@debate.count_neutral / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%</li>
+
+									<li class="non-non3"><%=100*@debate.count_against / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%</li>
+								<%end%>
+
+						     </div>
 						</div>
 
-						<div class="row" id="stats2">								
 
-							<% if @debate.evaluations.any?%>
-							<div class="reslutats-oui">
-								<div class="oui1">OUI</div>
-								<div class="oui3">|</div>
-								<div class="oui2"><%=100*@debate.count_for / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%</div>
-							</div>
-							
-							<div class="reslutats-suisse">
-								<div class="suisse1"><%= image_tag "croix-suisse.png"%></div>
-								<div class="suisse3">|</div>
-								<div class="suisse2"><%=100*@debate.count_neutral / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%</div>
-							</div>
-
-
-							<div class="reslutats-non">
-								<div class="non1">NON</div>
-								<div class="non3">|</div>
-								<div class="non2"><%=100*@debate.count_against / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%</div>
-							</div>
-							<%end%>
-								
-					     </div>
 						
 					</div>
 					
