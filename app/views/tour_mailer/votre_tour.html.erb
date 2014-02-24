@@ -44,7 +44,10 @@
 			<td bgcolor="aad0ff">
 				<table id="header" cellpadding="10" cellspacing="0" align="center">
 					<tr>
-						<td width="570" bgcolor="ffffff" align= "center"><h1>Le débat vous attend <%=@user.name%>,</h1></td>
+						<td width="570" bgcolor="ffffff" align= "center"><h1>Le débat vous attend <%= @user.name%>,</h1>
+					<%= user_url(@user)%>
+					<%= link_to @user.name, user_url(@user)%>
+					</td>
 					</tr>
 				</table><!-- header -->
 			</td>

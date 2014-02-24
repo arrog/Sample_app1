@@ -44,7 +44,7 @@
 			<td bgcolor="aad0ff">
 				<table id="header" cellpadding="10" cellspacing="0" align="center">
 					<tr>
-						<td width="570" bgcolor="ffffff" align= "center"><h1>Bonjour <%=@user.name%>,</h1></td>
+						<td width="570" bgcolor="ffffff" align= "center"><h1>Bonjour 							<%= link_to @user.name, user_url(@user)%>,</h1></td>
 					</tr>
 				</table><!-- header -->
 			</td>
@@ -58,7 +58,7 @@
 				<table id="content-1" cellpadding="20" cellspacing="0" align="center">
 					<tr>
 						<td width="560" valign="top" colspan="3" bgcolor="ffffff">
-							<h4>Bienvenue sur moutoners, le réseau social entièrement dédié au débat.</h4>
+							<h4>Bienvenue sur <%= link_to "moutoners", root_url%>, le réseau social entièrement dédié au débat.</h4>
 						</td>
 					</tr>
 				</table><!-- content 1 -->
@@ -78,7 +78,7 @@
 				<table id="content-3" cellpadding="10" cellspacing="0" align="center" >
 					<tr>
 						<td width="570" bgcolor="ffffff" align="center">
-							<%= image_tag attachments["mail-challenge1-01.png"].url%>
+							<%= link_to image_tag(attachments["mail-challenge1-01.png"].url), debate_url(@debate)%>
 						</td>
 					</tr>
 				</table><!-- content-2 -->
@@ -90,7 +90,7 @@
 				<table id="content-3" cellpadding="10" cellspacing="0" align="center" >
 					<tr>
 						<td width="570" bgcolor="ffffff" align="center">
-							<%= image_tag attachments["mail-challenge2-01.png"].url%>
+							<%=link_to image_tag(attachments["mail-challenge2-01.png"].url), debate_url(@debate1)%>
 						</td>
 					</tr>
 				</table><!-- content-2 -->
@@ -116,7 +116,7 @@
 				<table id="content-3" cellpadding="10" cellspacing="0" align="center" >
 					<tr>
 						<td width="570" bgcolor="ffffff" align="center">
-							<%= image_tag attachments["mail-challenge3-01.png"].url%>
+							<%= link_to image_tag(attachments["mail-challenge3-01.png"].url), debate_url(@challenge)%>
 						</td>
 					</tr>
 				</table><!-- content-2 -->

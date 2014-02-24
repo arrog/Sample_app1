@@ -6,7 +6,10 @@ class UserMailer < ActionMailer::Base
   #
   #   en.user_mailer.signup_confirmation.subject
   #
-  def signup_confirmation(user)
+  def signup_confirmation(user,debate,debate1,challenge)
+    @debate = debate
+    @debate1 = debate1
+    @challenge = challenge
     @user = user
     attachments.inline['mail-challenge1-01.png'] = File.read("#{Rails.root}/app/assets/images/mail-challenge1-01.png")
     attachments.inline['mail-challenge2-01.png'] = File.read("#{Rails.root}/app/assets/images/mail-challenge2-01.png")
