@@ -14,6 +14,6 @@ class UserMailer < ActionMailer::Base
     attachments.inline['mail-challenge1-01.png'] = File.read("#{Rails.root}/app/assets/images/mail-challenge1-01.png")
     attachments.inline['mail-challenge2-01.png'] = File.read("#{Rails.root}/app/assets/images/mail-challenge2-01.png")
     attachments.inline['mail-challenge3-01.png'] = File.read("#{Rails.root}/app/assets/images/mail-challenge3-01.png")
-    mail to: user.email, subject: "Sign Up Confirmation"
+    mail to: user.email, subject: "Bienvenue sur Moutoners"
   end
 end

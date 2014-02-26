@@ -5,13 +5,11 @@
 				<%= link_to image_tag(user.avatar.url(:medium)), user, class: "image"%>
 			</div>
 			<div class="nom">
-				<%= link_to user.fitting_name, user, class: "nom"%>
+				<%= link_to user.name, user, class: "nom"%>
 			</div>
 			<div class="contexte">
-				<%= user.content%>
+				<%= h Rinku.auto_link(user.content).gsub(/\n/, '<br/>').html_safe%>
 			<div>
 		</div>
-			
-		
 	</div>
 </section>

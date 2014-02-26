@@ -258,11 +258,14 @@
 			<%= image_tag("bulle-explication1-01.png", class: "bulle2")%>
 			<%= image_tag("bulle-explication0-01.png", class: "bulle3")%>													
 		</div>
-		
-		<% if !@challenge.context == nil%>
+
+		<% if @challenge.context.presence%>
 		<div class="row">
 			<div class "row" id="to-be-closed">
-				<div id="effective-context"><div class="text"><%= h(@challenge.content).gsub(/\n/, '<br/>').html_safe%></div></div>
+				<div id="effective-context">
+					<div class="text"><%= h(@challenge.content).gsub(/\n/, '<br/>').html_safe%>
+					</div>
+				</div>
 			</div>
 			<div class="row" id ="openning-context">
 				<div class="texte">Contexte</div>

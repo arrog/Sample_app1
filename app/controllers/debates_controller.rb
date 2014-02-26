@@ -26,7 +26,7 @@ class DebatesController < ApplicationController
       @arguments = @argumentable.arguments
       @argument = Argument.new
       @argcom = Argcom.new
-     
+      @partenaire = @debate.partenaire
   end
   
   def edit 
@@ -111,6 +111,12 @@ class DebatesController < ApplicationController
       redirect_to debate_path(@debate)
   end
   
+  def partenariat
+      @debate = Debate.find(params[:id])
+      @debate.partenariat
+      redirect_to debate_path(@debate)
+  end
+  
   def follow
     @debate = Debate.find(params[:id])
     if current_user
@@ -145,6 +151,6 @@ class DebatesController < ApplicationController
     
     def verify_is_admin
        (current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.try(:admin?))
-     end
+    end
      
 end

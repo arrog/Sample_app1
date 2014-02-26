@@ -71,7 +71,8 @@ SampleApp::Application.routes.draw do
       match 'promote2'
       match 'promote3'
       match 'promote4'
-      match 'promote5'                  
+      match 'promote5'   
+      match 'partenariat'               
       get :follow
       get :unfollow
       

@@ -4,7 +4,7 @@
 		<%= link_to image_tag(user.avatar.url(:medium)), user, class: "image"%>
 	</div>
 	<div class="row" id='nom-profile'>
-		<%= link_to user.fitting_name, user, class: 'texte'%>
+		<%= link_to user.name, user, class: 'texte'%>
 	</div>
 	
 	<% if current_user && current_user == user %>
@@ -67,7 +67,7 @@
 			  </div>
 			<% end %>
 		<% else %>
-			<div class="texte"><%= user.content %></div>
+			<div class="texte"><%= h Rinku.auto_link(user.content).gsub(/\n/, '<br/>').html_safe%></div>
 		<% end %>
 	</div>
 	

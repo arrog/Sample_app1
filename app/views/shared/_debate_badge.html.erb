@@ -14,7 +14,7 @@
 	    						<%= link_to debate.title, debate, class: "title2"%>
 							</div>
 							<div class="context">
-							<%= link_to debate.content, debate %>
+								<%= link_to debate.content.split('').first(80).join, debate %> ...
 							</div>
 						</div>
 					</div>

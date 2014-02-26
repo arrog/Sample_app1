@@ -44,9 +44,7 @@
 			<td bgcolor="aad0ff">
 				<table id="header" cellpadding="10" cellspacing="0" align="center">
 					<tr>
-						<td width="570" bgcolor="ffffff" align= "center"><h1>Le débat vous attend <%= @user.name%>,</h1>
-					<%= user_url(@user)%>
-					<%= link_to @user.name, user_url(@user)%>
+						<td width="570" bgcolor="ffffff" align= "center"><h1>Le débat vous attend <%= link_to @user.name, user_url(@user)%>,</h1>
 					</td>
 					</tr>
 				</table><!-- header -->
@@ -61,7 +59,7 @@
 				<table id="content-1" cellpadding="20" cellspacing="0" align="center">
 					<tr>
 						<td width="560" valign="top" colspan="3" bgcolor="ffffff">
-							<h4><a href='www.moutoners.com'>C'est à vous d'argumenter dans le débat "<%= @challenge.title%>".</a></h4>
+							<h4><a href='www.moutoners.com'><%= link_to "C'est à vous d'argumenter dans le débat ##{@challenge.title}", challenge_url(@challenge)%>.</a></h4>
 						</td>
 					</tr>
 				</table><!-- content 1 -->
@@ -81,7 +79,7 @@
 				<table id="content-3" cellpadding="10" cellspacing="0" align="center" >
 					<tr>
 						<td width="570" bgcolor="ffffff" align="center">
-							<%= image_tag attachments["mail-challenge4-01.png"].url%>
+							<%= link_to image_tag(attachments["mail-challenge4-01.png"].url), challenge_url(@challenge)%>
 						</td>
 					</tr>
 				</table><!-- content-2 -->

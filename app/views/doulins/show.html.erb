@@ -1,11 +1,8 @@
-<% if current_user && current_user.try(:admin?)%>
-	<%= link_to "promote", promote_doulin_path(@doulin)%>
-<% end %>
-
 <section id="doulin">
 	<div class="container">
 	<% if current_user.try(:admin?)%>
 		<a><%= link_to "modifier les informations", edit_doulin_path(@doulin), class: "edit3"%></a>
+		<%= link_to "promote", promote_doulin_path(@doulin)%>
 	<%end%>
 	<div class="row" id="typechallenge">
 		<%= image_tag 'bannire_type-01.png'%>

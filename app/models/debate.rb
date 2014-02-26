@@ -15,7 +15,7 @@ class Debate < ActiveRecord::Base
   has_reputation :votes, source: :user, aggregated_by: :sum
   has_many :evaluations, class_name: "ReputationSystem::Evaluation", as: :target
   
-  validates :content, presence: true, length: { maximum: 140 }
+  validates :content, presence: true
   validates :title, presence: true
   
   validates_presence_of :tag_list
@@ -40,12 +40,20 @@ class Debate < ActiveRecord::Base
   scope :homepage2, -> { where(:state => ["homepage2"]) }  
   scope :homepage3, -> { where(:state => ["homepage3"]) }  
   scope :homepage4, -> { where(:state => ["homepage4"]) }  
-  scope :homepage5, -> { where(:state => ["homepage5"]) }  
+  scope :homepage5, -> { where(:state => ["homepage5"]) }
+  scope :partenariat, -> { where(:state => ["partenaire","partenaire1", "partenaire2", "partenaire3"]) }  
          
   state_machine initial: :offline do
 
      event :publish do
        transition :offline => :online
+     end
+     
+     event :partenariat do
+       transition :offline => :partenaire
+       transition :partenaire => :partenaire1
+       transition :partenaire1 => :partenaire2
+       transition :partenaire2 => :partenaire3                    
      end
      
      event :promote1 do
@@ -132,6 +140,12 @@ class Debate < ActiveRecord::Base
       0
     else
       100*self.count_for/(self.count_for+self.count_against)
+    end
+  end
+  
+  def partenaire
+    if self.type_of_debate.presence
+      User.find(self.type_of_debate)
     end
   end
     

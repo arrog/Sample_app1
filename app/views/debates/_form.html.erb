@@ -61,6 +61,11 @@
 			<div id="effective-context"><div class="text"><%= f.text_area :context, :class => 'edit2'%></div></div>
 		</div>
 	</div>
+	<div class ="row"> Partenariat:
+	<% if current_user && current_user.try(:admin?)%>
+		<%= f.number_field :type_of_debate %>
+	<% end%>
+	</div>
 	
 	<div class="row" id='submit-challenge'>
 			<%= f.submit "Créér le débat", class: "action" %>

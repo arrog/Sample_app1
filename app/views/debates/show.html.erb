@@ -1,12 +1,18 @@
+<% if @debate.type_of_debate.presence %>
+	<%= render "partenariat", :debate => @debate%>
+<% else %>
+
 <section id="open-debate">
 	<div class="container">
 		<% if current_user && current_user.try(:admin?)%>
 		<div id="share2">
+			<%= @debate.state%>
 					<div><%= link_to "promote1", promote1_debate_path(@debate), class: "text"%>  </div>
 					<div><%= link_to "promote2", promote2_debate_path(@debate), class: "text"%>  </div>
 					<div><%= link_to "promote3", promote3_debate_path(@debate), class: "text"%>  </div>
 					<div><%= link_to "promote4", promote4_debate_path(@debate), class: "text"%>  </div>
 					<div><%= link_to "promote5", promote5_debate_path(@debate), class: "text"%>  </div>
+					<div><%= link_to "partenaire", promote5_debate_path(@debate), class: "text"%>  </div>
 					<div><%= link_to "edit",edit_debate_path(@debate), class: "text"%>    </div>                                                        
 					<div><%= link_to "publush",publish_debate_path(@debate), class: "text"%>    </div>                                                        
 		</div>                                                                
@@ -53,7 +59,7 @@
 							<% end%>
 						</div>
 						<div class="row" id="content">
-							<div class="content"><%= @debate.content%></div>
+							<div class="content"><%= h Rinku.auto_link(argument.content).gsub(/\n/, '<br/>').html_safe%></div>
 						</div>
 						<div class="row" id="vote">
 							<div class="suissse">SUISSE</div>
@@ -65,14 +71,14 @@
 				 			<li class="oui-oui"><%= link_to "OUI", vote_debate_path(@debate, type: "up"), method: "post", :class => "oui" %>	
 							</li>	
 							<% else %>
-								<li class="oui-oui"><%= link_to "OUI", new_user_session_path, :class => "oui" %>						
+								<li class="oui-oui"><%= link_to "OUI", new_user_session_path, :class => "oui" %></li>						
 							<% end%>
 							<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == 0.0 %>
 							<li class="suisse-suisse2"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %></li>
 							<% elsif current_user%>
 							<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), vote_debate_path(@debate, type: "neutral"), method: "post", class: "suisse" %></li>
 							<% else%>
-							<li class="suisse-suisse1"><%= link_to image_tag("croix-suisse.png"), new_user_session_path, method: "post", class: "suisse" %></li>
+							<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), new_user_session_path, method: "post", class: "suisse" %></li>
 							<%end%>
 							
 							<% if current_user && @debate.in_deb?(current_user) && @debate.valeur_vote(current_user) == -1.0 %>
@@ -82,8 +88,9 @@
 							<%else%>
 							<li class="non-non"><%= link_to "NON", new_user_session_path, method: "post", :class => "non" %></li>							
 							<%end%>
-						
-							<div class="row" id="vote">								
+							
+						</div>	
+						<div class="row" id="vote">								
 
 								<% if @debate.evaluations.any?%>
 									<li class="oui-oui3"><%=100*@debate.count_for / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%</li>
@@ -92,8 +99,8 @@
 
 									<li class="non-non3"><%=100*@debate.count_against / (@debate.count_neutral + @debate.count_for + @debate.count_against)%>%</li>
 								<%end%>
+								
 
-						     </div>
 						</div>
 
 
@@ -169,7 +176,7 @@
 			<%= image_tag("bulle-explication1-01.png", class: "bulle2")%>
 			<%= image_tag("bulle-explication0-01.png", class: "bulle3")%>													
 		</div>		
-					
+							
 		<div id="share">
 			<span>Partagez le débat sur</br></span>
 				<div class="ok">
@@ -181,7 +188,7 @@
 
 		</div>
 		
-
+<% end %>
 		
 		<div class="row" id="arguments">
 

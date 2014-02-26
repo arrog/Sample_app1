@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140218114247) do
+ActiveRecord::Schema.define(:version => 20140225165650) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -114,9 +114,9 @@ ActiveRecord::Schema.define(:version => 20140218114247) do
   create_table "debates", :force => true do |t|
     t.string   "title"
     t.string   "content"
-    t.string   "type_of_debate"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.integer  "type_of_debate",      :limit => 255
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.integer  "cat_id"
     t.text     "state"
     t.integer  "group"

@@ -133,9 +133,9 @@
 		}
 
 		#vote{
-		height: 55px;
+		height: 40px;
 		margin-top: 10px;
-		margin-right:5px;	
+		margin-right:5px;
 		
 		li{
 		display : inline-block;
@@ -180,7 +180,7 @@
 		
 		.oui-oui3{
 			margin-top: -25px;
-			margin-left:144px;
+			margin-left:124px;
 			background-color: #AAD0FF;
 			font-family: "bebasneue-webfont";
 			font-size: 22px;
@@ -704,144 +704,6 @@
 }
 
 
-
-#voting-bar{
-	background-color: #FFF;
-	margin-left: -24px;
-	margin-top:0px;
-	width: 300px;
-	height: 20px;
-	
-	.zero{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 300px;
-	height: 20px;
-	}	
-	.cinq{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 15px;
-	height: 20px;
-	}
-	.dix{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 30px;
-	height: 20px;
-	}
-	.quinze{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 45px;
-	height: 20px;
-	}
-	.vingt{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 60px;
-	height: 20px;
-	}	
-	.vingt-cinq{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 75px;
-	height: 20px;
-	}
-	.trente{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 90px;
-	height: 20px;
-	}
-	.trente-cinq{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 105px;
-	height: 20px;
-	}	
-	.quarante{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 120px;
-	height: 20px;
-	}	
-	.quarante-cinq{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 135px;
-	height: 20px;
-	}
-	.cinquante{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 150px;
-	height: 20px;
-	}
-	.cinquante-cinq{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 165px;
-	height: 20px;
-	}
-	.soixante{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 180px;
-	height: 20px;
-	}	
-	.soixante-cinq{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 195px;
-	height: 20px;
-	}
-	.septante{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 210px;
-	height: 20px;
-	}
-	.septante-cinq{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 225px;
-	height: 20px;
-	}	
-	.octante{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 240px;
-	height: 20px;
-	}	
-	.octante-cinq{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 255px;
-	height: 20px;
-	}
-	.nonante{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 270px;
-	height: 20px;
-	}
-	.nonante-cinq{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 285px;
-	height: 20px;
-	}
-	.cent{
-	background-color: #808080;
-	margin-left: 0px;
-	width: 0px;
-	height: 20px;
-	}
-}
-
-
-
 #debate-form{
 
 
@@ -1084,10 +946,10 @@ label img {
 	
 	#effective-context{
 	background-color:#EEE;
-	min-height:300px;
-	width: 485px;
+	min-height:150px;
+	width: 800px;
 	margin-top:20px;
-	margin-left:470px;
+	margin-left:150px;
 	margin-bottom: 10px;
 		.text{
 		font-family:"georgia";
@@ -1098,11 +960,12 @@ label img {
 	}
 	.edit2{
 	margin-top:15px;
-	width:430px;
-	height:490px;
+	width:740px;
+	height:200px;
 	background-color:white;
 	border-radius:0px;
 	resize: none;
+	border: none;
 	}
 }
 
@@ -1473,4 +1336,727 @@ border-image: url(border2.png) 13 fill repeat;
 		}	
 	}
 }
+}
+
+#partenariat-debate{
+	#gauche-ouvert{
+	width: 390px;
+	}
+	
+	#eliassakr{
+	margin-left: 70px;
+	width: 780px;
+	}
+	#title{
+		background-color: #C9C9C9;
+		min-height:260px;
+		width: 780px;
+		margin-top:20px;
+		margin-left:0px;
+		margin-bottom: 20px;
+
+		#touthaut{
+		width: 750px;
+		margin: 15px;
+		padding-bottom: 15px;
+		border-bottom: 3px Solid white;
+
+			#touthaut1{
+			padding: 15px;
+			margin-top: 15px;
+			margin-left:0px;
+			font-family: "georgia";
+			font-style: italic;
+			font-size: 30px;
+			text-align: center;
+			}
+		}
+		
+		
+	
+		.image1{
+		background-color: #C9C9C9;
+		height:222px;
+		width:374px;
+		margin-top:0px;
+		margin-left:15px;
+		
+			
+			.image{
+			margin-top: -241px;
+			img { width: 374px; height:222px;
+			}
+				position:relative;
+				z-index: 1;
+			}
+			
+		}
+		
+			#statss{
+			position: relative;
+			z-index: 10;
+			margin-left: 15px;
+			width: 374px;
+
+
+			#stats{
+			font-family:"bebasneue-webfont";
+			font-size:28px;
+			margin-top: -38px;
+			position: relative;
+			background-color: #808080;
+			height: 38px;
+			min-width: 290px;
+			z-index: 1;
+			opacity: 0.8;
+			margin-bottom:15px;
+
+			.stat1{
+				margin-left: 60px;
+
+				.image-bulle1{
+				padding-bottom:5px;
+				margin-left:5px;
+				margin-right: 5px;
+				}
+				.image-bulle2{
+				padding-bottom:5px;
+				margin-left:5px;
+				margin-right: 5px;
+				}
+				.image-bulle3{
+				padding-bottom:5px;
+				margin-left:5px;
+				}
+			}
+
+			.stat2{
+			margin-left: 10px;
+			margin-top: 0px;
+			}
+
+			}
+			}
+
+		}
+		#droite-ouvert{
+			width:335px;	
+			margin-left:-1px;
+			margin-top: 0px;
+			margin-left:40px;
+
+			#title2{
+			font-family: "gotham";
+			font-size: 23px;
+			text-align: left;
+			line-height: 23px;
+			 letter-spacing:-1px;
+
+			a:hover{
+			color:black;
+			}
+			}
+
+			#tags_list_doulin{
+			margin-top:10px;
+			font-family : "gotham-Bold";
+			font-size : 16px;
+			color: white;
+				.tags{
+				color: white;
+				}
+
+			li{
+			margin-right: 5px;
+			display : inline-block;
+			}
+
+			}
+
+			#content{
+				margin-right:5px;
+				margin-top:10px;
+				font-family:georgia;
+				font-size:14px;
+				font-style: italic;
+					.content{
+					padding-bottom:10px;
+					}
+				border-bottom:8px solid white;
+			}
+
+			#vote{
+			height: 40px;
+			margin-top: 10px;
+			margin-right:5px;	
+
+			li{
+			display : inline-block;
+			}
+
+			.vote2{
+				font-family:"gotham";
+				font-size:25px;
+
+			}
+
+			.oui-oui{
+				margin-top: -5px;
+				margin-left:30px;
+				background-color: #808080;
+				font-family: "bebasneue-webfont";
+				font-size: 25px;
+				padding: 5px 9px 5px 9px;
+
+				.oui{
+				color: black;
+				}
+			}
+
+			.oui-oui:hover{
+			background-color: #AAD0FF;
+			color: black;
+			}
+			.oui-oui2{
+				margin-top: -5px;
+				margin-left:30px;
+				background-color: #AAD0FF;
+				font-family: "bebasneue-webfont";
+				font-size: 25px;
+				padding: 5px 9px 5px 9px;
+				border: 1px Solid white;			
+
+				.oui{
+				color: black;
+				}
+			}
+
+			.oui-oui3{
+				margin-top: -25px;
+				margin-left:124px;
+				background-color: #AAD0FF;
+				font-family: "bebasneue-webfont";
+				font-size: 22px;
+				padding: 5px 6px 5px 6px;
+			}
+
+			.suissse{
+			margin-left:177px;
+			margin-top: -3px;
+			font-family: "gotham";
+			font-size: 10px;
+			}
+
+
+			.suisse-suisse{
+				margin-top: -5px;
+				margin-left:8px;
+				background-color: #808080;
+				font-family: "bebasneue-webfont";
+				font-size: 25px;
+				padding: 5px 12px 5px 12px;
+
+				.suisse{
+				color: white;
+				}
+			}
+
+			.suisse-suisse:hover{
+			background-color: black;
+			color: black;
+			}
+			.suisse-suisse2{
+				margin-top: -5px;
+				margin-left:8px;
+				background-color: black;
+				font-family: "bebasneue-webfont";
+				font-size: 25px;
+				padding: 5px 12px 5px 12px;
+			border: 1px Solid white;			
+
+			}
+
+			.suisse-suisse1{
+			margin-top: -5px;
+			margin-left:12px;
+			background-color: #808080;
+			font-family: "bebasneue-webfont";
+			font-size: 25px;
+			padding: 5px 12px 5px 12px;
+
+			.suisse{
+			color: white;
+			}			
+
+			}
+
+			.suisse-suisse3{
+				margin-top: -5px;
+				margin-left:8px;
+				background-color: #000;
+				font-family: "bebasneue-webfont";
+				font-size: 22px;
+				color: white;
+				padding: 5px 5px 5px 4px;
+			}
+
+			.non-non{
+				margin-top: -5px;
+				margin-left:8px;
+				background-color: #808080;
+				font-family: "bebasneue-webfont";
+				font-size: 25px;
+				padding: 5px 9px 5px 9px;
+
+				.non{
+				color: black;
+				}
+			}
+
+				.non-non:hover{
+				background-color: #FF7575;
+				color: black;
+				}
+
+				.non-non2{
+					margin-top: -5px;
+					margin-left:8px;
+					background-color: #FF6969;
+					font-family: "bebasneue-webfont";
+					font-size: 25px;
+					padding: 5px 9px 5px 9px;
+			border: 1px Solid white;				
+
+					.non{
+					color: black;
+					}
+				}
+				.non-non3{
+					margin-top: -5px;
+					margin-left:8px;
+					background-color: #FF6969;
+					font-family: "bebasneue-webfont";
+					font-size: 22px;
+					color: white;
+					padding: 5px 9px 5px 9px;
+				}	
+			}
+	
+	}
+
+	
+
+	#hover-categorie{
+	margin-top:-129px;
+	margin-left:947px;
+	height:  25px;
+	width: 90px;
+	background-color: #808080;
+	position: relative;
+	z-index: 10;
+	
+	.texte{
+		font-family: "gotham-Bold";
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 8px;
+		padding-top:4px;
+	}	
+	.arrow-left{
+		margin-top:-20px;
+		padding-left: 78px;
+	 	width: 0; 
+	 	height: 0; 
+	 	border-top: 12px solid transparent;
+	 	border-bottom: 12px solid transparent; 
+	 	border-right:12px solid white;
+	}
+	
+	}
+		
+	.partenaire{
+	margin-top: 20px;
+	margin-left: 865px;
+	}
+	
+	
+	#follow{
+	margin-left:947px;
+	height:  25px;
+	width: 90px;
+	background-color: #808080;
+	position: relative;
+	z-index: 10;
+	
+	.texte{
+		font-family: "gotham-Bold";
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 8px;
+		padding-top:4px;
+	}
+
+	.texte2{
+		font-family: "gotham-Bold";
+		font-size: 16px;
+		color: #FFF;
+		padding-left: 12px;
+		padding-top:4px;
+		
+		.texte:hover{
+			color: black;
+		}
+	}
+	.follow:hover{
+		background-color: black;
+	}
+	
+	
+	.arrow-left{
+		margin-top:-20px;
+		padding-left: 78px;
+	 	width: 0; 
+	 	height: 0; 
+	 	border-top: 12px solid transparent;
+	 	border-bottom: 12px solid transparent; 
+	 	border-right:12px solid white;
+	}
+	
+	}
+	
+	
+	#catcat{
+	margin-left:946px;
+	height:65px;
+	width:90px;
+	background-color:#AAD0FF;
+	position: relative;
+	z-index: 10;
+	
+	 .arrow-left{
+		padding-left:58px;
+	 	width: 0; 
+	 	height: 0; 
+	 	border-top: 32px solid transparent;
+	 	border-bottom: 34px solid transparent; 
+	 	border-right:32px solid white;
+	 }
+	.image{
+	margin-left:10px;
+	margin-top:-48px;
+	}
+	}
+	
+	#explications{
+	margin-left: 200px;
+	margin-top:40px;
+	position: relative;
+	z-index: 10;
+	
+		.bulle1{
+		margin-top:-60px;
+		}
+		.bulle2{
+		margin-top:-70px;
+		margin-left: 95px;
+		}
+		.bulle3{
+		margin-top:-70px;
+		margin-left: 190px;		
+		}
+	}
+	
+	#share2{
+		margin-left: 20px;
+		margin-bottom: 20px;
+		background-color: #808080;
+		min-height:50px;
+		width: 140px;
+		border-radius: 12px;
+		padding: 5px;
+	 	text-align: center;
+		color: white;
+		line-height: 20px;
+		font-family:"gotham-Bold";
+		font-size: 16px;
+		
+		a:hover{
+			color: white;
+		}
+	}
+	
+	#share{
+	margin-left: 420px;
+	margin-bottom: 20px;
+	background-color: #AAD0FF;
+	height:50px;
+	width: 240px;
+	border-radius: 12px;
+	padding-top:15px;
+ 	text-align: center;
+	color: black;
+	line-height: 20px;
+	font-family:"gotham-Bold";
+	font-size: 18px;
+	
+	.texte{
+	margin-top: -34px;
+	margin-left: 28px;
+	background-color: #000;
+	height: 24px;
+	width: 80px;
+	font-family: "gotham";
+	font-size: 16px;
+	color: #FFF;
+	padding-left: 8px;
+	padding-top:4px;
+		
+		.okk{
+		margin-top: -30px;
+		opacity:1;
+		}
+	}
+
+	
+	.ok{
+	position: relative;
+	z-index:0;
+	margin-left:-80px;
+	.okk{
+	margin-top: -30px;
+	opacity:0;
+	
+	.social-share-button{
+	margin-left:-20px;
+	}
+	}
+	
+	}
+	
+	
+	.okkk{
+	position: relative;
+	z-index:0;
+	margin-top: -31px;
+	margin-left: 100px;
+	.okkkk{
+	margin-top: -20px;
+	margin-left:20px;
+	opacity:0;
+	}
+	
+	}
+	}
+	
+	#votervoter{
+	margin-left:70px;
+	height:40px;
+	background-color: #C9C9C9;
+	margin-bottom: 10px;
+	width: 965px;
+	font-family: "gotham";
+	font-size:18px;
+	text-align: center;
+	cursor: pointer;
+	
+	#vote{
+	height: 35px;
+	margin-top: 10px;
+	margin-right:5px;	
+	border-bottom:8px solid white;
+	
+	li{
+	display : inline-block;
+	}
+	
+	.vote2{
+		font-family:"gotham";
+		font-size:25px;
+
+	}
+
+	.oui-oui{
+		margin-top: -5px;
+		margin-left:30px;
+		background-color: #808080;
+		font-family: "bebasneue-webfont";
+		font-size: 25px;
+		padding: 5px 9px 5px 9px;
+		
+		.oui{
+		color: black;
+		}
+	}
+	
+	.oui-oui:hover{
+	background-color: #AAD0FF;
+	}
+	.oui-oui2{
+		margin-top: -5px;
+		margin-left:30px;
+		background-color: #AAD0FF;
+		font-family: "bebasneue-webfont";
+		font-size: 25px;
+		padding: 5px 9px 5px 9px;
+		
+		.oui{
+		color: black;
+		}
+	}
+	
+	.suisse-suisse{
+		margin-top: -5px;
+		margin-left:8px;
+		background-color: #808080;
+		font-family: "bebasneue-webfont";
+		font-size: 25px;
+		padding: 5px 12px 5px 12px;
+		
+		.suisse{
+		color: white;
+		}
+	}
+	
+	.suisse-suisse:hover{
+	background-color: black;
+	}
+	.suisse-suisse2{
+		margin-top: -5px;
+		margin-left:8px;
+		background-color: #FF7575;
+		font-family: "bebasneue-webfont";
+		font-size: 25px;
+		padding: 5px 12px 5px 12px;
+		
+		.suisse{
+		color: white;
+		}
+	}
+	
+	.non-non{
+		margin-top: -5px;
+		margin-left:8px;
+		background-color: #808080;
+		font-family: "bebasneue-webfont";
+		font-size: 25px;
+		padding: 5px 9px 5px 9px;
+		
+		.non{
+		color: black;
+		}
+	}
+		
+		.non-non:hover{
+		background-color: #FF6969;
+		}
+		
+		.non-non2{
+			margin-top: -5px;
+			margin-left:8px;
+			background-color: #FF6969;
+			font-family: "bebasneue-webfont";
+			font-size: 25px;
+			padding: 5px 9px 5px 9px;
+
+			.non{
+			color: black;
+			}
+		}	
+	}
+	
+		.texte{
+			padding-top:10px;
+			font-family: "gotham";
+			font-size:22px;
+			color: #000;
+			text-align: center;
+		}
+	.texte-newarg{
+	padding-top:10px;
+	font-family: "gotham";
+	font-size:18px;
+	color: #000000;
+	text-align: center;
+	}
+	
+	div:hover{
+	text-decoration: underline;
+	}
+	
+	.texte2-newarg{
+	padding-top:10px;
+	font-family: "gotham";
+	font-size:18px;
+	color: #000000;
+	text-align: center;
+	}
+	
+	.arrow-up-newarg {
+		margin-left:700px;
+		margin-top:-18px;
+		width: 0; 
+		height: 0; 
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		cursor:  pointer;
+		border-bottom: 15px solid #FFF;
+	}
+
+	.arrow-down-newarg {
+		margin-left:700px;
+		margin-top:-15px;
+		width: 0; 
+		height: 0; 
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		cursor:  pointer;
+		border-top: 15px solid #FFF;
+	}
+	}
+
+	.edit0{
+	width:30px;
+	height:15px;
+	background-color:white;
+	border-radius:0px;
+	}
+		
+	.edit1{
+	width:280px;
+	height:30px;
+	background-color:white;
+	border-radius:0px;
+	}
+	
+	.edit3{
+	background-color: #808080;
+	color: #000000;
+	font-family:"bebasneue-webfont";
+	font-size:22px;
+	}
+	
+	
+	#arguments-debate{
+		margin-left: 162px;
+		
+		.contre{
+		margin-left: 246px;
+		}
+		
+		.suisse{
+		margin-left: 123px;
+		}
+	}
+	
+	#box-argument{
+		margin-left: 142px;
+		
+		.contre{
+		margin-left: 246px;
+		}
+		
+		.suisse{
+		margin-left: 123px;
+		}
+	}
 }
