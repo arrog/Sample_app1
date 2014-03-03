@@ -59,7 +59,7 @@
 							<% end%>
 						</div>
 						<div class="row" id="content">
-							<div class="content"><%= h Rinku.auto_link(argument.content).gsub(/\n/, '<br/>').html_safe%></div>
+							<div class="content"><%= h Rinku.auto_link(@debate.content).gsub(/\n/, '<br/>').html_safe%></div>
 						</div>
 						<div class="row" id="vote">
 							<div class="suissse">SUISSE</div>
