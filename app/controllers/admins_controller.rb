@@ -5,6 +5,7 @@ class AdminsController  < ApplicationController
   def index
    @debate = Debate.new
    @doulin = Doulin.new 
+   @article = Article.new
   end
   
   

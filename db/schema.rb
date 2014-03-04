@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140225165650) do
+ActiveRecord::Schema.define(:version => 20140304190336) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -59,6 +59,17 @@ ActiveRecord::Schema.define(:version => 20140225165650) do
   end
 
   add_index "arguments", ["argumentable_id", "argumentable_type"], :name => "index_arguments_on_argumentable_id_and_argumentable_type"
+
+  create_table "articles", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
 
   create_table "cats", :force => true do |t|
     t.text     "title"
@@ -114,7 +125,7 @@ ActiveRecord::Schema.define(:version => 20140225165650) do
   create_table "debates", :force => true do |t|
     t.string   "title"
     t.string   "content"
-    t.integer  "type_of_debate",      :limit => 255
+    t.integer  "article_id",          :limit => 255
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
     t.integer  "cat_id"

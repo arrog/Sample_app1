@@ -63,7 +63,7 @@
 	</div>
 	<div class ="row"> Partenariat:
 	<% if current_user && current_user.try(:admin?)%>
-		<%= f.number_field :type_of_debate %>
+		<%= f.number_field :article_id %>
 	<% end%>
 	</div>
 	

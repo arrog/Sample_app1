@@ -1,7 +1,7 @@
 class Debate < ActiveRecord::Base
   include ::PublicActivity::Common
     
-  attr_accessible :content, :title, :type_of_debate, :tag_list, :cat_id, :avatar, :state, :group, :context
+  attr_accessible :content, :title, :article_id, :tag_list, :cat_id, :avatar, :state, :group, :context
   
   acts_as_taggable
   acts_as_followable
@@ -144,8 +144,8 @@ class Debate < ActiveRecord::Base
   end
   
   def partenaire
-    if self.type_of_debate.presence
-      User.find(self.type_of_debate)
+    if self.article_id.presence
+      Article.find(self.article_id)
     end
   end
     
