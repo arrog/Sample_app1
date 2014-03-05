@@ -22,7 +22,6 @@ gem 'rinku'
 gem 'social-share-button'
 gem 'rack-mini-profiler'
 gem 'shareable'
-gem 'dalli'
 gem 'newrelic_rpm'
 
 group :development, :test do

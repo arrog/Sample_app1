@@ -12,11 +12,11 @@
 
 $(function(){
     $('.element').share({
-       title: 'Share Button Multiple Instantiation Test',
-       image: 'http://carrot.is/img/fb-share.jpg',
+       title: 'débat moutoners',
        app_id: '200803726740237',
        color: '#3B2B45',
        flyout: 'top right',
+	   text:'#débat #moutoners'
 		twitter: {
 			link:'url',
 		}
