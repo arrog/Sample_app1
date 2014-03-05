@@ -28,6 +28,10 @@ module ApplicationHelper
      :user
     end
     
+    def image_url(source)
+      URI.join(root_url, image_path(source))
+    end
+    
     def cp(path)
       if current_page?(path)
         "active"

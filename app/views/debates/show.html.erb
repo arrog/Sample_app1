@@ -1,4 +1,4 @@
-
+		<%= image_url("logo.png")%>
 <% if @debate.article_id.presence %>
 	<%= render "partenariat", :debate => @debate%>
 <% else %>
@@ -190,7 +190,7 @@
 		</div>
 		
 <% end %>
-		
+
 		<div class="row" id="arguments">
 
 					<% if current_user && @debate.has_evaluation?(:votes, current_user) %>

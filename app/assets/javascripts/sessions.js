@@ -6,10 +6,9 @@ $(function(){
     $('.element').share({
        title: 'débat moutoners',
        app_id: '200803726740237',
-       color: '#3B2B45',
        flyout: 'top right',
 	   text:'#débat #moutoners',
-	   text_font: true
+	   text_font: true,
 	   image:"https://s3-eu-west-1.amazonaws.com/moutoner-first/logo_juste_mouton.png?AWSAccessKeyId=ASIAJB7BVD63IVMPBVFQ&Expires=1394038643&Signature=S2dK7t59sS48Ph2ljEmv0PzwUL8%3D&x-amz-security-token=AQoDYXdzEEoakAJub03yHgg90dRqyQ%2B%2BzdPF4vlQDugkNj4wC63dZ8q8YyczBRL6LbNT05rpsOQGpH3sGMCzqsEu8py6l5TSzI0BcZIell9CckUL2YGLoinZUKVnbt/EWBbQhYxmaPBsFhSQy6sOqUIoFgtbYjRs7W1JNfFU51tGNeI5xLdL4HdvNnwtqLK5YguxqOqlL%2Bri5ktqr8qa53s7g0v3yZvrAxK0TwwI2QSWSXmzrMNmNDX/Vk7k%2BZzyryo%2BX0lQ7fwEodTjqY1OHNcOIiV7rC2lwE2kDPFdjuktkpES3DwgpOCoAi5zX7S6%2BOPJ51gkCd9vNJq0exnLdfdj%2BBWiZW5/947kR4Bs0MKIcowPJ/zKIm6rgiCerN2YBQ%3D%3D"
     });
  });
