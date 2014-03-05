@@ -9,8 +9,5 @@ $(function(){
        color: '#3B2B45',
        flyout: 'top right',
 	   text:'#débat #moutoners'
-		twitter: {
-			link:'url'
-		}
     });
  });
