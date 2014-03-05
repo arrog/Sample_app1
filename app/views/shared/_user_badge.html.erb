@@ -3,7 +3,7 @@
 		<div class="span2">
 			<% if user.class == User%>
 			<div class="image1">				
-				<%= link_to image_tag(user.avatar.url(:medium)), user, class: "image"%>
+				<%= link_to image_tag(user.avatar.url(:small)), user, class: "image"%>
 			</div>
 			<div class="nom">
 				<%= link_to user.name, user, class: "nom"%>
@@ -15,10 +15,10 @@
 							 
 			<% else%>  
 			<div class="image1">
-				<%= link_to image_tag(user.avatar.url(:medium)), "http://#{@partenaire.url}", class: "image"%>
+				<%= link_to image_tag(user.avatar.url(:medium)), "http://#{user.url}", class: "image"%>
 			</div>
 			<div class="nom">
-				<%= link_to user.name, "http://#{@partenaire.url}", class: "nom"%>
+				<%= link_to user.name, "http://#{user.url}", class: "nom"%>
 			</div>
 			<div class="contexte">
 					<%= h Rinku.auto_link(user.url).gsub(/\n/, '<br/>').html_safe%>

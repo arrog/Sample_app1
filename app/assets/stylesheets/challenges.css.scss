@@ -790,6 +790,8 @@
 		font-size: 14px;
 		padding: 10px 25px 10px 25px;
 		border: 20px Solid #EEE;
+		word-wrap:break-word;
+		a{color: #2200CC;}
 		}
 	}
 	
@@ -1329,7 +1331,8 @@ text-align: center;
 
 					.content{
 					text-align: left;
-							word-wrap:break-word;
+					word-wrap:break-word;
+					a{color: #2200CC;}	
 					}
 				}
 				#american-milieu-3{
@@ -2061,7 +2064,7 @@ text-align: center;
 
 			
 				.title{
-					word-wrap:break-word;
+				word-wrap:break-word;
 				padding-top:5px;
 				padding-right: 10px;
 				text-align: left;
@@ -2097,6 +2100,8 @@ text-align: center;
 			
 				.content{
 				text-align: left;
+				word-wrap:break-word;
+				a{color: #2200CC;}	
 				}
 			}
 			#ld-milieu-3{
@@ -3006,6 +3011,8 @@ text-align: center;
 
 					.content{
 					text-align: left;
+					word-wrap:break-word;
+					a{color: #2200CC;}
 					}
 				}
 
@@ -4301,6 +4308,8 @@ text-align: center;
 
 					.content{
 					text-align: left;
+					word-wrap:break-word;
+					a{color: #2200CC;}
 					}
 				}
 

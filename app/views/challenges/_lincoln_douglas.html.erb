@@ -77,7 +77,7 @@
 				</div>
 
 				<div class="row" id="ld-milieu-2">
-					<div class='content'><%= @challenge.context%></div>
+					<div class='content'><%= h Rinku.auto_link(@challenge.context).gsub(/\n/, '<br/>').html_safe%></div>
 				</div>
 	
 				<div class="row" id="ld-milieu-3">
@@ -263,7 +263,7 @@
 		<div class="row">
 			<div class "row" id="to-be-closed">
 				<div id="effective-context">
-					<div class="text"><%= h(@challenge.content).gsub(/\n/, '<br/>').html_safe%>
+					<div class="text"><%= h Rinku.auto_link(@challenge.content).gsub(/\n/, '<br/>').html_safe%>
 					</div>
 				</div>
 			</div>

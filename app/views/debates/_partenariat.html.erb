@@ -14,13 +14,71 @@
 		</div>                                                                
 		<% end %>		
 		
+		<div id="share">
+			<span>Partagez le débat sur</br></span>
+				<div class="ok">
+				<%=image_tag('facebook-blanc.png', :alt => 'Moutoners', class: "image")%>
+				<div class="okk"><%= social_share_button_tag(@debate.title) %></div></div>
+				<div class="okkk">-&nbsp;
+				<%=image_tag('twitter-blanc-01.png', :alt => 'Moutoners', class: "image")%>
+				<div class="okkkk"><%= twitter_button :url=> 'https://moutoners.com/debats' %>></div></div>
+		</div>
+		
+		<div id="catcat">
+			<div class="arrow-left"></div>   		
+	   		<div class="image">
+	   		<% if @debate.cat_id == 1 %>
+	   			<%= link_to image_tag("cat-sports.png", :alt => 'Moutoners'), list_path(:cat => 1)%>
+	   		<%elsif @debate.cat_id == 2 %>
+	   			<%= link_to image_tag("cat-quotidien.png", :alt => 'Moutoners'), list_path(:cat => 2)%>
+	   		<%elsif @debate.cat_id == 3 %>
+	   			<%= link_to image_tag("cat-monde.png", :alt => 'Moutoners'), list_path(:cat => 3)%>
+	   		<%elsif @debate.cat_id == 4 %>
+	   			<%= link_to image_tag("cat-economie.png", :alt => 'Moutoners'), list_path(:cat => 4)%>
+	   		<%elsif @debate.cat_id == 5 %>
+	   			<%= link_to image_tag("cat-culture.png", :alt => 'Moutoners'), list_path(:cat => 5)%>
+	   		<%elsif @debate.cat_id == 6 %>
+	   		 	<%= link_to image_tag("cat-sciences.png", :alt => 'Moutoners'), list_path(:cat => 6)%>
+	   		<%elsif @debate.cat_id == 7 %>
+	   			<%= link_to image_tag("cat-philosophie.png", :alt => 'Moutoners'), list_path(:cat => 7)%>
+	   		<%elsif @debate.cat_id == 8 %>
+	   			<%= link_to image_tag("cat-societe.png", :alt => 'Moutoners'), list_path(:cat => 8)%>
+	   		<%end%>
+	   		</div>
+	   	</div>
+	
+		<div id="hover-categorie">
+			<div class="follow">
+	   			<div class="texte">
+	   				<% if @debate.cat_id == 1 %>
+			   			sport
+			   		<%elsif @debate.cat_id == 2 %>
+			   			actualité
+			   		<%elsif @debate.cat_id == 3 %>
+			   			monde
+			   		<%elsif @debate.cat_id == 4 %>
+			   			économie
+			   		<%elsif @debate.cat_id == 5 %>
+			   			culture
+			   		<%elsif @debate.cat_id == 6 %>
+			   		 	sciences
+			   		<%elsif @debate.cat_id == 7 %>
+			   			philo
+			   		<%elsif @debate.cat_id == 8 %>
+			   			société
+			   		<%end%>
+	   			</div>
+	   			<div class="arrow-left"></div>
+	   		</div>
+		</div>
+		
 	 <div class="row">
 		
 		<div class="span10 offset1" id="eliassakr">		
 			<div id="title">
 				<div class="row" id="touthaut">
 					<div id="touthaut1">
-						Lire l'article lu sur <%= link_to @partenaire.name, "http://#{@partenaire.url}"%>
+						Débat sur l'article lu sur <%= link_to @partenaire.name, "http://#{@partenaire.url}"%>
 					</div>
 				</div>
 				
@@ -38,15 +96,15 @@
 							<div id="stats">
 							<div class="stat1">
 								<%= @debate.count_for+@debate.count_against + @debate.count_neutral%>
-								<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image-bulle1")%>
+								<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image-bullel1")%>
 								|
 
 								<span class="stat2"><%= @debate.arguments.count%></span>
-								<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image-bulle2")%>
+								<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image-bullel2")%>
 								|
 
 								<span class="stat2"><%= @debate.argcoms.count%></span>
-								<%= image_tag("icone-debat-2.png", alt: "Moutoners", class: "image-bulle3")%>
+								<%= image_tag("icone-debat-2.png", alt: "Moutoners", class: "image-bullel3")%>
 							</div>
 							</div>
 						</div>
@@ -111,29 +169,20 @@
 				</div>
 	 		</div>
 	 	</div>
-		
+
 		<div class="partenaire">
 			<div class="lien">
 				Lien de l'article:
 			</div>
 			<%= render 'shared/user_badge', user: @partenaire%>
 		</div>
+		</div>
+		
 		
 		<div class="row" id="explications">
 			<%= image_tag("bulle-explication-01.png", class: "bulle1")%>
 			<%= image_tag("bulle-explication1-01.png", class: "bulle2")%>
 			<%= image_tag("bulle-explication0-01.png", class: "bulle3")%>													
 		</div>		
-							
-		<div id="share">
-			<span>Partagez le débat sur</br></span>
-				<div class="ok">
-				<%=image_tag('facebook-blanc.png', :alt => 'Moutoners', class: "image")%>
-				<div class="okk"><%= social_share_button_tag(@debate.title) %></div></div>
-				<div class="okkk">
-				<%=image_tag('twitter-blanc-01.png', :alt => 'Moutoners', class: "image")%>
-				<div class="okkkk"><%= twitter_button :url=> 'https://moutoners.com/debats' %>></div></div>
-
-		</div>
-
-		</div>
+		
+		

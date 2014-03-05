@@ -28,6 +28,7 @@
 	margin-top:-40px;
 	font-family:"georgia";
 	font-size: 14px;
+	a{color: #2200CC;}	
 		word-wrap:break-word;	
 	
 	::-webkit-input-placeholder {
@@ -74,9 +75,11 @@
 	padding-left: 5px;
 	min-height: 70px;
 	background-color: white;
-	margin-bottom:10px;}
-	
+	margin-bottom:10px;
+	a{color: #2200CC;}	
 	word-wrap:break-word;	
+	}
+
 	#gauche-comment{
 		width:155px;
 		#imageuser{

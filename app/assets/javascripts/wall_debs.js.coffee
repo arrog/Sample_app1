@@ -46,7 +46,7 @@ $(document).ready ->
   $("#catcat").mouseout ->
 	    $(this).siblings("#hover-categorie").hide()	
 
-  $(".image-bulle31").mouseover ->
+  $(".image-bulle31").mousevover ->
 	    $(this).parents("#british").children(".container").children("#explications").children(".bulle1").show()
 
   $(".image-bulle31").mouseout ->
@@ -140,7 +140,28 @@ $(document).ready ->
 			    $(this).parents("#open-debate").children(".container").children("#explications").children(".bulle3").show()
 
 		  $(".image-bulle3").mouseout ->
-		    	$(this).parents("#open-debate").children(".container").children("#explications").children(".bulle3").hide()	
+		    	$(this).parents("#open-debate").children(".container").children("#explications").children(".bulle3").hide()
+
+  $(".image-bullel1").mouseover ->
+  	$(this).parents("#partenariat-debate").children(".container").children("#explications").children(".bulle1").show()
+
+  $(".image-bullel1").mouseout ->
+	    $(this).parents("#partenariat-debate").children(".container").children("#explications").children(".bulle1").hide()	
+
+  $(".image-bullel2").mouseover ->
+	    $(this).parents("#partenariat-debate").children(".container").children("#explications").children(".bulle2").show()
+
+  $(".image-bullel2").mouseout ->
+	    $(this).parents("#partenariat-debate").children(".container").children("#explications").children(".bulle2").hide()
+
+  $(".image-bullel3").mouseover ->
+	    $(this).parents("#partenariat-debate").children(".container").children("#explications").children(".bulle3").show()
+
+  $(".image-bullel3").mouseout ->
+	    $(this).parents("#partenariat-debate").children(".container").children("#explications").children(".bulle3").hide()
+
+
+			
 
   $("#invitation-british").click ->
 	    $(this).parent().parent().hide().siblings(".invitation-fermer-british").show()

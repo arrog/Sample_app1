@@ -4,9 +4,10 @@ class UsersController < ApplicationController
   before_filter :admin_user,     only: [:destroy, :index]
   before_filter :load_group, only: :invite_group
   
+  helper_method :sort_column, :sort_direction
   
   def index
-    @users = User.all
+    @users = User.order(sort_column + " " + sort_direction)
   end
   
   def update
@@ -162,5 +163,13 @@ class UsersController < ApplicationController
   def load_group
     resource, id= request.path.split('/')[1, 2]
     @group = resource.singularize.classify.constantize.find(id)
+  end
+  
+  def sort_column
+    User.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end
