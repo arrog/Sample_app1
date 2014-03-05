@@ -40,6 +40,7 @@ $(document).ready ->
   $(".bulle3").hide()
   $("#hover-categorie").hide()
 
+
   $("#catcat").mouseover ->
 	    $(this).siblings("#hover-categorie").show()
 

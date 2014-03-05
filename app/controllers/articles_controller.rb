@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
+   before_filter :admin_user
   def index
     @articles = Article.all
 
@@ -75,5 +76,14 @@ class ArticlesController < ApplicationController
   
   def article_params
     params.require(:article).permit(:avatar)
+  end
+  
+  def correct_user
+        @user = User.find(params[:id])
+        redirect_to(root_path) unless current_user == @user
+  end
+  
+  def admin_user
+        redirect_to(root_path) unless current_user.admin?
   end
 end

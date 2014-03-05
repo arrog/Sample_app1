@@ -1656,7 +1656,7 @@ border-image: url(border2.png) 13 fill repeat;
 	margin-left:610px;
 	height:  25px;
 	width: 110px;
-	background-color: #AAD0FF;
+	background-color: #808080;
 	position: relative;
 	z-index: 10;
 	
@@ -1747,7 +1747,7 @@ border-image: url(border2.png) 13 fill repeat;
 	width:110px;
 	margin-top:-85px;
 	margin-bottom:20px;
-	background-color:#C9C9C9;
+	background-color:#AAD0FF;
 	position: relative;
 	z-index: 10;
 	
@@ -1807,60 +1807,24 @@ border-image: url(border2.png) 13 fill repeat;
 	#share{
 	margin-left: 370px;
 	margin-bottom: 20px;
-	background-color: #AAD0FF;
-	height:50px;
+	margin-top: 20px;
+	background-color: #C9C9C9;
+	height:60px;
 	width: 240px;
-	padding-top:15px;
+	padding-top:5px;
  	text-align: center;
 	color: black;
 	line-height: 20px;
 	font-family:"gotham-Bold";
 	font-size: 18px;
 	
-	.texte{
-	margin-top: -34px;
-	margin-left: 28px;
-	background-color: #000;
-	height: 24px;
-	width: 80px;
-	font-family: "gotham";
-	font-size: 16px;
-	color: #FFF;
-	padding-left: 8px;
-	padding-top:4px;
-		
-		.okk{
-		margin-top: -30px;
-		opacity:1;
-		}
+	.element{
+	margin-left: 77px;
+	padding-top:5px;
+	padding-bottom: 5px;
 	}
 
-	
-	.ok{
 
-	margin-left:-103px;
-	
-	.okk{
-	margin-top: -30px;
-	opacity:0;	
-	.social-share-button{
-	margin-left:-25px;
-	}
-	}
-	
-	}
-	
-	
-	.okkk{
-	margin-top: -31px;
-	margin-left: 95px;
-	.okkkk{
-	margin-top: -20px;
-	margin-left:20px;
-	opacity:0;
-	}
-	
-	}
 	}
 	
 	#votervoter{
