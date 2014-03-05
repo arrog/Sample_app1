@@ -9,6 +9,6 @@ $(function(){
        color: '#3B2B45',
        flyout: 'top right',
 	   text:'#débat #moutoners',
-		text_font: true,
+	   text_font: true
     });
  });
