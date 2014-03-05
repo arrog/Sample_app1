@@ -10,7 +10,7 @@ $(function(){
        flyout: 'top right',
 	   text:'#débat #moutoners'
 		twitter: {
-			link:'url',
+			link:'url'
 		}
     });
  });
