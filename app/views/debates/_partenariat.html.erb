@@ -1,3 +1,4 @@
+<meta property="og:image" content="https://s3-eu-west-1.amazonaws.com/moutoner-first/users/profile11-01.png?AWSAccessKeyId=ASIAJYMGELUNRHVHRKYQ&Expires=1394117460&Signature=99M5LcKNKxIEkOQJTLkOOJK2UjY%3D&x-amz-security-token=AQoDYXdzEGAakALOKeJHjO8Y7jyhb0swJaJzK0uyo8qirQpaY6rJvYDdReOCYYCpbKhvg6/95vIUIFkRLG4m5QhekjsuGDQyY2EIqi/i5CppBaut27aKbaAy1xvjIRBUgA/k4EnWNWubfvPZOSIGQvUwqvKnLe24pooBXwgfqTRVbuFSb3zqbeWdxr1hY8eDXJyqf/awtXnXWTGchsvSpsHiXjrtrfey9k/KZV50DbQdcM/Ds/oGTpqvt2NZvF6hh0QJSXNyRryr6/ls6PQq2tNU5ucFikzSxuT%2BogTJ9aKVpWOLC3FCFW0v64jRghAZkjXAVeQNBSAcARDmTegLrRHVPzS0QkzczXEZScZrpf6jOwSLXG8OnNhLdCDQkuKYBQ%3D%3D" />
 <section id="partenariat-debate">
 	<div class="container">
 		<% if current_user && current_user.try(:admin?)%>
@@ -90,7 +91,7 @@
 					<div class="span5" id="gauche-ouvert">
 						
 					    <div class="image1">	
-							<%= image_tag(@debate.avatar.url(:medium), class: "image")%>
+							<%= link_to image_tag(@debate.avatar.url(:medium)), @debate, class: "image"%>
 							<%= image_tag("ouvert-image.png", alt: "Moutoners", class: "image")%>							
 
 						</div>
