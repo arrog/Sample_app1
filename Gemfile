@@ -49,6 +49,7 @@ group :assets do
   gem 'omniauth-viadeo'
   gem 'omniauth-linkedin'
   gem "omniauth-google-oauth2"
+  gem 'font-awesome-less'
 
 end
 
