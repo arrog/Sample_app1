@@ -2,12 +2,350 @@
   <%= render :partial => "shared/flash_messages" %>
   
   <div class="container">
-	<div class="row" id="presentation1">
-		<%= image_tag("presentation-centrale16-01.png")%>
+
+	<div class="row">
+		<div class="row" id="abobo">
+			Le débat sur le Web, en plein Boom!
+		</div>
+	</div>
+    <div class="row">
+      <div class="span4" id ="small-abo">
+		<div class="offre2">
+			Le débat en France
+		</div>
+		<div class="cadre13">
+			<div class="sous-titre">
+				6 millions de personnes participent activement à des forums.
+				</br></br>
+				50 mille personnes participent aux débats réels.
+			</div>
+		</div>
+		
+		<div class="offre1">
+			Sur le web
+		</div>
+		<div class="cadre13">
+			<div class="sous-titre">
+				De nombreux forums politiques, mais sclérosés.
+			</div>
+		</div>
+		
+		<div class="offre1">
+			Dans la vraie vie
+		</div>
+		<div class="cadre13">
+			<div class="sous-titre">
+				Les colloques politiques en nette perte d'affluence ces 5 dernières années.
+				</br></br>
+				Le nombre de rencontres et débats artistiques augmente.
+			</div>
+		</div>
+		
+		
+	   </div>
+	
+      <div class="span4" id ="big-abo">
+		<div class="offre2">
+			Les Concurrents
+		</div>
+		<div class="cadre13">
+			<div class="sous-titre">
+				Emergence de nouveaux sites de débats sur les deux dernières années.
+				</br></br>
+				Les sites d'informations se dotent de leurs propres plateformes de débat.
+			</div>
+		</div>
+		<div class="offre1">
+			En France
+		</div>
+		<div class="cadre13">
+			<div class="sous-titre">
+				Newsring, concurrent surpuissant.
+				</br></br>
+				Le Monde, lance sa propre plateforme de débats, en Janvier 2014.
+			</div>
+		</div>
+		
+		<div class="offre1">
+			Dans le monde
+		</div>
+		<div class="cadre13">
+			<div class="sous-titre">
+				New York Times et Economist, ont lancé leur plateforme de débat semblable à celle du monde.
+				</br></br>
+				L'UE a lancé son site de débats "défis".
+			</div>
+		</div>
+	
+	
+	  </div>	
+    </div>
+
+	<div class="row">
+		<div class="row" id="abobo">
+			Quel mouton viser ?
+		</div>
 	</div>
 	
+	
+	<div class="row" id="pousse-gauche">
+	<%= render "shared/argument_badge", argument: @argument1 %>	
+	</div>
+	<div class="row" id="pousse-droite">
+		<%= render "shared/argument_contre_badge", argument: @argument2 %>
+	</div>
+	
+	<div class="row">
+		<div class="row" id="photo-abonnement">
+		<%= link_to (image_tag('moutons-abonnement.png', :alt => 'Moutoners')), root_path %>
+		</div>
+		<div class="row" id="intro2">
+		 Cible: En marketing, ce qu'il faut toucher pour ne pas couler. 
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="row" id="abobo">
+			Beta Test - Retour client
+		</div>
+	</div>
+	
+	<div class="row" id="pousse-milieu">
+		<%= render "shared/argument_neutre_badge", argument: @argument3 %>
+	</div>
+	<div class="row" id="pousse-milieu">
+		<%= render "shared/argument_neutre_badge", argument: @argument4 %>
+	</div>
+	
+	
+	
+	
+	
+  </div>
+
+</section>
+<section id="abonnements">
+  <%= render :partial => "shared/flash_messages" %>
+  
+  <div class="container">
 	<div class="row" id="presentation1">
-		<%= link_to(image_tag("presentation-centrale17-01.png"), presentation_path)%>
+		<%= image_tag("presentation-centrale8-01.png")%>
+	</div>
+	<div class="row">
+		<div class="row" id="intro">
+			Venez vous faire tondre.
+		</div>
+		<div class="row" id="abobo">
+			Abonnez-vous !
+		</div>
+	</div>
+    <div class="row">
+      <div class="span4" id ="petit-abo">
+		<div class="offre2">
+			Offre "mouton libre"
+		</div>
+		<div class="cadre13">
+			<div class="titre">
+			2€ par mois.
+			</div>
+			<div class="sous-titre">
+			sans engagements
+			</div>
+		</div>
+	  </div>
+      <div class="span4" id ="grand-abo">
+		<div class="offre2">
+			Offre "instinct grégaire"
+		</div>
+		<div class="cadre13">
+			<div class="titre">
+			13€ par an.
+			</div>
+			<div class="sous-titre">
+			sans engagements
+			</div>
+		</div>
+	  </div>
+    </div>
+<div class="row" id="isabelle"><%= image_tag("tout-gratuit-01.png", class: "image")%></div>
+	<div class="row" id="promesses">
+		Pas de publicité,</br>Pas de parrainage,</br>Pas de sponsors.
+	</div>
+	<div class="row">
+		<div class="row" id="intro2">
+		Nous ne ferons jamais commerce de vos informations.
+		</div>
+	</div>
+  </div>
+
+</section>
+<section id="presentation-1">
+  <%= render :partial => "shared/flash_messages" %>
+  
+  <div class="container">
+	<div class="row" id="presentation1">
+		<%= image_tag("presentation-centrale11-01.png")%>
+	</div>
+	<div class="row">
+		<div class="row" id="abobo">
+			Stratégie d'acquisition BtoB:</br>
+			Les Médias, Les Think Tank</br>
+			et l'Education
+		</div>
+	</div>
+  	
+	<div class="row" id="raison1">
+		<div class="circle">
+			<%=image_tag("billetboule-01.png", class: "image")%>
+			<div class="text">1</div>
+		</div>
+		<div class="text2"><h2>Les Médias:</h2>Nous discutons avec plusieurs médias actuellement pour un partenariat avec Moutoners. En échange d'une API Moutoners, ils organisent des débats conjointement sur Moutoners et leur site web.
+		</div>
+	</div>
+	
+	<div class="row" id="photo-abonnement1">
+	<%= image_tag('graphe-01.png', :alt => 'Moutoners') %>
+	</div>
+	
+	<div class="row" id="raison1">
+		<div class="circle">
+			<%=image_tag("billetboule-01.png", class: "image")%>
+			<div class="text">2</div>
+		</div>
+		<div class="text2"><h2>Les Think Thank</h2>Suite aux recommandations du jury précédent, nous avons entamé des discussions avec des partis politiques et des think tank. Nous avons trouvé certains prêts à un accord, pour avoir leur propre groupe et tous leurs adhérents détenteurs d'un compte premium.
+		</div>
+	</div>
+	<div class="row" id="raison1">
+		<div class="circle">
+			<%=image_tag("billetboule-01.png", class: "image")%>
+			<div class="text">3</div>
+		</div>
+		<div class="text2"><h2>Les Universités</h2>Pour l'éducation et notamment les devoirs en langues étrangères, Moutoners pourraient être utile ! Nous allons proposer aux professeurs des groupes secrets, que seul les personnes qui y seront invités pourront voir. Ainsi ils pourront débattre, discuter, se défieret se corriger entre eux.
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="row" id="abobo">
+			Stratégie d'acquisition BtoC:</br>
+			Viralité, Tournoi, Joutes
+		</div>
+	</div>
+	
+	<div class="row" id="raison1">
+		<div class="circle">
+			<%=image_tag("billetboule-01.png", class: "image")%>
+			<div class="text">1</div>
+		</div>
+		<div class="text2"><h2>Viralité</h2>
+			Suite à des sondages effectués et à des analytics sur la version beta, nous avons pu déterminer les différents coefficients de viralité: nous avons une viralité de 0,3!
+		</div>
+	</div>
+
+	<div class="row" id="raison1">
+		<div class="circle">
+			<%=image_tag("billetboule-01.png", class: "image")%>
+			<div class="text">2</div>
+		</div>
+		<div class="text2"><h2>Tournoi</h2>
+			Nous allons organiser avec la fédération francophone de débats, un tournoi dialectique sur Moutoners, entre les différentes universités!
+		</div>
+	</div>	
+
+	<div class="row" id="raison1">
+		<div class="circle">
+			<%=image_tag("billetboule-01.png", class: "image")%>
+			<div class="text">3</div>
+		</div>
+		<div class="text2"><h2>Joutes</h2>
+			Dans nos bureaux, nous allons organiser 1 fois par semaine des joutes oratoires dialectiques en partenariat avec le Flux de Paris, pour sensibiliser à l'art de la dialectique?
+		</div>
+	</div>	
+	
+  </div>
+
+</section>
+<section id="presentation-1">
+  <%= render :partial => "shared/flash_messages" %>
+  
+  <div class="container">
+	<div class="row" id="presentation1">
+		<%= image_tag("presentation-centrale12-01.png")%>
+	</div>
+	
+	<div class="row">
+		<div class="row" id="abobo">
+			Quelques Chiffres
+		</div>
+	</div>
+	<div class="row">
+		<div class="row" id="intro">
+			Argumente. Conteste. Vote. Défie. Juge. Débats.	
+		</div>
+	</div>
+	
+	<div class="row">
+      <div class="span11" id ="holy">
+	   <div id="video">
+	     <div id="connecte">
+	   			<div class="row" id="lesphotos">
+					<%= link_to image_tag('defisb.jpg'), dialectiques_path, class: "image1-expl"%>
+					<%= link_to image_tag('defisbleu.jpg'), dialectiques_path, class: "image2-expl"%>
+	   			</div>
+	   			<div class="row" id="lesphotos">
+					<%= link_to image_tag('expertsb.jpg'), dialectiques_path, class: "image1-expl"%>
+					<%= link_to image_tag('expertsbleu.jpg'), dialectiques_path, class: "image2-expl"%>
+	   			</div>
+	   			<div class="row" id="lesphotos">
+					<%= link_to image_tag('ouvertb.jpg'), dialectiques_path, class: "image1-expl"%>
+					<%= link_to image_tag('ouvertbleu.jpg'), debats_path, class: "image2-expl"%>					
+	   			</div>			
+	     </div>
+	     <div id="video2_0">
+	   		<div class="intro"><%= @citations2.first %></div>
+       		<div class="image">
+				<%= image_tag("courbe1-01.png")%>
+			</div>
+	   		<%= image_tag("fleche-droite.png", class: "fleche10")%>
+	     </div>
+	     <div id="video2_01">
+	   		<div class="intro"><%= @citations2.second %></div>
+       		<div class="image">
+				<%= image_tag("courbe2-01.png")%>
+			</div>
+       
+	   		<%= image_tag("fleche-droite.png", class: "fleche11")%>
+	     </div>
+	
+	     <div id="video2_02">
+	   		<div class="intro"><%= @citations2.third %></div>
+			<div class="image">
+				<%= image_tag("courbe3-01.png")%>
+			</div>
+	   		<%= image_tag("fleche-droite.png", class: "fleche12")%>
+	     </div>
+		
+		 <div id="video2_03">
+	   		<div class="intro"><%= @citations2.fourth %></div>
+       		<div class="image">
+				<%= image_tag("courbe4-01.png")%>
+			</div>
+	     </div>
+	
+	   </div>
+	  </div>
+	</div>
+	
+  </div>
+
+</section>
+
+<section id="presentation-1">
+  <%= render :partial => "shared/flash_messages" %>
+  
+  <div class="container">
+	
+	<div class="row" id="presentation1">
+		<%= link_to(image_tag("presentation-centrale13-01.png"), help_path)%>
 	</div>
 	
   </div>
