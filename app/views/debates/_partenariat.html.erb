@@ -1,4 +1,4 @@
-
+<%= image_url("logo.png")%>
 <section id="partenariat-debate">
 	<div class="container">
 		<% if current_user && current_user.try(:admin?)%>
@@ -19,7 +19,9 @@
 			<span>Pour partager le débat :</br></span>
 			<div class="element">
 				<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
-				<a class="addthis_button_preferred_1"></a>
+				<a class="addthis_button_preferred_1">
+					<meta property="og:image" content="http://i2.ytimg.com/vi/1F7DKyFt5pY/default.jpg" /> 
+				</a>
 				<a class="addthis_button_preferred_3"></a>
 				<a class="addthis_button_preferred_4"></a>
 				</div>
