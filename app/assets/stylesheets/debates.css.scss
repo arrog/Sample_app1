@@ -429,21 +429,22 @@
 	}
 	
 	#share{
-	margin-left: 420px;
-	margin-bottom: 20px;
-	background-color: #AAD0FF;
-	height:60px;
-	width: 240px;
+	margin-left: 470px;
+	margin-bottom: 0px;
+	margin-top:20px;
+	background-color: white;
+	height:50px;
+	width: 140px;
 	border-radius: 12px;
-	padding-top:5px;
+	padding-top:9px;
  	text-align: center;
 	color: black;
 	line-height: 20px;
 	font-family:"gotham-Bold";
 	font-size: 18px;
-	
+	border: 1px Solid #AAD0FF;
 	.element{
-	margin-left: 77px;
+	margin-left: 17px;
 	padding-top:5px;
 	padding-bottom: 5px;
 	}
@@ -1611,7 +1612,7 @@ border-image: url(border2.png) 13 fill repeat;
 	#hover-categorie{
 	margin-top:-20px;
 	margin-bottom:20px;
-	margin-left:610px;
+	margin-left:560px;
 	height:  25px;
 	width: 110px;
 	background-color: #808080;
@@ -1700,7 +1701,7 @@ border-image: url(border2.png) 13 fill repeat;
 	
 	
 	#catcat{
-	margin-left:610px;
+	margin-left:560px;
 	height:65px;
 	width:110px;
 	margin-top:-85px;
@@ -1763,22 +1764,23 @@ border-image: url(border2.png) 13 fill repeat;
 	}
 	
 	#share{
-	margin-left: 370px;
+	margin-left: 420px;
 	margin-bottom: 20px;
 	margin-top: 20px;
-	background-color: #C9C9C9;
-	height:60px;
-	width: 240px;
+	background-color: white;
+	height:58px;
+	width: 140px;
 	padding-top:5px;
  	text-align: center;
 	color: black;
 	line-height: 20px;
 	font-family:"gotham-Bold";
 	font-size: 18px;
+	border: 1px Solid #AAD0FF;
 	
 	.element{
-	margin-left: 77px;
-	padding-top:5px;
+	margin-left: 17px;
+	padding-top:10px;
 	padding-bottom: 5px;
 	}
 	}

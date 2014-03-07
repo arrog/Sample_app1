@@ -17,6 +17,17 @@
 					<div><%= link_to "publush",publish_debate_path(@debate), class: "text"%>    </div>                                                        
 		</div>                                                                
 		<% end %>		
+		<div id="share">
+			<div class="element">
+				<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+				<a class="addthis_button_preferred_2"></a>
+				<a class="addthis_button_preferred_1"></a>
+				<a class="addthis_button_preferred_4"></a>				
+				</div>
+				<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+				<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53187d105cd934bc"></script>			
+			</div>
+		</div>
 		
 	 <div class="row">
 		<div class="span10 offset1">
@@ -177,11 +188,6 @@
 			<%= image_tag("bulle-explication0-01.png", class: "bulle3")%>													
 		</div>		
 							
-		<div id="share">
-			<span>Partagez le débat sur</br></span>
-			<div class="element">
-			</div>
-		</div>
 		
 <% end %>
 
