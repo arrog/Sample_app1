@@ -36,12 +36,14 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    redirect_to @article
   end
 
   # POST /articles
   # POST /articles.json
   def create
     @article = Article.create(params[:article])
+    redirect_to @article
   end
 
   # PUT /articles/1

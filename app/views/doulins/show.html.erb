@@ -3,14 +3,29 @@
 	<% if current_user.try(:admin?)%>
 		<a><%= link_to "modifier les informations", edit_doulin_path(@doulin), class: "edit3"%></a>
 		<%= link_to "promote", promote_doulin_path(@doulin)%>
+		<%= render"articles/form", article: Article.new, position: @doulin.id %>
 	<%end%>
-	<div class="row" id="typechallenge">
-		<%= image_tag 'bannire_type-01.png'%>
-		<span class="texte"> Débat d'experts ! </span>
+
+	<div id="share">
+		<div class="element">
+			<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+			<a class="addthis_button_preferred_2"></a>
+			<a class="addthis_button_preferred_1"></a>
+			<a class="addthis_button_preferred_4"></a>				
+			</div>
+			<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53187d105cd934bc"></script>			
+		</div>
 	</div>
+	
 	 <div class="row">
 		<div class="span10 offset1">
 			<div id="title">
+				<div class="row" id="touthaut">
+					<div id="touthaut1">
+						<%= link_to("Débat d'experts", @doulin)%>
+					</div>
+				</div>
 				<div class="row" id="imagesup">
 					<%= image_tag @doulin.avatar.url(:large), class:"image" %>
 				</div>
@@ -27,7 +42,7 @@
 						</div>
 						<div class="first_user">
 							<% if @doulin.have_first? %>
-								<a><%= link_to @doulin.first_user.fitting_name, @doulin.first_user, class: "first_user"%></a>
+								<a><%= link_to @doulin.first_user.fitting_name, @doulin.first_user, class: "first_user1"%></a>
 									<p class='desc'><%= @doulin.first_user.content%></p>
 							<%else%>
 								<% if current_user.try(:admin)%>
@@ -44,7 +59,7 @@
 							
 							<div class="row" id="tags_list_doulin">
 								<% @doulin.tags.each do |l|%>
-									<li><%= link_to l.name, list_path(:view =>'tag', :tag => l.name), class: "tags"%></li>
+									<li><%= link_to "##{l.name}", list_path(:view =>'tag', :tag => l.name), class: "tags"%></li>
 								<% end%>
 							</div>
 							
@@ -140,12 +155,6 @@
 	 			</div>
 	 		</div>
 	 	</div>				
-
-		<div class="span1" id="share">
-				<div class="ok">
-				<%=image_tag('facebook_petit.png', :alt => 'Moutoners', class: "image")%>
-				<div class="okk"><%= social_share_button_tag(@doulin.title) %></div></div>
-		</div>
 		
 		<div class="span1" id="follow">
 			<div class="follow">
@@ -156,7 +165,7 @@
 	   		<% end %>
 	   			<div class="arrow-left"></div>
 			</div>
-	   </div>
+	    </div>
 
 	   	<div class="span1" id="catcat">
 			<div class="arrow-left"></div>   		
@@ -180,20 +189,45 @@
 	   		<%end%>
 	   		</div>
 	   	</div>
+
 		
 		<div class="row">
-
 			<div class "row" id="to-be-closed">
-				<div id="effective-context"><div class="text"><%= h(@doulin.content).gsub(/\n/, '<br/>').html_safe%></div></div>
+				<div class="row" id="partenaire">
+					<% if @doulin.articles.any? %>
+					<div class="span3">
+						<div class="lien">
+							Article n°1
+						</div>
+						<%= render 'shared/user_badge', user: @doulin.articles.first%>
+					</div>
+					<% end %>
+					<% if @doulin.articles.count > 1 %>
+					<div class="span3"id="second">
+						<div class="lien">
+											Article n°2
+						</div>
+						<%= render 'shared/user_badge', user: @doulin.articles.second%>
+					</div>
+					<% end %>
+					<% if @doulin.articles.count > 2 %>
+					<div class="span3" id="dernieradroite">
+						<div class="lien">
+											Article n°3
+						</div>
+						<%= render 'shared/user_badge', user: @doulin.articles.last%>
+					</div>
+					<% end%>
+				</div>
+				<% if !@doulin.context == nil%>
+				<div id="effective-context"><div class="text"><%= h Rinku.auto_link(@doulin.content).gsub(/\n/, '<br/>').html_safe%></div></div>
+				<% end%>
 			</div>
 			<div class="row" id ="openning-context">
-				<div class="texte">Contexte</div>
-				<div class="arrow-down-context"></div>
-				<div class="arrow-up-context"></div>
+				<div class="texte">Des articles en lien avec le sujet</div>
 			</div>
 		</div>
-		
-		
+
 		<div class="row" id="start">
 			<% if @doulin.state =="online" && signed_in? && current_user == @doulin.first_user%>
 				<%= link_to("Commence le débat".html_safe,
@@ -303,10 +337,9 @@
 			<% end %>	
 		</div>
 		
-
-		<% if @doulin. state == "offline" || @doulin. state == "complete_off"%>
-		<div class="row">
+		
 			<% if current_user.try(:admin)%>
+		<div class="row">			
 				<%= link_to "GET READY", ready_doulin_path(@doulin), method: "post" %>
 				</br>
 				<%= link_to "PUBLISH", publish_doulin_path(@doulin), method: "post" %>
@@ -322,8 +355,9 @@
 				              :class => 'btn btn-danger' %>
 				</div>
 		</div>
-			<%end%>
-		<% elsif ["first","third" ,"fifth"].include?(@doulin.state)%>
+		<%end%>
+		
+		<% if ["first","third" ,"fifth"].include?(@doulin.state)%>
 			<% if current_user && current_user==@doulin.first_user%>
 			<%else%>
 			<div class="tour-gauche">

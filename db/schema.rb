@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140304190336) do
+ActiveRecord::Schema.define(:version => 20140307101323) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20140304190336) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "doulin_id"
   end
 
   create_table "cats", :force => true do |t|
@@ -125,9 +126,8 @@ ActiveRecord::Schema.define(:version => 20140304190336) do
   create_table "debates", :force => true do |t|
     t.string   "title"
     t.string   "content"
-    t.integer  "article_id",          :limit => 255
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
     t.integer  "cat_id"
     t.text     "state"
     t.integer  "group"
@@ -136,6 +136,7 @@ ActiveRecord::Schema.define(:version => 20140304190336) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "article_id"
   end
 
   create_table "doulins", :force => true do |t|

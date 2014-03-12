@@ -1,0 +1,132 @@
+<section id="doulin">
+	 <div class="row">
+		<div class="span10 offset1">
+			<div id="title">
+				<div class="row" id="touthaut">
+					<div id="touthaut1">
+						<%= link_to("Débat d'experts à la une", @doulin)%>
+					</div>
+				</div>
+				
+				<div class="row">	
+					<div class="span2">
+						
+					    <div class="image1">
+							<% if @doulin.have_first? %>
+								<%= image_tag @doulin.first_user.avatar.url(:medium), class:"image" %>
+							<%else%>
+								<%= image_tag ("default_medium.jpg") %>
+							<%end%>
+						</div>
+						<div class="first_user">
+							<% if @doulin.have_first? %>
+								<a><%= link_to @doulin.first_user.fitting_name, @doulin.first_user, class: "first_user1"%></a>
+									<p class='desc'><%= @doulin.first_user.content%></p>
+							<%else%>
+								<% if current_user.try(:admin)%>
+									<a><%= link_to "rajoute un expert",new_doulin_expertise_path(@doulin.id), class: "first_user" %></a>
+								<%end%>	
+							<%end%>
+						</div>
+						
+					</div>					
+					<div class="span5" id="title2">	
+							<div class="title3"><%= link_to @doulin.title, @doulin, class: "title3"%></div>
+							
+							<div class="row" id="tags_list_doulin">
+								<% @doulin.tags.each do |l|%>
+									<li><%= link_to "##{l.name}", list_path(:view =>'tag', :tag => l.name), class: "tags"%></li>
+								<% end%>
+							</div>
+							
+							<div id="content">
+								<span id="content"><%= @doulin.context%></span>
+							</div>
+							
+							<div class="row" id="vote">
+								<% if @doulin.have_first? %>
+								
+									<% if current_user  && @doulin.has_evaluation?(:vote_experts, current_user) %>
+										<% if @doulin.valeur_vote(current_user) == 1.0 %>
+										<div class= "moitie-gauche1">
+											<span class="rapport-gauche"><%= @doulin.rapport%>%</span>
+											<div class="pour-truc"><a><%= link_to "#{@doulin.first_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "up"), class: "pour-first"%></a></div>
+										<% else %>
+											<div class= "moitie-gauche">
+											<span class="rapport-gauche"><%= @doulin.rapport%>%</span>
+											<div class="pour-truc"><a><%= link_to "#{@doulin.first_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "up"), class: "pour-first"%></a></div>
+										<% end %>
+									<% else%>
+										<div class= "moitie-gauche">
+										<div class="pour-truc"><a><%= link_to "Pour #{@doulin.first_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "up"), class: "pour-first"%></a></div>
+									<% end %>
+								<% else %>
+									<div class= "moitie-gauche">
+									<div class="pour-truc"><a class="pour-first" href="#"></a></div>	
+								<%end%>
+								</div>
+
+								<% if @doulin.have_second? %>
+									<% if current_user  && @doulin.has_evaluation?(:vote_experts, current_user) %>
+										<% if @doulin.valeur_vote(current_user) == -1.0 %>
+										<div class="moitie-droite1">
+											<span class="rapport-droite"><%= @doulin.rapport_inverse%>%</span>
+											<div class="pour-truc"><a><%= link_to "#{@doulin.second_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "down"), class: "pour-second"%></a></div>
+										<% else %>
+										<div class="moitie-droite">
+											<span class="rapport-droite"><%= @doulin.rapport_inverse%>%</span>
+											<div class="pour-truc"><a><%= link_to "#{@doulin.second_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "down"), class: "pour-second"%></a></div>
+										<% end %>
+									<% else%>
+									<div class="moitie-droite">
+										<div class="pour-truc"><a><%= link_to "Pour #{@doulin.second_user.fitting_name}", vote_expert_doulin_path(@doulin, type: "down"), class: "pour-second"%></a></div>
+									<% end %>
+								<% else %>
+								<div class="moitie-droite">
+								<div class="pour-truc">	<a class="pour-second" href="#"></a></div>
+								<%end%>	
+								</div>
+							</div>
+			
+							<div class="row" id="stats">
+								<div class="stat1">
+									<%= @doulin.count_for+@doulin.count_against%>
+									<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image")%>
+									|
+							
+									<span class="stat2"><%= @doulin.arguments.count%></span>
+									<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image")%>
+									|
+							
+									<span class="stat2"><%= @doulin.comments.count%></span>
+									<%= image_tag("icone-debat-2.png", alt: "Moutoners", class: "image")%>
+								</div>
+							</div>
+									
+					</div>
+					<div class="span2">
+						
+					    <div class="image2">
+							<% if @doulin.have_second? %>
+								<%= image_tag @doulin.second_user.avatar.url(:medium), class:"image" %>
+							<%else%>
+								<%= image_tag ("default_medium.jpg") %>
+							<%end%>
+						</div>
+						<div class="second_user">
+							<% if @doulin.have_second? %>
+								<a><%= link_to @doulin.second_user.fitting_name, @doulin.second_user, class: "second_user"%></a>
+									<p class='desc'><%= @doulin.second_user.content%></p>
+							<%else%>
+								<% if current_user.try(:admin)%>
+									<a><%= link_to "rajoute un expert",new_doulin_expertise_path(@doulin.id), class: "first_user" %></a>
+								<%end%>	
+							<%end%>
+						</div>
+						
+					</div>					
+					</div>		
+	 			</div>
+	 		</div>
+	 	</div>
+</section>

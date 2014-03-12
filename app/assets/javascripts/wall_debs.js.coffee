@@ -286,6 +286,9 @@ $(document).ready ->
   $(".arrow-up-newarg").click ->
 	    $(this).hide().siblings(".texte2-newarg").hide().siblings(".arrow-down-newarg").show().siblings('.texte-newarg').show().parent().siblings("#box-argument").slideUp("fast")
 
+ $("#openning-context").click ->
+	    $(this).hide().siblings("#to-be-closed").slideDown("fast")
+
   $(".arrow-down-context").click ->
 	    $(this).hide().siblings(".arrow-up-context").show().parent().siblings("#to-be-closed").slideDown("fast")
 

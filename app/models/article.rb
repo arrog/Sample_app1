@@ -1,5 +1,7 @@
 class Article < ActiveRecord::Base
-  attr_accessible :name, :url, :avatar
+  attr_accessible :name, :url, :avatar, :doulin_id
+  
+  belongs_to :doulin
   
   has_attached_file :avatar,
                     :styles =>  { :large => "300x300>", :medium => "150x150>", :small => "50x50>", :tiny => "30x30>" },

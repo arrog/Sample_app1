@@ -13,11 +13,12 @@ class Doulin < ActiveRecord::Base
   has_many :expertises
   has_many :users, through: :expertises
   has_many :comments, as: :commentable
+  has_many :articles
   
   has_reputation :vote_experts, source: :user, aggregated_by: :sum
   has_many :evaluations, class_name: "ReputationSystem::Evaluation", as: :target
   
-  validates :context, presence: true, length: { maximum: 140 }
+  validates :context, presence: true
   validates :title, presence: true
   
   validates_presence_of :tag_list
@@ -36,7 +37,7 @@ class Doulin < ActiveRecord::Base
                     :s3_host_name => 's3-eu-west-1.amazonaws.com'
   
                         
-  scope :permission_doulin, -> { where(:state => ["online", "first", "third", "fifth", "seventh","second", "forth", "sixth", "eighth","over"]) }
+  scope :permission_doulin, -> { where(:state => ["online", "first", "third", "fifth", "seventh","second", "forth", "sixth", "eighth","over", "homepage"]) }
   scope :homepage, -> { where(:state => ["homepage"]) }
   
   paginates_per 10
@@ -67,19 +68,7 @@ class Doulin < ActiveRecord::Base
     event :finish do
       transition :sixth => :over
       transition :eighth => :over
-    end
-    event :promote do
-      transition :online => :homepage
-      transition :first => :homepage
-      transition :second => :homepage
-      transition :third => :homepage
-      transition :forth => :homepage
-      transition :fifth => :homepage
-      transition :sixth => :homepage
-      transition :seventh => :homepage
-      transition :eighth => :homepage
-      transition :over => :homepage
-    end                              
+    end                          
   end
   
   def valeur_vote(user)

@@ -16,7 +16,7 @@ class StaticPagesController < ApplicationController
     @challenge = Challenge.homepage.reverse!.first
     @challenge1 = Challenge.homepage.reverse![1]
     @challenge2 = Challenge.homepage.reverse![2]
-    @doulin = Doulin.homepage.last
+    @doulin = Doulin.permission_doulin.last
     @debate = Debate.homepage1.reverse!.first
     @debate1 = Debate.homepage2.reverse!.first
     @debate2 = Debate.homepage3.reverse!.first
