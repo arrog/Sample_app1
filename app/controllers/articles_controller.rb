@@ -36,7 +36,10 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
-    redirect_to @article
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @article }
+    end
   end
 
   # POST /articles
