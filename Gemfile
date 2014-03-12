@@ -24,6 +24,7 @@ gem 'rack-mini-profiler'
 gem 'shareable'
 gem 'dalli'
 gem 'newrelic_rpm'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'annotate', '2.5.0'
