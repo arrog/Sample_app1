@@ -3,7 +3,7 @@
 	<% if current_user.try(:admin?)%>
 		<a><%= link_to "modifier les informations", edit_doulin_path(@doulin), class: "edit3"%></a>
 		<%= link_to "promote", promote_doulin_path(@doulin)%>
-		<%= render"articles/form", @article: Article.new, position: @doulin.id %>
+		<%= render"articles/form", position: @doulin.id %>
 	<%end%>
 
 	<div id="share">

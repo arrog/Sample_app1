@@ -26,6 +26,7 @@ class DoulinsController < ApplicationController
       @expertise = @doulin.expertises.new
       @arguments = @argumentable.arguments
       @argument = Argument.new
+      @article = Article.new
   end
   
   def edit 
