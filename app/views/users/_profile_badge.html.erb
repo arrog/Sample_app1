@@ -67,7 +67,11 @@
 			  </div>
 			<% end %>
 		<% else %>
-			<div class="texte"><%= h Rinku.auto_link(user.content).gsub(/\n/, '<br/>').html_safe%></div>
+			<div class="texte">
+				<% if user.content.presence %>
+					<%= h Rinku.auto_link(user.content).gsub(/\n/, '<br/>').html_safe%>
+				<% end %>
+			</div>
 		<% end %>
 	</div>
 	
