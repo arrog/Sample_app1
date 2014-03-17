@@ -29,6 +29,13 @@ class ChallengesController < ApplicationController
   end
   
   def update
+    @challenge = Challenge.find(params[:id])
+       if @challenge.update_attributes(params[:challenge])
+         flash[:success] = "Profile updated"
+              redirect_to @challenge
+       else
+         render 'edit'
+       end
   end
   
   def edit
