@@ -1,6 +1,6 @@
 class ChallengesController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
-  
+  before_filter :verify_is_admin,  only: [:edit, :destroy, :update, :index]
   def new
     @challenge = Challenge.new
   end
@@ -32,6 +32,7 @@ class ChallengesController < ApplicationController
   end
   
   def edit
+      @challenge = Challenge.find(params[:id])
   end
   
   def vote_challenge
@@ -221,5 +222,9 @@ class ChallengesController < ApplicationController
     end
   end
   
-  
+  private
+   
+   def verify_is_admin
+      (current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.try(:admin?))
+   end  
 end
