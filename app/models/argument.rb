@@ -27,7 +27,7 @@ class Argument < ActiveRecord::Base
   
   validates :user_id, presence: true
   validates :title, presence: true, length: { maximum: 100 }
-  validates :content, presence: true
+  validates :content, presence: true, length: { minimum: 150 }
   
   
   def valeur_vote(user)
