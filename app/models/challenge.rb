@@ -247,68 +247,76 @@ class Challenge < ActiveRecord::Base
   
   def speaking_british
     if self.state == "first"
-      self.first_opponent
+      self.prime_minister
     elsif self.state == "second"
-      self.second_prop      
+      self.first_opponent
     elsif self.state == "third"
-      self.second_opp
+      self.second_prop      
     elsif self.state == "forth"
-      self.third_prop
+      self.second_opp
     elsif self.state == "fifth"
-      self.third_opp
+      self.third_prop
     elsif self.state == "sixth"
-      self.fourth_prop
+      self.third_opp
     elsif self.state == "seventh"
+      self.fourth_prop
+    elsif self.state == "eighth"
       self.fourth_opp
     end                          
   end
   
   def speaking_american
     if self.state == "first"
-      self.first_opponent
+      self.prime_minister
     elsif self.state == "second"
-      self.second_prop      
-    elsif self.state == "third"
-      self.second_opp
-    elsif self.state == "forth"
       self.first_opponent
+    elsif self.state == "third"
+      self.second_prop      
+    elsif self.state == "forth"
+      self.second_opp
     elsif self.state == "fifth"
+      self.first_opponent
+    elsif self.state == "sixth"
       self.prime_minister
     end                          
   end
 
   def speaking_fc
     if self.state == "first"
-      self.first_opponent
-    elsif self.state == "second"
-      self.second_prop      
-    elsif self.state == "third"
-      self.second_opp
-    elsif self.state == "forth"
       self.prime_minister
-    elsif self.state == "fifth"
+    elsif self.state == "second"
       self.first_opponent
+    elsif self.state == "third"
+      self.second_prop      
+    elsif self.state == "forth"
+      self.second_opp
+    elsif self.state == "fifth"
+      self.prime_minister
     elsif self.state == "sixth"
-      self.second_prop
+      self.first_opponent
     elsif self.state == "seventh"
+      self.second_prop
+    elsif self.state == "eighth"
       self.second_opp
     end                         
   end    
   
   def speaking_ld
     if self.state == "first"
-      self.first_opponent
+      self.prime_minister
     elsif self.state == "second"
-      self.prime_minister      
+      self.first_opponent      
     elsif self.state == "third"
-      self.first_opponent
+      self.prime_minister
     elsif self.state == "forth"
-      self.prime_minister
-    elsif self.state == "fifth"
       self.first_opponent
-    elsif self.state == "sixth"
+    elsif self.state == "fifth"
       self.prime_minister
+    elsif self.state == "sixth"
+      self.first_opponent
     elsif self.state == "seventh"
+      self.prime_minister
+    elsif self.state == "eighth"
       self.first_opponent
     end                         
   end
