@@ -32,7 +32,10 @@ after_create :send_welcome_email
   
   has_many :memberships, dependent: :destroy
   has_many :groups, through: :memberships, :uniq => true
-  
+
+  has_many :participations, dependent: :destroy
+  has_many :events, through: :participations, :uniq => true
+    
   has_many :performances, dependent: :destroy
   has_many :challenges, through: :performances, :uniq => true
   has_many :judgments
@@ -40,6 +43,8 @@ after_create :send_welcome_email
   has_many :argcoms, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :repliques
+  
+  has_many :notes
   
   has_many :evaluations, class_name: "ReputationSystem::Evaluation", as: :source
   has_reputation :likes, source: {reputation: :likes, of: :arguments}, aggregated_by: :sum
@@ -116,8 +121,26 @@ after_create :send_welcome_email
       relationships.where(value:1) + reverse_relationships.where(value:1)
     end
     
+    def noted_by?(other, event)
+      participations.where(event_id: event.id).first.notes.where(user_id: other.id).any?
+    end
+    
     def defier?(other_user)
  (Relationship.where(reciever_id: other_user.id, value:-1, sender_id: self.id)+ Relationship.where(sender_id: other_user.id, value:-1, reciever_id: self.id)).any?
+    end
+    
+    def notefinaleevent(event)
+      a=0
+      b=  self.participations.where(event_id: event.id).first.notes.count
+      self.participations.where(event_id: event.id).first.notes.each do |note|
+        a = a + note.valeur
+      end
+      if b == 0
+        return "-"
+      else
+        
+        return (a/b).ceil
+      end
     end
     
     def debating?(debate)
@@ -152,6 +175,10 @@ after_create :send_welcome_email
       memberships.where(group_id: group.id, state:"rejected").any?
     end
     
+    def good_participation(event)
+      participations.where(event_id: event.id)
+    end
+    
     def rejoindre!(group)
       memberships.create!(user_id: self.id, group_id: group.id)
     end
@@ -160,8 +187,16 @@ after_create :send_welcome_email
       Membership.create!(user_id: user.id, group_id: group.id, state: "accepted")
     end
     
+    def participer!(event)
+      participations.create!(user_id: self.id, event_id: event.id)
+    end
+    
     def admin_group?(group)
       memberships.where(group_id: group.id, role:"admin").any?
+    end
+    
+    def in_event?(event)
+      participations.where(event_id: event.id).any?
     end
     
     #rejoindre une position

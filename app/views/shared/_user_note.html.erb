@@ -1,0 +1,46 @@
+<section id="user-notes">
+	<%=form_for(note) do |f| %>
+	<%= render '/shared/error_messages', object: f.object %>
+	<%= f.hidden_field :participation_id, value: participation.first.id%>
+	<%= f.hidden_field :user_id, value: current_user.id%>
+	
+	<div class="row">
+		<div class="span3" id="gauche-note">
+			<%= render 'shared/user_badge', user: user%>
+		</div>
+		<div class="span3" id= "droite-note">
+		   <div class="emotion">
+		   	<%= radio_button_tag "note[valeur]", 1, note.valeur == 1, :checked => 1%>
+		   	<label for="note_valeur_1" class="choix1"><%= image_tag ("unsurdix-01.png")%></label>
+		   	<%= radio_button_tag "note[valeur]", 2, note.valeur == 2 %>
+		   	<label for ="note_valeur_2"><%= image_tag ("deuxsurdix-01.png")%></label>
+		   	<%= radio_button_tag "note[valeur]", 3, note.valeur == 3 %>
+		   	<label for="note_valeur_3"><%= image_tag ("troissurdix-01.png")%></label>
+		   	<%= radio_button_tag "note[valeur]", 4, note.valeur == 4%>
+		   	<label for ="note_valeur_4"><%= image_tag ("quatresurdix-01.png")%></label>
+		   	<%= radio_button_tag "note[valeur]", 5, note.valeur == 5 %>
+		   	<label for="note_valeur_5"><%= image_tag ("cinqsurdix-01.png")%></label>
+		   	<%= radio_button_tag "note[valeur]", 6, note.valeur == 6 %>
+		   	<label for ="note_valeur_6"><%= image_tag ("sixsurdix-01.png")%></label>
+		   	<%= radio_button_tag "note[valeur]", 7, note.valeur == 7 %>
+		   	<label for="note_valeur_7"><%= image_tag ("septsurdix-01.png")%></label>
+		   	<%= radio_button_tag "note[valeur]", 8, note.valeur == 8 %>
+		   	<label for ="note_valeur_8"><%= image_tag ("huitsurdix-01.png")%></label>	
+		   	<%= radio_button_tag "note[valeur]", 9, note.valeur == 9 %>
+		   	<label class="last" for ="note_valeur_8"><%= image_tag ("neufsurdix-01.png")%></label>
+		   	<%= radio_button_tag "note[valeur]", 10, note.valeur == 19 %>
+		   	<label class="lastlast" for ="note_valeur_8"><%= image_tag ("dixsurdix-01.png")%></label>					
+			</div>
+			<div class="action">
+				<%= f.submit "OK", class: "action" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	
+</section>
+
+
+
+
+

@@ -1,5 +1,6 @@
 SampleApp::Application.routes.draw do
   
+
   constraints(:host => /^www\./) do
     match "(*x)" => redirect { |params, request|
       URI.parse(request.url).tap {|url| url.host.sub!('www.', '') }.to_s
@@ -15,6 +16,8 @@ SampleApp::Application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
+  
+  resources :notes
   
   resources :users do
       member do
@@ -48,6 +51,14 @@ SampleApp::Application.routes.draw do
       get :members
     end
   end
+  
+    resources :events do
+      member do
+        get :rejoindre
+        match 'publish'
+        match 'vote'
+      end
+    end
   
   resources :invitations do
     member do

@@ -1,0 +1,570 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+#show-event{
+		
+	#title{
+	min-height:200px;
+	width: 683px;
+	margin-top:20px;
+	margin-left:109px;
+	margin-bottom: 15px;
+
+		#touthaut{
+		background-color: #AAD0FF;
+		width: 652px;
+		padding-bottom: 5px;
+		margin-left: 15px;
+		border-bottom: 3px Solid white;   	
+			#touthaut1{
+			padding: 15px;
+			margin-top: 5px;
+			margin-left:0px;
+			font-family: "georgia";
+			font-style: italic;
+			font-size: 30px;
+			text-align: center;
+			}
+		}
+	
+		#event-header{
+		margin: 15px 0px 0px 15px;
+		img{width: 653px;}
+		
+			.image1{
+			img{width: 653px; height: 321px;}
+			}
+			.image2{
+			height: 143px;
+			width: 653px;
+			margin-top: -120px;
+			text-align: center;
+			img{width: 653px;}
+				.text{
+				margin-top: -50px;
+				font-family: "gotham";
+				font-size: 25px;
+				color: black;		
+				}
+			}
+		}
+		
+		#papa1{
+		margin-left: 145px;
+		background-color: #C9C9C9;
+		min-height: 250px;
+		border-radius: 12px;
+		margin-bottom: 30px;
+		margin-top: 15px;
+		width: 390px;
+
+			#badge-show{
+				margin-left: 15px;
+				width: 165px;
+				margin-top: 15px;
+				margin-bottom: 15px;
+				border-right: 1px Solid white;
+				padding-right: 15px;
+
+				#badge1{
+				margin: 10px 10px 0px 10px;
+
+					.texte{
+					background-color: black;
+					Color: white;
+					font-family:"gotham-Bold";
+					font-size: 14px;
+					text-align: center;
+					padding-left: 5px;
+					height:24px;
+					padding-top: 5px;
+
+					.link{
+					color: white;
+					}
+					}
+
+					.texte2{
+					text-align: center;
+					background-color: black;
+					Color: white;
+					font-family:"gotham-Bold";
+					font-size: 14px;
+					height:24px;
+					padding-top: 5px;
+					}
+				}
+
+				#stat-event{
+					margin-left: 10px;
+					margin-right: 10px;
+					padding-bottom: 17px;
+					margin-top: 10px;
+					font-family: "gotham";
+					font-size: 16px;
+					border-bottom: 1px solid white;
+
+					.texte{
+						margin-top:0px;
+						margin-left: 5px;
+						background-color: #808080;
+						text-align: center;
+						color: white;
+						font-family: "bebasneue-webfont";
+						font-size: 27px;
+						padding: 7px 8px 7px 8px;
+						width: 27px;
+					}
+
+					.texte2{
+						margin-left: 60px;
+						margin-top: -24px;
+					}
+					.texte3{
+						width:90px;
+						background-color:red;
+						float: right;
+						margin-left: 60px;
+						margin-top: -35px;
+					}
+				}
+
+				#stat-event1{
+					margin-left: 10px;
+					margin-right: 10px;
+					padding-bottom: 10px;
+					margin-top: 10px;
+					font-family: "gotham";
+					font-size: 16px;
+					border-bottom: 1px solid white;
+
+					.texte{
+						margin-top:0px;
+						margin-left: 5px;
+						background-color: #808080;
+						text-align: center;
+						color: white;
+						font-family: "bebasneue-webfont";
+						font-size: 27px;
+						padding: 7px 8px 7px 8px;
+						width: 27px;
+					}
+
+					.texte3{
+						width:90px;
+						float: right;
+						margin-left: 60px;
+						margin-top: -35px;
+					}
+				}
+
+				#content-event{
+					margin-left:10px;
+					margin-right: 10px;
+					margin-top: 10px;
+					font-family: "georgia";
+					font-size: 13px;
+					font-style: italic;
+					text-overflow: ellipsis;
+					overflow : hidden;
+					word-wrap:break-word;
+					min-height: 60px;
+					padding-bottom:10px;
+				}		
+			}
+
+			#badge-show2{
+				margin-left: 15px;
+				width: 165px;
+				margin-top: 15px;
+				margin-bottom: 15px;
+
+				#badge1{
+				margin: 10px 10px 0px 10px;
+
+					.texte{
+					background-color: black;
+					Color: white;
+					font-family:"gotham-Bold";
+					font-size: 14px;
+					text-align: center;
+					padding-left: 5px;
+					height:24px;
+					padding-top: 5px;
+
+					.link{
+					color: white;
+					}
+					}
+
+					.texte2{
+					text-align: center;
+					background-color: black;
+					Color: white;
+					font-family:"gotham-Bold";
+					font-size: 14px;
+					height:24px;
+					padding-top: 5px;
+					}
+				}
+
+				#icones-users{
+				margin-top: 8px;
+				height: 127px;
+				margin-left: 10px;
+				margin-right: 10px;
+
+				.ligne1{
+					margin-top: 0px;
+					img { width: 42px; height:35px;}
+
+					li{
+					display: inline-block;
+					margin-left: 3px;
+					margin-top: 5px;
+					}
+
+
+				}
+				}
+
+				#voir-tous{
+					margin-left: 10px;
+					margin-right: 10px;
+					margin-top: 9px;
+					margin-bottom: 10px;
+					font-family: "gotham-Bold";
+					font-size: 14px;
+					color: white;
+					background-color:#A3A3A3;
+					height: 28px;
+					padding-top:7px;
+					text-align: center;
+
+						.texte{
+						color: white;
+						}
+				}
+			}
+		}
+		
+		#nouvellerange{
+			width: 653px;
+			margin-left: 15px;
+			margin-top:-10px;
+			background-color: #EEE;
+			
+			#event-gauche{
+				width: 326px;
+				margin-left: 0px;
+				border-right: 2px Solid white;
+				
+				#content{
+					margin: 15px;
+					font-family: georgia;
+					font-size:14px;
+				}
+			}
+			
+			#event-droite{
+				width: 300px;
+				margin-left: 0px;
+
+				
+				#vote{
+				height: 40px;
+				margin-top: 10px;
+				margin-right:5px;
+				margin-left: 15px;
+
+				li{
+				display : inline-block;
+				}
+
+				.vote2{
+					font-family:"gotham";
+					font-size:25px;
+
+				}
+
+				.oui-oui{
+					margin-top: -5px;
+					margin-left:20px;
+					background-color: #808080;
+					font-family: "bebasneue-webfont";
+					font-size: 25px;
+					padding: 5px 9px 5px 9px;
+
+					.oui{
+					color: black;
+					}
+				}
+
+				.oui-oui:hover{
+				background-color: #AAD0FF;
+				color: black;
+				}
+				.oui-oui2{
+					margin-top: -5px;
+					margin-left:20px;
+					background-color: #AAD0FF;
+					font-family: "bebasneue-webfont";
+					font-size: 25px;
+					padding: 5px 9px 5px 9px;
+					border: 1px Solid white;			
+
+					.oui{
+					color: black;
+					}
+				}
+
+				.oui-oui3{
+					margin-top: -25px;
+					margin-left:114px;
+					background-color: #AAD0FF;
+					font-family: "bebasneue-webfont";
+					font-size: 22px;
+					padding: 5px 6px 5px 6px;
+				}
+
+				.suissse{
+				margin-left:167px;
+				margin-top: -3px;
+				font-family: "gotham";
+				font-size: 10px;
+				}
+
+
+				.suisse-suisse{
+					margin-top: -5px;
+					margin-left:8px;
+					background-color: #808080;
+					font-family: "bebasneue-webfont";
+					font-size: 25px;
+					padding: 5px 12px 5px 12px;
+
+					.suisse{
+					color: white;
+					}
+				}
+
+				.suisse-suisse:hover{
+				background-color: black;
+				color: black;
+				}
+				.suisse-suisse2{
+					margin-top: -5px;
+					margin-left:8px;
+					background-color: black;
+					font-family: "bebasneue-webfont";
+					font-size: 25px;
+					padding: 5px 12px 5px 12px;
+				border: 1px Solid white;			
+
+				}
+
+				.suisse-suisse1{
+				margin-top: -5px;
+				margin-left:12px;
+				background-color: #808080;
+				font-family: "bebasneue-webfont";
+				font-size: 25px;
+				padding: 5px 12px 5px 12px;
+
+				.suisse{
+				color: white;
+				}			
+
+				}
+
+				.suisse-suisse3{
+					margin-top: -5px;
+					margin-left:8px;
+					background-color: #000;
+					font-family: "bebasneue-webfont";
+					font-size: 22px;
+					color: white;
+					padding: 5px 5px 5px 4px;
+				}
+
+				.non-non{
+					margin-top: -5px;
+					margin-left:8px;
+					background-color: #808080;
+					font-family: "bebasneue-webfont";
+					font-size: 25px;
+					padding: 5px 9px 5px 9px;
+
+					.non{
+					color: black;
+					}
+				}
+
+					.non-non:hover{
+					background-color: #FF7575;
+					color: black;
+					}
+
+					.non-non2{
+						margin-top: -5px;
+						margin-left:8px;
+						background-color: #FF6969;
+						font-family: "bebasneue-webfont";
+						font-size: 25px;
+						padding: 5px 9px 5px 9px;
+				border: 1px Solid white;				
+
+						.non{
+						color: black;
+						}
+					}
+					.non-non3{
+						margin-top: -5px;
+						margin-left:8px;
+						background-color: #FF6969;
+						font-family: "bebasneue-webfont";
+						font-size: 22px;
+						color: white;
+						padding: 5px 9px 5px 9px;
+					}	
+				}
+			}
+			
+		}
+	}
+	
+
+	#afficher-commentaires{
+		height: 30px;
+		font-family: 'gotham-Bold';
+		font-size: 20px;
+		background-color: #AAD0FF;
+		color: white;
+		width: 653px;
+		margin-left: 205px;
+		padding-top:10px;
+		text-align: center;
+		cursor: pointer;
+		margin-bottom: 30px;
+		margin-top:10px;
+	}
+	#fermer-commentaires{
+		height: 30px;
+		font-family: 'gotham-Bold';
+		font-size: 20px;
+		background-color: #AAD0FF;
+		color: white;
+		width: 653px;
+		margin-left: 205px;
+		padding-top:10px;
+		text-align: center;
+		cursor: pointer;
+		margin-bottom: 30px;
+		margin-top: 10px;
+	}
+	#noter-utilisateurs{
+		height: 30px;
+		font-family: 'gotham-Bold';
+		font-size: 20px;
+		background-color: #839AB2;
+		color: white;
+		width: 653px;
+		margin-left: 205px;
+		padding-top:10px;
+		text-align: center;
+		cursor: pointer;
+		margin-bottom: 20px;
+		margin-top: 50px;
+	}
+	
+	#laissons-entrer{
+	width: 753px;
+	margin-left: 205px;
+	
+	li{
+	margin-right:8px;
+	display: inline-block;
+	}
+	}
+	
+	#laissons-entrer2{
+	width: 753px;
+	margin-left: 225px;
+	
+	li{
+	margin-right:88px;
+	display: inline-block;
+	}
+	}
+}
+
+#user-notes{
+
+	.emotion{
+	
+	.input_hidden {
+	    position: absolute;
+		background-color: #DDD;
+	    left: -9999px;
+	}
+	
+	.selected {
+	    background-color: #839AB2;
+	}
+	
+	label {
+	    cursor: pointer;
+
+	}
+	
+	label img {
+	    padding: 2px;
+	}
+	
+	.last{
+	padding:0px;
+	}
+	.lastlast{
+	border: none;
+	margin-top: -4px;
+	}
+	}
+	
+		#gauche-note{
+		width: 170px;
+		}
+		#droite-note{
+		background-color: #DDD;
+		margin-left: 0px;
+		width: 40px;
+		height: 333px;
+		
+		.action{
+		background-color: #808080;
+		font: "bebasneue-webfont";
+		font-size: 18px;
+		height: 30px;
+		width: 40px;
+		border: none;
+		border-radius: 0px;
+		color: white;
+		cursor:pointer;
+		}
+		}
+		
+		#notefinale{
+		background-color: #808080;
+		width: 170px;
+		margin-top: -30px;
+		font-family: "bebasneue-webfont";
+		font-size: 25px;
+		padding-top:4px;
+		margin-bottom: 15px;
+		text-align: center;
+		height: 25px;
+
+		}
+}

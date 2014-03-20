@@ -367,6 +367,9 @@
 	height:  25px;
 	width: 90px;
 	background-color: #808080;
+	curosr: pointer;
+	position: relative;
+	z-index: 10;
 	
 	.follow:hover{
 	background-color: black;
@@ -406,6 +409,8 @@
 	height:65px;
 	width:90px;
 	background-color:#C9C9C9;
+	position: relative;
+	z-index: 10;
 	
 	 .arrow-left{
 		padding-left:58px;

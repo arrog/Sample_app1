@@ -1,0 +1,39 @@
+<section>
+	<div class="span7" id="new-comment-event">
+		<div class="row">
+			<div class="span2" id="comment-gauche">
+				<div class="row" id="imageuser">
+					<% if current_user %>
+						<%= image_tag current_user.avatar.url(:small), class: "image" %>
+					<% elsif %>
+						<%= image_tag ("default_small.jpg")%>
+					<% end%>
+				</div>
+				<div class="row"id="user">
+					<% if current_user%>
+						<%= current_user.fitting_name%>
+					<% elsif %>
+						Connecte toi
+					<% end%>
+				</div>
+			</div>
+			<div class="span4" id="comment-form">
+				<%= form_for comment do |f| %>
+				 <%= render 'shared/error_messages', object: f.object %>
+				  <div class="field">
+				    <%= f.text_area :content, placeholder: "Votre avis et votre impression sur la rencontre/débat", class: "content" %>
+					<%= f.hidden_field :commentable_id, :value => commentable.id %>
+					<%= f.hidden_field :commentable_type, :value => type %>
+				 
+				 	<div class="action">
+						<%= f.submit "OK", class: "actions" %>
+					</div>
+				</div>
+				<% end %>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+

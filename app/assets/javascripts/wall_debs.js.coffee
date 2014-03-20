@@ -15,6 +15,7 @@ $(document).ready ->
   $(".arrow-up-comments").hide()
   $("#comments-to-open").hide()
   $(".comment-texte2").hide()
+  $("#fermer-commentaires").hide()
   $(".invitation-fermer").hide()
   $(".invitation-fermer1").hide()
   $(".invitation-fermer-american").hide()
@@ -40,6 +41,12 @@ $(document).ready ->
   $(".bulle3").hide()
   $("#hover-categorie").hide()
 
+
+  $("#afficher-commentaires").click ->
+	    $(this).hide().siblings("#fermer-commentaires").show().siblings("#comments-to-open").show()
+
+  $("#fermer-commentaires").click ->
+	    $(this).hide().siblings("#afficher-commentaires").show().siblings("#comments-to-open").hide()
 
   $("#catcat").mouseover ->
 	    $(this).siblings("#hover-categorie").show()

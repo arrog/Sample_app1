@@ -1,0 +1,8 @@
+<section id="user-notes">
+	<div class="row">
+		<%= render 'shared/user_badge', user: user%>
+	</div>
+	<div class="row" id="notefinale">
+		<span class="text"><%= user.notefinaleevent(@event)%> /10</span>
+	</div>
+</section>

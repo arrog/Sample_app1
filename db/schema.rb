@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140312185057) do
+ActiveRecord::Schema.define(:version => 20140319130224) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -153,6 +153,19 @@ ActiveRecord::Schema.define(:version => 20140312185057) do
     t.text     "content"
   end
 
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "state"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "location"
+  end
+
   create_table "expertises", :force => true do |t|
     t.integer  "user_id"
     t.integer  "doulin_id"
@@ -260,6 +273,21 @@ ActiveRecord::Schema.define(:version => 20140312185057) do
   end
 
   add_index "microposts", ["user_id", "created_at"], :name => "index_microposts_on_user_id_and_created_at"
+
+  create_table "notes", :force => true do |t|
+    t.string   "user_id"
+    t.integer  "valeur",           :limit => 255
+    t.string   "participation_id"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  create_table "participations", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "performances", :force => true do |t|
     t.integer  "user_id"

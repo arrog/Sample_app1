@@ -1,0 +1,206 @@
+<% if current_user && current_user.try(:admin?)%>
+<div id="share2">
+	<%= @event.state%>
+			<div><%= link_to "edit",edit_event_path(@event), class: "text"%>    </div>                                                        
+			<div><%= link_to "publush",publish_event_path(@event), class: "text"%>    </div>
+			<div><%= link_to "publush",publish_event_path(@event), class: "text"%>    </div>                                                                                                                
+</div>                                                                
+<% end %>
+
+<section id="show-event">
+	<div class="container">
+		<div class="row">
+			<div class="span10 offset1">
+				<div id="title">
+					<div class="row" id="touthaut">
+						<div id="touthaut1">
+						<%= link_to("Une Rencontre pour débattre", @event)%>
+						</div>
+					</div>
+					
+					<div class="row" id="event-header">
+						<div class="image1">
+							<%= image_tag @event.avatar.url(:large), class: "image"%>
+						</div>
+						<div class="image2">
+							<%= image_tag "group-header-01.png", class: "image9"%>
+							<div class='text'><%= link_to @event.title, @event, class: 'text'%></div>
+						</div>
+					</div>
+					
+					<div class="row" id="nouvellerange">
+						<div class="span3" id='event-gauche'>
+							<div class="row" id="content">
+								<div class="content"><%= h Rinku.auto_link(@event.description).gsub(/\n/, '<br/>').html_safe%></div>
+							</div>
+						</div>
+						<div class="span3" id='event-droite'>
+							
+							<div class="row" id="vote">
+								<div class="suissse">SUISSE</div>
+								<span class="vote2">VOTEZ</span>
+								<% if current_user && @event.in_event?(current_user) && @event.valeur_vote(current_user) == 1.0 %>
+					 			<li class="oui-oui2"><%= link_to "OUI", vote_event_path(@event, type: "up"), method: "post", :class => "oui" %>
+								</li>
+								<% elsif current_user%>
+					 			<li class="oui-oui"><%= link_to "OUI", vote_event_path(@event, type: "up"), method: "post", :class => "oui" %>	
+								</li>	
+								<% else %>
+									<li class="oui-oui"><%= link_to "OUI", new_user_session_path, :class => "oui" %></li>						
+								<% end%>
+								<% if current_user && @event.in_event?(current_user) && @event.valeur_vote(current_user) == 0.0 %>
+								<li class="suisse-suisse2"><%= link_to image_tag("croix-suisse.png"), vote_event_path(@event, type: "neutral"), method: "post", class: "suisse" %></li>
+								<% elsif current_user%>
+								<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), vote_event_path(@event, type: "neutral"), method: "post", class: "suisse" %></li>
+								<% else%>
+								<li class="suisse-suisse"><%= link_to image_tag("croix-suisse.png"), new_user_session_path, method: "post", class: "suisse" %></li>
+								<%end%>
+
+								<% if current_user && @event.in_event?(current_user) && @event.valeur_vote(current_user) == -1.0 %>
+								<li class="non-non2"><%= link_to "NON", vote_event_path(@event, type: "down"), method: "post", :class => "non" %></li>	
+								<%elsif current_user%>
+								<li class="non-non"><%= link_to "NON", vote_event_path(@event, type: "down"), method: "post", :class => "non" %></li>			
+								<%else%>
+								<li class="non-non"><%= link_to "NON", new_user_session_path, method: "post", :class => "non" %></li>							
+								<%end%>
+
+							</div>	
+							<div class="row" id="vote">								
+
+									<% if @event.evaluations.any?%>
+										<li class="oui-oui3"><%=100*@event.count_for / (@event.count_neutral + @event.count_for + @event.count_against)%>%</li>
+
+										<li class="suisse-suisse3"><%=100*@event.count_neutral / (@event.count_neutral + @event.count_for + @event.count_against)%>%</li>
+
+										<li class="non-non3"><%=100*@event.count_against / (@event.count_neutral + @event.count_for + @event.count_against)%>%</li>
+									<%end%>
+
+
+							</div>
+							
+						</div>
+					</div>
+					
+					<div class="row" id="papa1">
+						<div class="span3" id="badge-show">
+							<div class="row" id="badge1">
+								<div class="texte">Description</div>
+							</div>
+							<div class="row" id="stat-event">
+								<div class="texte"><%= @event.users.count%></div>
+								<div class="texte2">membres</div>
+							</div>
+							<div class="row" id="stat-event1">
+								<div class="texte"><%= @event.comments.count%></div>
+								<div class="texte3">arguments</div>
+							</div>
+							<div class="row" id="content-event">
+								<%= @event.location%>
+							</div>
+						</div>
+						<div class="span3" id="badge-show2">
+							<div class="row" id="badge1">
+								<div class="texte">Participants</div>
+							</div>
+							<div class="row" id="icones-users">
+								<div class="ligne1">
+									<li class="imageuser">
+										<% if @event.users.count >=1 %>
+										<%= link_to image_tag(@event.users.first.avatar.url(:small)), @event.users.first, class: "image1"%>
+										<%end%>
+									</li>
+									<li class="imageuser">
+										<% if @event.users.count >=2 %>
+										<%= link_to image_tag(@event.users.second.avatar.url(:small)), @event.users.second, class: "image2"%>
+										<%end%>
+									</li>
+									<li class="imageuser">
+										<% if @event.users.count >=3 %>
+										<%= link_to image_tag(@event.users.third.avatar.url(:small)), @event.users.third, class: "image3"%>
+										<%end%>
+									</li>
+								</div>
+
+								<div class="ligne1">
+									<li class="imageuser">
+										<% if @event.users.count >=4 %>
+										<%= link_to image_tag(@event.users[3].avatar.url(:small)), @event.users[3], class: "image1"%>
+										<%end%>
+									</li>
+									<li class="imageuser">
+										<% if @event.users.count >=5 %>
+										<%= link_to image_tag(@event.users[4].avatar.url(:small)), @event.users[4], class: "image2"%>
+										<%end%>
+									</li>
+									<li class="imageuser">
+										<% if @event.users.count >=6 %>
+										<%= link_to image_tag(@event.users[5].avatar.url(:small)), @event.users[5], class: "image3"%><%end%>
+									</li>
+								</div>
+							</div>
+							<div class="row" id="voir-tous">
+								<% if current_user && current_user.in_event?(@event)%>
+									<%= link_to "Vous participez", event_path(@event), class: "texte" %>
+								<% elsif @event.state == "open" %>
+									<%= link_to "Participer", rejoindre_event_path(@event), class: "texte" %>
+								<% else %>
+									Inscriptions closes
+								<% end %>
+							</div>
+
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="row" id="afficher-commentaires">
+			<span class="texte">Afficher les contributions des paricipants</span>
+		</div>
+		
+		<div class="row" id="comments-to-open">
+			<% @comments.each do |m| %>
+				<%= render "shared/comment_badge", comment: m %>
+		    <% end %>
+		</div>
+		
+		<div class="row" id="fermer-commentaires">
+			<span class="texte">Cacher les contributions</span>
+		</div>
+		
+		<div class='row'>
+			<% if current_user && current_user.in_event?(@event)%>
+			<div class="row" id="okok"><%= render "shared/comment_event_form", commentable: @event, type: Event, comment: @event.comments.new%></div>
+			<% end %>
+		</div>
+		
+			<% if current_user && current_user.in_event?(@event) && @event.state == "full"%>
+			<div class="row" id="noter-utilisateurs">
+				<span class="texte">Notez les participants !</span>
+			</div>
+			<div class="row" id='laissons-entrer'>
+				<% @event.lesautres(current_user).each do |l| %>
+					<% if l.noted_by?(current_user, @event) == true %>
+					<% else%>
+						<li><%= render 'shared/user_note', participation: l.good_participation(@event), note: current_user.notes.new, user: l %></li>
+					<% end%>
+				<% end %>
+			</div>
+			<% end%>
+			
+			
+			<% if @event.state =="close"%>
+			<div class="row" id="noter-utilisateurs">
+				<span class="texte"> Les notes des participants</span>
+			</div>
+			<div class="row" id='laissons-entrer2'>
+			<% @event.users.each do |l| %>
+				<li><%= render 'shared/user_noted', user: l%></li>
+			<% end%>
+			</div>
+			<% end%>
+			
+		</div>
+	</div>
+</section>

@@ -214,3 +214,179 @@
 
 }
 
+
+#new-comment-event{
+	width: 653px;
+	min-height: 75px;
+	background-color: #DDD;
+	margin-top:5px;
+	margin-left: 245px;
+	word-wrap:break-word;
+	
+	#comment-gauche{
+		width: 130px;
+		#imageuser{
+		width: 120px;
+		margin-left: 10px;
+
+		padding: 10px 0px 10px 0px;
+		border-bottom: 2px Solid white;
+			img { width: 120px; height: 120px;}
+			.image{
+			}
+		}
+
+		#user{
+		font-family:"gotham";
+		font-size:14px;
+		padding-top:8px;
+		width: 120px;
+		overflow: hidden;
+		margin-left: 10px;
+		text-align: center;
+		}
+		
+	}
+
+ 	#comment-form{
+	height: 170px;
+	}
+
+	.content{
+	margin: -9px 5px 5px -10px;
+	background-color: #FFF;
+	border-radius:0px;
+	height:100px;
+	width: 494px;
+	font-family:"georgia";
+	font-size: 14px;
+	border-radius:0px;
+	border: none;
+	resize:none;
+	box-shadow: none;
+	}
+	
+	.action{
+		background-color: white;
+		height: 40px;
+		width: 502px;
+		margin: -5px 0px 0px -10px;
+		
+		.actions{
+			float: right;
+			border-radius:0px;
+			border: none;
+			margin-top: 1px;
+			margin-right: 15px;
+			padding: 5px;
+			font-family: "gotham";
+			font-size: 18px;
+			color: black;
+			background-color: #808080;
+		}
+	
+	}
+
+}
+
+#comment-event1{
+
+	   #stats-comments{
+	   margin-left: 20px;
+	   margin-bottom: 10px;
+	   margin-top:5px;
+	   font-family: "bebasneue-font";
+	   font-size: 27px;
+			
+			#noteenhaut{
+			background-color: #AAD0FF;
+			padding: 5px;
+			width: 50px;
+			}
+			notenhaut:hover{
+			background-color: #839AB2;
+			}
+			#noteenbas{
+			background-color: #FF7575;
+			padding: 5px;
+			width: 50px;
+			}
+	   }
+}
+#comment-event{
+
+	min-height: 55px;
+	background-color: #EEE;
+	margin-top:5px;
+	margin-left: 225px;
+	width: 653px;
+	
+	#stats-comments{
+	margin-left: 10px;
+	margin-bottom: 10px;
+	font-family: "bebasneue-font";
+	font-size: 27px;
+		.texte{
+		font-family: "georgia";
+		color: #808080;
+		}
+	}
+	
+	#droite-comment{
+		margin-left: 0px;
+		width: 542px;
+		
+		#content{
+		width: 518px;
+		margin-top: 10px;
+		margin-left: 10px;
+		font-family:"georgia";
+		font-size: 13px;
+		padding-top: 5px;
+		padding-left: 5px;
+		min-height: 95px;
+		background-color: white;
+		margin-bottom:10px;
+		a{color: #2200CC;}	
+		word-wrap:break-word;
+		}
+		
+	}
+
+	#gauche-comment{
+		width:110px;
+		
+		#imageuser{
+		width: 130px;
+		margin-left: 10px;
+		margin-top: 10px;
+		img { width: 100px; height:100px;}
+		}
+
+		#user{
+		margin-left: 10px;
+		font-family:"gotham";
+		font-size:14px;
+		padding-top:8px;
+		overflow: hidden;
+		text-align: center;
+		padding-bottom: 5px;
+		}
+	}
+
+	
+	#comment-form{
+	word-wrap:break-word;
+	width: 440px;
+	margin-left: 5px;
+	margin-top: 10px;
+	background-color: white;
+	min-height: 70px;
+	padding: 10px;
+	font-family:"georgia";
+	font-size: 14px;
+	text-align:justify;
+	margin-bottom: 10px;
+	}
+	
+}
