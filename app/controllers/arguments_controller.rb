@@ -1,7 +1,8 @@
 class ArgumentsController < ApplicationController
- before_filter :load_argumentable, except: [:edit, :destroy, :new]
+ before_filter :load_argumentable, except: [:edit, :destroy, :new, :index]
  before_filter :authenticate_user!, only: [:new, :edit, :create, :destroy, :like]
  before_filter :correct_user, only: [:edit]
+ before_filter :verify_is_admin,  only: [:index]
  
   def new
     @argument = Argument.new
@@ -13,6 +14,9 @@ class ArgumentsController < ApplicationController
     @argcom = @argument.argcoms.new
   end
   
+  def index
+    @arguments= Argument.all
+  end
 
   def create
       @argument = @argumentable.arguments.new(params[:argument])
@@ -72,6 +76,10 @@ class ArgumentsController < ApplicationController
           elsif
             redirect_to(root_path)
           end
+    end
+    
+    def verify_is_admin
+       (current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.try(:admin?))
     end
     
 end

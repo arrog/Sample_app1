@@ -1,0 +1,11 @@
+<div class="container">
+	<% @arguments.each do |argument| %>
+
+	<div class="row" id="arguments-debate">
+
+			<%= render "shared/argument_badge", :argument => argument, :argumentable => @debate %>
+
+	</div>
+
+	<%end%>
+</div>
