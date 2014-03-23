@@ -26,12 +26,10 @@ class ApplicationController < ActionController::Base
     session[:previous_url] || root_path
   end
   
-  private
-  def render_error(status, exception)
-    respond_to do |format|
-      format.html { render template: "errors/error_#{status}", layout: 'layouts/application', status: status }
-      format.all { render nothing: true, status: status }
-    end
+  config.exceptions_app = lambda do |env|
+       ErrorController.action(:render_error).call(env)
   end
+  
+  private
   
 end
