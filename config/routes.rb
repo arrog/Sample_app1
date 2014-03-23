@@ -185,11 +185,7 @@ SampleApp::Application.routes.draw do
   match '/incomplets', to:'static_pages#list_ajoindre'
   match '/debats',    to: 'static_pages#list_debates'
   match '/challenge',    to: 'static_pages#challenge'
-  
-  get "/404", :to => "errors#not_found"
-  get "/422", :to => "errors#unacceptable"
-  get "/500", :to => "errors#internal_error"
-  
+    
 
   
   get 'tags/:tag', to: 'static_pages#list', as: :tag
