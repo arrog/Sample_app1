@@ -1,9 +1,9 @@
 <% if challenge.type_deb == 2%>
-	<%= render "shared/lincoln_douglas_badge", challenge: @challenge%>
+	<%= render "shared/lincoln_douglas_badge", challenge: challenge%>
 <%elsif challenge.type_deb == 3 %>
-	<%= render "shared/american_badge", challenge: @challenge%>
+	<%= render "shared/american_badge", challenge: challenge%>
 <%elsif challenge.type_deb == 4 %>
-	<%= render "shared/fc_badge", challenge: @challenge%>
+	<%= render "shared/fc_badge", challenge: challenge%>
 <%elsif challenge.type_deb == 8 %>
-	<%= render "shared/british_badge", challenge: @challenge%>
+	<%= render "shared/british_badge", challenge: challenge%>
 <%end%>
