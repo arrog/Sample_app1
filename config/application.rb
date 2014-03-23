@@ -19,6 +19,7 @@ end
 
 module SampleApp
   class Application < Rails::Application
+      config.exceptions_app = self.routes
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -66,8 +67,6 @@ module SampleApp
     
     # Enable the asset pipeline
     config.assets.enabled = true
-    
-    config.exceptions_app = self.routes
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
@@ -76,9 +75,6 @@ module SampleApp
     
     config.to_prepare do
       Devise::SessionsController.layout "devise" 
-    end
-    
-    
-     
+    end  
   end
 end
