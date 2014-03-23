@@ -185,7 +185,6 @@ SampleApp::Application.routes.draw do
   
   get "errors/error_404"
   get "errors/error_500"  
-  match "/404", :to => "errors#error_404
   
   get 'tags/:tag', to: 'static_pages#list', as: :tag
   
