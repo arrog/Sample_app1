@@ -3,13 +3,6 @@ SampleApp::Application.routes.draw do
   unless Rails.application.config.consider_all_requests_local
      match '*not_found', to: 'errors#error_404'
    end
-   
-
-  constraints(:host => /^www\./) do
-    match "(*x)" => redirect { |params, request|
-      URI.parse(request.url).tap {|url| url.host.sub!('www.', '') }.to_s
-    }
-  end
   
   resources :articles
 
@@ -188,7 +181,6 @@ SampleApp::Application.routes.draw do
   match '/debats',    to: 'static_pages#list_debates'
   match '/challenge',    to: 'static_pages#challenge'
   
-  match "/404", :to => "errors#error_404"
   get "errors/error_404"
   get "errors/error_500"  
 
