@@ -122,7 +122,8 @@
 					<div class="row" id="fc-milieu-2">
 						<div class='content'><%= h Rinku.auto_link(@challenge.context).gsub(/\n/, '<br/>').html_safe%></div>
 					</div>
-
+					
+					<% unless @challenge.not_full?%>
 					<div class="row" id="fc-milieu-3-b">
 
 							<% if @challenge.position_taken.include?(1) %>
@@ -217,7 +218,7 @@
 							<%end%>	
 							</div>						
 					</div>
-
+					<% end %>
 
 
 

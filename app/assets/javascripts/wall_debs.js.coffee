@@ -11,6 +11,7 @@ $(document).ready ->
   $("#to-be-closed").hide()
   $(".arrow-up-context").hide()
   $(".arrow-up-newarg").hide()
+  $(".developpement-bisbis").hide()
   $(".texte2-newarg").hide()
   $("#votervoter2").hide()
   $(".arrow-up-comments").hide()

@@ -81,7 +81,7 @@
 			<div class="row">
 			
 			<div class="row" id ="openning-comments3">
-				<div class="comment-texte1">Le débat ne peut débuter. Il manque <%= @challenge.place_left%> participants.</div>
+				<div class="comment-texte1">Le débat ne peut débuter. Il manque <%= @challenge.place_left%> participant(s).</div>
 			</div>
 			
 			</div>
@@ -89,7 +89,7 @@
 				<div class="row" id="inviterchallenge">
 					Inviter de nouvelles personnes
 				</div>
-				<div class="row" id="developpement-bis">
+				<div class="row" id="developpement-bisbis">
 						<% @challenge.challenge_toinvite.shuffle.each do |user|%>
 							<li>
 							<%= render "shared/user_badge", user: user%>
