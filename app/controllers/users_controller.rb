@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     @object1 = @user.all_following
     @object2 = @user.challenges
     @object3 = @user.debates
-    @object4= (@object1 + @object2+ @object3).uniq.
+    @object4= (@object1 + @object2+ @object3).uniq
     @object= @object4.sort { |x,y| y.created_at <=> x.created_at }.paginate(:page => params[:page], :per_page =>8)
   end
   
