@@ -188,6 +188,7 @@ SampleApp::Application.routes.draw do
   match '/debats',    to: 'static_pages#list_debates'
   match '/challenge',    to: 'static_pages#challenge'
   
+  match "/404", :to => "errors#error_404"
   get "errors/error_404"
   get "errors/error_500"  
 
