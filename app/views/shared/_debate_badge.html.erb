@@ -14,7 +14,7 @@
 	    						<%= link_to debate.title, debate, class: "title2"%>
 							</div>
 							<div class="context">
-								<% if debate.content.split('.').length > 80%>
+								<% if debate.content.split('.').first.length > 80%>
 									<%= link_to debate.content.split('').first(80).join, debate %> ...
 								<% else %>
 									<%= link_to debate.content.split('.').first, debate%>.
