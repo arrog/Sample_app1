@@ -1,9 +1,16 @@
 class ErrorsController < ApplicationController
   
-  def render_error
-      @exception = env["action_dispatch.exception"]
-      @status_code = ActionDispatch::ExceptionWrapper.new(env, @exception).status_code
-      render :error_page, status: @status_code, layout: true
+  def not_found
+    render :status => 404
   end
+ 
+  def unacceptable
+    render :status => 422
+  end
+ 
+  def internal_error
+    render :status => 500
+  end
+
   
 end
