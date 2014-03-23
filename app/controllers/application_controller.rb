@@ -26,10 +26,6 @@ class ApplicationController < ActionController::Base
     session[:previous_url] || root_path
   end
   
-  config.exceptions_app = lambda do |env|
-       ErrorController.action(:render_error).call(env)
-  end
-  
   private
   
 end
