@@ -77,6 +77,8 @@ module SampleApp
     config.to_prepare do
       Devise::SessionsController.layout "devise" 
     end
+    
+    
      
   end
 end

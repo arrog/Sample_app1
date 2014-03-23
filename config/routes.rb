@@ -1,7 +1,11 @@
 SampleApp::Application.routes.draw do
   
-  
-  config.exceptions_app = self.routes
+
+  constraints(:host => /^www\./) do
+    match "(*x)" => redirect { |params, request|
+      URI.parse(request.url).tap {|url| url.host.sub!('www.', '') }.to_s
+    }
+  end
   
   resources :articles
 
