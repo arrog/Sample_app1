@@ -1,5 +1,14 @@
 SampleApp::Application.routes.draw do
   
+
+  constraints(:host => /^www\./) do
+    match "(*x)" => redirect { |params, request|
+      URI.parse(request.url).tap {|url| url.host.sub!('www.', '') }.to_s
+    }
+  end
+  
+  config.exceptions_app = self.routes
+  
   resources :articles
 
 
@@ -7,7 +16,6 @@ SampleApp::Application.routes.draw do
                      controllers: {omniauth_callbacks: "omniauth_callbacks"}
                      
   match 'auth/:provider/callback', to: 'sessions#create'
-  match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
   
   resources :notes
