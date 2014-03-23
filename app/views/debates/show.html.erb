@@ -194,7 +194,11 @@
 		<div class="row" id="arguments">
 
 					<% if current_user && @debate.has_evaluation?(:votes, current_user) %>
-					
+						
+						<div class="row" id="votervoter2">
+							J'argumenterai plus tard
+						</div>
+						
 						<div class="row" id="box-argument">
 				   			<% if @debate.valeur_vote(current_user) == 1.0 %>
 								<div class="pour">
@@ -213,10 +217,8 @@
 
 						<div class="row" id="votervoter">
 							<div class="texte-newarg">Contribue au débat!</div>
-							<div class='texte2-newarg'>J'argumenterai plus tard</div>
-							<div class="arrow-down-newarg"></div>
-							<div class="arrow-up-newarg"></div>
 						</div>
+					
 				
 					<% else  %>
 						<div class="row" id="votervoter">						

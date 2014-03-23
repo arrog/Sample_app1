@@ -614,6 +614,21 @@
 		border-top: 15px solid #FFF;
 	}
 	}
+	
+	#votervoter2{
+		margin-left:402px;
+		height:30px;
+		background-color: #AAD0FF;
+		margin-bottom: 10px;
+		width: 300px;
+		font-family: "gotham-Bold";
+		font-size:18px;
+		text-align: center;
+		cursor: pointer;
+		border-radius: 12px;
+		color: white;
+		padding-top:10px;
+	}
 
 	.edit0{
 	width:30px;
@@ -941,45 +956,53 @@ border-bottom: 1px Solid black;
 	.title{
 	font-family: "gotham-Bold";
 	font-size: 20px;
-	text-align: left;
+	text-align: center;
 	line-height: 23px;
-	 letter-spacing:-1px;	
+	 letter-spacing:-1px;
+	margin-left: 90px;	
 	}
-	
-	.suivant{
-	width: 149px;
-	height: 30px;
-	background-color: #FF7575;
-	margin-top: -28px;
-	margin-left: 430px;
-	font-family: "georgia";
-	font-size: 18px;
 		
-		.text{
-		padding-left: 10px;
-		padding-top: 5px;
+		.flecheback{
+		margin-top: -5px;
+		margin-left:10px;
+		cursor: pointer;
 		}
+		.flecheback1{
+		margin-top: -5px;
+		margin-left:10px;
+		cursor: pointer;
+		}
+		.flecheback2{
+		margin-top: -5px;
+		margin-left:10px;
+		cursor: pointer;
+		}
+		.flecheback3{
+		margin-top: -5px;
+		margin-left:10px;
+		cursor: pointer;
+		}				
+		
 		.flechehome{
-		margin-top: -38px;
-		margin-left:130px;
+		margin-top: -5px;
+		margin-left:90px;
 		cursor: pointer;
 		}
 		.flechehome1{
-		margin-top: -38px;
-		margin-left:130px;
+		margin-top: -5px;
+		margin-left:90px;
 		cursor: pointer;
 		}
 		.flechehome2{
-		margin-top: -38px;
-		margin-left:130px;
+		margin-top: -5px;
+		margin-left:90px;
 		cursor: pointer;
 		}
 		.flechehome3{
-		margin-top: -38px;
-		margin-left:130px;
+		margin-top: -5px;
+		margin-left:90px;
 		cursor: pointer;
 		}
-	}
 }
 #gauche-ouvert{
 width: 272px;
@@ -1950,6 +1973,21 @@ border-image: url(border2.png) 13 fill repeat;
 	}
 	}
 
+	#votervoter2{
+		margin-left:402px;
+		height:30px;
+		background-color: #AAD0FF;
+		margin-bottom: 10px;
+		width: 300px;
+		font-family: "gotham-Bold";
+		font-size:18px;
+		text-align: center;
+		cursor: pointer;
+		border-radius: 12px;
+		color: white;
+		padding-top:10px;
+	}
+	
 	.edit0{
 	width:30px;
 	height:15px;

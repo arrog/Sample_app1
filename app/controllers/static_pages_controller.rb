@@ -44,6 +44,7 @@ class StaticPagesController < ApplicationController
   end
   
   def help
+    @challenge = Challenge.first
   end
 
   def about

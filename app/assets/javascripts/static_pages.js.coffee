@@ -49,7 +49,20 @@ $(document).ready ->
 	    $(this).parents(".en-ce-moment2").hide().siblings(".en-ce-moment3").show()
 
   $(".flechehome3").click ->
-	    $(this).parents(".en-ce-moment3").hide().siblings(".en-ce-moment4").show()		
+	    $(this).parents(".en-ce-moment3").hide().siblings(".en-ce-moment4").show()
+
+  $(".flecheback").click ->
+	    $(this).parents(".en-ce-moment4").hide().siblings(".en-ce-moment3").show()
+
+  $(".flecheback1").click ->
+	    $(this).parents(".en-ce-moment1").hide().siblings(".en-ce-moment").show()
+
+  $(".flecheback2").click ->
+	    $(this).parents(".en-ce-moment2").hide().siblings(".en-ce-moment1").show()
+
+  $(".flecheback3").click ->
+	    $(this).parents(".en-ce-moment3").hide().siblings(".en-ce-moment2").show()
+					
 
   $(".fleche01").click ->
     	$(this).parent().hide().siblings("#video01").show()

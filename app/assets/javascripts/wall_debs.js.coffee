@@ -12,6 +12,7 @@ $(document).ready ->
   $(".arrow-up-context").hide()
   $(".arrow-up-newarg").hide()
   $(".texte2-newarg").hide()
+  $("#votervoter2").hide()
   $(".arrow-up-comments").hide()
   $("#comments-to-open").hide()
   $(".comment-texte2").hide()
@@ -309,4 +310,7 @@ $(document).ready ->
 	    $(this).hide().siblings(".arrow-down-comments").show().siblings(".comment-texte2").hide().siblings(".comment-texte1").show().parent().siblings("#comments-to-open").hide().siblings("#comments-to-close").slideDown("slow")
 
   $("#votervoter").mouseover ->
-	    $(this).children(".arrow-down-newarg").hide().siblings(".texte-newarg").hide().siblings(".arrow-up-newarg").show().siblings('.texte2-newarg').show().parent().siblings("#box-argument").slideDown("slow")
+	    $(this).hide().siblings("#box-argument").slideDown("slow").siblings("#votervoter2").show()
+
+  $("#votervoter2").click ->
+	    $(this).hide().siblings("#box-argument").hide()

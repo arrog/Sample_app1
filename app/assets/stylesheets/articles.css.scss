@@ -1,3 +1,448 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#challenge-lincoln{
+
+	#challenge-badge1{
+		height:128px;
+		width:470px;
+		margin-bottom:15px;
+		background-image:url(/assets/image-ld-01.png);
+		
+		#challenge-badge2{
+		padding-left: 30px;
+		padding-top: 35px;
+		position:relative;
+		z-index: 1;
+		
+		.image{
+		padding-top:15px;
+		margin-left:-10px;
+		}
+		}
+		
+		#challenge-badge3{
+			background-image: url(/assets/text-badge.png);
+			width: 352px;
+			height: 110px;
+			margin-left:0px;
+			margin-top:10px;
+			
+			 .title{
+			 word-wrap:break-word;
+			 width: 290px;
+			 margin:30px 0px 3px 30px;
+		   	 text-align: center;
+		   	 font-family:"gotham";
+		   	 font-size:18px;
+
+
+				.title2{
+					color:black;
+					position:relative;
+					z-index: 1;
+				}
+				.title:hover{
+					text-decoration: underline;
+				}
+
+		   	 }
+		}
+	}
+		
+		.follow{
+		margin-left:-20px;
+		height:  25px;
+		width: 90px;
+		background-color: #808080;
+		
+		.texte{
+			font-family: "gotham-Bold";
+			font-size: 16px;
+			color: #FFF;
+			padding-left: 8px;
+			padding-top:4px;
+			
+		}
+		
+		
+		.texte2{
+			font-family: "gotham-Bold";
+			font-size: 16px;
+			color: #FFF;
+			padding-left: 12px;
+			padding-top:4px;
+		}
+		.arrow-left{
+			margin-top:-20px;
+			padding-left: 78px;
+		 	width: 0; 
+		 	height: 0; 
+		 	border-top: 12px solid transparent;
+		 	border-bottom: 12px solid transparent; 
+		 	border-right:12px solid white;
+		}
+		
+		}
+		
+		.follow:hover{
+			background-color: black;
+		}
+	
+		.categorie{
+		margin-top:8px;
+		margin-left:-20px;
+		height:65px;
+		width:90px;
+		background-color:#AAD0FF;
+		
+		 .arrow-left{
+			padding-left:58px;
+		 	width: 0; 
+		 	height: 0; 
+		 	border-top: 32px solid transparent;
+		 	border-bottom: 34px solid transparent; 
+         
+		 	border-right:32px solid white;
+		 }
+		 .image{
+			padding-left:10px;
+			margin-top:-48px;
+		 }
+		}
+}
+
+#challenge-fc{
+
+	#challenge-badge1{
+		height:128px;
+		width:470px;
+		margin-bottom:15px;
+		background-image:url(/assets/2048-01.png);
+		
+		#challenge-badge2{
+		padding-left: 30px;
+		padding-top: 35px;
+		position:relative;
+		z-index: 1;
+		
+		.image{
+		padding-top:15px;
+		margin-left:-10px;
+		}
+		}
+		
+		#challenge-badge3{
+			background-image: url(/assets/text-badge.png);
+			width: 352px;
+			height: 110px;
+			margin-left:0px;
+			margin-top:10px;
+			
+			 .title{
+			 word-wrap:break-word;
+			 width: 290px;
+			 margin:30px 0px 3px 30px;
+		   	 text-align: center;
+		   	 font-family:"gotham";
+		   	 font-size:18px;
+
+
+				.title2{
+					color:black;
+					position:relative;
+					z-index: 1;
+				}
+				.title:hover{
+					text-decoration: underline;
+				}
+
+		   	 }
+		}
+	}
+		
+		.follow{
+		margin-left:-20px;
+		height:  25px;
+		width: 90px;
+		background-color: #808080;
+		
+		.texte{
+			font-family: "gotham-Bold";
+			font-size: 16px;
+			color: #FFF;
+			padding-left: 8px;
+			padding-top:4px;
+			
+		}
+		
+		
+		.texte2{
+			font-family: "gotham-Bold";
+			font-size: 16px;
+			color: #FFF;
+			padding-left: 12px;
+			padding-top:4px;
+		}
+		.arrow-left{
+			margin-top:-20px;
+			padding-left: 78px;
+		 	width: 0; 
+		 	height: 0; 
+		 	border-top: 12px solid transparent;
+		 	border-bottom: 12px solid transparent; 
+		 	border-right:12px solid white;
+		}
+		
+		}
+		
+		.follow:hover{
+			background-color: black;
+		}
+	
+		.categorie{
+		margin-top:8px;
+		margin-left:-20px;
+		height:65px;
+		width:90px;
+		background-color:#AAD0FF;
+		
+		 .arrow-left{
+			padding-left:58px;
+		 	width: 0; 
+		 	height: 0; 
+		 	border-top: 32px solid transparent;
+		 	border-bottom: 34px solid transparent; 
+         
+		 	border-right:32px solid white;
+		 }
+		 .image{
+			padding-left:10px;
+			margin-top:-48px;
+		 }
+		}
+}
+
+#challenge-american{
+
+	#challenge-badge1{
+		height:128px;
+		width:470px;
+		margin-bottom:15px;
+		background-image:url(/assets/vintage.jaune1-01.png);
+		
+		#challenge-badge2{
+		padding-left: 30px;
+		padding-top: 35px;
+		position:relative;
+		z-index: 1;
+		
+		.image{
+		padding-top:15px;
+		margin-left:-10px;
+		}
+		}
+		
+		#challenge-badge3{
+			background-image: url(/assets/text-badge.png);
+			width: 352px;
+			height: 110px;
+			margin-left:0px;
+			margin-top:10px;
+			
+			 .title{
+			 word-wrap:break-word;
+			 width: 290px;
+			 margin:30px 0px 3px 30px;
+		   	 text-align: center;
+		   	 font-family:"gotham";
+		   	 font-size:18px;
+
+
+				.title2{
+					color:black;
+					position:relative;
+					z-index: 1;
+				}
+				.title:hover{
+					text-decoration: underline;
+				}
+
+		   	 }
+		}
+	}
+		
+		.follow{
+		margin-left:-20px;
+		height:  25px;
+		width: 90px;
+		background-color: #808080;
+		
+		.texte{
+			font-family: "gotham-Bold";
+			font-size: 16px;
+			color: #FFF;
+			padding-left: 8px;
+			padding-top:4px;
+			
+		}
+		
+		
+		.texte2{
+			font-family: "gotham-Bold";
+			font-size: 16px;
+			color: #FFF;
+			padding-left: 12px;
+			padding-top:4px;
+		}
+		.arrow-left{
+			margin-top:-20px;
+			padding-left: 78px;
+		 	width: 0; 
+		 	height: 0; 
+		 	border-top: 12px solid transparent;
+		 	border-bottom: 12px solid transparent; 
+		 	border-right:12px solid white;
+		}
+		
+		}
+		
+		.follow:hover{
+			background-color: black;
+		}
+	
+		.categorie{
+		margin-top:8px;
+		margin-left:-20px;
+		height:65px;
+		width:90px;
+		background-color:#AAD0FF;
+		
+		 .arrow-left{
+			padding-left:58px;
+		 	width: 0; 
+		 	height: 0; 
+		 	border-top: 32px solid transparent;
+		 	border-bottom: 34px solid transparent; 
+         
+		 	border-right:32px solid white;
+		 }
+		 .image{
+			padding-left:10px;
+			margin-top:-48px;
+		 }
+		}
+}
+
+#challenge-british{
+
+	#challenge-badge1{
+		height:128px;
+		width:470px;
+		margin-bottom:15px;
+		background-image:url(/assets/british-01-01.png);
+		
+		#challenge-badge2{
+		padding-left: 30px;
+		padding-top: 35px;
+		position:relative;
+		z-index: 1;
+		
+		.image{
+		padding-top:15px;
+		margin-left:-10px;
+		}
+		}
+		
+		#challenge-badge3{
+			background-image: url(/assets/text-badge.png);
+			width: 352px;
+			height: 110px;
+			margin-left:0px;
+			margin-top:10px;
+			
+			 .title{
+			 word-wrap:break-word;
+			 width: 290px;
+			 margin:30px 0px 3px 30px;
+		   	 text-align: center;
+		   	 font-family:"gotham";
+		   	 font-size:18px;
+
+
+				.title2{
+					color:black;
+					position:relative;
+					z-index: 1;
+				}
+				.title:hover{
+					text-decoration: underline;
+				}
+
+		   	 }
+		}
+	}
+		
+		.follow{
+		margin-left:-20px;
+		height:  25px;
+		width: 90px;
+		background-color: #808080;
+		
+		.texte{
+			font-family: "gotham-Bold";
+			font-size: 16px;
+			color: #FFF;
+			padding-left: 8px;
+			padding-top:4px;
+			
+		}
+		
+		
+		.texte2{
+			font-family: "gotham-Bold";
+			font-size: 16px;
+			color: #FFF;
+			padding-left: 12px;
+			padding-top:4px;
+		}
+		.arrow-left{
+			margin-top:-20px;
+			padding-left: 78px;
+		 	width: 0; 
+		 	height: 0; 
+		 	border-top: 12px solid transparent;
+		 	border-bottom: 12px solid transparent; 
+		 	border-right:12px solid white;
+		}
+		
+		}
+		
+		.follow:hover{
+			background-color: black;
+		}
+	
+		.categorie{
+		margin-top:8px;
+		margin-left:-20px;
+		height:65px;
+		width:90px;
+		background-color:#AAD0FF;
+		
+		 .arrow-left{
+			padding-left:58px;
+		 	width: 0; 
+		 	height: 0; 
+		 	border-top: 32px solid transparent;
+		 	border-bottom: 34px solid transparent; 
+         
+		 	border-right:32px solid white;
+		 }
+		 .image{
+			padding-left:10px;
+			margin-top:-48px;
+		 }
+		}
+}
