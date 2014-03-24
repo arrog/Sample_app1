@@ -289,7 +289,7 @@
 						<div id="start3">C'est ton tour !</div>
 						<%= render "shared/argument_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 1 %>
 					<% else %>
-					<div id="start2">	<%= link_to("Il faut valider l'argument. Il sera ensuite non-modifiable.".html_safe,
+					<div id="start2">	<%= link_to("Cliquer ici pour valider. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 										<%= render "shared/argument_badge", argument: @challenge.first_argument %>
 					<% end %>
@@ -309,7 +309,7 @@
 						<%= render "shared/argument_contre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 2 %>
 					<% else %>
 						
-						<div id="start1"><%= link_to("Il faut valider l'argument. Il sera ensuite non-modifiable.".html_safe,
+						<div id="start1"><%= link_to("Cliquer ici pour valider. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 							<%= render "shared/argument_contre_badge", argument: @challenge.second_argument %>
 					<% end %>
@@ -328,7 +328,7 @@
 						<%= render "shared/argument_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 3 %>
 					<% else %>
 
-						<div id="start2"><%= link_to("Il faut valider l'argument. Il sera ensuite non-modifiable.".html_safe,
+						<div id="start2"><%= link_to("Cliquer ici pour valider. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 						<%= render "shared/argument_badge", argument: @challenge.third_argument %>
 					<% end %>
@@ -347,7 +347,7 @@
 						<%= render "shared/argument_contre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 4 %>
 					<% else %>
 
-						<div id="start1"><%= link_to("Il faut valider l'argument. Il sera ensuite non-modifiable.".html_safe,
+						<div id="start1"><%= link_to("Cliquer ici pour valider. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 						<%= render "shared/argument_contre_badge", argument: @challenge.fourth_argument %>
 					<% end %>
@@ -366,7 +366,7 @@
 						<%= render "shared/argument_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 5 %>
 					<% else %>
 						
-						<div id="start2"><%= link_to("Il faut valider l'argument. Il sera ensuite non-modifiable.".html_safe,
+						<div id="start2"><%= link_to("Cliquer ici pour valider. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 				<%= render "shared/argument_badge", argument: @challenge.fifth_argument %>
 					<% end %>
