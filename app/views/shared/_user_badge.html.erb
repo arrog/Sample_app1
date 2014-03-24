@@ -22,7 +22,7 @@
 				<%= link_to user.name, "#", class: "nom"%>
 			</div>
 			<div class="contexte">
-					<%= h Rinku.auto_link(user.url).gsub(/\n/, '<br/>').html_safe%>
+					<%= h Rinku.auto_link(user.url, :target => '_blank').gsub(/\n/, '<br/>').html_safe%>
 			<div>
 			<% end%>				
 		</div>
