@@ -15,9 +15,18 @@
 		</div>
 		<div class="span6" id="content">
 			<%= form_for(argcom) do |f| %>
-			  <%= render 'shared/error_messages', object: f.object %>
-
-			    <%= f.text_field :content, placeholder: "Réaction à l'argument", class: "text-reaction" %>
+				  <% if argcom.errors.any? %>
+					<div class="error-messages-newarg">
+						<h2>Quelques petites erreurs : </h2>
+						<ul>
+							<% argcom.errors.full_messages.each do |msg|%>
+								<li><%= msg %></li>
+							<%end%>
+						</ul>
+					</div>
+		 		<%end%>
+            	
+			    <%= f.text_field :content, placeholder: "Réaction à l'argument en 140 signes", class: "text-reaction" %>
 				<%= f.hidden_field :argument_id, :value => argument.id %>
 			  	<%= f.submit "OK", class: "reaction" %>
 			<% end %>

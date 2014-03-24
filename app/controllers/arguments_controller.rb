@@ -11,7 +11,6 @@ class ArgumentsController < ApplicationController
   def show
     @argument = Argument.find(params[:id])
     @argcoms = @argument.argcoms
-    @argcom = @argument.argcoms.new
   end
   
   def index

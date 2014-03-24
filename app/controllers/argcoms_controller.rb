@@ -10,11 +10,14 @@ class ArgcomsController < ApplicationController
           redirect_to :back 
         else
           flash[:errors]
-          render "edit"
+          redirect_to argument_path(@argcom.argument) 
         end
   end
-
+  def new
+  end
+  
   def edit
+    @argument = Argument.find(params[:argument_id])
     @argcom = Argcom.find(params[:id])
   end
   
