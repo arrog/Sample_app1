@@ -9,10 +9,15 @@ class ArgcomsController < ApplicationController
           flash[:success] = "Comment created!"
           redirect_to :back 
         else
-          render "new"  ##??????
+          flash[:errors]
+          render "edit"
         end
   end
 
+  def edit
+    @argcom = Argcom.find(params[:id])
+  end
+  
   def destroy
     @argcom.destroy
     redirect_to root_url
