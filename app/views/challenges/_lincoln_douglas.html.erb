@@ -385,7 +385,7 @@
 						<%= render "shared/argument_contre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 6 %>
 					<% else %>
 						<div id="start1"><%= link_to("Il faut valider l'argument. Il sera ensuite non-modifiable.".html_safe,
-				              next_challenge_path(@challenge) ,:method => :post) %></div>
+				              finish_challenge_path(@challenge) ,:method => :post) %></div>
 						<%= render "shared/argument_contre_badge", argument: @challenge.sixth_argument %>
 					<% end %>
 				<% else%>
@@ -393,45 +393,7 @@
 			<% elsif ["seventh","eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
 				<%= render "shared/argument_contre_badge", argument: @challenge.sixth_argument %>
 			<% end %>	
-		</div>
-
-		<div class="row" id="pousse-gauche">
-			<% if @challenge.state == "seventh" %>
-				<% if signed_in? && current_user == @challenge.prime_minister %>
-					<% if !@challenge.arguments.where(position: 7).any? %>
-						<div id="start">C'est ton tour !</div>
-						<%= render "shared/argument_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 7 %>
-					<% else %>
-						<div id="start2"><%= link_to("Il faut valider l'argument. Il sera ensuite non-modifiable.".html_safe,
-				              next_challenge_path(@challenge) ,:method => :post) %></div>
-							<%= render "shared/argument_neutre_badge", argument: @challenge.seventh_argument %>
-					<% end %>
-				<% else%>
-				<%end%>
-			<% elsif ["eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
-				<%= render "shared/argument_badge", argument: @challenge.seventh_argument %>
-			<% end %>	
-		</div>
-        
-		<div class="row" id="pousse-gauche2">
-			<% if @challenge.state == "eighth" %>
-				<% if signed_in? && current_user == @challenge.first_opponent %>
-					<% if !@challenge.arguments.where(position: 8).any? %>
-						<div id="start">C'est ton tour !</div>
-						<%= render "shared/argument_contre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 8 %>
-					<% else %>
-						<div id="start1"><%= link_to("Il faut valider l'argument. Il sera ensuite non-modifiable.".html_safe,
-				              finish_challenge_path(@challenge) ,:method => :post) %></div>
-						<%= render "shared/argument_contre_badge", argument: @challenge.eighth_argument %>
-					<% end %>
-				<% else%>
-				<%end%>
-			<% elsif ["over", "judged", "judged_one"].include?(@challenge.state) %>
-				<%= render "shared/argument_contre_badge", argument: @challenge.eighth_argument %>
-			<% end %>	
-		</div>
-		
-		
+		</div>		
 
 
 		<% if ["first","third" ,"fifth", "seventh"].include?(@challenge.state)%>
