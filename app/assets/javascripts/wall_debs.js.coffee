@@ -7,6 +7,8 @@ jQuery ->
 
 $(document).ready ->
  $ ->
+  $("#box-argument").hide()
+  $("#votervoter2").hide()
   $("#to-be-closed").hide()
   $(".arrow-up-context").hide()
   $(".arrow-up-newarg").hide()
@@ -312,4 +314,4 @@ $(document).ready ->
 	    $(this).hide().siblings("#box-argument").slideDown("slow").siblings("#votervoter2").show()
 
   $("#votervoter2").click ->
-	    $(this).hide().siblings("#box-argument").hide("slow")
+	    $(this).hide().siblings("#box-argument").hide("slow").siblings("#votervoter1").show()
