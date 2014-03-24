@@ -10,19 +10,19 @@
 			</div>
 			<div class="contexte">
 				<% if user.content.presence %>
-					<%= h Rinku.auto_link(user.content).gsub(/\n/, '<br/>').html_safe%>
+					<%= h Rinku.auto_link(user.content, :all, 'target="_blank"').gsub(/\n/, '<br/>').html_safe%>
 				<% end %>
 			<div>
 							 
 			<% else%>  
 			<div class="image1">
-				<%= link_to image_tag(user.avatar.url(:medium)), "#", class: "image"%>
+				<%=image_tag(user.avatar.url(:medium), class: "image")%>
 			</div>
 			<div class="nom">
-				<%= link_to user.name, "#", class: "nom"%>
+				<%=user.name%>
 			</div>
 			<div class="contexte">
-					<%= h Rinku.auto_link(user.url, :target => '_blank').gsub(/\n/, '<br/>').html_safe%>
+					<%= h Rinku.auto_link(user.url, :all, 'target="_blank"').gsub(/\n/, '<br/>').html_safe%>
 			<div>
 			<% end%>				
 		</div>

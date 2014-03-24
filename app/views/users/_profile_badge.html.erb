@@ -69,7 +69,7 @@
 		<% else %>
 			<div class="texte">
 				<% if user.content.presence %>
-					<%= h Rinku.auto_link(user.content).gsub(/\n/, '<br/>').html_safe%>
+					<%= h Rinku.auto_link(user.content, :all, 'target="_blank"').gsub(/\n/, '<br/>').html_safe%>
 				<% end %>
 			</div>
 		<% end %>

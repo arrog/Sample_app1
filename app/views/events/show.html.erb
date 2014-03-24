@@ -31,7 +31,7 @@
 					<div class="row" id="nouvellerange">
 						<div class="span3" id='event-gauche'>
 							<div class="row" id="content">
-								<div class="content"><%= h Rinku.auto_link(@event.description).gsub(/\n/, '<br/>').html_safe%></div>
+								<div class="content"><%= h Rinku.auto_link(@event.description, :all, 'target="_blank"').gsub(/\n/, '<br/>').html_safe%></div>
 							</div>
 						</div>
 						<div class="span3" id='event-droite'>

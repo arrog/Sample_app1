@@ -26,7 +26,7 @@
 				</div>
 			</div>
 			<div class="span4" id="content">
-				<%= h Rinku.auto_link(comment.content).gsub(/\n/, '<br/>').html_safe  %>
+				<%= h Rinku.auto_link(comment.content, :all, 'target="_blank"').gsub(/\n/, '<br/>').html_safe  %>
 			</div>
 		</div>
 	</div>

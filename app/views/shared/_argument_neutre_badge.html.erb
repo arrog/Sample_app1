@@ -105,7 +105,7 @@
 	                 		<div class="toggle">
 								<% if argument.avatar.url == "default_argument-01.png" %>
 								  <div id="argcontent">
-									<%=h Rinku.auto_link(argument.content).gsub(/\n/, '<br/>').html_safe %>
+									<%=h Rinku.auto_link(argument.content, :all, 'target="_blank"').gsub(/\n/, '<br/>').html_safe %>
 								  </div>
 								<% else %>
 								  <div id="argcontent">
@@ -115,7 +115,7 @@
 										</div>
 
 										</br>
-										<%=h Rinku.auto_link(argument.content).gsub(/\n/, '<br/>').html_safe %>
+										<%=h Rinku.auto_link(argument.content, :all, 'target="_blank"').gsub(/\n/, '<br/>').html_safe %>
 								  </div>
 
 								<% end %>							

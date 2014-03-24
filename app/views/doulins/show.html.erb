@@ -221,7 +221,7 @@
 					<% end%>
 				</div>
 				<% if !@doulin.context == nil%>
-				<div id="effective-context"><div class="text"><%= h Rinku.auto_link(@doulin.content).gsub(/\n/, '<br/>').html_safe%></div></div>
+				<div id="effective-context"><div class="text"><%= h Rinku.auto_link(@doulin.content, :all, 'target="_blank"').gsub(/\n/, '<br/>').html_safe%></div></div>
 				<% end%>
 			</div>
 			<div class="row" id ="openning-context">
