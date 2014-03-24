@@ -450,19 +450,6 @@
 	}
 	}
 	
-	
-	#votervoter{
-	margin-left:162px;
-	height:40px;
-	background-color: #C9C9C9;
-	margin-bottom: 10px;
-	width: 780px;
-	font-family: "gotham-Bold";
-	font-size:18px;
-	text-align: center;
-	cursor: pointer;
-	
-	
 	#votervoter1{
 	margin-left:162px;
 	height:40px;
@@ -482,6 +469,17 @@
 		text-align: center;
 		}
 	}
+	
+	#votervoter{
+	margin-left:162px;
+	height:40px;
+	background-color: #C9C9C9;
+	margin-bottom: 10px;
+	width: 780px;
+	font-family: "gotham-Bold";
+	font-size:18px;
+	text-align: center;
+	cursor: pointer;
 	
 	#vote{
 	height: 35px;
@@ -642,14 +640,15 @@
 		margin-left:402px;
 		height:30px;
 		background-color: #AAD0FF;
-		margin-bottom: 10px;
-		width: 300px;
+		margin-bottom: 0px;
+		margin-top:-40px;
+		width: 220px;
 		font-family: "gotham-Bold";
 		font-size:18px;
 		text-align: center;
 		cursor: pointer;
-		border-radius: 12px;
-		color: white;
+		border-radius: 0px;
+		color: black;
 		padding-top:10px;
 	}
 
@@ -1840,7 +1839,15 @@ border-image: url(border2.png) 13 fill repeat;
 	font-size:18px;
 	text-align: center;
 	cursor: pointer;
-	
+		
+			.texte-newarg{
+			padding-top:10px;
+			font-family: "gotham-Bold";
+			font-size:18px;
+			color: #000000;
+			text-align: center;
+			}	
+	}
 	
 	#votervoter{
 	margin-left:70px;
@@ -1850,22 +1857,15 @@ border-image: url(border2.png) 13 fill repeat;
 	width: 965px;
 	font-family: "gotham-Bold";
 	font-size:18px;
-	text-align: center;
+	text-align: left;
 	cursor: pointer;
-		
-		.texte-newarg{
-		padding-top:10px;
-		font-family: "gotham-Bold";
-		font-size:18px;
-		color: #000000;
-		text-align: center;
-		}	
-	}
+
 	
 	#vote{
 	height: 35px;
 	margin-top: 10px;
-	margin-right:5px;	
+	margin-right:5px;
+	margin-left:160px;	
 	border-bottom:8px solid white;
 	
 	li{
@@ -2021,14 +2021,15 @@ border-image: url(border2.png) 13 fill repeat;
 		margin-left:402px;
 		height:30px;
 		background-color: #AAD0FF;
-		margin-bottom: 10px;
-		width: 300px;
+		margin-bottom: 0px;
+		margin-top:-40px;
+		width: 220px;
 		font-family: "gotham-Bold";
 		font-size:18px;
 		text-align: center;
 		cursor: pointer;
-		border-radius: 12px;
-		color: white;
+		border-radius: 0px;
+		color: black;
 		padding-top:10px;
 	}
 	

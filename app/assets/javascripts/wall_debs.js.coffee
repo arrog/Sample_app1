@@ -7,13 +7,11 @@ jQuery ->
 
 $(document).ready ->
  $ ->
-  $("#box-argument").hide()
   $("#to-be-closed").hide()
   $(".arrow-up-context").hide()
   $(".arrow-up-newarg").hide()
   $(".developpement-bisbis").hide()
   $(".texte2-newarg").hide()
-  $("#votervoter2").hide()
   $(".arrow-up-comments").hide()
   $("#comments-to-open").hide()
   $(".comment-texte2").hide()
@@ -314,4 +312,4 @@ $(document).ready ->
 	    $(this).hide().siblings("#box-argument").slideDown("slow").siblings("#votervoter2").show()
 
   $("#votervoter2").click ->
-	    $(this).hide().siblings("#box-argument").hide()
+	    $(this).hide().siblings("#box-argument").hide("slow")

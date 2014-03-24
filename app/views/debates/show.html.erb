@@ -193,13 +193,14 @@
 
 		<div class="row" id="arguments">
 
-					<% if current_user && @debate.has_evaluation?(:votes, current_user) %>
+					<% if current_user && @debate.has_evaluation?(:votes, current_user) %>						
 						
-						<div class="row" id="votervoter2">
-							J'argumenterai plus tard
+						<div class="gauche" id="votervoter2">
+ 							Contribuer plus tard
 						</div>
 						
 						<div class="row" id="box-argument">
+							
 				   			<% if @debate.valeur_vote(current_user) == 1.0 %>
 								<div class="pour">
 				   				<%= render "shared/argument_form", argumentable: @debate, argument: current_user.arguments.new, position:1 %>
@@ -213,12 +214,7 @@
 				   				<%= render "shared/argument_neutre_form", argumentable: @debate, argument: current_user.arguments.new, position:1 %>
 								</div>
 				   			<% end %>
-				    	</div>
-
-						<div class="row" id="votervoter1">
-							<div class="texte-newarg">Contribue au débat!</div>
-						</div>
-					
+				    	</div>					
 				
 					<% else  %>
 						<div class="row" id="votervoter">						
