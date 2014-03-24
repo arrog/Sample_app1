@@ -310,7 +310,7 @@ $(document).ready ->
   $(".arrow-up-comments").click ->
 	    $(this).hide().siblings(".arrow-down-comments").show().siblings(".comment-texte2").hide().siblings(".comment-texte1").show().parent().siblings("#comments-to-open").hide().siblings("#comments-to-close").slideDown("slow")
 
-  $("#votervoter").mouseover ->
+  $("#votervoter1").mouseover ->
 	    $(this).hide().siblings("#box-argument").slideDown("slow").siblings("#votervoter2").show()
 
   $("#votervoter2").click ->
