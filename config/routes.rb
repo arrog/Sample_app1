@@ -186,7 +186,7 @@ SampleApp::Application.routes.draw do
   get 'tags/:tag', to: 'static_pages#list', as: :tag
   
   match "/search_results/" => "static_pages#search_results", :via => :get, :as =>"search_results"
-  
+  match "/jquery.simple-text-rotator.js", :to => 'static_pages#home'
   match '*a', :to => 'errors#routing'
   
   
