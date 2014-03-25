@@ -1,7 +1,7 @@
 <section id='group-badge1'>
 	<div class="badge2">
-		<%= link_to image_tag(group.avatar.url(:large), class: "image"), group_path(group)%>
-		<%= link_to(image_tag("group_badge.png", class: "image2"), group_path(group))%>
+		<%= link_to image_tag(group.avatar.url(:large), class: "image"), event_path(group)%>
+		<%= link_to(image_tag("group_badge.png", class: "image2"), event_path(group))%>
 		<div class="row" id="title-group">
 			<div class="title"><%= link_to group.title, group, class: "title"%></div>
 		</div>
