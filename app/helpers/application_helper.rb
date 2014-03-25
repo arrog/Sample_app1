@@ -17,6 +17,7 @@ module ApplicationHelper
         end
         link_to(name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")})
     end
+    
     def sortable (column, title = nil)
       title ||= column.titleize
       css_class = column == sort_column ? "current #{sort_direction}" : nil
