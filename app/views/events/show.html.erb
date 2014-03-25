@@ -1,9 +1,8 @@
 <% if current_user && current_user.try(:admin?)%>
 <div id="share2">
-	<%= @event.state%>
+	<%= @event.state%> (open, full, close)
 			<div><%= link_to "edit",edit_event_path(@event), class: "text"%>    </div>                                                        
-			<div><%= link_to "publush",publish_event_path(@event), class: "text"%>    </div>
-			<div><%= link_to "publush",publish_event_path(@event), class: "text"%>    </div>                                                                                                                
+			<div><%= link_to "publush",publish_event_path(@event), class: "text"%>    </div>                                                                                                              
 </div>                                                                
 <% end %>
 
