@@ -42,7 +42,7 @@ class EventsController < ApplicationController
   end
   
   def index
-    @events = Event..sort { |x,y| y.created_at <=> x.created_at }.paginate(:page => params[:page], :per_page =>8)
+    @events = Event.all.sort { |x,y| y.created_at <=> x.created_at }.paginate(:page => params[:page], :per_page =>8)
 
     respond_to do |format|
       format.html # index.html.erb
