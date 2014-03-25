@@ -144,7 +144,7 @@
 				<% @total.each do |l| %>
 					<div class="row" id='sharing-badges'>
 							 <% if l.class == Debate %>
-							 	<%= render "shared/debate_badge", :debate => l %>
+							 	<%= render "shared/debate_badge", :debate => ok %>
 							<% elsif l.class == Doulin %>
 								<%= render "shared/doulin_badge", :doulin => l %>
 							<% elsif l.class == Challenge %>
