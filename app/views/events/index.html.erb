@@ -1,19 +1,16 @@
-<div class="container" id="index-doulins">
-	<div class="row" id="intro-doulin">
-		<div class="texte">Un fil d'actualité personnalisé</div>
+<section id="index-groups">
+	<div class="container">
+		<div class="row" id="intro-groupe">
+
+			<div class="text1">
+				Nos rencontres pour débattre
+			</div>
+		</div>
+		
+		<% @events.each do |g|%>
+		<div class="row" id="pousse-droite">
+			<%= render "shared/event_badge", group: g%>
+		</div>
+		<%end%>
 	</div>
-	
-				<div class="row" id= "for-badges">
-					<div class="span3">
-						<%= render "shared/menu_cat"%>
-					</div>
-						
-											
-					<div class="span8" id="list">
-						<%= render "shared/index", :object => @events %>
-						<%= will_paginate @events, previous_label: h("<"), next_label: h(">") %>	
-					</div>
-					
-				</div>
-			
-</div>
+</section>

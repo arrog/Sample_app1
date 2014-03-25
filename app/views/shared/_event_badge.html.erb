@@ -8,40 +8,38 @@
 	</div>
 	<div class="containant2">
 		<div class="rejoindre">
-			<% if current_user && current_user.in_group_accepted?(group)%>
-				<%= link_to "Actualité du groupe", group_path(group), class: "join"%>
-			<% elsif current_user && current_user.in_group_rejected?(group)%>
-				<%= link_to "Banni du groupe", group_path(group), class: "join"%>
-			<%elsif current_user && current_user.in_group?(group)%>
-				<span class="join">Demande en cours</span>
-			<% else %>
-				<%= link_to "Rejoindre le groupe", rejoindre_group_path(group), class: "join"%>
+			<%  if current_user && current_user.in_event?(group)%>
+				<%= link_to "Vous y participez", event_path(group), class: "join" %>
+			<% elsif group.state == "open"%>
+				<%= link_to "Participer", rejoindre_event_path(group), class: "join" %>
+			<%else%>
+				<span class="join">Inscriptions closes</span>
 			<% end %>
 		</div>
 		
 		<div class="icones-users">
 			<div class="ligne1">
 				<li class="imageuser">
-					<% if group.group_users.count >=1 %>
+					<% if group.users.count >=1 %>
 					<%= link_to image_tag(group.users.first.avatar.url(:small)), group.users.first, class: "image1"%>
 					<%end%>
 					</li>
 					
 					<li class="imageuser">
-						<% if group.group_users.count >=2 %>
+						<% if group.users.count >=2 %>
 						<%= link_to image_tag(group.users.second.avatar.url(:small)), group.users.second, class: "image2"%>
 						<%end%>
 						</li>
 					
 						<li class="imageuser">
-							<% if group.group_users.count >=3 %>
+							<% if group.users.count >=3 %>
 							<%= link_to image_tag(group.users.third.avatar.url(:small)), group.users.third, class: "image3"%>
 							<%end%>
 							</li>
 				
 					
 					<li class="imageuser">
-						<% if group.group_users.count >=4 %>
+						<% if group.users.count >=4 %>
 						<%= link_to image_tag(group.users.fourth.avatar.url(:small)), group.users.fourth, class: "image4"%>
 						<%end%>
 						</li>
@@ -49,26 +47,26 @@
 			</div>
 			<div class="ligne1">
 				<li class="imageuser">
-					<% if group.group_users.count >=5 %>
+					<% if group.users.count >=5 %>
 					<%= link_to image_tag(group.users[4].avatar.url(:small)), group.users[5], class: "image1"%>
 					<%end%>
 					</li>
 					
 					<li class="imageuser">
-						<% if group.group_users.count >=6 %>
+						<% if group.users.count >=6 %>
 						<%= link_to image_tag(group.users[5].avatar.url(:small)), group.users[6], class: "image2"%>
 						<%end%>
 						</li>
 					
 						<li class="imageuser">
-							<% if group.group_users.count >=7 %>
+							<% if group.users.count >=7 %>
 							<%= link_to image_tag(group.users[6].avatar.url(:small)), group.users[7], class: "image3"%>
 							<%end%>
 						</li>
 				
 					
 					<li class="imageuser" id="lastuserprof">
-						<%=group.group_users.count%>
+						<%=group.users.count%>
 					
 					</li>
 					

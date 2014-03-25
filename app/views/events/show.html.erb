@@ -140,7 +140,7 @@
 							</div>
 							<div class="row" id="voir-tous">
 								<% if current_user && current_user.in_event?(@event)%>
-									<%= link_to "Vous participez", event_path(@event), class: "texte" %>
+									<%= link_to "Vous y participez", event_path(@event), class: "texte" %>
 								<% elsif @event.state == "open" %>
 									<%= link_to "Participer", rejoindre_event_path(@event), class: "texte" %>
 								<% else %>
