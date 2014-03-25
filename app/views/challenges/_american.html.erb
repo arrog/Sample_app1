@@ -343,7 +343,7 @@
 		<% if !@challenge.context == nil%>
 		<div class="row">
 			<div class "row" id="to-be-closed">
-				<div id="effective-context"><div class="text"><%= h , :all, 'target="_blank"'.auto_link(@challenge.content).gsub(/\n/, '<br/>').html_safe%></div></div>
+				<div id="effective-context"><div class="text"><%= h Rinku.auto_link(@challenge.content, :all, 'target="_blank"').gsub(/\n/, '<br/>').html_safe%></div></div>
 			</div>
 			<div class="row" id ="openning-context">
 				<div class="texte">Contexte</div>
