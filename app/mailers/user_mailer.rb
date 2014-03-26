@@ -11,9 +11,9 @@ class UserMailer < ActionMailer::Base
     @debate1 = debate1
     @challenge = challenge
     @user = user
-    attachments.inline['mail-challenge1-01.png'] = File.read("#{Rails.root}/app/assets/images/mail-challenge1-01.png")
-    attachments.inline['mail-challenge2-01.png'] = File.read("#{Rails.root}/app/assets/images/mail-challenge2-01.png")
-    attachments.inline['mail-challenge3-01.png'] = File.read("#{Rails.root}/app/assets/images/mail-challenge3-01.png")
+    attachments.inline['mail-challenge1-04.png'] = File.read("#{Rails.root}/app/assets/images/mail-challenge1-04.png")
+    attachments.inline['mail-challenge2-05.png'] = File.read("#{Rails.root}/app/assets/images/mail-challenge2-05.png")
+    attachments.inline['mail-challenge3-06.png'] = File.read("#{Rails.root}/app/assets/images/mail-challenge3-06.png")
     mail to: user.email, subject: "Bienvenue sur Moutoners"
   end
 end

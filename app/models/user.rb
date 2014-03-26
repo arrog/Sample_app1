@@ -459,9 +459,9 @@ private
     end
     
     def send_welcome_email
-        @debate = Debate.homepage1.reverse!.first
-        @debate1 = Debate.homepage2.reverse!.first
-        @challenge = Challenge.homepage.reverse!.first
+        @debate = Debate.find(6)
+        @debate1 = Debate.find(13)
+        @challenge = Challenge.find(13)
         UserMailer.signup_confirmation(self, @debate, @debate1, @challenge).deliver
     end
     
