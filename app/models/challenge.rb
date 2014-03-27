@@ -67,7 +67,7 @@ class Challenge < ActiveRecord::Base
     end
     
     event :promote do
-      transition :incomplete => :homepage    
+      transition :incomplete => :homepage     
       transition :over => :homepage
       transition :judged => :homepage
     end

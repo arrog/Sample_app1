@@ -426,7 +426,7 @@
 			<% if @challenge.state =="incomplete" && !@challenge.not_full?%>
 			<% if current_user && current_user == @challenge.prime_minister %>
 		<div class="row" id="start">
-				<%= link_to("Commence le débat".html_safe,
+				<%= link_to("Cliquer ici pour commencer le débat".html_safe,
 		              starting_challenge_path(@challenge) ,:method => :post) %>
 		</div>
 			<%end%>
