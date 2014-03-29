@@ -16,7 +16,7 @@
 						<%= render "shared/menu_cat"%>
 					</div>
 					
-					<% if @challenges.any? %>
+					<% if !@challenges.any? %>
 						<div class="nothing">
 						Pas de joutes pour l'instant.
 						</div>
