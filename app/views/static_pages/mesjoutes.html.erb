@@ -1,6 +1,6 @@
 <div class="container" id="index-doulins">
 	<div class="row" id="intro-doulin">
-		<div class="texte">Débats codifiés en comité réduit</div>
+		<div class="texte">Mes joutes</div>
 	</div>
 	</br>
 	</br>
@@ -15,10 +15,17 @@
 					<div class="span3">
 						<%= render "shared/menu_cat"%>
 					</div>
-	
+					
+					<% if @challenges.any? %>
+						<div class="nothing">
+						Pas de joutes pour l'instant.
+						</div>
+					<% else %>
 					<div class="span8" id="list">
 						<%= render "shared/index", :object => @challenges %>
 						<%= will_paginate @challenges, previous_label: h("<"), next_label: h(">") %>	
 					</div>
+					<% end %>
+					
 				</div>
 </div>

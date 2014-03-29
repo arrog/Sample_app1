@@ -698,7 +698,7 @@
 	height:30px;
 	width: 240px;
 	margin-left : 424px;
-	margin-top: 75px;
+	margin-top: 15px;
 	border-top: 1px solid;
 	}
 	
@@ -1335,7 +1335,7 @@ text-align: center;
 
 						.moitie-gauche{
 						width:190px;
-						background-color: #808080;
+						background-color: #AAD0FF;
 						height: 35px;
 						font-family: "gotham-Bold";
 						font-size: 18px;
@@ -1362,9 +1362,7 @@ text-align: center;
 								}
 							}
 						}
-						div:hover{
-						background-color: #AAD0FF;
-						}
+
 
 
 						.moitie-gauche1{
@@ -1374,7 +1372,8 @@ text-align: center;
 						font-family: "gotham-Bold";
 						font-size: 18px;
 						color: white;
-						text-align: center;						
+						text-align: center;
+						border: 1px solid white;					
 							.rapport-gauche{
 							height:29px;
 							padding: 7px 5px 0px 5px;
@@ -1401,7 +1400,7 @@ text-align: center;
 						.moitie-droite{
 						float:right;
 						width:190px;
-						background-color: #808080;
+						background-color: #FF6969;
 						height: 35px;
 						font-family: "gotham-Bold";
 						font-size: 18px;
@@ -1438,7 +1437,8 @@ text-align: center;
 						font-family: "gotham-Bold";
 						font-size: 18px;
 						color: white;
-						text-align: center;						
+						text-align: center;
+						border: 1px solid white;												
 							.rapport-droite{
 							height:29px;
 							padding: 7px 5px 0px 5px;
@@ -1703,15 +1703,18 @@ text-align: center;
 	}
 	
 	#start3{
-		background-color: #AAD0FF;
-		font-family:"bebasneue-webfont";
+		background-color: #839AB2;
+		font-family:"georgia";
 		padding: 5px;
-		font-size:28px;
-		margin-left:450px;
+		font-size:21px;
 		margin-top:50px;
 		margin-bottom: 0px;
-		width:145px;
+		margin-left: 20px;
+		width:524px;
 		color:black;
+		text-align: center;
+		height: 25px;
+		padding-top:10px;
 	}
 	
 	#start4{
@@ -1731,7 +1734,7 @@ text-align: center;
 	margin-top:20px;
 	width: 383px;
 	min-height:52px;
-	margin-left:150px;
+	margin-left:-20px;
 	
 	.image{
 		padding: 5px 5px 5px 5px;
@@ -1750,7 +1753,7 @@ text-align: center;
 	margin-top:20px;
 	width: 383px;
 	min-height:52px;
-	margin-left:526px;
+	margin-left:130px;
 	
 	.image{
 		padding: 5px;
@@ -2077,7 +2080,7 @@ text-align: center;
 
 					.moitie-gauche{
 					width:190px;
-					background-color: #808080;
+					background-color: #AAD0FF;
 					height: 35px;
 					font-family: "gotham-Bold";
 					font-size: 18px;
@@ -2092,7 +2095,7 @@ text-align: center;
 						font-family: "georgia";
 						font-size: 16px;
 						font-style: italic;
-						font-weight: bold;
+						font-weight: white;
 						float: left;
 						}
 						.pour-truc{
@@ -2105,9 +2108,7 @@ text-align: center;
 						}
 					}
 					
-					div:hover{
-					background-color: #AAD0FF;
-					}
+
 
 
 					.moitie-gauche1{
@@ -2117,7 +2118,8 @@ text-align: center;
 					font-family: "gotham-Bold";
 					font-size: 18px;
 					color: white;
-					text-align: center;						
+					text-align: center;	
+					border: 1px Solid white;					
 						.rapport-gauche{
 						height:29px;
 						padding: 7px 5px 0px 5px;
@@ -2144,7 +2146,7 @@ text-align: center;
 					.moitie-droite{
 					float:right;
 					width:190px;
-					background-color: #808080;
+					background-color: #FF6969;
 					height: 35px;
 					font-family: "gotham-Bold";
 					font-size: 18px;
@@ -2181,7 +2183,8 @@ text-align: center;
 					font-family: "gotham-Bold";
 					font-size: 18px;
 					color: white;
-					text-align: center;						
+					text-align: center;	
+					border: 1px Solid white;					
 						.rapport-droite{
 						height:29px;
 						padding: 7px 5px 0px 5px;
@@ -2442,15 +2445,18 @@ text-align: center;
 	}
 	
 	#start3{
-		background-color: #AAD0FF;
-		font-family:"bebasneue-webfont";
+		background-color: #839AB2;
+		font-family:"georgia";
 		padding: 5px;
-		font-size:28px;
-		margin-left:450px;
+		font-size:21px;
 		margin-top:50px;
 		margin-bottom: 0px;
-		width:145px;
+		margin-left: 20px;
+		width:524px;
 		color:black;
+		text-align: center;
+		height: 25px;
+		padding-top:10px;
 	}
 	
 	#start4{
@@ -2470,7 +2476,7 @@ text-align: center;
 	margin-top:20px;
 	width: 383px;
 	min-height:52px;
-	margin-left:150px;
+	margin-left:-20px;
 	
 	.image{
 		padding: 5px 5px 5px 5px;
@@ -2489,7 +2495,7 @@ text-align: center;
 	margin-top:20px;
 	width: 383px;
 	min-height:52px;
-	margin-left:527px;
+	margin-left:130px;
 	
 	.image{
 		padding: 5px;
@@ -2962,7 +2968,7 @@ text-align: center;
 
 						.moitie-gauche{
 						width:190px;
-						background-color: #808080;
+						background-color: #AAD0FF;
 						height: 35px;
 						font-family: "gotham-Bold";
 						font-size: 18px;
@@ -2989,10 +2995,6 @@ text-align: center;
 								}
 							}
 						}
-
-						div:hover{
-						background-color: #AAD0FF;
-						}
 						
 						.moitie-gauche1{
 						width:190px;
@@ -3001,7 +3003,8 @@ text-align: center;
 						font-family: "gotham-Bold";
 						font-size: 18px;
 						color: white;
-						text-align: center;						
+						text-align: center;	
+						border: 1px Solid white;					
 							.rapport-gauche{
 							height:29px;
 							padding: 7px 5px 0px 5px;
@@ -3028,7 +3031,7 @@ text-align: center;
 						.moitie-droite{
 						float:right;
 						width:190px;
-						background-color: #808080;
+						background-color: #FF6969;
 						height: 35px;
 						font-family: "gotham-Bold";
 						font-size: 18px;
@@ -3065,7 +3068,8 @@ text-align: center;
 						font-family: "gotham-Bold";
 						font-size: 18px;
 						color: white;
-						text-align: center;						
+						text-align: center;	
+						border: 1px Solid white;					
 							.rapport-droite{
 							height:29px;
 							padding: 7px 5px 0px 5px;
@@ -3107,7 +3111,7 @@ text-align: center;
 
 						.moitie-gauche{
 						width:190px;
-						background-color: #808080;
+						background-color: #CCE6FF;
 						height: 35px;
 						font-family: "gotham-Bold";
 						font-size: 18px;
@@ -3135,9 +3139,6 @@ text-align: center;
 							}
 						}
 
-						div:hover{
-						background-color: #AAD0FF;
-						}
 						
 						.moitie-gauche1{
 						width:190px;
@@ -3146,7 +3147,8 @@ text-align: center;
 						font-family: "gotham-Bold";
 						font-size: 18px;
 						color: white;
-						text-align: center;						
+						text-align: center;	
+						border: 1px solid white;					
 							.rapport-gauche{
 							height:29px;
 							padding: 7px 5px 0px 5px;
@@ -3162,7 +3164,7 @@ text-align: center;
 						  padding-top: 7px;
 						  	.pour-first{
 						  	text-align: center;
-						  	color: black;
+						  	color: white;
 
 						  	}
 						  }						
@@ -3173,7 +3175,7 @@ text-align: center;
 						.moitie-droite{
 						float:right;
 						width:190px;
-						background-color: #808080;
+						background-color: #FF9090;
 						height: 35px;
 						font-family: "gotham-Bold";
 						font-size: 18px;
@@ -3210,7 +3212,8 @@ text-align: center;
 						font-family: "gotham-Bold";
 						font-size: 18px;
 						color: white;
-						text-align: center;						
+						text-align: center;	
+						border: 1px solid white;					
 							.rapport-droite{
 							height:29px;
 							padding: 7px 5px 0px 5px;
@@ -3466,15 +3469,18 @@ text-align: center;
 	}
 	
 	#start3{
-		background-color: #AAD0FF;
-		font-family:"bebasneue-webfont";
+		background-color: #839AB2;
+		font-family:"georgia";
 		padding: 5px;
-		font-size:28px;
-		margin-left:450px;
+		font-size:21px;
 		margin-top:50px;
 		margin-bottom: 0px;
-		width:145px;
+		margin-left: 20px;
+		width:524px;
 		color:black;
+		text-align: center;
+		height: 25px;
+		padding-top:10px;
 	}
 	
 	#start4{
@@ -3494,7 +3500,7 @@ text-align: center;
 	margin-top:20px;
 	width: 383px;
 	min-height:52px;
-	margin-left:150px;
+	margin-left:-20px;
 	
 	.image{
 		padding: 5px 5px 5px 5px;
@@ -3513,7 +3519,7 @@ text-align: center;
 	margin-top:20px;
 	width: 383px;
 	min-height:52px;
-	margin-left:526px;
+	margin-left:130px;
 	
 	.image{
 		padding: 5px;
@@ -4232,7 +4238,7 @@ text-align: center;
 
 						.moitie-gauche{
 						width:190px;
-						background-color: #808080;
+						background-color: #AAD0FF;
 						height: 35px;
 						font-family: "gotham-Bold";
 						font-size: 18px;
@@ -4260,10 +4266,7 @@ text-align: center;
 							}
 						}
 
-						div:hover{
-						background-color: #AAD0FF;
-						}
-						
+
 						.moitie-gauche1{
 						width:190px;
 						background-color: #AAD0FF;
@@ -4271,7 +4274,8 @@ text-align: center;
 						font-family: "gotham-Bold";
 						font-size: 18px;
 						color: white;
-						text-align: center;						
+						text-align: center;	
+						border: 1px Solid white;					
 							.rapport-gauche{
 							height:29px;
 							padding: 7px 5px 0px 5px;
@@ -4298,7 +4302,7 @@ text-align: center;
 						.moitie-droite{
 						float:right;
 						width:190px;
-						background-color: #808080;
+						background-color: #FF6969;
 						height: 35px;
 						font-family: "gotham-Bold";
 						font-size: 18px;
@@ -4335,7 +4339,8 @@ text-align: center;
 						font-family: "gotham-Bold";
 						font-size: 18px;
 						color: white;
-						text-align: center;						
+						text-align: center;
+						border: 1px Solid white;						
 							.rapport-droite{
 							height:29px;
 							padding: 7px 5px 0px 5px;
@@ -4377,7 +4382,7 @@ text-align: center;
 
 						.moitie-gauche{
 						width:190px;
-						background-color: #808080;
+						background-color: #CCE6FF;
 						height: 35px;
 						font-family: "gotham-Bold";
 						font-size: 18px;
@@ -4405,10 +4410,6 @@ text-align: center;
 							}
 						}
 
-						div:hover{
-						background-color: #AAD0FF;
-						}
-						
 						.moitie-gauche1{
 						width:190px;
 						background-color: #CCE6FF;
@@ -4416,7 +4417,8 @@ text-align: center;
 						font-family: "gotham-Bold";
 						font-size: 18px;
 						color: white;
-						text-align: center;						
+						text-align: center;
+						border: 1px Solid white;						
 							.rapport-gauche{
 							height:29px;
 							padding: 7px 5px 0px 5px;
@@ -4432,7 +4434,7 @@ text-align: center;
 						  padding-top: 7px;
 						  	.pour-first{
 						  	text-align: center;
-						  	color: black;
+						  	color: white;
 
 						  	}
 						  }						
@@ -4443,7 +4445,7 @@ text-align: center;
 						.moitie-droite{
 						float:right;
 						width:190px;
-						background-color: #808080;
+						background-color: #FF9090;
 						height: 35px;
 						font-family: "gotham-Bold";
 						font-size: 18px;
@@ -4480,7 +4482,8 @@ text-align: center;
 						font-family: "gotham-Bold";
 						font-size: 18px;
 						color: white;
-						text-align: center;						
+						text-align: center;	
+						border: 1px Solid white;					
 							.rapport-droite{
 							height:29px;
 							padding: 7px 5px 0px 5px;
@@ -4734,15 +4737,18 @@ text-align: center;
 	}
 	
 	#start3{
-		background-color: #AAD0FF;
-		font-family:"bebasneue-webfont";
+		background-color: #839AB2;
+		font-family:"georgia";
 		padding: 5px;
-		font-size:28px;
-		margin-left:450px;
+		font-size:21px;
 		margin-top:50px;
 		margin-bottom: 0px;
-		width:145px;
+		margin-left: 20px;
+		width:524px;
 		color:black;
+		text-align: center;
+		height: 25px;
+		padding-top:10px;
 	}
 	
 	#start4{
@@ -4762,7 +4768,7 @@ text-align: center;
 	margin-top:20px;
 	width: 383px;
 	min-height:52px;
-	margin-left:150px;
+	margin-left:-20px;
 	
 	.image{
 		padding: 5px 5px 5px 5px;
@@ -4781,7 +4787,7 @@ text-align: center;
 	margin-top:20px;
 	width: 383px;
 	min-height:52px;
-	margin-left:526px;
+	margin-left:130px;
 	
 	.image{
 		padding: 5px;

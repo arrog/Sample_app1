@@ -35,10 +35,10 @@ class Challenge < ActiveRecord::Base
   
   paginates_per 10
   
-  scope :open_challenges, -> { where(:state => ["first","second","third","forth","fifth","sixth","seventh","eighth"], group: nil)}
+  scope :open_challenges, -> { where(:state => ["incomplete","first","second","third","forth","fifth","sixth","seventh","eighth"], group: nil)}
   scope :incomplete, -> { where(:state => ["incomplete"]) }
   scope :homepage, -> { where(:state => ["homepage"]) }  
-    
+  scope :active, -> { where('places = ?', 0)}  
   state_machine initial: :incomplete do
     
     event :starting do
@@ -53,6 +53,8 @@ class Challenge < ActiveRecord::Base
       transition :fifth => :sixth
       transition :sixth => :seventh
       transition :seventh => :eighth
+      transition :homepage => :judged
+      transition :incomplete => :judged
     end
     
     event :finish do
@@ -73,7 +75,6 @@ class Challenge < ActiveRecord::Base
     end
   
   end
-  
   
   def places
     if jugebreve ==0
@@ -234,6 +235,25 @@ class Challenge < ActiveRecord::Base
     arguments.where(position:8).first
   end
   
+  
+  def lasst_speaker?
+    if [2,3].include?(self.type_deb) && self.arguments.count == 6
+      true
+    elsif [4,8].include?(self.type_deb) && self.arguments.count ==8
+       true
+    end  
+  end 
+  
+  def active?
+    if !self.not_full?
+      if [2,3].include?(self.type_deb) && self.arguments.count < 6
+        true
+      elsif [4,8].include?(self.type_deb) && self.arguments.count < 8
+        true
+      end
+    end
+  end
+  
   def speaking
     if self.type_deb == 2
       self.speaking_ld
@@ -247,78 +267,82 @@ class Challenge < ActiveRecord::Base
   end
   
   def speaking_british
-    if self.state == "first"
+    if self.arguments.count == 0
       self.prime_minister
-    elsif self.state == "second"
+    elsif self.arguments.count ==1
       self.first_opponent
-    elsif self.state == "third"
+    elsif self.arguments.count ==2
       self.second_prop      
-    elsif self.state == "forth"
+    elsif self.arguments.count ==3
       self.second_opp
-    elsif self.state == "fifth"
+    elsif self.arguments.count ==4
       self.third_prop
-    elsif self.state == "sixth"
+    elsif self.arguments.count ==5
       self.third_opp
-    elsif self.state == "seventh"
+    elsif self.arguments.count ==6
       self.fourth_prop
-    elsif self.state == "eighth"
+    elsif self.arguments.count ==7
       self.fourth_opp
+    elsif self.arguments.count == 8
+    User.first
     end                          
   end
   
   def speaking_american
-    if self.state == "first"
+    if self.arguments.count == 0
       self.prime_minister
-    elsif self.state == "second"
+    elsif self.arguments.count == 1
       self.first_opponent
-    elsif self.state == "third"
+    elsif self.arguments.count == 2
       self.second_prop      
-    elsif self.state == "forth"
+    elsif self.arguments.count == 3
       self.second_opp
-    elsif self.state == "fifth"
+    elsif self.arguments.count == 4
       self.first_opponent
-    elsif self.state == "sixth"
+    elsif self.arguments.count == 5
       self.prime_minister
+    elsif self.arguments.count == 6
+      User.first
     end                          
   end
 
   def speaking_fc
-    if self.state == "first"
+    if self.arguments.count == 0
       self.prime_minister
-    elsif self.state == "second"
+    elsif self.arguments.count == 1
       self.first_opponent
-    elsif self.state == "third"
+    elsif self.arguments.count == 2
       self.second_prop      
-    elsif self.state == "forth"
+    elsif self.arguments.count == 3
       self.second_opp
-    elsif self.state == "fifth"
+    elsif self.arguments.count == 4
       self.prime_minister
-    elsif self.state == "sixth"
+    elsif self.arguments.count == 5
       self.first_opponent
-    elsif self.state == "seventh"
+    elsif self.arguments.count == 6
       self.second_prop
-    elsif self.state == "eighth"
+    elsif self.arguments.count == 7
       self.second_opp
+    elsif self.arguments.count == 8
+      User.first
     end                         
   end    
   
   def speaking_ld
-    if self.state == "first"
+    if self.arguments.count ==0
       self.prime_minister
-    elsif self.state == "second"
+    elsif self.arguments.count ==1
       self.first_opponent      
-    elsif self.state == "third"
+    elsif self.arguments.count ==2
       self.prime_minister
-    elsif self.state == "forth"
+    elsif self.arguments.count ==3
       self.first_opponent
-    elsif self.state == "fifth"
+    elsif self.arguments.count ==4
       self.prime_minister
-    elsif self.state == "sixth"
+    elsif self.arguments.count ==5
       self.first_opponent
-    elsif self.state == "seventh"
-      self.prime_minister
-    elsif self.state == "eighth"
-      self.first_opponent
+    elsif self.arguments.count ==6
+      User.first
     end                         
   end
   

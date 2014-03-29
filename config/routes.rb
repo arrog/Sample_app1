@@ -179,15 +179,15 @@ SampleApp::Application.routes.draw do
   match '/list',    to: 'static_pages#list'
   match '/experts',    to: 'static_pages#list_doulins'
   match '/dialectiques',    to: 'static_pages#list_challenges'
-  match '/incomplets', to:'static_pages#list_ajoindre'
+  match '/encours', to:'static_pages#list_ajoindre'
+  match '/mesjoutes', to:'static_pages#mesjoutes'
   match '/debats',    to: 'static_pages#list_debates'
   match '/challenge',    to: 'static_pages#challenge'
   
   get 'tags/:tag', to: 'static_pages#list', as: :tag
   
   match "/search_results/" => "static_pages#search_results", :via => :get, :as =>"search_results"
-  match "/jquery.simple-text-rotator.js", :to => 'static_pages#home'
-  match '*a', :to => 'errors#routing'
+
   
   
 end

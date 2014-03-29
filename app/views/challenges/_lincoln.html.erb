@@ -1,9 +1,11 @@
+
 <section id="ld">
 	<div class="container">
+		
 	<div class="row" id="ld-title">
 		
 		<div class="row" id="ld-image-superieure">
-			<%= image_tag "saute_mouton-01.png", class: "image"%>
+			<%= image_tag "saute_mouton-01.jpg", class: "image"%>
 			<div class="image-sign">
 				<%= image_tag("signe-defi.png", alt: "Moutoners", class: "image2")%>
 			</div>
@@ -13,7 +15,7 @@
 			
 			<div class="span2" id="ld-gauche">
 				<div class="row" id="equipe">
-					Equipe Contre
+					Pour
 				</div>			
 				<div class="image1">
 					<div class="image2">
@@ -65,14 +67,15 @@
 				
 				<div class="row" id="ld-milieu-4">
 					<% @challenge.tags.each do |l|%>
-						<li><%= link_to l.name, list_path(:view =>'tag', :tag => l.name), class: "tags"%></li>
+						<li><%= link_to "##{l.name}", list_path(:view =>'tag', :tag => l.name), class: "tags"%></li>
 					<% end%>
 				</div>
 
 				<div class="row" id="ld-milieu-2">
-					<div class='content'><%= @challenge.context%></div>
+					<div class='content'><%= h Rinku.auto_link(@challenge.context, :all, 'target="_blank"').gsub(/\n/, '<br/>').html_safe%></div>
 				</div>
-	
+				
+				<% unless @challenge.not_full?%>
 				<div class="row" id="ld-milieu-3">
 						
 						<% if @challenge.position_taken.include?(1) %>
@@ -117,28 +120,29 @@
 						<%end%>	
 						</div>							
 				</div>
+				<% end %>
 				
 				<div class="row" id="ld-milieu-5">
 					<div class="stat1">
 						<%= @challenge.count_for+@challenge.count_against%>
-						<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image")%>
+						<%= image_tag("icone-debat-3.png", alt: "Moutoners", class: "image-bulle01")%>
 						|
 				
 						<span class="stat2"><%= @challenge.arguments.count%></span>
-						<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image")%>
+						<%= image_tag("icone-debat.png", alt: "Moutoners", class: "image-bulle02")%>
 						|
 				
 						<span class="stat2"><%= @challenge.comments.count%></span>
-						<%= image_tag("icone-debat-2.png", alt: "Moutoners", class: "image")%>
+						<%= image_tag("icone-debat-2.png", alt: "Moutoners", class: "image-bulle03")%>
 	
 					</div>
 				</div>	
 			</div>
 			
-			<div class="span2" id="ld-droite">	
+			<div class="span2" id="ld-droite">
 				<div class="row" id="equipe">
-					Equipe Contre
-				</div>		
+					Contre
+				</div>			
 				<div class="image1">
 					<div class="image2">
 					<% if @challenge.position_taken.include?(2) %>
@@ -187,14 +191,6 @@
 	</div>
 
 
-	<div class="span1" id="share">
-			<div class="ok">
-			<%=image_tag('facebook_petit.png', :alt => 'Moutoners', class: "image")%>)
-			<div class="okk"><%= social_share_button_tag(@challenge.title) %></div></div>
-			<div class="texte">Partager
-			<div class="okk"><%= social_share_button_tag(@challenge.title) %></div></div>
-	</div>
-
 		<div class="span1" id="follow">
 			<div class="follow">
 	   		<% if current_user && current_user.following?(@challenge)%>
@@ -228,11 +224,45 @@
 	   		<%end%>
 	   		</div>
 	   	</div>
-		
-		<div class="row">
+	
+		<div class="span1" id="hover-categorie">
+			<div class="follow">
+	   			<div class="texte">
+	   				<% if @challenge.cat_id == 1 %>
+			   			sport
+			   		<%elsif @challenge.cat_id == 2 %>
+			   			actualité
+			   		<%elsif @challenge.cat_id == 3 %>
+			   			monde
+			   		<%elsif @challenge.cat_id == 4 %>
+			   			éco
+			   		<%elsif @challenge.cat_id == 5 %>
+			   			culture
+			   		<%elsif @challenge.cat_id == 6 %>
+			   		 	sciences
+			   		<%elsif @challenge.cat_id == 7 %>
+			   			philo
+			   		<%elsif @challenge.cat_id == 8 %>
+			   			société
+			   		<%end%>
+	   			</div>
+	   			<div class="arrow-left"></div>
+	   		</div>
+		</div>
 
+		<div class="row" id="explications">
+			<%= image_tag("bulle-explication-01.png", class: "bulle1")%>
+			<%= image_tag("bulle-explication1-01.png", class: "bulle2")%>
+			<%= image_tag("bulle-explication0-01.png", class: "bulle3")%>													
+		</div>
+
+		<% if @challenge.content.presence%>
+		<div class="row">
 			<div class "row" id="to-be-closed">
-				<div id="effective-context"><div class="text"><%= h(@challenge.content).gsub(/\n/, '<br/>').html_safe%></div></div>
+				<div id="effective-context">
+					<div class="text"><%= h Rinku.auto_link(@challenge.content, :all, 'target="_blank"').gsub(/\n/, '<br/>').html_safe%>
+					</div>
+				</div>
 			</div>
 			<div class="row" id ="openning-context">
 				<div class="texte">Contexte</div>
@@ -240,6 +270,7 @@
 				<div class="arrow-up-context"></div>
 			</div>
 		</div>
+		<% end %>
 		
 		
 			<% if @challenge.state =="incomplete" && !@challenge.not_full?%>
@@ -256,10 +287,10 @@
 			<% if @challenge.state == "first" %>
 				<% if signed_in? && current_user == @challenge.prime_minister %>
 					<% if !@challenge.arguments.where(position: 1).any? %>
-						<div id="start">C'est ton tour !</div>
-						<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 1 %>
+						<div id="start3">C'est ton tour !</div>
+						<%= render "shared/argument_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 1 %>
 					<% else %>
-					<div id="start">	<%= link_to("VALIDE TON ARGUMENT".html_safe,
+					<div id="start2">	<%= link_to("Cliquer ici pour valider. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 										<%= render "shared/argument_badge", argument: @challenge.first_argument %>
 					<% end %>
@@ -275,11 +306,11 @@
 			<% if @challenge.state == "second" %>
 				<% if signed_in? && current_user == @challenge.first_opponent %>
 					<% if !@challenge.arguments.where(position: 2).any? %>
-						<div id="start">C'est ton tour !</div>
-						<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 2 %>
+						<div id="start4">C'est ton tour !</div>
+						<%= render "shared/argument_contre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 2 %>
 					<% else %>
 						
-						<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+						<div id="start1"><%= link_to("Cliquer ici pour valider. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 							<%= render "shared/argument_contre_badge", argument: @challenge.second_argument %>
 					<% end %>
@@ -295,10 +326,10 @@
 				<% if signed_in? && current_user == @challenge.prime_minister %>
 					<% if !@challenge.arguments.where(position: 3).any? %>
 						<div id="start">C'est ton tour !</div>
-						<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 3 %>
+						<%= render "shared/argument_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 3 %>
 					<% else %>
 
-						<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+						<div id="start2"><%= link_to("Cliquer ici pour valider. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 						<%= render "shared/argument_badge", argument: @challenge.third_argument %>
 					<% end %>
@@ -314,10 +345,10 @@
 				<% if signed_in? && current_user == @challenge.first_opponent %>
 					<% if !@challenge.arguments.where(position: 4).any? %>
 						<div id="start">C'est ton tour !</div>
-						<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 4 %>
+						<%= render "shared/argument_contre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 4 %>
 					<% else %>
 
-						<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+						<div id="start1"><%= link_to("Cliquer ici pour valider. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 						<%= render "shared/argument_contre_badge", argument: @challenge.fourth_argument %>
 					<% end %>
@@ -333,10 +364,10 @@
 				<% if signed_in? && current_user == @challenge.prime_minister %>
 					<% if !@challenge.arguments.where(position: 5).any? %>
 						<div id="start">C'est ton tour !</div>
-						<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 5 %>
+						<%= render "shared/argument_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 5 %>
 					<% else %>
 						
-						<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
+						<div id="start2"><%= link_to("Cliquer ici pour valider. Il sera ensuite non-modifiable.".html_safe,
 				              next_challenge_path(@challenge) ,:method => :post) %></div>
 				<%= render "shared/argument_badge", argument: @challenge.fifth_argument %>
 					<% end %>
@@ -352,10 +383,10 @@
 				<% if signed_in? && current_user == @challenge.first_opponent %>
 					<% if !@challenge.arguments.where(position: 6).any? %>
 						<div id="start">C'est ton tour !</div>
-						<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 6 %>
+						<%= render "shared/argument_contre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 6 %>
 					<% else %>
-						<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
-				              next_challenge_path(@challenge) ,:method => :post) %></div>
+						<div id="start1"><%= link_to("Cliquer ici pour valider. Il sera ensuite non-modifiable.".html_safe,
+				              finish_challenge_path(@challenge) ,:method => :post) %></div>
 						<%= render "shared/argument_contre_badge", argument: @challenge.sixth_argument %>
 					<% end %>
 				<% else%>
@@ -363,45 +394,7 @@
 			<% elsif ["seventh","eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
 				<%= render "shared/argument_contre_badge", argument: @challenge.sixth_argument %>
 			<% end %>	
-		</div>
-
-		<div class="row" id="pousse-gauche">
-			<% if @challenge.state == "seventh" %>
-				<% if signed_in? && current_user == @challenge.prime_minister %>
-					<% if !@challenge.arguments.where(position: 7).any? %>
-						<div id="start">C'est ton tour !</div>
-						<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 7 %>
-					<% else %>
-						<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
-				              next_challenge_path(@challenge) ,:method => :post) %></div>
-							<%= render "shared/argument_neutre_badge", argument: @challenge.seventh_argument %>
-					<% end %>
-				<% else%>
-				<%end%>
-			<% elsif ["eighth" ,"over", "judged", "judged_one"].include?(@challenge.state) %>
-				<%= render "shared/argument_badge", argument: @challenge.seventh_argument %>
-			<% end %>	
-		</div>
-        
-		<div class="row" id="pousse-gauche2">
-			<% if @challenge.state == "eighth" %>
-				<% if signed_in? && current_user == @challenge.first_opponent %>
-					<% if !@challenge.arguments.where(position: 8).any? %>
-						<div id="start">C'est ton tour !</div>
-						<%= render "shared/argument_neutre_form", argumentable: @challenge, argument: @challenge.arguments.new, position: 8 %>
-					<% else %>
-						<div id="start"><%= link_to("VALIDE TON ARGUMENT".html_safe,
-				              finish_challenge_path(@challenge) ,:method => :post) %></div>
-						<%= render "shared/argument_contre_badge", argument: @challenge.eighth_argument %>
-					<% end %>
-				<% else%>
-				<%end%>
-			<% elsif ["over", "judged", "judged_one"].include?(@challenge.state) %>
-				<%= render "shared/argument_contre_badge", argument: @challenge.eighth_argument %>
-			<% end %>	
-		</div>
-		
-		
+		</div>		
 
 
 		<% if ["first","third" ,"fifth", "seventh"].include?(@challenge.state)%>

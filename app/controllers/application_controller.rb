@@ -1,13 +1,8 @@
 class ApplicationController < ActionController::Base
-  
   protect_from_forgery
   after_filter :store_location
 
   # Force signout to prevent CSRF attacks
-  rescue_from ActiveRecord::RecordNotFound do
-    flash[:notice] = 'The object you tried to access does not exist'
-    redirect_to :root 
-  end
   
   def handle_unverified_request
     sign_out
@@ -23,4 +18,5 @@ class ApplicationController < ActionController::Base
     session[:previous_url] || root_path
   end
   
+
 end

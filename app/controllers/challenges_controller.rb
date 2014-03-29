@@ -103,7 +103,7 @@ class ChallengesController < ApplicationController
     @challenge.create_activity :join, owner: current_user
     if !@challenge.not_full?
       @user = @challenge.prime_minister
-      TourMailer.votre_tour(@user, @challenge).deliver
+      ChallengeMailer.new_argument(@user, @challenge).deliver
     end
     redirect_to @challenge
   end
@@ -114,7 +114,7 @@ class ChallengesController < ApplicationController
     @challenge.create_activity :join, owner: current_user
     if !@challenge.not_full?
       @user = @challenge.prime_minister
-      TourMailer.votre_tour(@user, @challenge).deliver
+      ChallengeMailer.new_argument(@user, @challenge).deliver
     end
     redirect_to @challenge
   end
@@ -125,7 +125,7 @@ class ChallengesController < ApplicationController
     @challenge.create_activity :join, owner: current_user
     if !@challenge.not_full?
       @user = @challenge.prime_minister
-      TourMailer.votre_tour(@user, @challenge).deliver
+      ChallengeMailer.new_argument(@user, @challenge).deliver
     end
     redirect_to @challenge
   end
@@ -136,7 +136,7 @@ class ChallengesController < ApplicationController
     @challenge.create_activity :join, owner: current_user
     if !@challenge.not_full?
       @user = @challenge.prime_minister
-      TourMailer.votre_tour(@user, @challenge).deliver
+      ChallengeMailer.new_argument(@user, @challenge).deliver
     end
     redirect_to @challenge
   end
@@ -147,7 +147,7 @@ class ChallengesController < ApplicationController
     @challenge.create_activity :join, owner: current_user
     if !@challenge.not_full?
       @user = @challenge.prime_minister
-      TourMailer.votre_tour(@user, @challenge).deliver
+      ChallengeMailer.new_argument(@user, @challenge).deliver
     end
     redirect_to @challenge
   end
@@ -158,7 +158,7 @@ class ChallengesController < ApplicationController
     @challenge.create_activity :join, owner: current_user
     if !@challenge.not_full?
       @user = @challenge.prime_minister
-      TourMailer.votre_tour(@user, @challenge).deliver
+      ChallengeMailer.new_argument(@user, @challenge).deliver
     end
     redirect_to @challenge
   end
@@ -169,7 +169,7 @@ class ChallengesController < ApplicationController
     @challenge.create_activity :join, owner: current_user
     if !@challenge.not_full?
       @user = @challenge.prime_minister
-      TourMailer.votre_tour(@user, @challenge).deliver
+      ChallengeMailer.new_argument(@user, @challenge).deliver
     end
     redirect_to @challenge
   end
@@ -180,7 +180,7 @@ class ChallengesController < ApplicationController
     @challenge.create_activity :join, owner: current_user
     if !@challenge.not_full?
       @user = @challenge.prime_minister
-      TourMailer.votre_tour(@user, @challenge).deliver
+      ChallengeMailer.new_argument(@user, @challenge).deliver
     end
     redirect_to @challenge
   end

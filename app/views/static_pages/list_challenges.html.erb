@@ -131,7 +131,8 @@
 	
 	<ul class ="row" id ="challenge-header">
 		 	        <li class='first'><%= link_to "Toutes les joutes", dialectiques_path, class: cp(dialectiques_path)%></li>
-		 	   	 	<li><%= link_to "Rejoindre un débat", incomplets_path, class: cp(incomplets_path) %></li>         	
+		 	   	 	<li><%= link_to "Mes joutes", mesjoutes_path, class: cp(mesjoutes_path) %></li>
+					<li><%= link_to "Joutes en cours", encours_path, class: cp(encours_path) %></li>  
 		 	        <li><%= link_to "Nouvelle joute", new_challenge_path, class: cp(new_challenge_path) %></li>
 	</ul>
 	

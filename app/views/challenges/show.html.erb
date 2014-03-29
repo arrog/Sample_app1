@@ -86,9 +86,6 @@
 			
 			</div>
 			<% if current_user && current_user.in_challenge?(@challenge)%>
-				<div class="row" id="inviterchallenge">
-					Inviter de nouvelles personnes
-				</div>
 				<div class="row" id="developpement-bisbis">
 						<% @challenge.challenge_toinvite.shuffle.each do |user|%>
 							<li>
@@ -189,16 +186,16 @@
 						<% end %>
 				</div>
 			<%end%>
-		<% elsif @challenge.state == "judged" || @challenge.state == "homepage"%>
+		<% elsif @challenge.active?%>
 		<div class="row">
 		<div class="row" id ="openning-comments3">
-			<div class="comment-texte3">Le débat est clos.</div>
+			<div class="comment-texte3">Le débat est en cours.</div>
 		</div>
 		</div>
 		<% else %>
 		<div class="row">
 			<div class="row" id ="openning-comments3">
-				<div class="comment-texte3">Le débat est en cours.</div>
+				<div class="comment-texte3">Le débat est clos.</div>
 			</div>
 		</div>
 		<%end%>
@@ -496,12 +493,14 @@
 		
 		<div class='row'>
 			
+			<% if @challenge.comments.count > 1%>
 			<div class="row" id ="openning-comments">
 				<div class="comment-texte1">Afficher plus de commentaires</div>
 				<div class="comment-texte2">Afficher moins de commentaires</div>
 				<div class="arrow-down-comments"></div>
 				<div class="arrow-up-comments"></div>
 			</div>
+			<% end %>
 			
 			<div class="row" id="comments-to-close">
 				<% if @challenge.comments.any?%> 

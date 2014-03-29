@@ -2,6 +2,7 @@
 
 class StaticPagesController < ApplicationController
   before_filter :store_location
+  before_filter :authenticate_user!, only: [:mesjoutes]
     
   has_scope :permission_doulin
   has_scope :permission_debate
@@ -110,6 +111,10 @@ class StaticPagesController < ApplicationController
     end
   end
   
+  def mesjoutes
+    @user = current_user
+    @challenges = @user.challenges.sort { |x,y| y.created_at <=> x.created_at }.paginate(:page => params[:page], :per_page =>8)
+  end
   
   def search_results
     @tag_challenges = Challenge.tagged_with("#{params[:search]}")

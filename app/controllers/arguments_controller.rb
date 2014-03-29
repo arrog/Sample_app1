@@ -23,6 +23,13 @@ class ArgumentsController < ApplicationController
       if @argument.save
         if @argumentable.class == Debate
             @argument.create_activity :create, owner: current_user
+        elsif @argumentable.class == Challenge
+            if @argumentable.last_speaker?
+               @argumentable.next
+            else    
+              @user = @argumentable.speaking
+              ChallengeMailer.new_argument(@user, @argumentable).deliver
+            end
         end
         flash[:success] = "Tu argumentes!"
         redirect_to @argumentable

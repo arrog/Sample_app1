@@ -245,64 +245,17 @@ after_create :send_welcome_email
     ## NOTIFICATION CHALLENEGES
     def debat_pret
       dc=[]
-      self.challenges.where(state: "incomplete").each do |l|
-        if !l.not_full?
-          if l.prime_minister == self
-            dc = dc +[l]
-          end
-        end
-      end
       dc
     end
     
     def challenge_active
       cha=[]     
-      challenges.open_challenges.each do |l|
-        if l.type_deb == 2
-          if l.prime_minister == self && ["first", "third", "fifth", "seventh"].include?(l.state)
-            cha = cha +[l]
-          elsif l.first_opponent == self && ["second", "forth", "sixth", "eighth"].include?(l.state)
-            cha = cha + [l]
-          end         
-        elsif l.type_deb == 3
-          if l.prime_minister == self && ["first", "sixth"].include?(l.state)
-             cha = cha +[l]
-          elsif l.first_opponent == self && ["second", "fifth"].include?(l.state)
-             cha = cha + [l]
-          elsif l.second_prop == self && ["third"].include?(l.state)
-             cha = cha + [l]
-          elsif l.second_opp == self && ["forth"].include?(l.state)
-             cha = cha + [l]
-          end           
-        elsif l.type_deb == 4
-          if l.prime_minister == self && ["first", "fifth"].include?(l.state)
-            cha = cha +[l]
-          elsif l.first_opponent == self && ["second", "sixth"].include?(l.state)
-            cha = cha + [l]
-          elsif l.second_prop == self && ["third", "seventh"].include?(l.state)
-            cha = cha + [l]
-          elsif l.second_opp == self && ["forth", "eighth"].include?(l.state)
-            cha = cha + [l]
-          end       
-        elsif l.type_deb == 8
-          if l.prime_minister == self && ["first"].include?(l.state)
-            cha = cha +[l]
-          elsif l.first_opponent == self && ["second"].include?(l.state)
-            cha = cha + [l]
-          elsif l.second_prop == self && ["third"].include?(l.state)
-            cha = cha + [l]
-          elsif l.second_opp == self && ["forth"].include?(l.state)
-            cha = cha + [l]
-          elsif l.third_prop == self && ["fifth"].include?(l.state)
-            cha = cha +[l]
-          elsif l.third_opp == self && ["sixth"].include?(l.state)
-            cha = cha + [l]
-          elsif l.fourth_prop == self && ["seventh"].include?(l.state)
-            cha = cha + [l]
-          elsif l.fourth_opp == self && ["eighth"].include?(l.state)
-            cha = cha + [l]
+      challenges.each do |l|
+        if l.active?
+          if self == l.speaking 
+            cha= cha + [l]
           end
-        end 
+        end
       end
       cha
     end
@@ -461,7 +414,7 @@ private
     def send_welcome_email
         @debate = Debate.find(6)
         @debate1 = Debate.find(13)
-        @challenge = Challenge.find(13)
+        @challenge = Challenge.find(50)
         UserMailer.signup_confirmation(self, @debate, @debate1, @challenge).deliver
     end
     
