@@ -5,6 +5,8 @@ task :mail2 => :environment do
   ch.each do |challenge|
     if challenge.active?
       user=challenge.speaking
+      puts user.email
+      puts challenge.title
       ChallengeMailer.new_argument(user, challenge).deliver
     end
   end
