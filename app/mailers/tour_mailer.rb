@@ -6,10 +6,11 @@ class TourMailer < ActionMailer::Base
   #
   #   en.tour_mailer.votre_tour.subject
   #
-  def votre_tour(name, mail, challenge)
+  def votre_tour(user, challenge)
+    @user = user
     @challenge = challenge
     attachments.inline['mail-challenge4-01.png'] = File.read("#{Rails.root}/app/assets/images/mail-challenge4-01.png")
-    mail to: mail, subject: "C'est à vous de débattre!"   
+    mail to: user.email, subject: "C'est à vous de débattre!"   
   end
   
 end
