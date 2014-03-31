@@ -414,7 +414,7 @@ private
     def send_welcome_email
         @debate = Debate.find(6)
         @debate1 = Debate.find(13)
-        @challenge = Challenge.find(50)
+        @challenge = Challenge.find(13)
         UserMailer.signup_confirmation(self, @debate, @debate1, @challenge).deliver
     end
     
