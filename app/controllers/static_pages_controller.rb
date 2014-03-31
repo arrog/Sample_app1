@@ -54,6 +54,8 @@ class StaticPagesController < ApplicationController
   
   def contact
     @activities = PublicActivity::Activity.order("created_at desc")
+    @user= User.first
+    @challenge= Challenge.first
   end
   
   def list

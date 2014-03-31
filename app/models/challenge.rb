@@ -236,7 +236,7 @@ class Challenge < ActiveRecord::Base
   end
   
   
-  def lasst_speaker?
+  def last_speaker?
     if [2,3].include?(self.type_deb) && self.arguments.count == 6
       true
     elsif [4,8].include?(self.type_deb) && self.arguments.count ==8

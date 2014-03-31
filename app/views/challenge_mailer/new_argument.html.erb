@@ -1,97 +1,428 @@
-<html>
-<head>
-   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-   <title>Moutoners sign_up confirmation</title>
-   <style type="text/css">
-   	a {color: #4A72AF;}
-	body, #header h1, #header h2, p {margin: 0; padding: 0;}
-	#main {border: 20px Solid #aad0ff;}
-	img {display: block;}
-	#top-message p, #bottom-message p {color: #3f4042; font-size: 12px; font-family: Arial, Helvetica, sans-serif; }
-	#header h1 {color: #000000 !important; font-family: "gotham-Bold"; font-size: 24px; margin-bottom: 0!important; padding-bottom: 0; }
-	#header h2 {color: #ffffff !important; font-family: Arial, Helvetica, sans-serif; font-size: 24px; margin-bottom: 0 !important; padding-bottom: 0; }
-	#header p {color: #ffffff !important; font-family: "Lucida Grande", "Lucida Sans", "Lucida Sans Unicode", sans-serif; font-size: 12px;  }
-	h1, h2, h3, h4, h5, h6 {margin: 0 0 0.8em 0;}
-	h3 {font-size: 28px; color: #444444 !important; font-family: Arial, Helvetica, sans-serif; }
-	h4 {font-size: 18px; color: #000000 !important; font-family: "georgia"; }
-	h5 {font-size: 16px; color: #444444 !important; font-family: "georgia"; }
-	p {font-size: 16px; color: #000000 !important; font-family: "georgia"; line-height: 1.5;}
-   </style>
-</head>
-
-
-
-<body>
-
-
-
-<table width="100%" cellpadding="0" cellspacing="0" bgcolor="ffffff"><tr><td>
-
-
-
-<table id="top-message" cellpadding="20" cellspacing="0" width="600" align="center">
-		<tr>
-			<td align="center">
-				<p>Trouble viewing this email? <a href="#">View in Browser</a></p>
-			</td>
-		</tr>
-</table><!-- top message -->
-
-
-
-<table id="main" width="600" align="center" cellpadding="0" cellspacing="15" bgcolor="ffffff">
-		<tr>
-			<td bgcolor="aad0ff">
-				<table id="header" cellpadding="10" cellspacing="0" align="center">
-					<tr>
-						<td width="570" bgcolor="ffffff" align= "center"><h1>Bonjour 							<%= link_to @user.name, user_url(@user)%>,</h1></td>
-					</tr>
-				</table><!-- header -->
-			</td>
-		</tr><!-- header -->
-
-		<tr>
-			<td></td>
-		</tr>
-		<tr>
-			<td>
-				<table id="content-1" cellpadding="20" cellspacing="0" align="center">
-					<tr>
-						<td width="560" valign="top" colspan="3" bgcolor="ffffff">
-							<h4><a href='www.moutoners.com'><%= link_to "C'est à vous d'argumenter dans le débat '#{@challenge.title}'", challenge_url(@challenge)%>.</a></h4>
-						</td>
-					</tr>
-				</table><!-- content 1 -->
-			</td>
-		</tr><!-- content 1 -->
-		<tr>
-			<td>
-				<table id="content-3" cellpadding="10" cellspacing="0" align="center" >
-					<tr>
-						<td width="570" bgcolor="ffffff" align="center">
-							<%= link_to image_tag(attachments["mail-challenge4-01.png"].url), challenge_url(@challenge)%>
-						</td>
-					</tr>
-				</table><!-- content-2 -->
-			</td>
-			
-		</tr>
-		<tr>
-		</tr>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>*|MC:SUBJECT|*</title>
 		
+    <style type="text/css">
+		#outlook a{
+			padding:0;
+		}
+		.ReadMsgBody{
+			width:100%;
+		}
+		.ExternalClass{
+			width:100%;
+		}
+		body{
+			margin:0;
+			padding:0;
+		}
+		img{
+			border:0;
+			height:auto;
+			line-height:100%;
+			outline:none;
+			text-decoration:none;
+		}
+		table,td{
+			border-collapse:collapse !important;
+			mso-table-lspace:0pt;
+			mso-table-rspace:0pt;
+		}
+		#bodyTable,#bodyCell{
+			height:100% !important;
+			margin:0;
+			padding:0;
+			width:100% !important;
+		}
+		#templateContainer{
+			width:600px;
+		}
+		body,#bodyTable{
+			background-color:#FFFFFF;
+		}
+		#templateRibbon{
+			background-color:#AAD0FF;
+		}
+		h1{
+			color:#363636 !important;
+			display:block;
+			font-family:Helvetica;
+			font-size:24px;
+			font-style:normal;
+			font-weight:normal;
+			line-height:100%;
+			letter-spacing:normal;
+			margin-top:0;
+			margin-right:0;
+			margin-bottom:10px;
+			margin-left:0;
+			text-align:left;
+		}
+		h2{
+			color:#363636 !important;
+			display:block;
+			font-family:Helvetica;
+			font-size:18px;
+			font-style:normal;
+			font-weight:normal;
+			line-height:100%;
+			letter-spacing:normal;
+			margin-top:0;
+			margin-right:0;
+			margin-bottom:10px;
+			margin-left:0;
+			text-align:left;
+		}
+		a{
+			color: black;
+		}
+		h3{
+			color:#363636 !important;
+			display:block;
+			font-family:Helvetica;
+			font-size:16px;
+			font-style:normal;
+			font-weight:normal;
+			line-height:100%;
+			letter-spacing:normal;
+			margin-top:0;
+			margin-right:0;
+			margin-bottom:10px;
+			margin-left:0;
+			text-align:left;
+		}
+		h4{
+			color:#363636 !important;
+			display:block;
+			font-family:Helvetica;
+			font-size:14px;
+			font-style:normal;
+			font-weight:normal;
+			line-height:100%;
+			letter-spacing:normal;
+			margin-top:0;
+			margin-right:0;
+			margin-bottom:10px;
+			margin-left:0;
+			text-align:left;
+		}
+		#templatePreheader{
+			background-color:#FFFFFF;
+			border-top:0;
+			border-bottom:0;
+		}
+		.preheaderContent{
+			color:#363636;
+			font-family:Helvetica;
+			font-size:10px;
+			line-height:125%;
+			padding-top:10px;
+			padding-bottom:10px;
+			text-align:left;
+		}
+		.preheaderContent a:link,.preheaderContent a:visited,.preheaderContent a .yshortcuts {
+			color:#363636;
+			font-weight:normal;
+			text-decoration:underline;
+		}
+		#templateHeader{
+			border-top:0;
+			border-bottom:0;
+		}
+		.headerContent{
+			color:#363636;
+			font-family:Helvetica;
+			font-size:20px;
+			font-weight:bold;
+			line-height:100%;
+			padding-top:20px;
+			padding-right:0;
+			padding-bottom:20px;
+			padding-left:0;
+			text-align:left;
+			vertical-align:middle;
+		}
+		.headerContent a:link,.headerContent a:visited,.headerContent a .yshortcuts {
+			color:#363636;
+			font-weight:normal;
+			text-decoration:underline;
+		}
+		#headerImage{
+			height:auto;
+			max-width:530px;
+		}
+		#templateBody{
+			border-top:0;
+			border-bottom:0;
+		}
+		.bodyContent{
+			color:#363636;
+			font-family:Helvetica;
+			font-size:13px;
+			line-height:150%;
+			padding-top:20px;
+			padding-bottom:20px;
+			text-align:left;
+		}
+		.bodyContent a:link,.bodyContent a:visited,.bodyContent a .yshortcuts {
+			color:#26AAE1;
+			font-weight:normal;
+			text-decoration:none;
+		}
+		.bodyContent img{
+			display:inline;
+			height:auto;
+			max-width:600px !important;
+		}
+		#templateFooter{
+			border-top:1px dotted #353536;
+			border-bottom:0;
+		}
+		.footerContent{
+			color:#363636;
+			font-family:Helvetica;
+			font-size:10px;
+			line-height:150%;
+			padding-top:20px;
+			padding-bottom:20px;
+			text-align:left;
+		}
+		.footerContent a:link,.footerContent a:visited,.footerContent a .yshortcuts,.footerContent a span {
+			color:#363636;
+			font-weight:normal;
+			text-decoration:underline;
+		}
+		.footerContent img{
+			display:inline;
+			height:auto;
+			max-width:600 !important;
+		}
+	@media only screen and (max-width: 500px){
+		body,table,td,p,a,li,blockquote{
+			-webkit-text-size-adjust:none !important;
+		}
 
-	</table><!-- main -->
-	<table id="bottom-message" cellpadding="20" cellspacing="0" width="600" align="center">
+}	@media only screen and (max-width: 500px){
+		body{
+			width:auto !important;
+		}
+
+}	@media only screen and (max-width: 500px){
+		td[id=bodyCell]{
+			padding:10px !important;
+		}
+
+}	@media only screen and (max-width: 500px){
+		table[id=templateContainer]{
+			max-width:600px !important;
+			width:100% !important;
+		}
+
+}	@media only screen and (max-width: 500px){
+		h1{
+			font-size:24px !important;
+			line-height:100% !important;
+		}
+
+}	@media only screen and (max-width: 500px){
+		h2{
+			font-size:20px !important;
+			line-height:100% !important;
+		}
+
+}	@media only screen and (max-width: 500px){
+		h3{
+			font-size:18px !important;
+			line-height:100% !important;
+		}
+
+}	@media only screen and (max-width: 500px){
+		h4{
+			font-size:16px !important;
+			line-height:100% !important;
+		}
+
+}	@media only screen and (max-width: 500px){
+		table[id=templatePreheader]{
+			display:none !important;
+		}
+
+}	@media only screen and (max-width: 500px){
+		table[id=templateHeader]{
+			width:100% !important;
+		}
+
+}	@media only screen and (max-width: 500px){
+		img[id=headerImage]{
+			height:auto !important;
+			max-width:233px !important;
+			width:100% !important;
+		}
+
+}	@media only screen and (max-width: 500px){
+		td[class=headerContent]{
+			font-size:20px !important;
+			line-height:150% !important;
+			padding-top:20px !important;
+			padding-right:10px;
+			!important;
+					/*@editable*/ padding-bottom:20px !important;
+			padding-left:0 !important;
+		}
+
+}	@media only screen and (max-width: 500px){
+		td[class=bodyContent]{
+			font-size:18px !important;
+			line-height:150% !important;
+		}
+
+}	@media only screen and (max-width: 500px){
+		td[class=footerContent]{
+			font-size:14px !important;
+			line-height:150% !important;
+		}
+
+}	@media only screen and (max-width: 500px){
+		td[class=footerContent] a{
+			display:block !important;
+		}
+
+}</style></head>
+    <body style="margin: 0;padding: 0;background-color: #FFFFFF;">
+    	<center>
+        	<table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;margin: 0;padding: 0;background-color: #FFFFFF;border-collapse: collapse !important;height: 100% !important;width: 100% !important;">
+            	<tr>
+                	<td align="center" height="100%" valign="top" width="100%" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+                    	<table border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+                            <tr>
+                            	<td align="center" valign="top" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+                                	<table border="0" cellpadding="0" cellspacing="0" width="600" id="templateContainer" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 600px;border-collapse: collapse !important;">
+                                    	<tr>
+                                        	<td align="center" valign="top" id="templateRibbon" style="padding-top: 10px;padding-right: 5px;padding-left: 5px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #AAD0FF;border-collapse: collapse !important;">
+                                            	<img src="http://gallery.mailchimp.com/27aac8a65e64c994c4416d6b8/images/icon_envelope.png" id="templateRibbonIcon" height="40" width="40" style="border: 0;height: auto;line-height: 100%;outline: none;text-decoration: none;">
+                                            </td>
+                                            <td align="left" valign="top" style="padding-left: 10px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+                                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+                                                    <tr>
+                                                        <td align="center" valign="top" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+                                                            <!-- BEGIN PREHEADER -->
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templatePreheader" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;background-color: #FFFFFF;border-top: 0;border-bottom: 0;border-collapse: collapse !important;">
+                                                                <tr>
+                                                                    <td class="preheaderContent" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #363636;font-family: Helvetica;font-size: 10px;line-height: 125%;padding-top: 10px;padding-bottom: 10px;text-align: left;border-collapse: collapse !important;">C'est ton tour de participer.</td>
+                                                                    <!-- *|IFNOT:ARCHIVE_PAGE|* -->
+                                                                    <td width="220" class="preheaderContent" style="padding-left: 20px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #363636;font-family: Helvetica;font-size: 10px;line-height: 125%;padding-top: 10px;padding-bottom: 10px;text-align: left;border-collapse: collapse !important;">Email not displaying correctly?<br>
+<a href="*|ARCHIVE|*" target="_blank" style="color: #363636;font-weight: normal;text-decoration: underline;">View it in your browser</a>.</td>
+                                                                    <!-- *|END:IF|* -->
+                                                                </tr>
+                                                            </table>
+                                                            <!-- END PREHEADER -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" valign="top" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+                                                            <!-- BEGIN HEADER -->
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateHeader" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-top: 0;border-bottom: 0;border-collapse: collapse !important;">
+                                                                <tr>
+                                                                    <td valign="top" class="headerContent" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #363636;font-family: Helvetica;font-size: 20px;font-weight: bold;line-height: 100%;padding-top: 20px;padding-right: 0;padding-bottom: 20px;padding-left: 0;text-align: left;vertical-align: middle;border-collapse: collapse !important;">
+                                                                        <a href="http://moutoners.com" target="_blank" style="color: #363636;font-weight: normal;text-decoration: underline;"><img src="https://gallery.mailchimp.com/16e725e6adfa2f345050d815f/images/logo.png" alt="" border="0" style="border: px none;border-color: ;border-style: none;border-width: px;height: 132px;width: 316px;margin: 0;padding: 0;max-width: 530px;line-height: 100%;outline: none;text-decoration: none;" width="316" height="132" id="headerImage"></a>
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- END HEADER -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" valign="top" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+                                                            <!-- BEGIN BODY -->
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateBody" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-top: 0;border-bottom: 0;border-collapse: collapse !important;">
+                                                                <tr>
+                                                                    <td valign="top" class="bodyContent" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #363636;font-family: Helvetica;font-size: 13px;line-height: 150%;padding-top: 20px;padding-bottom: 20px;text-align: left;border-collapse: collapse !important;"><h1 style="display: block;font-family: Helvetica;font-size: 24px;font-style: normal;font-weight: normal;line-height: 100%;letter-spacing: normal;margin-top: 0;margin-right: 0;margin-bottom: 10px;margin-left: 0;text-align: left;color: #363636 !important;"><span style="font-size:18px; line-height:18px">Bonjour 							<%= link_to @user.name, user_url(@user)%>,</span></h1>
+
+<table cellpadding="0" cellspacing="0" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+	<tbody>
 		<tr>
-			<td align="center">
-				<p>You are receiving this email because you signed up for updates</p>
-				<p><a href="#">Unsubscribe instantly</a> | <a href="#">Forward to a friend</a> | <a href="#">View in Browser</a></p>
+			<td class="td1" valign="middle" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+			<p class="p1"><%= link_to "C'est à vous d'argumenter dans le débat '#{@challenge.title}'", challenge_url(@challenge)%>.</p>
 			</td>
 		</tr>
-	</table><!-- top message -->
-</td></tr></table><!-- wrapper -->
-
-
-
-</body>
+	</tbody>
+</table>
+<br>
+<br>
+Merci!<br>
+<br>
+Paul<br>
+Moutoners</td>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- END BODY -->
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="center" valign="top" style="padding-bottom: 40px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-collapse: collapse !important;">
+                                                            <!-- BEGIN FOOTER -->
+                                                            <table border="0" cellpadding="0" cellspacing="0" width="100%" id="templateFooter" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;border-top: 1px dotted #353536;border-bottom: 0;border-collapse: collapse !important;">
+                                                                <tr>
+                                                                    <td valign="top" class="footerContent" style="mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #363636;font-family: Helvetica;font-size: 10px;line-height: 150%;padding-top: 20px;padding-bottom: 20px;text-align: left;border-collapse: collapse !important;"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td valign="top" class="footerContent" style="padding-top: 20px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #363636;font-family: Helvetica;font-size: 10px;line-height: 150%;padding-bottom: 20px;text-align: left;border-collapse: collapse !important;"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td valign="top" class="footerContent" style="padding-top: 20px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #363636;font-family: Helvetica;font-size: 10px;line-height: 150%;padding-bottom: 20px;text-align: left;border-collapse: collapse !important;"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td valign="top" class="footerContent" style="padding-top: 20px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;color: #363636;font-family: Helvetica;font-size: 10px;line-height: 150%;padding-bottom: 20px;text-align: left;border-collapse: collapse !important;"></td>
+                                                                </tr>
+                                                            </table>
+                                                            <!-- END FOOTER -->
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </center>
+                <center>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" id="canspamBarWrapper" style="background-color:#FFFFFF; border-top:1px solid #E5E5E5;">
+                    <tr>
+                        <td align="center" valign="top" style="padding-top:20px; padding-bottom:20px;">
+                            <table border="0" cellpadding="0" cellspacing="0" id="canspamBar">
+                                <tr>
+                                    <td align="center" valign="top" style="color:#606060; font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:150%; padding-right:20px; padding-bottom:5px; padding-left:20px; text-align:center;">
+                                        This email was sent to <a href="*|EMAIL|*" target="_blank" style="color:#404040 !important;">*Mouton*</a>
+                                        <br>
+                                        <a href="*|ABOUT_LIST|*" target="_blank" style="color:#404040 !important;"><em>why did I get this?</em></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UNSUB|*" style="color:#404040 !important;">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="*|UPDATE_PROFILE|*" style="color:#404040 !important;">update subscription preferences</a>
+                                        <br>
+                                        *Inscrits Moutoners*
+                                        <br>
+                                        <br>
+                                        *|MERCI|*
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <style type="text/css">
+                    @media only screen and (max-width: 480px){
+                        table[id="canspamBar"] td{font-size:14px !important;}
+                        table[id="canspamBar"] td a{display:block !important; margin-top:10px !important;}
+                    }
+                </style>
+            </center></body>
 </html>
