@@ -127,13 +127,13 @@
 					<div class="row" id="fc-milieu-3-b">
 						<% if current_user  && @challenge.has_evaluation?(:vote_challenges, current_user) &&@challenge.valeur_vote(current_user) == 1.0  %>
 							<div class= "moitie-gauche1">
-								<span class="rapport-gauche"><%= @challenge.rapport%>%</span>
+								<span class="rapport-gauche"><%= @challenge.rapport_fc%>%</span>
 								<div class="pour-truc"><a><%= link_to "#{@challenge.prime_minister.fitting_name}", vote_challenge_challenge_path(@challenge, type: "up"), class: "pour-first"%></a>
 								</div>
 							</div>
 						<% else %>
 							<div class= "moitie-gauche">
-								<span class="rapport-gauche"><%= @challenge.rapport%>%</span>
+								<span class="rapport-gauche"><%= @challenge.rapport_fc%>%</span>
 								<div class="pour-truc"><a><%= link_to "#{@challenge.prime_minister.fitting_name}", vote_challenge_challenge_path(@challenge, type: "up"), class: "pour-first"%></a>
 								</div>
 							</div>
@@ -141,12 +141,12 @@
 										
 						<% if current_user  && @challenge.has_evaluation?(:vote_challenges, current_user) && @challenge.valeur_vote(current_user) == -1.0 %>
 							<div class="moitie-droite1">
-								<span class="rapport-droite"><%= @challenge.rapport_inverse%>%</span>
+								<span class="rapport-droite"><%= @challenge.rapport_fc1%>%</span>
 								<div class="pour-truc"><a><%= link_to "#{@challenge.first_opponent.fitting_name}", vote_challenge_challenge_path(@challenge, type: "down"), class: "pour-second"%></a></div>
 							</div>
 						<% else %>
 							<div class="moitie-droite">
-								<span class="rapport-droite"><%= @challenge.rapport_inverse%>%</span>
+								<span class="rapport-droite"><%= @challenge.rapport_fc1%>%</span>
 								<div class="pour-truc"><a><%= link_to "#{@challenge.first_opponent.fitting_name}", vote_challenge_challenge_path(@challenge, type: "down"), class: "pour-second"%></a></div>
 							</div>
 						<% end%>
@@ -156,13 +156,13 @@
 					<div class="row" id="fc-milieu-3">
 						<% if current_user  && @challenge.has_evaluation?(:vote_challenges, current_user) &&@challenge.valeur_vote(current_user) == 2.0  %>
 							<div class= "moitie-gauche1">
-								<span class="rapport-gauche"><%= @challenge.rapport%>%</span>
+								<span class="rapport-gauche"><%= @challenge.rapport_fc2%>%</span>
 								<div class="pour-truc"><a><%= link_to "#{@challenge.second_prop.fitting_name}", vote_challenge_challenge_path(@challenge, type: "upup"), class: "pour-first"%></a>
 								</div>
 							</div>
 						<% else %>
 							<div class= "moitie-gauche">
-								<span class="rapport-gauche"><%= @challenge.rapport%>%</span>
+								<span class="rapport-gauche"><%= @challenge.rapport_fc2%>%</span>
 								<div class="pour-truc"><a><%= link_to "#{@challenge.second_prop.fitting_name}", vote_challenge_challenge_path(@challenge, type: "upup"), class: "pour-first"%></a>
 								</div>
 							</div>
@@ -170,12 +170,12 @@
 										
 						<% if current_user  && @challenge.has_evaluation?(:vote_challenges, current_user) && @challenge.valeur_vote(current_user) == -2.0 %>
 							<div class="moitie-droite1">
-								<span class="rapport-droite"><%= @challenge.rapport_inverse%>%</span>
+								<span class="rapport-droite"><%= @challenge.rapport_fc3%>%</span>
 								<div class="pour-truc"><a><%= link_to "#{@challenge.second_opp.fitting_name}", vote_challenge_challenge_path(@challenge, type: "downdown"), class: "pour-second"%></a></div>
 							</div>
 						<% else %>
 							<div class="moitie-droite">
-								<span class="rapport-droite"><%= @challenge.rapport_inverse%>%</span>
+								<span class="rapport-droite"><%= @challenge.rapport_fc3%>%</span>
 								<div class="pour-truc"><a><%= link_to "#{@challenge.second_opp.fitting_name}", vote_challenge_challenge_path(@challenge, type: "downdown"), class: "pour-second"%></a></div>
 							</div>
 						<% end%>					
