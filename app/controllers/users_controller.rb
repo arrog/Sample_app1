@@ -81,8 +81,8 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
       @users = @user.followers.paginate(page: params[:page])
       render 'show_follow'
-  end
-  
+  end 
+     
   def follow
     @user = User.find(params[:id])
     if current_user

@@ -24,7 +24,7 @@
 			</div>
 			<div class="row" id= "sign_in4">
 				
-					<span class="texte"><%= link_to "Mot de passe oublié?", root_path, class: "lien"%>
+					<span class="texte"><%= link_to "Mot de passe oublié?", new_password_path(resource_name), class: "lien"%>
 					</span>
 					<%= f.submit "OK", class: "submit-login" %>
 				<% end%>

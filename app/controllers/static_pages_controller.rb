@@ -56,6 +56,12 @@ class StaticPagesController < ApplicationController
     @activities = PublicActivity::Activity.order("created_at desc")
   end
   
+  def bienvenue
+    @debate = Debate.find(6)
+    @debate1 = Debate.find(13)
+    @challenge = Challenge.find(13)
+  end  
+  
   def list
     if params[:cat] && !params[:cat].empty?
       @current_category = Cat.find(params[:cat])

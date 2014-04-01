@@ -183,6 +183,7 @@ SampleApp::Application.routes.draw do
   match '/mesjoutes', to:'static_pages#mesjoutes'
   match '/debats',    to: 'static_pages#list_debates'
   match '/challenge',    to: 'static_pages#challenge'
+  match '/bienvenue',    to: 'static_pages#bienvenue'
   
   get 'tags/:tag', to: 'static_pages#list', as: :tag
   
