@@ -17,7 +17,7 @@
 						<div class="span4" id="intro-notifications">
 							<div class="texte">	<%= invitation.sender.fitting_name%> vous invite à prendre parti dans le défi :</div>
 							<div class="action-notification"><%= link_to "ok", accept_invitation_path(invitation), class: "notification-link"%></div>
-							<div class="action-notification2"><%= link_to "non", reject_invitation_path(invitation), class: "notification-link"%></div>
+							<div class="action-notification2"><%= link_to "no", reject_invitation_path(invitation), class: "notification-link"%></div>
 						</div>
 						<div class="row">
 							<%= render "shared/challenge_badge", challenge: invitation.challenge %>
