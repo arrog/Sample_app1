@@ -12,8 +12,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
   
   alias_method :facebook, :all
-  
-  
+
   def google_oauth2
      
     @user = User.find_for_google_oauth2(request.env["omniauth.auth"], current_user)
