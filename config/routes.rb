@@ -15,6 +15,7 @@ SampleApp::Application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
+  match '/users/auth/google_oauth2/callback', to: 'sessions#create'
   
   resources :notes
   
