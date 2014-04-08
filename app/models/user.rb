@@ -412,9 +412,9 @@ private
     end
     
     def send_welcome_email
-        @debate = Debate.find(14)
-        @debate1 = Debate.find(14)
-        @challenge = Challenge.find(50)
+        @debate = Debate.find(6)
+        @debate1 = Debate.find(13)
+        @challenge = Challenge.find(13)
         UserMailer.signup_confirmation(self, @debate, @debate1, @challenge).deliver
     end
     
