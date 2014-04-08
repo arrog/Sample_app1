@@ -184,7 +184,7 @@ SampleApp::Application.routes.draw do
   match '/debats',    to: 'static_pages#list_debates'
   match '/challenge',    to: 'static_pages#challenge'
   match '/bienvenue',    to: 'static_pages#bienvenue'
-  
+  match '/jquery.simple-text-rotator.js',    to: 'static_pages#home'
   get 'tags/:tag', to: 'static_pages#list', as: :tag
   
   match "/search_results/" => "static_pages#search_results", :via => :get, :as =>"search_results"
